@@ -2645,6 +2645,7 @@ Parser.SRC_SatO = "SatO";
 Parser.SRC_ToFW = "ToFW";
 Parser.SRC_MPP = "MPP";
 Parser.SRC_BMT = "BMT";
+Parser.SRC_DMTCRG = "DMTCRG";
 Parser.SRC_GHLoE = "GHLoE";
 Parser.SRC_DoDk = "DoDk";
 Parser.SRC_SCREEN = "Screen";
@@ -2817,6 +2818,7 @@ Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SatO] = "Sigil and the Outlands";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_ToFW] = "Turn of Fortune's Wheel";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_MPP] = "Morte's Planar Parade";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_BMT] = "The Book of Many Things";
+Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DMTCRG] = "The Deck of Many Things: Card Reference Guide";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_GHLoE] = "Grim Hollow: Lairs of Etharis";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_DoDk] = "Dungeons of Drakkenheim";
 Parser.SOURCE_JSON_TO_FULL[Parser.SRC_SCREEN] = "Dungeon Master's Screen";
@@ -2964,6 +2966,7 @@ Parser.SOURCE_JSON_TO_ABV[Parser.SRC_SatO] = "SatO";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_ToFW] = "ToFW";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_MPP] = "MPP";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_BMT] = "BMT";
+Parser.SOURCE_JSON_TO_ABV[Parser.SRC_DMTCRG] = "DMTCRG";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_GHLoE] = "GHLoE";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_DoDk] = "DoDk";
 Parser.SOURCE_JSON_TO_ABV[Parser.SRC_SCREEN] = "Screen";
@@ -3110,6 +3113,7 @@ Parser.SOURCE_JSON_TO_DATE[Parser.SRC_SatO] = "2023-10-17";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_ToFW] = "2023-10-17";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_MPP] = "2023-10-17";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_BMT] = "2023-11-14";
+Parser.SOURCE_JSON_TO_DATE[Parser.SRC_DMTCRG] = "2023-11-14";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_GHLoE] = "2023-11-30";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_DoDk] = "2023-12-21";
 Parser.SOURCE_JSON_TO_DATE[Parser.SRC_SCREEN] = "2015-01-20";
@@ -3325,6 +3329,7 @@ Parser.SOURCES_VANILLA = new Set([
 	Parser.SRC_MaBJoV,
 	Parser.SRC_CoA,
 	Parser.SRC_BMT,
+	Parser.SRC_DMTCRG,
 ]);
 
 // Any opinionated set of sources that are """hilarious, dude"""
@@ -3419,6 +3424,7 @@ Parser.SOURCES_AVAILABLE_DOCS_BOOK = {};
 	Parser.SRC_HF,
 	Parser.SRC_HFFotM,
 	Parser.SRC_BMT,
+	Parser.SRC_DMTCRG,
 ].forEach(src => {
 	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src] = src;
 	Parser.SOURCES_AVAILABLE_DOCS_BOOK[src.toLowerCase()] = src;

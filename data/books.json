@@ -5395,6 +5395,116 @@
 					"name": "Credits"
 				}
 			]
+		},
+		{
+			"name": "The Deck of Many Things: Card Reference Guide",
+			"id": "DMTCRG",
+			"source": "DMTCRG",
+			"group": "supplement",
+			"cover": {
+				"type": "internal",
+				"path": "covers/DMTCRG.webp"
+			},
+			"published": "2023-11-14",
+			"contents": [
+				{
+					"name": "The Deck of Many Things",
+					"headers": [
+						"Customizing Your Deck",
+						"Card Meanings"
+					]
+				},
+				{
+					"name": "Divinatory Uses",
+					"headers": [
+						"Divinatory Basics",
+						"Divinatory Spreads"
+					]
+				},
+				{
+					"name": "Adventure Spreads",
+					"headers": [
+						"Creating an Adventure Spread",
+						"Example",
+						"Variant: Dungeon Spread",
+						"Using an Adventure Spread During Play"
+					]
+				},
+				{
+					"name": "Reading the Cards",
+					"headers": [
+						"Aberration",
+						"Balance",
+						"Beast",
+						"Book",
+						"Bridge",
+						"Campfire",
+						"Cavern",
+						"Celestial",
+						"Comet",
+						"Construct",
+						"Corpse",
+						"Crossroads",
+						"Donjon",
+						"Door",
+						"Dragon",
+						"Elemental",
+						"Euryale",
+						"Expert",
+						"Fates",
+						"Fey",
+						"Fiend",
+						"Flames",
+						"Fool",
+						"Gem",
+						"Giant",
+						"Humanoid",
+						"Jester",
+						"Key",
+						"Knight",
+						"Lance",
+						"Mage",
+						"Map",
+						"Maze",
+						"Mine",
+						"Monstrosity",
+						"Moon",
+						"Ooze",
+						"Path",
+						"Pit",
+						"Plant",
+						"Priest",
+						"Prisoner",
+						"Puzzle",
+						"Ring",
+						"Rogue",
+						"Ruin",
+						"Sage",
+						"Shield",
+						"Ship",
+						"Skull",
+						"Staff",
+						"Stairway",
+						"Star",
+						"Statue",
+						"Sun",
+						"Talons",
+						"Tavern",
+						"Temple",
+						"Throne",
+						"Tomb",
+						"Tower",
+						"Tree",
+						"Undead",
+						"Void",
+						"Warrior",
+						"Well"
+					]
+				},
+				{
+					"name": "Credits"
+				}
+			]
 		}
 	]
 }
