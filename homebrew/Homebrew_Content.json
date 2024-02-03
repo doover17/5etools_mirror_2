@@ -1382,6 +1382,18 @@
 					]
 				}
 			]
+		},
+		{"abbreviation": "Infernal",
+			"source": "HB",
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Infernal Enchantment",
+					"entries": [
+						"An infernal enchantment has been placed upon this item. The item counts as magical for purposes of overcoming resistances and immunities, but this does not otherwise affect its status as a magic item. (An infernal enchantment and magical enchantment/infusion may co-exist on an item)."
+					]
+				}
+			]
 		}
 	],
 	"itemType": [
@@ -1851,6 +1863,26 @@
 			"entries": [
 				"A single dose (1 bottle) of this shining, clear water can be consumed as an action, instantly granting the benefits of a short rest to the drinker."
 			]
+		},
+		{"name": "Sword of Shrieking Spirits",
+			"source": "HB",
+			"type": "M",
+			"rarity": "very rare",
+			"reqAttune": true,
+			"weight": 6,
+			"weaponCategory": "martial",
+			"property": [
+				"H",
+				"2"
+			],
+			"dmg1": "2d6",
+			"dmgType": "S",
+			"entries": [
+				"The blade of this sword is wreathed in writhing translucent white-blue fragments of a spirit.",
+				"When this sword strikes a creature concentrating on a spell, it deals an additional xd6 necrotic damage, where x is the level of the spell being concentrated on.",
+				"For one minute after being hit by this sword, the next time the target casts a spell, it must succeed on a concentration check (against original hit damage) or the spell fails."
+			],
+			"tier": "major"
 		}
 	]
 }
