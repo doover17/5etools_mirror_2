@@ -307,7 +307,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/EGW/118-5.9-croaker-cave.webp"
+										"path": "book/EGW/118-5.9-croaker-cave.png"
 									},
 									"title": "Map 5.9: Croaker Cave",
 									"width": 2550,
@@ -1527,14 +1527,13 @@
 										"type": "internal",
 										"path": "book/EGW/thumbnail/118-5.9-croaker-cave.webp"
 									},
-									"id": "000",
-									"credit": "Deven Rue"
+									"id": "000"
 								},
 								{
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/EGW/118-5.9-croaker-cave-player.webp"
+										"path": "book/EGW/118-5.9-croaker-cave-player.png"
 									},
 									"title": "Player Version",
 									"width": 2550,
@@ -1548,8 +1547,7 @@
 									},
 									"mapParent": {
 										"id": "000"
-									},
-									"credit": "Deven Rue"
+									}
 								}
 							]
 						},
@@ -1888,12 +1886,11 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/EGW/119-05-06.webp"
+								"path": "book/EGW/119-05-06.png"
 							},
 							"title": "Sailing to Eiselcross",
 							"width": 1496,
-							"height": 1000,
-							"credit": "Marcela Medeiros"
+							"height": 1000
 						},
 						{
 							"type": "entries",
@@ -2134,7 +2131,7 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "book/EGW/120-5.10-salsvault.webp"
+														"path": "book/EGW/120-5.10-salsvault.png"
 													},
 													"title": "Map 5.10: Salsvault",
 													"width": 2550,
@@ -2750,14 +2747,13 @@
 														"type": "internal",
 														"path": "book/EGW/thumbnail/120-5.10-salsvault.webp"
 													},
-													"id": "001",
-													"credit": "Deven Rue"
+													"id": "001"
 												},
 												{
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "book/EGW/120-5.10-salsvault-player.webp"
+														"path": "book/EGW/120-5.10-salsvault-player.png"
 													},
 													"title": "Player Version",
 													"width": 2550,
@@ -2771,8 +2767,7 @@
 													},
 													"mapParent": {
 														"id": "001"
-													},
-													"credit": "Deven Rue"
+													}
 												}
 											]
 										}

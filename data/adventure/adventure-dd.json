@@ -30,11 +30,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/EGW/110-05-03.webp"
+										"path": "book/EGW/110-05-03.png"
 									},
 									"width": 1496,
-									"height": 1000,
-									"credit": "Brian Valeza"
+									"height": 1000
 								}
 							]
 						},
@@ -56,7 +55,7 @@
 					"page": 218,
 					"id": "7c2",
 					"entries": [
-						"The adventure begins with the characters arriving (whether singly or together) in Hupperdook. {@adventure Map 5.4|DD|0|Map 5.4: Lower Hupperdook} shows Lower Hupperdook and marks the locations of the Ironlot and Assembly Yard sections of the city.",
+						"The adventure begins with the characters arriving (whether singly or together) in Hupperdook. {@adventure Map 5.4|DD|0|Map 5.4: Lower Hupperdook View Player Version} shows Lower Hupperdook and marks the locations of the Ironlot and Assembly Yard sections of the city.",
 						"Once the players are ready to begin, read or paraphrase the following boxed text to set the scene:",
 						{
 							"type": "insetReadaloud",
@@ -75,7 +74,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/EGW/111-5.4-lower-hupperdook.webp"
+										"path": "book/EGW/111-5.4-lower-hupperdook.jpg"
 									},
 									"title": "Map 5.4: Lower Hupperdook",
 									"width": 2550,
@@ -631,14 +630,13 @@
 										"type": "internal",
 										"path": "book/EGW/thumbnail/111-5.4-lower-hupperdook.webp"
 									},
-									"id": "000",
-									"credit": "Deven Rue"
+									"id": "000"
 								},
 								{
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/EGW/111-5.4-lower-hupperdook-player.webp"
+										"path": "book/EGW/111-5.4-lower-hupperdook-player.jpg"
 									},
 									"title": "Player Version",
 									"width": 2550,
@@ -652,8 +650,7 @@
 									},
 									"mapParent": {
 										"id": "000"
-									},
-									"credit": "Deven Rue"
+									}
 								}
 							]
 						},
@@ -688,7 +685,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/EGW/112-5.5-ironlot-streets.webp"
+												"path": "book/EGW/112-5.5-ironlot-streets.png"
 											},
 											"title": "Map 5.5: Ironlot Streets",
 											"width": 2550,
@@ -700,14 +697,13 @@
 												"offsetY": -9
 											},
 											"imageType": "map",
-											"id": "7bc",
-											"credit": "Deven Rue"
+											"id": "7bc"
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/EGW/112-5.5-ironlot-streets-player.webp"
+												"path": "book/EGW/112-5.5-ironlot-streets-player.png"
 											},
 											"title": "Player Version",
 											"width": 2550,
@@ -721,8 +717,7 @@
 											"imageType": "mapPlayer",
 											"mapParent": {
 												"id": "7bc"
-											},
-											"credit": "Deven Rue"
+											}
 										}
 									]
 								},
@@ -798,7 +793,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/EGW/113-05-04.webp"
+										"path": "book/EGW/113-05-04.png"
 									},
 									"title": "Handout A: Burned Letter Fragment",
 									"width": 1000,
@@ -975,7 +970,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/EGW/114-5.6-nima-cinnarids-house.webp"
+												"path": "book/EGW/114-5.6-nima-cinnarids-house.jpg"
 											},
 											"title": "Map 5.6: Nima Cinnarid's House",
 											"width": 1200,
@@ -987,14 +982,13 @@
 												"offsetY": -72
 											},
 											"imageType": "map",
-											"id": "7bb",
-											"credit": "Deven Rue"
+											"id": "7bb"
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/EGW/114-5.6-nima-cinnarids-house-player.webp"
+												"path": "book/EGW/114-5.6-nima-cinnarids-house-player.jpg"
 											},
 											"title": "Player Version",
 											"width": 2400,
@@ -1009,8 +1003,7 @@
 											"mapParent": {
 												"id": "7bb",
 												"autoScale": true
-											},
-											"credit": "Deven Rue"
+											}
 										}
 									]
 								},
@@ -1056,7 +1049,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/EGW/115-05-05.webp"
+												"path": "book/EGW/115-05-05.png"
 											},
 											"title": "Handout B: Nima's Note",
 											"width": 1114,
@@ -1278,7 +1271,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/EGW/116-5.7-silver-falls-cavern.webp"
+												"path": "book/EGW/116-5.7-silver-falls-cavern.png"
 											},
 											"title": "Map 5.7: Silver Falls Cavern",
 											"width": 2550,
@@ -1290,14 +1283,13 @@
 												"offsetY": 47
 											},
 											"imageType": "map",
-											"id": "7ba",
-											"credit": "Deven Rue"
+											"id": "7ba"
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/EGW/116-5.7-silver-falls-cavern-player.webp"
+												"path": "book/EGW/116-5.7-silver-falls-cavern-player.png"
 											},
 											"title": "Player Version",
 											"width": 2550,
@@ -1311,8 +1303,7 @@
 											"imageType": "mapPlayer",
 											"mapParent": {
 												"id": "7ba"
-											},
-											"credit": "Deven Rue"
+											}
 										}
 									]
 								},
@@ -1437,7 +1428,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/EGW/117-5.8-stahlmasts-lair.webp"
+										"path": "book/EGW/117-5.8-stahlmasts-lair.jpg"
 									},
 									"title": "Map 5.8: Stahlmast's Lair",
 									"width": 2550,
@@ -5696,14 +5687,13 @@
 										"type": "internal",
 										"path": "book/EGW/thumbnail/117-5.8-stahlmasts-lair.webp"
 									},
-									"id": "001",
-									"credit": "Deven Rue"
+									"id": "001"
 								},
 								{
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/EGW/117-5.8-stahlmasts-lair-player.webp"
+										"path": "book/EGW/117-5.8-stahlmasts-lair-player.jpg"
 									},
 									"title": "Player Version",
 									"width": 2550,
@@ -5719,8 +5709,7 @@
 									"mapParent": {
 										"id": "001",
 										"autoScale": true
-									},
-									"credit": "Deven Rue"
+									}
 								}
 							]
 						},
@@ -5819,7 +5808,7 @@
 									]
 								},
 								"Any character with a passive Wisdom ({@skill Perception}) score of 16 or higher, or who succeeds on a DC 16 Wisdom ({@skill Perception}) check, notices that a hand crossbow is mounted to the top of the stone pillar. This clockwork crossbow remains inert unless Stahlmast is aware of the characters, in which case it attacks the nearest creature within 30 feet of it each round. The crossbow is +5 to hit and deals 3 ({@dice 1d6}) piercing damage on a hit. If a 1 or 2 is rolled for the crossbow's attack roll, it breaks and no longer functions.",
-								"The crossbow turret is a Large object with AC 17, 15 hit points, and immunity to poison and psychic damage."
+								"The crossbow turret is Large object with AC 17, 15 hit points, and immunity to poison and psychic damage."
 							]
 						},
 						{

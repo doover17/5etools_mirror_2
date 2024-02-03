@@ -50,16 +50,6 @@
 	}
 }
 
-.veapp {
-	&__ {
-		&ele-hoverable {
-			&:hover {
-				background: $rgb-bg--alt;
-			}
-		}
-	}
-}
-
 .last-mr-0:last-child {
 	margin-right: 0 !important;
 }

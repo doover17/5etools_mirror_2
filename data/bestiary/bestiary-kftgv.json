@@ -46,7 +46,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 8,
 			"_copy": {
 				"name": "Bandit Captain",
 				"source": "MM",
@@ -75,7 +74,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 8,
 			"_copy": {
 				"name": "Knight",
 				"source": "MM",
@@ -104,7 +102,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 8,
 			"_copy": {
 				"name": "Mage",
 				"source": "MM",
@@ -439,7 +436,7 @@
 			],
 			"reaction": [
 				{
-					"name": "Charmayne can take up to three reactions per round but only one per turn.",
+					"name": "Charmayne can take up to three reactions per round but only one per turn",
 					"entries": []
 				},
 				{
@@ -478,12 +475,6 @@
 			],
 			"conditionInflictSpell": [
 				"invisible"
-			],
-			"savingThrowForced": [
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -580,9 +571,6 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			],
-			"savingThrowForced": [
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -690,7 +678,6 @@
 		{
 			"name": "Conservatory Student",
 			"source": "KftGV",
-			"page": 110,
 			"_copy": {
 				"name": "Noble",
 				"source": "MM",
@@ -716,14 +703,12 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 12,
 			"_copy": {
 				"name": "Commoner",
 				"source": "MM"
 			},
 			"int": 10,
-			"hasToken": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Eldritch Horror Hatchling",
@@ -805,11 +790,6 @@
 					"displayAs": "action"
 				}
 			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"intelligence"
-			],
 			"hasToken": true,
 			"hasFluff": true
 		},
@@ -818,7 +798,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 8,
 			"_copy": {
 				"name": "Bandit",
 				"source": "MM",
@@ -847,7 +826,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 8,
 			"_copy": {
 				"name": "Spy",
 				"source": "MM",
@@ -876,7 +854,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 8,
 			"_copy": {
 				"name": "Assassin",
 				"source": "MM",
@@ -983,7 +960,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 105,
 			"_copy": {
 				"name": "Zombie",
 				"source": "MM",
@@ -1011,7 +987,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 8,
 			"_copy": {
 				"name": "Bandit",
 				"source": "MM",
@@ -1041,7 +1016,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 8,
 			"_copy": {
 				"name": "Thug",
 				"source": "MM",
@@ -1071,7 +1045,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 8,
 			"_copy": {
 				"name": "Veteran",
 				"source": "MM",
@@ -1101,7 +1074,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 51,
 			"_copy": {
 				"name": "Knight",
 				"source": "MM",
@@ -1123,7 +1095,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 169,
 			"_copy": {
 				"name": "Mind Flayer",
 				"source": "MM",
@@ -1140,15 +1111,13 @@
 				"L",
 				"N"
 			],
-			"hasToken": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Jalynvyr Nir'Thinn",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 155,
 			"_copy": {
 				"name": "Smoke Mephit",
 				"source": "MM",
@@ -1172,7 +1141,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 200,
 			"_copy": {
 				"name": "Efreeti",
 				"source": "MM",
@@ -1185,15 +1153,13 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Joster Mareet",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 107,
 			"_copy": {
 				"name": "Incubus",
 				"source": "MM",
@@ -1206,8 +1172,13 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluffImages": true
+			"type": {
+				"type": "humanoid",
+				"tags": [
+					"incubus"
+				]
+			},
+			"hasToken": true
 		},
 		{
 			"name": "Juvenile Eldritch Horror",
@@ -1245,9 +1216,6 @@
 					"displayAs": "action"
 				}
 			],
-			"savingThrowForcedSpell": [
-				"constitution"
-			],
 			"hasToken": true
 		},
 		{
@@ -1255,10 +1223,13 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 78,
 			"_copy": {
 				"name": "Deep Gnome (Svirfneblin)",
 				"source": "MM",
+				"_trait": {
+					"name": "Deep Gnome",
+					"source": "DMG"
+				},
 				"_mod": {
 					"*": {
 						"mode": "replaceTxt",
@@ -1271,7 +1242,7 @@
 						"items": {
 							"name": "Special Equipment",
 							"entries": [
-								"Kavoda carries a {@item Spell Scroll (2nd Level)||spell scroll} of {@spell magic weapon} and a {@item Potion of Hill Giant Strength||potion of giant strength (hill)}."
+								"Kavoda carries a {@item spell scroll} of {@spell magic weapon} and a {@item Potion of Hill Giant Strength||potion of giant strength (hill)}."
 							]
 						}
 					}
@@ -1496,13 +1467,6 @@
 			"conditionInflictSpell": [
 				"charmed"
 			],
-			"savingThrowForced": [
-				"constitution"
-			],
-			"savingThrowForcedSpell": [
-				"strength",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -1512,7 +1476,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 7,
 			"_copy": {
 				"name": "Commoner",
 				"source": "MM"
@@ -1527,15 +1490,13 @@
 				"L",
 				"G"
 			],
-			"hasToken": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Naevys Tharesso",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 150,
 			"_copy": {
 				"name": "Knight",
 				"source": "MM",
@@ -1575,7 +1536,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 130,
 			"_copy": {
 				"name": "Assassin",
 				"source": "MM",
@@ -1598,8 +1558,7 @@
 				"C",
 				"N"
 			],
-			"hasToken": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Prisoner 13",
@@ -1763,9 +1722,6 @@
 			"conditionInflict": [
 				"prone"
 			],
-			"savingThrowForced": [
-				"dexterity"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -1775,7 +1731,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 147,
 			"_copy": {
 				"name": "Ghost",
 				"source": "MM",
@@ -1788,15 +1743,13 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Sabrina Kilgore (Levels 1-4)",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 8,
 			"_copy": {
 				"name": "Bandit",
 				"source": "MM",
@@ -1826,7 +1779,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 8,
 			"_copy": {
 				"name": "Thug",
 				"source": "MM",
@@ -1856,7 +1808,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 8,
 			"_copy": {
 				"name": "Veteran",
 				"source": "MM",
@@ -2033,7 +1984,6 @@
 			],
 			"miscTags": [
 				"AOE",
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -2044,14 +1994,6 @@
 			"conditionInflictSpell": [
 				"charmed"
 			],
-			"savingThrowForced": [
-				"constitution",
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -2061,7 +2003,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 173,
 			"_copy": {
 				"name": "Archmage",
 				"source": "MM",
@@ -2088,13 +2029,11 @@
 					]
 				}
 			],
-			"hasToken": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Tiefling Acrobat",
 			"source": "KftGV",
-			"page": 37,
 			"_copy": {
 				"name": "Commoner",
 				"source": "MM"
@@ -2223,9 +2162,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"shortsword|phb"
-			],
 			"senseTags": [
 				"U"
 			],
@@ -2252,18 +2188,11 @@
 			],
 			"miscTags": [
 				"AOE",
-				"MLW",
 				"MW"
 			],
 			"conditionInflictSpell": [
 				"blinded",
 				"deafened"
-			],
-			"savingThrowForced": [
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2274,7 +2203,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 80,
 			"_copy": {
 				"name": "Shield Guardian",
 				"source": "MM",
@@ -2292,7 +2220,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 8,
 			"_copy": {
 				"name": "Bandit",
 				"source": "MM",
@@ -2322,7 +2249,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 8,
 			"_copy": {
 				"name": "Thug",
 				"source": "MM",
@@ -2352,7 +2278,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 8,
 			"_copy": {
 				"name": "Veteran",
 				"source": "MM",
@@ -2382,7 +2307,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 8,
 			"_copy": {
 				"name": "Scout",
 				"source": "MM",
@@ -2411,7 +2335,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 8,
 			"_copy": {
 				"name": "Spy",
 				"source": "MM",
@@ -2440,7 +2363,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 8,
 			"_copy": {
 				"name": "Veteran",
 				"source": "MM",
@@ -2469,7 +2391,6 @@
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 47,
 			"_copy": {
 				"name": "Nothic",
 				"source": "MM",
@@ -2487,15 +2408,13 @@
 				"Deep Speech",
 				"Elvish"
 			],
-			"hasToken": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Zorhanna Adulare",
 			"isNpc": true,
 			"isNamedCreature": true,
 			"source": "KftGV",
-			"page": 184,
 			"_copy": {
 				"name": "Archmage",
 				"source": "MM",
@@ -2515,8 +2434,7 @@
 				"Elvish",
 				"Sylvan"
 			],
-			"hasToken": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Zorhanna's Simulacrum",

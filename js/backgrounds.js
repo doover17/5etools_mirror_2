@@ -1,29 +1,20 @@
 "use strict";
 
 class BackgroundSublistManager extends SublistManager {
-	static get _ROW_TEMPLATE () {
-		return [
-			new SublistCellTemplate({
-				name: "Name",
-				css: "bold col-4 pl-0",
-				colStyle: "",
-			}),
-			new SublistCellTemplate({
-				name: "Skills",
-				css: "col-8 pr-0",
-				colStyle: "",
-			}),
-		];
+	constructor () {
+		super({
+			sublistClass: "subbackgrounds",
+		});
 	}
 
 	pGetSublistItem (it, hash) {
 		const name = it.name.replace("Variant ", "");
-		const {summary: skills} = Renderer.generic.getSkillSummary({skillProfs: it.skillProficiencies || [], isShort: true});
-		const cellsText = [name, skills];
+		const skills = Renderer.background.getSkillSummary(it.skillProficiencies || [], true);
 
 		const $ele = $$`<div class="lst__row lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="lst--border lst__row-inner">
-				${this.constructor._getRowCellsHtml({values: cellsText})}
+				<span class="bold col-4 pl-0">${name}</span>
+				<span class="col-8 pr-0">${skills}</span>
 			</a>
 		</div>`
 			.contextmenu(evt => this._handleSublistItemContextMenu(evt, listItem))
@@ -40,7 +31,6 @@ class BackgroundSublistManager extends SublistManager {
 			},
 			{
 				entity: it,
-				mdRow: [...cellsText],
 			},
 		);
 		return listItem;
@@ -58,14 +48,9 @@ class BackgroundPage extends ListPage {
 
 			pageFilter,
 
-			bookViewOptions: {
-				namePlural: "backgrounds",
-				pageTitle: "Backgrounds Book View",
-			},
+			listClass: "backgrounds",
 
 			dataProps: ["background"],
-
-			isMarkdownPopout: true,
 		});
 	}
 
@@ -82,7 +67,7 @@ class BackgroundPage extends ListPage {
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="bold col-4 pl-0">${name}</span>
 			<span class="col-6">${bg._skillDisplay}</span>
-			<span class="col-2 ve-text-center ${Parser.sourceJsonToColor(bg.source)} pr-0" title="${Parser.sourceJsonToFull(bg.source)}" ${Parser.sourceJsonToStyle(bg.source)}>${source}</span>
+			<span class="col-2 text-center ${Parser.sourceJsonToColor(bg.source)} pr-0" title="${Parser.sourceJsonToFull(bg.source)}" ${Parser.sourceJsonToStyle(bg.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(

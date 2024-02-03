@@ -94,9 +94,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/Belashyrra.webp"
-					},
-					"credit": "Cory Trego-Erdner"
+						"path": "bestiary/ERLW/Belashyrra.png"
+					}
 				}
 			]
 		},
@@ -136,9 +135,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/Bone Knight.webp"
-					},
-					"credit": "Tomas Giorello"
+						"path": "bestiary/ERLW/Bone Knight.png"
+					}
 				}
 			]
 		},
@@ -188,9 +186,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/Clawfoot.webp"
-					},
-					"credit": "Art from Wayfinder's Guide to Eberron"
+						"path": "bestiary/ERLW/Clawfoot.png"
+					}
 				}
 			]
 		},
@@ -240,9 +237,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/Dolgaunt.webp"
-					},
-					"credit": "Dave Allsop"
+						"path": "bestiary/ERLW/Dolgaunt.png"
+					}
 				}
 			]
 		},
@@ -268,9 +264,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/Dolgrim.webp"
-					},
-					"credit": "Dave Allsop"
+						"path": "bestiary/ERLW/Dolgrim.png"
+					}
 				}
 			]
 		},
@@ -349,9 +344,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/Dusk Hag.webp"
-					},
-					"credit": "Colin Boyer"
+						"path": "bestiary/ERLW/Dusk Hag.png"
+					}
 				}
 			]
 		},
@@ -444,9 +438,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/Dyrrn.webp"
-					},
-					"credit": "Brian Valeza"
+						"path": "bestiary/ERLW/Dyrrn.png"
+					}
 				}
 			]
 		},
@@ -503,9 +496,8 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "bestiary/ERLW/Fastieth.webp"
-							},
-							"credit": "Olga Drebas"
+								"path": "bestiary/ERLW/Fastieth.png"
+							}
 						}
 					}
 				}
@@ -552,9 +544,8 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "bestiary/ERLW/Hashalaq Quori.webp"
-							},
-							"credit": "Cory Trego-Erdner"
+								"path": "bestiary/ERLW/Hashalaq Quori.png"
+							}
 						}
 					}
 				}
@@ -618,9 +609,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/Inspired.webp"
-					},
-					"credit": "Lake Hurwitz"
+						"path": "bestiary/ERLW/Inspired.png"
+					}
 				}
 			]
 		},
@@ -651,9 +641,8 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "bestiary/ERLW/Iron Defender.webp"
-							},
-							"credit": "Ron Lemen"
+								"path": "bestiary/ERLW/Iron Defender.png"
+							}
 						}
 					}
 				}
@@ -687,9 +676,8 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "bestiary/ERLW/Kalaraq Quori.webp"
-							},
-							"credit": "Christopher Burdett"
+								"path": "bestiary/ERLW/Kalaraq Quori.png"
+							}
 						}
 					}
 				}
@@ -716,9 +704,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/Kalashtar.webp"
-					},
-					"credit": "Efflam Mercier"
+						"path": "bestiary/ERLW/Kalashtar.png"
+					}
 				}
 			]
 		},
@@ -768,9 +755,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/Karrnathi Undead Soldier.webp"
-					},
-					"credit": "Andrew Jones"
+						"path": "bestiary/ERLW/Karrnathi Undead Soldier.png"
+					}
 				}
 			]
 		},
@@ -834,9 +820,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/Lady Illmarrow.webp"
-					},
-					"credit": "Lake Hurwitz"
+						"path": "bestiary/ERLW/Lady Illmarrow.png"
+					}
 				}
 			]
 		},
@@ -853,9 +838,8 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "bestiary/ERLW/Living Burning Hands.webp"
-							},
-							"credit": "Claudio Pozas"
+								"path": "bestiary/ERLW/Living Burning Hands.png"
+							}
 						}
 					}
 				}
@@ -874,9 +858,8 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "bestiary/ERLW/Living Cloudkill.webp"
-							},
-							"credit": "Claudio Pozas"
+								"path": "bestiary/ERLW/Living Cloudkill.png"
+							}
 						}
 					}
 				}
@@ -895,9 +878,8 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "bestiary/ERLW/Living Lightning Bolt.webp"
-							},
-							"credit": "Claudio Pozas"
+								"path": "bestiary/ERLW/Living Lightning Bolt.png"
+							}
 						}
 					}
 				}
@@ -1061,9 +1043,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/Magewright.webp"
-					},
-					"credit": "Sam Keiser"
+						"path": "bestiary/ERLW/Magewright.png"
+					}
 				}
 			]
 		},
@@ -1090,9 +1071,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/Mordakhesh.webp"
-					},
-					"credit": "Zack Stella"
+						"path": "bestiary/ERLW/Mordakhesh.png"
+					}
 				}
 			]
 		},
@@ -1191,9 +1171,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/Radiant Idol.webp"
-					},
-					"credit": "Craig J Spearing"
+						"path": "bestiary/ERLW/Radiant Idol.png"
+					}
 				}
 			]
 		},
@@ -1240,9 +1219,8 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "bestiary/ERLW/Rak Tulkhesh.webp"
-							},
-							"credit": "Shawn Wood"
+								"path": "bestiary/ERLW/Rak Tulkhesh.png"
+							}
 						}
 					}
 				}
@@ -1269,9 +1247,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/Shifter.webp"
-					},
-					"credit": "Cory Trego-Erdner"
+						"path": "bestiary/ERLW/Shifter.png"
+					}
 				}
 			]
 		},
@@ -1318,9 +1295,8 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "bestiary/ERLW/Sul Khatesh.webp"
-							},
-							"credit": "Matt Stewart"
+								"path": "bestiary/ERLW/Sul Khatesh.png"
+							}
 						}
 					}
 				}
@@ -1399,9 +1375,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/Tarkanan Assassin.webp"
-					},
-					"credit": "Efflam Mercier"
+						"path": "bestiary/ERLW/Tarkanan Assassin.png"
+					}
 				}
 			]
 		},
@@ -1434,9 +1409,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/The Lord of Blades.webp"
-					},
-					"credit": "Steve Prescott"
+						"path": "bestiary/ERLW/The Lord of Blades.png"
+					}
 				}
 			]
 		},
@@ -1481,9 +1455,8 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "bestiary/ERLW/Tsucora Quori.webp"
-							},
-							"credit": "Dave Allsop"
+								"path": "bestiary/ERLW/Tsucora Quori.png"
+							}
 						}
 					}
 				}
@@ -1598,9 +1571,8 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "bestiary/ERLW/Undying Soldier.webp"
-							},
-							"credit": "James Zhang"
+								"path": "bestiary/ERLW/Undying Soldier.png"
+							}
 						}
 					}
 				}
@@ -1699,9 +1671,8 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "bestiary/ERLW/Valenar Hound.webp"
-							},
-							"credit": "Olga Drebas"
+								"path": "bestiary/ERLW/Valenar Hound.png"
+							}
 						}
 					}
 				}
@@ -1720,9 +1691,8 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "bestiary/ERLW/Valenar Steed.webp"
-							},
-							"credit": "Leesha Hannigan"
+								"path": "bestiary/ERLW/Valenar Steed.png"
+							}
 						}
 					}
 				}
@@ -1776,9 +1746,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/124-4-07.webp"
-					},
-					"credit": "Titus Lunter"
+						"path": "bestiary/ERLW/124-4-07.png"
+					}
 				}
 			]
 		},
@@ -1804,9 +1773,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/Warforged Soldier.webp"
-					},
-					"credit": "Claudio Pozas"
+						"path": "bestiary/ERLW/Warforged Soldier.png"
+					}
 				}
 			]
 		},
@@ -1838,9 +1806,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/Warforged Titan.webp"
-					},
-					"credit": "Wayne Reynolds"
+						"path": "bestiary/ERLW/Warforged Titan.png"
+					}
 				}
 			]
 		},
@@ -1867,9 +1834,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/ERLW/Zakya Rakshasa.webp"
-					},
-					"credit": "Zack Stella"
+						"path": "bestiary/ERLW/Zakya Rakshasa.png"
+					}
 				}
 			]
 		}

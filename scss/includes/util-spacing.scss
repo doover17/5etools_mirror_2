@@ -110,10 +110,6 @@
 
 .bb-1p {
 	border-bottom: 1px solid $rgb-border-grey !important;
-
-	&-trans {
-		border-bottom: 1px solid $rgb-border-grey--trans !important;
-	}
 }
 
 .bl-0 {
@@ -458,10 +454,6 @@
 	margin-top: ($spacer * 3) !important;
 }
 
-.mt-1p {
-	margin-top: 1px !important;
-}
-
 .mr-auto {
 	margin-right: auto !important;
 }
@@ -496,10 +488,6 @@
 
 .mr-5 {
 	margin-right: ($spacer * 3) !important;
-}
-
-.mr-3p {
-	margin-right: 3px !important;
 }
 
 .mb-auto {

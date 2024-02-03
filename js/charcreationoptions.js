@@ -1,27 +1,17 @@
 "use strict";
 
 class CharCreationOptionsSublistManager extends SublistManager {
-	static get _ROW_TEMPLATE () {
-		return [
-			new SublistCellTemplate({
-				name: "Type",
-				css: "col-5 ve-text-center pl-0",
-				colStyle: "text-center",
-			}),
-			new SublistCellTemplate({
-				name: "Name",
-				css: "bold col-7 pr-0",
-				colStyle: "",
-			}),
-		];
+	constructor () {
+		super({
+			sublistClass: "subcharcreationoptions",
+		});
 	}
 
 	pGetSublistItem (it, hash) {
-		const cellsText = [it.name, it._fOptionType];
-
 		const $ele = $$`<div class="lst__row lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="lst--border lst__row-inner">
-				${this.constructor._getRowCellsHtml({values: cellsText})}
+				<span class="col-5 text-center pl-0">${it._fOptionType}</span>
+				<span class="bold col-7 pr-0">${it.name}</span>
 			</a>
 		</div>`
 			.contextmenu(evt => this._handleSublistItemContextMenu(evt, listItem))
@@ -38,7 +28,6 @@ class CharCreationOptionsSublistManager extends SublistManager {
 			},
 			{
 				entity: it,
-				mdRow: [...cellsText],
 			},
 		);
 		return listItem;
@@ -56,9 +45,9 @@ class CharCreationOptionsPage extends ListPage {
 
 			pageFilter,
 
-			dataProps: ["charoption"],
+			listClass: "charcreationoptions",
 
-			isMarkdownPopout: true,
+			dataProps: ["charoption"],
 		});
 	}
 
@@ -72,9 +61,9 @@ class CharCreationOptionsPage extends ListPage {
 		const source = Parser.sourceJsonToAbv(it.source);
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
-			<span class="col-5 ve-text-center pl-0">${it._fOptionType}</span>
+			<span class="col-5 text-center pl-0">${it._fOptionType}</span>
 			<span class="bold col-5">${it.name}</span>
-			<span class="col-2 ve-text-center ${Parser.sourceJsonToColor(it.source)}" title="${Parser.sourceJsonToFull(it.source)} pr-0" ${Parser.sourceJsonToStyle(it.source)}>${source}</span>
+			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)}" title="${Parser.sourceJsonToFull(it.source)} pr-0" ${Parser.sourceJsonToStyle(it.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(

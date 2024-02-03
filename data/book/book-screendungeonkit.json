@@ -1275,7 +1275,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/ScreenDungeonKit/Cards-Conditions/Print1.webp"
+										"path": "book/ScreenDungeonKit/Cards-Conditions/Print1.png"
 									},
 									"title": "Page 1",
 									"width": 1691,
@@ -1285,7 +1285,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/ScreenDungeonKit/Cards-Conditions/Print2.webp"
+										"path": "book/ScreenDungeonKit/Cards-Conditions/Print2.png"
 									},
 									"title": "Page 2",
 									"width": 1689,
@@ -1295,7 +1295,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/ScreenDungeonKit/Cards-Conditions/Print3.webp"
+										"path": "book/ScreenDungeonKit/Cards-Conditions/Print3.png"
 									},
 									"title": "Page 3",
 									"width": 1688,
@@ -1305,7 +1305,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/ScreenDungeonKit/Cards-Conditions/Print4.webp"
+										"path": "book/ScreenDungeonKit/Cards-Conditions/Print4.png"
 									},
 									"title": "Page 4",
 									"width": 1687,
@@ -1334,7 +1334,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/ScreenDungeonKit/Cards-Initiative/PrintInitiative.webp"
+										"path": "book/ScreenDungeonKit/Cards-Initiative/PrintInitiative.png"
 									},
 									"width": 1692,
 									"height": 2128
@@ -1343,7 +1343,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/ScreenDungeonKit/Cards-Initiative/PrintBack.webp"
+										"path": "book/ScreenDungeonKit/Cards-Initiative/PrintBack.png"
 									},
 									"width": 1688,
 									"height": 2128
@@ -2027,7 +2027,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/ScreenDungeonKit/Cards-Geomorph/Print1.webp"
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/Print1.png"
 									},
 									"width": 1692,
 									"height": 2126,
@@ -2045,7 +2045,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/ScreenDungeonKit/Cards-Geomorph/Print2.webp"
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/Print2.png"
 									},
 									"width": 1692,
 									"height": 2131,
@@ -2063,7 +2063,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/ScreenDungeonKit/Cards-Geomorph/Print3.webp"
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/Print3.png"
 									},
 									"width": 1692,
 									"height": 2132,
@@ -2081,7 +2081,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/ScreenDungeonKit/Cards-Geomorph/Print4.webp"
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/Print4.png"
 									},
 									"width": 1698,
 									"height": 2136,
@@ -2099,7 +2099,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/ScreenDungeonKit/Cards-Geomorph/PrintBack.webp"
+										"path": "book/ScreenDungeonKit/Cards-Geomorph/PrintBack.png"
 									},
 									"width": 1687,
 									"height": 2128

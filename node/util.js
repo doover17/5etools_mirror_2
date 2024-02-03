@@ -1,5 +1,4 @@
 import * as fs from "fs";
-import https from "https";
 
 function readJson (path) {
 	try {
@@ -26,40 +25,27 @@ const FILE_PREFIX_BLOCKLIST = [
 	"gendata-",
 ];
 
-const DIR_PREFIX_BLOCKLIST = [
-	".git",
-	".idea",
-];
-
 /**
  * Recursively list all files in a directory.
  *
  * @param [opts] Options object.
  * @param [opts.blocklistFilePrefixes] Blocklisted filename prefixes (case sensitive).
- * @param [opts.blocklistDirPrefixes] Blocklisted directory prefixes (case sensitive).
  * @param [opts.allowlistFileExts] Allowlisted filename extensions (case sensitive).
  * @param [opts.dir] Directory to list.
  * @param [opts.allowlistDirs] Directory allowlist.
  */
 function listFiles (opts) {
 	opts = opts || {};
-	opts.dir = opts.dir ?? "./data";
-	opts.blocklistFilePrefixes = opts.blocklistFilePrefixes === undefined ? FILE_PREFIX_BLOCKLIST : opts.blocklistFilePrefixes;
-	opts.blocklistDirPrefixes = opts.blocklistDirPrefixes === undefined ? DIR_PREFIX_BLOCKLIST : opts.blocklistDirPrefixes;
-	opts.allowlistFileExts = opts.allowlistFileExts === undefined ? FILE_EXTENSION_ALLOWLIST : opts.allowlistFileExts;
+	opts.dir = opts.dir || "./data";
+	opts.blocklistFilePrefixes = opts.blocklistFilePrefixes || FILE_PREFIX_BLOCKLIST;
+	opts.allowlistFileExts = opts.allowlistFileExts || FILE_EXTENSION_ALLOWLIST;
 	opts.allowlistDirs = opts.allowlistDirs || null;
 
 	const dirContent = fs.readdirSync(opts.dir, "utf8")
 		.filter(file => {
 			const path = `${opts.dir}/${file}`;
-
-			if (isDirectory(path)) {
-				if (opts.blocklistDirPrefixes != null && opts.blocklistDirPrefixes.some(it => file.startsWith(it))) return false;
-				return opts.allowlistDirs ? opts.allowlistDirs.includes(path) : true;
-			}
-
-			return (opts.blocklistFilePrefixes == null || !opts.blocklistFilePrefixes.some(it => file.startsWith(it)))
-				&& (opts.allowlistFileExts == null || opts.allowlistFileExts.some(it => file.endsWith(it)));
+			if (isDirectory(path)) return opts.allowlistDirs ? opts.allowlistDirs.includes(path) : true;
+			return !opts.blocklistFilePrefixes.some(it => file.startsWith(it)) && opts.allowlistFileExts.some(it => file.endsWith(it));
 		})
 		.map(file => `${opts.dir}/${file}`);
 
@@ -84,47 +70,30 @@ function rmDirRecursiveSync (dir) {
 class PatchLoadJson {
 	static _CACHED = null;
 	static _CACHED_RAW = null;
+	static _CACHE_BREW_LOAD_SOURCE_INDEX = null;
 
 	static _PATCH_STACK = 0;
-
-	static _CACHE_HTTP_REQUEST = {};
 
 	static patchLoadJson () {
 		if (this._PATCH_STACK++) return;
 
 		PatchLoadJson._CACHED = PatchLoadJson._CACHED || DataUtil.loadJSON.bind(DataUtil);
 
-		const pLoadUrl = async url => {
-			if (!url.startsWith("http")) return readJson(url);
-
-			return this._CACHE_HTTP_REQUEST[url] ||= new Promise((resolve, reject) => {
-				https
-					.get(
-						url,
-						resp => {
-							let stack = "";
-							resp.on("data", chunk => stack += chunk);
-							resp.on("end", () => resolve(JSON.parse(stack)));
-						},
-					)
-					.on("error", err => reject(err));
-			});
-		};
-
 		const loadJsonCache = {};
-		DataUtil.loadJSON = (url) => {
+		DataUtil.loadJSON = async (url) => {
 			if (!loadJsonCache[url]) {
-				loadJsonCache[url] = (async () => {
-					const data = await pLoadUrl(url);
-					await DataUtil.pDoMetaMerge(url, data, {isSkipMetaMergeCache: true});
-					return data;
-				})();
+				const data = readJson(url);
+				await DataUtil.pDoMetaMerge(url, data, {isSkipMetaMergeCache: true});
+				loadJsonCache[url] = data;
 			}
 			return loadJsonCache[url];
 		};
 
 		PatchLoadJson._CACHED_RAW = PatchLoadJson._CACHED_RAW || DataUtil.loadRawJSON.bind(DataUtil);
-		DataUtil.loadRawJSON = async (url) => pLoadUrl(url);
+		DataUtil.loadRawJSON = async (url) => readJson(url);
+
+		PatchLoadJson._CACHE_BREW_LOAD_SOURCE_INDEX = PatchLoadJson._CACHE_BREW_LOAD_SOURCE_INDEX || DataUtil.brew.pLoadSourceIndex.bind(DataUtil.brew);
+		DataUtil.brew.pLoadSourceIndex = async () => null;
 	}
 
 	static unpatchLoadJson () {
@@ -132,6 +101,7 @@ class PatchLoadJson {
 
 		if (PatchLoadJson._CACHED) DataUtil.loadJSON = PatchLoadJson._CACHED;
 		if (PatchLoadJson._CACHED_RAW) DataUtil.loadRawJSON = PatchLoadJson._CACHED_RAW;
+		if (PatchLoadJson._CACHE_BREW_LOAD_SOURCE_INDEX) DataUtil.brew.pLoadSourceIndex = PatchLoadJson._CACHE_BREW_LOAD_SOURCE_INDEX;
 	}
 }
 

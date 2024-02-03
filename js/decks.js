@@ -1,22 +1,16 @@
 "use strict";
 
 class DecksSublistManager extends SublistManager {
-	static get _ROW_TEMPLATE () {
-		return [
-			new SublistCellTemplate({
-				name: "Name",
-				css: "bold col-12 pl-0",
-				colStyle: "",
-			}),
-		];
+	constructor () {
+		super({
+			sublistClass: "subdecks",
+		});
 	}
 
 	pGetSublistItem (ent, hash) {
-		const cellsText = [ent.name];
-
 		const $ele = $(`<div class="lst__row lst__row--sublist ve-flex-col">
 			<a href="#${hash}" class="lst--border lst__row-inner">
-				${this.constructor._getRowCellsHtml({values: cellsText})}
+				<span class="bold col-12 pl-0">${ent.name}</span>
 			</a>
 		</div>`)
 			.contextmenu(evt => this._handleSublistItemContextMenu(evt, listItem))
@@ -32,7 +26,6 @@ class DecksSublistManager extends SublistManager {
 			},
 			{
 				entity: ent,
-				mdRow: [...cellsText],
 			},
 		);
 		return listItem;
@@ -104,6 +97,8 @@ class DecksPage extends ListPage {
 
 			pageFilter,
 
+			listClass: "decks",
+
 			dataProps: ["deck"],
 
 			listSyntax: new ListSyntaxDecks({fnGetDataList: () => this._dataList}),
@@ -136,7 +131,7 @@ class DecksPage extends ListPage {
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="col-10 bold pl-0">${ent.name}</span>
-			<span class="col-2 ve-text-center ${Parser.sourceJsonToColor(ent.source)} pr-0" title="${Parser.sourceJsonToFull(ent.source)}" ${Parser.sourceJsonToStyle(ent.source)}>${source}</span>
+			<span class="col-2 text-center ${Parser.sourceJsonToColor(ent.source)} pr-0" title="${Parser.sourceJsonToFull(ent.source)}" ${Parser.sourceJsonToStyle(ent.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(
@@ -177,7 +172,7 @@ class DecksPage extends ListPage {
 				const card = RollerUtil.rollOnArray(cards);
 				if (!card._isReplacement || evt.shiftKey) await this._compCardState.pDrawCard(ent, card);
 
-				if (EventUtil.isCtrlMetaKey(evt)) {
+				if (evt.ctrlKey || evt.metaKey) {
 					const $eleChat = $$`<span>Drew card: ${Renderer.get().render(`{@card ${card.name}|${card.set}|${card.source}}`)}</span>`;
 
 					Renderer.dice.addRoll({

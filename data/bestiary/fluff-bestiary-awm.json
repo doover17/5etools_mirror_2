@@ -27,7 +27,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/AWM/Birdsquirrel.webp"
+						"path": "bestiary/AWM/Birdsquirrel.png"
 					}
 				}
 			]
@@ -67,7 +67,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/AWM/Dum-Dum Goblin.webp"
+						"path": "bestiary/AWM/Dum-Dum Goblin.png"
 					}
 				}
 			]
@@ -84,7 +84,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/AWM/Dwarf.webp"
+						"path": "bestiary/AWM/Dwarf.png"
 					}
 				}
 			]
@@ -108,7 +108,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/AWM/Great Kroom, Purple Worm.webp"
+						"path": "bestiary/AWM/Great Kroom, Purple Worm.png"
 					}
 				}
 			]
@@ -142,7 +142,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/AWM/Hill Giant, Blorbo.webp"
+						"path": "bestiary/AWM/Hill Giant, Blorbo.png"
 					}
 				}
 			]

@@ -117,21 +117,14 @@ const UtilBookReference = {
 			});
 		});
 
-		const walker = MiscUtil.getWalker({isAllowDeleteObjects: true, isDepthFirst: true});
+		const walker = MiscUtil.getWalker();
 
 		walker.walk(
 			outJson.data,
 			{
 				object: (obj) => {
 					delete obj.id; // Remove IDs to avoid duplicates
-
-					if (obj.type === "image" && !obj.data?.["quickrefKeep"]) return undefined;
-					if (obj.type === "gallery" && !obj.images.length) return undefined;
-
 					return obj;
-				},
-				array: (obj) => {
-					return obj.filter(it => it != null);
 				},
 			},
 		);

@@ -14,23 +14,6 @@ class PageFilterOptionalFeatures extends PageFilter {
 		}
 		return SortUtil.listSort(itemA, itemB, options);
 	}
-
-	static getLevelFilterItem (prereq) {
-		const lvlMeta = prereq.level;
-
-		if (typeof lvlMeta === "number") {
-			return new FilterItem({
-				item: `Level ${lvlMeta}`,
-				nest: `(No Class)`,
-			});
-		}
-
-		const className = lvlMeta.class ? lvlMeta.class.name : `(No Class)`;
-		return new FilterItem({
-			item: `${lvlMeta.class ? className : ""}${lvlMeta.subclass ? ` (${lvlMeta.subclass.name})` : ""} Level ${lvlMeta.level}`,
-			nest: className,
-		});
-	}
 	// endregion
 
 	constructor () {
@@ -76,7 +59,7 @@ class PageFilterOptionalFeatures extends PageFilter {
 				this._featureFilter,
 			],
 		});
-		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD", "Legacy", "Grants Additional Spells"], isMiscFilter: true});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD", "Grants Additional Spells"], isMiscFilter: true});
 	}
 
 	static mutateForFilters (it) {
@@ -88,31 +71,31 @@ class PageFilterOptionalFeatures extends PageFilter {
 			it._sPrereq = true;
 			it._fPrereqPact = it.prerequisite.filter(it => it.pact).map(it => it.pact);
 			it._fPrereqPatron = it.prerequisite.filter(it => it.patron).map(it => it.patron);
-			it._fprereqSpell = it.prerequisite
-				.filter(it => it.spell)
-				.map(prereq => {
-					return (prereq.spell || [])
-						.map(strOrObj => {
-							if (typeof strOrObj === "string") return strOrObj.split("#")[0].split("|")[0];
-
-							// TODO(Future) improve if required -- refactor this + `PageFilterSpells` display fns to e.g. render
-							const ptChoose = strOrObj.choose
-								.split("|")
-								.sort(SortUtil.ascSortLower)
-								.map(pt => {
-									const [filter, values] = pt.split("=");
-									switch (filter.toLowerCase()) {
-										case "level": return values.split(";").map(v => Parser.spLevelToFullLevelText(Number(v), {isPluralCantrips: false})).join("/");
-										case "class": return values.split(";").map(v => v.toTitleCase()).join("/");
-										default: return pt;
-									}
-								})
-								.join(" ");
-							return `Any ${ptChoose}`;
-						});
-				});
+			it._fprereqSpell = it.prerequisite.filter(it => it.spell).map(it => {
+				return (it.spell || []).map(it => it.split("#")[0].split("|")[0]);
+			});
 			it._fprereqFeature = it.prerequisite.filter(it => it.feature).map(it => it.feature);
-			it._fPrereqLevel = it.prerequisite.filter(it => it.level).map(PageFilterOptionalFeatures.getLevelFilterItem.bind(PageFilterOptionalFeatures));
+			it._fPrereqLevel = it.prerequisite.filter(it => it.level).map(it => {
+				const lvlMeta = it.level;
+
+				let item;
+				let className;
+				if (typeof lvlMeta === "number") {
+					className = `(No Class)`;
+					item = new FilterItem({
+						item: `Level ${lvlMeta}`,
+						nest: className,
+					});
+				} else {
+					className = lvlMeta.class ? lvlMeta.class.name : `(No Class)`;
+					item = new FilterItem({
+						item: `${lvlMeta.class ? className : ""}${lvlMeta.subclass ? ` (${lvlMeta.subclass.name})` : ""} Level ${lvlMeta.level}`,
+						nest: className,
+					});
+				}
+
+				return item;
+			});
 		}
 
 		it._dFeatureType = it.featureType.map(ft => Parser.optFeatureTypeToFull(ft));
@@ -120,7 +103,6 @@ class PageFilterOptionalFeatures extends PageFilter {
 		it.featureType.sort((a, b) => SortUtil.ascSortLower(Parser.optFeatureTypeToFull(a), Parser.optFeatureTypeToFull(b)));
 
 		it._fMisc = it.srd ? ["SRD"] : [];
-		if (SourceUtil.isLegacySourceWotc(it.source)) it._fMisc.push("Legacy");
 		if (it.additionalSpells) it._fMisc.push("Grants Additional Spells");
 	}
 
@@ -220,10 +202,10 @@ class ModalFilterOptionalFeatures extends ModalFilter {
 			</div>
 
 			<div class="col-3 ${optfeat._versionBase_isVersion ? "italic" : ""} ${this._getNameStyle()}">${optfeat._versionBase_isVersion ? `<span class="px-3"></span>` : ""}${optfeat.name}</div>
-			<span class="col-2 ve-text-center" title="${optfeat._dFeatureType}">${optfeat._lFeatureType}</span>
-			<span class="col-4 ve-text-center">${prerequisite}</span>
-			<span class="col-1 ve-text-center">${level}</span>
-			<div class="col-1 pr-0 ve-flex-h-center ${Parser.sourceJsonToColor(optfeat.source)}" title="${Parser.sourceJsonToFull(optfeat.source)}" ${Parser.sourceJsonToStyle(optfeat.source)}>${source}${Parser.sourceJsonToMarkerHtml(optfeat.source)}</div>
+			<span class="col-2 text-center" title="${optfeat._dFeatureType}">${optfeat._lFeatureType}</span>
+			<span class="col-4 text-center">${prerequisite}</span>
+			<span class="col-1 text-center">${level}</span>
+			<div class="col-1 pr-0 text-center ${Parser.sourceJsonToColor(optfeat.source)}" title="${Parser.sourceJsonToFull(optfeat.source)}" ${Parser.sourceJsonToStyle(optfeat.source)}>${source}</div>
 		</div>`;
 
 		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;

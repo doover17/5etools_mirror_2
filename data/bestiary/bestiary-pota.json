@@ -174,9 +174,6 @@
 				"name": "Aerisi Kalinoth",
 				"source": "PotA"
 			},
-			"attachedItems": [
-				"windvane|pota"
-			],
 			"traitTags": [
 				"Fey Ancestry",
 				"Legendary Resistances"
@@ -210,13 +207,6 @@
 			"conditionInflictSpell": [
 				"charmed",
 				"invisible"
-			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"constitution",
-				"dexterity",
-				"strength",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -373,9 +363,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb"
-			],
 			"senseTags": [
 				"D"
 			],
@@ -396,14 +383,9 @@
 				"I"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -477,9 +459,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"morningstar|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -490,7 +469,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"hasToken": true,
@@ -609,9 +587,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"glaive|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -631,17 +606,11 @@
 				"CS"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RCH"
 			],
 			"conditionInflictSpell": [
 				"prone"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -767,9 +736,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"spear|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -780,7 +746,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -914,9 +879,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"quarterstaff|phb"
-			],
 			"languageTags": [
 				"AQ",
 				"C"
@@ -934,13 +896,7 @@
 				"CS"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1007,9 +963,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"javelin|phb"
-			],
 			"languageTags": [
 				"C"
 			],
@@ -1018,7 +971,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -1142,10 +1094,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"lance|phb",
-				"shortsword|phb"
-			],
 			"traitTags": [
 				"Sneak Attack"
 			],
@@ -1159,7 +1107,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RCH"
 			],
@@ -1307,9 +1254,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"greataxe|phb"
-			],
 			"traitTags": [
 				"Brute"
 			],
@@ -1327,7 +1271,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"hasToken": true,
@@ -1449,9 +1392,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"+1 dagger|dmg"
-			],
 			"languageTags": [
 				"C",
 				"DU"
@@ -1470,15 +1410,9 @@
 				"CD"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1603,10 +1537,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"heavy crossbow|phb",
-				"longsword|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1619,7 +1549,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"
@@ -1728,9 +1657,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb"
-			],
 			"languageTags": [
 				"C",
 				"IG"
@@ -1745,13 +1671,9 @@
 				"CS"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1869,9 +1791,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb"
-			],
 			"traitTags": [
 				"Shapechanger"
 			],
@@ -1893,7 +1812,6 @@
 				"F"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -2003,10 +1921,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"longsword|phb",
-				"spear|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -2025,14 +1939,9 @@
 				"CS"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2085,14 +1994,8 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"greatsword|phb"
-			],
 			"actionTags": [
 				"Multiattack"
-			],
-			"miscTags": [
-				"MLW"
 			],
 			"hasToken": true
 		},
@@ -2211,9 +2114,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb"
-			],
 			"languageTags": [
 				"C",
 				"IG"
@@ -2229,14 +2129,9 @@
 				"CS"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2402,9 +2297,6 @@
 				"name": "Gar Shatterkeel",
 				"source": "PotA"
 			},
-			"attachedItems": [
-				"drown|pota"
-			],
 			"traitTags": [
 				"Amphibious",
 				"Legendary Resistances"
@@ -2444,15 +2336,6 @@
 			"conditionInflictSpell": [
 				"paralyzed",
 				"prone"
-			],
-			"savingThrowForcedLegendary": [
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"strength",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2570,9 +2453,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"shortsword|phb"
-			],
 			"traitTags": [
 				"Sneak Attack"
 			],
@@ -2591,7 +2471,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"conditionInflict": [
@@ -2762,9 +2641,6 @@
 			"conditionInflict": [
 				"stunned"
 			],
-			"savingThrowForced": [
-				"constitution"
-			],
 			"hasToken": true,
 			"hasFluff": true
 		},
@@ -2838,9 +2714,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb"
-			],
 			"traitTags": [
 				"Hold Breath"
 			],
@@ -2851,7 +2724,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -2977,10 +2849,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb",
-				"scimitar|phb"
-			],
 			"traitTags": [
 				"Hold Breath"
 			],
@@ -3003,14 +2871,9 @@
 				"CS"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3145,11 +3008,6 @@
 			],
 			"miscTags": [
 				"MW"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -3371,17 +3229,6 @@
 			"conditionInflictLegendary": [
 				"prone"
 			],
-			"savingThrowForced": [
-				"constitution"
-			],
-			"savingThrowForcedLegendary": [
-				"constitution",
-				"dexterity",
-				"strength"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -3469,10 +3316,6 @@
 			"damageTagsSpell": [
 				"F",
 				"O"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true
 		},
@@ -3600,9 +3443,6 @@
 				"name": "Marlos Urnrayle",
 				"source": "PotA"
 			},
-			"attachedItems": [
-				"ironfang|pota"
-			],
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -3631,13 +3471,6 @@
 			"conditionInflict": [
 				"petrified",
 				"restrained"
-			],
-			"savingThrowForced": [
-				"constitution"
-			],
-			"savingThrowForcedLegendary": [
-				"constitution",
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3810,12 +3643,6 @@
 			],
 			"miscTags": [
 				"MW"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"strength",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -4103,16 +3930,6 @@
 			"conditionInflictSpell": [
 				"prone"
 			],
-			"savingThrowForced": [
-				"dexterity",
-				"strength"
-			],
-			"savingThrowForcedLegendary": [
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -4334,17 +4151,6 @@
 			"conditionInflictSpell": [
 				"deafened"
 			],
-			"savingThrowForced": [
-				"strength"
-			],
-			"savingThrowForcedLegendary": [
-				"strength",
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -4460,9 +4266,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb"
-			],
 			"languageTags": [
 				"C"
 			],
@@ -4478,7 +4281,6 @@
 				"CS"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"conditionInflict": [
@@ -4486,10 +4288,6 @@
 			],
 			"conditionInflictSpell": [
 				"frightened"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4613,9 +4411,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb"
-			],
 			"languageTags": [
 				"AB",
 				"C"
@@ -4633,12 +4428,7 @@
 				"CW"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4676,14 +4466,8 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"maul|phb"
-			],
 			"damageTags": [
 				"B"
-			],
-			"miscTags": [
-				"MLW"
 			],
 			"hasToken": true
 		},
@@ -4766,9 +4550,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"spear|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -4781,13 +4562,9 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
-			],
-			"savingThrowForced": [
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4898,12 +4675,6 @@
 				}
 			],
 			"damageTagsLegendary": [],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"constitution",
-				"dexterity",
-				"wisdom"
-			],
 			"hasToken": true
 		},
 		{
@@ -4936,14 +4707,10 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"warhammer|phb"
-			],
 			"damageTags": [
 				"B"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"hasToken": true
@@ -5181,9 +4948,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb"
-			],
 			"traitTags": [
 				"Amphibious"
 			],
@@ -5206,14 +4970,9 @@
 				"I"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -5316,9 +5075,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb"
-			],
 			"languageTags": [
 				"AU",
 				"C"
@@ -5334,14 +5090,9 @@
 				"CS"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -5507,14 +5258,6 @@
 			"miscTags": [
 				"MW"
 			],
-			"savingThrowForced": [
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"strength"
-			],
 			"hasToken": true,
 			"hasFluff": true
 		},
@@ -5639,10 +5382,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"greatsword|phb",
-				"lance|phb"
-			],
 			"actionTags": [
 				"Multiattack",
 				"Parry"
@@ -5662,14 +5401,8 @@
 				"CS"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RCH"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -5848,9 +5581,6 @@
 				"name": "Vanifer",
 				"source": "PotA"
 			},
-			"attachedItems": [
-				"tinderstrike|pota"
-			],
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -5887,14 +5617,6 @@
 			"miscTags": [
 				"MW",
 				"RW"
-			],
-			"savingThrowForcedLegendary": [
-				"dexterity",
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -6034,10 +5756,6 @@
 			"conditionInflictSpell": [
 				"charmed"
 			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -6170,9 +5888,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"rapier|phb"
-			],
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -6199,16 +5914,11 @@
 				"CB"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"conditionInflictSpell": [
 				"deafened",
 				"invisible"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -6435,19 +6145,6 @@
 			],
 			"conditionInflictSpell": [
 				"invisible"
-			],
-			"savingThrowForced": [
-				"constitution"
-			],
-			"savingThrowForcedLegendary": [
-				"constitution",
-				"dexterity",
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true,

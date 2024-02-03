@@ -178,15 +178,6 @@ class BrewDoc {
 			});
 		}
 		// endregion
-
-		// region Object
-		if (json.object) {
-			json.object.forEach(obj => {
-				// 2023-10-07
-				if (typeof obj.size === "string") obj.size = [obj.size];
-			});
-		}
-		// endregion
 	}
 	// endregion
 }
@@ -270,19 +261,16 @@ class _BrewUtil2Base {
 	IS_EDITABLE;
 	PAGE_MANAGE;
 	URL_REPO_DEFAULT;
-	URL_REPO_ROOT_DEFAULT;
 	DISPLAY_NAME;
 	DISPLAY_NAME_PLURAL;
 	DEFAULT_AUTHOR;
 	STYLE_BTN;
-	IS_PREFER_DATE_ADDED;
 
-	_LOCK = new VeLock({name: this.constructor.name});
+	_LOCK = new VeLock();
 
 	_cache_iteration = 0;
 	_cache_brewsProc = null;
 	_cache_metas = null;
-	_cache_brews = null;
 	_cache_brewsLocal = null;
 
 	_isDirty = false;
@@ -292,71 +280,33 @@ class _BrewUtil2Base {
 
 	_storage = StorageUtil;
 
-	_parent = null;
-
-	/**
-	 * @param {?_BrewUtil2Base} parent
-	 */
-	constructor ({parent = null} = {}) {
-		this._parent = parent;
-	}
-
 	/* -------------------------------------------- */
 
-	_pActiveInit = null;
+	_isInit = false;
 
-	pInit () {
-		this._pActiveInit ||= (async () => {
-			// region Ensure the local homebrew cache is hot, to allow us to fetch from it later in a sync manner.
-			//   This is necessary to replicate the "meta" caching done for non-local brew.
-			await this._pGetBrew_pGetLocalBrew();
-			// endregion
+	async pInit () {
+		if (this._isInit) return;
+		this._isInit = true;
 
-			this._pInit_doBindDragDrop();
-			this._pInit_pDoLoadFonts().then(null);
-		})();
-		return this._pActiveInit;
+		// region Ensure the local homebrew cache is hot, to allow us to fetch from it later in a sync manner.
+		//   This is necessary to replicate the "meta" caching done for non-local brew.
+		await this._pGetBrew_pGetLocalBrew();
+		// endregion
+
+		this._pInit_doBindDragDrop();
 	}
 
 	/** @abstract */
 	_pInit_doBindDragDrop () { throw new Error("Unimplemented!"); }
-
-	async _pInit_pDoLoadFonts () {
-		const fontFaces = Object.entries(
-			(this._getBrewMetas() || [])
-				.map(({_meta}) => _meta?.fonts || {})
-				.mergeMap(it => it),
-		)
-			.map(([family, fontUrl]) => new FontFace(family, `url("${fontUrl}")`));
-
-		const results = await Promise.allSettled(
-			fontFaces.map(async fontFace => {
-				await fontFace.load();
-				return document.fonts.add(fontFace);
-			}),
-		);
-
-		const errors = results
-			.filter(({status}) => status === "rejected")
-			.map(({reason}, i) => ({message: `Font "${fontFaces[i].family}" failed to load!`, reason}));
-		if (errors.length) {
-			errors.forEach(({message}) => JqueryUtil.doToast({type: "danger", content: message}));
-			setTimeout(() => { throw new Error(errors.map(({message, reason}) => [message, reason].join("\n")).join("\n\n")); });
-		}
-
-		return document.fonts.ready;
-	}
 
 	/* -------------------------------------------- */
 
 	async pGetCustomUrl () { return this._storage.pGet(this._STORAGE_KEY_CUSTOM_URL); }
 
 	async pSetCustomUrl (val) {
-		await (!val
+		return !val
 			? this._storage.pRemove(this._STORAGE_KEY_CUSTOM_URL)
-			: this._storage.pSet(this._STORAGE_KEY_CUSTOM_URL, val));
-
-		location.reload();
+			: this._storage.pSet(this._STORAGE_KEY_CUSTOM_URL, val);
 	}
 
 	/* -------------------------------------------- */
@@ -446,8 +396,6 @@ class _BrewUtil2Base {
 
 	/** Fetch the raw brew from storage. */
 	async pGetBrew ({lockToken} = {}) {
-		if (this._cache_brews) return this._cache_brews;
-
 		try {
 			lockToken = await this._LOCK.pLock({token: lockToken});
 
@@ -456,19 +404,12 @@ class _BrewUtil2Base {
 				...(await this._pGetBrew_pGetLocalBrew({lockToken})),
 			];
 
-			return this._cache_brews = out
+			return out
 				// Ensure no brews which lack sources are loaded
 				.filter(brew => brew?.body?._meta?.sources?.length);
 		} finally {
 			this._LOCK.unlock();
 		}
-	}
-
-	/* -------------------------------------------- */
-
-	async pGetBrewBySource (source, {lockToken} = {}) {
-		const brews = await this.pGetBrew({lockToken});
-		return brews.find(brew => brew?.body?._meta?.sources?.some(src => src?.json === source));
 	}
 
 	/* -------------------------------------------- */
@@ -490,23 +431,21 @@ class _BrewUtil2Base {
 		const indexLocal = await DataUtil.loadJSON(`${Renderer.get().baseUrl}${this._PATH_LOCAL_INDEX}`);
 		if (!indexLocal?.toImport?.length) return this._cache_brewsLocal = [];
 
-		const brewDocs = (await indexLocal.toImport
-			.pMap(async name => {
-				name = `${name}`.trim();
-				const url = /^https?:\/\//.test(name) ? name : `${Renderer.get().baseUrl}${this._PATH_LOCAL_DIR}/${name}`;
-				const filename = UrlUtil.getFilename(url);
-				try {
-					const json = await DataUtil.loadRawJSON(url);
-					return this._getBrewDoc({json, url, filename, isLocal: true});
-				} catch (e) {
-					JqueryUtil.doToast({type: "danger", content: `Failed to load local homebrew from URL "${url}"! ${VeCt.STR_SEE_CONSOLE}`});
-					setTimeout(() => { throw e; });
-					return null;
-				}
-			}))
-			.filter(Boolean);
+		const out = await indexLocal.toImport.pMap(async name => {
+			name = `${name}`.trim();
+			const url = /^https?:\/\//.test(name) ? name : `${Renderer.get().baseUrl}${this._PATH_LOCAL_DIR}/${name}`;
+			const filename = UrlUtil.getFilename(url);
+			try {
+				const json = await DataUtil.loadRawJSON(url);
+				return this._getBrewDoc({json, url, filename, isLocal: true});
+			} catch (e) {
+				JqueryUtil.doToast({type: "danger", content: `Failed to load local homebrew from URL "${url}"! ${VeCt.STR_SEE_CONSOLE}`});
+				setTimeout(() => { throw e; });
+				return null;
+			}
+		});
 
-		return this._cache_brewsLocal = brewDocs;
+		return this._cache_brewsLocal = out.filter(Boolean);
 	}
 
 	/* -------------------------------------------- */
@@ -585,11 +524,7 @@ class _BrewUtil2Base {
 		};
 	}
 
-	/* -------------------------------------------- */
-
 	getCacheIteration () { return this._cache_iteration; }
-
-	/* -------------------------------------------- */
 
 	async pSetBrew (val, {lockToken} = {}) {
 		try {
@@ -605,7 +540,6 @@ class _BrewUtil2Base {
 
 		if (!isInitialMigration) {
 			if (this._cache_brewsProc) this._cache_iteration++;
-			this._cache_brews = null;
 			this._cache_brewsProc = null;
 		}
 		await this._storage.pSet(this._STORAGE_KEY, val);
@@ -618,8 +552,6 @@ class _BrewUtil2Base {
 
 		this._setBrewMetas(val.map(brew => this._getBrewDocReduced(brew)));
 	}
-
-	/* -------------------------------------------- */
 
 	_getBrewId (brew) {
 		if (brew.head.url) return brew.head.url;
@@ -637,42 +569,22 @@ class _BrewUtil2Base {
 		return [...brews, ...brewsToAdd];
 	}
 
-	/* -------------------------------------------- */
-
-	async _pLoadParentDependencies ({unavailableSources}) {
-		if (!unavailableSources?.length) return false;
-		if (!this._parent) return false;
-
-		await Promise.allSettled(unavailableSources.map(async source => {
-			const url = await this._parent.pGetSourceUrl(source);
-			if (!url) return;
-			await this._parent.pAddBrewFromUrl(url, {isLazy: true});
-		}));
-		await this._parent.pAddBrewsLazyFinalize();
-
-		return false;
-	}
-
-	/* -------------------------------------------- */
-
-	async _pGetBrewDependencies ({brewDocs, brewsRaw = null, brewsRawLocal = null, lockToken}) {
+	async _pAddBrewDependencies ({brewDocs, brewsRaw = null, brewsRawLocal = null, lockToken}) {
 		try {
 			lockToken = await this._LOCK.pLock({token: lockToken});
-			return (await this._pGetBrewDependencies_({brewDocs, brewsRaw, brewsRawLocal, lockToken}));
+			return (await this._pAddBrewDependencies_({brewDocs, brewsRaw, brewsRawLocal, lockToken}));
 		} finally {
 			this._LOCK.unlock();
 		}
 	}
 
-	async _pGetBrewDependencies_ ({brewDocs, brewsRaw = null, brewsRawLocal = null, lockToken}) {
+	async _pAddBrewDependencies_ ({brewDocs, brewsRaw = null, brewsRawLocal = null, lockToken}) {
 		const urlRoot = await this.pGetCustomUrl();
-		const brewIndex = await this.pGetSourceIndex(urlRoot);
+		const brewIndex = await this._pGetSourceIndex(urlRoot);
 
 		const toLoadSources = [];
 		const loadedSources = new Set();
-
-		const unavailableSources = new Set();
-		const brewDocsDependencies = [];
+		const out = [];
 
 		brewsRaw = brewsRaw || await this._pGetBrewRaw({lockToken});
 		brewsRawLocal = brewsRawLocal || await this._pGetBrew_pGetLocalBrew({lockToken});
@@ -683,11 +595,7 @@ class _BrewUtil2Base {
 		brewsRaw.forEach(brew => trackLoaded(brew));
 		brewsRawLocal.forEach(brew => trackLoaded(brew));
 
-		brewDocs.forEach(brewDoc => {
-			const {available, unavailable} = this._getBrewDependencySources({brewDoc, brewIndex});
-			toLoadSources.push(...available);
-			unavailable.forEach(src => unavailableSources.add(src));
-		});
+		brewDocs.forEach(brewDoc => toLoadSources.push(...this._getBrewDependencySources({brewDoc, brewIndex})));
 
 		while (toLoadSources.length) {
 			const src = toLoadSources.pop();
@@ -696,23 +604,18 @@ class _BrewUtil2Base {
 
 			const url = this.getFileUrl(brewIndex[src], urlRoot);
 			const brewDocDep = await this._pGetBrewDocFromUrl({url});
-			brewDocsDependencies.push(brewDocDep);
+			out.push(brewDocDep);
 			trackLoaded(brewDocDep);
 
-			const {available, unavailable} = this._getBrewDependencySources({brewDoc: brewDocDep, brewIndex});
-			toLoadSources.push(...available);
-			unavailable.forEach(src => unavailableSources.add(src));
+			toLoadSources.push(...this._getBrewDependencySources({brewDoc: brewDocDep, brewIndex}));
 		}
 
-		return {
-			brewDocsDependencies,
-			unavailableSources: [...unavailableSources].sort(SortUtil.ascSortLower),
-		};
+		return out;
 	}
 
 	async pGetSourceUrl (source) {
 		const urlRoot = await this.pGetCustomUrl();
-		const brewIndex = await this.pGetSourceIndex(urlRoot);
+		const brewIndex = await this._pGetSourceIndex(urlRoot);
 
 		if (brewIndex[source]) return this.getFileUrl(brewIndex[source], urlRoot);
 
@@ -725,7 +628,7 @@ class _BrewUtil2Base {
 	}
 
 	/** @abstract */
-	async pGetSourceIndex (urlRoot) { throw new Error("Unimplemented!"); }
+	async _pGetSourceIndex (urlRoot) { throw new Error("Unimplemented!"); }
 	/** @abstract */
 	getFileUrl (path, urlRoot) { throw new Error("Unimplemented!"); }
 	/** @abstract */
@@ -739,14 +642,15 @@ class _BrewUtil2Base {
 	_PROPS_DEPS_DEEP = ["otherSources"];
 
 	_getBrewDependencySources ({brewDoc, brewIndex}) {
-		const sources = new Set();
+		const out = new Set();
 
 		this._PROPS_DEPS.forEach(prop => {
 			const obj = brewDoc.body._meta?.[prop];
 			if (!obj || !Object.keys(obj).length) return;
 			Object.values(obj)
 				.flat()
-				.forEach(src => sources.add(src));
+				.filter(src => brewIndex[src])
+				.forEach(src => out.add(src));
 		});
 
 		this._PROPS_DEPS_DEEP.forEach(prop => {
@@ -755,28 +659,21 @@ class _BrewUtil2Base {
 			return Object.values(obj)
 				.map(objSub => Object.keys(objSub))
 				.flat()
-				.forEach(src => sources.add(src));
+				.filter(src => brewIndex[src])
+				.forEach(src => out.add(src));
 		});
 
-		const [available, unavailable] = [...sources]
-			.segregate(src => brewIndex[src]);
-
-		return {available, unavailable};
+		return out;
 	}
 
-	async pAddBrewFromUrl (url, {isLazy} = {}) {
-		let brewDocs = []; let unavailableSources = [];
-
+	async pAddBrewFromUrl (url, {lockToken, isLazy} = {}) {
 		try {
-			({brewDocs, unavailableSources} = await this._pAddBrewFromUrl({url, isLazy}));
+			return (await this._pAddBrewFromUrl({url, lockToken, isLazy}));
 		} catch (e) {
 			JqueryUtil.doToast({type: "danger", content: `Failed to load ${this.DISPLAY_NAME} from URL "${url}"! ${VeCt.STR_SEE_CONSOLE}`});
 			setTimeout(() => { throw e; });
-			return [];
 		}
-
-		await this._pLoadParentDependencies({unavailableSources});
-		return brewDocs;
+		return [];
 	}
 
 	async _pGetBrewDocFromUrl ({url}) {
@@ -795,17 +692,16 @@ class _BrewUtil2Base {
 				this._LOCK.unlock();
 			}
 
-			return {brewDocs: [brewDoc], unavailableSources: []};
+			return [brewDoc];
 		}
 
-		const brewDocs = [brewDoc]; const unavailableSources = [];
+		const brewDocs = [brewDoc];
 		try {
 			lockToken = await this._LOCK.pLock({token: lockToken});
 			const brews = MiscUtil.copyFast(await this._pGetBrewRaw({lockToken}));
 
-			const {brewDocsDependencies, unavailableSources: unavailableSources_} = await this._pGetBrewDependencies({brewDocs, brewsRaw: brews, lockToken});
+			const brewDocsDependencies = await this._pAddBrewDependencies({brewDocs: [brewDoc], brewsRaw: brews, lockToken});
 			brewDocs.push(...brewDocsDependencies);
-			unavailableSources.push(...unavailableSources_);
 
 			const brewsNxt = this._getNextBrews(brews, brewDocs);
 			await this.pSetBrew(brewsNxt, {lockToken});
@@ -813,25 +709,20 @@ class _BrewUtil2Base {
 			this._LOCK.unlock();
 		}
 
-		return {brewDocs, unavailableSources};
+		return brewDocs;
 	}
 
 	async pAddBrewsFromFiles (files) {
-		let brewDocs = []; let unavailableSources = [];
-
 		try {
 			const lockToken = await this._LOCK.pLock();
-			({brewDocs, unavailableSources} = await this._pAddBrewsFromFiles({files, lockToken}));
+			return (await this._pAddBrewsFromFiles({files, lockToken}));
 		} catch (e) {
 			JqueryUtil.doToast({type: "danger", content: `Failed to load ${this.DISPLAY_NAME} from file(s)! ${VeCt.STR_SEE_CONSOLE}`});
 			setTimeout(() => { throw e; });
-			return [];
 		} finally {
 			this._LOCK.unlock();
 		}
-
-		await this._pLoadParentDependencies({unavailableSources});
-		return brewDocs;
+		return [];
 	}
 
 	async _pAddBrewsFromFiles ({files, lockToken}) {
@@ -839,41 +730,29 @@ class _BrewUtil2Base {
 
 		const brews = MiscUtil.copyFast(await this._pGetBrewRaw({lockToken}));
 
-		const {brewDocsDependencies, unavailableSources} = await this._pGetBrewDependencies({brewDocs, brewsRaw: brews, lockToken});
+		const brewDocsDependencies = await this._pAddBrewDependencies({brewDocs, brewsRaw: brews, lockToken});
 		brewDocs.push(...brewDocsDependencies);
 
 		const brewsNxt = this._getNextBrews(brews, brewDocs);
 		await this.pSetBrew(brewsNxt, {lockToken});
 
-		return {brewDocs, unavailableSources};
-	}
-
-	async pAddBrewsLazyFinalize () {
-		let brewDocs = []; let unavailableSources = [];
-
-		try {
-			const lockToken = await this._LOCK.pLock();
-			({brewDocs, unavailableSources} = await this._pAddBrewsLazyFinalize_({lockToken}));
-		} catch (e) {
-			JqueryUtil.doToast({type: "danger", content: `Failed to finalize ${this.DISPLAY_NAME_PLURAL}! ${VeCt.STR_SEE_CONSOLE}`});
-			setTimeout(() => { throw e; });
-			return [];
-		} finally {
-			this._LOCK.unlock();
-		}
-
-		await this._pLoadParentDependencies({unavailableSources});
 		return brewDocs;
 	}
 
+	async pAddBrewsLazyFinalize ({lockToken} = {}) {
+		try {
+			lockToken = await this._LOCK.pLock({token: lockToken});
+			return (await this._pAddBrewsLazyFinalize_({lockToken}));
+		} finally {
+			this._LOCK.unlock();
+		}
+	}
+
 	async _pAddBrewsLazyFinalize_ ({lockToken}) {
-		const brewsRaw = await this._pGetBrewRaw({lockToken});
-		const {brewDocsDependencies, unavailableSources} = await this._pGetBrewDependencies({brewDocs: this._addLazy_brewsTemp, brewsRaw, lockToken});
-		const brewDocs = MiscUtil.copyFast(brewDocsDependencies);
-		const brewsNxt = this._getNextBrews(MiscUtil.copyFast(brewsRaw), [...this._addLazy_brewsTemp, ...brewDocsDependencies]);
+		const brews = MiscUtil.copyFast(await this._pGetBrewRaw({lockToken}));
+		const brewsNxt = this._getNextBrews(brews, this._addLazy_brewsTemp);
 		await this.pSetBrew(brewsNxt, {lockToken});
 		this._addLazy_brewsTemp = [];
-		return {brewDocs, unavailableSources};
 	}
 
 	async pPullAllBrews ({brews} = {}) {
@@ -1055,7 +934,7 @@ class _BrewUtil2Base {
 		[UrlUtil.PG_BACKGROUNDS]: ["background"],
 		[UrlUtil.PG_FEATS]: ["feat"],
 		[UrlUtil.PG_OPT_FEATURES]: ["optionalfeature"],
-		[UrlUtil.PG_RACES]: [...UrlUtil.PAGE_TO_PROPS[UrlUtil.PG_RACES], "raceFluff"],
+		[UrlUtil.PG_RACES]: ["race", "raceFluff", "subrace"],
 		[UrlUtil.PG_OBJECTS]: ["object"],
 		[UrlUtil.PG_TRAPS_HAZARDS]: ["trap", "hazard"],
 		[UrlUtil.PG_DEITIES]: ["deity"],
@@ -1326,76 +1205,6 @@ class _BrewUtil2Base {
 		return Omnidexer.decompressIndex(indexer.getIndex());
 	}
 	// endregion
-
-	// region Export to URL
-	async pGetUrlExportableSources () {
-		const brews = await this._pGetBrewRaw();
-		const brewsExportable = brews
-			.filter(brew => !brew.head.isEditable && !brew.head.isLocal);
-		return brewsExportable.flatMap(brew => brew.body._meta.sources.map(src => src.json)).unique();
-	}
-	// endregion
-}
-
-class _PrereleaseUtil extends _BrewUtil2Base {
-	_STORAGE_KEY_LEGACY = null;
-	_STORAGE_KEY_LEGACY_META = null;
-
-	_STORAGE_KEY = "PRERELEASE_STORAGE";
-	_STORAGE_KEY_META = "PRERELEASE_META_STORAGE";
-
-	_STORAGE_KEY_CUSTOM_URL = "PRERELEASE_CUSTOM_REPO_URL";
-	_STORAGE_KEY_MIGRATION_VERSION = "PRERELEASE_STORAGE_MIGRATION";
-
-	_PATH_LOCAL_DIR = "prerelease";
-	_PATH_LOCAL_INDEX = VeCt.JSON_PRERELEASE_INDEX;
-
-	_VERSION = 1;
-
-	IS_EDITABLE = false;
-	PAGE_MANAGE = UrlUtil.PG_MANAGE_PRERELEASE;
-	URL_REPO_DEFAULT = VeCt.URL_PRERELEASE;
-	URL_REPO_ROOT_DEFAULT = VeCt.URL_ROOT_PRERELEASE;
-	DISPLAY_NAME = "prerelease content";
-	DISPLAY_NAME_PLURAL = "prereleases";
-	DEFAULT_AUTHOR = "Wizards of the Coast";
-	STYLE_BTN = "btn-primary";
-	IS_PREFER_DATE_ADDED = false;
-
-	/* -------------------------------------------- */
-
-	_pInit_doBindDragDrop () { /* No-op */ }
-
-	/* -------------------------------------------- */
-
-	async pGetSourceIndex (urlRoot) { return DataUtil.prerelease.pLoadSourceIndex(urlRoot); }
-
-	getFileUrl (path, urlRoot) { return DataUtil.prerelease.getFileUrl(path, urlRoot); }
-
-	pLoadTimestamps (urlRoot) { return DataUtil.prerelease.pLoadTimestamps(urlRoot); }
-
-	pLoadPropIndex (urlRoot) { return DataUtil.prerelease.pLoadPropIndex(urlRoot); }
-
-	pLoadMetaIndex (urlRoot) { return DataUtil.prerelease.pLoadMetaIndex(urlRoot); }
-
-	/* -------------------------------------------- */
-
-	// region Editable
-
-	pGetEditableBrewDoc (brew) { return super.pGetEditableBrewDoc(brew); }
-	pGetOrCreateEditableBrewDoc () { return super.pGetOrCreateEditableBrewDoc(); }
-	pSetEditableBrewDoc () { return super.pSetEditableBrewDoc(); }
-	pGetEditableBrewEntity (prop, uniqueId, {isDuplicate = false} = {}) { return super.pGetEditableBrewEntity(prop, uniqueId, {isDuplicate}); }
-	pPersistEditableBrewEntity (prop, ent) { return super.pPersistEditableBrewEntity(prop, ent); }
-	pRemoveEditableBrewEntity (prop, uniqueId) { return super.pRemoveEditableBrewEntity(prop, uniqueId); }
-	pAddSource (sourceObj) { return super.pAddSource(sourceObj); }
-	pEditSource (sourceObj) { return super.pEditSource(sourceObj); }
-	pIsEditableSourceJson (sourceJson) { return super.pIsEditableSourceJson(sourceJson); }
-	pMoveOrCopyToEditableBySourceJson (sourceJson) { return super.pMoveOrCopyToEditableBySourceJson(sourceJson); }
-	pMoveToEditable ({brews}) { return super.pMoveToEditable({brews}); }
-	pCopyToEditable ({brews}) { return super.pCopyToEditable({brews}); }
-
-	// endregion
 }
 
 class _BrewUtil2 extends _BrewUtil2Base {
@@ -1417,12 +1226,10 @@ class _BrewUtil2 extends _BrewUtil2Base {
 	IS_EDITABLE = true;
 	PAGE_MANAGE = UrlUtil.PG_MANAGE_BREW;
 	URL_REPO_DEFAULT = VeCt.URL_BREW;
-	URL_REPO_ROOT_DEFAULT = VeCt.URL_ROOT_BREW;
 	DISPLAY_NAME = "homebrew";
 	DISPLAY_NAME_PLURAL = "homebrews";
 	DEFAULT_AUTHOR = "";
 	STYLE_BTN = "btn-info";
-	IS_PREFER_DATE_ADDED = true;
 
 	/* -------------------------------------------- */
 
@@ -1476,15 +1283,15 @@ class _BrewUtil2 extends _BrewUtil2Base {
 
 	/* -------------------------------------------- */
 
-	async pGetSourceIndex (urlRoot) { return DataUtil.brew.pLoadSourceIndex(urlRoot); }
+	async _pGetSourceIndex (urlRoot) { return DataUtil.brew.pLoadSourceIndex(urlRoot); }
 
 	getFileUrl (path, urlRoot) { return DataUtil.brew.getFileUrl(path, urlRoot); }
 
-	pLoadTimestamps (urlRoot) { return DataUtil.brew.pLoadTimestamps(urlRoot); }
+	pLoadTimestamps (brewIndex, src, urlRoot) { return DataUtil.brew.pLoadTimestamps(urlRoot); }
 
-	pLoadPropIndex (urlRoot) { return DataUtil.brew.pLoadPropIndex(urlRoot); }
+	pLoadPropIndex (brewIndex, src, urlRoot) { return DataUtil.brew.pLoadPropIndex(urlRoot); }
 
-	pLoadMetaIndex (urlRoot) { return DataUtil.brew.pLoadMetaIndex(urlRoot); }
+	pLoadMetaIndex (brewIndex, src, urlRoot) { return DataUtil.brew.pLoadMetaIndex(urlRoot); }
 
 	/* -------------------------------------------- */
 
@@ -1650,8 +1457,67 @@ class _BrewUtil2 extends _BrewUtil2Base {
 	// endregion
 }
 
+class _PrereleaseUtil extends _BrewUtil2Base {
+	_STORAGE_KEY_LEGACY = null;
+	_STORAGE_KEY_LEGACY_META = null;
+
+	_STORAGE_KEY = "PRERELEASE_STORAGE";
+	_STORAGE_KEY_META = "PRERELEASE_META_STORAGE";
+
+	_STORAGE_KEY_CUSTOM_URL = "PRERELEASE_CUSTOM_REPO_URL";
+	_STORAGE_KEY_MIGRATION_VERSION = "PRERELEASE_STORAGE_MIGRATION";
+
+	_PATH_LOCAL_DIR = "prerelease";
+	_PATH_LOCAL_INDEX = VeCt.JSON_PRERELEASE_INDEX;
+
+	_VERSION = 1;
+
+	IS_EDITABLE = false;
+	PAGE_MANAGE = UrlUtil.PG_MANAGE_PRERELEASE;
+	URL_REPO_DEFAULT = VeCt.URL_PRERELEASE;
+	DISPLAY_NAME = "prerelease content";
+	DISPLAY_NAME_PLURAL = "prereleases";
+	DEFAULT_AUTHOR = "Wizards of the Coast";
+	STYLE_BTN = "btn-primary";
+
+	/* -------------------------------------------- */
+
+	_pInit_doBindDragDrop () { /* No-op */ }
+
+	/* -------------------------------------------- */
+
+	async _pGetSourceIndex (urlRoot) { return DataUtil.prerelease.pLoadSourceIndex(urlRoot); }
+
+	getFileUrl (path, urlRoot) { return DataUtil.prerelease.getFileUrl(path, urlRoot); }
+
+	pLoadTimestamps (brewIndex, src, urlRoot) { return DataUtil.prerelease.pLoadTimestamps(urlRoot); }
+
+	pLoadPropIndex (brewIndex, src, urlRoot) { return DataUtil.prerelease.pLoadPropIndex(urlRoot); }
+
+	pLoadMetaIndex (brewIndex, src, urlRoot) { return DataUtil.prerelease.pLoadMetaIndex(urlRoot); }
+
+	/* -------------------------------------------- */
+
+	// region Editable
+
+	pGetEditableBrewDoc (brew) { return super.pGetEditableBrewDoc(brew); }
+	pGetOrCreateEditableBrewDoc () { return super.pGetOrCreateEditableBrewDoc(); }
+	pSetEditableBrewDoc () { return super.pSetEditableBrewDoc(); }
+	pGetEditableBrewEntity (prop, uniqueId, {isDuplicate = false} = {}) { return super.pGetEditableBrewEntity(prop, uniqueId, {isDuplicate}); }
+	pPersistEditableBrewEntity (prop, ent) { return super.pPersistEditableBrewEntity(prop, ent); }
+	pRemoveEditableBrewEntity (prop, uniqueId) { return super.pRemoveEditableBrewEntity(prop, uniqueId); }
+	pAddSource (sourceObj) { return super.pAddSource(sourceObj); }
+	pEditSource (sourceObj) { return super.pEditSource(sourceObj); }
+	pIsEditableSourceJson (sourceJson) { return super.pIsEditableSourceJson(sourceJson); }
+	pMoveOrCopyToEditableBySourceJson (sourceJson) { return super.pMoveOrCopyToEditableBySourceJson(sourceJson); }
+	pMoveToEditable ({brews}) { return super.pMoveToEditable({brews}); }
+	pCopyToEditable ({brews}) { return super.pCopyToEditable({brews}); }
+
+	// endregion
+}
+
+globalThis.BrewUtil2 = new _BrewUtil2();
 globalThis.PrereleaseUtil = new _PrereleaseUtil();
-globalThis.BrewUtil2 = new _BrewUtil2({parent: globalThis.PrereleaseUtil}); // Homebrew can depend on prerelease, but not the other way around
 
 class ManageBrewUi {
 	static _RenderState = class {
@@ -1761,7 +1627,7 @@ class ManageBrewUi {
 	async pRender ($wrp, {rdState = null} = {}) {
 		rdState = rdState || new this.constructor._RenderState();
 
-		rdState.$stgBrewList = $(`<div class="manbrew__current_brew ve-flex-col h-100 mt-1 min-h-0"></div>`);
+		rdState.$stgBrewList = $(`<div class="manbrew__current_brew ve-flex-col h-100 mt-1"></div>`);
 
 		await this._pRender_pBrewList(rdState);
 
@@ -1780,13 +1646,6 @@ class ManageBrewUi {
 		const $btnPullAll = this._isModal ? null : this._$getBtnPullAll(rdState);
 		const $btnDeleteAll = this._isModal ? null : this._$getBtnDeleteAll(rdState);
 
-		const $btnSaveToUrl = $(`<button class="btn btn-default btn-sm" title="Note that this does not include &quot;Editable&quot; or &quot;Local&quot; content.">Export List as URL</button>`)
-			.click(async () => {
-				const url = await ManageExternalUtils.pGetUrl();
-				await MiscUtil.pCopyTextToClipboard(url);
-				JqueryUtil.showCopiedEffect($btnSaveToUrl);
-			});
-
 		const $wrpBtns = $$`<div class="ve-flex-v-center no-shrink mobile__ve-flex-col">
 			<div class="ve-flex-v-center mobile__mb-2">
 				<div class="ve-flex-v-center btn-group mr-2">
@@ -1796,9 +1655,6 @@ class ManageBrewUi {
 				<div class="ve-flex-v-center btn-group mr-2">
 					${$btnLoadFromFile}
 					${$btnLoadFromUrl}
-				</div>
-				<div class="ve-flex-v-center btn-group mr-2">
-					${$btnSaveToUrl}
 				</div>
 			</div>
 			<div class="ve-flex-v-center">
@@ -1867,7 +1723,7 @@ class ManageBrewUi {
 			title: `${this._brewUtil.DISPLAY_NAME.toTitleCase()} Repository URL`,
 			$elePre: $(`<div>
 				<p>Leave blank to use the <a href="${this._brewUtil.URL_REPO_DEFAULT}" rel="noopener noreferrer" target="_blank">default ${this._brewUtil.DISPLAY_NAME} repo</a>.</p>
-				<div>Note that for GitHub URLs, the <code>raw.</code> URL must be used. For example, <code>${this._brewUtil.URL_REPO_ROOT_DEFAULT.replace(/TheGiddyLimit/g, "YourUsernameHere")}</code></div>
+				<div>Note that for GitHub URLs, the <code>raw.</code> URL must be used. For example, <code>${this._brewUtil.URL_REPO_DEFAULT.replace(/TheGiddyLimit/g, "YourUsernameHere")}</code></div>
 				<hr class="hr-3">
 			</div>`),
 			default: customBrewUtl,
@@ -1886,7 +1742,7 @@ class ManageBrewUi {
 			.click(evt => this._pHandleClick_btnListMass({evt, rdState}));
 		const $iptSearch = $(`<input type="search" class="search manbrew__search form-control" placeholder="Search ${this._brewUtil.DISPLAY_NAME}...">`);
 		const $cbAll = $(`<input type="checkbox">`);
-		const $wrpList = $(`<div class="list-display-only max-h-unset smooth-scroll overflow-y-auto h-100 min-h-0 brew-list brew-list--target manbrew__list relative ve-flex-col w-100 mb-3"></div>`);
+		const $wrpList = $(`<div class="list-display-only max-h-unset smooth-scroll overflow-y-auto h-100 brew-list brew-list--target manbrew__list relative ve-flex-col w-100 mb-3"></div>`);
 
 		rdState.list = new List({
 			$iptSearch,
@@ -1913,7 +1769,7 @@ class ManageBrewUi {
 				${$iptSearch}
 			</div>
 			${$wrpBtnsSort}
-			<div class="ve-flex w-100 h-100 min-h-0 relative">${$wrpList}</div>
+			<div class="ve-flex w-100 h-100 overflow-y-auto relative">${$wrpList}</div>
 		</div>`;
 
 		rdState.listSelectClickHandler = new ListSelectClickHandler({list: rdState.list});
@@ -1958,7 +1814,9 @@ class ManageBrewUi {
 				this._LBL_LIST_UPDATE,
 				async () => this._pDoPullAll({
 					rdState,
-					brews: getSelBrews(),
+					brews: getSelBrews({
+						fnFilter: brew => this._isBrewOperationPermitted_update(brew),
+					}),
 				}),
 			),
 			new ContextUtil.Action(
@@ -1990,7 +1848,7 @@ class ManageBrewUi {
 		].filter(Boolean));
 	}
 
-	_isBrewOperationPermitted_update (brew) { return this._brewUtil.isPullable(brew); }
+	_isBrewOperationPermitted_update (brew) { return !brew.head.isEditable && this._brewUtil.isPullable(brew); }
 	_isBrewOperationPermitted_moveToEditable (brew) { return BrewDoc.isOperationPermitted_moveToEditable({brew}); }
 	_isBrewOperationPermitted_delete (brew) { return !brew.head.isLocal; }
 
@@ -2039,7 +1897,7 @@ class ManageBrewUi {
 				const lnkUrl = brewSource.url
 					? e_({
 						tag: "a",
-						clazz: "col-2 ve-text-center",
+						clazz: "col-2 text-center",
 						href: brewSource.url,
 						attrs: {
 							target: "_blank",
@@ -2049,7 +1907,7 @@ class ManageBrewUi {
 					})
 					: e_({
 						tag: "span",
-						clazz: "col-2 ve-text-center",
+						clazz: "col-2 text-center",
 					});
 
 				const eleRow = e_({
@@ -2174,7 +2032,7 @@ class ManageBrewUi {
 				}),
 				e_({
 					tag: "div",
-					clazz: `col-1 ve-text-center italic mobile__text-clip-ellipsis`,
+					clazz: `col-1 text-center italic mobile__text-clip-ellipsis`,
 					title: ptCategory.title,
 					text: ptCategory.short,
 				}),
@@ -2569,16 +2427,13 @@ class GetBrewUi {
 		}
 
 		static mutateForFilters (brewInfo) {
-			brewInfo._fMisc = [];
-			if (brewInfo._brewAuthor && brewInfo._brewAuthor.toLowerCase().startsWith("sample -")) brewInfo._fMisc.push("Sample");
-			if (brewInfo.sources?.some(ab => ab.startsWith(Parser.SRC_UA_ONE_PREFIX))) brewInfo._fMisc.push("One D&D");
+			if (brewInfo._brewAuthor && brewInfo._brewAuthor.toLowerCase().startsWith("sample -")) brewInfo._fMisc = ["Sample"];
 		}
 
 		addToFilters (it, isExcluded) {
 			if (isExcluded) return;
 
 			this._typeFilter.addItem(it.props);
-			this._miscFilter.addItem(it._fMisc);
 		}
 
 		async _pPopulateBoxOptions (opts) {
@@ -2631,7 +2486,6 @@ class GetBrewUi {
 			case "category": return this.constructor._sortUrlList_orFallback(a, b, SortUtil.ascSortLower, "_brewPropDisplayName");
 			case "added": return this.constructor._sortUrlList_orFallback(a, b, SortUtil.ascSort, "_brewAdded");
 			case "modified": return this.constructor._sortUrlList_orFallback(a, b, SortUtil.ascSort, "_brewModified");
-			case "published": return this.constructor._sortUrlList_orFallback(a, b, SortUtil.ascSort, "_brewPublished");
 			default: throw new Error(`No sort order defined for property "${o.sortBy}"`);
 		}
 	}
@@ -2650,11 +2504,10 @@ class GetBrewUi {
 
 	async pInit () {
 		const urlRoot = await this._brewUtil.pGetCustomUrl();
-		const [timestamps, propIndex, metaIndex, sourceIndex] = await Promise.all([
+		const [timestamps, propIndex, metaIndex] = await Promise.all([
 			this._brewUtil.pLoadTimestamps(urlRoot),
 			this._brewUtil.pLoadPropIndex(urlRoot),
 			this._brewUtil.pLoadMetaIndex(urlRoot),
-			this._brewUtil.pGetSourceIndex(urlRoot),
 		]);
 
 		const pathToMeta = {};
@@ -2667,12 +2520,6 @@ class GetBrewUi {
 					});
 			});
 
-		Object.entries(sourceIndex)
-			.forEach(([src, path]) => {
-				if (!pathToMeta[path]) return;
-				(pathToMeta[path].sources ||= []).push(src);
-			});
-
 		this._dataList = Object.entries(pathToMeta)
 			.map(([path, meta]) => {
 				const out = {
@@ -2681,7 +2528,6 @@ class GetBrewUi {
 					name: UrlUtil.getFilename(path),
 					dirProp: this._brewUtil.getDirProp(meta.dir),
 					props: meta.props,
-					sources: meta.sources,
 				};
 
 				const spl = out.name.trim().replace(/\.json$/, "").split(";").map(it => it.trim());
@@ -2695,7 +2541,6 @@ class GetBrewUi {
 
 				out._brewAdded = timestamps[out.path]?.a ?? 0;
 				out._brewModified = timestamps[out.path]?.m ?? 0;
-				out._brewPublished = timestamps[out.path]?.p ?? 0;
 				out._brewInternalSources = metaIndex[out.name]?.n || [];
 				out._brewStatus = metaIndex[out.name]?.s || "ready";
 				out._brewPropDisplayName = this._brewUtil.getPropDisplayName(out.dirProp);
@@ -2727,7 +2572,7 @@ class GetBrewUi {
 
 		rdState.pageFilter = new this.constructor._PageFilterGetBrew({brewUtil: this._brewUtil});
 
-		const $btnAddSelected = $(`<button class="btn ${this._brewUtil.STYLE_BTN} btn-sm col-0-5 ve-text-center" disabled title="Add Selected"><span class="glyphicon glyphicon-save"></button>`);
+		const $btnAddSelected = $(`<button class="btn ${this._brewUtil.STYLE_BTN} btn-sm col-0-5 text-center" disabled title="Add Selected"><span class="glyphicon glyphicon-save"></button>`);
 
 		const $wrpRows = $$`<div class="list smooth-scroll max-h-unset"><div class="lst__row ve-flex-col"><div class="lst__wrp-cells lst--border lst__row-inner ve-flex w-100"><i>Loading...</i></div></div></div>`;
 
@@ -2748,17 +2593,13 @@ class GetBrewUi {
 
 		const $wrpMiniPills = $(`<div class="fltr__mini-view btn-group"></div>`);
 
-		const btnSortAddedPublished = this._brewUtil.IS_PREFER_DATE_ADDED
-			? `<button class="col-1-4 sort btn btn-default btn-xs" data-sort="added">Added</button>`
-			: `<button class="col-1-4 sort btn btn-default btn-xs" data-sort="published">Published</button>`;
-
 		const $wrpSort = $$`<div class="filtertools manbrew__filtertools btn-group input-group input-group--bottom ve-flex no-shrink">
 			<label class="col-0-5 pr-0 btn btn-default btn-xs ve-flex-vh-center">${rdState.cbAll}</label>
 			<button class="col-3-5 sort btn btn-default btn-xs" data-sort="name">Name</button>
 			<button class="col-3 sort btn btn-default btn-xs" data-sort="author">Author</button>
 			<button class="col-1-2 sort btn btn-default btn-xs" data-sort="category">Category</button>
 			<button class="col-1-4 sort btn btn-default btn-xs" data-sort="modified">Modified</button>
-			${btnSortAddedPublished}
+			<button class="col-1-4 sort btn btn-default btn-xs" data-sort="added">Added</button>
 			<button class="sort btn btn-default btn-xs ve-grow" disabled>Source</button>
 		</div>`;
 
@@ -2837,9 +2678,8 @@ class GetBrewUi {
 	}
 
 	_pRender_getUrlRowMeta (rdState, brewInfo, ix) {
-		const epochAddedPublished = this._brewUtil.IS_PREFER_DATE_ADDED ? brewInfo._brewAdded : brewInfo._brewPublished;
-		const timestampAddedPublished = epochAddedPublished
-			? DatetimeUtil.getDateStr({date: new Date(epochAddedPublished * 1000), isShort: true, isPad: true})
+		const timestampAdded = brewInfo._brewAdded
+			? DatetimeUtil.getDateStr({date: new Date(brewInfo._brewAdded * 1000), isShort: true, isPad: true})
 			: "";
 		const timestampModified = brewInfo._brewModified
 			? DatetimeUtil.getDateStr({date: new Date(brewInfo._brewModified * 1000), isShort: true, isPad: true})
@@ -2873,12 +2713,12 @@ class GetBrewUi {
 						}),
 						btnAdd,
 						e_({tag: "span", clazz: "col-3", text: brewInfo._brewAuthor}),
-						e_({tag: "span", clazz: "col-1-2 ve-text-center mobile__text-clip-ellipsis", text: brewInfo._brewPropDisplayName, title: brewInfo._brewPropDisplayName}),
-						e_({tag: "span", clazz: "col-1-4 ve-text-center code", text: timestampModified}),
-						e_({tag: "span", clazz: "col-1-4 ve-text-center code", text: timestampAddedPublished}),
+						e_({tag: "span", clazz: "col-1-2 text-center mobile__text-clip-ellipsis", text: brewInfo._brewPropDisplayName, title: brewInfo._brewPropDisplayName}),
+						e_({tag: "span", clazz: "col-1-4 text-center code", text: timestampModified}),
+						e_({tag: "span", clazz: "col-1-4 text-center code", text: timestampAdded}),
 						e_({
 							tag: "span",
-							clazz: "col-1 manbrew__source ve-text-center pr-0",
+							clazz: "col-1 manbrew__source text-center pr-0",
 							children: [
 								e_({
 									tag: "a",
@@ -2953,8 +2793,7 @@ class GetBrewUi {
 		});
 
 		await Promise.allSettled(listItems.map(it => it.data.pFnDoDownload({isLazy: true})));
-		const lazyDepsAdded = await this._brewUtil.pAddBrewsLazyFinalize();
-		this._brewsLoaded.push(...lazyDepsAdded);
+		await this._brewUtil.pAddBrewsLazyFinalize();
 		JqueryUtil.doToast(`Finished loading selected ${this._brewUtil.DISPLAY_NAME}!`);
 	}
 
@@ -3311,7 +3150,7 @@ class ManageEditableBrewContentsUi extends BaseComponent {
 		eleLi.innerHTML = `<label class="lst--border lst__row-inner no-select mb-0 ve-flex-v-center">
 			<div class="pl-0 col-1 ve-flex-vh-center"><input type="checkbox" class="no-events"></div>
 			<div class="col-5 bold">${dispName}</div>
-			<div class="col-1 ve-text-center" title="${(sourceMeta.full || "").qq()}" ${this._brewUtil.sourceToStyle(sourceMeta)}>${sourceMeta.abbreviation}</div>
+			<div class="col-1 text-center" title="${(sourceMeta.full || "").qq()}" ${this._brewUtil.sourceToStyle(sourceMeta)}>${sourceMeta.abbreviation}</div>
 			<div class="col-5 ve-flex-vh-center pr-0">${dispProp}</div>
 		</label>`;
 
@@ -3444,7 +3283,7 @@ class ManageEditableBrewContentsUi extends BaseComponent {
 		eleLi.innerHTML = `<label class="lst--border lst__row-inner no-select mb-0 ve-flex-v-center">
 			<div class="pl-0 col-1 ve-flex-vh-center"><input type="checkbox" class="no-events"></div>
 			<div class="col-5 bold">${name}</div>
-			<div class="col-2 ve-text-center">${abv}</div>
+			<div class="col-2 text-center">${abv}</div>
 			<div class="col-4 ve-flex-vh-center pr-0">${source.json}</div>
 		</label>`;
 

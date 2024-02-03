@@ -1,6 +1,7 @@
 "use strict";
 
-const onLoadSeo = async () => {
+window.addEventListener("load", async () => {
+	Renderer.get().setBaseUrl("/");
 	const fullPage = `${_SEO_PAGE}.html`;
 	const it = await DataLoader.pCacheAndGet(fullPage, _SEO_SOURCE, _SEO_HASH);
 
@@ -50,10 +51,4 @@ const onLoadSeo = async () => {
 			</div>`.insertAfter($wrpContent);
 		}
 	}
-};
-
-window.addEventListener("load", () => {
-	// Attempt to sneak this in before the navigation onload fires
-	Renderer.get().setBaseUrl("/");
-	onLoadSeo().then(null);
 });

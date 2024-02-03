@@ -8,7 +8,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/PHB/Barkskin.webp"
+						"path": "spells/PHB/Barkskin.png"
 					}
 				}
 			]
@@ -21,7 +21,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/PHB/Burning Hands.webp"
+						"path": "spells/PHB/Burning Hands.png"
 					}
 				}
 			]
@@ -34,7 +34,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/PHB/Cloudkill.webp"
+						"path": "spells/PHB/Cloudkill.jpg"
 					}
 				}
 			]
@@ -47,7 +47,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/PHB/Dimension Door.webp"
+						"path": "spells/PHB/Dimension Door.jpg"
 					}
 				}
 			]
@@ -60,7 +60,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/PHB/Fireball.webp"
+						"path": "spells/PHB/Fireball.png"
 					}
 				}
 			]
@@ -73,7 +73,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/PHB/Guardian of Faith.webp"
+						"path": "spells/PHB/Guardian of Faith.jpg"
 					}
 				}
 			]
@@ -86,7 +86,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/PHB/Insect Plague.webp"
+						"path": "spells/PHB/Insect Plague.png"
 					}
 				}
 			]
@@ -99,7 +99,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/PHB/Magic Missile.webp"
+						"path": "spells/PHB/Magic Missile.jpg"
 					}
 				}
 			]
@@ -112,7 +112,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/PHB/Mordenkainen's Sword.webp"
+						"path": "spells/PHB/Mordenkainen's Sword.png"
 					}
 				}
 			]
@@ -125,7 +125,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/PHB/Prismatic Spray.webp"
+						"path": "spells/PHB/Prismatic Spray.jpg"
 					}
 				}
 			]
@@ -138,7 +138,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/PHB/Sacred Flame.webp"
+						"path": "spells/PHB/Sacred Flame.png"
 					}
 				}
 			]
@@ -151,7 +151,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/PHB/Web.webp"
+						"path": "spells/PHB/Web.jpg"
 					}
 				}
 			]

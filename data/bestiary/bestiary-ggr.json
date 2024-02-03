@@ -88,7 +88,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"hasToken": true,
@@ -255,15 +254,6 @@
 			"conditionInflictSpell": [
 				"prone"
 			],
-			"savingThrowForced": [
-				"charisma",
-				"strength",
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -384,9 +374,6 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			],
-			"savingThrowForced": [
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -546,9 +533,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"longsword|phb"
-			],
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance"
@@ -568,14 +552,10 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"conditionInflict": [
 				"frightened"
-			],
-			"savingThrowForced": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -675,9 +655,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"longsword|phb"
-			],
 			"traitTags": [
 				"Flyby",
 				"Magic Resistance"
@@ -697,7 +674,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"hasToken": true,
@@ -858,9 +834,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"scimitar|phb"
-			],
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -885,13 +858,7 @@
 				"CW"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1011,9 +978,6 @@
 				"AOE",
 				"MW"
 			],
-			"savingThrowForced": [
-				"dexterity"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -1120,9 +1084,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"rapier|phb"
-			],
 			"senseTags": [
 				"D"
 			],
@@ -1140,14 +1101,10 @@
 			],
 			"miscTags": [
 				"HPR",
-				"MLW",
 				"MW"
 			],
 			"conditionInflict": [
 				"charmed"
-			],
-			"savingThrowForced": [
-				"charisma"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1275,10 +1232,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"longsword|phb",
-				"shortsword|phb"
-			],
 			"traitTags": [
 				"Devil's Sight"
 			],
@@ -1309,16 +1262,7 @@
 				"I"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
-			],
-			"savingThrowForced": [
-				"charisma"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1545,9 +1489,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"maul|phb"
-			],
 			"traitTags": [
 				"Legendary Resistances",
 				"Siege Monster"
@@ -1567,7 +1508,6 @@
 				"B"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RCH",
 				"RW"
@@ -1576,11 +1516,6 @@
 				"frightened",
 				"prone",
 				"stunned"
-			],
-			"savingThrowForced": [
-				"dexterity",
-				"strength",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1724,12 +1659,6 @@
 			"miscTags": [
 				"MW",
 				"RCH"
-			],
-			"savingThrowForced": [
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1979,9 +1908,6 @@
 			"conditionInflict": [
 				"prone"
 			],
-			"savingThrowForced": [
-				"strength"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -2111,9 +2037,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"longbow|phb"
-			],
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -2150,14 +2073,6 @@
 			],
 			"conditionInflictSpell": [
 				"restrained"
-			],
-			"savingThrowForced": [
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2256,9 +2171,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"warhammer|phb"
-			],
 			"languageTags": [
 				"C",
 				"X"
@@ -2274,12 +2186,7 @@
 				"I"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -2388,9 +2295,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"rapier|phb"
-			],
 			"languageTags": [
 				"C",
 				"X"
@@ -2406,11 +2310,7 @@
 			],
 			"miscTags": [
 				"AOE",
-				"MLW",
 				"MW"
-			],
-			"savingThrowForcedSpell": [
-				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2580,12 +2480,6 @@
 			"conditionInflictSpell": [
 				"charmed",
 				"prone"
-			],
-			"savingThrowForced": [
-				"charisma"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2833,14 +2727,6 @@
 				"poisoned",
 				"restrained"
 			],
-			"savingThrowForced": [
-				"constitution"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -2987,9 +2873,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"quarterstaff|phb"
-			],
 			"traitTags": [
 				"Siege Monster"
 			],
@@ -3010,13 +2893,7 @@
 				"CD"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3145,9 +3022,6 @@
 			],
 			"conditionInflict": [
 				"prone"
-			],
-			"savingThrowForced": [
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3293,9 +3167,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"greatsword|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3314,13 +3185,7 @@
 				"CC"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
-			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"constitution",
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3448,9 +3313,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"longsword|phb"
-			],
 			"traitTags": [
 				"Flyby",
 				"Magic Resistance"
@@ -3477,12 +3339,7 @@
 				"I"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3577,9 +3434,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"quarterstaff|phb"
-			],
 			"languageTags": [
 				"C",
 				"X"
@@ -3598,16 +3452,7 @@
 				"I"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
-			],
-			"savingThrowForced": [
-				"constitution"
-			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"constitution",
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -3727,9 +3572,6 @@
 				"MW",
 				"RCH"
 			],
-			"savingThrowForced": [
-				"dexterity"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -3827,9 +3669,6 @@
 			"conditionInflict": [
 				"frightened"
 			],
-			"savingThrowForced": [
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -3922,9 +3761,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"spear|phb"
-			],
 			"languageTags": [
 				"C",
 				"X"
@@ -3936,13 +3772,9 @@
 				"CC"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -4045,9 +3877,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"spear|phb"
-			],
 			"languageTags": [
 				"C",
 				"P",
@@ -4066,14 +3895,9 @@
 				"I"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4171,10 +3995,6 @@
 			],
 			"miscTags": [
 				"MW"
-			],
-			"savingThrowForced": [
-				"constitution",
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4451,9 +4271,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"quarterstaff|phb"
-			],
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -4478,19 +4295,11 @@
 				"CD"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"conditionInflictSpell": [
 				"poisoned",
 				"restrained"
-			],
-			"savingThrowForced": [
-				"constitution"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -4573,9 +4382,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"spear|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -4587,7 +4393,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RCH",
 				"RW",
@@ -4855,9 +4660,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"javelin|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -4870,7 +4672,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -4973,9 +4774,6 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			],
-			"savingThrowForced": [
-				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -5155,9 +4953,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"shortsword|phb"
-			],
 			"traitTags": [
 				"Spider Climb"
 			],
@@ -5175,7 +4970,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"hasToken": true,
@@ -5542,16 +5336,6 @@
 			"miscTags": [
 				"MW"
 			],
-			"savingThrowForced": [
-				"intelligence",
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"dexterity",
-				"strength",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -5827,15 +5611,6 @@
 				"restrained",
 				"unconscious"
 			],
-			"savingThrowForced": [
-				"constitution"
-			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"constitution",
-				"dexterity",
-				"strength"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -5962,9 +5737,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"quarterstaff|phb"
-			],
 			"traitTags": [
 				"Pack Tactics",
 				"Spider Climb"
@@ -5989,14 +5761,10 @@
 				"I"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"conditionInflictSpell": [
 				"poisoned"
-			],
-			"savingThrowForcedSpell": [
-				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -6087,9 +5855,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"spear|phb"
-			],
 			"traitTags": [
 				"Pack Tactics",
 				"Spider Climb"
@@ -6105,7 +5870,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -6236,9 +6000,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"quarterstaff|phb"
-			],
 			"languageTags": [
 				"C",
 				"X"
@@ -6253,12 +6014,7 @@
 				"CW"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -6421,9 +6177,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"shortsword|phb"
-			],
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -6448,18 +6201,11 @@
 				"I"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"conditionInflictSpell": [
 				"charmed",
 				"incapacitated"
-			],
-			"savingThrowForced": [
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -6603,9 +6349,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"spear|phb"
-			],
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -6628,7 +6371,6 @@
 				"I"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -6638,12 +6380,6 @@
 			],
 			"conditionInflictSpell": [
 				"charmed"
-			],
-			"savingThrowForced": [
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -6799,12 +6535,6 @@
 				"paralyzed",
 				"unconscious"
 			],
-			"savingThrowForced": [
-				"intelligence"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -6905,9 +6635,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb"
-			],
 			"languageTags": [
 				"C",
 				"X"
@@ -6920,13 +6647,9 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -7057,10 +6780,6 @@
 			],
 			"conditionInflict": [
 				"stunned"
-			],
-			"savingThrowForced": [
-				"intelligence",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -7363,14 +7082,6 @@
 				"petrified",
 				"restrained",
 				"stunned"
-			],
-			"savingThrowForced": [
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -7703,13 +7414,6 @@
 				"HPR",
 				"MW"
 			],
-			"savingThrowForced": [
-				"constitution",
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -7789,9 +7493,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"greataxe|phb"
-			],
 			"senseTags": [
 				"D"
 			],
@@ -7807,7 +7508,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RCH",
 				"RW"
@@ -7910,9 +7610,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"quarterstaff|phb"
-			],
 			"senseTags": [
 				"U"
 			],
@@ -7928,17 +7625,10 @@
 				"I"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"conditionInflict": [
 				"stunned"
-			],
-			"savingThrowForced": [
-				"intelligence"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -8146,13 +7836,6 @@
 				"charmed",
 				"poisoned"
 			],
-			"savingThrowForced": [
-				"constitution",
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -8248,9 +7931,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"club|phb"
-			],
 			"languageTags": [
 				"C",
 				"X"
@@ -8266,13 +7946,7 @@
 				"CB"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
-			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"constitution",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -8347,9 +8021,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -8361,7 +8032,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -8460,9 +8130,6 @@
 				"AOE",
 				"MW",
 				"RCH"
-			],
-			"savingThrowForced": [
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -8667,9 +8334,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"longsword|phb"
-			],
 			"languageTags": [
 				"C",
 				"X"
@@ -8686,12 +8350,7 @@
 				"CW"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -8786,9 +8445,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"shortsword|phb"
-			],
 			"traitTags": [
 				"Ambusher",
 				"Siege Monster"
@@ -8802,9 +8458,6 @@
 			],
 			"damageTags": [
 				"P"
-			],
-			"miscTags": [
-				"MLW"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -8874,9 +8527,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"light hammer|phb"
-			],
 			"languageTags": [
 				"C",
 				"X"
@@ -8887,13 +8537,9 @@
 			],
 			"miscTags": [
 				"AOE",
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
-			],
-			"savingThrowForced": [
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -9090,10 +8736,6 @@
 			"conditionInflict": [
 				"frightened"
 			],
-			"savingThrowForced": [
-				"dexterity",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -9278,12 +8920,6 @@
 				"MW",
 				"RCH"
 			],
-			"savingThrowForced": [
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -9397,9 +9033,6 @@
 			],
 			"conditionInflict": [
 				"paralyzed"
-			],
-			"savingThrowForced": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -9581,9 +9214,6 @@
 				"blinded",
 				"restrained"
 			],
-			"savingThrowForced": [
-				"dexterity"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -9662,9 +9292,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"longsword|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -9676,7 +9303,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"hasToken": true,
@@ -9748,11 +9374,6 @@
 			"damageTagsLegendary": [],
 			"damageTagsSpell": [
 				"P"
-			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"strength",
-				"wisdom"
 			],
 			"hasToken": true
 		},
@@ -9870,9 +9491,6 @@
 			"conditionInflict": [
 				"prone"
 			],
-			"savingThrowForced": [
-				"strength"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -9980,10 +9598,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb",
-				"rapier|phb"
-			],
 			"senseTags": [
 				"D"
 			],
@@ -10002,13 +9616,9 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -10230,13 +9840,6 @@
 				"grappled",
 				"restrained"
 			],
-			"savingThrowForced": [
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -10364,9 +9967,6 @@
 			"conditionInflict": [
 				"petrified",
 				"restrained"
-			],
-			"savingThrowForced": [
-				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -10554,9 +10154,6 @@
 			"conditionInflict": [
 				"blinded",
 				"restrained"
-			],
-			"savingThrowForced": [
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -10794,7 +10391,6 @@
 			],
 			"miscTags": [
 				"AOE",
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -10807,16 +10403,6 @@
 				"charmed",
 				"petrified",
 				"restrained"
-			],
-			"savingThrowForced": [
-				"constitution",
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"strength",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,

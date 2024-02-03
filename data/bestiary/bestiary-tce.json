@@ -199,9 +199,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"maul|phb"
-			],
 			"traitTags": [
 				"Charge"
 			],
@@ -212,7 +209,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"conditionInflict": [
@@ -455,9 +451,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"maul|phb"
-			],
 			"traitTags": [
 				"Flyby",
 				"Pack Tactics",
@@ -473,7 +466,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"hasToken": true
@@ -563,7 +555,6 @@
 				"R"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW"
 			],
@@ -980,9 +971,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"shortsword|phb"
-			],
 			"senseTags": [
 				"D"
 			],
@@ -998,7 +986,6 @@
 			],
 			"miscTags": [
 				"AOE",
-				"MLW",
 				"MW"
 			],
 			"conditionInflict": [
@@ -1474,9 +1461,6 @@
 			"conditionInflict": [
 				"prone"
 			],
-			"savingThrowForced": [
-				"dexterity"
-			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
@@ -1514,8 +1498,7 @@
 			"vulnerable": [
 				"bludgeoning"
 			],
-			"hasToken": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Shadow Spirit",

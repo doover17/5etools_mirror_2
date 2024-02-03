@@ -15,8 +15,7 @@
 					},
 					"title": "When the characters discover {@creature Murgaxor|SCC}'s deadly plan, they must spring into action",
 					"width": 1700,
-					"height": 2261,
-					"credit": "Toni Foti"
+					"height": 2261
 				},
 				{
 					"type": "section",
@@ -174,8 +173,7 @@
 									},
 									"title": "Fourth-year courses are the university's most challenging, and students often employ magical study techniques to get by",
 									"width": 1700,
-									"height": 1250,
-									"credit": "Lie Setiawan"
+									"height": 1250
 								}
 							]
 						}
@@ -355,8 +353,7 @@
 									},
 									"title": "Idyllic huts dot the bayou surrounding Witherbloom College's campus",
 									"width": 1700,
-									"height": 1387,
-									"credit": "Piotr Dura"
+									"height": 1387
 								},
 								{
 									"type": "entries",
@@ -713,8 +710,7 @@
 												"type": "internal",
 												"path": "book/SCC/thumbnail/103-map-6.1-the-detention-bog.webp"
 											},
-											"id": "000",
-											"credit": "Mike Schley"
+											"id": "000"
 										},
 										{
 											"type": "image",
@@ -734,8 +730,7 @@
 											},
 											"mapParent": {
 												"id": "000"
-											},
-											"credit": "Mike Schley"
+											}
 										}
 									]
 								},
@@ -793,8 +788,7 @@
 													},
 													"title": "When the Detention Bog isn't officially in use, students practice experimental magic here",
 													"width": 1700,
-													"height": 1280,
-													"credit": "Jason Kang"
+													"height": 1280
 												}
 											]
 										}
@@ -989,8 +983,7 @@
 											},
 											"title": "{@creature Murgaxor|SCC} Grenshel",
 											"width": 850,
-											"height": 1063,
-											"credit": "Olga Drebas"
+											"height": 1063
 										},
 										"A mean-spirited, egotistical spellcaster, {@creature Murgaxor|SCC} was censured repeatedly for disregarding safety protocols, hexing and cursing peers, and using harmful magic while on campus.",
 										"University officials believe {@creature Murgaxor|SCC} began his illicit experiments with life-draining magic shortly after he enrolled as a student.",
@@ -2759,8 +2752,7 @@
 														"type": "internal",
 														"path": "book/SCC/thumbnail/106-map-6.2-fortress-badlands.webp"
 													},
-													"id": "001",
-													"credit": "Mike Schley"
+													"id": "001"
 												},
 												{
 													"type": "image",
@@ -2780,8 +2772,7 @@
 													},
 													"mapParent": {
 														"id": "001"
-													},
-													"credit": "Mike Schley"
+													}
 												}
 											]
 										},
@@ -3053,8 +3044,7 @@
 															},
 															"title": "Lorehold expeditions into the badlands sometimes awaken more than mere memories",
 															"width": 1700,
-															"height": 1106,
-															"credit": "Jinho Bae"
+															"height": 1106
 														}
 													]
 												}
@@ -3894,8 +3884,7 @@
 														"type": "internal",
 														"path": "book/SCC/thumbnail/108-map-6.3-underground-cave.webp"
 													},
-													"id": "002",
-													"credit": "Sean MacDonald"
+													"id": "002"
 												},
 												{
 													"type": "image",
@@ -3915,8 +3904,7 @@
 													},
 													"mapParent": {
 														"id": "002"
-													},
-													"credit": "Sean MacDonald"
+													}
 												}
 											]
 										},
@@ -4124,8 +4112,7 @@
 											},
 											"title": "Adventurers never know what lurks within an ancient ruin",
 											"width": 850,
-											"height": 1224,
-											"credit": "Yeong-Hao Han"
+											"height": 1224
 										},
 										"This scene is the final opportunity for the characters to interact with their fellow students on campus before this adventure's climax and conclusion. As such, this Relationship encounter is more free-form than others.",
 										"Since this is the last such encounter before the adventure's finale, this scene should be of personal importance to each character. If a player wishes to cement a Beloved Relationship when they normally couldn't or gain a Friend even if they don't have enough Relationship Points, allow them to do so to reflect the poignant nature of this moment.",
@@ -4988,8 +4975,7 @@
 														"type": "internal",
 														"path": "book/SCC/thumbnail/110-map-6.4-ruins-of-caerdoon.webp"
 													},
-													"id": "003",
-													"credit": "Mike Schley"
+													"id": "003"
 												},
 												{
 													"type": "image",
@@ -5009,8 +4995,7 @@
 													},
 													"mapParent": {
 														"id": "003"
-													},
-													"credit": "Mike Schley"
+													}
 												}
 											]
 										},
@@ -5092,8 +5077,7 @@
 															},
 															"title": "The ruins near Strixhaven are watched over by strange creatures",
 															"width": 1700,
-															"height": 1303,
-															"credit": "Antonio José Manzanedo"
+															"height": 1303
 														}
 													]
 												}
@@ -5199,8 +5183,7 @@
 													},
 													"title": "Khelvor the daemogoth eagerly anticipates the suffering that will occur when {@creature Murgaxor|SCC}'s ritual is complete",
 													"width": 850,
-													"height": 1097,
-													"credit": "Kieran Yanner"
+													"height": 1097
 												},
 												{
 													"type": "insetReadaloud",
@@ -5311,8 +5294,7 @@
 									},
 									"title": "The Ruins of Caerdoon hold many remnants of ancient warfare",
 									"width": 1700,
-									"height": 1084,
-									"credit": "Jokubas Uogintas"
+									"height": 1084
 								}
 							]
 						},
@@ -5509,8 +5491,7 @@
 												"type": "internal",
 												"path": "book/SCC/thumbnail/114-map-6.5-fortress-of-caerdoon-basement.webp"
 											},
-											"id": "004",
-											"credit": "Sean MacDonald"
+											"id": "004"
 										},
 										{
 											"type": "image",
@@ -5530,8 +5511,7 @@
 											},
 											"mapParent": {
 												"id": "004"
-											},
-											"credit": "Sean MacDonald"
+											}
 										}
 									]
 								},
@@ -5787,8 +5767,7 @@
 									},
 									"title": "Strixhaven's faculty members celebrate the characters' victory over {@creature Murgaxor|SCC}",
 									"width": 1700,
-									"height": 1382,
-									"credit": "Alayna Danner"
+									"height": 1382
 								},
 								"If the characters stop {@creature Murgaxor|SCC}'s ritual, the mishaps plaguing Strixhaven University cease, and the corruption affecting Strixhaven's scholars vanishes. If {@creature Murgaxor|SCC} survives the ritual's premature end, the characters have a choice to make. They can take him back to Strixhaven to stand trial for his crimes, or they can administer justice themselves.",
 								"News of {@creature Murgaxor|SCC}'s defeat lifts the gloom on campus and restores its typically joyful atmosphere. Professor Sharpbeak tells the characters that the faculty plans to honor the heroes on their graduation day with a celebration attended by their Friends, Beloveds, and even Rivals. The faculty also offers each character a token of gratitude, in the form of a rare or uncommon magic item of the character's choice."

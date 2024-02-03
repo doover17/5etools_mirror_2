@@ -67,7 +67,6 @@
 				"B"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"hasToken": true
@@ -221,10 +220,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"hand crossbow|phb",
-				"shortsword|phb"
-			],
 			"languageTags": [
 				"C"
 			],
@@ -232,7 +227,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"

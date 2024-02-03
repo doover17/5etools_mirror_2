@@ -7,11 +7,12 @@
 			"id": "000",
 			"entries": [
 				{
-					"type": "quote",
+					"type": "insetReadaloud",
+					"id": "001",
 					"entries": [
-						"The mission of Strixhaven University is to discover and preserve magical knowledge, to disseminate that knowledge from one generation to the next, to promote free and open study of magic in all its forms, and to enhance the lives of people throughout the world through the use of magic."
-					],
-					"by": "Strixhaven mission statement"
+						"{@i The mission of Strixhaven University is to discover and preserve magical knowledge, to disseminate that knowledge from one generation to the next, to promote free and open study of magic in all its forms, and to enhance the lives of people throughout the world through the use of magic}.",
+						"\u2014Strixhaven mission statement"
+					]
 				},
 				{
 					"type": "image",
@@ -20,8 +21,7 @@
 						"path": "book/SCC/000-00-001.welcome-splash.webp"
 					},
 					"width": 1700,
-					"height": 1250,
-					"credit": "Daniel Ljunggren"
+					"height": 1250
 				},
 				"A magical world boasts many places where students can study magic and many sages who take eager learners under their wings. But being accepted to Strixhaven University is a special honor, the dream of many young students. Strixhaven is a place of enlightenment and learning, and both its graduates and its delegates are typically welcomed and respected wherever they go.",
 				"Founded seven centuries ago by five ancient dragons, Strixhaven is the premier institution of magical learning, drawing promising young mages from all over. Each equipped with its own campus and faculty, Strixhaven's five colleges\u2014summarized in the Colleges of Strixhaven table\u2014cover a vast array of academic and magical specialties.",
@@ -198,8 +198,7 @@
 									},
 									"title": "Strixhaven University, with the (Center) Biblioplex Surrounded by (Top) Silverquill and (Going Clockwise) Quandrix, Witherbloom, Prismari, and Lorehold",
 									"width": 1700,
-									"height": 2068,
-									"credit": "Luiza Laffitte"
+									"height": 2068
 								}
 							]
 						}
@@ -222,8 +221,7 @@
 					},
 					"title": "During a duel in the Hall of Oracles, a student transforms her opponent into a goat, who is held back by a friend",
 					"width": 1700,
-					"height": 2266,
-					"credit": "Robson Michel"
+					"height": 2266
 				},
 				{
 					"type": "section",
@@ -398,8 +396,7 @@
 							},
 							"title": "Archway Commons is a favorite spot for students to gather",
 							"width": 1700,
-							"height": 1233,
-							"credit": "Piotr Dura"
+							"height": 1233
 						},
 						{
 							"type": "entries",
@@ -421,8 +418,7 @@
 									},
 									"title": "Map 1.1: Central Campus",
 									"width": 3000,
-									"height": 2026,
-									"credit": "Francesca Baerald"
+									"height": 2026
 								},
 								{
 									"type": "entries",
@@ -506,8 +502,7 @@
 									},
 									"title": "The heart of Lorehold College overlooks a chasm littered with ancient ruins",
 									"width": 1700,
-									"height": 1250,
-									"credit": "Titus Lunter"
+									"height": 1250
 								},
 								{
 									"type": "entries",
@@ -684,8 +679,7 @@
 									},
 									"title": "Map 1.2: Lorehold Campus",
 									"width": 3000,
-									"height": 2026,
-									"credit": "Francesca Baerald"
+									"height": 2026
 								},
 								{
 									"type": "entries",
@@ -864,8 +858,7 @@
 									},
 									"title": "Prismari College offers breathtaking views to inspire its artists",
 									"width": 1700,
-									"height": 1272,
-									"credit": "Adam Paquette"
+									"height": 1272
 								},
 								{
 									"type": "entries",
@@ -937,8 +930,7 @@
 									},
 									"title": "Map 1.3: Prismari Campus",
 									"width": 3000,
-									"height": 2025,
-									"credit": "Francesca Baerald"
+									"height": 2025
 								},
 								{
 									"type": "entries",
@@ -1087,8 +1079,7 @@
 									},
 									"title": "The geometry of Torus Hall is the most prominent feature of Quandrix College",
 									"width": 1700,
-									"height": 1248,
-									"credit": "Piotr Dura"
+									"height": 1248
 								},
 								{
 									"type": "entries",
@@ -1159,8 +1150,7 @@
 									},
 									"title": "Map 1.4: Quandrix Campus",
 									"width": 3000,
-									"height": 2026,
-									"credit": "Francesca Baerald"
+									"height": 2026
 								},
 								{
 									"type": "entries",
@@ -1318,8 +1308,7 @@
 									},
 									"title": "The stately buildings of Silverquill promote an atmosphere of dignified study",
 									"width": 1700,
-									"height": 1273,
-									"credit": "Titus Lunter"
+									"height": 1273
 								},
 								{
 									"type": "entries",
@@ -1399,8 +1388,7 @@
 									},
 									"title": "Map 1.5: Silverquill Campus",
 									"width": 3000,
-									"height": 2026,
-									"credit": "Francesca Baerald"
+									"height": 2026
 								},
 								{
 									"type": "entries",
@@ -1549,8 +1537,7 @@
 									},
 									"title": "Deep in the bayou of Sedgemoor, Widdershins Hall is the heart of Witherbloom College",
 									"width": 1700,
-									"height": 1250,
-									"credit": "Alayna Danner"
+									"height": 1250
 								},
 								{
 									"type": "entries",
@@ -1640,8 +1627,7 @@
 									},
 									"title": "Map 1.6: Witherbloom Campus",
 									"width": 3000,
-									"height": 2026,
-									"credit": "Francesca Baerald"
+									"height": 2026
 								},
 								{
 									"type": "entries",
@@ -1699,8 +1685,7 @@
 					},
 					"title": "A group of Strixhaven students\u2014each from a different college\u2014descend into the depths below an ancient ruin",
 					"width": 1700,
-					"height": 2110,
-					"credit": "Zoltan Boros"
+					"height": 2110
 				},
 				{
 					"type": "section",
@@ -1977,8 +1962,7 @@
 					},
 					"title": "Strixhaven students are often in awe of their surroundings at the famed university of magic",
 					"width": 1700,
-					"height": 2261,
-					"credit": "Caroline Gariba"
+					"height": 2261
 				},
 				{
 					"type": "section",
@@ -2074,7 +2058,7 @@
 									"page": 42,
 									"id": "0d8",
 									"entries": [
-										"If you run chapter 4, 5, or 6 as a standalone adventure, you should ask each player to choose at least one student to be a Friend, a Beloved, or a Rival, as described in the {@book Relationship rules|SCC|3|relationships} later in this chapter. The Starting Relationship Points table lists the number of points a character has at the start with the chosen Friend, Beloved, or Rival.",
+										"If you run chapter 4, 5, or 6 as a standalone adventure, you should ask each player to choose at least one student to be a Friend, a Beloved, or a Rival, as described in the {@adventure Relationship rules|SCC-CK|0} later in this chapter. The Starting Relationship Points table lists the number of points a character has at the start with the chosen Friend, Beloved, or Rival.",
 										{
 											"type": "table",
 											"caption": "Starting Relationship Points",
@@ -2109,8 +2093,7 @@
 											},
 											"title": "First-year students rush to class carrying armloads of books\u2014and all their excitement for the start of a new academic year",
 											"width": 1700,
-											"height": 1098,
-											"credit": "Paul Scott Canavan"
+											"height": 1098
 										}
 									]
 								}
@@ -2246,8 +2229,7 @@
 									},
 									"title": "Students find many magical ways to celebrate their achievements",
 									"width": 850,
-									"height": 1322,
-									"credit": "Mathias Kollros"
+									"height": 1322
 								},
 								"While a student participates in an Extracurricular, they gain a Student Die and a Relationship Point, as explained below.",
 								{
@@ -2265,7 +2247,7 @@
 									"page": 44,
 									"id": "0e3",
 									"entries": [
-										"While a student participates in an Extracurricular, the student gains either a positive or a negative Relationship Point (the player's choice) with one student NPC who is also a member of the Extracurricular (see the {@book Relationship rules|SCC|3|relationships} later in this chapter)."
+										"While a student participates in an Extracurricular, the student gains either a positive or a negative Relationship Point (the player's choice) with one student NPC who is also a member of the Extracurricular (see the {@adventure Relationship rules|SCC-CK|0} later in this chapter)."
 									]
 								}
 							]
@@ -2728,8 +2710,7 @@
 											},
 											"title": "Strixhaven student employees work beside staff members to fill the many jobs available on campus",
 											"width": 850,
-											"height": 1064,
-											"credit": "Steve Prescott"
+											"height": 1064
 										}
 									]
 								},
@@ -2739,7 +2720,7 @@
 									"page": 46,
 									"id": "10b",
 									"entries": [
-										"While a character works a Job, they gain a positive or negative Relationship Point (the player's choice) with one student NPC at that Job. This represents a coworker with whom the character is often scheduled and with whom they can easily form a connection (see the {@book Relationship rules|SCC|3|relationships} later in this chapter)."
+										"While a character works a Job, they gain a positive or negative Relationship Point (the player's choice) with one student NPC at that Job. This represents a coworker with whom the character is often scheduled and with whom they can easily form a connection (see the {@adventure Relationship rules|SCC-CK|0} later in this chapter)."
 									]
 								}
 							]
@@ -3120,8 +3101,7 @@
 							},
 							"title": "A Witherbloom student heals a friend from Silverquill",
 							"width": 1700,
-							"height": 1095,
-							"credit": "Andrey Kuzinskiy"
+							"height": 1095
 						},
 						{
 							"type": "section",
@@ -3208,8 +3188,7 @@
 											},
 											"title": "Students discuss their shared interests during a sunset date",
 											"width": 1700,
-											"height": 984,
-											"credit": "Manuel Castañón"
+											"height": 984
 										},
 										{
 											"type": "entries",
@@ -3313,9 +3292,7 @@
 												"path": "book/SCC/032-03-008.aurora.webp"
 											},
 											"width": 850,
-											"height": 1177,
-											"title": "Aurora Luna Wynterstarr",
-											"credit": "Olga Drebas"
+											"height": 1177
 										},
 										{
 											"type": "inset",
@@ -3367,9 +3344,7 @@
 												"path": "book/SCC/033-03-009.bhedum.webp"
 											},
 											"width": 850,
-											"height": 1177,
-											"title": "Bhedum \"Rampart\" Sooviij",
-											"credit": "Ekaterina Burmak"
+											"height": 1177
 										},
 										{
 											"type": "inset",
@@ -3421,9 +3396,7 @@
 												"path": "book/SCC/034-03-010.cadoras.webp"
 											},
 											"width": 850,
-											"height": 1177,
-											"title": "Cadoras Damellawar",
-											"credit": "Yigit Koroglu"
+											"height": 1177
 										},
 										{
 											"type": "inset",
@@ -3475,9 +3448,7 @@
 												"path": "book/SCC/035-03-011.drazhomir.webp"
 											},
 											"width": 850,
-											"height": 1177,
-											"title": "Drazhomir Yarnask",
-											"credit": "Olga Drebas"
+											"height": 1177
 										},
 										{
 											"type": "inset",
@@ -3529,9 +3500,7 @@
 												"path": "book/SCC/036-03-012.grayson.webp"
 											},
 											"width": 850,
-											"height": 1177,
-											"title": "Grayson Wildemere",
-											"credit": "Howard Lyon"
+											"height": 1177
 										},
 										{
 											"type": "inset",
@@ -3583,9 +3552,7 @@
 												"path": "book/SCC/037-03-013.greta.webp"
 											},
 											"width": 850,
-											"height": 1177,
-											"title": "Greta Gorunn",
-											"credit": "Tony Foti"
+											"height": 1177
 										},
 										"Greta makes a point to write regularly to her older brother, Grog, whom she misses terribly.",
 										{
@@ -3638,9 +3605,7 @@
 												"path": "book/SCC/038-03-014.javenesh.webp"
 											},
 											"width": 850,
-											"height": 1177,
-											"title": "Javenesh Stoutclaw",
-											"credit": "Ekaterina Burmak"
+											"height": 1177
 										},
 										{
 											"type": "inset",
@@ -3691,9 +3656,7 @@
 												"path": "book/SCC/039-03-015.larine.webp"
 											},
 											"width": 850,
-											"height": 1177,
-											"title": "Larine Arneza",
-											"credit": "Jehan Choo"
+											"height": 1177
 										},
 										{
 											"type": "inset",
@@ -3745,9 +3708,7 @@
 												"path": "book/SCC/040-03-016.melwythorne.webp"
 											},
 											"width": 850,
-											"height": 1177,
-											"title": "Melwythorne",
-											"credit": "Dmitry Burmak"
+											"height": 1177
 										},
 										{
 											"type": "inset",
@@ -3799,9 +3760,7 @@
 												"path": "book/SCC/041-03-017.mina-lee.webp"
 											},
 											"width": 850,
-											"height": 1177,
-											"title": "Mina Lee",
-											"credit": "Lindsey Look"
+											"height": 1177
 										},
 										{
 											"type": "inset",
@@ -3853,9 +3812,7 @@
 												"path": "book/SCC/042-03-018.nora-ann-wu.webp"
 											},
 											"width": 850,
-											"height": 1177,
-											"title": "Nora Ann Wu",
-											"credit": "Cristi Balanescu"
+											"height": 1177
 										},
 										{
 											"type": "inset",
@@ -3906,9 +3863,7 @@
 												"path": "book/SCC/043-03-019.quentillius.webp"
 											},
 											"width": 850,
-											"height": 1177,
-											"title": "Quentillius Antiphiun Melentor III",
-											"credit": "Justine Cruz"
+											"height": 1177
 										},
 										{
 											"type": "inset",
@@ -3960,9 +3915,7 @@
 												"path": "book/SCC/044-03-020.rosie.webp"
 											},
 											"width": 850,
-											"height": 1177,
-											"title": "Rosimyffenbip \"Rosie\" Wuzfeddlims",
-											"credit": "Jesper Ejsing"
+											"height": 1177
 										},
 										{
 											"type": "inset",
@@ -4014,9 +3967,7 @@
 												"path": "book/SCC/045-03-021.rubina.webp"
 											},
 											"width": 850,
-											"height": 1177,
-											"title": "Rubina Larkingdale",
-											"credit": "Lie Setiawan"
+											"height": 1177
 										},
 										{
 											"type": "inset",
@@ -4069,9 +4020,7 @@
 												"path": "book/SCC/046-03-022.shuvadri.webp"
 											},
 											"width": 850,
-											"height": 1177,
-											"title": "Shuvadri Glintmantle",
-											"credit": "Raoul Vitale"
+											"height": 1177
 										},
 										{
 											"type": "inset",
@@ -4123,9 +4072,7 @@
 												"path": "book/SCC/047-03-023.tilana.webp"
 											},
 											"width": 850,
-											"height": 1177,
-											"title": "Tilana Kapule",
-											"credit": "Viko Menezes"
+											"height": 1177
 										},
 										{
 											"type": "inset",
@@ -4178,9 +4125,7 @@
 												"path": "book/SCC/048-03-024.urzmaktok.webp"
 											},
 											"width": 850,
-											"height": 1177,
-											"title": "Urzmaktok Grojsh",
-											"credit": "Jesper Ejsing"
+											"height": 1177
 										},
 										{
 											"type": "inset",
@@ -4232,9 +4177,7 @@
 												"path": "book/SCC/049-03-025.zanther.webp"
 											},
 											"width": 850,
-											"height": 1177,
-											"title": "Zanther Bowen",
-											"credit": "Olga Drebas"
+											"height": 1177
 										},
 										{
 											"type": "inset",
@@ -4329,8 +4272,7 @@
 					},
 					"title": "Strixhaven students battle a mage hunter and an Oriq recruiter",
 					"width": 1700,
-					"height": 2264,
-					"credit": "Dmitry Burmak"
+					"height": 2264
 				},
 				{
 					"type": "table",
@@ -4644,8 +4586,7 @@
 										"path": "book/SCC/129-07-013.lorehold-scholars.webp"
 									},
 									"width": 1700,
-									"height": 1310,
-									"credit": "Jason Rainville"
+									"height": 1310
 								},
 								{
 									"type": "list",
@@ -4673,8 +4614,7 @@
 										"path": "book/SCC/137-07-021.prismari-scholars.webp"
 									},
 									"width": 1700,
-									"height": 1133,
-									"credit": "Johannes Voss"
+									"height": 1133
 								},
 								{
 									"type": "list",
@@ -4702,8 +4642,7 @@
 										"path": "book/SCC/140-07-024.webp"
 									},
 									"width": 1700,
-									"height": 1107,
-									"credit": "Viktor Titov"
+									"height": 1107
 								},
 								{
 									"type": "list",
@@ -4731,8 +4670,7 @@
 										"path": "book/SCC/145-07-029.silverquill-scholars.webp"
 									},
 									"width": 1700,
-									"height": 1110,
-									"credit": "Bryan Sola"
+									"height": 1110
 								},
 								{
 									"type": "list",
@@ -4760,8 +4698,7 @@
 										"path": "book/SCC/152-07-036.witherbloom-scholars.webp"
 									},
 									"width": 1700,
-									"height": 1133,
-									"credit": "Dmitry Burmak"
+									"height": 1133
 								},
 								{
 									"type": "list",
@@ -4797,316 +4734,9 @@
 					"grid": {
 						"type": "none"
 					},
-					"imageType": "map",
-					"title": "Campus Map",
-					"credit": "Francesca Baerald"
+					"imageType": "map"
 				}
 			]
-		},
-		{
-			"type": "section",
-			"name": "Credits",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
-							"type": "list",
-							"style": "list-hang-notitle",
-							"columns": 2,
-							"items": [
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										{
-											"type": "item",
-											"name": "Lead Designer",
-											"entries": [
-												"Amanda Hamon"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Assistant Lead Designers",
-											"entries": [
-												"Jeremy Crawford, James Wyatt"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Art Director",
-											"entries": [
-												"Emi Tanji"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Designers",
-											"entries": [
-												"Bill Benham, Makenzie De Armas, Dan Dillon, Steve Kenson, T. Alexander Stangroom"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Assistant Designers",
-											"entries": [
-												"Sydney Adams, Taymoor Rehman"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Rules Developers",
-											"entries": [
-												"Jeremy Crawford, Ben Petrisor"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Editors",
-											"entries": [
-												"Judy Bauer, Michele Carter, Scott Fitzgerald Gray, Ianara Natividad, Christopher Perkins, F. Wesley Schneider"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Cultural & Sensitivity Consultant",
-											"entries": [
-												"Tanya DePass"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Graphic Designers",
-											"entries": [
-												"Trystan Falcone, Emi Tanji, Trish Yochum"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Cover Illustrators",
-											"entries": [
-												"Hydro74, Magali Villeneuve"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Cartographers",
-											"entries": [
-												"Francesca Baerald, Sean Macdonald, Mike Schley"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Additional Art Directors",
-											"entries": [
-												"Ovidio Cartagena, Taylor Ingvarsson, Kate Irwin, Thomas Jenkot, Zack Stella, Sarah Wassell"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Interior Illustrators",
-											"entries": [
-												"Steve Argyle, Jinho Bae, Cristi Balanescu, Mike Bierek, Zoltan Boros, Alex Brock, Filip Burburan, Dmitry Burmak, Ekaterina Burmak, Paul Scott Canavan, Manuel Castañón, Jehan Choo, Billy Christian, Chris Cold, Justine Cruz, Alayna Danner, Jonas De Ro, Olga Drebas, Piotr Dura, Jesper Ejsing, Anna Fehr, Tony Foti, Caroline Gariba, Ilse Gort, Johan Grenier, Yeong-Hao Han, Josh Hass, Hydro74, Izzy, Tomasz Jedruszek, Jihun, Jason Kang, Igor Kieryluk, Mathias Kollros, Yigit Koroglu, Kekai Kotaki, Andrey Kuzinskiy, Luiza Laffitte, Lius Lasahido, Ryan Alexander Lee, Lie Setiawan, Daniel Ljunggren, Lindsey Look, Titus Lunter, Howard Lyon, Slawomir Maniak, Antonio José Manzanedo, Joseph Meehan, Viko Menezes, Robson Michel, Francisco Miyara, Scott Murphy, Marta Nael, Hector Ortiz, Adam Paquette, Alessandra Pisano, Steve Prescott, Chris Rahn, Jason Rainville, Andreas Rocha, Denman Rooke, Sean Sevestre, Liiga Smilshkalne, Bryan Sola, Craig J Spearing, Raymond Swanland, YW Tang, Viktor Titov, Jokubas Uogintas, Randy Vargas, Svetlin Velinov, Raoul Vitale, Johannes Voss, Sara Winters, Bayard Wu, Kieran Yanner, Andreas Zafiratos"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Strixhaven World Designers",
-											"entries": [
-												"Doug Beyer (creative lead), Taylor Ingvarsson (art director), Jess Lanzillo (creative director), Meris Mullaley (creative producer), Fox Allison, Annie Sardelis, Emily Teng, Andrew Vallas, James Wyatt, Ari Zirulnik"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Project Engineer",
-											"entries": [
-												"Cynda Callaway"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Imaging Technicians",
-											"entries": [
-												"Kevin Yee"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Prepress Specialist",
-											"entries": [
-												"Jefferson Dunlap"
-											]
-										}
-									]
-								},
-								{
-									"type": "entries",
-									"name": "D&D Studio",
-									"entries": [
-										{
-											"type": "list",
-											"style": "list-hang-notitle",
-											"items": [
-												{
-													"type": "item",
-													"name": "Executive Producer",
-													"entries": [
-														"Ray Winninger"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Game Design Architects",
-													"entries": [
-														"Jeremy Crawford, Christopher Perkins"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Design Manager",
-													"entries": [
-														"Steve Scott"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Design Department",
-													"entries": [
-														"Sydney Adams, Judy Bauer, Makenzie De Armas, Dan Dillon, Amanda Hamon, Ari Levitch, Ben Petrisor, Taymoor Rehman, F. Wesley Schneider, James Wyatt"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Art Department Manager",
-													"entries": [
-														"Richard Whitters"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Principal Art Director",
-													"entries": [
-														"Kate Irwin"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Art Department",
-													"entries": [
-														"Trystan Falcone, Emi Tanji, Shawn Wood, Trish Yochum"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Senior Producer",
-													"entries": [
-														"Dan Tovar"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Producers",
-													"entries": [
-														"Bill Benham, Robert Hawkey, Lea Heleotis"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Director of Product Management",
-													"entries": [
-														"Liz Schuh"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Product Managers",
-													"entries": [
-														"Natalie Egan, Chris Lindsay, Hilary Ross, Chris Tulach"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Marketing Executive Producer",
-													"entries": [
-														"Ray Winninger"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Director of Global Brand Marketing",
-													"entries": [
-														"Brian Perry"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Global Brand Manager",
-													"entries": [
-														"Shelly Mazzanoble"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Senior Marketing Communications Manager",
-													"entries": [
-														"Greg Tito"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Community Manager",
-													"entries": [
-														"Brandy Camel"
-													]
-												}
-											]
-										}
-									],
-									"id": "07e"
-								}
-							]
-						}
-					],
-					"id": "07a"
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "book/SCC/credits.webp"
-					},
-					"maxWidth": 300,
-					"width": 850,
-					"height": 880
-				},
-				{
-					"type": "gallery",
-					"images": [
-						{
-							"type": "image",
-							"href": {
-								"type": "internal",
-								"path": "book/SCC/credits2.webp"
-							},
-							"title": "On the Cover: Three Strixhaven students find distractions from their studies in Magali Villeneuve's cover illustration. On the back, a harried Biblioplex assistant tries to tidy the mess.",
-							"width": 1200,
-							"height": 750
-						},
-						{
-							"type": "image",
-							"href": {
-								"type": "internal",
-								"path": "book/SCC/credits3.webp"
-							},
-							"title": "On the Alt-Cover: Hydro74 shows off the Strixhaven star, a symbol of unity and magical fellowship. The sigils of each of Strixhaven's five colleges adorn the back cover.",
-							"width": 1200,
-							"height": 750
-						}
-					]
-				}
-			],
-			"id": "001"
 		}
 	]
 }

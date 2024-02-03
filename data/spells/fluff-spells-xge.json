@@ -8,7 +8,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/XGE/Control Flames.webp"
+						"path": "spells/XGE/Control Flames.png"
 					}
 				}
 			]
@@ -21,7 +21,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/XGE/Danse Macabre.webp"
+						"path": "spells/XGE/Danse Macabre.png"
 					}
 				}
 			]
@@ -34,7 +34,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/XGE/Erupting Earth.webp"
+						"path": "spells/XGE/Erupting Earth.png"
 					}
 				}
 			]
@@ -47,7 +47,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/XGE/Find Greater Steed.webp"
+						"path": "spells/XGE/Find Greater Steed.png"
 					}
 				}
 			]
@@ -60,7 +60,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/XGE/Infernal Calling.webp"
+						"path": "spells/XGE/Infernal Calling.png"
 					}
 				}
 			]
@@ -73,7 +73,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/XGE/Mighty Fortress.webp"
+						"path": "spells/XGE/Mighty Fortress.png"
 					}
 				}
 			]
@@ -86,7 +86,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/XGE/Shadow Blade.webp"
+						"path": "spells/XGE/Shadow Blade.png"
 					}
 				}
 			]
@@ -99,7 +99,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/XGE/Storm Sphere.webp"
+						"path": "spells/XGE/Storm Sphere.png"
 					}
 				}
 			]
@@ -112,7 +112,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/XGE/Tiny Servant.webp"
+						"path": "spells/XGE/Tiny Servant.png"
 					}
 				}
 			]
@@ -125,7 +125,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/XGE/Whirlwind.webp"
+						"path": "spells/XGE/Whirlwind.png"
 					}
 				}
 			]

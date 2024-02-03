@@ -14,177 +14,122 @@ class Omnisearch {
 		return Number(isNonStandardA) - Number(isNonStandardB);
 	}
 
-	/* -------------------------------------------- */
-
-	static _TYPE_TIMEOUT_MS = 100; // auto-search after 100ms
-
-	static _iptSearch = null;
-	static _wrpSearchInput = null;
-	static _wrpSearchOutput = null;
-	static _dispSearchOutput = null;
-
 	static init () {
 		if (IS_VTT) return;
 
-		this._init_elements();
+		const $nav = $(`#navbar`);
 
-		this._dispSearchOutput.onClick(evt => {
+		this._$iptSearch = $(`<input class="form-control search omni__input" placeholder="${this._PLACEHOLDER_TEXT}" title="Hotkey: F. Disclaimer: unlikely to search everywhere. Use with caution." type="search">`)
+			.disableSpellcheck();
+		const $btnClearSearch = $(`<span class="absolute glyphicon glyphicon-remove omni__btn-clear"></span>`)
+			.mousedown(evt => {
+				evt.stopPropagation();
+				evt.preventDefault();
+				this._$iptSearch.val("").focus();
+			});
+		const $searchSubmit = $(`<button class="btn btn-default omni__submit" tabindex="-1"><span class="glyphicon glyphicon-search"></span></button>`);
+
+		this._$searchInputWrapper = $$`
+			<div class="input-group omni__wrp-input">
+				${this._$iptSearch}
+				${$btnClearSearch}
+				<div class="input-group-btn">
+					${$searchSubmit}
+				</div>
+			</div>
+		`.appendTo($nav);
+
+		this._$searchOutWrapper = $(`<div class="omni__wrp-output ve-flex"/>`).hideVe().insertAfter($nav);
+		this._$searchOut = $(`<div class="omni__output"/>`).appendTo(this._$searchOutWrapper);
+
+		$(window).on("click", () => this._$searchOutWrapper.hideVe());
+
+		this._$searchOut.on("click", evt => {
 			evt.stopPropagation();
 			Renderer.hover.cleanTempWindows();
 		});
 
-		this._iptSearch.onKeydown((evt) => {
+		this._$iptSearch.on("keydown", (evt) => {
 			evt.stopPropagation();
 			Renderer.hover.cleanTempWindows();
 			switch (evt.key) {
 				case "Enter":
-					if (EventUtil.isCtrlMetaKey(evt)) {
-						window.location = `${Renderer.get().baseUrl}${UrlUtil.PG_SEARCH}?${this._iptSearch.val()}`;
+					if (evt.ctrlKey || evt.metaKey) {
+						window.location = `${Renderer.get().baseUrl}${UrlUtil.PG_SEARCH}?${this._$iptSearch.val()}`;
 						break;
 					}
 
 					this._clickFirst = true;
-					this._handleClickSubmit(evt);
+					$searchSubmit.click();
 					break;
 				case "ArrowUp":
 					evt.preventDefault();
 					break;
 				case "ArrowDown":
 					evt.preventDefault();
-					$(this._dispSearchOutput).find(`.omni__lnk-name`).first().focus();
+					this._$searchOut.find(`.omni__lnk-name`).first().focus();
 					break;
 				case "Escape":
-					this._iptSearch.val("");
-					this._iptSearch.blur();
+					this._$iptSearch.val("");
+					this._$iptSearch.blur();
 			}
 		});
 
+		// auto-search after 100ms
+		const TYPE_TIMEOUT_MS = 100;
+
+		const handleSubmitClick = (evt) => {
+			if (evt) evt.stopPropagation();
+			Renderer.hover.cleanTempWindows();
+			this._pDoSearch();
+		};
+
 		let typeTimer;
-		this._iptSearch.onKeyup((evt) => {
+		this._$iptSearch.on("keyup", (evt) => {
 			this._clickFirst = false;
 			if (evt.which >= 37 && evt.which <= 40) return;
 			clearTimeout(typeTimer);
-			typeTimer = setTimeout(() => this._handleClickSubmit(), this._TYPE_TIMEOUT_MS);
+			typeTimer = setTimeout(() => handleSubmitClick(), TYPE_TIMEOUT_MS);
 		});
-		this._iptSearch.onKeydown(() => clearTimeout(typeTimer));
-		this._iptSearch.onClick(evt => {
+		this._$iptSearch.on("keydown", () => clearTimeout(typeTimer));
+		this._$iptSearch.on("click", evt => {
 			evt.stopPropagation();
 			Renderer.hover.cleanTempWindows();
-			if (this._iptSearch.val() && this._iptSearch.val().trim().length) this._handleClickSubmit();
+			if (this._$iptSearch.val() && this._$iptSearch.val().trim().length) handleSubmitClick();
 		});
 
-		this._init_scrollHandler();
-		this._init_bindBodyListeners();
+		$searchSubmit.on("click", evt => handleSubmitClick(evt));
+
+		this._init_initScrollHandler();
+
+		$(document.body).on("keypress", (evt) => {
+			if (!EventUtil.noModifierKeys(evt) || EventUtil.isInInput(evt)) return;
+			if (EventUtil.getKeyIgnoreCapsLock(evt) !== "F") return;
+			evt.preventDefault();
+			this._$iptSearch.select().focus();
+		});
 	}
 
-	static _handleClickSubmit (evt) {
-		if (evt) evt.stopPropagation();
-		Renderer.hover.cleanTempWindows();
-		return this._pDoSearch();
-	}
-
-	static _init_elements () {
-		const eleNavbar = document.getElementById("navbar");
-
-		this._iptSearch = e_({
-			tag: "input",
-			clazz: "form-control search omni__input",
-			placeholder: this._PLACEHOLDER_TEXT,
-			title: `Hotkey: F. Disclaimer: unlikely to search everywhere. Use with caution.`,
-			type: "search",
-		})
-			.disableSpellcheck();
-
-		const btnClearSearch = e_({
-			tag: "span",
-			clazz: "absolute glyphicon glyphicon-remove omni__btn-clear",
-			mousedown: evt => {
-				evt.stopPropagation();
-				evt.preventDefault();
-				this._iptSearch.val("").focus();
-			},
-		});
-
-		const btnSearchSubmit = e_({
-			tag: "button",
-			clazz: "btn btn-default omni__submit",
-			tabindex: -1,
-			html: `<span class="glyphicon glyphicon-search"></span>`,
-			click: evt => this._handleClickSubmit(evt),
-		});
-
-		this._wrpSearchInput = e_({
-			tag: "div",
-			clazz: "input-group omni__wrp-input",
-			children: [
-				this._iptSearch,
-				btnClearSearch,
-				e_({
-					tag: "div",
-					clazz: "input-group-btn",
-					children: [
-						btnSearchSubmit,
-					],
-				}),
-			],
-		})
-			.appendTo(eleNavbar);
-
-		this._dispSearchOutput = e_({
-			tag: "div",
-			clazz: "omni__output",
-		});
-
-		this._wrpSearchOutput = e_({
-			tag: "div",
-			clazz: "omni__wrp-output ve-flex",
-			children: [
-				this._dispSearchOutput,
-			],
-		})
-			.hideVe()
-			.insertAfter(eleNavbar);
-	}
-
-	static _init_scrollHandler () {
-		window.addEventListener("scroll", evt => {
+	static _init_initScrollHandler () {
+		const $window = $(window);
+		$window.on("scroll", evt => {
 			if (Renderer.hover.isSmallScreen(evt)) {
-				this._iptSearch.attr("placeholder", this._PLACEHOLDER_TEXT);
-				this._wrpSearchInput.removeClass("omni__wrp-input--scrolled");
-				this._dispSearchOutput.removeClass("omni__output--scrolled");
+				this._$iptSearch.attr("placeholder", this._PLACEHOLDER_TEXT);
+				this._$searchInputWrapper.removeClass("omni__wrp-input--scrolled");
+				this._$searchOut.removeClass("omni__output--scrolled");
 			} else {
-				if (window.scrollY > 50) {
-					this._iptSearch.attr("placeholder", " ");
-					this._wrpSearchInput.addClass("omni__wrp-input--scrolled");
-					this._dispSearchOutput.addClass("omni__output--scrolled");
+				if ($window.scrollTop() > 50) {
+					this._$iptSearch.attr("placeholder", " ");
+					this._$searchInputWrapper.addClass("omni__wrp-input--scrolled");
+					this._$searchOut.addClass("omni__output--scrolled");
 				} else {
-					this._iptSearch.attr("placeholder", this._PLACEHOLDER_TEXT);
-					this._wrpSearchInput.removeClass("omni__wrp-input--scrolled");
-					this._dispSearchOutput.removeClass("omni__output--scrolled");
+					this._$iptSearch.attr("placeholder", this._PLACEHOLDER_TEXT);
+					this._$searchInputWrapper.removeClass("omni__wrp-input--scrolled");
+					this._$searchOut.removeClass("omni__output--scrolled");
 				}
 			}
 		});
 	}
-
-	static _init_bindBodyListeners () {
-		document.body.addEventListener(
-			"click",
-			() => this._wrpSearchOutput.hideVe(),
-		);
-
-		document.body.addEventListener(
-			"keypress",
-			(evt) => {
-				if (!EventUtil.noModifierKeys(evt) || EventUtil.isInInput(evt)) return;
-				if (EventUtil.getKeyIgnoreCapsLock(evt) !== "F") return;
-				evt.preventDefault();
-				this._iptSearch.focus();
-				this._iptSearch.select();
-			},
-		);
-	}
-
-	/* -------------------------------------------- */
 
 	static async pGetResults (searchTerm) {
 		searchTerm = (searchTerm || "").toAscii();
@@ -278,7 +223,7 @@ class Omnisearch {
 		}
 
 		if (!this._state.isShowBrew) {
-			results = results.filter(r => !r.doc.s || !BrewUtil2.hasSourceJson(r.doc.s));
+			results = results.filter(r => !r.doc.s || SourceUtil.isSiteSource(r.doc.s));
 		}
 
 		if (!this._state.isShowUa) {
@@ -312,12 +257,12 @@ class Omnisearch {
 
 	// region Search
 	static async _pDoSearch () {
-		const results = await this.pGetResults(CleanUtil.getCleanString(this._iptSearch.val()));
+		const results = await this.pGetResults(this._$iptSearch.val());
 		this._pDoSearch_renderLinks(results);
 	}
 
 	static _renderLink_getHoverString (category, url, src, {isFauxPage = false} = {}) {
-		return `onmouseover="Renderer.hover.pHandleLinkMouseOver(event, this)" onmouseleave="Renderer.hover.handleLinkMouseLeave(event, this)" onmousemove="Renderer.hover.handleLinkMouseMove(event, this)" ondragstart="Renderer.hover.handleLinkDragStart(event, this)" data-vet-page="${UrlUtil.categoryToHoverPage(category).qq()}" data-vet-source="${src.qq()}" data-vet-hash="${url.qq()}" ${isFauxPage ? `data-vet-is-faux-page="true"` : ""} ${Renderer.hover.getPreventTouchString()}`;
+		return `onmouseover="Renderer.hover.pHandleLinkMouseOver(event, this)" onmouseleave="Renderer.hover.handleLinkMouseLeave(event, this)" onmousemove="Renderer.hover.handleLinkMouseMove(event, this)" data-vet-page="${UrlUtil.categoryToHoverPage(category).qq()}" data-vet-source="${src.qq()}" data-vet-hash="${url.qq()}" ${isFauxPage ? `data-vet-is-faux-page="true"` : ""} ${Renderer.hover.getPreventTouchString()}`;
 	}
 
 	static $getResultLink (r) {
@@ -329,10 +274,10 @@ class Omnisearch {
 		return $(`<a href="${href}" ${r.h ? this._renderLink_getHoverString(r.c, r.u, r.s, {isFauxPage}) : ""} class="omni__lnk-name">${r.cf}: ${r.n}</a>`);
 	}
 
-	static _btnToggleBrew = null;
-	static _btnToggleUa = null;
-	static _btnToggleBlocklisted = null;
-	static _btnToggleSrd = null;
+	static _$btnToggleBrew = null;
+	static _$btnToggleUa = null;
+	static _$btnToggleBlocklisted = null;
+	static _$btnToggleSrd = null;
 
 	static _doInitBtnToggleFilter (
 		{
@@ -344,14 +289,8 @@ class Omnisearch {
 	) {
 		if (this[propBtn]) this[propBtn].detach();
 		else {
-			this[propBtn] = e_({
-				tag: "button",
-				clazz: "btn btn-default btn-xs",
-				title,
-				tabindex: -1,
-				text,
-				click: () => this._state[propState] = !this._state[propState],
-			});
+			this[propBtn] = $(`<button class="btn btn-default btn-xs" title="${title.qq()}" tabindex="-1">${text.qq()}</button>`)
+				.on("click", () => this._state[propState] = !this._state[propState]);
 
 			const hk = (val) => {
 				this[propBtn].toggleClass("active", this._state[propState]);
@@ -365,60 +304,42 @@ class Omnisearch {
 	static _pDoSearch_renderLinks (results, page = 0) {
 		this._doInitBtnToggleFilter({
 			propState: "isShowBrew",
-			propBtn: "_btnToggleBrew",
+			propBtn: "_$btnToggleBrew",
 			title: "Include homebrew content results",
 			text: "Include Homebrew",
 		});
 
 		this._doInitBtnToggleFilter({
 			propState: "isShowUa",
-			propBtn: "_btnToggleUa",
+			propBtn: "_$btnToggleUa",
 			title: "Include Unearthed Arcana and other unofficial source results",
 			text: "Include UA/etc.",
 		});
 
 		this._doInitBtnToggleFilter({
 			propState: "isShowBlocklisted",
-			propBtn: "_btnToggleBlocklisted",
+			propBtn: "_$btnToggleBlocklisted",
 			title: "Include blocklisted content results",
 			text: "Include Blocklisted",
 		});
 
 		this._doInitBtnToggleFilter({
 			propState: "isSrdOnly",
-			propBtn: "_btnToggleSrd",
+			propBtn: "_$btnToggleSrd",
 			title: "Only show Systems Reference Document content results",
 			text: "SRD Only",
 		});
 
-		this._dispSearchOutput.empty();
+		this._$searchOut.empty();
 
-		this._dispSearchOutput.appends(
-			e_({
-				tag: "div",
-				clazz: "ve-flex-h-right ve-flex-v-center mb-2",
-				children: [
-					e_({
-						tag: "div",
-						clazz: "btn-group ve-flex-v-center",
-						children: [
-							this._btnToggleBrew,
-							this._btnToggleUa,
-							this._btnToggleBlocklisted,
-							this._btnToggleSrd,
-						],
-					}),
-					e_({
-						tag: "button",
-						clazz: "btn btn-default btn-xs ml-2",
-						title: "Help",
-						html: `<span class="glyphicon glyphicon-info-sign"></span>`,
-						click: () => this.doShowHelp(),
-					}),
-				],
-			}),
-		);
+		const $btnHelp = $(`<button class="btn btn-default btn-xs ml-2" title="Help"><span class="glyphicon glyphicon-info-sign"></span></button>`)
+			.click(() => this.doShowHelp());
 
+		this._$searchOut.append($(`<div class="ve-flex-h-right ve-flex-v-center mb-2"/>`)
+			.append([
+				$$`<div class="btn-group ve-flex-v-center">${this._$btnToggleBrew}${this._$btnToggleUa}${this._$btnToggleBlocklisted}${this._$btnToggleSrd}</div>`,
+				$btnHelp,
+			]));
 		const base = page * this._MAX_RESULTS;
 		for (let i = base; i < Math.max(Math.min(results.length, this._MAX_RESULTS + base), base); ++i) {
 			const r = results[i].doc;
@@ -433,24 +354,21 @@ class Omnisearch {
 				? `<a href="${adventureBookSourceHref}">${ptPageInner}</a>`
 				: ptPageInner;
 
-			const ptSourceInner = source
-				? `<span class="${Parser.sourceJsonToColor(source)}" ${Parser.sourceJsonToStyle(source)} title="${Parser.sourceJsonToFull(source)}">${Parser.sourceJsonToAbv(source)}</span>`
-				: `<span></span>`;
+			const ptSourceInner = source ? `<span class="${Parser.sourceJsonToColor(source)}" ${Parser.sourceJsonToStyle(source)} title="${Parser.sourceJsonToFull(source)}">${Parser.sourceJsonToAbv(source)}</span>` : `<span></span>`;
 			const ptSource = ptPage || !adventureBookSourceHref
 				? ptSourceInner
 				: `<a href="${adventureBookSourceHref}">${ptSourceInner}</a>`;
 
 			$$`<div class="omni__row-result split-v-center stripe-odd">
 				${$link}
-				<div class="ve-flex-v-center">
+				<div class="inline-block">
 					${ptSource}
 					${isSrd ? `<span class="ve-muted omni__disp-srd help-subtle relative" title="Available in the Systems Reference Document">[SRD]</span>` : ""}
-					${Parser.sourceJsonToMarkerHtml(source, {isList: false, additionalStyles: "omni__disp-source-marker"})}
-					${ptPage ? `<span class="omni__wrp-page small-caps">${ptPage}</span>` : ""}
+					${ptPage}
 				</div>
-			</div>`.appendTo(this._dispSearchOutput);
+			</div>`.appendTo(this._$searchOut);
 		}
-		this._wrpSearchOutput.showVe();
+		this._$searchOutWrapper.showVe();
 
 		// add pagination if there are many results
 		if (results.length > this._MAX_RESULTS) {
@@ -470,15 +388,15 @@ class Omnisearch {
 				});
 				$pgControls.append($nxt);
 			} else ($pgControls.append(`<span class="omni__paginate-right omni__paginate-ctrl">`));
-			$pgControls.appendTo(this._dispSearchOutput);
+			this._$searchOut.append($pgControls);
 		}
 
 		if (this._clickFirst && results.length) {
-			$(this._dispSearchOutput).find(`.omni__lnk-name`).first()[0].click();
+			this._$searchOut.find(`.omni__lnk-name`).first()[0].click();
 		}
 
 		if (!results.length) {
-			$(this._dispSearchOutput).append(`<div class="ve-muted"><i>No results found.</i></div>`);
+			this._$searchOut.append(`<div class="ve-muted"><i>No results found.</i></div>`);
 		}
 	}
 	// endregion
@@ -580,7 +498,7 @@ class Omnisearch {
 				if ($(`.has-results-left`).length) {
 					const ix = $ele.parent().index() - 1; // offset as the control bar is at position 0
 					$(`.omni__paginate-left`).click();
-					const $psNext = $(this._dispSearchOutput).find(`.omni__row-result`);
+					const $psNext = this._$searchOut.find(`.omni__row-result`);
 					$($psNext[ix] || $psNext[$psNext.length - 1]).find(`.omni__lnk-name`).focus();
 				}
 				break;
@@ -591,9 +509,9 @@ class Omnisearch {
 					$ele.parent().prev().find(`.omni__lnk-name`).focus();
 				} else if ($(`.has-results-left`).length) {
 					$(`.omni__paginate-left`).click();
-					$(this._dispSearchOutput).find(`.omni__lnk-name`).last().focus();
+					this._$searchOut.find(`.omni__lnk-name`).last().focus();
 				} else {
-					this._iptSearch.focus();
+					this._$iptSearch.focus();
 				}
 				break;
 			}
@@ -602,7 +520,7 @@ class Omnisearch {
 				if ($(`.has-results-right`).length) {
 					const ix = $ele.parent().index() - 1; // offset as the control bar is at position 0
 					$(`.omni__paginate-right`).click();
-					const $psNext = $(this._dispSearchOutput).find(`.omni__row-result`);
+					const $psNext = this._$searchOut.find(`.omni__row-result`);
 					$($psNext[ix] || $psNext[$psNext.length - 1]).find(`.omni__lnk-name`).focus();
 				}
 				break;
@@ -613,7 +531,7 @@ class Omnisearch {
 					$ele.parent().next().find(`.omni__lnk-name`).focus();
 				} else if ($(`.has-results-right`).length) {
 					$(`.omni__paginate-right`).click();
-					$(this._dispSearchOutput).find(`.omni__lnk-name`).first().focus();
+					this._$searchOut.find(`.omni__lnk-name`).first().focus();
 				}
 				break;
 			}
@@ -658,6 +576,11 @@ Omnisearch._searchIndex = null;
 Omnisearch._adventureBookLookup = null; // A map of `<sourceLower>: (adventureCatId|bookCatId)`
 Omnisearch._pLoadSearch = null;
 Omnisearch._CATEGORY_COUNTS = {};
+
+Omnisearch._$searchOut = null;
+Omnisearch._$searchOutWrapper = null;
+Omnisearch._$searchInputWrapper = null;
+Omnisearch._$wrpNoResultsFound = null;
 
 Omnisearch._clickFirst = false;
 Omnisearch._MAX_RESULTS = 15;

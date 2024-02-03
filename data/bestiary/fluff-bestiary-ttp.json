@@ -29,7 +29,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/TTP/Decapus.webp"
+						"path": "bestiary/TTP/Decapus.jpg"
 					}
 				}
 			]
@@ -69,7 +69,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/TTP/Geonid.webp"
+						"path": "bestiary/TTP/Geonid.jpg"
 					}
 				}
 			]
@@ -103,7 +103,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/TTP/Topi.webp"
+						"path": "bestiary/TTP/Topi.jpg"
 					}
 				}
 			]
@@ -137,7 +137,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/MM/Plesiosaurus.webp"
+						"path": "bestiary/MM/Plesiosaurus.jpg"
 					}
 				}
 			]

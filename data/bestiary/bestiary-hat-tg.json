@@ -124,9 +124,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"sling|phb"
-			],
 			"senseTags": [
 				"D"
 			],
@@ -158,14 +155,6 @@
 			],
 			"conditionInflictSpell": [
 				"restrained"
-			],
-			"savingThrowForced": [
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -281,9 +270,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"shortsword|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -300,17 +286,10 @@
 				"O"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"conditionInflictSpell": [
 				"charmed"
-			],
-			"savingThrowForced": [
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -423,10 +402,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb",
-				"heavy crossbow|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -439,7 +414,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW",
@@ -572,12 +546,8 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW"
-			],
-			"savingThrowForced": [
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -713,9 +683,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"quarterstaff|phb"
-			],
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -743,7 +710,6 @@
 			],
 			"miscTags": [
 				"AOE",
-				"MLW",
 				"MW"
 			],
 			"hasToken": true,
@@ -900,14 +866,6 @@
 			"conditionInflictSpell": [
 				"restrained"
 			],
-			"savingThrowForced": [
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -1041,9 +999,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"longsword|phb"
-			],
 			"senseTags": [
 				"D"
 			],
@@ -1061,14 +1016,10 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"conditionInflict": [
 				"prone"
-			],
-			"savingThrowForced": [
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,

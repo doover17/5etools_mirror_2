@@ -2,11 +2,7 @@
 
 class RenderFeats {
 	static $getRenderedFeat (feat) {
-		const ptCategoryPrerequisite = Renderer.feat.getJoinedCategoryPrerequisites(
-			feat.category,
-			Renderer.utils.prerequisite.getHtml(feat.prerequisite),
-		);
-
+		const prerequisite = Renderer.utils.prerequisite.getHtml(feat.prerequisite);
 		const ptRepeatable = Renderer.utils.getRepeatableHtml(feat);
 
 		Renderer.feat.initFullEntries(feat);
@@ -17,7 +13,7 @@ class RenderFeats {
 			${Renderer.utils.getBorderTr()}
 			${Renderer.utils.getExcludedTr({entity: feat, dataProp: "feat"})}
 			${Renderer.utils.getNameTr(feat, {page: UrlUtil.PG_FEATS})}
-			${ptCategoryPrerequisite ? `<tr><td colspan="6">${ptCategoryPrerequisite}</td></tr>` : ""}
+			${prerequisite ? `<tr><td colspan="6">${prerequisite}</td></tr>` : ""}
 			${ptRepeatable ? `<tr><td colspan="6">${ptRepeatable}</td></tr>` : ""}
 			<tr><td class="divider" colspan="6"><div></div></td></tr>
 			<tr class="text"><td colspan="6">${renderStack.join("")}</td></tr>

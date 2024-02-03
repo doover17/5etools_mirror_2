@@ -5,10 +5,7 @@ FilterUtil.SUB_HASH_PREFIX_LENGTH = 4;
 
 class PageFilter {
 	static defaultSourceSelFn (val) {
-		// Assume the user wants to select their loaded homebrew by default
-		// Overridden by the "Deselect Homebrew Sources by Default" option
-		return SourceUtil.getFilterGroup(val) === SourceUtil.FILTER_GROUP_STANDARD
-			|| SourceUtil.getFilterGroup(val) === SourceUtil.FILTER_GROUP_HOMEBREW;
+		return !SourceUtil.isNonstandardSource(val);
 	}
 
 	constructor (opts) {
@@ -91,10 +88,6 @@ class PageFilter {
 			const hash = UrlUtil.URL_TO_HASH_BUILDER[page]({name, source});
 			return !ExcludeUtil.isExcluded(hash, prop, source, {isNoCount: true});
 		});
-	}
-
-	static getListAliases (ent) {
-		return (ent.alias || []).map(it => `"${it}"`).join(",");
 	}
 	// endregion
 }
@@ -536,16 +529,15 @@ class FilterBox extends ProxyBase {
 
 	async pDoLoadState () {
 		const toLoad = await StorageUtil.pGetForPage(this._getNamespacedStorageKey());
-		if (toLoad == null) return;
-		this._setStateFromLoaded(toLoad, {isUserSavedState: true});
+		if (toLoad != null) this._setStateFromLoaded(toLoad);
 	}
 
-	_setStateFromLoaded (state, {isUserSavedState = false} = {}) {
+	_setStateFromLoaded (state) {
 		state.box = state.box || {};
 		this._proxyAssign("meta", "_meta", "__meta", state.box.meta || {}, true);
 		this._proxyAssign("minisHidden", "_minisHidden", "__minisHidden", state.box.minisHidden || {}, true);
 		this._proxyAssign("combineAs", "_combineAs", "__combineAs", state.box.combineAs || {}, true);
-		this._filters.forEach(it => it.setStateFromLoaded(state.filters, {isUserSavedState}));
+		this._filters.forEach(it => it.setStateFromLoaded(state.filters));
 	}
 
 	_getSaveableState () {
@@ -841,7 +833,7 @@ class FilterBox extends ProxyBase {
 					this._cachedState = null;
 					this.fireChangeEvent();
 					return;
-				} else this._setStateFromLoaded(this._cachedState, {isUserSavedState: true});
+				} else this._setStateFromLoaded(this._cachedState);
 			}
 		} else {
 			this.fireChangeEvent();
@@ -1102,12 +1094,8 @@ class FilterBox extends ProxyBase {
 		return out.length ? out : null;
 	}
 
-	getFilterTag ({isAddSearchTerm = false} = {}) {
+	getFilterTag () {
 		const parts = this._filters.map(f => f.getFilterTagPart()).filter(Boolean);
-		if (isAddSearchTerm && this._$iptSearch) {
-			const term = this._$iptSearch.val().trim();
-			if (term) parts.push(`search=${term}`);
-		}
 		return `{@filter |${UrlUtil.getCurrentPage().replace(/\.html$/, "")}|${parts.join("|")}}`;
 	}
 
@@ -1267,8 +1255,6 @@ class FilterBase extends BaseComponent {
 
 		this.__meta = {...this.getDefaultMeta()};
 		this._meta = this._getProxy("meta", this.__meta);
-
-		this._hasUserSavedState = false;
 	}
 
 	_getRenderedHeader () {
@@ -1469,7 +1455,6 @@ class Filter extends FilterBase {
 	 *        Defaults to ascending alphabetical sort.
 	 * @param [opts.itemSortFnMini] Function which should be used to sort the `items` array when rendering mini-pills.
 	 * @param [opts.groupFn] Function which takes an item and assigns it to a group.
-	 * @param [opts.groupNameFn] Function which takes a group and returns a group name;
 	 * @param [opts.minimalUi] True if the filter should render with a reduced UI, false otherwise.
 	 * @param [opts.umbrellaItems] Items which should, when set active, show everything in the filter. E.g. "All".
 	 * @param [opts.umbrellaExcludes] Items which should ignore the state of any `umbrellaItems`
@@ -1490,7 +1475,6 @@ class Filter extends FilterBase {
 		this._itemSortFn = opts.itemSortFn === undefined ? SortUtil.ascSort : opts.itemSortFn;
 		this._itemSortFnMini = opts.itemSortFnMini;
 		this._groupFn = opts.groupFn;
-		this._groupNameFn = opts.groupNameFn;
 		this._minimalUi = opts.minimalUi;
 		this._umbrellaItems = Filter._getAsFilterItems(opts.umbrellaItems);
 		this._umbrellaExcludes = Filter._getAsFilterItems(opts.umbrellaExcludes);
@@ -1502,7 +1486,7 @@ class Filter extends FilterBase {
 		Filter._validateItemNests(this._items, this._nests);
 
 		this._filterBox = null;
-		this._items.forEach(it => this._defaultItemState(it, {isForce: true}));
+		this._items.forEach(it => this._defaultItemState(it));
 		this.__$wrpFilter = null;
 		this.__wrpPills = null;
 		this.__wrpMiniPills = null;
@@ -1529,14 +1513,13 @@ class Filter extends FilterBase {
 		};
 	}
 
-	setStateFromLoaded (filterState, {isUserSavedState = false} = {}) {
-		if (!filterState?.[this.header]) return;
-
-		const toLoad = filterState[this.header];
-		this._hasUserSavedState = this._hasUserSavedState || isUserSavedState;
-		this.setBaseStateFromLoaded(toLoad);
-		Object.assign(this._state, toLoad.state);
-		Object.assign(this._nestsHidden, toLoad.nestsHidden);
+	setStateFromLoaded (filterState) {
+		if (filterState && filterState[this.header]) {
+			const toLoad = filterState[this.header];
+			this.setBaseStateFromLoaded(toLoad);
+			Object.assign(this._state, toLoad.state);
+			Object.assign(this._nestsHidden, toLoad.nestsHidden);
+		}
 	}
 
 	_getStateNotDefault ({nxtState = null} = {}) {
@@ -1723,13 +1706,7 @@ class Filter extends FilterBase {
 		Object.entries(this._nests).forEach(([nestName, nestMeta]) => tgt[nestName] = !!nestMeta.isHidden);
 	}
 
-	_defaultItemState (item, {isForce = false} = {}) {
-		// Avoid setting state for new items if the user already has active filter state. This prevents the case where e.g.:
-		//   - The user has cleared their source filter;
-		//   - A new source is added to the site;
-		//   - The new source becomes the *only* selected item in their filter.
-		if (!isForce && this._hasUserSavedState && !Object.values(this.__state).some(Boolean)) return this._state[item.item] = 0;
-
+	_defaultItemState (item) {
 		// if both a selFn and a deselFn are specified, we default to deselecting
 		this._state[item.item] = this._getDefaultState(item.item);
 	}
@@ -2139,14 +2116,14 @@ class Filter extends FilterBase {
 	_doRenderPills_doRenderWrpGroup (group) {
 		const existingMeta = this._pillGroupsMeta[group];
 		if (existingMeta && !existingMeta.isAttached) {
-			existingMeta.wrpDivider.appendTo(this.__wrpPills);
+			existingMeta.hrDivider.appendTo(this.__wrpPills);
 			existingMeta.wrpPills.appendTo(this.__wrpPills);
 			existingMeta.isAttached = true;
 		}
 		if (existingMeta) return;
 
 		this._pillGroupsMeta[group] = {
-			wrpDivider: this._doRenderPills_doRenderWrpGroup_getDivider(group).appendTo(this.__wrpPills),
+			hrDivider: this._doRenderPills_doRenderWrpGroup_getHrDivider(group).appendTo(this.__wrpPills),
 			wrpPills: this._doRenderPills_doRenderWrpGroup_getWrpPillsSub(group).appendTo(this.__wrpPills),
 			isAttached: true,
 		};
@@ -2154,14 +2131,14 @@ class Filter extends FilterBase {
 		Object.entries(this._pillGroupsMeta)
 			.sort((a, b) => SortUtil.ascSortLower(a[0], b[0]))
 			.forEach(([groupKey, groupMeta], i) => {
-				groupMeta.wrpDivider.appendTo(this.__wrpPills);
-				groupMeta.wrpDivider.toggleVe(!this._isGroupDividerHidden(groupKey, i));
+				groupMeta.hrDivider.appendTo(this.__wrpPills);
+				groupMeta.hrDivider.toggleVe(!this._isGroupDividerHidden(groupKey, i));
 				groupMeta.wrpPills.appendTo(this.__wrpPills);
 			});
 
 		if (this._nests) {
 			this._pillGroupsMeta[group].toggleDividerFromNestVisibility = () => {
-				this._pillGroupsMeta[group].wrpDivider.toggleVe(!this._isGroupDividerHidden(group));
+				this._pillGroupsMeta[group].hrDivider.toggleVe(!this._isGroupDividerHidden(group));
 			};
 
 			// bind group dividers to show/hide depending on nest visibility state
@@ -2186,34 +2163,7 @@ class Filter extends FilterBase {
 		return groupItems.length === hiddenGroupItems.length;
 	}
 
-	_doRenderPills_doRenderWrpGroup_getDivider (group) {
-		const eleHeader = this._doRenderPills_doRenderWrpGroup_getDividerHeader(group);
-		const eleHr = this._doRenderPills_doRenderWrpGroup_getDividerHr(group);
-
-		return e_({
-			tag: "div",
-			clazz: "ve-flex-col w-100",
-			children: [
-				eleHr,
-				eleHeader,
-			]
-				.filter(Boolean),
-		});
-	}
-
-	_doRenderPills_doRenderWrpGroup_getDividerHr (group) { return e_({tag: "hr", clazz: `fltr__dropdown-divider--sub hr-2 mx-3`}); }
-
-	_doRenderPills_doRenderWrpGroup_getDividerHeader (group) {
-		const groupName = this._groupNameFn?.(group);
-		if (!groupName) return null;
-
-		return e_({
-			tag: "div",
-			clazz: `fltr__divider-header ve-muted italic ve-small`,
-			text: groupName,
-		});
-	}
-
+	_doRenderPills_doRenderWrpGroup_getHrDivider () { return e_({tag: "hr", clazz: `fltr__dropdown-divider--sub hr-2 mx-3`}); }
 	_doRenderPills_doRenderWrpGroup_getWrpPillsSub () { return e_({tag: "div", clazz: `fltr__wrp-pills--sub fltr__container-pills`}); }
 
 	_doRenderMiniPills () {
@@ -2304,10 +2254,6 @@ class Filter extends FilterBase {
 		this._doToggleDisplay();
 	}
 
-	_getFilterItem (item) {
-		return item instanceof FilterItem ? item : new FilterItem({item});
-	}
-
 	addItem (item) {
 		if (item == null) return;
 
@@ -2318,13 +2264,30 @@ class Filter extends FilterBase {
 		}
 
 		if (!this.__itemsSet.has(item.item || item)) {
-			item = this._getFilterItem(item);
+			item = item instanceof FilterItem ? item : new FilterItem({item});
 			Filter._validateItemNest(item, this._nests);
 
 			this._isItemsDirty = true;
 			this._items.push(item);
 			this.__itemsSet.add(item.item);
 			if (this._state[item.item] == null) this._defaultItemState(item);
+		}
+	}
+
+	static _isItemsEqual (item1, item2) {
+		return (item1 instanceof FilterItem ? item1.item : item1) === (item2 instanceof FilterItem ? item2.item : item2);
+	}
+
+	removeItem (item) {
+		const ixItem = this._items.findIndex(it => Filter._isItemsEqual(it, item));
+		if (~ixItem) {
+			const item = this._items[ixItem];
+
+			// FIXME this doesn't remove any associated hooks, and is therefore a minor memory leak
+			this._isItemsDirty = true;
+			item.rendered.detach();
+			item.btnMini.detach();
+			this._items.splice(ixItem, 1);
 		}
 	}
 
@@ -2490,7 +2453,7 @@ class Filter extends FilterBase {
 
 		Object.values(this._pillGroupsMeta || {})
 			.forEach(it => {
-				it.wrpDivider.detach();
+				it.hrDivider.detach();
 				it.wrpPills.detach();
 				it.isAttached = false;
 			});
@@ -2650,7 +2613,7 @@ class SearchableFilter extends Filter {
 						const visibleRowMetas = rowMetas.filter(it => it.isVisible);
 						if (!visibleRowMetas.length) return;
 						if (evt.shiftKey) this._doSetPillsClear();
-						this._state[visibleRowMetas[0].item.item] = (EventUtil.isCtrlMetaKey(evt)) ? 2 : 1;
+						this._state[visibleRowMetas[0].item.item] = (evt.ctrlKey || evt.metaKey) ? 2 : 1;
 						$iptSearch.blur();
 						break;
 					}
@@ -2748,7 +2711,7 @@ class SearchableFilter extends Filter {
 
 					case "Enter": {
 						if (evt.shiftKey) this._doSetPillsClear();
-						this._state[item.item] = (EventUtil.isCtrlMetaKey(evt)) ? 2 : 1;
+						this._state[item.item] = (evt.ctrlKey || evt.metaKey) ? 2 : 1;
 						row.blur();
 						break;
 					}
@@ -2845,7 +2808,6 @@ class SourceFilter extends Filter {
 		opts.itemSortFnMini = opts.itemSortFnMini === undefined ? SourceFilter._SORT_ITEMS_MINI.bind(SourceFilter) : opts.itemSortFnMini;
 		opts.itemSortFn = opts.itemSortFn === undefined ? (a, b) => SortUtil.ascSortLower(Parser.sourceJsonToFull(a.item), Parser.sourceJsonToFull(b.item)) : opts.itemSortFn;
 		opts.groupFn = opts.groupFn === undefined ? SourceUtil.getFilterGroup : opts.groupFn;
-		opts.groupNameFn = opts.groupNameFn === undefined ? SourceUtil.getFilterGroupName : opts.groupNameFn;
 		opts.selFn = opts.selFn === undefined ? PageFilter.defaultSourceSelFn : opts.selFn;
 
 		super(opts);
@@ -2856,70 +2818,48 @@ class SourceFilter extends Filter {
 
 	doSetPillsClear () { return this._doSetPillsClear(); }
 
-	_getFilterItem (item) {
-		return item instanceof FilterItem ? item : new SourceFilterItem({item});
-	}
-
 	addItem (item) {
 		const out = super.addItem(item);
 		this._tmpState.ixAdded++;
 		return out;
 	}
 
-	trimState_ () {
-		if (!this._items?.length) return;
-
-		const sourcesLoaded = new Set(this._items.map(itm => itm.item));
-		const nxtState = MiscUtil.copyFast(this.__state);
-		Object.keys(nxtState)
-			.filter(k => !sourcesLoaded.has(k))
-			.forEach(k => delete nxtState[k]);
-
-		this._proxyAssignSimple("state", nxtState, true);
+	removeItem (item) {
+		const out = super.removeItem(item);
+		this._tmpState.ixAdded--;
+		return out;
 	}
 
 	_getHeaderControls_addExtraStateBtns (opts, wrpStateBtnsOuter) {
 		const btnSupplements = e_({
 			tag: "button",
 			clazz: `btn btn-default w-100 ${opts.isMulti ? "btn-xxs" : "btn-xs"}`,
-			title: `SHIFT to add to existing selection; CTRL to include UA/etc.`,
+			title: `SHIFT to include UA/etc.`,
 			html: `Core/Supplements`,
-			click: evt => this._doSetPinsSupplements({isIncludeUnofficial: EventUtil.isCtrlMetaKey(evt), isAdditive: evt.shiftKey}),
+			click: evt => this._doSetPinsSupplements(evt.shiftKey),
 		});
 
 		const btnAdventures = e_({
 			tag: "button",
 			clazz: `btn btn-default w-100 ${opts.isMulti ? "btn-xxs" : "btn-xs"}`,
-			title: `SHIFT to add to existing selection; CTRL to include UA`,
+			title: `SHIFT to include UA/etc.`,
 			html: `Adventures`,
-			click: evt => this._doSetPinsAdventures({isIncludeUnofficial: EventUtil.isCtrlMetaKey(evt), isAdditive: evt.shiftKey}),
-		});
-
-		const btnPartnered = e_({
-			tag: "button",
-			clazz: `btn btn-default w-100 ${opts.isMulti ? "btn-xxs" : "btn-xs"}`,
-			title: `SHIFT to add to existing selection`,
-			html: `Partnered`,
-			click: evt => this._doSetPinsPartnered({isAdditive: evt.shiftKey}),
+			click: evt => this._doSetPinsAdventures(evt.shiftKey),
 		});
 
 		const btnHomebrew = e_({
 			tag: "button",
 			clazz: `btn btn-default w-100 ${opts.isMulti ? "btn-xxs" : "btn-xs"}`,
-			title: `SHIFT to add to existing selection`,
 			html: `Homebrew`,
-			click: evt => this._doSetPinsHomebrew({isAdditive: evt.shiftKey}),
+			click: () => this._doSetPinsHomebrew(),
 		});
 
-		const hkIsButtonsActive = () => {
-			const hasPartnered = Object.keys(this.__state).some(src => SourceUtil.getFilterGroup(src) === SourceUtil.FILTER_GROUP_PARTNERED);
-			btnPartnered.toggleClass("ve-hidden", !hasPartnered);
-
-			const hasBrew = Object.keys(this.__state).some(src => SourceUtil.getFilterGroup(src) === SourceUtil.FILTER_GROUP_HOMEBREW);
+		const hkIsBrewActive = () => {
+			const hasBrew = Object.keys(this.__state).some(src => SourceUtil.getFilterGroup(src) === 2);
 			btnHomebrew.toggleClass("ve-hidden", !hasBrew);
 		};
-		this._addHook("tmpState", "ixAdded", hkIsButtonsActive);
-		hkIsButtonsActive();
+		this._addHook("tmpState", "ixAdded", hkIsBrewActive);
+		hkIsBrewActive();
 
 		const actionSelectDisplayMode = new ContextUtil.ActionSelect({
 			values: Object.keys(SourceFilter._PILL_DISPLAY_MODE_LABELS).map(Number),
@@ -2936,10 +2876,6 @@ class SourceFilter extends Filter {
 				() => this._doSetPinsStandard(),
 			),
 			new ContextUtil.Action(
-				"Select All Partnered Sources",
-				() => this._doSetPinsPartnered(),
-			),
-			new ContextUtil.Action(
 				"Select All Non-Standard Sources",
 				() => this._doSetPinsNonStandard(),
 			),
@@ -2952,10 +2888,6 @@ class SourceFilter extends Filter {
 				`Select "Vanilla" Sources`,
 				() => this._doSetPinsVanilla(),
 				{title: `Select a baseline set of sources suitable for any campaign.`},
-			),
-			new ContextUtil.Action(
-				"Select All Non-UA Sources",
-				() => this._doSetPinsNonUa(),
 			),
 			null,
 			new ContextUtil.Action(
@@ -3002,7 +2934,6 @@ class SourceFilter extends Filter {
 			children: [
 				btnSupplements,
 				btnAdventures,
-				btnPartnered,
 				btnHomebrew,
 				btnBurger,
 				btnOnlyPrimary,
@@ -3011,51 +2942,27 @@ class SourceFilter extends Filter {
 	}
 
 	_doSetPinsStandard () {
-		Object.keys(this._state).forEach(k => this._state[k] = SourceUtil.getFilterGroup(k) === SourceUtil.FILTER_GROUP_STANDARD ? 1 : 0);
-	}
-
-	_doSetPinsPartnered ({isAdditive = false}) {
-		this._proxyAssignSimple(
-			"state",
-			Object.keys(this._state)
-				.mergeMap(k => ({[k]: SourceUtil.getFilterGroup(k) === SourceUtil.FILTER_GROUP_PARTNERED ? 1 : isAdditive ? this._state[k] : 0})),
-		);
+		Object.keys(this._state).forEach(k => this._state[k] = SourceUtil.getFilterGroup(k) === 0 ? 1 : 0);
 	}
 
 	_doSetPinsNonStandard () {
-		Object.keys(this._state).forEach(k => this._state[k] = SourceUtil.getFilterGroup(k) === SourceUtil.FILTER_GROUP_NON_STANDARD ? 1 : 0);
+		Object.keys(this._state).forEach(k => this._state[k] = SourceUtil.getFilterGroup(k) === 1 ? 1 : 0);
 	}
 
-	_doSetPinsSupplements ({isIncludeUnofficial = false, isAdditive = false} = {}) {
-		this._proxyAssignSimple(
-			"state",
-			Object.keys(this._state)
-				.mergeMap(k => ({[k]: SourceUtil.isCoreOrSupplement(k) && (isIncludeUnofficial || !SourceUtil.isNonstandardSource(k)) ? 1 : isAdditive ? this._state[k] : 0})),
-		);
+	_doSetPinsSupplements (isIncludeUnofficial) {
+		Object.keys(this._state).forEach(k => this._state[k] = SourceUtil.isCoreOrSupplement(k) && (isIncludeUnofficial || !SourceUtil.isNonstandardSource(k)) ? 1 : 0);
 	}
 
-	_doSetPinsAdventures ({isIncludeUnofficial = false, isAdditive = false}) {
-		this._proxyAssignSimple(
-			"state",
-			Object.keys(this._state)
-				.mergeMap(k => ({[k]: SourceUtil.isAdventure(k) && (isIncludeUnofficial || !SourceUtil.isNonstandardSource(k)) ? 1 : isAdditive ? this._state[k] : 0})),
-		);
+	_doSetPinsAdventures (isIncludeUnofficial) {
+		Object.keys(this._state).forEach(k => this._state[k] = SourceUtil.isAdventure(k) && (isIncludeUnofficial || !SourceUtil.isNonstandardSource(k)) ? 1 : 0);
 	}
 
-	_doSetPinsHomebrew ({isAdditive = false}) {
-		this._proxyAssignSimple(
-			"state",
-			Object.keys(this._state)
-				.mergeMap(k => ({[k]: SourceUtil.getFilterGroup(k) === SourceUtil.FILTER_GROUP_HOMEBREW ? 1 : isAdditive ? this._state[k] : 0})),
-		);
+	_doSetPinsHomebrew () {
+		Object.keys(this._state).forEach(k => this._state[k] = SourceUtil.getFilterGroup(k) === 2 ? 1 : 0);
 	}
 
 	_doSetPinsVanilla () {
 		Object.keys(this._state).forEach(k => this._state[k] = Parser.SOURCES_VANILLA.has(k) ? 1 : 0);
-	}
-
-	_doSetPinsNonUa () {
-		Object.keys(this._state).forEach(k => this._state[k] = !SourceUtil.isPrereleaseSource(k) ? 1 : 0);
 	}
 
 	_doSetPinsSrd () {
@@ -3093,23 +3000,21 @@ class SourceFilter extends Filter {
 	static getCompleteFilterSources (ent) {
 		if (!ent.otherSources) return ent.source;
 
-		const otherSourcesFilt = ent.otherSources
-			// Avoid `otherSources` from e.g. homebrews which are not loaded, and so lack their metadata
-			.filter(src => !ExcludeUtil.isExcluded("*", "*", src.source, {isNoCount: true}) && SourceUtil.isKnownSource(src.source));
+		const otherSourcesFilt = ent.otherSources.filter(src => !ExcludeUtil.isExcluded("*", "*", src.source, {isNoCount: true}));
 		if (!otherSourcesFilt.length) return ent.source;
 
 		return [ent.source].concat(otherSourcesFilt.map(src => new SourceFilterItem({item: src.source, isIgnoreRed: true, isOtherSource: true})));
 	}
 
-	_doRenderPills_doRenderWrpGroup_getDividerHeader (group) {
+	_doRenderPills_doRenderWrpGroup_getHrDivider (group) {
 		switch (group) {
-			case SourceUtil.FILTER_GROUP_NON_STANDARD: return this._doRenderPills_doRenderWrpGroup_getDividerHeader_groupNonStandard(group);
-			case SourceUtil.FILTER_GROUP_HOMEBREW: return this._doRenderPills_doRenderWrpGroup_getDividerHeader_groupBrew(group);
-			default: return super._doRenderPills_doRenderWrpGroup_getDividerHeader(group);
+			case 1: return this._doRenderPills_doRenderWrpGroup_getHrDivider_groupOne(group);
+			case 2: return this._doRenderPills_doRenderWrpGroup_getHrDivider_groupTwo(group);
+			default: return super._doRenderPills_doRenderWrpGroup_getHrDivider(group);
 		}
 	}
 
-	_doRenderPills_doRenderWrpGroup_getDividerHeader_groupNonStandard (group) {
+	_doRenderPills_doRenderWrpGroup_getHrDivider_groupOne (group) {
 		let dates = [];
 		const comp = BaseComponent.fromObject({
 			min: 0,
@@ -3233,9 +3138,9 @@ class SourceFilter extends Filter {
 
 		return e_({
 			tag: "div",
-			clazz: `split-v-center w-100`,
+			clazz: `ve-flex-col w-100`,
 			children: [
-				super._doRenderPills_doRenderWrpGroup_getDividerHeader(group) || e_({clazz: "div"}),
+				super._doRenderPills_doRenderWrpGroup_getHrDivider(),
 				e_({
 					tag: "div",
 					clazz: `mb-1 ve-flex-h-right`,
@@ -3249,7 +3154,7 @@ class SourceFilter extends Filter {
 		});
 	}
 
-	_doRenderPills_doRenderWrpGroup_getDividerHeader_groupBrew (group) {
+	_doRenderPills_doRenderWrpGroup_getHrDivider_groupTwo (group) {
 		const btnClear = e_({
 			tag: "button",
 			clazz: `btn btn-xxs btn-default px-1`,
@@ -3265,9 +3170,9 @@ class SourceFilter extends Filter {
 
 		return e_({
 			tag: "div",
-			clazz: `split-v-center w-100`,
+			clazz: `ve-flex-col w-100`,
 			children: [
-				super._doRenderPills_doRenderWrpGroup_getDividerHeader(group) || e_({clazz: "div"}),
+				super._doRenderPills_doRenderWrpGroup_getHrDivider(),
 				e_({
 					tag: "div",
 					clazz: `mb-1 ve-flex-h-right`,
@@ -3339,11 +3244,17 @@ class SourceFilter extends Filter {
 	getSources () {
 		const out = {
 			all: [],
+			official: [],
+			unofficial: [],
+			homebrew: [],
 		};
 		this._items.forEach(it => {
 			out.all.push(it.item);
-			const group = this._groupFn(it);
-			(out[group] ||= []).push(it.item);
+			switch (this._groupFn(it)) {
+				case 0: out.official.push(it.item); break;
+				case 1: out.unofficial.push(it.item); break;
+				case 2: out.homebrew.push(it.item); break;
+			}
 		});
 		return out;
 	}
@@ -3864,11 +3775,9 @@ class AbilityScoreFilter extends FilterBase {
 		};
 	}
 
-	setStateFromLoaded (filterState, {isUserSavedState = false} = {}) {
-		if (!filterState?.[this.header]) return;
-
+	setStateFromLoaded (filterState) {
+		if (!filterState || !filterState[this.header]) return;
 		const toLoad = filterState[this.header];
-		this._hasUserSavedState = this._hasUserSavedState || isUserSavedState;
 		this.setBaseStateFromLoaded(toLoad);
 		Object.assign(this._state, toLoad.state);
 	}
@@ -4134,11 +4043,10 @@ class RangeFilter extends FilterBase {
 		};
 	}
 
-	setStateFromLoaded (filterState, {isUserSavedState = false} = {}) {
+	setStateFromLoaded (filterState) {
 		if (!filterState?.[this.header]) return;
 
 		const toLoad = filterState[this.header];
-		this._hasUserSavedState = this._hasUserSavedState || isUserSavedState;
 
 		// region Ensure to-be-loaded state is populated with sensible data
 		const tgt = (toLoad.state || {});
@@ -4456,7 +4364,7 @@ class RangeFilter extends FilterBase {
 			$wrpDropdowns.addClass("ve-grow");
 
 			return this.__$wrpFilter = $$`<div class="ve-flex">
-				<div class="fltr__range-inline-label mr-2">${this._getRenderedHeader()}</div>
+				<div class="fltr__range-inline-label">${this._getRenderedHeader()}</div>
 				${$wrpSlider}
 				${$wrpDropdowns}
 			</div>`;
@@ -4748,11 +4656,10 @@ class OptionsFilter extends FilterBase {
 		};
 	}
 
-	setStateFromLoaded (filterState, {isUserSavedState = false} = {}) {
-		if (!filterState?.[this.header]) return;
+	setStateFromLoaded (filterState) {
+		if (!filterState || !filterState[this.header]) return;
 
 		const toLoad = filterState[this.header];
-		this._hasUserSavedState = this._hasUserSavedState || isUserSavedState;
 
 		this.setBaseStateFromLoaded(toLoad);
 
@@ -4868,7 +4775,7 @@ class OptionsFilter extends FilterBase {
 
 		if (opts.isMulti) {
 			return this.__$wrpFilter = $$`<div class="ve-flex">
-				<div class="fltr__range-inline-label mr-2">${this._getRenderedHeader()}</div>
+				<div class="fltr__range-inline-label">${this._getRenderedHeader()}</div>
 				${$wrpButtons}
 			</div>`;
 		} else {
@@ -5051,14 +4958,13 @@ class MultiFilter extends FilterBase {
 		return out;
 	}
 
-	setStateFromLoaded (filterState, {isUserSavedState = false} = {}) {
-		if (!filterState?.[this.header]) return;
-
-		const toLoad = filterState[this.header];
-		this._hasUserSavedState = this._hasUserSavedState || isUserSavedState;
-		this.setBaseStateFromLoaded(toLoad);
-		Object.assign(this._state, toLoad.state);
-		this._filters.forEach(it => it.setStateFromLoaded(filterState, {isUserSavedState}));
+	setStateFromLoaded (filterState) {
+		if (filterState && filterState[this.header]) {
+			const toLoad = filterState[this.header];
+			this.setBaseStateFromLoaded(toLoad);
+			Object.assign(this._state, toLoad.state);
+			this._filters.forEach(it => it.setStateFromLoaded(filterState));
+		}
 	}
 
 	getSubHashes () {

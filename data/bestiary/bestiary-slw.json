@@ -101,11 +101,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb",
-				"shortbow|phb",
-				"shortsword|phb"
-			],
 			"languageTags": [
 				"C"
 			],
@@ -113,7 +108,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW",
@@ -190,9 +184,6 @@
 			"conditionInflict": [
 				"paralyzed",
 				"poisoned"
-			],
-			"savingThrowForced": [
-				"constitution"
 			],
 			"hasToken": true
 		},
@@ -308,9 +299,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"quarterstaff|phb"
-			],
 			"languageTags": [
 				"C"
 			],
@@ -324,11 +312,7 @@
 				"CC"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity"
 			],
 			"hasToken": true
 		},
@@ -444,9 +428,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"quarterstaff|phb"
-			],
 			"languageTags": [
 				"C"
 			],
@@ -460,11 +441,7 @@
 				"CW"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity"
 			],
 			"hasToken": true
 		},
@@ -681,9 +658,6 @@
 				"AOE",
 				"MW"
 			],
-			"savingThrowForced": [
-				"dexterity"
-			],
 			"hasToken": true
 		},
 		{
@@ -803,10 +777,6 @@
 					"source": "SLW"
 				}
 			],
-			"attachedItems": [
-				"longbow|phb",
-				"longsword|phb"
-			],
 			"languageTags": [
 				"C"
 			],
@@ -815,7 +785,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"

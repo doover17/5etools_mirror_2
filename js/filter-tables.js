@@ -10,13 +10,12 @@ class PageFilterTables extends PageFilter {
 	constructor () {
 		super({sourceFilterOpts: {selFn: PageFilterTables._sourceSelFn}});
 
-		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD", "Basic Rules", "Legacy"], isMiscFilter: true});
+		this._miscFilter = new Filter({header: "Miscellaneous", items: ["SRD", "Basic Rules"], isMiscFilter: true});
 	}
 
 	static mutateForFilters (it) {
 		it._fMisc = it.srd ? ["SRD"] : [];
 		if (it.basicRules) it._fMisc.push("Basic Rules");
-		if (SourceUtil.isLegacySourceWotc(it.source)) it._fMisc.push("Legacy");
 	}
 
 	addToFilters (it, isExcluded) {

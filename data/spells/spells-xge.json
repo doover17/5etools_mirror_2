@@ -212,7 +212,6 @@
 				"beast"
 			],
 			"miscTags": [
-				"ADV",
 				"SGT"
 			],
 			"areaTags": [
@@ -281,7 +280,6 @@
 				"dexterity"
 			],
 			"miscTags": [
-				"DFT",
 				"SGT"
 			],
 			"areaTags": [
@@ -1454,9 +1452,6 @@
 			"savingThrow": [
 				"dexterity"
 			],
-			"miscTags": [
-				"DFT"
-			],
 			"areaTags": [
 				"R"
 			]
@@ -1741,7 +1736,6 @@
 				"dexterity"
 			],
 			"miscTags": [
-				"DFT",
 				"SGT"
 			],
 			"areaTags": [
@@ -2034,7 +2028,6 @@
 			],
 			"miscTags": [
 				"AAD",
-				"ADV",
 				"DFT",
 				"THP"
 			]
@@ -2047,6 +2040,10 @@
 				{
 					"source": "EEPC",
 					"page": 19
+				},
+				{
+					"source": "UAWGE",
+					"page": 107
 				},
 				{
 					"source": "ERLW",
@@ -3439,7 +3436,6 @@
 				"If you cast this spell multiple times, you can have no more than two of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action."
 			],
 			"miscTags": [
-				"DFT",
 				"SGT"
 			],
 			"areaTags": [
@@ -4291,8 +4287,7 @@
 			],
 			"miscTags": [
 				"HL",
-				"UBA",
-				"ADV"
+				"UBA"
 			]
 		},
 		{
@@ -4742,7 +4737,6 @@
 			],
 			"miscTags": [
 				"AAD",
-				"ADV",
 				"THP"
 			]
 		},
@@ -5282,6 +5276,7 @@
 				"blinded"
 			],
 			"miscTags": [
+				"DFT",
 				"SGT"
 			],
 			"areaTags": [
@@ -5302,7 +5297,8 @@
 					"page": 116
 				},
 				{
-					"source": "MOT"
+					"source": "MOT",
+					"page": 0
 				}
 			],
 			"level": 3,
@@ -5719,8 +5715,7 @@
 				"force"
 			],
 			"miscTags": [
-				"AAD",
-				"ADV"
+				"AAD"
 			]
 		}
 	]

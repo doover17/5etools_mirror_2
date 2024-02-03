@@ -54,7 +54,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/MFF/Assassin Bug.webp"
+						"path": "bestiary/MFF/Assassin Bug.png"
 					}
 				}
 			]
@@ -109,7 +109,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/MFF/Blindheim.webp"
+						"path": "bestiary/MFF/Blindheim.png"
 					}
 				}
 			]
@@ -165,7 +165,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/MFF/Crab Folk.webp"
+						"path": "bestiary/MFF/Crab Folk.png"
 					}
 				}
 			]
@@ -213,7 +213,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/MFF/Dire Corby.webp"
+						"path": "bestiary/MFF/Dire Corby.png"
 					}
 				}
 			]
@@ -260,7 +260,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/MFF/Eye of Fear and Flame.webp"
+						"path": "bestiary/MFF/Eye of Fear and Flame.png"
 					}
 				}
 			]
@@ -321,7 +321,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/MFF/Fog Giant.webp"
+						"path": "bestiary/MFF/Fog Giant.png"
 					}
 				}
 			]
@@ -370,7 +370,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/MFF/Forlarren.webp"
+						"path": "bestiary/MFF/Forlarren.png"
 					}
 				}
 			]
@@ -424,7 +424,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/MFF/Jermlaine.webp"
+						"path": "bestiary/MFF/Jermlaine.png"
 					}
 				}
 			]
@@ -472,7 +472,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/MFF/Khargra.webp"
+						"path": "bestiary/MFF/Khargra.png"
 					}
 				}
 			]
@@ -521,7 +521,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/MFF/Killmoulis.webp"
+						"path": "bestiary/MFF/Killmoulis.png"
 					}
 				}
 			]
@@ -575,7 +575,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/MFF/Mite.webp"
+						"path": "bestiary/MFF/Mite.png"
 					}
 				}
 			]
@@ -631,7 +631,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/MFF/Needle Spawn.webp"
+						"path": "bestiary/MFF/Needle Spawn.png"
 					}
 				}
 			]
@@ -678,7 +678,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/MFF/Norker.webp"
+						"path": "bestiary/MFF/Norker.png"
 					}
 				}
 			]
@@ -733,7 +733,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/MFF/Screaming Devilkin.webp"
+						"path": "bestiary/MFF/Screaming Devilkin.png"
 					}
 				}
 			]
@@ -780,7 +780,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/MFF/Xill.webp"
+						"path": "bestiary/MFF/Xill.png"
 					}
 				}
 			]
@@ -821,7 +821,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/MFF/Ygorl, Lord of Entropy.webp"
+						"path": "bestiary/MFF/Ygorl, Lord of Entropy.png"
 					}
 				}
 			]

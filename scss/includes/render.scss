@@ -5,6 +5,7 @@ Renderer
 @import "vars";
 
 $rgb-inset-border: #656565;
+$w-list-indent: 24px;
 
 :root {
 	--sz-font-h0: 1.8em;
@@ -12,13 +13,10 @@ $rgb-inset-border: #656565;
 	--sz-font-h2: 1.35em;
 
 	--h-mb-p: 5px;
-	--h-mb-p-inline: 0;
 	--h-mb-quote-line: 5px;
 	--h-mb-quote-line-last: 5px;
 	--h-mb-li: 3px;
 	--w-text-indent-inline-p: 0.7em;
-	--w-pl-list: 24px;
-	--w-pl-list-no-bullets: 10px;
 }
 
 @mixin rd__h--large() {
@@ -77,21 +75,16 @@ $rgb-inset-border: #656565;
 		&list {
 			margin-top: 0;
 			margin-bottom: var(--h-mb-p);
-			padding-left: var(--w-pl-list);
+			padding-left: $w-list-indent;
 
 			> .rd__list:last-child {
 				margin-bottom: 0;
-			}
-
-			> .rd__list-name {
-				margin-left: calc(-1 * var(--w-pl-list));
 			}
 		}
 
 		&list-name {
 			margin: 0 0 var(--h-mb-li);
 			font-weight: bold;
-			list-style-type: none;
 		}
 
 		&li {
@@ -143,11 +136,6 @@ $rgb-inset-border: #656565;
 		&wrp-gallery-image {
 			padding: 0 10px 10px;
 			max-width: 33%;
-		}
-
-		&gallery-name {
-			font-style: italic;
-			text-decoration: underline;
 		}
 
 		&quote {
@@ -254,7 +242,7 @@ $rgb-inset-border: #656565;
 			list-style: none;
 
 			> .rd__list-name {
-				margin-left: calc(-1 * var(--w-pl-list));
+				margin-left: -$w-list-indent;
 			}
 
 			// Firefox workaround; list bullets are pseudo-elements "::marker"
@@ -278,23 +266,11 @@ $rgb-inset-border: #656565;
 
 		&list-no-bullets {
 			list-style: none;
-			padding: 0 0 0 var(--w-pl-list-no-bullets);
-
-			> .rd__list-name {
-				margin-left: calc(-1 * var(--w-pl-list-no-bullets));
-			}
+			padding: 0 10px;
 		}
 
 		&list-italic {
 			font-style: italic;
-		}
-
-		&quote {
-			&-pull {
-				padding: 10px 15px;
-				text-align: center;
-				font-size: 125%;
-			}
 		}
 
 		// section headers
@@ -387,7 +363,7 @@ $rgb-inset-border: #656565;
 		&b--3 > p,
 		&b--4 > p {
 			text-indent: var(--w-text-indent-inline-p);
-			margin-bottom: var(--h-mb-p-inline);
+			margin-bottom: 0;
 
 			&:first-of-type {
 				display: inline;
@@ -435,7 +411,6 @@ $rgb-inset-border: #656565;
 			border-right-width: 1px;
 			margin: 5px;
 			width: calc(100% - 12px);
-			table-layout: fixed;
 
 			&--inset {
 				box-shadow: 0 0 4px 0 rgb(152, 142, 124);
@@ -521,8 +496,8 @@ $rgb-inset-border: #656565;
 			}
 
 			&-img-speaker {
-				margin-top: -5px;
-				margin-bottom: -5px;
+				margin-top: -20px;
+				margin-bottom: -20px;
 
 				&--left {
 					float: left;
@@ -628,39 +603,6 @@ $rgb-inset-border: #656565;
 			&stroke-bg {
 				stroke: $rgb-bg;
 			}
-		}
-	}
-
-	&-homebrew__ {
-		&b {
-			background-color: $rgb-bg-homebrew;
-			clear: both;
-		}
-
-		&wrp-notice {
-			float: right;
-			border: 1px dotted;
-			margin-bottom: 5px;
-			margin-left: 5px;
-			padding-right: 2px;
-			padding-left: 2px;
-			text-indent: 0;
-		}
-
-		&disp-notice {
-			&::before {
-				content: "Homebrew";
-			}
-		}
-
-		&disp-old-content {
-			color: #a00;
-			margin-left: 5px;
-		}
-
-		&disp-inline {
-			background-color: $rgb-bg-homebrew;
-			text-decoration: underline dotted;
 		}
 	}
 }

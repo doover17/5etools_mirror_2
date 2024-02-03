@@ -1,9 +1,4 @@
 {
-	"_meta": {
-		"internalCopies": [
-			"monsterFluff"
-		]
-	},
 	"monsterFluff": [
 		{
 			"name": "Anarch",
@@ -31,9 +26,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Anarch.webp"
-					},
-					"credit": "Wayne Reynolds"
+						"path": "bestiary/GGR/Anarch.jpg"
+					}
 				}
 			]
 		},
@@ -78,9 +72,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Archon of the Triumvirate.webp"
-					},
-					"credit": "David Rapoza"
+						"path": "bestiary/GGR/Archon of the Triumvirate.jpg"
+					}
 				}
 			]
 		},
@@ -118,9 +111,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Arclight Phoenix.webp"
-					},
-					"credit": "Slawomir Maniak"
+						"path": "bestiary/GGR/Arclight Phoenix.jpg"
+					}
 				}
 			]
 		},
@@ -159,9 +151,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Aurelia.webp"
-					},
-					"credit": "Chris Rahn"
+						"path": "bestiary/GGR/Aurelia.jpg"
+					}
 				}
 			]
 		},
@@ -206,9 +197,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Battleforce Angel.webp"
-					},
-					"credit": "Alex Konstad"
+						"path": "bestiary/GGR/Battleforce Angel.jpg"
+					}
 				}
 			]
 		},
@@ -238,9 +228,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Biomancer.webp"
-					},
-					"credit": "Mike Bierek"
+						"path": "bestiary/GGR/Biomancer.jpg"
+					}
 				}
 			]
 		},
@@ -284,9 +273,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Blistercoil Weird.webp"
-					},
-					"credit": "Dan Scott"
+						"path": "bestiary/GGR/Blistercoil Weird.jpg"
+					}
 				}
 			]
 		},
@@ -338,9 +326,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Blood Drinker Vampire.webp"
-					},
-					"credit": "Winona Nelson"
+						"path": "bestiary/GGR/Blood Drinker Vampire.jpg"
+					}
 				}
 			]
 		},
@@ -371,9 +358,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Blood Witch.webp"
-					},
-					"credit": "Michael C. Hayes"
+						"path": "bestiary/GGR/Blood Witch.jpg"
+					}
 				}
 			]
 		},
@@ -410,9 +396,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Bloodfray Giant.webp"
-					},
-					"credit": "Steve Argyle"
+						"path": "bestiary/GGR/Bloodfray Giant.jpg"
+					}
 				}
 			]
 		},
@@ -451,8 +436,7 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/GGR/Borborygmos.webp"
-					},
-					"credit": "Todd Lockwood"
+					}
 				}
 			]
 		},
@@ -504,9 +488,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Cackler.webp"
-					},
-					"credit": "Ryan Barger"
+						"path": "bestiary/GGR/Cackler.jpg"
+					}
 				}
 			]
 		},
@@ -637,9 +620,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Category 1 Krasis.webp"
-					},
-					"credit": "Wesley Burt"
+						"path": "bestiary/GGR/Category 1 Krasis.jpg"
+					}
 				}
 			]
 		},
@@ -770,9 +752,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Category 2 Krasis.webp"
-					},
-					"credit": "Lius Lasahido"
+						"path": "bestiary/GGR/Category 2 Krasis.jpg"
+					}
 				}
 			]
 		},
@@ -903,9 +884,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Category 3 Krasis.webp"
-					},
-					"credit": "Jehan Choo"
+						"path": "bestiary/GGR/Category 3 Krasis.jpg"
+					}
 				}
 			]
 		},
@@ -943,9 +923,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Conclave Dryad.webp"
-					},
-					"credit": "Ryan Pancoast"
+						"path": "bestiary/GGR/Conclave Dryad.jpg"
+					}
 				}
 			]
 		},
@@ -997,9 +976,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Counterflux Blastseeker.webp"
-					},
-					"credit": "Peter Mohrbacher"
+						"path": "bestiary/GGR/Counterflux Blastseeker.jpg"
+					}
 				}
 			]
 		},
@@ -1052,9 +1030,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Deathpact Angel.webp"
-					},
-					"credit": "Jason Chan"
+						"path": "bestiary/GGR/Deathpact Angel.jpg"
+					}
 				}
 			]
 		},
@@ -1092,9 +1069,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Devkarin Lich.webp"
-					},
-					"credit": "Anna Steinbauer"
+						"path": "bestiary/GGR/Devkarin Lich.jpg"
+					}
 				}
 			]
 		},
@@ -1131,9 +1107,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Druid of the Old Ways.webp"
-					},
-					"credit": "Daarken"
+						"path": "bestiary/GGR/Druid of the Old Ways.jpg"
+					}
 				}
 			]
 		},
@@ -1164,9 +1139,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Felidar.webp"
-					},
-					"credit": "Chris Rallis"
+						"path": "bestiary/GGR/Felidar.jpg"
+					}
 				}
 			]
 		},
@@ -1196,9 +1170,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Firefist.webp"
-					},
-					"credit": "James Ryman"
+						"path": "bestiary/GGR/Firefist.jpg"
+					}
 				}
 			]
 		},
@@ -1244,9 +1217,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Firemane Angel.webp"
-					},
-					"credit": "Clint Cearley"
+						"path": "bestiary/GGR/Firemane Angel.jpg"
+					}
 				}
 			]
 		},
@@ -1313,9 +1285,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Fluxcharger.webp"
-					},
-					"credit": "Willian Murai"
+						"path": "bestiary/GGR/Fluxcharger.jpg"
+					}
 				}
 			]
 		},
@@ -1455,9 +1426,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Flying Horror.webp"
-					},
-					"credit": "Adam Paquette"
+						"path": "bestiary/GGR/Flying Horror.png"
+					}
 				}
 			]
 		},
@@ -1509,9 +1479,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/041-228.webp"
-					},
-					"credit": "Chris Rallis"
+						"path": "bestiary/GGR/041-228.png"
+					}
 				}
 			]
 		},
@@ -1555,9 +1524,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Galvanice Weird.webp"
-					},
-					"credit": "Chris Rallis"
+						"path": "bestiary/GGR/Galvanice Weird.jpg"
+					}
 				}
 			]
 		},
@@ -1587,9 +1555,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Gloamwing.webp"
-					},
-					"credit": "Steven Belledin"
+						"path": "bestiary/GGR/Gloamwing.jpg"
+					}
 				}
 			]
 		},
@@ -1657,9 +1624,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Guardian Giant.webp"
-					},
-					"credit": "Aaron Miller"
+						"path": "bestiary/GGR/Guardian Giant.png"
+					}
 				}
 			]
 		},
@@ -1689,9 +1655,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Horncaller.webp"
-					},
-					"credit": "Howard Lyon"
+						"path": "bestiary/GGR/Horncaller.jpg"
+					}
 				}
 			]
 		},
@@ -1745,9 +1710,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Hybrid Flier.webp"
-					},
-					"credit": "Grzegorz Rutkowski"
+						"path": "bestiary/GGR/Hybrid Flier.jpg"
+					}
 				}
 			]
 		},
@@ -1801,9 +1765,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Hybrid Shocker.webp"
-					},
-					"credit": "Simon Dominic"
+						"path": "bestiary/GGR/Hybrid Shocker.jpg"
+					}
 				}
 			]
 		},
@@ -1857,9 +1820,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Indentured Spirit.webp"
-					},
-					"credit": "Josh Hass"
+						"path": "bestiary/GGR/Indentured Spirit.jpg"
+					}
 				}
 			]
 		},
@@ -1891,9 +1853,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Isperia.webp"
-					},
-					"credit": "Scott M. Fischer"
+						"path": "bestiary/GGR/Isperia.jpg"
+					}
 				}
 			]
 		},
@@ -1931,9 +1892,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Jarad Vod Savo.webp"
-					},
-					"credit": "Eric Deschamps"
+						"path": "bestiary/GGR/Jarad Vod Savo.jpg"
+					}
 				}
 			]
 		},
@@ -1971,9 +1931,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Kraul Death Priest.webp"
-					},
-					"credit": "Mathias Kollros"
+						"path": "bestiary/GGR/Kraul Death Priest.jpg"
+					}
 				}
 			]
 		},
@@ -2010,9 +1969,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Kraul Warrior.webp"
-					},
-					"credit": "Kev Walker"
+						"path": "bestiary/GGR/Kraul Warrior.jpg"
+					}
 				}
 			]
 		},
@@ -2065,8 +2023,7 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/GGR/Lazav.webp"
-					},
-					"credit": "Yongjae Choi"
+					}
 				}
 			]
 		},
@@ -2119,9 +2076,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Master of Cruelties.webp"
-					},
-					"credit": "Chase Stone"
+						"path": "bestiary/GGR/Master of Cruelties.jpg"
+					}
 				}
 			]
 		},
@@ -2173,9 +2129,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Mind Drinker Vampire.webp"
-					},
-					"credit": "Darek Zabrocki"
+						"path": "bestiary/GGR/Mind Drinker Vampire.jpg"
+					}
 				}
 			]
 		},
@@ -2249,9 +2204,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Nightveil Specter.webp"
-					},
-					"credit": "Min Yum"
+						"path": "bestiary/GGR/Nightveil Specter.jpg"
+					}
 				}
 			]
 		},
@@ -2282,9 +2236,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Niv-Mizzet.webp"
-					},
-					"credit": "Todd Lockwood"
+						"path": "bestiary/GGR/Niv-Mizzet.jpg"
+					}
 				}
 			]
 		},
@@ -2315,9 +2268,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Nivix Cyclops.webp"
-					},
-					"credit": "Wayne Reynolds"
+						"path": "bestiary/GGR/Nivix Cyclops.jpg"
+					}
 				}
 			]
 		},
@@ -2372,9 +2324,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Obzedat Ghost.webp"
-					},
-					"credit": "Svetlin Velinov"
+						"path": "bestiary/GGR/Obzedat Ghost.jpg"
+					}
 				}
 			]
 		},
@@ -2411,9 +2362,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Orzhov Giant.webp"
-					},
-					"credit": "Karl Kopinski"
+						"path": "bestiary/GGR/Orzhov Giant.jpg"
+					}
 				}
 			]
 		},
@@ -2443,9 +2393,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Precognitive Mage.webp"
-					},
-					"credit": "Chris Rallis"
+						"path": "bestiary/GGR/Precognitive Mage.jpg"
+					}
 				}
 			]
 		},
@@ -2476,9 +2425,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Rakdos.webp"
-					},
-					"credit": "Randy Vargas"
+						"path": "bestiary/GGR/Rakdos.jpg"
+					}
 				}
 			]
 		},
@@ -2508,9 +2456,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Rakdos Lampooner.webp"
-					},
-					"credit": "Viktor Adame Minguez"
+						"path": "bestiary/GGR/Rakdos Lampooner.jpg"
+					}
 				}
 			]
 		},
@@ -2540,27 +2487,72 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Rakdos Performer.webp"
-					},
-					"credit": "Eric Deschamps"
+						"path": "bestiary/GGR/Rakdos Performer.jpg"
+					}
 				}
 			]
 		},
 		{
 			"name": "Rakdos Performer, Fire Eater",
 			"source": "GGR",
-			"_copy": {
-				"name": "Rakdos Performer, Blade Juggler",
-				"source": "GGR"
-			}
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"entries": [
+										"By offering a place for those of many different talents, the Cult of Rakdos has seen its numbers swell with performing artists, including blade jugglers, fire eaters, and high wire acrobats. Performers carry the message of Rakdos out into the streets: cut loose, free yourself from the bonds of society's mores and expectations, and indulge your desires."
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/GGR/Rakdos Performer.jpg"
+					}
+				}
+			]
 		},
 		{
 			"name": "Rakdos Performer, High-Wire Acrobat",
 			"source": "GGR",
-			"_copy": {
-				"name": "Rakdos Performer, Blade Juggler",
-				"source": "GGR"
-			}
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "entries",
+							"entries": [
+								{
+									"type": "entries",
+									"entries": [
+										"By offering a place for those of many different talents, the Cult of Rakdos has seen its numbers swell with performing artists, including blade jugglers, fire eaters, and high wire acrobats. Performers carry the message of Rakdos out into the streets: cut loose, free yourself from the bonds of society's mores and expectations, and indulge your desires."
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/GGR/Rakdos Performer.jpg"
+					}
+				}
+			]
 		},
 		{
 			"name": "Reckoner",
@@ -2588,9 +2580,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Reckoner.webp"
-					},
-					"credit": "Howard Lyon"
+						"path": "bestiary/GGR/Reckoner.jpg"
+					}
 				}
 			]
 		},
@@ -2642,9 +2633,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Scorchbringer Guard.webp"
-					},
-					"credit": "Jack Wang"
+						"path": "bestiary/GGR/Scorchbringer Guard.jpg"
+					}
 				}
 			]
 		},
@@ -2819,9 +2809,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Shadow Horror.webp"
-					},
-					"credit": "Igor Kieryluk"
+						"path": "bestiary/GGR/Shadow Horror.jpg"
+					}
 				}
 			]
 		},
@@ -2874,9 +2863,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Sire of Insanity.webp"
-					},
-					"credit": "Johann Bodin"
+						"path": "bestiary/GGR/Sire of Insanity.jpg"
+					}
 				}
 			]
 		},
@@ -3015,9 +3003,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Skittering Horror.webp"
-					},
-					"credit": "Karl Kopinski"
+						"path": "bestiary/GGR/Skittering Horror.jpg"
+					}
 				}
 			]
 		},
@@ -3049,9 +3036,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Skyjek Roc.webp"
-					},
-					"credit": "Titus Lunter"
+						"path": "bestiary/GGR/Skyjek Roc.jpg"
+					}
 				}
 			]
 		},
@@ -3081,9 +3067,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Skyswimmer.webp"
-					},
-					"credit": "Rk Post"
+						"path": "bestiary/GGR/Skyswimmer.jpg"
+					}
 				}
 			]
 		},
@@ -3143,9 +3128,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Sunder Shaman.webp"
-					},
-					"credit": "Jason Rainville"
+						"path": "bestiary/GGR/Sunder Shaman.jpg"
+					}
 				}
 			]
 		},
@@ -3198,9 +3182,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Trostani.webp"
-					},
-					"credit": "Chippy"
+						"path": "bestiary/GGR/Trostani.jpg"
+					}
 				}
 			]
 		},
@@ -3233,9 +3216,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Undercity Medusa.webp"
-					},
-					"credit": "Alex Konstad"
+						"path": "bestiary/GGR/Undercity Medusa.jpg"
+					}
 				}
 			]
 		},
@@ -3279,9 +3261,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Winged Thrull.webp"
-					},
-					"credit": "Mark Zug"
+						"path": "bestiary/GGR/Winged Thrull.jpg"
+					}
 				}
 			]
 		},
@@ -3311,9 +3292,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Wurm.webp"
-					},
-					"credit": "Filip Burburan"
+						"path": "bestiary/GGR/Wurm.jpg"
+					}
 				}
 			]
 		},
@@ -3343,9 +3323,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/GGR/Zegana.webp"
-					},
-					"credit": "Willian Murai"
+						"path": "bestiary/GGR/Zegana.jpg"
+					}
 				}
 			]
 		}

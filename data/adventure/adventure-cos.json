@@ -379,7 +379,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/000-cos01-01.webp"
+										"path": "adventure/CoS/000-cos01-01.png"
 									},
 									"width": 1000,
 									"height": 1000
@@ -591,7 +591,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/001-cos01-01a.webp"
+										"path": "adventure/CoS/001-cos01-01a.png"
 									},
 									"width": 872,
 									"height": 629
@@ -628,7 +628,7 @@
 												"This card tells of a powerful force for good and protection, a holy symbol of great hope."
 											]
 										},
-										"This card determines the location of the {@item Holy Symbol of Ravenkind|CoS} (described in {@adventure appendix C|CoS|20}). Read the boxed text for the appropriate card, as given in the \"{@area Treasure Locations|02c|x}\" section that follows."
+										"This card determines the location of the {@item Holy Symbol of Ravenkind|CoS} (described in {@adventure appendix C|CoS|20|{@item Holy Symbol of Ravenkind|CoS}}). Read the boxed text for the appropriate card, as given in the \"{@area Treasure Locations|02c|x}\" section that follows."
 									]
 								},
 								{
@@ -645,7 +645,7 @@
 												"This is a card of power and strength. It tells of a weapon of vengeance: a sword of sunlight."
 											]
 										},
-										"This card determines the location of the {@item Sunsword|CoS} (described in {@adventure appendix C|CoS|20}). Read the boxed text for the appropriate card, as given in the \"{@area Treasure Locations|02c|x}\" section that follows."
+										"This card determines the location of the {@item Sunsword|CoS} (described in {@adventure appendix C|CoS|20|{@item Sunsword|CoS}}). Read the boxed text for the appropriate card, as given in the \"{@area Treasure Locations|02c|x}\" section that follows."
 									]
 								},
 								{
@@ -1454,7 +1454,7 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/CoS/002-cos01-02.webp"
+								"path": "adventure/CoS/002-cos01-02.png"
 							},
 							"width": 1000,
 							"height": 748
@@ -1483,7 +1483,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/003-cos19-10.webp"
+										"path": "adventure/CoS/003-cos19-10.png"
 									},
 									"title": "Strahd's Crest",
 									"width": 1000,
@@ -1792,7 +1792,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/CoS/004-cos02-01.webp"
+						"path": "adventure/CoS/004-cos02-01.png"
 					},
 					"width": 1000,
 					"height": 1000
@@ -1906,7 +1906,7 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/CoS/005-cos02-02.webp"
+								"path": "adventure/CoS/005-cos02-02.png"
 							},
 							"width": 1000,
 							"height": 654
@@ -2062,7 +2062,7 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/CoS/006-cos02-03.webp"
+								"path": "adventure/CoS/006-cos02-03.png"
 							},
 							"width": 2018,
 							"height": 2235
@@ -3144,7 +3144,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/007-001.webp"
+										"path": "adventure/CoS/007-001.jpg"
 									},
 									"title": "Map 2.1: Barovia",
 									"width": 5025,
@@ -3758,7 +3758,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/008-cos201.webp"
+										"path": "adventure/CoS/008-cos201.jpg"
 									},
 									"title": "Player Version",
 									"width": 5025,
@@ -3813,7 +3813,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/009-cos02-04.webp"
+										"path": "adventure/CoS/009-cos02-04.png"
 									},
 									"width": 1000,
 									"height": 593
@@ -4002,7 +4002,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/010-cos02-06.webp"
+												"path": "adventure/CoS/010-cos02-06.jpg"
 											},
 											"title": "Map 2.2: Tser Pool Encampment",
 											"width": 1000,
@@ -4021,7 +4021,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/011-cos202.webp"
+												"path": "adventure/CoS/011-cos202.jpg"
 											},
 											"title": "Player Version",
 											"width": 1950,
@@ -4474,7 +4474,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/CoS/012-cos03-01.webp"
+						"path": "adventure/CoS/012-cos03-01.png"
 					},
 					"width": 1000,
 					"height": 1000
@@ -4482,11 +4482,12 @@
 				"The village of Barovia is the saddest place in the land, its residents so terrified of Strahd that they rarely venture from their homes. The village lies in the shadow of Castle Ravenloft, buried under fog but still unable to hide from the vampire's sight.",
 				"Until recently, Strahd had been paying nightly visits to {@creature Ireena Kolyana|CoS}, the adopted daughter of the village burgomaster. Ireena carries the soul of Strahd's beloved Tatyana and looks exactly like her. Strahd intends to make Ireena his bride, turn her into a vampire, and lock her away in the castle crypts for all time.",
 				{
-					"type": "quote",
+					"type": "insetReadaloud",
+					"id": "13c",
 					"entries": [
-						"Same voice, same face, same graceful body, she was Tatyana come back to life again. I was absolutely witless from astonishment."
-					],
-					"by": "{@creature Strahd von Zarovich|CoS} in I, Strahd: The Memoirs of a Vampire"
+						"Same voice, same face, same graceful body, she was Tatyana come back to life again. I was absolutely witless from astonishment.",
+						"\u2014{@creature Strahd von Zarovich|CoS} in I, Strahd: The Memoirs of a Vampire"
+					]
 				},
 				{
 					"type": "section",
@@ -4586,7 +4587,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/013-003.webp"
+										"path": "adventure/CoS/013-003.jpg"
 									},
 									"title": "Map 3.1: Village of Barovia",
 									"width": 1950,
@@ -4758,7 +4759,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/014-cos301.webp"
+										"path": "adventure/CoS/014-cos301.jpg"
 									},
 									"title": "Player Version",
 									"width": 1950,
@@ -4819,7 +4820,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/015-cos03-03.webp"
+												"path": "adventure/CoS/015-cos03-03.png"
 											},
 											"title": "Ismark the Lesser",
 											"width": 789,
@@ -4879,7 +4880,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/016-cos03-04.webp"
+										"path": "adventure/CoS/016-cos03-04.png"
 									},
 									"title": "{@creature Mad Mary|CoS}",
 									"width": 823,
@@ -4924,7 +4925,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/017-cos03-05.webp"
+												"path": "adventure/CoS/017-cos03-05.png"
 											},
 											"title": "{@creature Ireena Kolyana|CoS}",
 											"width": 1000,
@@ -4967,7 +4968,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/018-004.webp"
+												"path": "adventure/CoS/018-004.jpg"
 											},
 											"title": "Map 3.2: Church",
 											"width": 2400,
@@ -5137,7 +5138,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/019-cos302.webp"
+												"path": "adventure/CoS/019-cos302.jpg"
 											},
 											"title": "Player Version",
 											"width": 2400,
@@ -5261,7 +5262,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/020-cos03-07.webp"
+												"path": "adventure/CoS/020-cos03-07.png"
 											},
 											"title": "{@creature Donavich|CoS}",
 											"width": 853,
@@ -5306,7 +5307,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/021-cos03-08.webp"
+												"path": "adventure/CoS/021-cos03-08.png"
 											},
 											"title": "{@creature Doru|CoS}",
 											"width": 830,
@@ -5408,7 +5409,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/022-cos03-09.webp"
+										"path": "adventure/CoS/022-cos03-09.png"
 									},
 									"width": 1000,
 									"height": 240
@@ -5429,7 +5430,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/CoS/023-cos04-01.webp"
+						"path": "adventure/CoS/023-cos04-01.png"
 					},
 					"width": 1000,
 					"height": 1000
@@ -6172,7 +6173,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/024-005.webp"
+										"path": "adventure/CoS/024-005.jpg"
 									},
 									"title": "Map 2: Walls of Ravenloft",
 									"width": 2248,
@@ -6363,7 +6364,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/024-005-player.webp"
+										"path": "adventure/CoS/024-005-player.jpg"
 									},
 									"title": "Player Version",
 									"imageType": "mapPlayer",
@@ -6532,7 +6533,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/025-006.webp"
+										"path": "adventure/CoS/025-006.jpg"
 									},
 									"title": "Map 3: Main Floor",
 									"width": 2473,
@@ -7444,7 +7445,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/025-006-player.webp"
+										"path": "adventure/CoS/025-006-player.jpg"
 									},
 									"title": "Player Version",
 									"imageType": "mapPlayer",
@@ -7577,7 +7578,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/026-cos04-04.webp"
+										"path": "adventure/CoS/026-cos04-04.png"
 									},
 									"width": 1000,
 									"height": 742
@@ -7671,7 +7672,7 @@
 									"page": 57,
 									"id": "1c7",
 									"entries": [
-										"The statuette on the altar is an artifact called the {@item Icon of Ravenloft|CoS} (see {@adventure appendix C|CoS|20}). Any evil creature that touches the statuette must make a DC 17 Constitution saving throw, taking 88 ({@dice 16d10}) radiant damage on a failed save, or half as much damage on a successful one. The statuette is safe for all creatures to handle once it is no longer in contact with the altar.",
+										"The statuette on the altar is an artifact called the {@item Icon of Ravenloft|CoS} (see {@adventure appendix C|CoS|20|{@item Icon of Ravenloft|CoS}}). Any evil creature that touches the statuette must make a DC 17 Constitution saving throw, taking 88 ({@dice 16d10}) radiant damage on a failed save, or half as much damage on a successful one. The statuette is safe for all creatures to handle once it is no longer in contact with the altar.",
 										"Gustav's corpse wears a handsome, fur-lined black cloak embroidered with golden thread (worth 250 gp) and a suit of {@item chain mail|PHB}, both nonmagical. Gustav's black mace is a {@item mace of terror}."
 									]
 								},
@@ -7803,7 +7804,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/027-cos04-05.webp"
+												"path": "adventure/CoS/027-cos04-05.jpg"
 											},
 											"width": 753,
 											"height": 1000
@@ -7926,7 +7927,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/028-007.webp"
+										"path": "adventure/CoS/028-007.jpg"
 									},
 									"title": "Map 4: Court of the Count",
 									"width": 2389,
@@ -8552,7 +8553,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/028-007-player.webp"
+										"path": "adventure/CoS/028-007-player.jpg"
 									},
 									"title": "Player Version",
 									"imageType": "mapPlayer",
@@ -8706,7 +8707,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/029-cos04-07.webp"
+										"path": "adventure/CoS/029-cos04-07.png"
 									},
 									"title": "{@creature Lief Lipsiege|CoS}",
 									"width": 751,
@@ -8899,7 +8900,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/030-008.webp"
+										"path": "adventure/CoS/030-008.jpg"
 									},
 									"title": "Map 5: Rooms of Weeping",
 									"width": 2338,
@@ -9692,7 +9693,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/030-008-player.webp"
+										"path": "adventure/CoS/030-008-player.png"
 									},
 									"title": "Player Version",
 									"imageType": "mapPlayer",
@@ -9801,7 +9802,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/031-cos04-09.webp"
+												"path": "adventure/CoS/031-cos04-09.png"
 											},
 											"title": "Tatyana",
 											"width": 431,
@@ -10022,7 +10023,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/032-cos04-10.webp"
+										"path": "adventure/CoS/032-cos04-10.png"
 									},
 									"title": "{@creature Gertruda|CoS}",
 									"width": 589,
@@ -10137,7 +10138,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/033-009.webp"
+										"path": "adventure/CoS/033-009.jpg"
 									},
 									"title": "Map 6: Spires of Ravenloft",
 									"width": 2400,
@@ -10526,7 +10527,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/033-009-player.webp"
+										"path": "adventure/CoS/033-009-player.png"
 									},
 									"title": "Player Version",
 									"imageType": "mapPlayer",
@@ -10562,7 +10563,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/034-cos04-11.webp"
+										"path": "adventure/CoS/034-cos04-11.png"
 									},
 									"width": 733,
 									"height": 1000
@@ -10607,7 +10608,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/035-cos04-20.webp"
+										"path": "adventure/CoS/035-cos04-20.png"
 									},
 									"title": "{@creature Escher|CoS} and the Three Brides",
 									"width": 915,
@@ -10748,7 +10749,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/036-010.webp"
+												"path": "adventure/CoS/036-010.jpg"
 											},
 											"title": "Maps 7-10: Spires and Tower of Ravenloft",
 											"width": 1181,
@@ -11515,7 +11516,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/036-010-player.webp"
+												"path": "adventure/CoS/036-010-player.jpg"
 											},
 											"title": "Player Version",
 											"imageType": "mapPlayer",
@@ -11670,7 +11671,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/037-cos19-10.webp"
+										"path": "adventure/CoS/037-cos19-10.png"
 									},
 									"width": 1000,
 									"height": 820
@@ -11739,7 +11740,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/038-011.webp"
+										"path": "adventure/CoS/038-011.jpg"
 									},
 									"title": "Map 11: Larders of Ill Omen & Map 12: Dungeon and Catacombs",
 									"width": 2427,
@@ -14030,7 +14031,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/038-011-player.webp"
+										"path": "adventure/CoS/038-011-player.jpg"
 									},
 									"title": "Player Version",
 									"imageType": "mapPlayer",
@@ -14069,7 +14070,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/039-012.webp"
+												"path": "adventure/CoS/039-012.jpg"
 											},
 											"title": "Map: Elevator Trap",
 											"width": 1200,
@@ -14260,7 +14261,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/040-cos401.webp"
+												"path": "adventure/CoS/040-cos401.jpg"
 											},
 											"title": "Player Version",
 											"width": 1200,
@@ -14316,7 +14317,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/041-cos04-16.webp"
+										"path": "adventure/CoS/041-cos04-16.png"
 									},
 									"title": "{@creature Cyrus Belview|CoS}",
 									"width": 781,
@@ -14591,7 +14592,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/042-cos04-17.webp"
+										"path": "adventure/CoS/042-cos04-17.png"
 									},
 									"title": "Map: Traps in Area K73",
 									"width": 1000,
@@ -14922,7 +14923,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/043-cos04-18.webp"
+												"path": "adventure/CoS/043-cos04-18.png"
 											},
 											"title": "{@creature Emil Toranescu|CoS}",
 											"width": 802,
@@ -15046,7 +15047,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/044-cos04-19.webp"
+										"path": "adventure/CoS/044-cos04-19.jpg"
 									},
 									"width": 753,
 									"height": 1000
@@ -15446,7 +15447,7 @@
 											"page": 86,
 											"id": "2bb",
 											"entries": [
-												"A {@spell detect magic} spell reveals that the thighbone radiates an aura of evocation magic. See {@adventure appendix C|CoS|20} for more information on {@item Saint Markovia's thighbone|CoS}."
+												"A {@spell detect magic} spell reveals that the thighbone radiates an aura of evocation magic. See {@adventure appendix C|CoS|20|{@item Saint Markovia's Thighbone|CoS}} for more information on {@item Saint Markovia's thighbone|CoS}."
 											]
 										}
 									]
@@ -16380,7 +16381,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/045-cos04-21.webp"
+										"path": "adventure/CoS/045-cos04-21.png"
 									},
 									"title": "King Barov and Queen Ravenovia",
 									"width": 942,
@@ -16417,7 +16418,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/CoS/046-cos05-01.webp"
+						"path": "adventure/CoS/046-cos05-01.png"
 					},
 					"width": 1000,
 					"height": 1000
@@ -16425,11 +16426,12 @@
 				"Vallaki was founded not long after Strahd's armies conquered the valley by an ancestor of the town's current burgomaster, {@creature Baron Vargas Vallakovich|CoS}. The Vallakoviches have royal blood in their veins and have long believed themselves superior to the Zarovich line. Baron Vallakovich has deluded himself into believing that hope and happiness are the keys to Vallaki's salvation. If he can make everyone in Vallaki happy, the burgomaster thinks that the town will somehow escape Strahd's grasp and return to the forgotten world whence it came. He stages one festival after another to bolster the spirits of the townsfolk, but most Vallakians consider these festivals to be pointless, meaningless affairs more likely to incur Strahd's wrath than to provide any hope for the future.",
 				"In the last festival, Baron Vallakovich had townsfolk parade through the streets with the severed heads of wolves on pikes. His next event, which the burgomaster has dubbed the Festival of the Blazing Sun, is soon to get under way (see the \"{@area Special Events|406|x}\" section at the end of this chapter). Weatherworn garlands from previous festivals still hang from the eaves of Vallaki's buildings, and work has begun on a large wicker sun, to be set ablaze in the town square on the day of the festival. In the days leading up to the festival, Baron Vallakovich has begun arresting local malcontents and throwing them in the stocks so that his efforts aren't ruined by \"those of little hope or faith.\"",
 				{
-					"type": "quote",
+					"type": "insetReadaloud",
+					"id": "326",
 					"entries": [
-						"There is no light in the eyes of the men that feed off this land. They are as dead as the dead."
-					],
-					"by": "{@creature Strahd von Zarovich|CoS}"
+						"There is no light in the eyes of the men that feed off this land. They are as dead as the dead.",
+						"\u2014{@creature Strahd von Zarovich|CoS}"
+					]
 				},
 				{
 					"type": "section",
@@ -16454,7 +16456,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/047-013.webp"
+										"path": "adventure/CoS/047-013.jpg"
 									},
 									"title": "Map 5.1: Vallaki (Area N)",
 									"width": 1950,
@@ -16666,7 +16668,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/048-cos05-02-player.webp"
+										"path": "adventure/CoS/048-cos05-02-player.jpg"
 									},
 									"title": "Player Version",
 									"width": 1950,
@@ -16825,7 +16827,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/049-cos05-03.webp"
+										"path": "adventure/CoS/049-cos05-03.png"
 									},
 									"title": "{@creature Milivoj|CoS}",
 									"width": 746,
@@ -16878,7 +16880,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/050-014.webp"
+												"path": "adventure/CoS/050-014.jpg"
 											},
 											"title": "Map 5.2: Blue Water Inn (Area N2)",
 											"width": 2400,
@@ -17336,7 +17338,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/051-cos501.webp"
+												"path": "adventure/CoS/051-cos501.jpg"
 											},
 											"title": "Player Version",
 											"width": 2400,
@@ -17435,7 +17437,7 @@
 															"type": "image",
 															"href": {
 																"type": "internal",
-																"path": "adventure/CoS/052-cos05-05.webp"
+																"path": "adventure/CoS/052-cos05-05.png"
 															},
 															"title": "{@creature Szoldar Szoldarovich|CoS}",
 															"width": 697,
@@ -17445,7 +17447,7 @@
 															"type": "image",
 															"href": {
 																"type": "internal",
-																"path": "adventure/CoS/053-cos05-06.webp"
+																"path": "adventure/CoS/053-cos05-06.png"
 															},
 															"title": "{@creature Yevgeni Krushkin|CoS}",
 															"width": 774,
@@ -17715,7 +17717,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/054-cos05-07.webp"
+												"path": "adventure/CoS/054-cos05-07.png"
 											},
 											"title": "The Martikov Family",
 											"width": 1000,
@@ -17801,7 +17803,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/055-015.webp"
+												"path": "adventure/CoS/055-015.jpg"
 											},
 											"title": "Map 5.3: Burgomaster's Mansion (Area N3)",
 											"width": 2400,
@@ -18325,7 +18327,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/056-cos502.webp"
+												"path": "adventure/CoS/056-cos502.jpg"
 											},
 											"title": "Player Version",
 											"width": 2400,
@@ -18364,7 +18366,7 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/CoS/057-cos05-09.webp"
+														"path": "adventure/CoS/057-cos05-09.png"
 													},
 													"title": "The Baroness and Baron",
 													"width": 973,
@@ -18900,7 +18902,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/058-016.webp"
+												"path": "adventure/CoS/058-016.jpg"
 											},
 											"title": "Map 5.4: Wachterhaus (Area N4)",
 											"width": 2400,
@@ -19495,7 +19497,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/059-cos503.webp"
+												"path": "adventure/CoS/059-cos503.jpg"
 											},
 											"title": "Player Version",
 											"width": 2400,
@@ -19533,7 +19535,7 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/CoS/060-cos05-11.webp"
+														"path": "adventure/CoS/060-cos05-11.png"
 													},
 													"title": "Fiona Wachter and {@creature Majesto|CoS}",
 													"width": 1000,
@@ -19981,7 +19983,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/061-cos05-12.webp"
+												"path": "adventure/CoS/061-cos05-12.png"
 											},
 											"width": 1000,
 											"height": 590
@@ -20039,7 +20041,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/062-cos05-14.webp"
+										"path": "adventure/CoS/062-cos05-14.png"
 									},
 									"title": "{@creature Henrik Van Der Voort|CoS}",
 									"width": 801,
@@ -20056,7 +20058,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/063-cos05-13.webp"
+												"path": "adventure/CoS/063-cos05-13.png"
 											},
 											"title": "Map 5.5: Coffin Maker's Shop (Area N6)",
 											"width": 1000,
@@ -20239,7 +20241,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/064-cos504.webp"
+												"path": "adventure/CoS/064-cos504.jpg"
 											},
 											"title": "Player Version",
 											"width": 2400,
@@ -20393,7 +20395,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/065-cos05-15.webp"
+										"path": "adventure/CoS/065-cos05-15.png"
 									},
 									"title": "{@creature Gadof Blinsky|CoS} and {@creature Piccolo|CoS}",
 									"width": 921,
@@ -20515,7 +20517,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/066-018.webp"
+												"path": "adventure/CoS/066-018.jpg"
 											},
 											"title": "Map 5.6: Vistani Camp (Area N9)",
 											"width": 2400,
@@ -21049,7 +21051,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/067-cos505.webp"
+												"path": "adventure/CoS/067-cos505.jpg"
 											},
 											"title": "Player Version",
 											"width": 2400,
@@ -21101,7 +21103,7 @@
 															"type": "image",
 															"href": {
 																"type": "internal",
-																"path": "adventure/CoS/068-cos05-18.webp"
+																"path": "adventure/CoS/068-cos05-18.png"
 															},
 															"title": "{@creature Luvash|CoS}",
 															"width": 849,
@@ -21111,7 +21113,7 @@
 															"type": "image",
 															"href": {
 																"type": "internal",
-																"path": "adventure/CoS/069-cos05-17.webp"
+																"path": "adventure/CoS/069-cos05-17.png"
 															},
 															"title": "{@creature Arrigal|CoS}",
 															"width": 813,
@@ -21476,18 +21478,19 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/CoS/070-cos06-01.webp"
+						"path": "adventure/CoS/070-cos06-01.png"
 					},
 					"width": 1000,
 					"height": 1000
 				},
 				"Made with the bones of the innocent, the hags' dream pastries allow Barovians to enter a trance, wherein they can escape to heavenly places full of joy. When adults can no longer afford the hag's dream pastries, the hags offer to trade their pastries for the Barovians' children, thus preying on the adults' selfishness while acquiring the ingredients they need to make more pastries. This is how the hags sow corruption in Strahd's domain and why they don't take the children by force. The hags are interested only in children who have souls. They prick each child with a needle; if the child cries, that's a sign that the infant has a soul.",
 				{
-					"type": "quote",
+					"type": "insetReadaloud",
+					"id": "411",
 					"entries": [
-						"Dreams are for the living."
-					],
-					"by": "{@creature Strahd von Zarovich|CoS}"
+						"Dreams are for the living.",
+						"\u2014{@creature Strahd von Zarovich|CoS}"
+					]
 				},
 				{
 					"type": "section",
@@ -21537,7 +21540,7 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/CoS/071-cos06-02.webp"
+								"path": "adventure/CoS/071-cos06-02.png"
 							},
 							"width": 734,
 							"height": 1000
@@ -21586,7 +21589,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/072-019.webp"
+												"path": "adventure/CoS/072-019.jpg"
 											},
 											"title": "Map 6.1: Old Bonegrinder (Area O)",
 											"width": 2400,
@@ -21778,7 +21781,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/073-cos601.webp"
+												"path": "adventure/CoS/073-cos601.jpg"
 											},
 											"title": "Player Version",
 											"width": 2400,
@@ -21872,7 +21875,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/074-cos06-04.webp"
+												"path": "adventure/CoS/074-cos06-04.png"
 											},
 											"width": 1000,
 											"height": 748
@@ -21907,7 +21910,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/CoS/075-cos07-01.webp"
+						"path": "adventure/CoS/075-cos07-01.png"
 					},
 					"width": 1000,
 					"height": 1000
@@ -21936,7 +21939,7 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/CoS/076-cos07-02.webp"
+								"path": "adventure/CoS/076-cos07-02.png"
 							},
 							"width": 878,
 							"height": 1000
@@ -22028,7 +22031,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/077-020.webp"
+										"path": "adventure/CoS/077-020.jpg"
 									},
 									"title": "Map 7.1: Argynvostholt (Area Q)",
 									"width": 4800,
@@ -22834,7 +22837,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/078-cos701.webp"
+										"path": "adventure/CoS/078-cos701.jpg"
 									},
 									"title": "Player Version",
 									"width": 4800,
@@ -23398,7 +23401,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/079-021.webp"
+												"path": "adventure/CoS/079-021.jpg"
 											},
 											"title": "Map 7.2: Argynvostholt (Area Q) - Rooftop and Beacon",
 											"width": 2400,
@@ -24238,7 +24241,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/080-cos702.webp"
+												"path": "adventure/CoS/080-cos702.jpg"
 											},
 											"title": "Player Version",
 											"width": 2400,
@@ -24500,7 +24503,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/081-cos07-05.webp"
+												"path": "adventure/CoS/081-cos07-05.png"
 											},
 											"title": "{@creature Sir Godfrey Gwilym|CoS}",
 											"width": 757,
@@ -24936,7 +24939,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/CoS/082-cos08-01.webp"
+						"path": "adventure/CoS/082-cos08-01.png"
 					},
 					"width": 1000,
 					"height": 1000
@@ -24944,11 +24947,12 @@
 				"Looming high above Krezk is the Abbey of Saint Markovia, once a convent and hospital, now a madhouse overrun with wickedness. After Saint Markovia and her followers failed to overthrow Strahd, the abbey became a fortress closed off from the rest of the world. Strahd ruthlessly preyed on the fears of the clerics and nuns holed up inside, but ultimately it was their isolation and greed that doomed them. The clergy began fighting over food and wine. By the time their supplies ran out, they had either been killed by each other's hands or driven hopelessly insane by Strahd's acts of terror against them. For years afterward, the villagers of Krezk avoided the place, fearing that the abbey was cursed, haunted, or both.",
 				"Then, over a century ago, a pilgrim from a distant land came to Krezk and insisted that he be allowed to reopen the abbey. The nameless man was strikingly handsome and extremely persuasive, and the villagers couldn't help but do as he commanded. Eternally young, he presides over the abbey to this day, and locals refer to him simply as {@creature the Abbot|CoS}. Many villagers suspect that {@creature the Abbot|CoS} is Strahd in disguise, for they've heard stories about Strahd appearing in other guises. The truth, however, is even more disturbing.",
 				{
-					"type": "quote",
+					"type": "insetReadaloud",
+					"id": "4bc",
 					"entries": [
-						"The gleam in her eyes was like warm sunlight on a still pond. That light is gone forever. When I try to imagine those eyes, all I see is a mad abyss."
-					],
-					"by": "{@creature Strahd von Zarovich|CoS}"
+						"The gleam in her eyes was like warm sunlight on a still pond. That light is gone forever. When I try to imagine those eyes, all I see is a mad abyss.",
+						"\u2014{@creature Strahd von Zarovich|CoS}"
+					]
 				},
 				{
 					"type": "section",
@@ -24964,7 +24968,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/083-022.webp"
+										"path": "adventure/CoS/083-022.jpg"
 									},
 									"title": "Map 8.1: The Village of Krezk (Area S)",
 									"width": 1950,
@@ -25115,7 +25119,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/084-cos801.webp"
+										"path": "adventure/CoS/084-cos801.jpg"
 									},
 									"title": "Player Version",
 									"width": 1950,
@@ -25227,7 +25231,7 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/CoS/085-cos08-03.webp"
+														"path": "adventure/CoS/085-cos08-03.png"
 													},
 													"width": 1000,
 													"height": 726
@@ -25311,7 +25315,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/086-023.webp"
+										"path": "adventure/CoS/086-023.jpg"
 									},
 									"title": "Map 8.2: Abbey of Saint Markovia - Ground Floor",
 									"width": 2400,
@@ -26038,7 +26042,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/087-cos802.webp"
+										"path": "adventure/CoS/087-cos802.jpg"
 									},
 									"title": "Player Version",
 									"width": 2400,
@@ -26080,7 +26084,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/088-cos08-04.webp"
+										"path": "adventure/CoS/088-cos08-04.png"
 									},
 									"title": "{@creature Otto Belview|CoS}",
 									"width": 865,
@@ -26099,7 +26103,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/089-cos08-05.webp"
+												"path": "adventure/CoS/089-cos08-05.png"
 											},
 											"title": "{@creature Zygfrek Belview|CoS}",
 											"width": 901,
@@ -26235,7 +26239,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/090-024.webp"
+												"path": "adventure/CoS/090-024.jpg"
 											},
 											"title": "Map 8.3: Abbey of Saint Markovia - Upper Floor & Cellar",
 											"width": 2400,
@@ -26481,7 +26485,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/091-cos803.webp"
+												"path": "adventure/CoS/091-cos803.jpg"
 											},
 											"title": "Player Version",
 											"width": 2400,
@@ -26896,7 +26900,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/092-cos08-07.webp"
+										"path": "adventure/CoS/092-cos08-07.png"
 									},
 									"title": "{@creature Clovin Belview|CoS}",
 									"width": 871,
@@ -27146,7 +27150,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/093-cos08-08.webp"
+										"path": "adventure/CoS/093-cos08-08.png"
 									},
 									"title": "Baron Krezkov",
 									"width": 1000,
@@ -27229,18 +27233,19 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/CoS/094-cos09-01.webp"
+						"path": "adventure/CoS/094-cos09-01.png"
 					},
 					"width": 1000,
 					"height": 1000
 				},
 				"Tsolenka Pass is a gravel road that hugs Mount Ghakis, climbing to great heights. The road starts at the Raven River crossroads ({@adventure chapter 2|CoS|3}, {@area area R|130|x}) and travels seven miles to a gatehouse ({@area areas T1|532|x}\u2013{@area T3|535|x}) and a guard tower ({@area areas T4|536|x}\u2013{@area T6|53b|x}), as well as a stone bridge ({@area areas T7|53f|x}\u2013{@area T9|543|x}) that spans the Luna River. Wind and snow make the journey treacherous. Without some way to keep warm, characters who aren't dressed for cold weather suffer the effects of extreme cold at night (see \"{@book Weather|DMG|5|Weather}\" in chapter 5, \"Adventure Environments,\" of the {@book Dungeon Master's Guide|DMG}).",
 				{
-					"type": "quote",
+					"type": "insetReadaloud",
+					"id": "530",
 					"entries": [
-						"The road curved and climbed, making a lengthy switchback into this edge of Mount Ghakis. The air grew colder, not warmer, and patches of snow became more frequent until they were unbroken."
-					],
-					"by": "{@creature Strahd von Zarovich|CoS} in I, Strahd: The Memoirs of a Vampire"
+						"The road curved and climbed, making a lengthy switchback into this edge of Mount Ghakis. The air grew colder, not warmer, and patches of snow became more frequent until they were unbroken.",
+						"\u2014{@creature Strahd von Zarovich|CoS} in I, Strahd: The Memoirs of a Vampire"
+					]
 				},
 				{
 					"type": "section",
@@ -27256,7 +27261,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/095-025.webp"
+										"path": "adventure/CoS/095-025.jpg"
 									},
 									"title": "Map 9.1: Tsolenka Pass (Area T)",
 									"width": 2400,
@@ -27518,7 +27523,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/096-cos901.webp"
+										"path": "adventure/CoS/096-cos901.jpg"
 									},
 									"title": "Player Version",
 									"width": 2400,
@@ -27739,7 +27744,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/097-cos09-03.webp"
+										"path": "adventure/CoS/097-cos09-03.png"
 									},
 									"width": 1000,
 									"height": 677
@@ -27807,7 +27812,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/CoS/098-cos10-01.webp"
+						"path": "adventure/CoS/098-cos10-01.png"
 					},
 					"width": 1000,
 					"height": 1000
@@ -27815,11 +27820,12 @@
 				"The ruins of Berez are now home to {@creature Baba Lysaga|CoS} (see {@area appendix D|75d|x}), an almost mythic figure tied to Strahd's ancient past. A hermit, she spends most of her time crafting and animating scarecrows to hunt down and kill the ravens and the wereravens that infest Strahd's domain. When she isn't working evil magic, {@creature Baba Lysaga|CoS} sacrifices beasts to Mother Night and collects their blood, then bathes in the blood on nights of the new moon in a ritual to stave off the effects of extreme old age.",
 				"{@creature Baba Lysaga|CoS} recently stole a magic gemstone from the Wizards of Wines vineyard ({@adventure chapter 12|CoS|13}), in the hope that the wereravens who protect the vineyard will try to reclaim it. She keeps it in her hut as bait to lure her enemies to their deaths. The gem has given her hut a semblance of life.",
 				{
-					"type": "quote",
+					"type": "insetReadaloud",
+					"id": "54d",
 					"entries": [
-						"I had nothing left to give but my own life's blood, but it was hers to take. She would at last be my bride."
-					],
-					"by": "{@creature Strahd von Zarovich|CoS} in I, Strahd: The Memoirs of a Vampire"
+						"I had nothing left to give but my own life's blood, but it was hers to take. She would at last be my bride.",
+						"\u2014{@creature Strahd von Zarovich|CoS} in I, Strahd: The Memoirs of a Vampire"
+					]
 				},
 				{
 					"type": "section",
@@ -27863,7 +27869,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/099-026.webp"
+										"path": "adventure/CoS/099-026.jpg"
 									},
 									"title": "Map 10.1: The Ruins of Berez (Area U)",
 									"width": 1575,
@@ -28067,7 +28073,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/100-cos1002.webp"
+										"path": "adventure/CoS/100-cos1002.jpg"
 									},
 									"title": "Player Version",
 									"width": 1575,
@@ -28194,7 +28200,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/101-cos10-02.webp"
+												"path": "adventure/CoS/101-cos10-02.jpg"
 											},
 											"title": "Map 10.2: {@creature Baba Lysaga|CoS}'s Creeping Hut",
 											"width": 1000,
@@ -28239,7 +28245,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/102-cos1001.webp"
+												"path": "adventure/CoS/102-cos1001.jpg"
 											},
 											"title": "Player Version",
 											"width": 1125,
@@ -28466,7 +28472,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/103-cos10-04.webp"
+										"path": "adventure/CoS/103-cos10-04.png"
 									},
 									"width": 1000,
 									"height": 592
@@ -28488,7 +28494,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/CoS/104-cos11-01.webp"
+						"path": "adventure/CoS/104-cos11-01.png"
 					},
 					"width": 1000,
 					"height": 1000
@@ -28497,11 +28503,12 @@
 				"Khazan's tower stood empty for ages, it seemed, and would have collapsed under the weight of neglect were it not for the magic wards placed on it long ago. Recently, the tower was taken over by the legendary vampire hunter Rudolph van Richten, who used it as a base from which to explore Barovia. He has since relocated to the nearby town of Vallaki, where he hides in plain sight.",
 				"Following in the vampire hunter's footsteps is his protégé, {@creature Ezmerelda d'Avenir|CoS}, who has taken to living in the tower while she searches for her mentor. She isn't present when the characters arrive, however.",
 				{
-					"type": "quote",
+					"type": "insetReadaloud",
+					"id": "573",
 					"entries": [
-						"Van Richten has returned, the old fool. He tries to hide from me, but I shall find him. He and I have much to discuss."
-					],
-					"by": "{@creature Strahd von Zarovich|CoS}"
+						"Van Richten has returned, the old fool. He tries to hide from me, but I shall find him. He and I have much to discuss.",
+						"\u2014{@creature Strahd von Zarovich|CoS}"
+					]
 				},
 				{
 					"type": "section",
@@ -28560,7 +28567,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/105-027.webp"
+												"path": "adventure/CoS/105-027.jpg"
 											},
 											"title": "Map 11.1: Van Richten's Tower (Area V)",
 											"width": 1200,
@@ -28929,7 +28936,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/106-cos1101.webp"
+												"path": "adventure/CoS/106-cos1101.jpg"
 											},
 											"title": "Player Version",
 											"width": 1200,
@@ -28988,7 +28995,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/107-cos11-02.webp"
+												"path": "adventure/CoS/107-cos11-02.png"
 											},
 											"width": 1000,
 											"height": 457
@@ -29015,7 +29022,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/108-cos11-03.webp"
+										"path": "adventure/CoS/108-cos11-03.png"
 									},
 									"width": 663,
 									"height": 1000
@@ -29190,7 +29197,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/109-cos11-05.webp"
+												"path": "adventure/CoS/109-cos11-05.png"
 											},
 											"width": 892,
 											"height": 1000
@@ -29217,18 +29224,19 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/CoS/110-cos12-01.webp"
+						"path": "adventure/CoS/110-cos12-01.png"
 					},
 					"width": 1000,
 					"height": 1000
 				},
 				"The wereravens provide the wine to Barovian taverns for free, knowing the good it brings to the Barovian people.",
 				{
-					"type": "quote",
+					"type": "insetReadaloud",
+					"id": "591",
 					"entries": [
-						"Why, it is nothing to become an animal, for that is the true nature of every man. We are not meant to wear crowns and drink from goblets."
-					],
-					"by": "{@creature Strahd von Zarovich|CoS}"
+						"Why, it is nothing to become an animal, for that is the true nature of every man. We are not meant to wear crowns and drink from goblets.",
+						"\u2014{@creature Strahd von Zarovich|CoS}"
+					]
 				},
 				"The winery is known for three wines: the unremarkable Purple Grapemash No. 3, the slightly more tantalizing Red Dragon Crush, and the rich Champagne du le Stomp. Ten years ago, one of the vineyard's magic gems was dug up and stolen, and as a result, the winery stopped producing its best vintage, the champagne. No one knows what happened to the gem. {@creature Davian Martikov|CoS} blames his middle son, Urwin (see {@adventure chapter 5|CoS|6}, {@area area N2|333|x}), for the loss because Urwin was on watch the night the gem was taken. Davian is convinced that Urwin shirked his duty to spend time with his betrothed, and the two men have been at odds ever since. To this day, Urwin steadfastly denies his father's accusation.",
 				"Adding to Davian's misery, the wereravens have been fending off frequent attacks by {@creature Baba Lysaga|CoS}'s scarecrow constructs. Three weeks ago, during one such attack, another gem was found, dug up, and taken. Davian believes that it is in the possession of {@creature Baba Lysaga|CoS} (see {@adventure chapter 10|CoS|11}, {@area area U3|55c|x}).",
@@ -29334,7 +29342,7 @@
 								]
 							]
 						},
-						"The druid lurking in {@area area W16|5bb|x} carries a {@item Gulthias staff|CoS} (see {@adventure appendix C|CoS|20}). If the staff is destroyed, all blights within 300 feet of it instantly wither and die."
+						"The druid lurking in {@area area W16|5bb|x} carries a {@item Gulthias staff|CoS} (see {@adventure appendix C|CoS|20|{@item Gulthias Staff|CoS}}). If the staff is destroyed, all blights within 300 feet of it instantly wither and die."
 					]
 				},
 				{
@@ -29351,7 +29359,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/111-028.webp"
+										"path": "adventure/CoS/111-028.jpg"
 									},
 									"title": "Map 12.1: Wizard of Wines Winery (Area W)",
 									"width": 2400,
@@ -29972,7 +29980,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/112-cos1201.webp"
+										"path": "adventure/CoS/112-cos1201.jpg"
 									},
 									"title": "Player Version",
 									"width": 2400,
@@ -30134,7 +30142,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/113-cos12-03.webp"
+										"path": "adventure/CoS/113-cos12-03.png"
 									},
 									"title": "Twig Blight",
 									"width": 703,
@@ -30285,7 +30293,7 @@
 									"page": 178,
 									"id": "5bd",
 									"entries": [
-										"The druid wields a {@item Gulthias staff|CoS} (see {@adventure appendix C|CoS|20}), which can be used to destroy the blights in the winery."
+										"The druid wields a {@item Gulthias staff|CoS} (see {@adventure appendix C|CoS|20|{@item Gulthias Staff|CoS}}), which can be used to destroy the blights in the winery."
 									]
 								}
 							]
@@ -30308,7 +30316,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/114-cos12-04.webp"
+										"path": "adventure/CoS/114-cos12-04.png"
 									},
 									"title": "{@creature Davian Martikov|CoS}",
 									"width": 645,
@@ -30446,7 +30454,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/115-cos12-05.webp"
+												"path": "adventure/CoS/115-cos12-05.png"
 											},
 											"width": 1000,
 											"height": 723
@@ -30469,7 +30477,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/CoS/116-cos13-01.webp"
+						"path": "adventure/CoS/116-cos13-01.png"
 					},
 					"width": 1000,
 					"height": 1000
@@ -30509,7 +30517,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/117-029.webp"
+										"path": "adventure/CoS/117-029.jpg"
 									},
 									"title": "Map 13.1: Amber Temple (Area X) - Upper Level",
 									"width": 2400,
@@ -31484,7 +31492,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/118-cos1301.webp"
+										"path": "adventure/CoS/118-cos1301.jpg"
 									},
 									"title": "Player Version",
 									"width": 2400,
@@ -31798,7 +31806,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/119-cos13-03.webp"
+										"path": "adventure/CoS/119-cos13-03.png"
 									},
 									"title": "{@creature Vilnius|CoS} and Quasit",
 									"width": 845,
@@ -32265,7 +32273,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/120-030.webp"
+												"path": "adventure/CoS/120-030.jpg"
 											},
 											"title": "Map 13.2: Amber Temple (Area X) - Lower Level",
 											"width": 2400,
@@ -33350,7 +33358,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/121-cos1302.webp"
+												"path": "adventure/CoS/121-cos1302.jpg"
 											},
 											"title": "Player Version",
 											"width": 2400,
@@ -33915,7 +33923,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/122-cos13-05.webp"
+										"path": "adventure/CoS/122-cos13-05.png"
 									},
 									"title": "{@creature Amber Golem|CoS}",
 									"width": 643,
@@ -34161,18 +34169,19 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/CoS/123-cos14-01.webp"
+						"path": "adventure/CoS/123-cos14-01.png"
 					},
 					"width": 1000,
 					"height": 1000
 				},
 				"The druids who worship Strahd as lord of the land and master of the weather convene here, atop Yester Hill, on the very edge of Strahd's domain. This hill is also where the evil blights that walk the Svalich Woods are born, and where Strahd comes on occasion to glimpse his ancestral home.",
 				{
-					"type": "quote",
+					"type": "insetReadaloud",
+					"id": "673",
 					"entries": [
-						"By day or night, stretching up to the limits of vision, the edges of my realm are marked by a great wall of mist. I was there at its birth."
-					],
-					"by": "{@creature Strahd von Zarovich|CoS} in I, Strahd: The Memoirs of a Vampire"
+						"By day or night, stretching up to the limits of vision, the edges of my realm are marked by a great wall of mist. I was there at its birth.",
+						"\u2014{@creature Strahd von Zarovich|CoS} in I, Strahd: The Memoirs of a Vampire"
+					]
 				},
 				{
 					"type": "section",
@@ -34188,7 +34197,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/124-031.webp"
+										"path": "adventure/CoS/124-031.jpg"
 									},
 									"title": "Map 14.1: Yester Hill (Area Y)",
 									"width": 1950,
@@ -34442,7 +34451,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/125-cos1401.webp"
+										"path": "adventure/CoS/125-cos1401.jpg"
 									},
 									"title": "Player Version",
 									"width": 1950,
@@ -34656,7 +34665,7 @@
 									"page": 200,
 									"id": "68a",
 									"entries": [
-										"The rocks of the cairn are heavy but can be rolled aside, revealing a {@item blood spear|CoS} (see {@adventure appendix C|CoS|20}) lying amid Kavan's moldy bones. Any creature can wield the spear, but only the character chosen by Kavan to wield it gains a +2 bonus to attack and damage rolls made with this magic weapon."
+										"The rocks of the cairn are heavy but can be rolled aside, revealing a {@item blood spear|CoS} (see {@adventure appendix C|CoS|20|{@item Blood Spear|CoS}}) lying amid Kavan's moldy bones. Any creature can wield the spear, but only the character chosen by Kavan to wield it gains a +2 bonus to attack and damage rolls made with this magic weapon."
 									]
 								}
 							]
@@ -34678,18 +34687,19 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/CoS/126-cos15-01.webp"
+						"path": "adventure/CoS/126-cos15-01.png"
 					},
 					"width": 1000,
 					"height": 1000
 				},
 				"This ideological divide couldn't be reconciled and led to many disagreements. The other werewolves were split between the two camps, and it seemed likely that either Kiril or Emil would die before the conflict could be resolved.",
 				{
-					"type": "quote",
+					"type": "insetReadaloud",
+					"id": "68c",
 					"entries": [
-						"The wolves began to howl. They knew me. All the wolves of Barovia did."
-					],
-					"by": "{@creature Strahd von Zarovich|CoS} in I, Strahd: The Memoirs of a Vampire"
+						"The wolves began to howl. They knew me. All the wolves of Barovia did.",
+						"\u2014{@creature Strahd von Zarovich|CoS} in I, Strahd: The Memoirs of a Vampire"
+					]
 				},
 				"Then Kiril disappeared for several days, causing the other werewolves to wonder whether he had fled or had been quietly disposed of by Emil and his allies. When Kiril returned, he was accompanied by a pack of several dozen dire wolves loyal to Strahd, and he brought word from Castle Ravenloft that Strahd was not pleased with Emil's attempt to fracture the pack. The dire wolves took Emil back to Castle Ravenloft to face punishment, and he was never seen again.",
 				"Kiril reestablished his dominance, but his ideas and tactics didn't sit well with the pack's older members, and they certainly didn't please Emil's mate, {@creature Zuleika Toranescu|CoS}. She knows she can't slay Kiril on her own, and after what happened to Emil, the rest of the pack is unwilling to challenge Kiril's authority and face Strahd's wrath. Kiril won't let Zuleika hunt, so she's more or less confined to the den.",
@@ -34733,7 +34743,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/127-032.webp"
+										"path": "adventure/CoS/127-032.jpg"
 									},
 									"title": "Map 15.1: Werewolf Den (Area Z)",
 									"width": 2400,
@@ -35582,7 +35592,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/128-cos1501.webp"
+										"path": "adventure/CoS/128-cos1501.jpg"
 									},
 									"title": "Player Version",
 									"width": 2400,
@@ -35765,7 +35775,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/129-cos15-03.webp"
+										"path": "adventure/CoS/129-cos15-03.png"
 									},
 									"title": "{@creature Zuleika Toranescu|CoS}",
 									"width": 804,
@@ -35844,7 +35854,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/130-cos15-04.webp"
+										"path": "adventure/CoS/130-cos15-04.png"
 									},
 									"title": "{@creature Kiril Stoyanovich|CoS}",
 									"width": 708,
@@ -35902,7 +35912,7 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/CoS/131-cos16-01.webp"
+								"path": "adventure/CoS/131-cos16-01.jpg"
 							},
 							"width": 753,
 							"height": 1000
@@ -36030,7 +36040,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/132-cos16-02.webp"
+												"path": "adventure/CoS/132-cos16-02.png"
 											},
 											"width": 1000,
 											"height": 679
@@ -36133,7 +36143,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/133-cos17-01.webp"
+										"path": "adventure/CoS/133-cos17-01.png"
 									},
 									"title": "{@creature Thornboldt \"Thorn\" Durst|CoS} and {@creature Rosavalda \"Rose\" Durst|CoS}",
 									"width": 526,
@@ -36191,7 +36201,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/134-deathhousedm.webp"
+										"path": "adventure/CoS/134-deathhousedm.jpg"
 									},
 									"title": "Map B.1: Death House",
 									"width": 5455,
@@ -37614,7 +37624,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/135-deathhouseplayer.webp"
+										"path": "adventure/CoS/135-deathhouseplayer.jpg"
 									},
 									"title": "Player Version",
 									"width": 5455,
@@ -38477,7 +38487,7 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/CoS/136-cos18-01.webp"
+								"path": "adventure/CoS/136-cos18-01.png"
 							},
 							"width": 1018,
 							"height": 1000
@@ -38824,7 +38834,7 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/CoS/143-636623960253938131.webp"
+														"path": "adventure/CoS/143-636623960253938131.png"
 													},
 													"title": "{@creature Strahd's Animated Armor|CoS}",
 													"width": 300,
@@ -38923,7 +38933,7 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/CoS/144-636379873620950408.webp"
+														"path": "adventure/CoS/144-636379873620950408.png"
 													},
 													"title": "{@creature Baba Lysaga|CoS}",
 													"width": 745,
@@ -38967,7 +38977,7 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/CoS/145-636379876850421049.webp"
+														"path": "adventure/CoS/145-636379876850421049.png"
 													},
 													"title": "{@creature Barovian Witch|CoS}",
 													"width": 299,
@@ -39115,7 +39125,7 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/CoS/146-636623997177812461.webp"
+														"path": "adventure/CoS/146-636623997177812461.png"
 													},
 													"title": "{@creature Ezmerelda d'Avenir|CoS}",
 													"width": 300,
@@ -39221,7 +39231,7 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/CoS/147-636623996907006468.webp"
+														"path": "adventure/CoS/147-636623996907006468.png"
 													},
 													"title": "{@creature Izek Strazni|CoS}",
 													"width": 300,
@@ -39458,7 +39468,7 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/CoS/148-636985373100391611.webp"
+														"path": "adventure/CoS/148-636985373100391611.jpg"
 													},
 													"title": "{@creature Mongrelfolk|CoS}",
 													"width": 300,
@@ -39519,7 +39529,7 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/CoS/149-636623996440271782.webp"
+														"path": "adventure/CoS/149-636623996440271782.png"
 													},
 													"title": "{@creature Phantom Warrior|CoS}",
 													"width": 300,
@@ -39602,7 +39612,7 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/CoS/150-636623996229835683.webp"
+														"path": "adventure/CoS/150-636623996229835683.png"
 													},
 													"title": "{@creature Pidlwick II|CoS}",
 													"width": 300,
@@ -39710,7 +39720,7 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/CoS/151-636623996027511661.webp"
+														"path": "adventure/CoS/151-636623996027511661.png"
 													},
 													"title": "{@creature Rahadin|CoS}",
 													"width": 300,
@@ -39798,7 +39808,7 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/CoS/152-636623995708971736.webp"
+														"path": "adventure/CoS/152-636623995708971736.png"
 													},
 													"title": "{@creature Rictavio|CoS}",
 													"width": 300,
@@ -39921,7 +39931,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/CoS/153-636988936829621698.webp"
+												"path": "adventure/CoS/153-636988936829621698.jpg"
 											},
 											"title": "{@creature Strahd von Zarovich|CoS}",
 											"width": 300,
@@ -40026,7 +40036,7 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/CoS/154-cos19-11.webp"
+														"path": "adventure/CoS/154-cos19-11.png"
 													},
 													"width": 585,
 													"height": 1000
@@ -40114,7 +40124,7 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/CoS/155-637515969684846750.webp"
+														"path": "adventure/CoS/155-637515969684846750.png"
 													},
 													"title": "{@creature Wereraven|VRGR}",
 													"width": 399,
@@ -40557,7 +40567,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/156-dnd_tarokka_artifact.webp"
+												"path": "decks/CoS/Tarokka Deck/156-dnd_tarokka_artifact.png"
 											},
 											"title": "Artifact",
 											"width": 714,
@@ -40567,7 +40577,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/157-dnd_tarokka_beast.webp"
+												"path": "decks/CoS/Tarokka Deck/157-dnd_tarokka_beast.png"
 											},
 											"title": "Beast",
 											"width": 714,
@@ -40577,7 +40587,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/158-dnd_tarokka_brokenone.webp"
+												"path": "decks/CoS/Tarokka Deck/158-dnd_tarokka_brokenone.png"
 											},
 											"title": "Broken One",
 											"width": 714,
@@ -40587,7 +40597,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/159-dnd_tarokka_darklord.webp"
+												"path": "decks/CoS/Tarokka Deck/159-dnd_tarokka_darklord.png"
 											},
 											"title": "Darklord",
 											"width": 714,
@@ -40597,7 +40607,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/160-dnd_tarokka_donjon.webp"
+												"path": "decks/CoS/Tarokka Deck/160-dnd_tarokka_donjon.png"
 											},
 											"title": "Donjon",
 											"width": 714,
@@ -40607,7 +40617,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/161-dnd_tarokka_ghost.webp"
+												"path": "decks/CoS/Tarokka Deck/161-dnd_tarokka_ghost.png"
 											},
 											"title": "Ghost",
 											"width": 714,
@@ -40617,7 +40627,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/162-dnd_tarokka_executioner.webp"
+												"path": "decks/CoS/Tarokka Deck/162-dnd_tarokka_executioner.png"
 											},
 											"title": "Executioner",
 											"width": 714,
@@ -40627,7 +40637,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/163-dnd_tarokka_horseman.webp"
+												"path": "decks/CoS/Tarokka Deck/163-dnd_tarokka_horseman.png"
 											},
 											"title": "Horseman",
 											"width": 714,
@@ -40637,7 +40647,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/164-dnd_tarokka_innocent.webp"
+												"path": "decks/CoS/Tarokka Deck/164-dnd_tarokka_innocent.png"
 											},
 											"title": "Innocent",
 											"width": 714,
@@ -40647,7 +40657,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/165-dnd_tarokka_marionette.webp"
+												"path": "decks/CoS/Tarokka Deck/165-dnd_tarokka_marionette.png"
 											},
 											"title": "Marionette",
 											"width": 714,
@@ -40657,7 +40667,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/166-dnd_tarokka_mists.webp"
+												"path": "decks/CoS/Tarokka Deck/166-dnd_tarokka_mists.png"
 											},
 											"title": "Mists",
 											"width": 714,
@@ -40667,7 +40677,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/167-dnd_tarokka_raven.webp"
+												"path": "decks/CoS/Tarokka Deck/167-dnd_tarokka_raven.png"
 											},
 											"title": "Raven",
 											"width": 714,
@@ -40677,7 +40687,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/168-dnd_tarokka_seer.webp"
+												"path": "decks/CoS/Tarokka Deck/168-dnd_tarokka_seer.png"
 											},
 											"title": "Seer",
 											"width": 714,
@@ -40687,7 +40697,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/169-dnd_tarokka_tempter.webp"
+												"path": "decks/CoS/Tarokka Deck/169-dnd_tarokka_tempter.png"
 											},
 											"title": "Tempter",
 											"width": 714,
@@ -40710,7 +40720,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/170-dnd_tarokka_warrior.webp"
+												"path": "decks/CoS/Tarokka Deck/170-dnd_tarokka_warrior.png"
 											},
 											"title": "Warrior",
 											"width": 714,
@@ -40720,7 +40730,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/171-dnd_tarokka_avenger.webp"
+												"path": "decks/CoS/Tarokka Deck/171-dnd_tarokka_avenger.png"
 											},
 											"title": "Avenger",
 											"width": 714,
@@ -40730,7 +40740,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/172-dnd_tarokka_paladin.webp"
+												"path": "decks/CoS/Tarokka Deck/172-dnd_tarokka_paladin.png"
 											},
 											"title": "Paladin",
 											"width": 714,
@@ -40740,7 +40750,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/173-dnd_tarokka_soldier.webp"
+												"path": "decks/CoS/Tarokka Deck/173-dnd_tarokka_soldier.png"
 											},
 											"title": "Soldier",
 											"width": 714,
@@ -40750,7 +40760,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/174-dnd_tarokka_mercenary.webp"
+												"path": "decks/CoS/Tarokka Deck/174-dnd_tarokka_mercenary.png"
 											},
 											"title": "Mercenary",
 											"width": 714,
@@ -40760,7 +40770,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/175-dnd_tarokka_myrmidon.webp"
+												"path": "decks/CoS/Tarokka Deck/175-dnd_tarokka_myrmidon.png"
 											},
 											"title": "Myrmidon",
 											"width": 714,
@@ -40770,7 +40780,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/176-dnd_tarokka_berserker.webp"
+												"path": "decks/CoS/Tarokka Deck/176-dnd_tarokka_berserker.png"
 											},
 											"title": "Berserker",
 											"width": 714,
@@ -40780,7 +40790,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/177-dnd_tarokka_hoodedone.webp"
+												"path": "decks/CoS/Tarokka Deck/177-dnd_tarokka_hoodedone.png"
 											},
 											"title": "Hooded One",
 											"width": 714,
@@ -40790,7 +40800,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/178-dnd_tarokka_dictator.webp"
+												"path": "decks/CoS/Tarokka Deck/178-dnd_tarokka_dictator.png"
 											},
 											"title": "Dictator",
 											"width": 714,
@@ -40800,7 +40810,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/179-dnd_tarokka_torturer.webp"
+												"path": "decks/CoS/Tarokka Deck/179-dnd_tarokka_torturer.png"
 											},
 											"title": "Torturer",
 											"width": 714,
@@ -40823,7 +40833,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/180-dnd_tarokka_wizard.webp"
+												"path": "decks/CoS/Tarokka Deck/180-dnd_tarokka_wizard.png"
 											},
 											"title": "Wizard",
 											"width": 714,
@@ -40833,7 +40843,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/181-dnd_tarokka_transmuter.webp"
+												"path": "decks/CoS/Tarokka Deck/181-dnd_tarokka_transmuter.png"
 											},
 											"title": "Transmuter",
 											"width": 714,
@@ -40843,7 +40853,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/182-dnd_tarokka_diviner.webp"
+												"path": "decks/CoS/Tarokka Deck/182-dnd_tarokka_diviner.png"
 											},
 											"title": "Diviner",
 											"width": 714,
@@ -40853,7 +40863,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/183-dnd_tarokka_enchanter.webp"
+												"path": "decks/CoS/Tarokka Deck/183-dnd_tarokka_enchanter.png"
 											},
 											"title": "Enchanter",
 											"width": 714,
@@ -40863,7 +40873,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/184-dnd_tarokka_abjurer.webp"
+												"path": "decks/CoS/Tarokka Deck/184-dnd_tarokka_abjurer.png"
 											},
 											"title": "Abjurer",
 											"width": 714,
@@ -40873,7 +40883,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/185-dnd_tarokka_elementalist.webp"
+												"path": "decks/CoS/Tarokka Deck/185-dnd_tarokka_elementalist.png"
 											},
 											"title": "Elementalist",
 											"width": 714,
@@ -40883,7 +40893,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/186-dnd_tarokka_evoker.webp"
+												"path": "decks/CoS/Tarokka Deck/186-dnd_tarokka_evoker.png"
 											},
 											"title": "Evoker",
 											"width": 714,
@@ -40893,7 +40903,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/187-dnd_tarokka_illusionist.webp"
+												"path": "decks/CoS/Tarokka Deck/187-dnd_tarokka_illusionist.png"
 											},
 											"title": "Illusionist",
 											"width": 714,
@@ -40903,7 +40913,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/188-dnd_tarokka_necromancer.webp"
+												"path": "decks/CoS/Tarokka Deck/188-dnd_tarokka_necromancer.png"
 											},
 											"title": "Necromancer",
 											"width": 714,
@@ -40913,7 +40923,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/189-dnd_tarokka_conjurer.webp"
+												"path": "decks/CoS/Tarokka Deck/189-dnd_tarokka_conjurer.png"
 											},
 											"title": "Conjurer",
 											"width": 714,
@@ -40936,7 +40946,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/190-dnd_tarokka_rogue.webp"
+												"path": "decks/CoS/Tarokka Deck/190-dnd_tarokka_rogue.png"
 											},
 											"title": "Rogue",
 											"width": 714,
@@ -40946,7 +40956,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/191-dnd_tarokka_swashbuckler.webp"
+												"path": "decks/CoS/Tarokka Deck/191-dnd_tarokka_swashbuckler.png"
 											},
 											"title": "Swashbuckler",
 											"width": 714,
@@ -40956,7 +40966,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/192-dnd_tarokka_philanth.webp"
+												"path": "decks/CoS/Tarokka Deck/192-dnd_tarokka_philanth.png"
 											},
 											"title": "Philanthropist",
 											"width": 714,
@@ -40966,7 +40976,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/193-dnd_tarokka_trader.webp"
+												"path": "decks/CoS/Tarokka Deck/193-dnd_tarokka_trader.png"
 											},
 											"title": "Trader",
 											"width": 714,
@@ -40976,7 +40986,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/194-dnd_tarokka_merchant.webp"
+												"path": "decks/CoS/Tarokka Deck/194-dnd_tarokka_merchant.png"
 											},
 											"title": "Merchant",
 											"width": 714,
@@ -40986,7 +40996,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/195-dnd_tarokka_guildmember.webp"
+												"path": "decks/CoS/Tarokka Deck/195-dnd_tarokka_guildmember.png"
 											},
 											"title": "Guild Member",
 											"width": 714,
@@ -40996,7 +41006,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/196-dnd_tarokka_beggar.webp"
+												"path": "decks/CoS/Tarokka Deck/196-dnd_tarokka_beggar.png"
 											},
 											"title": "Beggar",
 											"width": 714,
@@ -41006,7 +41016,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/197-dnd_tarokka_thief.webp"
+												"path": "decks/CoS/Tarokka Deck/197-dnd_tarokka_thief.png"
 											},
 											"title": "Thief",
 											"width": 714,
@@ -41016,7 +41026,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/198-dnd_tarokka_taxcollector.webp"
+												"path": "decks/CoS/Tarokka Deck/198-dnd_tarokka_taxcollector.png"
 											},
 											"title": "Tax Collector",
 											"width": 714,
@@ -41026,7 +41036,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/199-dnd_tarokka_miser.webp"
+												"path": "decks/CoS/Tarokka Deck/199-dnd_tarokka_miser.png"
 											},
 											"title": "Miser",
 											"width": 714,
@@ -41049,7 +41059,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/200-dnd_tarokka_priest.webp"
+												"path": "decks/CoS/Tarokka Deck/200-dnd_tarokka_priest.png"
 											},
 											"title": "Priest",
 											"width": 714,
@@ -41059,7 +41069,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/201-dnd_tarokka_monk.webp"
+												"path": "decks/CoS/Tarokka Deck/201-dnd_tarokka_monk.png"
 											},
 											"title": "Monk",
 											"width": 714,
@@ -41069,7 +41079,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/202-dnd_tarokka_missionary.webp"
+												"path": "decks/CoS/Tarokka Deck/202-dnd_tarokka_missionary.png"
 											},
 											"title": "Missionary",
 											"width": 714,
@@ -41079,7 +41089,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/203-dnd_tarokka_healer.webp"
+												"path": "decks/CoS/Tarokka Deck/203-dnd_tarokka_healer.png"
 											},
 											"title": "Healer",
 											"width": 714,
@@ -41089,7 +41099,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/204-dnd_tarokka_shepherd.webp"
+												"path": "decks/CoS/Tarokka Deck/204-dnd_tarokka_shepherd.png"
 											},
 											"title": "Shepherd",
 											"width": 714,
@@ -41099,7 +41109,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/205-dnd_tarokka_druid.webp"
+												"path": "decks/CoS/Tarokka Deck/205-dnd_tarokka_druid.png"
 											},
 											"title": "Druid",
 											"width": 714,
@@ -41109,7 +41119,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/206-dnd_tarokka_anarchist.webp"
+												"path": "decks/CoS/Tarokka Deck/206-dnd_tarokka_anarchist.png"
 											},
 											"title": "Anarchist",
 											"width": 714,
@@ -41119,7 +41129,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/207-dnd_tarokka_charlatan.webp"
+												"path": "decks/CoS/Tarokka Deck/207-dnd_tarokka_charlatan.png"
 											},
 											"title": "Charlatan",
 											"width": 714,
@@ -41129,7 +41139,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/208-dnd_tarokka_bishop.webp"
+												"path": "decks/CoS/Tarokka Deck/208-dnd_tarokka_bishop.png"
 											},
 											"title": "Bishop",
 											"width": 714,
@@ -41139,7 +41149,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "decks/CoS/Tarokka Deck/209-dnd_tarokka_traitor.webp"
+												"path": "decks/CoS/Tarokka Deck/209-dnd_tarokka_traitor.png"
 											},
 											"title": "Traitor",
 											"width": 714,
@@ -41181,7 +41191,7 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/CoS/210-f1.webp"
+								"path": "adventure/CoS/210-f1.jpg"
 							},
 							"width": 2307,
 							"height": 1887
@@ -41207,7 +41217,7 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/CoS/211-f2.webp"
+								"path": "adventure/CoS/211-f2.jpg"
 							},
 							"width": 2646,
 							"height": 1536
@@ -41243,7 +41253,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/212-f3.webp"
+										"path": "adventure/CoS/212-f3.jpg"
 									},
 									"width": 1311,
 									"height": 1928
@@ -41252,7 +41262,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/213-f4.webp"
+										"path": "adventure/CoS/213-f4.jpg"
 									},
 									"width": 1324,
 									"height": 1939
@@ -41288,7 +41298,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/214-f5.webp"
+										"path": "adventure/CoS/214-f5.jpg"
 									},
 									"width": 1277,
 									"height": 1941
@@ -41297,7 +41307,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/CoS/215-f6.webp"
+										"path": "adventure/CoS/215-f6.jpg"
 									},
 									"width": 1276,
 									"height": 1938
@@ -41328,7 +41338,7 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/CoS/216-f7.webp"
+								"path": "adventure/CoS/216-f7.jpg"
 							},
 							"width": 2766,
 							"height": 1981
@@ -41356,209 +41366,12 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/CoS/217-f8.webp"
+								"path": "adventure/CoS/217-f8.jpg"
 							},
 							"width": 2768,
 							"height": 1499
 						}
 					]
-				}
-			]
-		},
-		{
-			"type": "section",
-			"name": "Credits",
-			"entries": [
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"columns": 2,
-					"items": [
-						{
-							"type": "item",
-							"name": "Lead Designer",
-							"entries": [
-								"Christopher Perkins"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Creative Consultants",
-							"entries": [
-								"Tracy and Laura Hickman"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Designers",
-							"entries": [
-								"Adam Lee, Richard Whitters, Jeremy Crawford"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Managing Editor",
-							"entries": [
-								"Jeremy Crawford"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Editor",
-							"entries": [
-								"Kim Mohan"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Editorial Assistance",
-							"entries": [
-								"Scott Fitzgerald Gray"
-							]
-						},
-						{
-							"type": "item",
-							"name": "D&D Lead Designers",
-							"entries": [
-								"Mike Mearls, Jeremy Crawford"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Art Director",
-							"entries": [
-								"Kate Irwin"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Additional Art Direction",
-							"entries": [
-								"Shauna Narciso, Richard Whitters"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Graphic Designer",
-							"entries": [
-								"Emi Tanji"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Cover Illustrator",
-							"entries": [
-								"Ben Oliver"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Interior Illustrators",
-							"entries": [
-								"Dave Allsop, François Beauregard, Mark Behm, Eric Belisle, Zoltan Boros, Jedd Chevrier, Daarken, Lake Hurwitz, Chuck Lukacs, Howard Lyon, Ben Oliver, Adam Paquette, Rob Rey, Chris Seaman, Richard Whitters, Kieran Yanner"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Cartographers",
-							"entries": [
-								"François Beauregard, Mike Schley, Ben Wootten"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Project Managers",
-							"entries": [
-								"Neil Shinkle, Heather Fleming"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Product Engineer",
-							"entries": [
-								"Cynda Callaway"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Prepress Specialist",
-							"entries": [
-								"Jefferson Dunlap"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Other D&D Team Members",
-							"entries": [
-								"Greg Bilsland, Chris Dupuis, David Gershman, John Feil, Trevor Kidd, Christopher Lindsay, Shelly Mazzanoble, Ben Petrisor, Hilary Ross, Liz Schuh, Matt Sernett, Nathan Stewart, Greg Tito"
-							]
-						},
-						"This book is based on the 32-page D&D adventure Ravenloft published in 1983 by TSR, Inc. Here are that book's credits:",
-						{
-							"type": "item",
-							"name": "Designers",
-							"entries": [
-								"Tracy and Laura Hickman"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Editor",
-							"entries": [
-								"Curtis Smith"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Graphic Designer",
-							"entries": [
-								"Debra Stubbe"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Illustrator",
-							"entries": [
-								"Clyde Caldwell"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Cartographer",
-							"entries": [
-								"David C. Sutherland III"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Playtesters",
-							"entries": [
-								"Robert Alaniz,* Mal A'menz,* Glen Ausse, Jerry Behrendt, Teddy Benson, Anthony Caroselli,* Christopher D'Andrea,* Jason Fransella,* Jeff Galper, Elyssa Grant, Steve Heitke, Mary Hershey, Sterling Hershey, Justin Hicks, Shaun Horner, Donald Jacobs, James Krot, Yan Lacharité,* Jonathan Longstaff,* Michael LeClair, Ray Lillard, Eric Lopez, J.M., Matt Maranda,* Cris McDaniel, Randy Merkel, Lou Michelli,* Mike Mihalas,* Daniel Norton,* Lucas Pierce, Claudio Pozas,* John Proudfoot,* Rob Quillen II, Karl Resch,* Jason Riley, Sarah Riley, Arthur Severance,* Sam Sherry,* Zach Sielaff, David \"Oak\" Stark,* Jayson Thiry, Steve Townshend,* Kyle Turner,* Will Vaughn, Peter Youngs"
-							]
-						},
-						"{@i *This playtester provided feedback for a group.}"
-					]
-				},
-				{
-					"type": "inset",
-					"entries": [
-						"The following D&D books also provided material and inspiration:",
-						"Cordell, Bruce R. and James Wyatt. {@i Expedition to Castle Ravenloft}. 2006.",
-						"Elrod, P.N. I, Strahd: {@i The Memoirs of a Vampire}. 1993.",
-						"Hickman, Tracy and Laura. {@i Rahasia}. 1984.",
-						"Nesmith, Bruce with Andria Hayday. {@i Realm of Terror}. 1990.",
-						"Pozas, Claudio. \"Fair Barovia.\" {@i Dungeon 207}. 2012.",
-						"TSR, Inc. {@i Van Richten's Monster Hunter's Compendium, Volume One}. 1999.",
-						"\u2014\u2014\u2014. {@i Van Richten's Monster Hunter's Compendium, Volume Three}. 2000."
-					]
-				},
-				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "adventure/CoS/credits.webp"
-					},
-					"title": "On the cover: the master of Ravenloft is having guests for dinner, and you are invited. Ben Oliver sheds light on the vampire Strahd von Zarovich, whose dark past is a tale to be told, and whose evil knows no bounds."
 				}
 			]
 		},
@@ -41571,15 +41384,19 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/CoS/218-poster-barovia.webp"
-					}
+						"path": "adventure/CoS/218-poster-barovia.jpg"
+					},
+					"width": 5355,
+					"height": 3775
 				},
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/CoS/219-poster-castle-ravenloft.webp"
-					}
+						"path": "adventure/CoS/219-poster-castle-ravenloft.jpg"
+					},
+					"width": 7000,
+					"height": 4948
 				}
 			],
 			"id": "0a1"

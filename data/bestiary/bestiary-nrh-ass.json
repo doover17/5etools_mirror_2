@@ -71,9 +71,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"scimitar|phb"
-			],
 			"languageTags": [
 				"C"
 			],
@@ -81,7 +78,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"hasToken": true

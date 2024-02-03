@@ -1,15 +1,6 @@
 {
 	"spell": [
 		{
-			"name": "Abi-Dalzim's Horrid Wilting",
-			"source": "XGE",
-			"system": {
-				"target.value": 30,
-				"target.units": "ft",
-				"target.type": "cube"
-			}
-		},
-		{
 			"name": "Alarm",
 			"source": "PHB",
 			"system": {
@@ -24,95 +15,6 @@
 			"system": {
 				"target.value": 1,
 				"target.type": "creature"
-			}
-		},
-		{
-			"name": "Arcane Gate",
-			"source": "PHB",
-			"system": {
-				"target.value": 10,
-				"target.units": "ft",
-				"target.type": "wall"
-			}
-		},
-		{
-			"name": "Armor of Agathys",
-			"source": "PHB",
-			"system": {
-				"damage.parts": [
-					[
-						"5",
-						"temphp"
-					]
-				]
-			}
-		},
-		{
-			"name": "Blade Barrier",
-			"source": "PHB",
-			"system": {
-				"target.value": 100,
-				"target.units": "ft",
-				"target.type": "wall"
-			}
-		},
-		{
-			"name": "Blade Ward",
-			"source": "PHB",
-			"effects": [
-				{
-					"changes": [
-						{
-							"key": "system.traits.dr.value",
-							"mode": "CUSTOM",
-							"value": "bludgeoning",
-							"priority": 20
-						},
-						{
-							"key": "system.traits.dr.value",
-							"mode": "CUSTOM",
-							"value": "piercing",
-							"priority": 20
-						},
-						{
-							"key": "system.traits.dr.value",
-							"mode": "CUSTOM",
-							"value": "slashing",
-							"priority": 20
-						}
-					],
-					"duration": {
-						"rounds": 1
-					}
-				}
-			]
-		},
-		{
-			"name": "Bones of the Earth",
-			"source": "XGE",
-			"system": {
-				"target.value": 3,
-				"target.units": "ft",
-				"target.type": "radius"
-			}
-		},
-		{
-			"name": "Booming Blade",
-			"source": "TCE",
-			"system": {
-				"actionType": "mwak",
-				"target.value": 1,
-				"target.units": "",
-				"target.type": "creature",
-				"damage.parts": [
-					[
-						"(floor(((@details.level + @details.spellLevel) + 1) / 6))d8[on hit]",
-						"thunder"
-					]
-				],
-				"damage.versatile": "(floor(((@details.level + @details.spellLevel) + 1) / 6) + 1)d8[on willing movement]",
-				"scaling.mode": "none",
-				"scaling.formula": ""
 			}
 		},
 		{
@@ -134,34 +36,12 @@
 			}
 		},
 		{
-			"name": "Chaos Bolt",
-			"source": "XGE",
-			"system": {
-				"damage.parts": [
-					[
-						"2d8 + 1d6",
-						""
-					]
-				],
-				"formula": ""
-			}
-		},
-		{
 			"name": "Circle of Death",
 			"source": "PHB",
 			"system": {
 				"target.value": 60,
 				"target.units": "ft",
 				"target.type": "sphere"
-			}
-		},
-		{
-			"name": "Cloud of Daggers",
-			"source": "PHB",
-			"system": {
-				"target.value": 5,
-				"target.units": "ft",
-				"target.type": "cube"
 			}
 		},
 		{
@@ -192,46 +72,10 @@
 			}
 		},
 		{
-			"name": "Control Flames",
-			"source": "XGE",
-			"system": {
-				"target.value": 5,
-				"target.units": "ft",
-				"target.type": "cube"
-			}
-		},
-		{
 			"name": "Control Water",
 			"source": "PHB",
 			"system": {
 				"target.value": 100,
-				"target.units": "ft",
-				"target.type": "cube"
-			}
-		},
-		{
-			"name": "Control Winds",
-			"source": "XGE",
-			"system": {
-				"target.value": 100,
-				"target.units": "ft",
-				"target.type": "cube"
-			}
-		},
-		{
-			"name": "Cordon of Arrows",
-			"source": "PHB",
-			"system": {
-				"target.value": 30,
-				"target.units": "ft",
-				"target.type": "sphere"
-			}
-		},
-		{
-			"name": "Create Bonfire",
-			"source": "XGE",
-			"system": {
-				"target.value": 5,
 				"target.units": "ft",
 				"target.type": "cube"
 			}
@@ -255,15 +99,6 @@
 			}
 		},
 		{
-			"name": "Dawn",
-			"source": "XGE",
-			"system": {
-				"target.value": 30,
-				"target.units": "ft",
-				"target.type": "cylinder"
-			}
-		},
-		{
 			"name": "Daylight",
 			"source": "PHB",
 			"system": {
@@ -282,15 +117,6 @@
 			}
 		},
 		{
-			"name": "Dust Devil",
-			"source": "XGE",
-			"system": {
-				"target.value": 5,
-				"target.units": "ft",
-				"target.type": "cube"
-			}
-		},
-		{
 			"name": "Earthquake",
 			"source": "PHB",
 			"system": {
@@ -306,15 +132,6 @@
 				"target.value": 20,
 				"target.units": "ft",
 				"target.type": "square"
-			}
-		},
-		{
-			"name": "Erupting Earth",
-			"source": "XGE",
-			"system": {
-				"target.value": 20,
-				"target.units": "ft",
-				"target.type": "cube"
 			}
 		},
 		{
@@ -363,20 +180,6 @@
 			}
 		},
 		{
-			"name": "Flame Blade",
-			"source": "PHB",
-			"system": {
-				"damage.parts": [
-					[
-						"(floor((@item.level) / 2) + 2)d6",
-						"fire"
-					]
-				],
-				"scaling.mode": "none",
-				"scaling.formula": ""
-			}
-		},
-		{
 			"name": "Flame Strike",
 			"source": "PHB",
 			"system": {
@@ -404,70 +207,12 @@
 			}
 		},
 		{
-			"name": "Forcecage",
-			"source": "PHB",
-			"system": {
-				"target.value": 20,
-				"target.units": "ft",
-				"target.type": "cube"
-			}
-		},
-		{
-			"name": "Frostbite",
-			"source": "XGE",
-			"system": {
-				"target.value": 1,
-				"target.units": "",
-				"target.type": "creature"
-			}
-		},
-		{
-			"name": "Gate",
-			"source": "PHB",
-			"system": {
-				"target.value": 20,
-				"target.units": "ft",
-				"target.type": "wall"
-			}
-		},
-		{
 			"name": "Grease",
 			"source": "PHB",
 			"system": {
 				"target.value": 10,
 				"target.units": "ft",
 				"target.type": "square"
-			}
-		},
-		{
-			"name": "Green-Flame Blade",
-			"source": "TCE",
-			"system": {
-				"actionType": "mwak",
-				"target.value": 1,
-				"target.units": "",
-				"target.type": "creature",
-				"damage.parts": [
-					[
-						"(floor(((@details.level + @details.spellLevel) + 1) / 6))d8[on hit]",
-						"fire"
-					],
-					[
-						"@mod + (floor(((@details.level + @details.spellLevel) + 1) / 6))d8[splash]",
-						"fire"
-					]
-				],
-				"scaling.mode": "none",
-				"scaling.formula": ""
-			}
-		},
-		{
-			"name": "Gust",
-			"source": "XGE",
-			"system": {
-				"target.value": 1,
-				"target.units": "",
-				"target.type": "creature"
 			}
 		},
 		{
@@ -480,39 +225,12 @@
 			}
 		},
 		{
-			"name": "Healing Spirit",
-			"source": "XGE",
-			"system": {
-				"target.value": 5,
-				"target.units": "ft",
-				"target.type": "cube"
-			}
-		},
-		{
-			"name": "Hex",
-			"source": "PHB",
-			"system": {
-				"target.value": 1,
-				"target.units": null,
-				"target.type": "creature"
-			}
-		},
-		{
 			"name": "Hunger of Hadar",
 			"source": "PHB",
 			"system": {
 				"target.value": 20,
 				"target.units": "ft",
 				"target.type": "sphere"
-			}
-		},
-		{
-			"name": "Hunter's Mark",
-			"source": "PHB",
-			"system": {
-				"target.value": 1,
-				"target.units": null,
-				"target.type": "creature"
 			}
 		},
 		{
@@ -525,48 +243,12 @@
 			}
 		},
 		{
-			"name": "Ice Knife",
-			"source": "XGE",
-			"system": {
-				"damage.parts": [
-					[
-						"1d10[to target]",
-						"piercing"
-					],
-					[
-						"(floor(@item.level + 1))d6[splash]",
-						"cold"
-					]
-				],
-				"scaling.mode": "none",
-				"scaling.formula": ""
-			}
-		},
-		{
 			"name": "Ice Storm",
 			"source": "PHB",
 			"system": {
 				"target.value": 20,
 				"target.units": "ft",
 				"target.type": "cylinder"
-			}
-		},
-		{
-			"name": "Illusory Dragon",
-			"source": "XGE",
-			"system": {
-				"target.value": 60,
-				"target.units": "ft",
-				"target.type": "cone"
-			}
-		},
-		{
-			"name": "Immolation",
-			"source": "XGE",
-			"system": {
-				"target.value": 30,
-				"target.units": "ft",
-				"target.type": "radius"
 			}
 		},
 		{
@@ -579,15 +261,6 @@
 			}
 		},
 		{
-			"name": "Infestation",
-			"source": "XGE",
-			"system": {
-				"target.value": 1,
-				"target.units": "",
-				"target.type": "creature"
-			}
-		},
-		{
 			"name": "Insect Plague",
 			"source": "PHB",
 			"system": {
@@ -597,69 +270,12 @@
 			}
 		},
 		{
-			"name": "Lightning Arrow",
-			"source": "PHB",
-			"system": {
-				"damage.parts": [
-					[
-						"((@item.level) + 1)[on hit]",
-						"lightning"
-					],
-					[
-						"((@item.level) - 1)d8[area]",
-						"lightning"
-					]
-				],
-				"scaling.mode": "none",
-				"scaling.formula": ""
-			}
-		},
-		{
-			"name": "Lightning Lure",
-			"source": "TCE",
-			"system": {
-				"target.value": 1,
-				"target.units": "",
-				"target.type": "creature"
-			}
-		},
-		{
-			"name": "Maddening Darkness",
-			"source": "XGE",
-			"system": {
-				"target.value": 60,
-				"target.units": "ft",
-				"target.type": "sphere"
-			}
-		},
-		{
-			"name": "Maelstrom",
-			"source": "XGE",
-			"system": {
-				"target.value": 30,
-				"target.units": "ft",
-				"target.type": "radius"
-			}
-		},
-		{
 			"name": "Magic Circle",
 			"source": "PHB",
 			"system": {
 				"target.value": 10,
 				"target.units": "ft",
 				"target.type": "cylinder"
-			}
-		},
-		{
-			"name": "Magic Missile",
-			"source": "PHB",
-			"system": {
-				"damage.parts": [
-					[
-						"(1d4 + 1) * (2 + @item.level)",
-						"force"
-					]
-				]
 			}
 		},
 		{
@@ -679,6 +295,56 @@
 						"bludgeoning"
 					]
 				]
+			}
+		},
+		{
+			"name": "Magic Missile",
+			"source": "PHB",
+			"system": {
+				"damage.parts": [
+					[
+						"(1d4 + 1) * (2 + @item.level)",
+						"force"
+					]
+				]
+			}
+		},
+		{
+			"name": "Spiritual Weapon",
+			"source": "PHB",
+			"system": {
+				"damage.parts": [
+					[
+						"(floor((@item.level) / 2))d8 + @mod",
+						"force"
+					]
+				],
+				"scaling.mode": "none",
+				"scaling.formula": ""
+			}
+		},
+		{
+			"name": "Spirit Shroud",
+			"source": "TCE",
+			"system": {
+				"damage.parts": [],
+				"scaling.mode": "none",
+				"scaling.formula": "",
+				"formula": "(floor(((@item.level) - 1) / 2))d8"
+			}
+		},
+		{
+			"name": "Flame Blade",
+			"source": "PHB",
+			"system": {
+				"damage.parts": [
+					[
+						"(floor((@item.level) / 2) + 2)d6",
+						"fire"
+					]
+				],
+				"scaling.mode": "none",
+				"scaling.formula": ""
 			}
 		},
 		{
@@ -712,24 +378,6 @@
 			}
 		},
 		{
-			"name": "Melf's Acid Arrow",
-			"source": "PHB",
-			"system": {
-				"damage.parts": [
-					[
-						"4d4[immediate]",
-						"acid"
-					],
-					[
-						"(@item.level)d4[end of turn]",
-						"acid"
-					]
-				],
-				"scaling.mode": "none",
-				"scaling.formula": ""
-			}
-		},
-		{
 			"name": "Meteor Swarm",
 			"source": "PHB",
 			"system": {
@@ -739,26 +387,8 @@
 			}
 		},
 		{
-			"name": "Mind Sliver",
-			"source": "TCE",
-			"system": {
-				"target.value": 1,
-				"target.units": "",
-				"target.type": "creature"
-			}
-		},
-		{
 			"name": "Minor Illusion",
 			"source": "PHB",
-			"system": {
-				"target.value": 5,
-				"target.units": "ft",
-				"target.type": "cube"
-			}
-		},
-		{
-			"name": "Mold Earth",
-			"source": "XGE",
 			"system": {
 				"target.value": 5,
 				"target.units": "ft",
@@ -772,15 +402,6 @@
 				"target.value": 5,
 				"target.units": "ft",
 				"target.type": "cylinder"
-			}
-		},
-		{
-			"name": "Mordenkainen's Private Sanctum",
-			"source": "PHB",
-			"system": {
-				"target.value": 100,
-				"target.units": "ft",
-				"target.type": "cube"
 			}
 		},
 		{
@@ -802,15 +423,6 @@
 			}
 		},
 		{
-			"name": "Otto's Irresistible Dance",
-			"source": "PHB",
-			"system": {
-				"target.value": 1,
-				"target.units": null,
-				"target.type": "creature"
-			}
-		},
-		{
 			"name": "Phantasmal Force",
 			"source": "PHB",
 			"system": {
@@ -826,15 +438,6 @@
 				"target.value": 100,
 				"target.units": "ft",
 				"target.type": "radius"
-			}
-		},
-		{
-			"name": "Prismatic Wall",
-			"source": "PHB",
-			"system": {
-				"target.value": 90,
-				"target.units": "ft",
-				"target.type": "wall"
 			}
 		},
 		{
@@ -856,15 +459,6 @@
 			}
 		},
 		{
-			"name": "Pyrotechnics",
-			"source": "XGE",
-			"system": {
-				"target.value": 5,
-				"target.units": "ft",
-				"target.type": "cube"
-			}
-		},
-		{
 			"name": "Reverse Gravity",
 			"source": "PHB",
 			"system": {
@@ -874,37 +468,10 @@
 			}
 		},
 		{
-			"name": "Sapping Sting",
-			"source": "EGW",
-			"system": {
-				"target.value": 1,
-				"target.units": "",
-				"target.type": "creature"
-			}
-		},
-		{
-			"name": "Shape Water",
-			"source": "XGE",
-			"system": {
-				"target.value": 5,
-				"target.units": "ft",
-				"target.type": "cube"
-			}
-		},
-		{
 			"name": "Shatter",
 			"source": "PHB",
 			"system": {
 				"target.value": 10,
-				"target.units": "ft",
-				"target.type": "sphere"
-			}
-		},
-		{
-			"name": "Sickening Radiance",
-			"source": "XGE",
-			"system": {
-				"target.value": 30,
 				"target.units": "ft",
 				"target.type": "sphere"
 			}
@@ -928,15 +495,6 @@
 			}
 		},
 		{
-			"name": "Sleep",
-			"source": "PHB",
-			"system": {
-				"target.value": 20,
-				"target.units": "ft",
-				"target.type": "sphere"
-			}
-		},
-		{
 			"name": "Sleet Storm",
 			"source": "PHB",
 			"system": {
@@ -955,15 +513,6 @@
 			}
 		},
 		{
-			"name": "Snilloc's Snowball Swarm",
-			"source": "XGE",
-			"system": {
-				"target.value": 5,
-				"target.units": "ft",
-				"target.type": "sphere"
-			}
-		},
-		{
 			"name": "Spike Growth",
 			"source": "PHB",
 			"system": {
@@ -973,52 +522,8 @@
 			}
 		},
 		{
-			"name": "Spirit Guardians",
-			"source": "PHB",
-			"system": {
-				"target.value": null,
-				"target.units": null,
-				"target.type": "self",
-				"range.value": 15,
-				"range.units": "ft"
-			}
-		},
-		{
-			"name": "Spirit Shroud",
-			"source": "TCE",
-			"system": {
-				"damage.parts": [],
-				"scaling.mode": "none",
-				"scaling.formula": "",
-				"formula": "(floor(((@item.level) - 1) / 2))d8"
-			}
-		},
-		{
-			"name": "Spiritual Weapon",
-			"source": "PHB",
-			"system": {
-				"damage.parts": [
-					[
-						"(floor((@item.level) / 2))d8 + @mod",
-						"force"
-					]
-				],
-				"scaling.mode": "none",
-				"scaling.formula": ""
-			}
-		},
-		{
 			"name": "Stinking Cloud",
 			"source": "PHB",
-			"system": {
-				"target.value": 20,
-				"target.units": "ft",
-				"target.type": "sphere"
-			}
-		},
-		{
-			"name": "Storm Sphere",
-			"source": "XGE",
 			"system": {
 				"target.value": 20,
 				"target.units": "ft",
@@ -1032,25 +537,6 @@
 				"target.value": 60,
 				"target.units": "ft",
 				"target.type": "radius"
-			}
-		},
-		{
-			"name": "Sword Burst",
-			"source": "TCE",
-			"system": {
-				"target.value": 5,
-				"target.units": "ft",
-				"target.type": "creature",
-				"range.units": "special"
-			}
-		},
-		{
-			"name": "Synaptic Static",
-			"source": "XGE",
-			"system": {
-				"target.value": 20,
-				"target.units": "ft",
-				"target.type": "sphere"
 			}
 		},
 		{
@@ -1071,104 +557,6 @@
 			}
 		},
 		{
-			"name": "Temple of the Gods",
-			"source": "XGE",
-			"system": {
-				"target.value": 120,
-				"target.units": "ft",
-				"target.type": "cube"
-			}
-		},
-		{
-			"name": "Thorn Whip",
-			"source": "PHB",
-			"system": {
-				"target.value": 1,
-				"target.units": "",
-				"target.type": "creature"
-			}
-		},
-		{
-			"name": "Thunder Step",
-			"source": "XGE",
-			"system": {
-				"target.value": 10,
-				"target.units": "ft",
-				"target.type": "sphere"
-			}
-		},
-		{
-			"name": "Thunderclap",
-			"source": "XGE",
-			"system": {
-				"target.value": 5,
-				"target.units": "ft",
-				"target.type": "creature",
-				"range.units": "special"
-			}
-		},
-		{
-			"name": "Tidal Wave",
-			"source": "XGE",
-			"system": {
-				"target.value": 30,
-				"target.units": "ft",
-				"target.type": "wall"
-			}
-		},
-		{
-			"name": "Toll the Dead",
-			"source": "XGE",
-			"system": {
-				"target.value": 1,
-				"target.units": "",
-				"target.type": "creature",
-				"damage.parts": [
-					[
-						"(floor(((@details.level + @details.spellLevel) + 1) / 6) + 1)d8[if uninjured]",
-						"necrotic"
-					]
-				],
-				"damage.versatile": "(floor(((@details.level + @details.spellLevel) + 1) / 6) + 1)d12[if injured]",
-				"scaling.mode": "none",
-				"scaling.formula": ""
-			}
-		},
-		{
-			"name": "Transmute Rock",
-			"source": "XGE",
-			"system": {
-				"target.value": 40,
-				"target.units": "ft",
-				"target.type": "cube"
-			}
-		},
-		{
-			"name": "Vitriolic Sphere",
-			"source": "XGE",
-			"system": {
-				"target.value": 20,
-				"target.units": "ft",
-				"target.type": "sphere",
-				"damage.parts": [
-					[
-						"10d4",
-						"acid"
-					]
-				],
-				"formula": "5d4[acid]"
-			}
-		},
-		{
-			"name": "Wall of Fire",
-			"source": "PHB",
-			"system": {
-				"target.value": 60,
-				"target.units": "ft",
-				"target.type": "wall"
-			}
-		},
-		{
 			"name": "Wall of Force",
 			"source": "PHB",
 			"system": {
@@ -1182,24 +570,6 @@
 			"source": "PHB",
 			"system": {
 				"target.value": 100,
-				"target.units": "ft",
-				"target.type": "wall"
-			}
-		},
-		{
-			"name": "Wall of Light",
-			"source": "XGE",
-			"system": {
-				"target.value": 60,
-				"target.units": "ft",
-				"target.type": "wall"
-			}
-		},
-		{
-			"name": "Wall of Sand",
-			"source": "XGE",
-			"system": {
-				"target.value": 30,
 				"target.units": "ft",
 				"target.type": "wall"
 			}
@@ -1223,24 +593,6 @@
 			}
 		},
 		{
-			"name": "Wall of Water",
-			"source": "XGE",
-			"system": {
-				"target.value": 30,
-				"target.units": "ft",
-				"target.type": "wall"
-			}
-		},
-		{
-			"name": "Watery Sphere",
-			"source": "XGE",
-			"system": {
-				"target.value": 5,
-				"target.units": "ft",
-				"target.type": "radius"
-			}
-		},
-		{
 			"name": "Web",
 			"source": "PHB",
 			"system": {
@@ -1259,6 +611,222 @@
 			}
 		},
 		{
+			"name": "Zone of Truth",
+			"source": "PHB",
+			"system": {
+				"target.value": 15,
+				"target.units": "ft",
+				"target.type": "sphere"
+			}
+		},
+		{
+			"name": "Haywire (UA)",
+			"source": "UAModernMagic",
+			"system": {
+				"target.value": 10,
+				"target.units": "ft",
+				"target.type": "sphere"
+			}
+		},
+		{
+			"name": "Abi-Dalzim's Horrid Wilting",
+			"source": "XGE",
+			"system": {
+				"target.value": 30,
+				"target.units": "ft",
+				"target.type": "cube"
+			}
+		},
+		{
+			"name": "Bones of the Earth",
+			"source": "XGE",
+			"system": {
+				"target.value": 3,
+				"target.units": "ft",
+				"target.type": "radius"
+			}
+		},
+		{
+			"name": "Control Flames",
+			"source": "XGE",
+			"system": {
+				"target.value": 5,
+				"target.units": "ft",
+				"target.type": "cube"
+			}
+		},
+		{
+			"name": "Control Winds",
+			"source": "XGE",
+			"system": {
+				"target.value": 100,
+				"target.units": "ft",
+				"target.type": "cube"
+			}
+		},
+		{
+			"name": "Create Bonfire",
+			"source": "XGE",
+			"system": {
+				"target.value": 5,
+				"target.units": "ft",
+				"target.type": "cube"
+			}
+		},
+		{
+			"name": "Dawn",
+			"source": "XGE",
+			"system": {
+				"target.value": 30,
+				"target.units": "ft",
+				"target.type": "cylinder"
+			}
+		},
+		{
+			"name": "Dust Devil",
+			"source": "XGE",
+			"system": {
+				"target.value": 5,
+				"target.units": "ft",
+				"target.type": "cube"
+			}
+		},
+		{
+			"name": "Erupting Earth",
+			"source": "XGE",
+			"system": {
+				"target.value": 20,
+				"target.units": "ft",
+				"target.type": "cube"
+			}
+		},
+		{
+			"name": "Healing Spirit",
+			"source": "XGE",
+			"system": {
+				"target.value": 5,
+				"target.units": "ft",
+				"target.type": "cube"
+			}
+		},
+		{
+			"name": "Illusory Dragon",
+			"source": "XGE",
+			"system": {
+				"target.value": 60,
+				"target.units": "ft",
+				"target.type": "cone"
+			}
+		},
+		{
+			"name": "Immolation",
+			"source": "XGE",
+			"system": {
+				"target.value": 30,
+				"target.units": "ft",
+				"target.type": "radius"
+			}
+		},
+		{
+			"name": "Maddening Darkness",
+			"source": "XGE",
+			"system": {
+				"target.value": 60,
+				"target.units": "ft",
+				"target.type": "sphere"
+			}
+		},
+		{
+			"name": "Mold Earth",
+			"source": "XGE",
+			"system": {
+				"target.value": 5,
+				"target.units": "ft",
+				"target.type": "cube"
+			}
+		},
+		{
+			"name": "Pyrotechnics",
+			"source": "XGE",
+			"system": {
+				"target.value": 5,
+				"target.units": "ft",
+				"target.type": "cube"
+			}
+		},
+		{
+			"name": "Shape Water",
+			"source": "XGE",
+			"system": {
+				"target.value": 5,
+				"target.units": "ft",
+				"target.type": "cube"
+			}
+		},
+		{
+			"name": "Sickening Radiance",
+			"source": "XGE",
+			"system": {
+				"target.value": 30,
+				"target.units": "ft",
+				"target.type": "sphere"
+			}
+		},
+		{
+			"name": "Snilloc's Snowball Swarm",
+			"source": "XGE",
+			"system": {
+				"target.value": 5,
+				"target.units": "ft",
+				"target.type": "sphere"
+			}
+		},
+		{
+			"name": "Storm Sphere",
+			"source": "XGE",
+			"system": {
+				"target.value": 20,
+				"target.units": "ft",
+				"target.type": "sphere"
+			}
+		},
+		{
+			"name": "Synaptic Static",
+			"source": "XGE",
+			"system": {
+				"target.value": 20,
+				"target.units": "ft",
+				"target.type": "sphere"
+			}
+		},
+		{
+			"name": "Transmute Rock",
+			"source": "XGE",
+			"system": {
+				"target.value": 40,
+				"target.units": "ft",
+				"target.type": "cube"
+			}
+		},
+		{
+			"name": "Vitriolic Sphere",
+			"source": "XGE",
+			"system": {
+				"target.value": 20,
+				"target.units": "ft",
+				"target.type": "sphere"
+			}
+		},
+		{
+			"name": "Watery Sphere",
+			"source": "XGE",
+			"system": {
+				"target.value": 5,
+				"target.units": "ft",
+				"target.type": "radius"
+			}
+		},
+		{
 			"name": "Whirlwind",
 			"source": "XGE",
 			"system": {
@@ -1268,12 +836,377 @@
 			}
 		},
 		{
+			"name": "Wrath of Nature",
+			"source": "XGE",
+			"system": {
+				"target.value": 60,
+				"target.units": "ft",
+				"target.type": "cube"
+			}
+		},
+		{
+			"name": "Maelstrom",
+			"source": "XGE",
+			"system": {
+				"target.value": 30,
+				"target.units": "ft",
+				"target.type": "radius"
+			}
+		},
+		{
+			"name": "Blade Barrier",
+			"source": "PHB",
+			"system": {
+				"target.value": 100,
+				"target.units": "ft",
+				"target.type": "wall"
+			}
+		},
+		{
+			"name": "Mordenkainen's Private Sanctum",
+			"source": "PHB",
+			"system": {
+				"target.value": 100,
+				"target.units": "ft",
+				"target.type": "cube"
+			}
+		},
+		{
+			"name": "Prismatic Wall",
+			"source": "PHB",
+			"system": {
+				"target.value": 90,
+				"target.units": "ft",
+				"target.type": "wall"
+			}
+		},
+		{
+			"name": "Sleep",
+			"source": "PHB",
+			"system": {
+				"target.value": 20,
+				"target.units": "ft",
+				"target.type": "sphere"
+			}
+		},
+		{
+			"name": "Wall of Fire",
+			"source": "PHB",
+			"system": {
+				"target.value": 60,
+				"target.units": "ft",
+				"target.type": "wall"
+			}
+		},
+		{
 			"name": "Wind Wall",
 			"source": "PHB",
 			"system": {
 				"target.value": 50,
 				"target.units": "ft",
 				"target.type": "wall"
+			}
+		},
+		{
+			"name": "Arcane Gate",
+			"source": "PHB",
+			"system": {
+				"target.value": 10,
+				"target.units": "ft",
+				"target.type": "wall"
+			}
+		},
+		{
+			"name": "Cloud of Daggers",
+			"source": "PHB",
+			"system": {
+				"target.value": 5,
+				"target.units": "ft",
+				"target.type": "cube"
+			}
+		},
+		{
+			"name": "Cordon of Arrows",
+			"source": "PHB",
+			"system": {
+				"target.value": 30,
+				"target.units": "ft",
+				"target.type": "sphere"
+			}
+		},
+		{
+			"name": "Forcecage",
+			"source": "PHB",
+			"system": {
+				"target.value": 20,
+				"target.units": "ft",
+				"target.type": "cube"
+			}
+		},
+		{
+			"name": "Gate",
+			"source": "PHB",
+			"system": {
+				"target.value": 20,
+				"target.units": "ft",
+				"target.type": "wall"
+			}
+		},
+		{
+			"name": "Temple of the Gods",
+			"source": "XGE",
+			"system": {
+				"target.value": 120,
+				"target.units": "ft",
+				"target.type": "cube"
+			}
+		},
+		{
+			"name": "Thunder Step",
+			"source": "XGE",
+			"system": {
+				"target.value": 10,
+				"target.units": "ft",
+				"target.type": "sphere"
+			}
+		},
+		{
+			"name": "Thunderclap",
+			"source": "XGE",
+			"system": {
+				"target.value": 5,
+				"target.units": "ft",
+				"target.type": "creature"
+			}
+		},
+		{
+			"name": "Tidal Wave",
+			"source": "XGE",
+			"system": {
+				"target.value": 30,
+				"target.units": "ft",
+				"target.type": "wall"
+			}
+		},
+		{
+			"name": "Wall of Light",
+			"source": "XGE",
+			"system": {
+				"target.value": 60,
+				"target.units": "ft",
+				"target.type": "wall"
+			}
+		},
+		{
+			"name": "Wall of Sand",
+			"source": "XGE",
+			"system": {
+				"target.value": 30,
+				"target.units": "ft",
+				"target.type": "wall"
+			}
+		},
+		{
+			"name": "Wall of Water",
+			"source": "XGE",
+			"system": {
+				"target.value": 30,
+				"target.units": "ft",
+				"target.type": "wall"
+			}
+		},
+		{
+			"name": "Sapping Sting",
+			"source": "EGW",
+			"system": {
+				"target.value": 1,
+				"target.units": "",
+				"target.type": "creature"
+			}
+		},
+		{
+			"name": "Thorn Whip",
+			"source": "PHB",
+			"system": {
+				"target.value": 1,
+				"target.units": "",
+				"target.type": "creature"
+			}
+		},
+		{
+			"name": "Booming Blade",
+			"source": "TCE",
+			"system": {
+				"actionType": "mwak",
+				"target.value": 1,
+				"target.units": "",
+				"target.type": "creature",
+				"damage.parts": [
+					[
+						"(floor(((@details.level + @details.spellLevel) + 1) / 6))d8[on hit]",
+						"thunder"
+					]
+				],
+				"damage.versatile": "(floor(((@details.level + @details.spellLevel) + 1) / 6) + 1)d8[on willing movement]",
+				"scaling.mode": "none",
+				"scaling.formula": ""
+			}
+		},
+		{
+			"name": "Green-Flame Blade",
+			"source": "TCE",
+			"system": {
+				"actionType": "mwak",
+				"target.value": 1,
+				"target.units": "",
+				"target.type": "creature",
+				"damage.parts": [
+					[
+						"(floor(((@details.level + @details.spellLevel) + 1) / 6))d8[on hit]",
+						"fire"
+					],
+					[
+						"@mod + (floor(((@details.level + @details.spellLevel) + 1) / 6))d8[splash]",
+						"fire"
+					]
+				],
+				"scaling.mode": "none",
+				"scaling.formula": ""
+			}
+		},
+		{
+			"name": "Lightning Lure",
+			"source": "TCE",
+			"system": {
+				"target.value": 1,
+				"target.units": "",
+				"target.type": "creature"
+			}
+		},
+		{
+			"name": "Sword Burst",
+			"source": "TCE",
+			"system": {
+				"target.value": 5,
+				"target.units": "ft",
+				"target.type": "sphere"
+			}
+		},
+		{
+			"name": "Word of Radiance",
+			"source": "XGE",
+			"system": {
+				"target.value": 5,
+				"target.units": "ft",
+				"target.type": "sphere"
+			}
+		},
+		{
+			"name": "Mind Sliver",
+			"source": "TCE",
+			"system": {
+				"target.value": 1,
+				"target.units": "",
+				"target.type": "creature"
+			}
+		},
+		{
+			"name": "Frostbite",
+			"source": "XGE",
+			"system": {
+				"target.value": 1,
+				"target.units": "",
+				"target.type": "creature"
+			}
+		},
+		{
+			"name": "Gust",
+			"source": "XGE",
+			"system": {
+				"target.value": 1,
+				"target.units": "",
+				"target.type": "creature"
+			}
+		},
+		{
+			"name": "Infestation",
+			"source": "XGE",
+			"system": {
+				"target.value": 1,
+				"target.units": "",
+				"target.type": "creature"
+			}
+		},
+		{
+			"name": "Toll the Dead",
+			"source": "XGE",
+			"system": {
+				"target.value": 1,
+				"target.units": "",
+				"target.type": "creature",
+				"damage.parts": [
+					[
+						"(floor(((@details.level + @details.spellLevel) + 1) / 6) + 1)d8[if uninjured]",
+						"necrotic"
+					]
+				],
+				"damage.versatile": "(floor(((@details.level + @details.spellLevel) + 1) / 6) + 1)d12[if injured]",
+				"scaling.mode": "none",
+				"scaling.formula": ""
+			}
+		},
+		{
+			"name": "Ice Knife",
+			"source": "XGE",
+			"system": {
+				"damage.parts": [
+					[
+						"1d10[to target]",
+						"piercing"
+					],
+					[
+						"(floor(@item.level + 1))d6[splash]",
+						"cold"
+					]
+				],
+				"scaling.mode": "none",
+				"scaling.formula": ""
+			}
+		},
+		{
+			"name": "Melf's Acid Arrow",
+			"source": "PHB",
+			"system": {
+				"damage.parts": [
+					[
+						"4d4[immediate]",
+						"acid"
+					],
+					[
+						"(@item.level)d4[end of turn]",
+						"acid"
+					]
+				],
+				"scaling.mode": "none",
+				"scaling.formula": ""
+			}
+		},
+		{
+			"name": "Lightning Arrow",
+			"source": "PHB",
+			"system": {
+				"damage.parts": [
+					[
+						"((@item.level) + 1)[on hit]",
+						"lightning"
+					],
+					[
+						"((@item.level) - 1)d8[area]",
+						"lightning"
+					]
+				],
+				"scaling.mode": "none",
+				"scaling.formula": ""
 			}
 		},
 		{
@@ -1298,31 +1231,48 @@
 			}
 		},
 		{
-			"name": "Word of Radiance",
+			"name": "Chaos Bolt",
 			"source": "XGE",
 			"system": {
-				"target.value": 5,
-				"target.units": "ft",
-				"target.type": "sphere"
+				"damage.parts": [
+					[
+						"2d8 + 1d6",
+						""
+					]
+				],
+				"formula": ""
 			}
 		},
 		{
-			"name": "Wrath of Nature",
-			"source": "XGE",
-			"system": {
-				"target.value": 60,
-				"target.units": "ft",
-				"target.type": "cube"
-			}
-		},
-		{
-			"name": "Zone of Truth",
+			"name": "Blade Ward",
 			"source": "PHB",
-			"system": {
-				"target.value": 15,
-				"target.units": "ft",
-				"target.type": "sphere"
-			}
+			"effects": [
+				{
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "CUSTOM",
+							"value": "bludgeoning",
+							"priority": 20
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "CUSTOM",
+							"value": "piercing",
+							"priority": 20
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "CUSTOM",
+							"value": "slashing",
+							"priority": 20
+						}
+					],
+					"duration": {
+						"rounds": 1
+					}
+				}
+			]
 		}
 	]
 }

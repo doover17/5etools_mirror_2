@@ -9,7 +9,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/DC/000-hf9lp-ebondeaths-lair.webp"
+						"path": "adventure/DC/000-hf9lp-ebondeaths-lair.jpg"
 					},
 					"title": "{@creature Ebondeath|DC}'s Lair",
 					"width": 1164,
@@ -102,7 +102,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/DC/001-map-sc.webp"
+												"path": "adventure/DC/001-map-sc.jpg"
 											},
 											"title": "Map 1: The Sword Coast",
 											"width": 2105,
@@ -121,7 +121,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/DC/002-wnecz-map-sword-coast-pc.webp"
+												"path": "adventure/DC/002-wnecz-map-sword-coast-pc.jpg"
 											},
 											"title": "Player Version",
 											"width": 2153,
@@ -316,7 +316,7 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/DC/003-wjwlc-map-leilon-town-map_dm.webp"
+								"path": "adventure/DC/003-wjwlc-map-leilon-town-map_dm.jpg"
 							},
 							"title": "Map 2: Leilon Town",
 							"width": 3600,
@@ -631,7 +631,7 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/DC/004-qfdcj-map-leilon-town-map_player.webp"
+								"path": "adventure/DC/004-qfdcj-map-leilon-town-map_player.jpg"
 							},
 							"title": "Player Version",
 							"width": 3600,
@@ -1103,7 +1103,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/DC/005-5omvv-map-dumathoins-gulch_dm.webp"
+												"path": "adventure/DC/005-5omvv-map-dumathoins-gulch_dm.jpg"
 											},
 											"title": "Map 3: Dumathoin's Gulch",
 											"width": 2835,
@@ -1121,7 +1121,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/DC/006-oubp4-map-dumathoins-gulch_player.webp"
+												"path": "adventure/DC/006-oubp4-map-dumathoins-gulch_player.jpg"
 											},
 											"title": "Player Version",
 											"width": 2835,
@@ -1343,7 +1343,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/DC/007-nokov-map-ebondeaths-mausoleum_dm.webp"
+										"path": "adventure/DC/007-nokov-map-ebondeaths-mausoleum_dm.jpg"
 									},
 									"title": "Map 4: Ebondeath's Mausoleum",
 									"width": 3600,
@@ -2720,7 +2720,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/DC/008-xva5z-map-ebondeaths-mausoleum_player.webp"
+										"path": "adventure/DC/008-xva5z-map-ebondeaths-mausoleum_player.jpg"
 									},
 									"title": "Player Version",
 									"width": 3600,
@@ -2774,7 +2774,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/DC/009-fui5e-zombie-lair-in-water.webp"
+												"path": "adventure/DC/009-fui5e-zombie-lair-in-water.jpg"
 											},
 											"title": "Zombie Lair in Water",
 											"width": 1000,
@@ -3065,7 +3065,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/DC/010-ibovp-map-icingdeath-and-twinkle_dm.webp"
+												"path": "adventure/DC/010-ibovp-map-icingdeath-and-twinkle_dm.jpg"
 											},
 											"title": "Map 5: Icingdeath and Twinkle",
 											"width": 3600,
@@ -4382,7 +4382,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/DC/011-enh49-map-icingdeath-and-twinkle_player.webp"
+												"path": "adventure/DC/011-enh49-map-icingdeath-and-twinkle_player.jpg"
 											},
 											"title": "Player Version",
 											"width": 3600,
@@ -4851,7 +4851,7 @@
 										],
 										[
 											"5",
-											"Allied soldiers ask the characters to discipline a group of deserters hiding out in a nearby barn."
+											"Allied soldiers ask the characters to disciplinegroup of deserters hiding out in a nearby barn."
 										],
 										[
 											"6",
@@ -5022,7 +5022,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/DC/012-ozw9h-flowchart-export.webp"
+												"path": "adventure/DC/012-ozw9h-flowchart-export.png"
 											},
 											"title": "Battle Flowchart",
 											"width": 850,
@@ -5343,7 +5343,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/DC/013-n3ef5-ghostly-warrior.webp"
+												"path": "adventure/DC/013-n3ef5-ghostly-warrior.png"
 											},
 											"title": "Ghostly Warrior",
 											"width": 800,
@@ -5593,7 +5593,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/DC/014-cvtwd-map-stormlordshideout_dm.webp"
+												"path": "adventure/DC/014-cvtwd-map-stormlordshideout_dm.jpg"
 											},
 											"title": "Map 6: Storm Lord's Hideout",
 											"width": 3600,
@@ -6731,7 +6731,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/DC/015-en4hl-map-stormlordshideout_player.webp"
+												"path": "adventure/DC/015-en4hl-map-stormlordshideout_player.jpg"
 											},
 											"title": "Player Version",
 											"width": 3600,
@@ -7036,7 +7036,7 @@
 								"Gallio can answer any questions the players have about the history of the tower or the mission at hand (see \"{@area Into the Ethereal|124|x}\").",
 								{
 									"type": "inset",
-									"name": "Gallio's Hidden Agenda",
+									"name": "Gallio's Hidden Agenda ",
 									"id": "10d",
 									"entries": [
 										"Gallio has secret orders from his superiors in the Order of the Many-Starred Cloak to recover a magical artifact called the {@item ruinstone|DC} from the Ethereal Plane. He intends to use the party to lure the {@item Ruinstone|DC|ruinstone's} guardians away, allowing him to seize it for his studies. Gallio doesn't know that the artifact is protected by a field of wild magic. Touching it unleashes a magical backlash that overloads the planar beacon and frees any monsters held inside the tower: the same fate that befell Thalivar."
@@ -7049,7 +7049,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/DC/016-qlle0-map-thalivars-beacon_dm.webp"
+												"path": "adventure/DC/016-qlle0-map-thalivars-beacon_dm.jpg"
 											},
 											"title": "Map 7: Thalivar's Beacon",
 											"width": 3600,
@@ -7655,7 +7655,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/DC/017-vxcmx-map-thalivars-beacon_player.webp"
+												"path": "adventure/DC/017-vxcmx-map-thalivars-beacon_player.jpg"
 											},
 											"title": "Player Version",
 											"width": 3600,
@@ -8014,7 +8014,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/DC/023-ynkgo-donnabella.webp"
+										"path": "adventure/DC/023-ynkgo-donnabella.png"
 									},
 									"width": 850,
 									"height": 1000
@@ -8078,7 +8078,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/DC/024-leeom-galandro.webp"
+										"path": "adventure/DC/024-leeom-galandro.png"
 									},
 									"width": 850,
 									"height": 1000
@@ -8142,7 +8142,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/DC/025-l3v6r-inverna.webp"
+										"path": "adventure/DC/025-l3v6r-inverna.png"
 									},
 									"width": 850,
 									"height": 1000
@@ -8206,7 +8206,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/DC/026-3krsm-nib.webp"
+										"path": "adventure/DC/026-3krsm-nib.png"
 									},
 									"width": 850,
 									"height": 1000
@@ -8270,7 +8270,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/DC/027-pu4f2-pete.webp"
+										"path": "adventure/DC/027-pu4f2-pete.png"
 									},
 									"width": 850,
 									"height": 1000
@@ -8334,7 +8334,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/DC/028-gttxp-quinn.webp"
+										"path": "adventure/DC/028-gttxp-quinn.png"
 									},
 									"width": 850,
 									"height": 1000
@@ -8398,7 +8398,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/DC/029-1qyge-ruby.webp"
+										"path": "adventure/DC/029-1qyge-ruby.png"
 									},
 									"width": 850,
 									"height": 1000
@@ -8462,7 +8462,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/DC/030-nemem-shanjan.webp"
+										"path": "adventure/DC/030-nemem-shanjan.png"
 									},
 									"width": 850,
 									"height": 1000
@@ -8526,7 +8526,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/DC/031-nrqv1-talon.webp"
+										"path": "adventure/DC/031-nrqv1-talon.png"
 									},
 									"width": 850,
 									"height": 1000
@@ -8715,88 +8715,6 @@
 										]
 									]
 								}
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"type": "section",
-			"name": "Credits",
-			"entries": [
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Story Creators",
-							"entries": [
-								"Bill Benham, Christopher Lindsay"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Story Consultant",
-							"entries": [
-								"Christopher Perkins"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Lead Designer",
-							"entries": [
-								"Will Doyle"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Developers",
-							"entries": [
-								"James Introcaso, Shawn Merwin"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Editors",
-							"entries": [
-								"Hannah Rose"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Managing Editor",
-							"entries": [
-								"Christopher Lindsay"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Graphic Designer",
-							"entries": [
-								"Rich Lescouflair"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Illustrators",
-							"entries": [
-								"Daren Bader, Mark Behm, Eric Belisle, Filip Burburan, Hector Ortiz, Claudio Pozas, Kieran Yanner"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Cartographers",
-							"entries": [
-								"Stacey Allen, Will Doyle"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Playtest Coordinator",
-							"entries": [
-								"Bill Benham"
 							]
 						}
 					]

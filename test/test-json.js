@@ -5,11 +5,6 @@ import {Um, Uf, JsonTester} from "5etools-utils";
 const LOG_TAG = "JSON";
 const _IS_FAIL_SLOW = !!process.env.FAIL_SLOW;
 
-const _GENERATED_ALLOWLIST = new Set([
-	"bookref-quick.json",
-	"gendata-spell-source-lookup.json",
-]);
-
 async function main () {
 	const jsonTester = new JsonTester({
 		tagLog: LOG_TAG,
@@ -31,11 +26,14 @@ async function main () {
 		},
 	});
 
-	const fileList = Uf.listJsonFiles("data")
-		.filter(filePath => {
-			if (filePath.includes("data/generated")) return _GENERATED_ALLOWLIST.has(filePath.split("/").at(-1));
-			return true;
-		});
+	const fileList = Uf.listJsonFiles(
+		"data",
+		{
+			dirBlocklist: new Set([
+				"data/generated",
+			]),
+		},
+	);
 
 	const results = await jsonTester.pGetErrorsOnDirsWorkers({
 		isFailFast: !_IS_FAIL_SLOW,

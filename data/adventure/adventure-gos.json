@@ -10,11 +10,10 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/GoS/000-01-01-chapter-1.webp"
+						"path": "adventure/GoS/000-01-01-chapter-1.png"
 					},
 					"width": 753,
-					"height": 1000,
-					"credit": "Zoltan Boros"
+					"height": 1000
 				},
 				"Saltmarsh is a nondescript fishing village tucked away on the southern coast of the Kingdom of Keoland. For several generations, Keoland was a formidable military power. Its superior cavalry and bold knights pushed the kingdom's borders outward to the north, west, and east. Each successful campaign increased both the crown's wealth and power, and each one in turn drew the kingdom's attention even farther north. The southern coastal regions of Keoland remained a backwater.",
 				"The crown's benign neglect allowed piracy and banditry to flourish. Saltmarsh and similar towns kept to fishing, content to maintain a low profile and avoid governmental entanglements. Decades ago, the pirates who prowled the waters off Saltmarsh grew strong enough to create their own realm, a loose confederacy known as the Hold of the Sea Princes. With the rise of that nation came increased raids on Saltmarsh and its neighbors. The Sea Princes' raiding ships pillaged the coast for more slaves to support their growing realm, and Saltmarsh suffered heavily. The memories of those times loom heavily over the area, and the locals' hatred of the Sea Princes runs deep.",
@@ -204,11 +203,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/GoS/001-01-02.webp"
+										"path": "adventure/GoS/001-01-02.png"
 									},
 									"width": 1000,
-									"height": 669,
-									"credit": "Zoltan Boros"
+									"height": 669
 								},
 								{
 									"type": "entries",
@@ -753,7 +751,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/002-01-dm.webp"
+												"path": "adventure/GoS/002-01-dm.png"
 											},
 											"width": 2550,
 											"height": 3338,
@@ -764,7 +762,7 @@
 												"size": 147,
 												"distance": 250
 											},
-											"id": "5c9",
+											"id": "54e",
 											"mapRegions": [
 												{
 													"area": "050",
@@ -2751,14 +2749,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/GoS/thumbnail/002-01-dm.webp"
-											},
-											"credit": "Mike Schley"
+											}
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/003-01-pc.webp"
+												"path": "adventure/GoS/003-01-pc.png"
 											},
 											"title": "Player Version",
 											"width": 2550,
@@ -2770,9 +2767,8 @@
 												"distance": 250
 											},
 											"mapParent": {
-												"id": "5c9"
-											},
-											"credit": "Mike Schley"
+												"id": "54e"
+											}
 										}
 									]
 								},
@@ -3240,11 +3236,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/GoS/004-01-04.webp"
+										"path": "adventure/GoS/004-01-04.png"
 									},
 									"width": 665,
-									"height": 1000,
-									"credit": "Leesha Hannigan"
+									"height": 1000
 								},
 								"{@creature Captain Xendros|GoS} of the Faithful Quartermasters of Iuz has magic items for sale and can also broker the sale of magic items. Any such item comes with a mild curse, however. Anyone attuned to the item can be targeted by a {@spell detect thoughts} spell cast by Xendros, with no limit on range; any saving throws triggered by the spell automatically fail; and the target has no knowledge of the casting. This curse can be detected by casting an {@spell identify} spell on the item and succeeding on a DC 25 Intelligence ({@skill Arcana}) check. The check can be attempted once per casting.",
 								{
@@ -3402,7 +3397,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/GoS/005-02-dm.webp"
+										"path": "adventure/GoS/005-02-dm.png"
 									},
 									"width": 4200,
 									"height": 5700,
@@ -3416,7 +3411,7 @@
 										"distance": 7500,
 										"units": "yards"
 									},
-									"id": "5ca",
+									"id": "54f",
 									"mapRegions": [
 										{
 											"area": "06f",
@@ -3744,14 +3739,13 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/GoS/thumbnail/005-02-dm.webp"
-									},
-									"credit": "Dyson Logos"
+									}
 								},
 								{
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/GoS/006-02-pc.webp"
+										"path": "adventure/GoS/006-02-pc.png"
 									},
 									"title": "Player Version",
 									"width": 4200,
@@ -3766,9 +3760,8 @@
 										"units": "yards"
 									},
 									"mapParent": {
-										"id": "5ca"
-									},
-									"credit": "Dyson Logos"
+										"id": "54f"
+									}
 								}
 							]
 						},
@@ -3812,11 +3805,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/007-01-05.webp"
+												"path": "adventure/GoS/007-01-05.png"
 											},
 											"width": 1000,
-											"height": 710,
-											"credit": "Zoltan Boros"
+											"height": 710
 										}
 									]
 								},
@@ -5227,11 +5219,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/GoS/008-01-07.webp"
+										"path": "adventure/GoS/008-01-07.png"
 									},
 									"width": 1000,
-									"height": 819,
-									"credit": "Wayne England"
+									"height": 819
 								}
 							]
 						}
@@ -5249,25 +5240,27 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/GoS/009-02-01-chapter-2.webp"
+						"path": "adventure/GoS/009-02-01-chapter-2.png"
 					},
 					"width": 753,
-					"height": 1000,
-					"credit": "Sidharth Chaturvedi"
+					"height": 1000
 				},
 				"Four miles east of Saltmarsh, just inland of the old coast road, stands a haunted house. Until twenty years ago, it had been the residence of an aged alchemist of sinister reputation. Even then, locals avoided the house because of its owner's mysterious activities. Now, two decades after the unexplained disappearance of its occupant, the house has taken on an even greater air of evil and mystery.",
 				"Dilapidated and long abandoned, the house presents an unwholesome appearance. Those hardy souls who have infrequently sought entry (pursuing rumors of a secret hoard of alchemical gold) all returned with naught save grim tales of decaying chambers presided over by monstrous perils. Indeed, such is the reputation of the house that the fields around it, though prime agricultural land, remain untended and rank with weeds.",
 				"This adventure is designed for four to six 1st-level characters. If the characters complete both portions, \"{@area The Haunted House|0c6|x}\" and \"{@area The Sea Ghost|135|x},\" they are likely to reach 3rd level.",
 				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "adventure/GoS/010-02-02-module-the-sinister-secret-of-saltmarsh.webp"
-					},
-					"width": 567,
-					"height": 717,
-					"maxWidth": 350,
-					"credit": "Dave De Leuw"
+					"type": "gallery",
+					"images": [
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "adventure/GoS/010-02-02-module-the-sinister-secret-of-saltmarsh.png"
+							},
+							"width": 567,
+							"height": 717
+						}
+					]
 				},
 				{
 					"type": "inset",
@@ -5542,7 +5535,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/011-06-dm.webp"
+												"path": "adventure/GoS/011-06-dm.png"
 											},
 											"width": 4200,
 											"height": 5700,
@@ -5554,7 +5547,7 @@
 												"offsetX": -2,
 												"offsetY": 26
 											},
-											"id": "5cb",
+											"id": "550",
 											"mapRegions": [
 												{
 													"area": "104",
@@ -6039,14 +6032,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/GoS/thumbnail/011-06-dm.webp"
-											},
-											"credit": "Dyson Logos"
+											}
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/012-06-pc.webp"
+												"path": "adventure/GoS/012-06-pc.png"
 											},
 											"title": "Player Version",
 											"width": 4200,
@@ -6059,9 +6051,8 @@
 												"offsetY": 26
 											},
 											"mapParent": {
-												"id": "5cb"
-											},
-											"credit": "Dyson Logos"
+												"id": "550"
+											}
 										}
 									]
 								},
@@ -6551,7 +6542,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/013-04-dm.webp"
+												"path": "adventure/GoS/013-04-dm.png"
 											},
 											"width": 4200,
 											"height": 5700,
@@ -6563,7 +6554,7 @@
 												"offsetX": -29,
 												"offsetY": 41
 											},
-											"id": "5cc",
+											"id": "551",
 											"mapRegions": [
 												{
 													"area": "108",
@@ -7500,14 +7491,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/GoS/thumbnail/013-04-dm.webp"
-											},
-											"credit": "Dyson Logos"
+											}
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/014-04-pc.webp"
+												"path": "adventure/GoS/014-04-pc.png"
 											},
 											"title": "Player Version",
 											"width": 4200,
@@ -7520,9 +7510,8 @@
 												"offsetY": -12
 											},
 											"mapParent": {
-												"id": "5cc"
-											},
-											"credit": "Dyson Logos"
+												"id": "551"
+											}
 										}
 									]
 								},
@@ -7734,11 +7723,10 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/GoS/015-02-04-skeletal-alchemist.webp"
+														"path": "adventure/GoS/015-02-04-skeletal-alchemist.png"
 													},
 													"width": 784,
-													"height": 1000,
-													"credit": "Leesha Hannigan"
+													"height": 1000
 												}
 											]
 										}
@@ -7818,11 +7806,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/GoS/016-02-06.webp"
+										"path": "adventure/GoS/016-02-06.png"
 									},
 									"width": 1000,
-									"height": 673,
-									"credit": "Even Amundsen"
+									"height": 673
 								},
 								"The passages and caverns beyond the secret door in the south wall of {@area room 21|10e|x} all decline perceptibly toward the sea. The passage that runs north of {@area areas 25|124|x} and {@area 26|126} and the interior of {@area areas 27|128|x}, {@area 28|12e}, and {@area 29|130} are well-lit by torches set in crude brackets on the walls. {@area Areas 25|124|x} and {@area 26|126} are dark. {@area Area 30|132|x} is open to daylight. The walls are slimy and the floors are moist, though the smugglers have laid matting in places to make them more easily passable.",
 								"All these passages and caverns are natural, though there are signs of worked stone here and there; such evidence is found on the stairs leading from the secret door and in places where narrow passages were widened.",
@@ -8020,11 +8007,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/GoS/017-02-07.webp"
+										"path": "adventure/GoS/017-02-07.png"
 									},
 									"width": 1000,
-									"height": 672,
-									"credit": "Sidharth Chaturvedi"
+									"height": 672
 								}
 							]
 						},
@@ -8183,7 +8169,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/018-03-dm.webp"
+												"path": "adventure/GoS/018-03-dm.png"
 											},
 											"width": 4200,
 											"height": 5700,
@@ -8195,7 +8181,7 @@
 												"offsetX": 32,
 												"offsetY": 6
 											},
-											"id": "5cd",
+											"id": "552",
 											"mapRegions": [
 												{
 													"area": "148",
@@ -10089,14 +10075,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/GoS/thumbnail/018-03-dm.webp"
-											},
-											"credit": "Dyson Logos"
+											}
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/019-03-pc.webp"
+												"path": "adventure/GoS/019-03-pc.png"
 											},
 											"title": "Player Version",
 											"width": 4200,
@@ -10109,9 +10094,8 @@
 												"offsetY": 26
 											},
 											"mapParent": {
-												"id": "5cd"
-											},
-											"credit": "Dyson Logos"
+												"id": "552"
+											}
 										}
 									]
 								},
@@ -10297,11 +10281,10 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/GoS/020-02-09.webp"
+														"path": "adventure/GoS/020-02-09.png"
 													},
 													"width": 2513,
-													"height": 1850,
-													"credit": "Sidharth Chaturvedi"
+													"height": 1850
 												}
 											]
 										}
@@ -10642,24 +10625,26 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/GoS/021-03-01-chapter-3.webp"
+						"path": "adventure/GoS/021-03-01-chapter-3.png"
 					},
 					"width": 753,
-					"height": 1000,
-					"credit": "Scott Murphy"
+					"height": 1000
 				},
 				"The discovery that a colony of lizardfolk lies near the small fishing town of Saltmarsh and is purchasing weaponry considered sophisticated by lizardfolk standards has alarmed the Saltmarsh Town Council. Greatly troubled and filled with apprehension, the councillors call an emergency meeting.",
 				"This adventure is designed for a group of four to six 3rd-level characters.",
 				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "adventure/GoS/022-03-02-module-danger-at-dunwater.webp"
-					},
-					"width": 567,
-					"height": 717,
-					"maxWidth": 350,
-					"credit": "Dave De Leuw"
+					"type": "gallery",
+					"images": [
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "adventure/GoS/022-03-02-module-danger-at-dunwater.png"
+							},
+							"width": 567,
+							"height": 717
+						}
+					]
 				},
 				{
 					"type": "inset",
@@ -11541,7 +11526,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/023-05-dm.webp"
+												"path": "adventure/GoS/023-05-dm.png"
 											},
 											"width": 8192,
 											"height": 5399,
@@ -11554,7 +11539,7 @@
 												"offsetY": -58,
 												"distance": 10
 											},
-											"id": "5ce",
+											"id": "553",
 											"mapRegions": [
 												{
 													"area": "1b3",
@@ -14033,14 +14018,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/GoS/thumbnail/023-05-dm.webp"
-											},
-											"credit": "Dyson Logos"
+											}
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/024-05-pc.webp"
+												"path": "adventure/GoS/024-05-pc.png"
 											},
 											"title": "Player Version",
 											"width": 8192,
@@ -14054,9 +14038,8 @@
 												"distance": 10
 											},
 											"mapParent": {
-												"id": "5ce"
-											},
-											"credit": "Dyson Logos"
+												"id": "553"
+											}
 										}
 									]
 								},
@@ -14251,11 +14234,10 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/GoS/025-03-04-banquet-hall-p73.webp"
+														"path": "adventure/GoS/025-03-04-banquet-hall-p73.png"
 													},
 													"width": 1000,
-													"height": 673,
-													"credit": "Scott Murphy"
+													"height": 673
 												}
 											]
 										}
@@ -14653,11 +14635,10 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/GoS/026-03-05-nursery-p77.webp"
+														"path": "adventure/GoS/026-03-05-nursery-p77.png"
 													},
 													"width": 1000,
-													"height": 710,
-													"credit": "Scott Murphy"
+													"height": 710
 												}
 											]
 										}
@@ -15031,11 +15012,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/027-03-06-sauriv-p80.webp"
+												"path": "adventure/GoS/027-03-06-sauriv-p80.png"
 											},
 											"width": 818,
-											"height": 1000,
-											"credit": "Olga Drebas"
+											"height": 1000
 										},
 										{
 											"type": "entries",
@@ -15458,11 +15438,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/028-03-07-koalinth-sergeant-p83.webp"
+												"path": "adventure/GoS/028-03-07-koalinth-sergeant-p83.png"
 											},
 											"width": 836,
-											"height": 1000,
-											"credit": "Olga Drebas"
+											"height": 1000
 										},
 										"One {@creature koalinth sergeant|GoS} and three {@creature koalinth|GoS} rest in the weeds as they prepare to take their leave (see {@adventure appendix C|GoS|10} for each). A successful DC 14 Wisdom ({@skill Perception}) check is required to notice them. Unless the party is accompanied by lizardfolk, the koalinth attack the characters if they spot them.",
 										{
@@ -15738,12 +15717,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/029-03-08-thousand-teeth-p85.webp"
+												"path": "adventure/GoS/029-03-08-thousand-teeth-p85.png"
 											},
 											"width": 808,
-											"height": 1000,
-											"title": "Thousand Teeth",
-											"credit": "Leesha Hannigan"
+											"height": 1000
 										},
 										"The pool is 8 feet deep at its center. The water is polluted from the rotting remains of {@creature Thousand Teeth|GoS}'s meals, and any creature that ingests more than a spoonful must succeed on a DC 12 Constitution saving throw or be {@condition poisoned} for 1 hour.",
 										"In addition to {@creature Thousand Teeth|GoS} (see {@adventure appendix C|GoS|10}) in its muddy mound, two {@creature Giant Constrictor Snake||giant constrictor snakes} lurk in the canopy of vines and drop down on unsuspecting creatures that linger too long at the pool's edge. A character who has a passive Perception score of 15 or more notices the snakes before they attack.",
@@ -15774,24 +15751,26 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/GoS/030-04-01-chapter-4.webp"
+						"path": "adventure/GoS/030-04-01-chapter-4.png"
 					},
 					"width": 753,
-					"height": 1000,
-					"credit": "Julian Kok"
+					"height": 1000
 				},
 				"When a ship missing for years is spotted adrift at sea, its one-time owner sees a final chance to recover a lost fortune. But what the former owner cannot know is that the ship has a new master\u2014a wretched druid, driven mad by cannibalism and attended by a horde of venomous pets.",
 				"{@i Salvage Operation} is a D&D adventure designed for four to six 4th-level characters.",
 				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "adventure/GoS/031-04-02-salvage-operation.webp"
-					},
-					"width": 567,
-					"height": 717,
-					"maxWidth": 350,
-					"credit": "Attila Adorjany"
+					"type": "gallery",
+					"images": [
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "adventure/GoS/031-04-02-salvage-operation.png"
+							},
+							"width": 567,
+							"height": 717
+						}
+					]
 				},
 				{
 					"type": "inset",
@@ -15901,7 +15880,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/GoS/032-27-dm.webp"
+										"path": "adventure/GoS/032-27-dm.png"
 									},
 									"width": 2063,
 									"height": 1425,
@@ -15914,7 +15893,7 @@
 										"offsetY": 28,
 										"scale": 2
 									},
-									"id": "5cf",
+									"id": "554",
 									"mapRegions": [
 										{
 											"area": "279",
@@ -16545,14 +16524,13 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/GoS/thumbnail/032-27-dm.webp"
-									},
-									"credit": "Mike Schley"
+									}
 								},
 								{
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/GoS/033-27-pc.webp"
+										"path": "adventure/GoS/033-27-pc.png"
 									},
 									"title": "Player Version",
 									"width": 2063,
@@ -16566,9 +16544,8 @@
 										"scale": 2
 									},
 									"mapParent": {
-										"id": "5cf"
-									},
-									"credit": "Mike Schley"
+										"id": "554"
+									}
 								}
 							]
 						},
@@ -16824,11 +16801,10 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/GoS/034-04-04-unholy-shrine-p92.webp"
+														"path": "adventure/GoS/034-04-04-unholy-shrine-p92.png"
 													},
 													"width": 1000,
-													"height": 618,
-													"credit": "Sam Keiser"
+													"height": 618
 												}
 											]
 										}
@@ -17053,11 +17029,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/035-04-05-octopus-p95.webp"
+												"path": "adventure/GoS/035-04-05-octopus-p95.png"
 											},
 											"width": 1000,
-											"height": 688,
-											"credit": "Sam Keiser"
+											"height": 688
 										}
 									]
 								},
@@ -17153,25 +17128,27 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/GoS/036-05-01-chapter-5.webp"
+						"path": "adventure/GoS/036-05-01-chapter-5.png"
 					},
 					"width": 753,
-					"height": 1000,
-					"credit": "Chris Rallis"
+					"height": 1000
 				},
 				"A local mariners' guild would like to claim a small, strategically located island and build a lighthouse there. But so far, its representatives have not been able to land safely on the island\u2014every attempt to come ashore has been met by a horde of undead.",
 				"The guild posts a lucrative contract offer in nearby coastal communities, seeking adventurers willing to secure the island and its burned-out abbey. When the characters come across this information and decide to investigate the opportunity, the adventure officially gets under way.",
 				"{@i Isle of the Abbey} is designed for a party of four to six 5th-level characters.",
 				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "adventure/GoS/037-05-02-original-adventure-p98.webp"
-					},
-					"width": 567,
-					"height": 717,
-					"maxWidth": 350,
-					"credit": "Peter Clarke"
+					"type": "gallery",
+					"images": [
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "adventure/GoS/037-05-02-original-adventure-p98.png"
+							},
+							"width": 567,
+							"height": 717
+						}
+					]
 				},
 				{
 					"type": "inset",
@@ -17366,7 +17343,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/GoS/038-26-dm.webp"
+										"path": "adventure/GoS/038-26-dm.png"
 									},
 									"width": 2100,
 									"height": 2850,
@@ -17379,14 +17356,13 @@
 										"offsetY": 42,
 										"distance": 500
 									},
-									"id": "5d0",
-									"credit": "Dyson Logos"
+									"id": "555"
 								},
 								{
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/GoS/039-26-pc.webp"
+										"path": "adventure/GoS/039-26-pc.png"
 									},
 									"title": "Player Version",
 									"width": 2100,
@@ -17400,9 +17376,8 @@
 										"distance": 500
 									},
 									"mapParent": {
-										"id": "5d0"
-									},
-									"credit": "Dyson Logos"
+										"id": "555"
+									}
 								}
 							]
 						},
@@ -17433,7 +17408,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/040-25-dm.webp"
+												"path": "adventure/GoS/040-25-dm.png"
 											},
 											"width": 4126,
 											"height": 2850,
@@ -17446,14 +17421,13 @@
 												"offsetY": -23,
 												"distance": 150
 											},
-											"id": "5d1",
-											"credit": "Dyson Logos"
+											"id": "556"
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/041-25-pc.webp"
+												"path": "adventure/GoS/041-25-pc.png"
 											},
 											"title": "Player Version",
 											"width": 4126,
@@ -17467,9 +17441,8 @@
 												"distance": 150
 											},
 											"mapParent": {
-												"id": "5d1"
-											},
-											"credit": "Dyson Logos"
+												"id": "556"
+											}
 										}
 									]
 								},
@@ -17529,11 +17502,10 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/GoS/042-05-05-complications-on-the-dunes-p101.webp"
+														"path": "adventure/GoS/042-05-05-complications-on-the-dunes-p101.png"
 													},
 													"width": 1000,
-													"height": 715,
-													"credit": "Christopher Moeller"
+													"height": 715
 												}
 											]
 										}
@@ -17760,7 +17732,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/GoS/043-24-dm.webp"
+										"path": "adventure/GoS/043-24-dm.png"
 									},
 									"width": 4200,
 									"height": 5700,
@@ -18530,14 +18502,13 @@
 									"hrefThumbnail": {
 										"type": "internal",
 										"path": "adventure/GoS/thumbnail/043-24-dm.webp"
-									},
-									"credit": "Dyson Logos"
+									}
 								},
 								{
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/GoS/044-24-pc.webp"
+										"path": "adventure/GoS/044-24-pc.png"
 									},
 									"title": "Player Version",
 									"width": 4200,
@@ -18553,8 +18524,7 @@
 									"mapParent": {
 										"id": "fff",
 										"offsetY": -200
-									},
-									"credit": "Dyson Logos"
+									}
 								}
 							]
 						},
@@ -18877,11 +18847,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/045-05-07-floor-trap-p108.webp"
+												"path": "adventure/GoS/045-05-07-floor-trap-p108.png"
 											},
 											"width": 1000,
-											"height": 678,
-											"credit": "Christopher Moeller"
+											"height": 678
 										}
 									]
 								},
@@ -19009,24 +18978,26 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/GoS/046-06-01-chapter-6.webp"
+						"path": "adventure/GoS/046-06-01-chapter-6.png"
 					},
 					"width": 753,
-					"height": 1000,
-					"credit": "Lake Hurwitz"
+					"height": 1000
 				},
 				"This adventure builds on the events of two previous adventures, {@adventure The Sinister Secret of Saltmarsh|GoS|1} and {@adventure Danger at Dunwater|GoS|2}. The following section provides a summary of those adventures for characters who did not participate in the missions.",
 				"{@i The Final Enemy} is designed for four to six characters of 7th level. If you want to use story-based character advancement (see chapter 8 of the {@book Dungeon Master's Guide|DMG}), the characters gain a level for completing this adventure.",
 				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "adventure/GoS/047-06-02-original-module-the-final-enemy.webp"
-					},
-					"width": 567,
-					"height": 717,
-					"maxWidth": 350,
-					"credit": "Dave De Leuw"
+					"type": "gallery",
+					"images": [
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "adventure/GoS/047-06-02-original-module-the-final-enemy.png"
+							},
+							"width": 567,
+							"height": 717
+						}
+					]
 				},
 				{
 					"type": "inset",
@@ -19177,11 +19148,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/048-06-03-sahuagin-stronghold.webp"
+								"path": "adventure/GoS/048-06-03-sahuagin-stronghold.png"
 							},
 							"width": 1000,
-							"height": 673,
-							"credit": "Sam Keiser"
+							"height": 673
 						},
 						{
 							"type": "entries",
@@ -19612,7 +19582,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/049-23-dm.webp"
+												"path": "adventure/GoS/049-23-dm.png"
 											},
 											"width": 4200,
 											"height": 5700,
@@ -19625,7 +19595,7 @@
 												"offsetY": -8,
 												"distance": 10
 											},
-											"id": "5d2",
+											"id": "557",
 											"mapRegions": [
 												{
 													"area": "33c",
@@ -20450,14 +20420,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/GoS/thumbnail/049-23-dm.webp"
-											},
-											"credit": "Dyson Logos"
+											}
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/050-23-pc.webp"
+												"path": "adventure/GoS/050-23-pc.png"
 											},
 											"title": "Player Version",
 											"width": 4200,
@@ -20471,9 +20440,8 @@
 												"distance": 10
 											},
 											"mapParent": {
-												"id": "5d2"
-											},
-											"credit": "Dyson Logos"
+												"id": "557"
+											}
 										}
 									]
 								},
@@ -21025,11 +20993,10 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/GoS/051-06-05-p121.webp"
+														"path": "adventure/GoS/051-06-05-p121.png"
 													},
 													"width": 1000,
-													"height": 698,
-													"credit": "Mark Behm"
+													"height": 698
 												}
 											]
 										}
@@ -21052,7 +21019,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/052-22-dm.webp"
+												"path": "adventure/GoS/052-22-dm.png"
 											},
 											"width": 4186,
 											"height": 5672,
@@ -21065,7 +21032,7 @@
 												"offsetY": -10,
 												"distance": 10
 											},
-											"id": "5d3",
+											"id": "558",
 											"mapRegions": [
 												{
 													"area": "38f",
@@ -21959,14 +21926,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/GoS/thumbnail/052-22-dm.webp"
-											},
-											"credit": "Dyson Logos"
+											}
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/053-22-pc.webp"
+												"path": "adventure/GoS/053-22-pc.png"
 											},
 											"title": "Player Version",
 											"width": 4186,
@@ -21980,9 +21946,8 @@
 												"distance": 10
 											},
 											"mapParent": {
-												"id": "5d3"
-											},
-											"credit": "Dyson Logos"
+												"id": "558"
+											}
 										}
 									]
 								},
@@ -22274,11 +22239,10 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/GoS/054-06-07-p125.webp"
+														"path": "adventure/GoS/054-06-07-p125.png"
 													},
 													"width": 1000,
-													"height": 617,
-													"credit": "Even Amundsen"
+													"height": 617
 												}
 											]
 										}
@@ -22388,11 +22352,10 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/GoS/055-06-08-rapture-weed-p126.webp"
+														"path": "adventure/GoS/055-06-08-rapture-weed-p126.png"
 													},
 													"width": 1000,
-													"height": 643,
-													"credit": "Jim nelson"
+													"height": 643
 												}
 											]
 										}
@@ -22566,11 +22529,10 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/GoS/056-06-09-p127.webp"
+														"path": "adventure/GoS/056-06-09-p127.png"
 													},
 													"width": 1000,
-													"height": 676,
-													"credit": "Mark Behm"
+													"height": 676
 												}
 											]
 										}
@@ -22915,7 +22877,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/057-21-dm.webp"
+												"path": "adventure/GoS/057-21-dm.png"
 											},
 											"width": 4200,
 											"height": 5700,
@@ -22928,7 +22890,7 @@
 												"offsetY": 52,
 												"distance": 10
 											},
-											"id": "5d4",
+											"id": "559",
 											"mapRegions": [
 												{
 													"area": "3e3",
@@ -23629,14 +23591,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/GoS/thumbnail/057-21-dm.webp"
-											},
-											"credit": "Dyson Logos"
+											}
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/058-21-pc.webp"
+												"path": "adventure/GoS/058-21-pc.png"
 											},
 											"title": "Player Version",
 											"width": 4200,
@@ -23650,9 +23611,8 @@
 												"distance": 10
 											},
 											"mapParent": {
-												"id": "5d4"
-											},
-											"credit": "Dyson Logos"
+												"id": "559"
+											}
 										}
 									]
 								},
@@ -24008,11 +23968,10 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/GoS/059-06-11-arena-p135.webp"
+														"path": "adventure/GoS/059-06-11-arena-p135.png"
 													},
 													"width": 1000,
-													"height": 759,
-													"credit": "Eric Belisle"
+													"height": 759
 												}
 											]
 										}
@@ -24522,23 +24481,26 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/GoS/060-07-01-chapter-7-p140.webp"
+						"path": "adventure/GoS/060-07-01-chapter-7-p140.png"
 					},
 					"width": 753,
-					"height": 1000,
-					"credit": "David Sladek"
+					"height": 1000
 				},
 				"Five years ago, a hermitage devoted to the contemplation of nature was established in an abandoned island fortress, once the site of a beacon meant to warn against invasion from the sea. The folk of the hermitage opened the island to people of all faiths, promising a place for those seeking solitude and peace. But that peace has now been shattered, and the characters must determine what force of evil has slain the residents of Firewatch Island almost to the last\u2014and how to prevent the even greater tragedy to come.",
 				"{@i Tammeraut's Fate} is an adventure designed for four to six 9th-level characters.",
 				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "adventure/GoS/061-07-02-tammerauts-fate-p142.webp"
-					},
-					"width": 567,
-					"height": 717,
-					"maxWidth": 350
+					"type": "gallery",
+					"images": [
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "adventure/GoS/061-07-02-tammerauts-fate-p142.png"
+							},
+							"width": 567,
+							"height": 717
+						}
+					]
 				},
 				{
 					"type": "inset",
@@ -24706,11 +24668,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/062-07-03-p143.webp"
+								"path": "adventure/GoS/062-07-03-p143.png"
 							},
 							"width": 1000,
-							"height": 636,
-							"credit": "Eric Belisle"
+							"height": 636
 						},
 						{
 							"type": "entries",
@@ -24787,11 +24748,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "adventure/GoS/063-07-04-p144.webp"
+										"path": "adventure/GoS/063-07-04-p144.png"
 									},
 									"width": 1000,
-									"height": 667,
-									"credit": "Eric Belisle"
+									"height": 667
 								}
 							]
 						},
@@ -24812,7 +24772,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/064-20-dm.webp"
+												"path": "adventure/GoS/064-20-dm.png"
 											},
 											"width": 2063,
 											"height": 1425,
@@ -24823,14 +24783,13 @@
 												"size": 82,
 												"distance": 30
 											},
-											"id": "5d5",
-											"credit": "Mike Schley"
+											"id": "55a"
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/065-20-pc.webp"
+												"path": "adventure/GoS/065-20-pc.png"
 											},
 											"title": "Player Version",
 											"width": 2063,
@@ -24842,9 +24801,8 @@
 												"distance": 30
 											},
 											"mapParent": {
-												"id": "5d5"
-											},
-											"credit": "Mike Schley"
+												"id": "55a"
+											}
 										}
 									]
 								},
@@ -24912,7 +24870,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/066-19-dm.webp"
+												"path": "adventure/GoS/066-19-dm.png"
 											},
 											"width": 2100,
 											"height": 2850,
@@ -24925,7 +24883,7 @@
 												"offsetY": -26,
 												"distance": 10
 											},
-											"id": "5d6",
+											"id": "55b",
 											"mapRegions": [
 												{
 													"area": "416",
@@ -26058,14 +26016,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/GoS/thumbnail/066-19-dm.webp"
-											},
-											"credit": "Mike Schley"
+											}
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/067-19-pc.webp"
+												"path": "adventure/GoS/067-19-pc.png"
 											},
 											"title": "Player Version",
 											"width": 2100,
@@ -26079,9 +26036,8 @@
 												"distance": 10
 											},
 											"mapParent": {
-												"id": "5d6"
-											},
-											"credit": "Mike Schley"
+												"id": "55b"
+											}
 										}
 									]
 								},
@@ -26615,7 +26571,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/068-18-dm.webp"
+												"path": "adventure/GoS/068-18-dm.png"
 											},
 											"width": 2138,
 											"height": 1500,
@@ -26628,7 +26584,7 @@
 												"offsetY": 21,
 												"distance": 10
 											},
-											"id": "5d7",
+											"id": "55c",
 											"mapRegions": [
 												{
 													"area": "416",
@@ -27095,14 +27051,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/GoS/thumbnail/068-18-dm.webp"
-											},
-											"credit": "Mike Schley"
+											}
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/069-18-pc.webp"
+												"path": "adventure/GoS/069-18-pc.png"
 											},
 											"title": "Player Version",
 											"width": 2138,
@@ -27116,9 +27071,8 @@
 												"distance": 10
 											},
 											"mapParent": {
-												"id": "5d7"
-											},
-											"credit": "Mike Schley"
+												"id": "55c"
+											}
 										}
 									]
 								},
@@ -27266,7 +27220,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/070-17-dm.webp"
+												"path": "adventure/GoS/070-17-dm.png"
 											},
 											"width": 2138,
 											"height": 1500,
@@ -27278,7 +27232,7 @@
 												"offsetY": 14,
 												"distance": 10
 											},
-											"id": "5d8",
+											"id": "55d",
 											"mapRegions": [
 												{
 													"area": "462",
@@ -27552,14 +27506,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/GoS/thumbnail/070-17-dm.webp"
-											},
-											"credit": "Mike Schley"
+											}
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/071-17-pc.webp"
+												"path": "adventure/GoS/071-17-pc.png"
 											},
 											"title": "Player Version",
 											"width": 2138,
@@ -27572,9 +27525,8 @@
 												"distance": 10
 											},
 											"mapParent": {
-												"id": "5d8"
-											},
-											"credit": "Mike Schley"
+												"id": "55d"
+											}
 										}
 									]
 								},
@@ -28073,7 +28025,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/072-16-dm.webp"
+												"path": "adventure/GoS/072-16-dm.png"
 											},
 											"width": 2138,
 											"height": 1500,
@@ -28085,14 +28037,13 @@
 												"offsetX": 51,
 												"offsetY": 46
 											},
-											"id": "5d9",
-											"credit": "Mike Schley"
+											"id": "55e"
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/073-16-pc.webp"
+												"path": "adventure/GoS/073-16-pc.png"
 											},
 											"title": "Player Version",
 											"width": 2138,
@@ -28105,9 +28056,8 @@
 												"offsetY": 46
 											},
 											"mapParent": {
-												"id": "5d9"
-											},
-											"credit": "Mike Schley"
+												"id": "55e"
+											}
 										}
 									]
 								},
@@ -28281,24 +28231,26 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/GoS/074-08-01-chapter-8-p163.webp"
+						"path": "adventure/GoS/074-08-01-chapter-8-p163.png"
 					},
 					"width": 753,
-					"height": 1000,
-					"credit": "Sam Burley"
+					"height": 1000
 				},
 				"A series of mysterious murders shakes the downtrodden folk of the Styes\u2014a decaying port fallen on hard times and slowly being reclaimed by the sea. Even after the so-called Lantern Ghost killer is caught and executed, some in the district believe that the true killer is still out there. It's left to the adventurers to follow the clues that the local militia ignores, exposing corruption, the clandestine activities of a dark cult\u2014and the alien presence whose evil lurks beneath it all.",
 				"{@i The Styes} is an adventure designed for four to six 11th-level characters.",
 				{
-					"type": "image",
-					"href": {
-						"type": "internal",
-						"path": "adventure/GoS/075-08-02-original-the-styes.webp"
-					},
-					"width": 567,
-					"height": 717,
-					"maxWidth": 350,
-					"credit": "Joachim Barrum"
+					"type": "gallery",
+					"images": [
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "adventure/GoS/075-08-02-original-the-styes.png"
+							},
+							"width": 567,
+							"height": 717
+						}
+					]
 				},
 				{
 					"type": "inset",
@@ -28383,7 +28335,7 @@
 							"id": "4a3",
 							"entries": [
 								"Shortly after their arrival in town, the characters come upon a dozen children chasing and tormenting an elderly male human\u2014{@creature Master Refrum|GoS}. The victim feebly brandishes a holy symbol of good at them, but the children and onlookers alike simply taunt him. They then turn to pelting Refrum with stones as they accuse him of being a friend to murderers.",
-								"If the characters step in, the children run away and the onlookers rapidly lose interest. {@creature Master Refrum|GoS} (LG male human {@creature priest}) introduces himself, thanks the characters for saving him from a humiliating fate, and asks them to escort him back to his home. He provides the basic facts about the recent murders if the characters haven't learned them from a passerby before now.",
+								"If the characters step in, the children run away and the onlookers rapidly lose interest. {@creature Master Refrum|GoS|Master Refrum} (LG male human {@creature priest}) introduces himself, thanks the characters for saving him from a humiliating fate, and asks them to escort him back to his home. He provides the basic facts about the recent murders if the characters haven't learned them from a passerby before now.",
 								"If the characters don't intervene, {@creature Master Refrum|GoS} protects himself by casting {@spell sanctuary}, then using {@spell thaumaturgy} to frighten away the children and any onlookers with terrifying roars and ground tremors. He still speaks to the characters afterward, recognizing them as adventurers as he asks for help clearing Jarme's name. He pleads for the characters to accompany him to his workshop to get the details of the situation."
 							]
 						},
@@ -28556,7 +28508,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/076-15-dm.webp"
+												"path": "adventure/GoS/076-15-dm.png"
 											},
 											"width": 2138,
 											"height": 1500,
@@ -28567,7 +28519,7 @@
 												"size": 75,
 												"distance": 150
 											},
-											"id": "5da",
+											"id": "55f",
 											"mapRegions": [
 												{
 													"area": "4b6",
@@ -29000,14 +28952,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/GoS/thumbnail/076-15-dm.webp"
-											},
-											"credit": "Mike Schley"
+											}
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/077-15-pc.webp"
+												"path": "adventure/GoS/077-15-pc.png"
 											},
 											"title": "Player Version",
 											"width": 2138,
@@ -29019,9 +28970,8 @@
 												"distance": 150
 											},
 											"mapParent": {
-												"id": "5da"
-											},
-											"credit": "Mike Schley"
+												"id": "55f"
+											}
 										}
 									]
 								},
@@ -29129,11 +29079,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/078-08-04-master-refrum-p169.webp"
+												"path": "adventure/GoS/078-08-04-master-refrum-p169.png"
 											},
 											"width": 766,
-											"height": 1000,
-											"credit": "Joachim Barrum"
+											"height": 1000
 										}
 									]
 								},
@@ -29276,11 +29225,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/079-08-05-p171.webp"
+												"path": "adventure/GoS/079-08-05-p171.png"
 											},
 											"width": 1000,
-											"height": 693,
-											"credit": "Joachim Barrum"
+											"height": 693
 										}
 									]
 								}
@@ -29384,7 +29332,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/080-14-dm.webp"
+												"path": "adventure/GoS/080-14-dm.png"
 											},
 											"width": 2138,
 											"height": 1500,
@@ -29397,7 +29345,7 @@
 												"offsetY": -57,
 												"scale": 2
 											},
-											"id": "5db",
+											"id": "560",
 											"mapRegions": [
 												{
 													"area": "4d7",
@@ -29752,14 +29700,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/GoS/thumbnail/080-14-dm.webp"
-											},
-											"credit": "Mike Schley"
+											}
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/081-14-pc.webp"
+												"path": "adventure/GoS/081-14-pc.png"
 											},
 											"title": "Player Version",
 											"width": 2138,
@@ -29773,9 +29720,8 @@
 												"scale": 2
 											},
 											"mapParent": {
-												"id": "5db"
-											},
-											"credit": "Mike Schley"
+												"id": "560"
+											}
 										}
 									]
 								},
@@ -29884,11 +29830,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/082-08-07-p176.webp"
+												"path": "adventure/GoS/082-08-07-p176.png"
 											},
 											"width": 1000,
-											"height": 362,
-											"credit": "Joachim Barrum"
+											"height": 362
 										}
 									]
 								},
@@ -30008,11 +29953,10 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/GoS/083-08-08-mr-dory-p177.webp"
+														"path": "adventure/GoS/083-08-08-mr-dory-p177.png"
 													},
 													"width": 749,
-													"height": 1000,
-													"credit": "Joachim Barrum"
+													"height": 1000
 												}
 											]
 										},
@@ -30057,11 +30001,10 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/GoS/084-08-09-p178.webp"
+														"path": "adventure/GoS/084-08-09-p178.png"
 													},
 													"width": 771,
-													"height": 1000,
-													"credit": "Joachim Barrum"
+													"height": 1000
 												},
 												"Dory received this note from one the Whisperer's minions in response to Jarme's arrest. It tasks Dory with finding more flesh and negative emotion for the kraken.",
 												"Other notes on the desk and the table are either horrid examples of disturbing erotica written with a shaky hand, or various letters that implicate Dory in foul crimes. Still more scraps of parchment contain scribbles and crude drawings of tentacled monsters\u2014mad visions induced by Dory's connection to the Whisperer. If the characters saw the drawings on the walls of Jarme's cell, they immediately notice a similarity."
@@ -30115,7 +30058,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/085-13-dm.webp"
+												"path": "adventure/GoS/085-13-dm.png"
 											},
 											"width": 2138,
 											"height": 1500,
@@ -30127,7 +30070,7 @@
 												"offsetX": -13,
 												"offsetY": -17
 											},
-											"id": "5dc",
+											"id": "561",
 											"mapRegions": [
 												{
 													"area": "4fa",
@@ -30783,14 +30726,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/GoS/thumbnail/085-13-dm.webp"
-											},
-											"credit": "Mike Schley"
+											}
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/086-13-pc.webp"
+												"path": "adventure/GoS/086-13-pc.png"
 											},
 											"title": "Player Version",
 											"width": 2138,
@@ -30803,9 +30745,8 @@
 												"offsetY": -17
 											},
 											"mapParent": {
-												"id": "5dc"
-											},
-											"credit": "Mike Schley"
+												"id": "561"
+											}
 										}
 									]
 								},
@@ -30903,11 +30844,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/087-08-11-p181.webp"
+												"path": "adventure/GoS/087-08-11-p181.png"
 											},
 											"width": 1000,
-											"height": 716,
-											"credit": "Joachim Barrum"
+											"height": 716
 										}
 									]
 								},
@@ -31011,7 +30951,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/088-12-dm.webp"
+												"path": "adventure/GoS/088-12-dm.png"
 											},
 											"width": 2138,
 											"height": 1500,
@@ -31023,7 +30963,7 @@
 												"offsetX": 18,
 												"offsetY": 12
 											},
-											"id": "5dd",
+											"id": "562",
 											"mapRegions": [
 												{
 													"area": "507",
@@ -31364,14 +31304,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/GoS/thumbnail/088-12-dm.webp"
-											},
-											"credit": "Mike Schley"
+											}
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/089-12-pc.webp"
+												"path": "adventure/GoS/089-12-pc.png"
 											},
 											"title": "Player Version",
 											"width": 2138,
@@ -31384,9 +31323,8 @@
 												"offsetY": 12
 											},
 											"mapParent": {
-												"id": "5dd"
-											},
-											"credit": "Mike Schley"
+												"id": "562"
+											}
 										}
 									]
 								},
@@ -31442,11 +31380,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/090-08-13-juvenile-kraken-184.webp"
+												"path": "adventure/GoS/090-08-13-juvenile-kraken-184.png"
 											},
 											"width": 730,
-											"height": 1000,
-											"credit": "Joachim Barrum"
+											"height": 1000
 										},
 										"Failure is not an option for agents of the Endless Nadir, and the aboleths fight to the death if it comes to that. This is not the lair of these creatures, so they can't use lair actions or regional effects. In the event that the characters could use some help in a battle, one of the aboleths might stray too close to the pit and be pulled in by the {@creature juvenile kraken|GoS}; see the next section for more information. A fight isn't inevitable, however.",
 										{
@@ -31581,7 +31518,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/099-09-dm.webp"
+												"path": "adventure/GoS/099-09-dm.png"
 											},
 											"title": "Map A.5: Cove Reef",
 											"width": 4200,
@@ -31770,14 +31707,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/GoS/thumbnail/099-09-dm.webp"
-											},
-											"credit": "Dyson Logos"
+											}
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/100-09-pc.webp"
+												"path": "adventure/GoS/100-09-pc.png"
 											},
 											"title": "Player Version",
 											"width": 4200,
@@ -31791,8 +31727,7 @@
 											},
 											"mapParent": {
 												"id": "5CA"
-											},
-											"credit": "Dyson Logos"
+											}
 										}
 									]
 								},
@@ -32100,11 +32035,10 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/GoS/101-za-10-sea-hag-p218.webp"
+														"path": "adventure/GoS/101-za-10-sea-hag-p218.png"
 													},
 													"width": 862,
-													"height": 1000,
-													"credit": "Conceptopolis"
+													"height": 1000
 												}
 											],
 											"id": "56b"
@@ -32209,7 +32143,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/102-11-dm.webp"
+												"path": "adventure/GoS/102-11-dm.png"
 											},
 											"title": "Map A.6: Wreck of the Marshal",
 											"width": 4200,
@@ -32542,14 +32476,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/GoS/thumbnail/102-11-dm.webp"
-											},
-											"credit": "Dyson Logos"
+											}
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/103-11-pc.webp"
+												"path": "adventure/GoS/103-11-pc.png"
 											},
 											"title": "Player Version",
 											"width": 4200,
@@ -32561,8 +32494,7 @@
 											},
 											"mapParent": {
 												"id": "5CB"
-											},
-											"credit": "Dyson Logos"
+											}
 										}
 									]
 								},
@@ -32940,11 +32872,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/104-za-12-dragon-turtle-p223.webp"
+												"path": "adventure/GoS/104-za-12-dragon-turtle-p223.png"
 											},
 											"width": 376,
-											"height": 1000,
-											"credit": "Mark Zug"
+											"height": 1000
 										},
 										"Those who fish in the waters around Saltmarsh know that a {@creature dragon turtle} called Xalatamos claims the wreck of the {@i Marshal} as part of its domain. As long as the wreck was undisturbed, Xalatamos kept to itself\u2014until recently, when it began threatening fishers to hand over their daily catches to pay for the theft of his treasure.",
 										{
@@ -33029,7 +32960,7 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/105-08-dm.webp"
+												"path": "adventure/GoS/105-08-dm.png"
 											},
 											"title": "Map A.7: Warthalkeel Ruins",
 											"width": 4200,
@@ -33946,14 +33877,13 @@
 											"hrefThumbnail": {
 												"type": "internal",
 												"path": "adventure/GoS/thumbnail/105-08-dm.webp"
-											},
-											"credit": "Dyson Logos"
+											}
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/106-08-pc.webp"
+												"path": "adventure/GoS/106-08-pc.png"
 											},
 											"title": "Player Version",
 											"width": 4200,
@@ -33967,8 +33897,7 @@
 											},
 											"mapParent": {
 												"id": "5CC"
-											},
-											"credit": "Dyson Logos"
+											}
 										}
 									]
 								},
@@ -34372,11 +34301,10 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "adventure/GoS/107-za-14-mud-mephit-p227.webp"
+														"path": "adventure/GoS/107-za-14-mud-mephit-p227.png"
 													},
 													"width": 1000,
-													"height": 718,
-													"credit": "Richard Whitters"
+													"height": 718
 												}
 											],
 											"id": "5bd"
@@ -34436,11 +34364,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "adventure/GoS/108-za-15-deep-scion-p228.webp"
+												"path": "adventure/GoS/108-za-15-deep-scion-p228.png"
 											},
 											"width": 707,
-											"height": 1000,
-											"credit": "Brynn Metheney"
+											"height": 1000
 										},
 										{
 											"type": "entries",
@@ -34538,11 +34465,10 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/GoS/109-zb-01-p229.webp"
+						"path": "adventure/GoS/109-zb-01-p229.png"
 					},
 					"width": 1000,
-					"height": 708,
-					"credit": "Tyler Jacobson"
+					"height": 708
 				}
 			]
 		},
@@ -34576,11 +34502,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/110-636918204697433981.webp"
+								"path": "adventure/GoS/110-636918204697433981.png"
 							},
 							"width": 300,
-							"height": 401,
-							"credit": "Zoltan Boros"
+							"height": 401
 						}
 					]
 				},
@@ -34595,11 +34520,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/111-bard.webp"
+								"path": "adventure/GoS/111-bard.png"
 							},
 							"width": 199,
-							"height": 362,
-							"credit": "Justin Gerard"
+							"height": 362
 						}
 					]
 				},
@@ -34614,11 +34538,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/112-zc-01-p232.webp"
+								"path": "adventure/GoS/112-zc-01-p232.png"
 							},
 							"width": 1000,
-							"height": 350,
-							"credit": "Franz Vohwinkel"
+							"height": 350
 						}
 					]
 				},
@@ -34680,11 +34603,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/113-636927501496690015.webp"
+								"path": "adventure/GoS/113-636927501496690015.png"
 							},
 							"width": 300,
-							"height": 511,
-							"credit": "Shawn Wood"
+							"height": 511
 						}
 					]
 				},
@@ -34710,11 +34632,10 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "adventure/GoS/114-background.webp"
+						"path": "adventure/GoS/114-background.png"
 					},
 					"width": 1000,
-					"height": 448,
-					"credit": "Francis Tsai"
+					"height": 448
 				},
 				{
 					"type": "entries",
@@ -34763,11 +34684,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/115-636936172905796727.webp"
+								"path": "adventure/GoS/115-636936172905796727.png"
 							},
 							"width": 299,
-							"height": 410,
-							"credit": "Joachim Barrum"
+							"height": 410
 						}
 					]
 				},
@@ -34782,11 +34702,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/116-636918878248818673.webp"
+								"path": "adventure/GoS/116-636918878248818673.png"
 							},
 							"width": 400,
-							"height": 289,
-							"credit": "Shawn Wood"
+							"height": 289
 						}
 					]
 				},
@@ -34801,11 +34720,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/117-636936222843222800.webp"
+								"path": "adventure/GoS/117-636936222843222800.png"
 							},
 							"width": 299,
-							"height": 358,
-							"credit": "Olga Drebas"
+							"height": 358
 						}
 					]
 				},
@@ -34829,11 +34747,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/118-zc-03-p240.webp"
+								"path": "adventure/GoS/118-zc-03-p240.png"
 							},
 							"width": 802,
-							"height": 1000,
-							"credit": "Jim Nelson"
+							"height": 1000
 						}
 					]
 				},
@@ -34893,11 +34810,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/119-636918880235909098.webp"
+								"path": "adventure/GoS/119-636918880235909098.png"
 							},
 							"width": 299,
-							"height": 257,
-							"credit": "Shawn Wood"
+							"height": 257
 						}
 					]
 				},
@@ -34930,11 +34846,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/120-zc-04-p244.webp"
+								"path": "adventure/GoS/120-zc-04-p244.png"
 							},
 							"width": 706,
-							"height": 1000,
-							"credit": "Wayne England"
+							"height": 1000
 						}
 					]
 				},
@@ -34958,11 +34873,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/121-zc-05-p245.webp"
+								"path": "adventure/GoS/121-zc-05-p245.png"
 							},
 							"width": 1000,
-							"height": 317,
-							"credit": "Chris Seaman"
+							"height": 317
 						}
 					]
 				},
@@ -34986,11 +34900,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/122-zc-06-p246.webp"
+								"path": "adventure/GoS/122-zc-06-p246.png"
 							},
 							"width": 889,
-							"height": 1000,
-							"credit": "Wayne England"
+							"height": 1000
 						}
 					]
 				},
@@ -35005,11 +34918,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/123-zc-07-p247.webp"
+								"path": "adventure/GoS/123-zc-07-p247.png"
 							},
 							"width": 1000,
-							"height": 489,
-							"credit": "Rudy Siswanto"
+							"height": 489
 						}
 					]
 				},
@@ -35123,11 +35035,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/124-zc-08-p252.webp"
+								"path": "adventure/GoS/124-zc-08-p252.png"
 							},
 							"width": 1000,
-							"height": 298,
-							"credit": "Michael Komarck"
+							"height": 298
 						}
 					]
 				},
@@ -35169,11 +35080,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/125-636936213737158195.webp"
+								"path": "adventure/GoS/125-636936213737158195.png"
 							},
 							"width": 299,
-							"height": 382,
-							"credit": "Leesha Hannigan"
+							"height": 382
 						}
 					]
 				},
@@ -35188,11 +35098,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/126-zc-09-p253.webp"
+								"path": "adventure/GoS/126-zc-09-p253.png"
 							},
 							"width": 1000,
-							"height": 497,
-							"credit": "Vincent Proce"
+							"height": 497
 						}
 					]
 				},
@@ -35216,11 +35125,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/127-636918877666194101.webp"
+								"path": "adventure/GoS/127-636918877666194101.png"
 							},
 							"width": 360,
-							"height": 328,
-							"credit": "Shawn Wood"
+							"height": 328
 						}
 					]
 				},
@@ -35255,11 +35163,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "adventure/GoS/128-636936209694586082.webp"
+								"path": "adventure/GoS/128-636936209694586082.png"
 							},
 							"width": 300,
-							"height": 371,
-							"credit": "Leesha Hannigan"
+							"height": 371
 						}
 					]
 				},
@@ -35270,256 +35177,6 @@
 					"id": "54a",
 					"entries": [
 						"A large, exquisitely carved {@creature Vampiric Jade Statue|GoS|jade statue} of a vampire guards the tunnels in {@adventure Isle of the Abbey|GoS|4}, having been brought to life by dark magic. Its stone fangs draw blood that it then uses to work a curse on its victims."
-					]
-				}
-			]
-		},
-		{
-			"type": "section",
-			"name": "Credits",
-			"entries": [
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"columns": 2,
-					"items": [
-						{
-							"type": "item",
-							"name": "Lead Designers",
-							"entries": [
-								"Mike Mearls, Kate Welch"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Designers",
-							"entries": [
-								"Wolfgang Baur, James Introcaso, Joseph A. McCullough, Jon Sawatsky, Steve Winter"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Design Consultants",
-							"entries": [
-								"Will Ansell, Myke Cole"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Developers",
-							"entries": [
-								"Jeremy Crawford, Ben Petrisor, F. Wesley Schneider"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Playtest Coordinators",
-							"entries": [
-								"Bill Benham, Christopher Lindsay"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Playtest Analyst",
-							"entries": [
-								"Ben Petrisor"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Lead Editor",
-							"entries": [
-								"Kim Mohan"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Editors",
-							"entries": [
-								"Michele Carter, Scott Fitzgerald Gray, F. Wesley Schneider"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Art Director",
-							"entries": [
-								"Kate Irwin"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Graphic Design",
-							"entries": [
-								"Emi Tanji, Trish Yochum"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Concept Artist",
-							"entries": [
-								"Shawn Wood"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Senior Art Director",
-							"entries": [
-								"Richard Whitters"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Senior Creative Art Director",
-							"entries": [
-								"Shauna Narciso"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Cover Illustrator",
-							"entries": [
-								"Grzegorz Rutkowski"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Cartographers",
-							"entries": [
-								"Dyson Logos, Mike Schley"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Producer",
-							"entries": [
-								"Dan Tovar"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Project Managers",
-							"entries": [
-								"Bill Benham, Stan!, Matt Warren"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Product Engineer",
-							"entries": [
-								"Cynda Callaway"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Interior Illustrators",
-							"entries": [
-								"Even Amundsen, Joachim Barrum, Mark Behm, Eric Belisle, Zoltan Boros, Sam Burley, Sidharth Chaurvedi, Conceptopolis, Olga Drebas, Wayne England, Justin Gerard, Leesha Hannigan, Lake Hurwitz, Tyler Jacobson, Sam Keiser, Julian Kok, Michael Komarck, Slawomir Maniak, Brynn Metheney, Christopher Moeller, Scott Murphy, Jim Nelson, Vincent Proce, Chris Rallis, Chris Seaman, Rudy Siswanto, David Sladek, Francis Tsai, Franz Vohwinkel, Richard Whitters, Shawn Wood, Mark Zug"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Imaging Technician",
-							"entries": [
-								"Kevin Yee"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Art Administration",
-							"entries": [
-								"David Gershman"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Prepress Specialist",
-							"entries": [
-								"Jefferson Dunlap"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Senior Director Global Brand Strategy",
-							"entries": [
-								"Nathan Stewart"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Director Licensing & Publishing",
-							"entries": [
-								"Liz Schuh"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Licensing Manager",
-							"entries": [
-								"Hilary Ross"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Digital Marketing Manager",
-							"entries": [
-								"Bart Carroll"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Senior Communications Manager",
-							"entries": [
-								"Greg Tito"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Manager Global Brand Marketing",
-							"entries": [
-								"Anna Vo"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Brand Manager",
-							"entries": [
-								"Shelly Mazzanoble"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Associate Brand Manager",
-							"entries": [
-								"Pelham Greene"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Principal Game Designer",
-							"entries": [
-								"Chris Perkins"
-							]
-						},
-						{
-							"type": "item",
-							"name": "Narrative Designers",
-							"entries": [
-								"Adam Lee, Ari Levitch"
-							]
-						}
-					]
-				},
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Playtesters",
-							"entries": [
-								"Adam Howard, Adrian Farmer, Alan Drake, Alex D'Amico, Alex Forsyth, Alex Kammer, Alex McClead, Alex Wilson, Alexander Kretov, Alicia Cisneros, Alicia Graham, Amanda Stone, Amber Spiva, Andre Battrick, Andrew Cornejo, Andrew Epps, Andrew Kujawa, Andy Baker, Anthony Vicini, Ari Gonzalez, Ariel Harsh, Arthur Wright, Ashleigh Bishop, Austin Fields, Austin Haffke, Austin Sanders, Beau Coker, Benjamin Shindewolfe, Beverly Stauffer, Bill Kerney, Boyd Bennett, Brenda Hopper, Brendan Barr, Broderick Jones, Bruce LaClair, Cait Davis, Cameron Scruggs, Cassidy Schenley, Charles Wright, Chase Louviere, Cherie Bruce, Cheryl Pierce, Chloe Mirzayi, Chris Davis, Chris Kensta, Chris McGovern, Chris Wood, Christian Franz, Christian Hancock, Christian Zoltar Bellomo, Christine Weidenbach, Christopher Hackler, Christopher Scoggin, Christopher Wood, Chuck Benscoter, Cindy Moore, Clayton Embrey, Cliff Hanger, Cody Helms, Collin Wheeler, Connor Schenck, Connor Self, Craig Domres, Dace McFadden, Dan Beam, Dan DeHaan, Dan Harsh, Dan Harsh, Dan Klinestiver, Daniel E. Chapman II, Daniel 'KBlin' Oliveira, Daniel Klinestiver, Daniel Tye, Dario Berto, Dave Backer, Dave Knighton, David \"Cameron\" Gidcumb, David Morris, David Schnoll, David Woods, Derek Gray, Derek Myers, Devon Argo, Doug Davis, Dylan Cole, Ed Kraft, Emre Cihangir, Eric Kooistra, Erik Grenter, Evan Jackson, Evan Rodarte, Evan Schulz, Flo Velasquez, Gabriel Soares Machado, Gabrielle Zulaski, Génesis Martínez, Greg Lyman, Greg Smith, Grigory Parovichnikov, Gus Reyer, Haig Morrison, Heather Coleman, Héctor Ramírez, Howard Hubbard, Hugo Mendieta, Ian Hawthorne, Ian Kimmel, Ian Rick, Jackson Thomas, Jacob Benscoter, Jacob Dalton, Jacob DelMauro, Jamal Ali, James Armstead, James Endicott, James Hazel, James Holland, James Kirtley, James Schweiss, Jamie Shepperson, Jared Fegan, Jason Conwell, Jason Jarosz, Jason Lopez, Jason Matteson, Jason Thomas, Jawsh Murdock, Jay Africa, Jay Elmore, Jay Jani, Jeanette Wiley, Jeffery \"JJ\" Zielinski, Jeffery Barnes, Jennifer Couture-Swarner, Jeramie Cooper, Jeremiah Gaddis, Jeremiah Popa, Jerrin Chambers, Jesse Smith, Jessica Goff, Jia Jian Tin, Jim Berrier, Jim Quirk, João Eduardo Dantas, JoDee Murch, Joe Boergjes, Joe Grover, Joe Maranda, Joel González, Joel Thompson, John Amann, John Fulmer, John Horan, John Mangrum, John Stickles, John W Mangrum, Jon Lamkin, Jonathan Connor Self, Jonathan Longstaff, Jordan Brass, Jorge Sepúlveda, Joseph Kauffman III, Joseph Schenck III, Joseph Simpson Ph.D, Joshua Fredrickson, Joshua Hart, Joshua Levin, Julie Wright, Julius Smith, Justin Faris, Kalani Jasmine Vernon, Kalani Vernon, Karl Rader, Karl Resch, Kate Tollefson, Katelyn Popa, Kathy Dunn, Kelly Lewis, Ken Beckman, Ken Breese, Kenneth Mahan, Kirsten Thomas, Krupal Desai, Kurt Waldkirch, Kyle Jackson, Lance Schantz, Laura Wiley, Logan Ruggaber, Logan Thomas Ruggaber, Lou Michelli, Luca Andreolli, Lucas Thode, Luke Absolum Reid, Lyza Bryandinskaya, Mackenzie hoffman, Magnus Morgan, Marc Soucy, Marcello De Velazquez, Mark Detwiler, Martin Lennartz, Mary Hershey, Matt Burton, Matt Maranda, Matt Warwick, Matteo La Rosa, Matthew Austin, Matthew Roderick, Matthew Stanford, Matthew Talley, Matthew Warwick, Max Leu, Melissa Bassett, Michael Anderson, Michael Campfield, Michael Dunn, Michael Obermeier, Michael Patrick Campfield, Mike Kelly, Mike Olson, Mike Thomas, Miranda McFadden, Natalie Tabor, Nathaniel L. Arons, Neil Hamamoto, Nic Tollefson, Nick LaClair, Nina Wong, Olga Shvedova, Patrick Ian Rick, Paul Aparicio, Paul Thomas, Philip Koop, Rachel Aubrecht, Ralph Bohn Jr, Ramiel Louie, Randall Harris, Richard Nunn, Rob Parker, Robert Ditsch, Robert Quillen II, Robert Scott, Rod Ehrman, Roy Adam Lentz, Russ Paulsen, Ryan Hagan, Samuel Brett, Scott Moore, Sean Freeland, Sean Payne, Sergey Gvildis, Shani Knighton, Stacy McGovern, Stephen Milton, Sterling Hershey, Steve Townshend, Tabitha Samuel, Tashfeen Bhimdi, Thelem Eysier, Thomas Kocanjer, Thomas Whitney, Tim Langen, Tom Blackmon, Tom Duchaine, Tony Lovett, Tony Stremanos, Tony Vicini, Tori Backer, Travis Fuller, Tristan Andrews, Tristan Hendrix, Troy Sandlin, Tyler Urbanski, Vanessa Fernandes Pinheiro, Victor Barros Pimentel, Wayne Chang, Wayne Fuller, Will Hoffman, Will Vaughn, Willi Burger, Xavier Stepniak, Zachary Pickett"
-							]
-						}
 					]
 				}
 			]

@@ -1,30 +1,5 @@
 @import "includes/vars";
 
-// region Token
-img.token {
-	font-size: 1.6em;
-	right: 0.4em;
-}
-// endregion
-
-// region Custom statblock styling
-#pagecontent .rnd-name .source {
-	position: relative;
-	margin-right: 0.2em;
-}
-
-#pagecontent {
-	background-size: 100% auto;
-	background: url("../img/bestiary/stat-block-top-texture.webp") no-repeat, repeat top center, $rgb-bg-orange;
-}
-
-.night-mode {
-	#pagecontent {
-		background: $rgb-bg--night !important;
-	}
-}
-// endregion
-
 // region Proficiency dice rollers
 [data-proficiency-dice-mode="dice"] {
 	.rd__dc--rollable {
@@ -61,19 +36,15 @@ img.token {
 // endregion
 
 // region Encounter builder
-.best__ {
-	&ecgen-active {
-		.lst__row--bestiary-sublist {
-			cursor: default;
-		}
-
-		.lst__row--bestiary-sublist:hover {
-			background: initial;
-		}
-	}
+.ecgen_active .lst__row--bestiary-sublist {
+	cursor: default;
 }
 
-.best-ecgen {
+.ecgen_active .lst__row--bestiary-sublist:hover {
+	background: initial;
+}
+
+.ecgen {
 	&__ {
 		&visible,
 		&visible--flex,
@@ -81,17 +52,41 @@ img.token {
 			display: none;
 		}
 
-		&btn-list {
+		&btn_list {
 			padding: 0 2px;
 			line-height: 12px;
 			font-size: 9px;
 			border-radius: 3px;
 		}
+
+		&wrp_add_players_btn_wrp {
+			width: calc(140px + 0.5rem);
+		}
+	}
+
+	&-player__ {
+		&wrp-row {
+			&:only-child {
+				.ecgen-player__btn-inline {
+					display: none !important;
+				}
+			}
+		}
+
+		&btn-inline {
+			font-size: 10px;
+		}
 	}
 }
 
-.best__ecgen-active {
-	.best-ecgen {
+.night-mode .ecgen__ {
+	&wrp {
+		background: $rgb-bg--night;
+	}
+}
+
+.ecgen_active {
+	.ecgen {
 		&__visible {
 			display: block;
 		}

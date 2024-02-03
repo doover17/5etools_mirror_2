@@ -72,10 +72,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb",
-				"light crossbow|phb"
-			],
 			"senseTags": [
 				"D"
 			],
@@ -87,7 +83,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"
@@ -185,10 +180,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"light crossbow|phb",
-				"scimitar|phb"
-			],
 			"senseTags": [
 				"D"
 			],
@@ -205,7 +196,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"
@@ -309,9 +299,6 @@
 			],
 			"miscTags": [
 				"MW"
-			],
-			"savingThrowForced": [
-				"constitution"
 			],
 			"hasToken": true,
 			"hasFluffImages": true

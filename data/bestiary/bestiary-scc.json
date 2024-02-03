@@ -190,14 +190,6 @@
 			"conditionInflictSpell": [
 				"incapacitated"
 			],
-			"savingThrowForced": [
-				"charisma",
-				"constitution",
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"charisma"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -295,10 +287,6 @@
 			"conditionInflict": [
 				"blinded",
 				"charmed"
-			],
-			"savingThrowForced": [
-				"charisma",
-				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -495,9 +483,6 @@
 			"conditionInflict": [
 				"prone"
 			],
-			"savingThrowForced": [
-				"constitution"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -575,9 +560,6 @@
 			],
 			"conditionInflict": [
 				"prone"
-			],
-			"savingThrowForced": [
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -782,7 +764,7 @@
 					"name": "Pact of Pain",
 					"entries": [
 						"Using a 10-minute ritual, the daemogoth can forge a magical bond with a willing creature it touches throughout the ritual. The creature becomes bound by the pact until it dies, the daemogoth dies, or the pact is broken by any effect that can remove a curse.",
-						"The daemogoth chooses one spell from the {@filter necromancy or enchantment school that is 3rd level or lower|spells|level=0;1;2;3|school=N;E}. The bound creature can cast that spell using this pact, requiring no material components and using Intelligence as the spellcasting ability. When it casts the spell, the creature takes 7 ({@damage 2d6}) psychic damage, which can't break the creature's {@status concentration} on a spell. Once the bound creature casts the spell in this way, it can't do so again until it finishes a long rest."
+						"The daemogoth chooses one spell from the necromancy or enchantment school that is 3rd level or lower. The bound creature can cast that spell using this pact, requiring no material components and using Intelligence as the spellcasting ability. When it casts the spell, the creature takes 7 ({@damage 2d6}) psychic damage, which can't break the creature's {@status concentration} on a spell. Once the bound creature casts the spell in this way, it can't do so again until it finishes a long rest."
 					]
 				}
 			],
@@ -826,9 +808,6 @@
 			],
 			"conditionInflict": [
 				"frightened"
-			],
-			"savingThrowForced": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -907,7 +886,7 @@
 					"name": "Pact of Suffering",
 					"entries": [
 						"Using a 10-minute long ritual, the titan can forge a magical bond with a willing creature it touches throughout the ritual. The creature becomes bound by the pact until it dies, the titan dies, or the pact is broken by a {@spell wish} spell.",
-						"The titan chooses one spell from the {@filter necromancy or enchantment school that is 8th level or lower|spells|level=0;1;2;3;4;5;6;7;8|school=N;E}. The bound creature can cast that spell using this pact, requiring no material components and using Intelligence as the spellcasting ability. When it casts the spell, the creature takes 21 ({@damage 6d6}) psychic damage, which can't break the creature's {@status concentration} on a spell. Once the bound creature casts the spell in this way, it can't do so again until it finishes a long rest."
+						"The titan chooses one spell from the necromancy or enchantment school that is 8th level or lower. The bound creature can cast that spell using this pact, requiring no material components and using Intelligence as the spellcasting ability. When it casts the spell, the creature takes 21 ({@damage 6d6}) psychic damage, which can't break the creature's {@status concentration} on a spell. Once the bound creature casts the spell in this way, it can't do so again until it finishes a long rest."
 					]
 				}
 			],
@@ -976,10 +955,6 @@
 			],
 			"conditionInflict": [
 				"frightened"
-			],
-			"savingThrowForced": [
-				"constitution",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1337,13 +1312,6 @@
 			"conditionInflict": [
 				"prone"
 			],
-			"savingThrowForced": [
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"strength"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -1442,9 +1410,6 @@
 			],
 			"miscTags": [
 				"MW"
-			],
-			"savingThrowForced": [
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1553,9 +1518,6 @@
 			"conditionInflict": [
 				"blinded"
 			],
-			"savingThrowForced": [
-				"constitution"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -1663,12 +1625,6 @@
 			],
 			"miscTags": [
 				"RCH"
-			],
-			"savingThrowForced": [
-				"constitution"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1803,13 +1759,6 @@
 			"conditionInflict": [
 				"incapacitated"
 			],
-			"savingThrowForced": [
-				"constitution",
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity"
-			],
 			"hasToken": true,
 			"hasFluff": true
 		},
@@ -1931,10 +1880,6 @@
 			"conditionInflict": [
 				"prone",
 				"restrained"
-			],
-			"savingThrowForced": [
-				"strength",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -2072,12 +2017,6 @@
 			],
 			"conditionInflict": [
 				"restrained"
-			],
-			"savingThrowForced": [
-				"strength"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -2232,10 +2171,6 @@
 				"grappled",
 				"restrained"
 			],
-			"savingThrowForced": [
-				"dexterity",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -2367,9 +2302,6 @@
 			],
 			"conditionInflict": [
 				"incapacitated"
-			],
-			"savingThrowForced": [
-				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2538,15 +2470,6 @@
 			"conditionInflictSpell": [
 				"stunned"
 			],
-			"savingThrowForced": [
-				"charisma",
-				"constitution",
-				"strength"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -2668,9 +2591,6 @@
 			],
 			"conditionInflict": [
 				"incapacitated"
-			],
-			"savingThrowForced": [
-				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2803,9 +2723,6 @@
 			],
 			"conditionInflictSpell": [
 				"charmed"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2988,12 +2905,6 @@
 			"conditionInflict": [
 				"prone"
 			],
-			"savingThrowForced": [
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"strength"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -3123,13 +3034,6 @@
 				"prone",
 				"stunned"
 			],
-			"savingThrowForced": [
-				"dexterity",
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"strength"
-			],
 			"hasToken": true,
 			"hasFluff": true
 		},
@@ -3253,12 +3157,6 @@
 			"miscTags": [
 				"AOE",
 				"RCH"
-			],
-			"savingThrowForced": [
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -3391,14 +3289,6 @@
 			"conditionInflict": [
 				"prone"
 			],
-			"savingThrowForced": [
-				"strength"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"strength"
-			],
 			"hasToken": true,
 			"hasFluff": true
 		},
@@ -3495,9 +3385,6 @@
 			],
 			"spellcastingTags": [
 				"O"
-			],
-			"savingThrowForcedSpell": [
-				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3612,12 +3499,6 @@
 			],
 			"miscTags": [
 				"AOE"
-			],
-			"savingThrowForced": [
-				"constitution"
-			],
-			"savingThrowForcedSpell": [
-				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -3757,9 +3638,6 @@
 			"spellcastingTags": [
 				"O"
 			],
-			"savingThrowForcedSpell": [
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true
 		},
@@ -3887,9 +3765,6 @@
 			"conditionInflict": [
 				"charmed",
 				"poisoned"
-			],
-			"savingThrowForced": [
-				"intelligence"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -4070,9 +3945,6 @@
 			],
 			"conditionInflict": [
 				"prone"
-			],
-			"savingThrowForced": [
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4309,12 +4181,6 @@
 				"charmed",
 				"incapacitated"
 			],
-			"savingThrowForced": [
-				"constitution"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -4415,9 +4281,6 @@
 			],
 			"conditionInflictSpell": [
 				"prone"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4533,12 +4396,6 @@
 			],
 			"conditionInflictSpell": [
 				"prone"
-			],
-			"savingThrowForced": [
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4658,12 +4515,6 @@
 				"charmed",
 				"incapacitated",
 				"prone"
-			],
-			"savingThrowForced": [
-				"constitution"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -4796,13 +4647,6 @@
 			"conditionInflictSpell": [
 				"prone"
 			],
-			"savingThrowForced": [
-				"constitution"
-			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true
 		},
@@ -4884,9 +4728,6 @@
 			"miscTags": [
 				"AOE",
 				"MW"
-			],
-			"savingThrowForced": [
-				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5023,9 +4864,6 @@
 			],
 			"conditionInflict": [
 				"charmed"
-			],
-			"savingThrowForced": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5211,15 +5049,6 @@
 				"MW",
 				"RCH"
 			],
-			"savingThrowForced": [
-				"constitution",
-				"strength"
-			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"constitution",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -5393,12 +5222,6 @@
 			"conditionInflict": [
 				"prone"
 			],
-			"savingThrowForced": [
-				"constitution"
-			],
-			"savingThrowForcedSpell": [
-				"intelligence"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -5523,9 +5346,6 @@
 			],
 			"conditionInflict": [
 				"poisoned"
-			],
-			"savingThrowForced": [
-				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5668,9 +5488,6 @@
 			"conditionInflict": [
 				"poisoned"
 			],
-			"savingThrowForced": [
-				"constitution"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -5804,12 +5621,6 @@
 				"blinded",
 				"incapacitated"
 			],
-			"savingThrowForced": [
-				"constitution"
-			],
-			"savingThrowForcedSpell": [
-				"charisma"
-			],
 			"hasToken": true,
 			"hasFluff": true
 		},
@@ -5934,9 +5745,6 @@
 			],
 			"miscTags": [
 				"RCH"
-			],
-			"savingThrowForced": [
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -6069,10 +5877,6 @@
 			"conditionInflict": [
 				"incapacitated",
 				"restrained"
-			],
-			"savingThrowForced": [
-				"constitution",
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true

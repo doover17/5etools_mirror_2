@@ -133,9 +133,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -148,7 +145,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -338,9 +334,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"rapier|phb"
-			],
 			"actionTags": [
 				"Parry"
 			],
@@ -353,7 +346,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"
@@ -533,10 +525,6 @@
 				"grappled",
 				"restrained"
 			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -673,10 +661,6 @@
 				"deafened",
 				"prone"
 			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -768,9 +752,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"glaive|phb"
-			],
 			"traitTags": [
 				"Amphibious"
 			],
@@ -785,15 +766,11 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RCH"
 			],
 			"conditionInflict": [
 				"charmed"
-			],
-			"savingThrowForced": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -879,9 +856,6 @@
 			],
 			"conditionInflict": [
 				"incapacitated"
-			],
-			"savingThrowForced": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -998,9 +972,6 @@
 			"conditionInflict": [
 				"frightened"
 			],
-			"savingThrowForced": [
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -1028,11 +999,6 @@
 			"name": "Displacer Beast Kitten",
 			"source": "WBtW",
 			"page": 108,
-			"otherSources": [
-				{
-					"source": "BMT"
-				}
-			],
 			"size": [
 				"S"
 			],
@@ -1201,10 +1167,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"+1 longsword|dmg",
-				"dagger|phb"
-			],
 			"senseTags": [
 				"D"
 			],
@@ -1220,7 +1182,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -1366,10 +1327,6 @@
 			"spellcastingTags": [
 				"O"
 			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -1473,10 +1430,6 @@
 				"petrified",
 				"prone",
 				"restrained"
-			],
-			"savingThrowForced": [
-				"constitution",
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2005,9 +1958,6 @@
 			"conditionInflict": [
 				"blinded"
 			],
-			"savingThrowForced": [
-				"constitution"
-			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
@@ -2160,10 +2110,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"club|phb",
-				"sling|phb"
-			],
 			"traitTags": [
 				"Pack Tactics"
 			],
@@ -2175,7 +2121,6 @@
 				"B"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"
@@ -2251,10 +2196,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"club|phb",
-				"light crossbow|phb"
-			],
 			"languageTags": [
 				"C",
 				"S"
@@ -2264,7 +2205,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"
@@ -2498,16 +2438,6 @@
 				"prone",
 				"restrained"
 			],
-			"savingThrowForced": [
-				"charisma",
-				"constitution",
-				"intelligence",
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -2698,10 +2628,6 @@
 			"conditionInflict": [
 				"prone"
 			],
-			"savingThrowForced": [
-				"charisma",
-				"dexterity"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -2786,7 +2712,6 @@
 				"B"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"hasToken": true,
@@ -2941,13 +2866,6 @@
 				"charmed",
 				"restrained"
 			],
-			"savingThrowForced": [
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -3056,9 +2974,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3076,20 +2991,12 @@
 				"O"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
 			],
 			"conditionInflict": [
 				"unconscious"
-			],
-			"savingThrowForced": [
-				"constitution"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3206,9 +3113,6 @@
 			"conditionInflict": [
 				"grappled",
 				"incapacitated"
-			],
-			"savingThrowForced": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3330,9 +3234,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"+1 quarterstaff|dmg"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3349,19 +3250,11 @@
 			],
 			"miscTags": [
 				"AOE",
-				"MLW",
 				"MW"
 			],
 			"conditionInflictSpell": [
 				"paralyzed",
 				"prone"
-			],
-			"savingThrowForced": [
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3511,9 +3404,6 @@
 			],
 			"miscTags": [
 				"MW"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3764,10 +3654,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb",
-				"shortsword|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3778,7 +3664,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -4013,10 +3898,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"hand crossbow|phb",
-				"shortsword|phb"
-			],
 			"traitTags": [
 				"Fey Ancestry",
 				"Sneak Attack"
@@ -4035,7 +3916,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"
@@ -4191,11 +4071,6 @@
 				"incapacitated",
 				"unconscious"
 			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"dexterity",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -4299,9 +4174,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb"
-			],
 			"traitTags": [
 				"Fey Ancestry",
 				"Regeneration"
@@ -4318,16 +4190,12 @@
 				"R"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
 			],
 			"conditionInflict": [
 				"blinded"
-			],
-			"savingThrowForced": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4494,12 +4362,6 @@
 			"conditionInflictSpell": [
 				"blinded"
 			],
-			"savingThrowForced": [
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -4657,10 +4519,6 @@
 			"conditionInflictSpell": [
 				"charmed"
 			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -4768,9 +4626,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"eldritch staff|wbtw"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -4792,10 +4647,6 @@
 				"charmed",
 				"incapacitated",
 				"invisible"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4902,9 +4753,6 @@
 			],
 			"conditionInflict": [
 				"prone"
-			],
-			"savingThrowForced": [
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5027,9 +4875,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"steel|wbtw"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -5051,10 +4896,6 @@
 			],
 			"conditionInflictSpell": [
 				"prone"
-			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5163,9 +5004,6 @@
 			],
 			"conditionInflict": [
 				"incapacitated"
-			],
-			"savingThrowForced": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5514,9 +5352,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -5530,7 +5365,6 @@
 			],
 			"miscTags": [
 				"AOE",
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -5641,9 +5475,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb"
-			],
 			"languageTags": [
 				"C",
 				"X"
@@ -5655,7 +5486,6 @@
 				"O"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -5788,9 +5618,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb"
-			],
 			"senseTags": [
 				"D"
 			],
@@ -5806,7 +5633,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -5931,9 +5757,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"warhammer|phb"
-			],
 			"languageTags": [
 				"C"
 			],
@@ -5945,17 +5768,12 @@
 				"O"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"conditionInflictSpell": [
 				"deafened",
 				"paralyzed",
 				"prone"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,

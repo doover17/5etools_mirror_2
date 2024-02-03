@@ -8,9 +8,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/EGW/Dark Star.webp"
-					},
-					"credit": "Axel Defois"
+						"path": "spells/EGW/Dark Star.png"
+					}
 				}
 			]
 		},
@@ -22,9 +21,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "spells/EGW/Reality Break.webp"
-					},
-					"credit": "Brian Valeza"
+						"path": "spells/EGW/Reality Break.png"
+					}
 				}
 			]
 		}

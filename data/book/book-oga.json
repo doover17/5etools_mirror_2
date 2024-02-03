@@ -15,8 +15,8 @@
 						"type": "internal",
 						"path": "book/OGA/001.webp"
 					},
-					"width": 941,
-					"height": 975
+					"width": 865,
+					"height": 953
 				},
 				{
 					"type": "section",
@@ -41,8 +41,8 @@
 												"type": "internal",
 												"path": "book/OGA/002.webp"
 											},
-											"width": 291,
-											"height": 498
+											"width": 292,
+											"height": 490
 										}
 									],
 									"id": "003"
@@ -75,8 +75,8 @@
 												"type": "internal",
 												"path": "book/OGA/003.webp"
 											},
-											"width": 416,
-											"height": 498
+											"width": 417,
+											"height": 497
 										}
 									],
 									"id": "006"
@@ -109,8 +109,8 @@
 												"type": "internal",
 												"path": "book/OGA/004.webp"
 											},
-											"width": 270,
-											"height": 341
+											"width": 331,
+											"height": 418
 										}
 									],
 									"id": "009"
@@ -143,8 +143,8 @@
 												"type": "internal",
 												"path": "book/OGA/005.webp"
 											},
-											"width": 687,
-											"height": 710
+											"width": 750,
+											"height": 776
 										},
 										{
 											"type": "inset",

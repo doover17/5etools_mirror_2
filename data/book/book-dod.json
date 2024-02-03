@@ -12,8 +12,7 @@
 						"path": "book/DoD/001.webp"
 					},
 					"width": 449,
-					"height": 590,
-					"credit": "Alayna Danner"
+					"height": 590
 				},
 				"Domains of Delight are to the Feywild what Domains of Dread are to the Shadowfell: sequestered realms governed by powerful beings. Whereas a Domain of Dread is ruled by a Darklord, a Domain of Delight is ruled by an archfey\u2014the most powerful of Fey creatures. An archfey gives form to their Domain of Delight, shaping it in ways unique to their personality. Some Domains of Delight are bright and cheery, while others are gloomy, but each one reflects the emotional state of its ruler. A Domain of Delight can be as small as a few acres or as big as a country.",
 				"This accessory helps you create Domains of Delight and the archfey who rule them, building on the information about the Feywild that appears in the Dungeon Master's Guide. The ideas, tips, and tables in this chapter are meant to spark your imagination. Use what excites and intrigues you, discard what doesn't, and make up the rest!",
@@ -45,8 +44,7 @@
 									},
 									"title": "The Queen of Air and Darkness floats above her throne, attended by her quickling spies and satyr spymaster.",
 									"width": 1241,
-									"height": 816,
-									"credit": "Sam Keiser"
+									"height": 816
 								},
 								{
 									"type": "entries",
@@ -235,8 +233,7 @@
 									},
 									"title": "The borders of Baba Yaga's domain are patrolled by her dancing hut, which doesn't dance so much as stomp trespassers into the ground.",
 									"width": 1241,
-									"height": 799,
-									"credit": "Livia Prima"
+									"height": 799
 								},
 								{
 									"type": "table",
@@ -489,8 +486,7 @@
 											},
 											"title": "A satyr hopes to find the perfect gift at a faerie bazaar.",
 											"width": 1241,
-											"height": 766,
-											"credit": "Zoltan Boros"
+											"height": 766
 										},
 										{
 											"type": "entries",
@@ -922,8 +918,7 @@
 							},
 							"title": "One way to end a curse on yourself is to get bitten by a faerie dragon of a particular color.",
 							"width": 1134,
-							"height": 753,
-							"credit": "Lars Grant-West"
+							"height": 753
 						},
 						{
 							"type": "section",
@@ -1256,8 +1251,7 @@
 							},
 							"title": "A centaur guards an archfey's palace.",
 							"width": 1240,
-							"height": 824,
-							"credit": "Craig J Spearing"
+							"height": 824
 						},
 						{
 							"type": "entries",
@@ -1540,8 +1534,7 @@
 					},
 					"title": "An intrepid gnome adventurer traverses a moonlit stream while scowling flowers look on.",
 					"width": 1239,
-					"height": 809,
-					"credit": "Mark Behm"
+					"height": 809
 				},
 				{
 					"type": "section",
@@ -1613,8 +1606,7 @@
 							},
 							"title": "One never knows where a \"shortcut\" through the Feywild might lead.",
 							"width": 1241,
-							"height": 808,
-							"credit": "Ned Rogers"
+							"height": 808
 						},
 						{
 							"type": "entries",
@@ -1904,8 +1896,7 @@
 							},
 							"title": "A boggle uses its innate magic to pluck a vial from a crone's belt.",
 							"width": 1239,
-							"height": 804,
-							"credit": "Helder Almeida"
+							"height": 804
 						},
 						{
 							"type": "entries",
@@ -1994,278 +1985,126 @@
 			"page": 24,
 			"name": "Adventure Aids",
 			"entries": [
-				"The following pages provide easy-to-use versions of appendices {@adventure D|WBtW|9} and {@adventure E|WBtW|10} from {@adventure The Wild Beyond the Witchlight|WBtW}, as well as the adventure's {@adventure Story Tracker|WBtW|11}.",
+				"The following pages provide easy-to-use versions of appendices D and E from The Wild Beyond the Witchlight, as well as the adventure's Story Tracker.",
 				{
-					"type": "list",
-					"items": [
-						"{@note See the {@deck Roleplaying Cards|WBtW} deck entry for individual cards, or {@adventure Appendix D of Wild Beyond the Witchlight|WBtW|9} for printable assets.}",
-						"{@note See the {@table Stagefright's Lines|WBtW} table to roll, or {@adventure Appendix E of Wild Beyond the Witchlight|WBtW|10} for printable assets.}",
-						"{@note See the {@adventure Story Tracker Appendix of Wild Beyond the Witchlight|WBtW|11} for printable story tracker assets.}"
-					]
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/DoD/aids1.webp"
+					},
+					"width": 655,
+					"height": 845
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/DoD/aids2.webp"
+					},
+					"width": 653,
+					"height": 847
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/DoD/aids3.webp"
+					},
+					"width": 653,
+					"height": 845
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/DoD/aids4.webp"
+					},
+					"width": 656,
+					"height": 848
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/DoD/aids5.webp"
+					},
+					"width": 654,
+					"height": 847
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/DoD/aids6.webp"
+					},
+					"width": 652,
+					"height": 846
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/DoD/aids7.webp"
+					},
+					"width": 651,
+					"height": 843
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/DoD/aids8.webp"
+					},
+					"width": 653,
+					"height": 845
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/DoD/aids9.webp"
+					},
+					"width": 621,
+					"height": 928
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/DoD/aids10.webp"
+					},
+					"width": 620,
+					"height": 928
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/DoD/aids11.webp"
+					},
+					"width": 617,
+					"height": 796
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/DoD/tracker1.webp"
+					},
+					"width": 717,
+					"height": 973
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/DoD/tracker2.webp"
+					},
+					"width": 713,
+					"height": 958
 				}
 			],
 			"id": "038"
-		},
-		{
-			"type": "section",
-			"name": "Credits",
-			"entries": [
-				{
-					"type": "entries",
-					"entries": [
-						{
-							"type": "list",
-							"style": "list-hang-notitle",
-							"columns": 2,
-							"items": [
-								{
-									"type": "list",
-									"style": "list-hang-notitle",
-									"items": [
-										{
-											"type": "item",
-											"name": "Writer",
-											"entries": [
-												"Adam Lee"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Art Director",
-											"entries": [
-												"Kate Irwin"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Developers",
-											"entries": [
-												"Jeremy Crawford, Ben Petrisor, Christopher Perkins"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Editors",
-											"entries": [
-												"Judy Bauer, Jeremy Crawford, Christopher Perkins"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Proofreader",
-											"entries": [
-												"Ari Levitch"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Graphic Designer",
-											"entries": [
-												"Trish Yochum"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Consultants",
-											"entries": [
-												"Shiaw-Ling Lai, Omar Ramadan-Santiago"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Interior Illustrators",
-											"entries": [
-												"Helder Almeida, Mark Behm, Zoltan Boros, Alayna Danner, Toma Feizo Gas, Lars Grant-West, Sam Keiser, Livia Prima, Ned Rogers, Magali Villeneuve"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Concept Art Director",
-											"entries": [
-												"Shawn Wood"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Concept Illustrators",
-											"entries": [
-												"Jedd Chevier, Daarken, Toma Feizo Gas, Titus Lunter, April Prime, Ilya Shkipin, Cory Trego-Erdner, Shawn Wood, Kieran Yanner"
-											]
-										},
-										{
-											"type": "item",
-											"name": "Imaging Technician",
-											"entries": [
-												"Kevin Yee"
-											]
-										}
-									]
-								},
-								{
-									"type": "entries",
-									"name": "D&D Studio",
-									"entries": [
-										{
-											"type": "list",
-											"style": "list-hang-notitle",
-											"items": [
-												{
-													"type": "item",
-													"name": "Executive Producer",
-													"entries": [
-														"Ray Winninger"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Game Design Architects",
-													"entries": [
-														"Jeremy Crawford, Christopher Perkins"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Design Manager",
-													"entries": [
-														"Steve Scott"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Design Department",
-													"entries": [
-														"Sydney Adams, Judy Bauer, Makenzie De Armas, Dan Dillon, Amanda Hamon, Ari Levitch, Ben Petrisor, Taymoor Rehman, F. Wesley Schneider, James Wyatt"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Art Department Manager",
-													"entries": [
-														"Richard Whitters"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Principal Art Director",
-													"entries": [
-														"Kate Irwin"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Art Department",
-													"entries": [
-														"Trystan Falcone, Emi Tanji, Shawn Wood, Trish Yochum"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Senior Producer",
-													"entries": [
-														"Dan Tovar"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Producers",
-													"entries": [
-														"Bill Benham, Robert Hawkey, Lea Heleotis"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Director of Product Management",
-													"entries": [
-														"Liz Schuh"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Product Managers",
-													"entries": [
-														"Natalie Egan, Chris Lindsay, Hilary Ross, Chris Tulach"
-													]
-												}
-											]
-										}
-									],
-									"id": "03b"
-								},
-								{
-									"type": "entries",
-									"name": "Marketing",
-									"entries": [
-										{
-											"type": "list",
-											"style": "list-hang-notitle",
-											"items": [
-												{
-													"type": "item",
-													"name": "Director of Global Brand Marketing",
-													"entries": [
-														"Brian Perry"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Global Brand Manager",
-													"entries": [
-														"Shelly Mazzanoble"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Senior Marketing Communications Manager",
-													"entries": [
-														"Greg Tito"
-													]
-												},
-												{
-													"type": "item",
-													"name": "Community Manager",
-													"entries": [
-														"Brandy Camel"
-													]
-												}
-											]
-										}
-									],
-									"id": "03c"
-								},
-								{
-									"type": "entries",
-									"name": "D&D Beyond",
-									"entries": [
-										{
-											"type": "list",
-											"style": "list-hang-notitle",
-											"items": [
-												{
-													"type": "item",
-													"name": "D&D Beyond Product Manager",
-													"entries": [
-														"Patrick Backmann"
-													]
-												},
-												{
-													"type": "item",
-													"name": "D&D Beyond Digital Design Team",
-													"entries": [
-														"Jay Jani, Adam Walton, Cameron Powell, Joseph Keen"
-													]
-												}
-											]
-										}
-									],
-									"id": "03d"
-								}
-							]
-						}
-					],
-					"id": "03a"
-				}
-			],
-			"id": "039"
 		}
 	]
 }

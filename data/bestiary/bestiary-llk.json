@@ -139,13 +139,6 @@
 				"prone",
 				"unconscious"
 			],
-			"savingThrowForced": [
-				"intelligence"
-			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"wisdom"
-			],
 			"hasToken": true
 		},
 		{
@@ -476,9 +469,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"shortsword|phb"
-			],
 			"traitTags": [
 				"Sneak Attack"
 			],
@@ -498,7 +488,6 @@
 				"CB"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"conditionInflict": [
@@ -508,9 +497,6 @@
 				"charmed",
 				"incapacitated",
 				"prone"
-			],
-			"savingThrowForcedSpell": [
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluffImages": true
@@ -567,9 +553,6 @@
 			"spellcastingTags": [
 				"O"
 			],
-			"savingThrowForcedSpell": [
-				"dexterity"
-			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
@@ -613,9 +596,6 @@
 			"conditionInflict": [
 				"petrified",
 				"restrained"
-			],
-			"savingThrowForced": [
-				"constitution"
 			],
 			"hasToken": true,
 			"hasFluffImages": true
@@ -735,9 +715,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"quarterstaff|phb"
-			],
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -761,7 +738,6 @@
 				"CL"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"conditionInflict": [
@@ -771,13 +747,6 @@
 			"conditionInflictSpell": [
 				"charmed",
 				"incapacitated"
-			],
-			"savingThrowForced": [
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"intelligence",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluffImages": true
@@ -936,7 +905,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"hasToken": true

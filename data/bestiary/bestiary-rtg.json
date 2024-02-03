@@ -167,9 +167,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"mace|phb"
-			],
 			"traitTags": [
 				"Regeneration",
 				"Tree Stride"
@@ -202,18 +199,10 @@
 				"I"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"conditionInflictSpell": [
 				"incapacitated"
-			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"constitution",
-				"dexterity",
-				"intelligence",
-				"wisdom"
 			],
 			"hasToken": true
 		},
@@ -325,9 +314,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"club|phb"
-			],
 			"traitTags": [
 				"Regeneration",
 				"Tree Stride"
@@ -345,7 +331,6 @@
 				"B"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"hasToken": true

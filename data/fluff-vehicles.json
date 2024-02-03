@@ -8,9 +8,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "items/DMG/Apparatus of Kwalish.webp"
-					},
-					"credit": "Aaron Hübrich"
+						"path": "items/DMG/Apparatus of Kwalish.jpg"
+					}
 				}
 			]
 		},
@@ -93,9 +92,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "vehicles/AI/battle-balloon.webp"
-					},
-					"credit": "Kim Van Deun"
+						"path": "vehicles/AI/battle-balloon.png"
+					}
 				}
 			]
 		},
@@ -112,8 +110,7 @@
 					"href": {
 						"type": "internal",
 						"path": "vehicles/AAG/Bombard.webp"
-					},
-					"credit": "Ned Rogers"
+					}
 				},
 				{
 					"type": "image",
@@ -121,8 +118,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Bombard Map.webp"
 					},
-					"title": "Bombard Deck Plans",
-					"credit": "Dyson Logos"
+					"title": "Bombard Deck Plans"
 				},
 				{
 					"type": "image",
@@ -130,8 +126,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Bombard Map Player Version.webp"
 					},
-					"title": "Unlabeled Version",
-					"credit": "Dyson Logos"
+					"title": "Unlabeled Version"
 				}
 			]
 		},
@@ -149,8 +144,7 @@
 					"href": {
 						"type": "internal",
 						"path": "vehicles/AAG/Damselfly Ship.webp"
-					},
-					"credit": "Kent Davis"
+					}
 				},
 				{
 					"type": "image",
@@ -158,8 +152,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Damselfly Ship Map.webp"
 					},
-					"title": "Damselfly Ship Deck Plans",
-					"credit": "Dyson Logos"
+					"title": "Damselfly Ship Deck Plans"
 				},
 				{
 					"type": "image",
@@ -167,8 +160,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Damselfly Ship Map Player Version.webp"
 					},
-					"title": "Unlabeled Version",
-					"credit": "Dyson Logos"
+					"title": "Unlabeled Version"
 				}
 			]
 		},
@@ -193,7 +185,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "vehicles/BGDIA/Demon Grinder.webp"
+						"path": "vehicles/BGDIA/Demon Grinder.jpg"
 					}
 				}
 			]
@@ -219,7 +211,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "vehicles/BGDIA/Devil's Ride.webp"
+						"path": "vehicles/BGDIA/Devil's Ride.jpg"
 					}
 				}
 			]
@@ -238,8 +230,7 @@
 					"href": {
 						"type": "internal",
 						"path": "vehicles/AAG/Flying Fish Ship.webp"
-					},
-					"credit": "David Rene Christensen"
+					}
 				},
 				{
 					"type": "image",
@@ -247,8 +238,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Flying Fish Ship Map.webp"
 					},
-					"title": "Flying Fish Ship Deck Plans",
-					"credit": "Dyson Logos"
+					"title": "Flying Fish Ship Deck Plans"
 				},
 				{
 					"type": "image",
@@ -256,8 +246,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Flying Fish Ship Map Player Version.webp"
 					},
-					"title": "Unlabeled Version",
-					"credit": "Dyson Logos"
+					"title": "Unlabeled Version"
 				}
 			]
 		},
@@ -397,9 +386,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "vehicles/GoS/galley-ship.webp"
-					},
-					"credit": "Mike Schley"
+						"path": "vehicles/GoS/galley-ship.png"
+					}
 				}
 			]
 		},
@@ -415,8 +403,7 @@
 					"href": {
 						"type": "internal",
 						"path": "vehicles/AAG/Hammerhead Ship.webp"
-					},
-					"credit": "Ralph Horsley"
+					}
 				},
 				{
 					"type": "image",
@@ -424,8 +411,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Hammerhead Ship Map.webp"
 					},
-					"title": "Hammerhead Ship Deck Plans",
-					"credit": "Dyson Logos"
+					"title": "Hammerhead Ship Deck Plans"
 				},
 				{
 					"type": "image",
@@ -433,8 +419,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Hammerhead Ship Map Player Version.webp"
 					},
-					"title": "Unlabeled Version",
-					"credit": "Dyson Logos"
+					"title": "Unlabeled Version"
 				}
 			]
 		},
@@ -534,9 +519,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "vehicles/GoS/smaller-ships.webp"
-					},
-					"credit": "Mike Schley"
+						"path": "vehicles/GoS/smaller-ships.png"
+					}
 				}
 			]
 		},
@@ -554,8 +538,7 @@
 					"href": {
 						"type": "internal",
 						"path": "vehicles/AAG/Lamprey Ship.webp"
-					},
-					"credit": "Kent Davis"
+					}
 				},
 				{
 					"type": "image",
@@ -563,8 +546,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Lamprey Ship Map.webp"
 					},
-					"title": "Lamprey Ship Deck Plans",
-					"credit": "Dyson Logos"
+					"title": "Lamprey Ship Deck Plans"
 				},
 				{
 					"type": "image",
@@ -572,8 +554,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Lamprey Ship Map Player Version.webp"
 					},
-					"title": "Unlabeled Version",
-					"credit": "Dyson Logos"
+					"title": "Unlabeled Version"
 				}
 			]
 		},
@@ -592,8 +573,7 @@
 					"href": {
 						"type": "internal",
 						"path": "vehicles/AAG/Living Ship.webp"
-					},
-					"credit": "Alfven Ato"
+					}
 				},
 				{
 					"type": "image",
@@ -601,8 +581,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Living Ship Map.webp"
 					},
-					"title": "Living Ship Deck Plans",
-					"credit": "Dyson Logos"
+					"title": "Living Ship Deck Plans"
 				},
 				{
 					"type": "image",
@@ -610,8 +589,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Living Ship Map Player Version.webp"
 					},
-					"title": "Unlabeled Version",
-					"credit": "Dyson Logos"
+					"title": "Unlabeled Version"
 				}
 			]
 		},
@@ -696,9 +674,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "vehicles/GoS/smaller-ships.webp"
-					},
-					"credit": "Mike Schley"
+						"path": "vehicles/GoS/smaller-ships.png"
+					}
 				}
 			]
 		},
@@ -731,9 +708,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "vehicles/AI/mechanical-beholder.webp"
-					},
-					"credit": "Chris Walton"
+						"path": "vehicles/AI/mechanical-beholder.png"
+					}
 				}
 			]
 		},
@@ -750,8 +726,7 @@
 					"href": {
 						"type": "internal",
 						"path": "vehicles/AAG/Nautiloid.webp"
-					},
-					"credit": "Kent Davis"
+					}
 				},
 				{
 					"type": "image",
@@ -759,8 +734,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Nautiloid Map.webp"
 					},
-					"title": "Nautiloid Deck Plans",
-					"credit": "Dyson Logos"
+					"title": "Nautiloid Deck Plans"
 				},
 				{
 					"type": "image",
@@ -768,8 +742,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Nautiloid Map Player Version.webp"
 					},
-					"title": "Unlabeled Version",
-					"credit": "Dyson Logos"
+					"title": "Unlabeled Version"
 				}
 			]
 		},
@@ -787,8 +760,7 @@
 					"href": {
 						"type": "internal",
 						"path": "vehicles/AAG/Nightspider.webp"
-					},
-					"credit": "Jessica Nguyen"
+					}
 				},
 				{
 					"type": "image",
@@ -796,8 +768,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Nightspider Map.webp"
 					},
-					"title": "Nightspider Deck Plans",
-					"credit": "Dyson Logos"
+					"title": "Nightspider Deck Plans"
 				},
 				{
 					"type": "image",
@@ -805,8 +776,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Nightspider Map Player Version.webp"
 					},
-					"title": "Unlabeled Version",
-					"credit": "Dyson Logos"
+					"title": "Unlabeled Version"
 				}
 			]
 		},
@@ -906,7 +876,7 @@
 										{
 											"type": "item",
 											"name": "Mangonel",
-											"entry": "Sailing ships have one {@object mangonel} (DMG, ch. 8) attached to the deck. Each weapon has 10 mangonel stones stacked and secured near it."
+											"entry": "Sailing ships have one {@object mangonel} (DMG, ch. 8) attached to the deck.  Each weapon has 10 mangonel stones stacked and secured near it."
 										},
 										{
 											"type": "item",
@@ -1051,9 +1021,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "vehicles/GoS/sailing-ship.webp"
-					},
-					"credit": "Mike Schley"
+						"path": "vehicles/GoS/sailing-ship.png"
+					}
 				}
 			]
 		},
@@ -1078,7 +1047,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "vehicles/BGDIA/Scavenger.webp"
+						"path": "vehicles/BGDIA/Scavenger.jpg"
 					}
 				}
 			]
@@ -1095,8 +1064,7 @@
 					"href": {
 						"type": "internal",
 						"path": "vehicles/AAG/Scorpion Ship.webp"
-					},
-					"credit": "David Rene Christensen"
+					}
 				},
 				{
 					"type": "image",
@@ -1104,8 +1072,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Scorpion Ship Map.webp"
 					},
-					"title": "Scorpion Ship Deck Plans",
-					"credit": "Dyson Logos"
+					"title": "Scorpion Ship Deck Plans"
 				},
 				{
 					"type": "image",
@@ -1113,8 +1080,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Scorpion Ship Map Player Version.webp"
 					},
-					"title": "Unlabeled Version",
-					"credit": "Dyson Logos"
+					"title": "Unlabeled Version"
 				}
 			]
 		},
@@ -1131,8 +1097,7 @@
 					"href": {
 						"type": "internal",
 						"path": "vehicles/AAG/Shrike Ship.webp"
-					},
-					"credit": "Olly Lawson"
+					}
 				},
 				{
 					"type": "image",
@@ -1140,8 +1105,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Shrike Ship Map.webp"
 					},
-					"title": "Shrike Ship Deck Plans",
-					"credit": "Dyson Logos"
+					"title": "Shrike Ship Deck Plans"
 				},
 				{
 					"type": "image",
@@ -1149,8 +1113,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Shrike Ship Map Player Version.webp"
 					},
-					"title": "Unlabeled Version",
-					"credit": "Dyson Logos"
+					"title": "Unlabeled Version"
 				}
 			]
 		},
@@ -1166,8 +1129,7 @@
 					"href": {
 						"type": "internal",
 						"path": "vehicles/AAG/Space Galleon.webp"
-					},
-					"credit": "David Rene Christensen"
+					}
 				},
 				{
 					"type": "image",
@@ -1175,8 +1137,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Space Galleon Map.webp"
 					},
-					"title": "Space Galleon Deck Plans",
-					"credit": "Dyson Logos"
+					"title": "Space Galleon Deck Plans"
 				},
 				{
 					"type": "image",
@@ -1184,8 +1145,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Space Galleon Map Player Version.webp"
 					},
-					"title": "Unlabeled Version",
-					"credit": "Dyson Logos"
+					"title": "Unlabeled Version"
 				}
 			]
 		},
@@ -1202,8 +1162,7 @@
 					"href": {
 						"type": "internal",
 						"path": "vehicles/AAG/Squid Ship.webp"
-					},
-					"credit": "Katerina Ladon"
+					}
 				},
 				{
 					"type": "image",
@@ -1211,8 +1170,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Squid Ship Map.webp"
 					},
-					"title": "Squid Ship Deck Plans",
-					"credit": "Dyson Logos"
+					"title": "Squid Ship Deck Plans"
 				},
 				{
 					"type": "image",
@@ -1220,8 +1178,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Squid Ship Map Player Version.webp"
 					},
-					"title": "Unlabeled Version",
-					"credit": "Dyson Logos"
+					"title": "Unlabeled Version"
 				}
 			]
 		},
@@ -1238,8 +1195,7 @@
 					"href": {
 						"type": "internal",
 						"path": "vehicles/AAG/Star Moth.webp"
-					},
-					"credit": "Bruce Brenneise"
+					}
 				},
 				{
 					"type": "image",
@@ -1247,8 +1203,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Star Moth Map.webp"
 					},
-					"title": "Star Moth Deck Plans",
-					"credit": "Dyson Logos"
+					"title": "Star Moth Deck Plans"
 				},
 				{
 					"type": "image",
@@ -1256,8 +1211,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Star Moth Map Player Version.webp"
 					},
-					"title": "Unlabeled Version",
-					"credit": "Dyson Logos"
+					"title": "Unlabeled Version"
 				}
 			]
 		},
@@ -1282,7 +1236,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "vehicles/BGDIA/Tormentor.webp"
+						"path": "vehicles/BGDIA/Tormentor.jpg"
 					}
 				}
 			]
@@ -1300,8 +1254,7 @@
 					"href": {
 						"type": "internal",
 						"path": "vehicles/AAG/Turtle Ship.webp"
-					},
-					"credit": "Alfven Ato"
+					}
 				},
 				{
 					"type": "image",
@@ -1309,8 +1262,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Turtle Ship Map.webp"
 					},
-					"title": "Turtle Ship Deck Plans",
-					"credit": "Dyson Logos"
+					"title": "Turtle Ship Deck Plans"
 				},
 				{
 					"type": "image",
@@ -1318,8 +1270,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Turtle Ship Map Player Version.webp"
 					},
-					"title": "Unlabeled Version",
-					"credit": "Dyson Logos"
+					"title": "Unlabeled Version"
 				}
 			]
 		},
@@ -1337,8 +1288,7 @@
 					"href": {
 						"type": "internal",
 						"path": "vehicles/AAG/Tyrant Ship.webp"
-					},
-					"credit": "Olly Lawson"
+					}
 				},
 				{
 					"type": "image",
@@ -1346,8 +1296,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Tyrant Ship Map.webp"
 					},
-					"title": "Tyrant Ship Deck Plans",
-					"credit": "Dyson Logos"
+					"title": "Tyrant Ship Deck Plans"
 				},
 				{
 					"type": "image",
@@ -1355,8 +1304,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Tyrant Ship Map Player Version.webp"
 					},
-					"title": "Unlabeled Version",
-					"credit": "Dyson Logos"
+					"title": "Unlabeled Version"
 				}
 			]
 		},
@@ -1596,9 +1544,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "vehicles/GoS/warship.webp"
-					},
-					"credit": "Mike Schley"
+						"path": "vehicles/GoS/warship.png"
+					}
 				}
 			]
 		},
@@ -1615,8 +1562,7 @@
 					"href": {
 						"type": "internal",
 						"path": "vehicles/AAG/Wasp Ship.webp"
-					},
-					"credit": "Olly Lawson"
+					}
 				},
 				{
 					"type": "image",
@@ -1624,8 +1570,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Wasp Ship Map.webp"
 					},
-					"title": "Wasp Ship Deck Plans",
-					"credit": "Dyson Logos"
+					"title": "Wasp Ship Deck Plans"
 				},
 				{
 					"type": "image",
@@ -1633,8 +1578,7 @@
 						"type": "internal",
 						"path": "vehicles/AAG/Wasp Ship Map Player Version.webp"
 					},
-					"title": "Unlabeled Version",
-					"credit": "Dyson Logos"
+					"title": "Unlabeled Version"
 				}
 			]
 		}

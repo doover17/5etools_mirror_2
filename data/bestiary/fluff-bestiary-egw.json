@@ -57,9 +57,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Aeorian Absorber.webp"
-					},
-					"credit": "David Rene Christensen"
+						"path": "bestiary/EGW/Aeorian Absorber.jpg"
+					}
 				}
 			]
 		},
@@ -120,9 +119,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Aeorian Nullifier.webp"
-					},
-					"credit": "David Rene Christensen"
+						"path": "bestiary/EGW/Aeorian Nullifier.jpg"
+					}
 				}
 			]
 		},
@@ -183,9 +181,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Aeorian Reverser.webp"
-					},
-					"credit": "David Rene Christensen"
+						"path": "bestiary/EGW/Aeorian Reverser.jpg"
+					}
 				}
 			]
 		},
@@ -232,9 +229,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Blood Hunter.webp"
-					},
-					"credit": "Joma Cueto"
+						"path": "bestiary/EGW/Blood Hunter.jpg"
+					}
 				}
 			]
 		},
@@ -293,9 +289,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Core Spawn Crawler.webp"
-					},
-					"credit": "Stephen Oakley"
+						"path": "bestiary/EGW/Core Spawn Crawler.jpg"
+					}
 				}
 			]
 		},
@@ -330,9 +325,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Core Spawn Emissary.webp"
-					},
-					"credit": "Stephen Oakley"
+						"path": "bestiary/EGW/Core Spawn Emissary.jpg"
+					}
 				}
 			]
 		},
@@ -366,9 +360,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Core Spawn Seer.webp"
-					},
-					"credit": "Stephen Oakley"
+						"path": "bestiary/EGW/Core Spawn Seer.jpg"
+					}
 				}
 			]
 		},
@@ -402,9 +395,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Core Spawn Worm.webp"
-					},
-					"credit": "Stephen Oakley"
+						"path": "bestiary/EGW/Core Spawn Worm.jpg"
+					}
 				}
 			]
 		},
@@ -425,9 +417,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Frost Giant Zombie.webp"
-					},
-					"credit": "David Sladek"
+						"path": "bestiary/EGW/Frost Giant Zombie.jpg"
+					}
 				}
 			]
 		},
@@ -448,9 +439,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Frost Worm.webp"
-					},
-					"credit": "Brian Valeza"
+						"path": "bestiary/EGW/Frost Worm.jpg"
+					}
 				}
 			]
 		},
@@ -472,9 +462,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Gearkeeper Construct.webp"
-					},
-					"credit": "Stephen Oakley"
+						"path": "bestiary/EGW/Gearkeeper Construct.jpg"
+					}
 				}
 			]
 		},
@@ -494,9 +483,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Gloomstalker.webp"
-					},
-					"credit": "Zoltan Boros"
+						"path": "bestiary/EGW/Gloomstalker.jpg"
+					}
 				}
 			]
 		},
@@ -516,9 +504,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Horizonback Tortoise.webp"
-					},
-					"credit": "Kent Davis"
+						"path": "bestiary/EGW/Horizonback Tortoise.jpg"
+					}
 				}
 			]
 		},
@@ -538,9 +525,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Husk Zombie.webp"
-					},
-					"credit": "David Sladek"
+						"path": "bestiary/EGW/Husk Zombie.jpg"
+					}
 				}
 			]
 		},
@@ -586,9 +572,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Merrow Shallowpriest.webp"
-					},
-					"credit": "Andrew Mar"
+						"path": "bestiary/EGW/Merrow Shallowpriest.jpg"
+					}
 				}
 			]
 		},
@@ -615,9 +600,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Moorbounder.webp"
-					},
-					"credit": "Marcela Medeiros"
+						"path": "bestiary/EGW/Moorbounder.jpg"
+					}
 				}
 			]
 		},
@@ -638,8 +622,7 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/EGW/Mossback Steward.webp"
-					},
-					"credit": "Kent Davis"
+					}
 				}
 			]
 		},
@@ -660,9 +643,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Nergaliid.webp"
-					},
-					"credit": "Stephen Oakley"
+						"path": "bestiary/EGW/Nergaliid.jpg"
+					}
 				}
 			]
 		},
@@ -708,9 +690,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Sahuagin Warlock of Ukotoa.webp"
-					},
-					"credit": "Eric Belisle"
+						"path": "bestiary/EGW/Sahuagin Warlock of Ukotoa.jpg"
+					}
 				}
 			]
 		},
@@ -731,9 +712,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Sea Fury.webp"
-					},
-					"credit": "Andrew Mar"
+						"path": "bestiary/EGW/Sea Fury.jpg"
+					}
 				}
 			]
 		},
@@ -753,9 +733,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Shadowghast.webp"
-					},
-					"credit": "Eric Belisle"
+						"path": "bestiary/EGW/Shadowghast.jpg"
+					}
 				}
 			]
 		},
@@ -781,9 +760,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Skra Sorsk.webp"
-					},
-					"credit": "Eric Belisle"
+						"path": "bestiary/EGW/Skra Sorsk.jpg"
+					}
 				}
 			]
 		},
@@ -803,9 +781,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Swavain Basilisk.webp"
-					},
-					"credit": "Mark Behm"
+						"path": "bestiary/EGW/Swavain Basilisk.jpg"
+					}
 				}
 			]
 		},
@@ -838,9 +815,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/EGW/Udaak.webp"
-					},
-					"credit": "Kent Davis"
+						"path": "bestiary/EGW/Udaak.jpg"
+					}
 				}
 			]
 		}

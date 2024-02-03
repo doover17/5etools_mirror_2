@@ -8,9 +8,6 @@
 			"otherSources": [
 				{
 					"source": "TCE"
-				},
-				{
-					"source": "BMT"
 				}
 			],
 			"size": [
@@ -147,12 +144,6 @@
 			"otherSources": [
 				{
 					"source": "BGDIA"
-				},
-				{
-					"source": "SatO"
-				},
-				{
-					"source": "ToFW"
 				}
 			],
 			"size": [

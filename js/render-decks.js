@@ -20,11 +20,11 @@ class RenderDecks {
 		}),
 	};
 
-	static getCardTextHtml ({card, deck = null}) {
+	static getCardTextHtml ({card}) {
 		const ptText = Renderer.get()
 			.setFirstSection(true)
 			.setPartPageExpandCollapseDisabled(true)
-			.render({name: card.name, entries: Renderer.card.getFullEntries(card, {backCredit: deck?.back?.credit})}, 1);
+			.render({name: card.name, entries: Renderer.card.getFullEntries(card)}, 1);
 		Renderer.get().setPartPageExpandCollapseDisabled(false);
 		return ptText;
 	}
@@ -44,12 +44,6 @@ class RenderDecks {
 		const $rowsCards = ent.cards
 			.map((card, ixCard) => {
 				const ptText = this.getCardTextHtml({card});
-
-				const $btnMarkDrawn = $(`<button class="btn btn-default btn-xs" title="Mark Card as Drawn"><i class="fas fa-fw fa-cards"></i></button>`)
-					.click(async evt => {
-						evt.stopPropagation();
-						await cardStateManager.pDrawCard(ent, card);
-					});
 
 				const $btnReplace = $(`<button class="btn btn-default btn-xs" title="Return Card to Deck"><i class="fas fa-arrow-rotate-left"></i></button>`)
 					.click(async evt => {
@@ -71,7 +65,6 @@ class RenderDecks {
 				const $wrpFace = $$`<div class="no-shrink px-1 decks__wrp-card-face relative">
 					<div class="absolute pt-2 pr-2 decks__wrp-btn-show-card">
 						<div class="btn-group ve-flex-v-center">
-							${$btnMarkDrawn}
 							${$btnReplace}
 							${$btnViewer}
 						</div>
@@ -79,15 +72,12 @@ class RenderDecks {
 					${Renderer.get().setFirstSection(true).render({...card.face, title: card.name, altText: card.name})}
 				</div>`;
 
-				const $imgFace = $wrpFace.find("img");
-				const title = $imgFace.closest(`[title]`).title();
 				const propCardDrawn = cardStateManager.getPropCardDrawn({hashDeck, ixCard});
 				const hkCardDrawn = cardStateManager.addHookBase(propCardDrawn, () => {
 					const isDrawn = !!cardStateManager.get(propCardDrawn);
-					$btnMarkDrawn.prop("disabled", isDrawn);
 					$btnReplace.prop("disabled", !isDrawn);
 					$wrpFace.toggleClass("decks__wrp-card-face--drawn", isDrawn);
-					$imgFace.title(isDrawn ? `${title} (Drawn)` : title);
+					$wrpFace.find("img").title(isDrawn ? `${card.name} (Drawn)` : card.name);
 				});
 				fnsCleanup.push(() => cardStateManager.removeHookBase(propCardDrawn, hkCardDrawn));
 				hkCardDrawn();
@@ -136,8 +126,8 @@ class RenderDecks {
 	/* -------------------------------------------- */
 
 	static async pRenderStgCard ({deck, card}) {
-		const imgUrlBack = (card.back || deck.back) ? Renderer.utils.getEntryMediaUrl(card.back || deck.back, "href", "img") : null;
-		const imgUrlCard = Renderer.utils.getEntryMediaUrl(card.face, "href", "img");
+		const imgUrlBack = (card.back || deck.back) ? Renderer.utils.getMediaUrl(card.back || deck.back, "href", "img") : null;
+		const imgUrlCard = Renderer.utils.getMediaUrl(card.face, "href", "img");
 
 		const imgBack = imgUrlBack ? await AnimationUtil.pLoadImage(imgUrlBack) : null;
 		if (imgBack) {
@@ -182,8 +172,8 @@ class RenderDecks {
 		const metasSparkles = await [...new Array(8)]
 			.pSerialAwaitMap(async (_, i) => {
 				const imgSparkle = i % 2
-					? await AnimationUtil.pLoadImage(Renderer.get().getMediaUrl("img", "decks/page/medium-2.webp"))
-					: await AnimationUtil.pLoadImage(Renderer.get().getMediaUrl("img", "decks/page/medium-1.webp"));
+					? await AnimationUtil.pLoadImage(`${Renderer.get().baseUrl}img/decks/page/medium-2.webp`)
+					: await AnimationUtil.pLoadImage(`${Renderer.get().baseUrl}img/decks/page/medium-1.webp`);
 
 				e_({
 					ele: imgSparkle,
@@ -218,9 +208,9 @@ class RenderDecks {
 			${$wrpCardSway}
 		</div>`;
 
-		const ptText = RenderDecks.getCardTextHtml({card, deck});
+		const ptText = RenderDecks.getCardTextHtml({card});
 
-		const $wrpInfo = $$`<div class="stats stats--book decks-draw__wrp-desc mobile__hidden px-2 ve-text-center mb-4">${ptText}</div>`
+		const $wrpInfo = $$`<div class="stats stats--book decks-draw__wrp-desc mobile__hidden px-2 text-center mb-4">${ptText}</div>`
 			.click(evt => evt.stopPropagation());
 
 		const $btnFlip = imgBack

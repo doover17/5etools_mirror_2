@@ -44,7 +44,7 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "bestiary/IDRotF/Auril (First Form).webp"
+								"path": "bestiary/IDRotF/Auril (First Form).jpg"
 							}
 						}
 					}
@@ -79,7 +79,7 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "bestiary/IDRotF/Auril (Second Form).webp"
+								"path": "bestiary/IDRotF/Auril (Second Form).jpg"
 							}
 						}
 					}
@@ -114,7 +114,7 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "bestiary/IDRotF/Auril (Third Form).webp"
+								"path": "bestiary/IDRotF/Auril (Third Form).jpg"
 							}
 						}
 					}
@@ -182,7 +182,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Auril the Frostmaiden.webp"
+						"path": "bestiary/IDRotF/Auril the Frostmaiden.png"
 					}
 				}
 			]
@@ -231,7 +231,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Avarice.webp"
+						"path": "bestiary/IDRotF/Avarice.png"
 					},
 					"title": "Avarice, her raven familiar, and her gargoyles"
 				}
@@ -253,7 +253,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Awakened White Moose.webp"
+						"path": "bestiary/IDRotF/Awakened White Moose.jpg"
 					}
 				}
 			]
@@ -276,7 +276,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Bjornhild Solvigsdottir.webp"
+						"path": "bestiary/IDRotF/Bjornhild Solvigsdottir.jpg"
 					}
 				}
 			]
@@ -323,7 +323,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Chardalyn Berserker.webp"
+						"path": "bestiary/IDRotF/Chardalyn Berserker.jpg"
 					}
 				}
 			]
@@ -350,7 +350,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Chardalyn Dragon.webp"
+						"path": "bestiary/IDRotF/Chardalyn Dragon.jpg"
 					}
 				}
 			]
@@ -453,21 +453,21 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Chwinga.webp"
+						"path": "bestiary/IDRotF/Chwinga.png"
 					}
 				},
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Chwinga-2.webp"
+						"path": "bestiary/IDRotF/Chwinga-2.png"
 					}
 				},
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Chwinga-3.webp"
+						"path": "bestiary/IDRotF/Chwinga-3.png"
 					}
 				}
 			]
@@ -506,7 +506,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Coldlight Walker.webp"
+						"path": "bestiary/IDRotF/Coldlight Walker.jpg"
 					}
 				}
 			]
@@ -529,7 +529,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Demos Magen.webp"
+						"path": "bestiary/IDRotF/Demos Magen.jpg"
 					}
 				}
 			]
@@ -552,7 +552,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Dzaans Simulacrum.webp"
+						"path": "bestiary/IDRotF/Dzaans Simulacrum.jpg"
 					}
 				}
 			]
@@ -573,7 +573,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Fox.webp"
+						"path": "bestiary/IDRotF/Fox.jpg"
 					}
 				}
 			]
@@ -618,7 +618,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Frost Druid.webp"
+						"path": "bestiary/IDRotF/Frost Druid.jpg"
 					}
 				}
 			]
@@ -639,7 +639,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Frost Giant Skeleton.webp"
+						"path": "bestiary/IDRotF/Frost Giant Skeleton.jpg"
 					}
 				}
 			]
@@ -662,7 +662,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Galvan Magen.webp"
+						"path": "bestiary/IDRotF/Galvan Magen.jpg"
 					}
 				}
 			]
@@ -683,7 +683,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Giant Walrus.webp"
+						"path": "bestiary/IDRotF/Giant Walrus.jpg"
 					}
 				}
 			]
@@ -721,7 +721,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Gnoll Vampire.webp"
+						"path": "bestiary/IDRotF/Gnoll Vampire.jpg"
 					}
 				}
 			]
@@ -755,7 +755,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Gnome Ceremorph.webp"
+						"path": "bestiary/IDRotF/Gnome Ceremorph.jpg"
 					}
 				}
 			]
@@ -778,7 +778,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Gnome Squidling.webp"
+						"path": "bestiary/IDRotF/Gnome Squidling.jpg"
 					}
 				}
 			]
@@ -799,7 +799,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Goliath Warrior.webp"
+						"path": "bestiary/IDRotF/Goliath Warrior.jpg"
 					}
 				}
 			]
@@ -821,7 +821,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Goliath Werebear.webp"
+						"path": "bestiary/IDRotF/Goliath Werebear.jpg"
 					}
 				}
 			]
@@ -844,7 +844,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Grandolpha Muzgardt.webp"
+						"path": "bestiary/IDRotF/Grandolpha Muzgardt.jpg"
 					}
 				}
 			]
@@ -878,7 +878,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Hare.webp"
+						"path": "bestiary/IDRotF/Hare.jpg"
 					}
 				}
 			]
@@ -927,7 +927,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Hypnos Magen.webp"
+						"path": "bestiary/IDRotF/Hypnos Magen.jpg"
 					}
 				}
 			]
@@ -988,7 +988,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Ice Troll.webp"
+						"path": "bestiary/IDRotF/Ice Troll.jpg"
 					}
 				}
 			]
@@ -1010,7 +1010,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Icewind Kobold.webp"
+						"path": "bestiary/IDRotF/Icewind Kobold.jpg"
 					}
 				}
 			]
@@ -1072,7 +1072,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Kadroth.webp"
+						"path": "bestiary/IDRotF/Kadroth.jpg"
 					}
 				}
 			]
@@ -1094,7 +1094,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Kingsport.webp"
+						"path": "bestiary/IDRotF/Kingsport.jpg"
 					}
 				}
 			]
@@ -1128,7 +1128,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Knucklehead Trout.webp"
+						"path": "bestiary/IDRotF/Knucklehead Trout.jpg"
 					}
 				}
 			]
@@ -1149,7 +1149,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Kobold Vampire Spawn.webp"
+						"path": "bestiary/IDRotF/Kobold Vampire Spawn.jpg"
 					}
 				}
 			]
@@ -1171,7 +1171,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Living Bigbys Hand.webp"
+						"path": "bestiary/IDRotF/Living Bigbys Hand.jpg"
 					}
 				}
 			]
@@ -1193,7 +1193,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Living Blade of Disaster.webp"
+						"path": "bestiary/IDRotF/Living Blade of Disaster.jpg"
 					}
 				}
 			]
@@ -1216,7 +1216,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Living Demiplane.webp"
+						"path": "bestiary/IDRotF/Living Demiplane.jpg"
 					}
 				}
 			]
@@ -1237,9 +1237,8 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Lonelywood Banshee.webp"
-					},
-					"credit": "Tomas Giorello"
+						"path": "bestiary/IDRotF/Lonelywood Banshee.jpg"
+					}
 				}
 			]
 		},
@@ -1273,7 +1272,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Mountain Goat.webp"
+						"path": "bestiary/IDRotF/Mountain Goat.jpg"
 					}
 				}
 			]
@@ -1290,7 +1289,7 @@
 							"entries": [
 								"Nass Lantomir was an apprentice of Zelenn the White, one of five archmages who oversee the Arcane Brotherhood. Nass and Zelenn's relationship started off well, but in recent years it has become painfully obvious to Zelenn that Nass has been slow to master the arcane tradition of divination. Zelenn's suggestion that Nass leave the Hosttower of the Arcane and gain experience abroad left Nass feeling unwanted. After much thought, however, Nass came around to the idea. She could put her magic to the test and carve out a name for herself.",
 								"As she was preparing to leave the Hosttower, Nass overheard her master talking to another wizard about a covert expedition to Icewind Dale being undertaken to seek out long-lost magic from a bygone empire. Rather than carry out her original plan, Nass followed her fellow wizards to Icewind Dale. She caught up to them in Bryn Shander and made her presence known, claiming she was sent by her master to aid the expedition with her divinations. Egos and frayed nerves caused the group to split up shortly thereafter, with each wizard determined to succeed alone.",
-								"One night while the others slept, Nass stole a {@item Professor Skant|IDRotF|professor orb} (see {@adventure appendix D|IDRotF|22}) from one of her fellow wizards, Vellynne Harpell. Two of Vellynne's kobold companions witnessed the theft, and Nass killed them with {@spell Melf's acid arrow} spells before fleeing with the orb.",
+								"One night while the others slept, Nass stole a {@item Professor Skant|IDRotF|professor orb} (see {@adventure appendix D|IDRotF|22|{@item Professor Orb|WDMM}}) from one of her fellow wizards, Vellynne Harpell. Two of Vellynne's kobold companions witnessed the theft, and Nass killed them with {@spell Melf's acid arrow} spells before fleeing with the orb.",
 								"Nass fled Ten-Towns and headed toward the Sea of Moving Ice, hoping to find a tome called {@item The Codicil of White|IDRotF}, a book of magic and lore composed by servants of Auril the Frostmaiden. The Arcane Brotherhood believes that this book tells how to reach a lost city of magic entombed in the ice. Before she could obtain the book, Nass perished. She now exists as a ghost, unable to rest until she finds the book. Characters who come upon Nass's frozen remains also find her spellbook and the orb she stole from Vellynne.",
 								{
 									"type": "entries",
@@ -1323,7 +1322,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Nass Lantomirs Ghost.webp"
+						"path": "bestiary/IDRotF/Nass Lantomirs Ghost.jpg"
 					}
 				}
 			]
@@ -1348,7 +1347,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Prisoner 237.webp"
+						"path": "bestiary/IDRotF/Prisoner 237.jpg"
 					}
 				}
 			]
@@ -1461,7 +1460,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Seal.webp"
+						"path": "bestiary/IDRotF/Seal.jpg"
 					}
 				}
 			]
@@ -1482,7 +1481,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Sephek Kaltro.webp"
+						"path": "bestiary/IDRotF/Sephek Kaltro.jpg"
 					}
 				}
 			]
@@ -1503,7 +1502,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Snow Golem.webp"
+						"path": "bestiary/IDRotF/Snow Golem.jpg"
 					}
 				}
 			]
@@ -1537,7 +1536,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Spellix Romwod.webp"
+						"path": "bestiary/IDRotF/Spellix Romwod.jpg"
 					}
 				}
 			]
@@ -1558,7 +1557,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Sperm Whale.webp"
+						"path": "bestiary/IDRotF/Sperm Whale.jpg"
 					}
 				}
 			]
@@ -1579,7 +1578,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Spitting Mimic.webp"
+						"path": "bestiary/IDRotF/Spitting Mimic.jpg"
 					}
 				}
 			]
@@ -1626,7 +1625,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Tomb Tapper.webp"
+						"path": "bestiary/IDRotF/Tomb Tapper.jpg"
 					}
 				}
 			]
@@ -1643,7 +1642,7 @@
 							"entries": [
 								"Vellynne Harpell is a member of the prestigious Harpell family, based in the town of Longsaddle. Cold and dispassionate, she took to magic only a decade ago in her late forties and is skilled in the arcane tradition of necromancy. She has a lifelong struggle\u2014a nervous disorder that manifests as trembling. It can affect her balance and her stride, but she has learned to cast her spells unimpeded by it.",
 								"Despite her firm grasp of the dark arts, she would not have been admitted into the Arcane Brotherhood without her family connections\u2014a fact that sticks in her craw.",
-								"Vellynne brought a family heirloom with her to Icewind Dale: a {@item professor orb|WDMM} (see {@adventure appendix D|IDRotF|22}) that she refers to by its proper name, {@item Professor Skant|IDRotF}. This orb has knowledge about Netheril that could be important if Vellynne locates the lost Netherese city buried under the Reghed Glacier. The orb was recently stolen by Nass Lantomir, one of Vellynne's rivals in the Arcane Brotherhood. Vellynne intends to get it back before resuming her quest to find Ythryn.",
+								"Vellynne brought a family heirloom with her to Icewind Dale: a {@item professor orb|WDMM} (see {@adventure appendix D|IDRotF|22|{@item Professor Orb|WDMM}}) that she refers to by its proper name, {@item Professor Skant|IDRotF}. This orb has knowledge about Netheril that could be important if Vellynne locates the lost Netherese city buried under the Reghed Glacier. The orb was recently stolen by Nass Lantomir, one of Vellynne's rivals in the Arcane Brotherhood. Vellynne intends to get it back before resuming her quest to find Ythryn.",
 								{
 									"type": "entries",
 									"name": "Companions",
@@ -1676,7 +1675,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Vellynne Harpell.webp"
+						"path": "bestiary/IDRotF/Vellynne Harpell.png"
 					},
 					"title": "Vellynne Harpell and her kobold minions"
 				}
@@ -1726,7 +1725,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Verbeeg Marauder.webp"
+						"path": "bestiary/IDRotF/Verbeeg Marauder.jpg"
 					}
 				}
 			]
@@ -1785,7 +1784,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Xardorok Sunblight.webp"
+						"path": "bestiary/IDRotF/Xardorok Sunblight.jpg"
 					}
 				}
 			]
@@ -1806,7 +1805,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Yeti Tyke.webp"
+						"path": "bestiary/IDRotF/Yeti Tyke.jpg"
 					}
 				}
 			]
@@ -1827,7 +1826,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Young Griffon (Medium).webp"
+						"path": "bestiary/IDRotF/Young Griffon (Medium).jpg"
 					}
 				}
 			]
@@ -1848,7 +1847,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Young Griffon (Small).webp"
+						"path": "bestiary/IDRotF/Young Griffon (Small).jpg"
 					}
 				}
 			]
@@ -1869,7 +1868,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/IDRotF/Young Griffon (Tiny).webp"
+						"path": "bestiary/IDRotF/Young Griffon (Tiny).jpg"
 					}
 				}
 			]

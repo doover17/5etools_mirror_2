@@ -92,9 +92,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"javelin|phb"
-			],
 			"languageTags": [
 				"AU",
 				"OTH"
@@ -104,7 +101,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -137,14 +133,8 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"club|phb"
-			],
 			"languageTags": [
 				"GI"
-			],
-			"miscTags": [
-				"MLW"
 			],
 			"hasToken": true
 		},
@@ -238,10 +228,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"heavy crossbow|phb",
-				"warhammer|phb"
-			],
 			"senseTags": [
 				"D"
 			],
@@ -254,7 +240,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"
@@ -271,7 +256,7 @@
 				"name": "Veteran",
 				"source": "MM",
 				"_trait": {
-					"name": "Shield Dwarf",
+					"name": "Mountain Dwarf",
 					"source": "PHB"
 				},
 				"_mod": {
@@ -431,10 +416,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"hand crossbow|phb",
-				"shortsword|phb"
-			],
 			"languageTags": [
 				"C",
 				"D",
@@ -446,7 +427,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"
@@ -538,9 +518,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"greatclub|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -553,7 +530,6 @@
 				"B"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RCH",
 				"RW"
@@ -713,10 +689,6 @@
 			],
 			"spellcastingTags": [
 				"O"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"strength"
 			],
 			"hasToken": true
 		},
@@ -1039,9 +1011,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"morningstar|phb"
-			],
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -1069,7 +1038,6 @@
 			],
 			"miscTags": [
 				"AOE",
-				"MLW",
 				"MW",
 				"RCH",
 				"RW"
@@ -1081,14 +1049,6 @@
 				"charmed",
 				"incapacitated",
 				"invisible"
-			],
-			"savingThrowForced": [
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"strength",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1225,7 +1185,6 @@
 				"source": "MM"
 			},
 			"damageTagsLegendary": [],
-			"conditionInflictLegendary": [],
 			"hasToken": true
 		},
 		{
@@ -1319,10 +1278,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"greatsword|phb",
-				"heavy crossbow|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1334,7 +1289,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"
@@ -1420,10 +1374,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"shortsword|phb",
-				"sling|phb"
-			],
 			"traitTags": [
 				"Sneak Attack"
 			],
@@ -1434,7 +1384,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"
@@ -1646,9 +1595,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"maul|phb"
-			],
 			"traitTags": [
 				"Siege Monster"
 			],
@@ -1664,16 +1610,12 @@
 				"B"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RCH",
 				"RW"
 			],
 			"conditionInflict": [
 				"prone"
-			],
-			"savingThrowForced": [
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1756,9 +1698,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb"
-			],
 			"actionTags": [
 				"Parry"
 			],
@@ -1772,7 +1711,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -1913,10 +1851,6 @@
 				"O",
 				"R"
 			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"wisdom"
-			],
 			"hasToken": true
 		},
 		{
@@ -1927,7 +1861,7 @@
 				"name": "Guard",
 				"source": "MM",
 				"_trait": {
-					"name": "Shield Dwarf",
+					"name": "Mountain Dwarf",
 					"source": "PHB"
 				}
 			},
@@ -2063,9 +1997,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"battleaxe|phb"
-			],
 			"senseTags": [
 				"D"
 			],
@@ -2080,7 +2011,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"hasToken": true,
@@ -2148,15 +2078,9 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"+1 greataxe|dmg"
-			],
 			"languageTags": [
 				"C",
 				"OTH"
-			],
-			"miscTags": [
-				"MLW"
 			],
 			"hasToken": true
 		},
@@ -2247,9 +2171,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"gurt's greataxe|skt"
-			],
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -2265,7 +2186,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RCH",
 				"RW",
@@ -2791,17 +2711,6 @@
 				"prone",
 				"restrained"
 			],
-			"savingThrowForced": [
-				"dexterity",
-				"wisdom"
-			],
-			"savingThrowForcedLegendary": [
-				"constitution",
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -2905,9 +2814,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"greataxe|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -2924,7 +2830,6 @@
 				"O"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RCH",
 				"RW",
@@ -2947,7 +2852,7 @@
 				"name": "Veteran",
 				"source": "MM",
 				"_trait": {
-					"name": "Shield Dwarf",
+					"name": "Mountain Dwarf",
 					"source": "PHB"
 				},
 				"_mod": {
@@ -3033,14 +2938,8 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"club|phb"
-			],
 			"languageTags": [
 				"GI"
-			],
-			"miscTags": [
-				"MLW"
 			],
 			"hasToken": true
 		},
@@ -3265,14 +3164,6 @@
 			],
 			"conditionInflict": [
 				"deafened"
-			],
-			"savingThrowForced": [
-				"constitution",
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3516,20 +3407,6 @@
 				"petrified",
 				"restrained"
 			],
-			"savingThrowForced": [
-				"dexterity",
-				"wisdom"
-			],
-			"savingThrowForcedLegendary": [
-				"constitution",
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"constitution",
-				"dexterity",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true
 		},
@@ -3541,7 +3418,7 @@
 				"name": "Knight",
 				"source": "MM",
 				"_trait": {
-					"name": "Shield Dwarf",
+					"name": "Mountain Dwarf",
 					"source": "PHB"
 				},
 				"_mod": {
@@ -3863,9 +3740,6 @@
 				"MW",
 				"RCH"
 			],
-			"savingThrowForcedSpell": [
-				"dexterity"
-			],
 			"hasToken": true,
 			"hasFluff": true
 		},
@@ -3951,10 +3825,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"heavy crossbow|phb",
-				"longsword|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3966,7 +3836,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"
@@ -4052,10 +3921,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"club|phb",
-				"heavy crossbow|phb"
-			],
 			"languageTags": [
 				"C"
 			],
@@ -4064,7 +3929,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"
@@ -4123,7 +3987,7 @@
 				"name": "Commoner",
 				"source": "MM",
 				"_trait": {
-					"name": "Shield Dwarf",
+					"name": "Mountain Dwarf",
 					"source": "PHB"
 				}
 			},
@@ -4151,7 +4015,7 @@
 				"name": "Knight",
 				"source": "MM",
 				"_trait": {
-					"name": "Shield Dwarf",
+					"name": "Mountain Dwarf",
 					"source": "PHB"
 				},
 				"_mod": {
@@ -4266,10 +4130,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"hand crossbow|phb",
-				"shortsword|phb"
-			],
 			"languageTags": [
 				"C",
 				"D"
@@ -4278,7 +4138,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"
@@ -4401,10 +4260,6 @@
 			"miscTags": [
 				"MW"
 			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -4476,10 +4331,6 @@
 			],
 			"spellcastingTags": [
 				"O"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity"
 			],
 			"hasToken": true
 		},
@@ -4674,9 +4525,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dagger|phb"
-			],
 			"languageTags": [
 				"C",
 				"H"
@@ -4685,7 +4533,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -4761,10 +4608,6 @@
 			],
 			"spellcastingTags": [
 				"O"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity"
 			],
 			"hasToken": true
 		},
@@ -4915,9 +4758,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"rapier|phb"
-			],
 			"actionTags": [
 				"Parry"
 			],
@@ -4937,11 +4777,7 @@
 				"O"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
-			],
-			"savingThrowForcedSpell": [
-				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5072,11 +4908,6 @@
 				"D",
 				"DR",
 				"E"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluffImages": true
@@ -5218,10 +5049,6 @@
 			"conditionInflict": [
 				"blinded",
 				"restrained"
-			],
-			"savingThrowForced": [
-				"constitution",
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -5385,10 +5212,6 @@
 			"spellcastingTags": [
 				"O"
 			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity"
-			],
 			"hasToken": true
 		},
 		{
@@ -5477,10 +5300,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"hand crossbow|phb",
-				"quarterstaff|phb"
-			],
 			"traitTags": [
 				"Sneak Attack"
 			],
@@ -5493,7 +5312,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"
@@ -5612,7 +5430,7 @@
 				"name": "Guard",
 				"source": "MM",
 				"_trait": {
-					"name": "Shield Dwarf",
+					"name": "Mountain Dwarf",
 					"source": "PHB"
 				}
 			},
@@ -5628,9 +5446,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"warhammer|phb"
-			],
 			"senseTags": [
 				"D"
 			],
@@ -5643,7 +5458,6 @@
 				"B"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"hasToken": true
@@ -5656,7 +5470,7 @@
 				"name": "Noble",
 				"source": "MM",
 				"_trait": {
-					"name": "Shield Dwarf",
+					"name": "Mountain Dwarf",
 					"source": "PHB"
 				}
 			},
@@ -5672,9 +5486,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"warhammer|phb"
-			],
 			"senseTags": [
 				"D"
 			],
@@ -5687,7 +5498,6 @@
 				"B"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"hasToken": true
@@ -5776,10 +5586,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"heavy crossbow|phb",
-				"maul|phb"
-			],
 			"languageTags": [
 				"C"
 			],
@@ -5788,7 +5594,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"
@@ -5883,10 +5688,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"dart|phb",
-				"shortsword|phb"
-			],
 			"actionTags": [
 				"Parry"
 			],
@@ -5898,7 +5699,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -6161,19 +5961,6 @@
 				"restrained",
 				"unconscious"
 			],
-			"savingThrowForced": [
-				"constitution",
-				"dexterity"
-			],
-			"savingThrowForcedLegendary": [
-				"constitution",
-				"strength"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"intelligence",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -6420,9 +6207,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"greatclub|phb"
-			],
 			"senseTags": [
 				"D"
 			],
@@ -6443,7 +6227,6 @@
 			],
 			"miscTags": [
 				"AOE",
-				"MLW",
 				"MW",
 				"RCH",
 				"RW"
@@ -6453,10 +6236,6 @@
 			],
 			"conditionInflictSpell": [
 				"prone"
-			],
-			"savingThrowForced": [
-				"dexterity",
-				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -6473,7 +6252,7 @@
 				"name": "Bandit Captain",
 				"source": "MM",
 				"_trait": {
-					"name": "Shield Dwarf",
+					"name": "Mountain Dwarf",
 					"source": "PHB"
 				},
 				"_mod": {
@@ -6818,9 +6597,6 @@
 			"spellcastingTags": [
 				"O"
 			],
-			"savingThrowForcedSpell": [
-				"strength"
-			],
 			"hasToken": true
 		},
 		{
@@ -6912,10 +6688,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"morningstar|phb",
-				"shortbow|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -6927,7 +6699,6 @@
 				"P"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"
@@ -7088,10 +6859,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"shortbow|phb",
-				"spear|phb"
-			],
 			"languageTags": [
 				"C",
 				"OTH"
@@ -7108,15 +6875,10 @@
 				"O"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW",
 				"THW"
-			],
-			"savingThrowForcedSpell": [
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -7379,10 +7141,6 @@
 			"spellcastingTags": [
 				"O"
 			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity"
-			],
 			"hasToken": true
 		},
 		{
@@ -7623,9 +7381,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"quarterstaff|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -7645,7 +7400,6 @@
 				"CC"
 			],
 			"miscTags": [
-				"MLW",
 				"MW"
 			],
 			"conditionInflict": [
@@ -7655,14 +7409,6 @@
 				"incapacitated",
 				"paralyzed",
 				"prone"
-			],
-			"savingThrowForced": [
-				"constitution"
-			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"dexterity",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -7739,10 +7485,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"greatsword|phb",
-				"longbow|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -7755,16 +7497,12 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"
 			],
 			"conditionInflict": [
 				"incapacitated"
-			],
-			"savingThrowForced": [
-				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -7860,10 +7598,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"battleaxe|phb",
-				"javelin|phb"
-			],
 			"languageTags": [
 				"C",
 				"GI"
@@ -7873,7 +7607,6 @@
 				"S"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RW",
 				"THW"
@@ -8062,16 +7795,6 @@
 				"invisible",
 				"restrained"
 			],
-			"savingThrowForced": [
-				"dexterity"
-			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"dexterity",
-				"intelligence",
-				"strength",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -8163,10 +7886,6 @@
 					]
 				}
 			],
-			"attachedItems": [
-				"quarterstaff|phb",
-				"sling|phb"
-			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -8179,7 +7898,6 @@
 				"B"
 			],
 			"miscTags": [
-				"MLW",
 				"MW",
 				"RNG",
 				"RW"

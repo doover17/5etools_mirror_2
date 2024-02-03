@@ -501,13 +501,8 @@ class BookUtil {
 	static async booksHashChange () {
 		const $contents = $(".contents");
 
-		const [bookIdRaw, ...hashParts] = Hist.util.getHashParts(window.location.hash, {isReturnEncoded: true});
+		const [bookIdRaw, ...hashParts] = window.location.hash.slice(1).split(HASH_PART_SEP);
 		const bookId = decodeURIComponent(bookIdRaw);
-
-		if (!bookId) {
-			this._booksHashChange_noContent({$contents});
-			return;
-		}
 
 		const isNewBook = BookUtil.curRender.curBookId !== bookId;
 
@@ -612,15 +607,6 @@ class BookUtil {
 		if (isNewBook) MiscUtil.scrollPageTop();
 	}
 
-	static _booksHashChange_noContent ({$contents}) {
-		this._doPopulateContents({$contents});
-
-		BookUtil.$dispBook.empty().html(`<tr><th class="border" colspan="6"></th></tr>
-			<tr><td colspan="6" class="initial-message book-loading-message">Please select ${Parser.getArticle(BookUtil.contentType)} ${BookUtil.contentType} to view!</td></tr><tr><th class="border" colspan="6"></th></tr>`);
-
-		$(`.bk__overlay-loading`).remove();
-	}
-
 	static _booksHashChange_handleNotFound ({$contents, bookId}) {
 		if (!window.location.hash) return window.history.back();
 
@@ -661,7 +647,7 @@ class BookUtil {
 	static _doPopulateContents ({$contents, book}) {
 		$contents.html(BookUtil.allPageUrl ? `<div><a href="${BookUtil.allPageUrl}" class="lst--border lst__row-inner"><span class="bold">\u21FD ${this._getAllTitle()}</span></a></div>` : "");
 
-		if (book) BookUtil._$getRenderedContents({book}).appendTo($contents);
+		BookUtil._$getRenderedContents({book}).appendTo($contents);
 	}
 
 	static _getAllTitle () {
@@ -696,26 +682,20 @@ class BookUtil {
 			});
 
 		// region Mobile only "open find bar" buttons
-		const $btnToTop = $(`<button class="btn btn-default btn-sm no-print bbl-0" title="To Top"><span class="glyphicon glyphicon-arrow-up"></span></button>`)
-			.click(evt => {
-				evt.stopPropagation();
-				MiscUtil.scrollPageTop();
-			});
-
-		const $btnOpenFind = $(`<button class="btn btn-default btn-sm no-print" title="Find"><kbd>F</kbd></button>`)
+		const $btnOpenFind = $(`<button class="btn btn-default btn-sm bk__btn-find no-print" title="Find">F</button>`)
 			.click(evt => {
 				evt.stopPropagation();
 				BookUtil._showSearchBox(indexData, bookId, false);
 			});
 
-		const $btnOpenGoto = $(`<button class="btn btn-default btn-sm no-print bbr-0" title="Go to Page"><kbd>G</kbd></button>`)
+		const $btnOpenGoto = $(`<button class="btn btn-default btn-sm bk__btn-goto no-print" title="Go to Page">G</button>`)
 			.click(evt => {
 				evt.stopPropagation();
 				BookUtil._showSearchBox(indexData, bookId, true);
 			});
 
 		$$`<div class="mobile__visible bk__wrp-btns-open-find btn-group">
-			${$btnToTop}${$btnOpenFind}${$btnOpenGoto}
+			${$btnOpenFind}${$btnOpenGoto}
 		</div>`.appendTo(document.body);
 	}
 

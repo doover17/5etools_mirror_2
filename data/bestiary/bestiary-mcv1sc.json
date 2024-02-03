@@ -453,14 +453,6 @@
 			"conditionInflictSpell": [
 				"blinded"
 			],
-			"savingThrowForced": [
-				"constitution",
-				"wisdom"
-			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"dexterity"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -592,10 +584,6 @@
 			],
 			"damageTags": [
 				"O"
-			],
-			"savingThrowForced": [
-				"constitution",
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -825,10 +813,6 @@
 				"poisoned",
 				"prone"
 			],
-			"savingThrowForced": [
-				"constitution",
-				"wisdom"
-			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -969,11 +953,6 @@
 			"conditionInflict": [
 				"frightened",
 				"prone"
-			],
-			"savingThrowForced": [
-				"constitution",
-				"strength",
-				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1312,9 +1291,6 @@
 			],
 			"conditionInflict": [
 				"grappled"
-			],
-			"savingThrowForced": [
-				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,

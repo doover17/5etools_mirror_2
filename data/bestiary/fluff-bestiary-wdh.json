@@ -27,7 +27,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Ahmaergo.webp"
+						"path": "bestiary/WDH/Ahmaergo.jpg"
 					}
 				}
 			]
@@ -73,14 +73,14 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Aurinax.webp"
+						"path": "bestiary/WDH/Aurinax.jpg"
 					}
 				},
 				{
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Vault-of-Dragons.webp"
+						"path": "bestiary/WDH/Vault-of-Dragons.jpg"
 					}
 				}
 			]
@@ -135,7 +135,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Barnibus Blastwind.webp"
+						"path": "bestiary/WDH/Barnibus Blastwind.jpg"
 					}
 				}
 			]
@@ -191,7 +191,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Black Viper.webp"
+						"path": "bestiary/WDH/Black Viper.jpg"
 					}
 				}
 			]
@@ -231,7 +231,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Davil Starsong.webp"
+						"path": "bestiary/WDH/Davil Starsong.jpg"
 					}
 				}
 			]
@@ -262,7 +262,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Drow Gunslinger.webp"
+						"path": "bestiary/WDH/Drow Gunslinger.jpg"
 					}
 				}
 			]
@@ -296,7 +296,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Durnan.webp"
+						"path": "bestiary/WDH/Durnan.jpg"
 					}
 				}
 			]
@@ -309,7 +309,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Cassalanters.webp"
+						"path": "bestiary/WDH/Cassalanters.jpg"
 					}
 				}
 			]
@@ -416,7 +416,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Griffon Cavalry Rider.webp"
+						"path": "bestiary/WDH/Griffon Cavalry Rider.jpg"
 					}
 				}
 			]
@@ -429,7 +429,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Grinda.webp"
+						"path": "bestiary/WDH/Grinda.jpg"
 					}
 				}
 			]
@@ -484,7 +484,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Hlam.webp"
+						"path": "bestiary/WDH/Hlam.jpg"
 					}
 				}
 			]
@@ -515,7 +515,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Hrabbaz.webp"
+						"path": "bestiary/WDH/Hrabbaz.jpg"
 					}
 				}
 			]
@@ -554,7 +554,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Istrid Horn.webp"
+						"path": "bestiary/WDH/Istrid Horn.jpg"
 					}
 				}
 			]
@@ -593,7 +593,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Jalester Silvermane.webp"
+						"path": "bestiary/WDH/Jalester Silvermane.jpg"
 					}
 				}
 			]
@@ -650,7 +650,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Jarlaxle Baenre.webp"
+						"path": "bestiary/WDH/Jarlaxle Baenre.jpg"
 					}
 				}
 			]
@@ -663,7 +663,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Summer-Scene.webp"
+						"path": "bestiary/WDH/Summer-Scene.jpg"
 					}
 				}
 			]
@@ -765,7 +765,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Laeral Silverhand.webp"
+						"path": "bestiary/WDH/Laeral Silverhand.jpg"
 					}
 				}
 			]
@@ -904,7 +904,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Manshoon.webp"
+						"path": "bestiary/WDH/Manshoon.jpg"
 					}
 				}
 			]
@@ -1036,7 +1036,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Meloon Wardragon.webp"
+						"path": "bestiary/WDH/Meloon Wardragon.jpg"
 					}
 				}
 			]
@@ -1076,7 +1076,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Mirt.webp"
+						"path": "bestiary/WDH/Mirt.jpg"
 					}
 				}
 			]
@@ -1108,7 +1108,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Nar'l Xibrindas.webp"
+						"path": "bestiary/WDH/Nar'l Xibrindas.jpg"
 					}
 				}
 			]
@@ -1121,7 +1121,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Winter-Scene.webp"
+						"path": "bestiary/WDH/Winter-Scene.jpg"
 					}
 				}
 			]
@@ -1134,7 +1134,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Nihiloor.webp"
+						"path": "bestiary/WDH/Nihiloor.jpg"
 					}
 				}
 			]
@@ -1179,7 +1179,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Nimblewright.webp"
+						"path": "bestiary/WDH/Nimblewright.jpg"
 					}
 				}
 			]
@@ -1210,7 +1210,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Noska Ur'gray.webp"
+						"path": "bestiary/WDH/Noska Ur'gray.jpg"
 					}
 				}
 			]
@@ -1268,7 +1268,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/The Gralhunds.webp"
+						"path": "bestiary/WDH/The Gralhunds.jpg"
 					}
 				}
 			]
@@ -1281,7 +1281,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Osvaldo.webp"
+						"path": "bestiary/WDH/Osvaldo.jpg"
 					}
 				}
 			]
@@ -1312,7 +1312,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Ott Steeltoes.webp"
+						"path": "bestiary/WDH/Ott Steeltoes.jpg"
 					}
 				}
 			]
@@ -1399,7 +1399,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Renaer Neverember.webp"
+						"path": "bestiary/WDH/Renaer Neverember.jpg"
 					}
 				}
 			]
@@ -1452,7 +1452,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Saeth Cromley.webp"
+						"path": "bestiary/WDH/Saeth Cromley.jpg"
 					}
 				}
 			]
@@ -1513,7 +1513,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Skeemo Weirdbottle.webp"
+						"path": "bestiary/WDH/Skeemo Weirdbottle.jpg"
 					}
 				}
 			]
@@ -1549,7 +1549,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Autumn-Scene.webp"
+						"path": "bestiary/WDH/Autumn-Scene.jpg"
 					}
 				}
 			]
@@ -1677,7 +1677,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Tashlyn Yafeera.webp"
+						"path": "bestiary/WDH/Tashlyn Yafeera.jpg"
 					}
 				}
 			]
@@ -1709,7 +1709,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Thorvin Twinbeard.webp"
+						"path": "bestiary/WDH/Thorvin Twinbeard.jpg"
 					}
 				}
 			]
@@ -1785,7 +1785,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Urstul Floxin.webp"
+						"path": "bestiary/WDH/Urstul Floxin.jpg"
 					}
 				}
 			]
@@ -1818,7 +1818,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Vajra Safahr.webp"
+						"path": "bestiary/WDH/Vajra Safahr.jpg"
 					}
 				}
 			]
@@ -1915,7 +1915,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Walking Statue of Waterdeep.webp"
+						"path": "bestiary/WDH/Walking Statue of Waterdeep.jpg"
 					}
 				}
 			]
@@ -1936,7 +1936,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Xanathar-Lair.webp"
+						"path": "bestiary/WDH/Xanathar-Lair.jpg"
 					}
 				}
 			]
@@ -1967,7 +1967,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Yagra Stonefist.webp"
+						"path": "bestiary/WDH/Yagra Stonefist.jpg"
 					}
 				}
 			]
@@ -2000,7 +2000,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/The Gralhunds.webp"
+						"path": "bestiary/WDH/The Gralhunds.jpg"
 					}
 				}
 			]
@@ -2090,7 +2090,7 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "bestiary/WDH/Ziraj the Hunter.webp"
+						"path": "bestiary/WDH/Ziraj the Hunter.jpg"
 					}
 				}
 			]

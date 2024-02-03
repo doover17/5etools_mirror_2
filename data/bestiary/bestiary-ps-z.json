@@ -25,12 +25,10 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
-			"name": "Archon of Redemption",
+			"name": "Archon Of Redemption",
 			"source": "PSZ",
 			"page": 22,
 			"size": [
@@ -192,13 +190,7 @@
 				"MW",
 				"RCH"
 			],
-			"savingThrowForcedSpell": [
-				"constitution",
-				"wisdom"
-			],
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Baloth",
@@ -215,9 +207,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Boulderfoot Giant",
@@ -227,9 +217,7 @@
 				"name": "Stone Giant",
 				"source": "MM"
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Caustic Crawler",
@@ -246,9 +234,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Drake (Large)",
@@ -265,9 +251,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Drake (Small)",
@@ -284,9 +268,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Emrakul",
@@ -309,8 +291,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Felidar",
@@ -479,16 +460,7 @@
 			"conditionInflict": [
 				"prone"
 			],
-			"savingThrowForced": [
-				"strength"
-			],
-			"savingThrowForcedSpell": [
-				"charisma",
-				"dexterity"
-			],
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Gnarlid",
@@ -505,8 +477,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true
+			"hasToken": true
 		},
 		{
 			"name": "Gomazoa",
@@ -526,9 +497,7 @@
 			"speed": {
 				"fly": 10
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Great Cat",
@@ -545,9 +514,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Griffin (Type 1)",
@@ -564,9 +531,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Griffin (Type 2)",
@@ -583,9 +548,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Heartstabber Mosquito",
@@ -602,8 +565,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true
+			"hasToken": true
 		},
 		{
 			"name": "Hellion",
@@ -620,9 +582,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Hurda",
@@ -637,33 +597,19 @@
 						"replace": "giant",
 						"with": "hurda"
 					},
-					"action": [
-						{
-							"mode": "replaceArr",
-							"replace": "Multiattack",
-							"items": {
-								"name": "Multiattack",
-								"entries": [
-									"The hurda makes two smash attacks."
-								]
-							}
-						},
-						{
-							"mode": "replaceArr",
-							"replace": "Greatclub",
-							"items": {
-								"name": "Smash",
-								"entries": [
-									"{@atk mw} {@hit 8} to hit, reach 10 ft., one target. {@h}18 ({@damage 3d8 + 5}) bludgeoning damage."
-								]
-							}
+					"action": {
+						"mode": "replaceArr",
+						"replace": "Greatclub",
+						"items": {
+							"name": "Smash",
+							"entries": [
+								"{@atk mw} {@hit 8} to hit, reach 10 ft., one target. {@h}18 ({@damage 3d8 + 5}) bludgeoning damage."
+							]
 						}
-					]
+					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Iona",
@@ -682,9 +628,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Kozilek",
@@ -708,8 +652,7 @@
 				}
 			},
 			"damageTagsLegendary": [],
-			"hasToken": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Kraken",
@@ -846,12 +789,7 @@
 				"grappled",
 				"restrained"
 			],
-			"savingThrowForced": [
-				"dexterity"
-			],
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Linvala",
@@ -870,9 +808,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Ogre Channeler",
@@ -889,9 +825,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Oxen",
@@ -908,8 +842,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true
+			"hasToken": true
 		},
 		{
 			"name": "Pestilence Demon",
@@ -926,9 +859,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Shade",
@@ -945,9 +876,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Shatterskull Giant",
@@ -957,9 +886,7 @@
 				"name": "Boulderfoot Giant",
 				"source": "PSZ"
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Shoal Serpent",
@@ -976,8 +903,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true
+			"hasToken": true
 		},
 		{
 			"name": "Sphinx (Type 1)",
@@ -988,9 +914,7 @@
 				"source": "MM"
 			},
 			"damageTagsLegendary": [],
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Sphinx (Type 2)",
@@ -1001,9 +925,7 @@
 				"source": "MM"
 			},
 			"damageTagsLegendary": [],
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Spirit",
@@ -1020,9 +942,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Surrakar",
@@ -1039,9 +959,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Terastodon",
@@ -1058,9 +976,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Terra Stomper",
@@ -1077,8 +993,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true
+			"hasToken": true
 		},
 		{
 			"name": "Timbermaw",
@@ -1095,8 +1010,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true
+			"hasToken": true
 		},
 		{
 			"name": "Trench Giant",
@@ -1113,9 +1027,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Turntimber Giant",
@@ -1125,9 +1037,7 @@
 				"name": "Cloud Giant",
 				"source": "MM"
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Ulamog",
@@ -1150,8 +1060,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Vampire Null",
@@ -1168,8 +1077,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true
+			"hasToken": true
 		},
 		{
 			"name": "Woodcrasher Baloth",
@@ -1183,9 +1091,7 @@
 				"walk": 30,
 				"climb": 50
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Wraith",
@@ -1195,9 +1101,7 @@
 				"name": "Wraith",
 				"source": "MM"
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Wurm",
@@ -1214,8 +1118,7 @@
 					}
 				}
 			},
-			"hasToken": true,
-			"hasFluff": true
+			"hasToken": true
 		},
 		{
 			"name": "Zendikar Dragon",
@@ -1226,9 +1129,7 @@
 				"source": "MM"
 			},
 			"int": 8,
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		},
 		{
 			"name": "Zendikar Golem",
@@ -1238,9 +1139,7 @@
 				"name": "Stone Golem",
 				"source": "MM"
 			},
-			"hasToken": true,
-			"hasFluff": true,
-			"hasFluffImages": true
+			"hasToken": true
 		}
 	]
 }

@@ -9,11 +9,10 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "book/GGR/000-intro01.webp"
+						"path": "book/GGR/000-intro01.jpg"
 					},
 					"width": 2500,
-					"height": 1738,
-					"credit": "Jamie Jones, Willian Murai"
+					"height": 1738
 				},
 				"From the back of her soaring roc, a sky knight surveys the spire-studded cityscape below. As the morning fog dissipates under the chill autumn sun, the city spreads out as far as she can see: lofty cathedrals, squat courthouses, towering apartments, sprawling tenements, cobblestone plazas, and broken ruins where once-majestic buildings have crumbled to rubble. She imagines the teeming masses below her: humans, elves, vedalken, minotaurs, goblins, loxodons, and other peoples, as some of them rise to greet the morning and others retire after a hard night of work or play. They are the reason she is here: sworn to protect them, she leads a flight of roc riders toward the fires raging in Precinct Three. Soldiers on the ground will put out the flames, while it's her job to deal with their source: the dragon she can just make out, clinging to the spire of a distant tower. Standing in her stirrups and raising her sword, she turns her mount toward the dragon, ready to battle once again for the sake of Ravnica.",
 				"Ravnica is a whole new world for your Dungeons & Dragons campaign to explore. A vast, sprawling city that covers the whole of the known world, Ravnica teems with intrigue and adventure, driven by the conflicts among the ten powerful guilds that rule the city.",
@@ -440,11 +439,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/001-intro02.webp"
+										"path": "book/GGR/001-intro02.png"
 									},
 									"width": 1000,
-									"height": 452,
-									"credit": "Adam Paquette"
+									"height": 452
 								}
 							],
 							"id": "00b"
@@ -464,11 +462,10 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "book/GGR/000-c101.webp"
+						"path": "book/GGR/000-c101.jpg"
 					},
 					"width": 2513,
-					"height": 3338,
-					"credit": "Daarken"
+					"height": 3338
 				},
 				"The {@book Player's Handbook|PHB} describes a step-by-step process of character creation. When you create a character for a Ravnica campaign, you'll go through the same steps, with the added step of choosing a guild.",
 				"Creating a character begins with imagining the person you want to play. The ten guilds of Ravnica provide a way to jump-start your imagination and steer you toward certain character archetypes that can guide the rest of the decisions you make for your character.",
@@ -621,7 +618,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/001-c102.webp"
+										"path": "book/GGR/001-c102.png"
 									},
 									"width": 2139,
 									"height": 2657
@@ -811,11 +808,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/002-c104.webp"
+										"path": "book/GGR/002-c104.png"
 									},
 									"width": 1000,
-									"height": 1000,
-									"credit": "Ryan Barger"
+									"height": 1000
 								},
 								"The elves of Ravnica are as much at home in the markets of Ivy Lane and the inns of Oak Street as their kin on other worlds are in ancient forests and fey castles. They scale the spires of cathedrals and meditate in gardens and greenbelts. They are part of the city, contributing to its vibrant life and sprawling growth while ensuring it never strays too far from its roots in the earth.",
 								"Elves are associated with the principles and magic of nature, growth, and stability. Striving to live in harmony with both nature and the community of Ravnica, they are drawn to guilds that share those ideals, particularly Selesnya, Golgari, and Simic. The Gruul Clans revere nature but set themselves in opposition to civilization, so they don't hold much appeal for the typical elf.",
@@ -893,11 +889,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/003-c103.webp"
+										"path": "book/GGR/003-c103.png"
 									},
 									"width": 1000,
-									"height": 1000,
-									"credit": "Ryan Pancoast"
+									"height": 1000
 								},
 								"See the {@race Centaur|GGR} entry in the races page."
 							],
@@ -912,11 +907,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/004-c105.webp"
+										"path": "book/GGR/004-c105.png"
 									},
 									"width": 1000,
-									"height": 1000,
-									"credit": "Kar Kopinski"
+									"height": 1000
 								},
 								"See the {@race Goblin|GGR} entry in the races page."
 							],
@@ -931,11 +925,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/005-c106.webp"
+										"path": "book/GGR/005-c106.png"
 									},
 									"width": 1000,
-									"height": 1001,
-									"credit": "Zack Stella"
+									"height": 1001
 								},
 								"See the {@race Loxodon|GGR} entry in the races page."
 							],
@@ -950,11 +943,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/006-c107.webp"
+										"path": "book/GGR/006-c107.png"
 									},
 									"width": 1362,
-									"height": 1000,
-									"credit": "Wisnu Tan"
+									"height": 1000
 								},
 								"See the {@race Minotaur|GGR} entry in the races page."
 							],
@@ -969,11 +961,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/007-c108.webp"
+										"path": "book/GGR/007-c108.png"
 									},
 									"width": 1000,
-									"height": 1000,
-									"credit": "Bram Sels"
+									"height": 1000
 								},
 								"See the {@race Simic Hybrid|GGR} entry in the races page."
 							],
@@ -988,11 +979,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/008-c109.webp"
+										"path": "book/GGR/008-c109.png"
 									},
 									"width": 1000,
-									"height": 1000,
-									"credit": "Matt Stewart"
+									"height": 1000
 								},
 								"See the {@race Vedalken|GGR} entry in the races page."
 							],
@@ -1027,23 +1017,23 @@
 									],
 									"rows": [
 										[
-											"{@class barbarian||Path of the Ancestral Guardian|Ancestral Guardian|XGE}*",
+											"Path of the Ancestral Guardian*",
 											"Gruul"
 										],
 										[
-											"{@class barbarian||Path of the Berserker|Berserker}",
+											"Path of the Berserker",
 											"Gruul, {@creature Rakdos|GGR}"
 										],
 										[
-											"{@class barbarian||Path of the Storm Herald|Storm Herald|XGE}*",
+											"Path of the Storm Herald*",
 											"Gruul"
 										],
 										[
-											"{@class barbarian||Path of the Totem Warrior|Totem Warrior}",
+											"Path of the Totem Warrior",
 											"Gruul"
 										],
 										[
-											"{@class barbarian||Path of the Zealot|Zealot|XGE}*",
+											"Path of the Zealot*",
 											"Boros, {@creature Rakdos|GGR}"
 										]
 									],
@@ -1073,23 +1063,23 @@
 									],
 									"rows": [
 										[
-											"{@class bard||College of Glamour|Glamour|XGE}*",
+											"College of Glamour*",
 											"Selesnya"
 										],
 										[
-											"{@class bard||College of Lore|Lore}",
+											"College of Lore",
 											"Azorius, Selesnya"
 										],
 										[
-											"{@class bard||College of Swords|Swords|XGE}*",
+											"College of Swords*",
 											"{@creature Rakdos|GGR}"
 										],
 										[
-											"{@class bard||College of Valor|Valor}",
+											"College of Valor",
 											"{@creature Rakdos|GGR}"
 										],
 										[
-											"{@class bard||College of Whispers|Whispers|XGE}*",
+											"College of Whispers*",
 											"Dimir"
 										]
 									],
@@ -1119,39 +1109,39 @@
 									],
 									"rows": [
 										[
-											"{@class cleric||Forge Domain|Forge|XGE}*",
+											"Forge Domain*",
 											"Boros"
 										],
 										[
-											"{@class cleric||Knowledge Domain|Knowledge}",
+											"Knowledge Domain",
 											"Azorius"
 										],
 										[
-											"{@class cleric||Life Domain|Life}",
+											"Life Domain",
 											"Boros, Selesnya"
 										],
 										[
-											"{@class cleric||Light Domain|Light}",
+											"Light Domain",
 											"Boros"
 										],
 										[
-											"{@class cleric||Nature Domain|Nature}",
+											"Nature Domain",
 											"Selesnya"
 										],
 										[
-											"{@class cleric||Order Domain|Order|TCE}**",
+											"Order Domain**",
 											"Azorius, Orzhov"
 										],
 										[
-											"{@class cleric||Tempest Domain|Tempest}",
+											"Tempest Domain",
 											"Gruul"
 										],
 										[
-											"{@class cleric||Trickery Domain|Trickery}",
+											"Trickery Domain",
 											"Dimir"
 										],
 										[
-											"{@class cleric||War Domain|War}",
+											"War Domain",
 											"Boros"
 										]
 									],
@@ -1164,11 +1154,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/010-c111.webp"
+										"path": "book/GGR/010-c111.png"
 									},
 									"width": 1375,
-									"height": 1000,
-									"credit": "Karla Ortiz"
+									"height": 1000
 								}
 							],
 							"id": "025"
@@ -1192,23 +1181,23 @@
 									],
 									"rows": [
 										[
-											"{@class druid||Circle of Dreams|Dreams|XGE}*",
+											"Circle of Dreams*",
 											"Selesnya"
 										],
 										[
-											"{@class druid||Circle of Spores|Spores|TCE}**",
+											"Circle of Spores**",
 											"Golgari"
 										],
 										[
-											"{@class druid||Circle of the Land|Land}",
+											"Circle of the Land",
 											"Golgari (forest, swamp, Underdark), Selesnya (forest, grassland), Simic (coast, forest)"
 										],
 										[
-											"{@class druid||Circle of the Moon|Moon}",
+											"Circle of the Moon",
 											"Gruul"
 										],
 										[
-											"{@class druid||Circle of the Shepherd|Shepherd|XGE}*",
+											"Circle of the Shepherd*",
 											"Selesnya"
 										]
 									],
@@ -1239,23 +1228,23 @@
 									],
 									"rows": [
 										[
-											"{@class fighter||Arcane Archer|Arcane Archer|XGE}*",
+											"Arcane Archer*",
 											"Selesnya"
 										],
 										[
-											"{@class fighter||Battle Master|Battle MAster}",
+											"Battle Master",
 											"Azorius, Boros, Orzhov, Selesnya"
 										],
 										[
-											"{@class fighter||Cavalier|Cavalier|XGE}*",
+											"Cavalier*",
 											"Azorius, Boros"
 										],
 										[
-											"{@class fighter||Champion|Champion}",
+											"Champion",
 											"Azorius, Boros, Golgari, Gruul, Orzhov, {@creature Rakdos|GGR}, Selesnya, Simic"
 										],
 										[
-											"{@class fighter||Eldritch Knight|Eldritch Knight}",
+											"Eldritch Knight",
 											"Azorius, Boros, Izzet, {@creature Rakdos|GGR}"
 										]
 									],
@@ -1285,19 +1274,19 @@
 									],
 									"rows": [
 										[
-											"{@class monk||Way of Shadow|Shadow}",
+											"Way of Shadow",
 											"Dimir"
 										],
 										[
-											"{@class monk||Way of the Four Elements|Four Elements}",
+											"Way of the Four Elements",
 											"Simic (focus on water- and air-related disciplines)"
 										],
 										[
-											"{@class monk||Way of the Open Hand|Open Hand}",
+											"Way of the Open Hand",
 											"Selesnya, Simic"
 										],
 										[
-											"{@class monk||Way of the Sun Soul|Sun Soul|XGE}*",
+											"Way of the Sun Soul*",
 											"Boros"
 										]
 									],
@@ -1327,23 +1316,23 @@
 									],
 									"rows": [
 										[
-											"{@class Paladin||Oath of Conquest|Conquest|XGE}*",
+											"Oath of Conquest*",
 											"Orzhov"
 										],
 										[
-											"{@class Paladin||Oath of Devotion|Devotion}",
+											"Oath of Devotion",
 											"Boros"
 										],
 										[
-											"{@class Paladin||Oath of Redemption|Redemption|XGE}*",
+											"Oath of Redemption*",
 											"Selesnya"
 										],
 										[
-											"{@class Paladin||Oath of the Ancients|Ancients}",
+											"Oath of the Ancients",
 											"Selesnya"
 										],
 										[
-											"{@class Paladin||Oath of Vengeance|Vengeance}",
+											"Oath of Vengeance",
 											"Azorius"
 										]
 									]
@@ -1353,11 +1342,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/011-c112.webp"
+										"path": "book/GGR/011-c112.png"
 									},
 									"width": 1394,
-									"height": 1000,
-									"credit": "Tyler Walpole"
+									"height": 1000
 								}
 							],
 							"id": "029"
@@ -1381,15 +1369,15 @@
 									],
 									"rows": [
 										[
-											"{@class ranger||Beast Master|Beast Master}",
+											"Beast Master",
 											"Golgari (prefer insects and reptiles), Gruul (prefer fierce beasts), Selesnya (prefer wolves)"
 										],
 										[
-											"{@class ranger||Gloom Stalker|Gloom Stalker|XGE}*",
+											"Gloom Stalker*",
 											"Golgari"
 										],
 										[
-											"{@class ranger||Hunter|Hunter}",
+											"Hunter",
 											"Boros, Gruul, Selesnya"
 										]
 									],
@@ -1419,31 +1407,31 @@
 									],
 									"rows": [
 										[
-											"{@class Rogue||Arcane Trickster|Arcane Trickster}",
+											"Arcane Trickster",
 											"Dimir"
 										],
 										[
-											"{@class Rogue||Assassin|Assassin}",
+											"Assassin",
 											"Dimir, Golgari, Orzhov"
 										],
 										[
-											"{@class Rogue||Inquisitive|Inquisitive|XGE}*",
+											"Inquisitive*",
 											"Azorius, Dimir"
 										],
 										[
-											"{@class Rogue||Mastermind|Mastermind|XGE}*",
+											"Mastermind*",
 											"Dimir"
 										],
 										[
-											"{@class Rogue||Scout|Scout|XGE}*",
+											"Scout*",
 											"Gruul"
 										],
 										[
-											"{@class Rogue||Swashbuckler|Swashbuckler|XGE}*",
+											"Swashbuckler*",
 											"{@creature Rakdos|GGR}"
 										],
 										[
-											"{@class Rogue||Thief|Thief}",
+											"Thief",
 											"Dimir, Golgari, Orzhov, {@creature Rakdos|GGR}"
 										]
 									]
@@ -1472,23 +1460,23 @@
 									],
 									"rows": [
 										[
-											"{@class Sorcerer||Divine Soul|Divine Soul|XGE}*",
+											"Divine Soul*",
 											"Boros"
 										],
 										[
-											"{@class Sorcerer||Draconic Bloodline|Draconic}",
+											"Draconic Bloodline",
 											"Izzet"
 										],
 										[
-											"{@class Sorcerer||Shadow Magic|Shadow|XGE}*",
+											"Shadow Magic*",
 											"Dimir"
 										],
 										[
-											"{@class Sorcerer||Storm Sorcery|Storm|XGE}*",
+											"Storm Sorcery*",
 											"Izzet"
 										],
 										[
-											"{@class Sorcerer||Wild Magic|Wild}",
+											"Wild Magic",
 											"Izzet"
 										]
 									],
@@ -1519,19 +1507,19 @@
 									],
 									"rows": [
 										[
-											"{@class Warlock||The Archfey|Archfey}",
+											"The Archfey",
 											"Selesnya"
 										],
 										[
-											"{@class Warlock||The Celestial|Celestial|XGE}*",
+											"The Celestial*",
 											"Boros"
 										],
 										[
-											"{@class Warlock||The Fiend|Fiend}",
+											"The Fiend",
 											"{@creature Rakdos|GGR}"
 										],
 										[
-											"{@class Warlock||The Great Old One|Great Old One}",
+											"The Great Old One",
 											"Any"
 										]
 									],
@@ -1561,39 +1549,39 @@
 									],
 									"rows": [
 										[
-											"{@class Wizard||School of Abjuration|Abjuration}",
+											"School of Abjuration",
 											"Azorius, Orzhov"
 										],
 										[
-											"{@class Wizard||School of Conjuration|Conjuration}",
+											"School of Conjuration",
 											"Izzet, Simic"
 										],
 										[
-											"{@class Wizard||School of Divination|Divination}",
+											"School of Divination",
 											"Azorius, Dimir, Orzhov"
 										],
 										[
-											"{@class Wizard||School of Enchantment|Enchantment}",
+											"School of Enchantment",
 											"Azorius, Dimir, Orzhov"
 										],
 										[
-											"{@class Wizard||School of Evocation|Evocation}",
+											"School of Evocation",
 											"Boros, Izzet"
 										],
 										[
-											"{@class Wizard||School of Illusion|Illusion}",
+											"School of Illusion",
 											"Dimir"
 										],
 										[
-											"{@class Wizard||School of Necromancy|Necromancy}",
+											"School of Necromancy",
 											"Golgari, Orzhov"
 										],
 										[
-											"{@class Wizard||School of Transmutation|Transmutation}",
+											"School of Transmutation",
 											"Izzet, Simic"
 										],
 										[
-											"{@class Wizard||War Magic|War|XGE}*",
+											"War Magic*",
 											"Boros"
 										]
 									],
@@ -1630,11 +1618,10 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "book/GGR/014-201.webp"
+						"path": "book/GGR/014-201.jpg"
 					},
 					"width": 2513,
-					"height": 3338,
-					"credit": "Victor Adame Minguez"
+					"height": 3338
 				},
 				"The ten guilds are the lifeblood of Ravnica, making up the foundation of its society. They are voluntary associations led by guildmasters, but that's the extent of their resemblance to the craft and merchant guilds found on most Dungeons & Dragons worlds. They include many different kinds of organizations:",
 				{
@@ -1821,11 +1808,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/015-202.webp"
+								"path": "book/GGR/015-202.png"
 							},
 							"width": 1000,
-							"height": 467,
-							"credit": "Craig J Spearing"
+							"height": 467
 						},
 						{
 							"type": "quote",
@@ -1945,11 +1931,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/016-203.webp"
+										"path": "book/GGR/016-203.png"
 									},
 									"width": 751,
-									"height": 1000,
-									"credit": "Johannes Voss"
+									"height": 1000
 								},
 								"The {@background Azorius Functionary|ggr} background is available for characters who are part of the Azorius guild.",
 								{
@@ -1962,11 +1947,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/017-204.webp"
+												"path": "book/GGR/017-204.png"
 											},
 											"width": 1000,
-											"height": 620,
-											"credit": "Even Amundsen"
+											"height": 620
 										},
 										{
 											"type": "inset",
@@ -2057,11 +2041,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/018-205.webp"
+												"path": "book/GGR/018-205.png"
 											},
 											"width": 644,
-											"height": 1000,
-											"credit": "Mark Winters"
+											"height": 1000
 										},
 										"{@i Prerequisite: Rank 3 and renown 50 or higher in the Azorius Senate}",
 										"As an arbiter (or capital), you serve as the head of your column. Only {@creature Isperia|GGR}, the Supreme Judge, can appoint you to this position, and only if one of the three existing arbiters leaves her service.",
@@ -2154,11 +2137,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/019-206.webp"
+								"path": "book/GGR/019-206.png"
 							},
 							"width": 1000,
-							"height": 436,
-							"credit": "Aaron Miller"
+							"height": 436
 						},
 						{
 							"type": "quote",
@@ -2222,11 +2204,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/020-207.webp"
+										"path": "book/GGR/020-207.png"
 									},
 									"width": 1000,
-									"height": 699,
-									"credit": "Titus Lunter"
+									"height": 699
 								},
 								{
 									"type": "entries",
@@ -2273,21 +2254,19 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/021-208.webp"
+												"path": "book/GGR/021-208.png"
 											},
 											"width": 989,
-											"height": 1000,
-											"credit": "James Ryman"
+											"height": 1000
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/022-209.webp"
+												"path": "book/GGR/022-209.png"
 											},
 											"width": 1000,
-											"height": 647,
-											"credit": "Raymond Swanland"
+											"height": 647
 										}
 									]
 								},
@@ -2352,11 +2331,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/023-210.webp"
+												"path": "book/GGR/023-210.png"
 											},
 											"width": 1000,
-											"height": 1000,
-											"credit": "Zoltan Boros"
+											"height": 1000
 										},
 										"{@i Prerequisite: Rank 1 and renown 10 or higher in the Boros Legion}",
 										"As a brigadier, you are responsible for missions and strategies that you can't execute entirely on your own or with the aid of a handful of soldiers. After receiving goals handed down from the captain above you, it's your job to figure out the tactics needed to accomplish those goals.",
@@ -2484,11 +2462,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/024-211.webp"
+								"path": "book/GGR/024-211.png"
 							},
 							"width": 1000,
-							"height": 487,
-							"credit": "Zezhou Chen"
+							"height": 487
 						},
 						{
 							"type": "quote",
@@ -2554,11 +2531,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/025-212.webp"
+										"path": "book/GGR/025-212.png"
 									},
 									"width": 2036,
-									"height": 1725,
-									"credit": "Clint Cearley"
+									"height": 1725
 								},
 								"The {@background Dimir Operative|ggr} background is available for characters who are part of the Dimir guild.",
 								{
@@ -2579,11 +2555,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/026-213.webp"
+												"path": "book/GGR/026-213.png"
 											},
 											"width": 1000,
-											"height": 611,
-											"credit": "Grzegorz Rutkowski"
+											"height": 611
 										},
 										"As you gain renown within House Dimir, you will be rewarded with missions of increasing importance. No formal ranks exist for you to progress through, but certain thresholds of renown indicate improvements in your standing within the guild. Perhaps most important, according to the philosophy of House Dimir, higher standing brings greater knowledge of the inner workings of Ravnica and the guild.",
 										"At the start of your career, your orders include step-by-step instructions\u2014or they consist of just a single task. You receive these instructions from your guild contact."
@@ -2641,11 +2616,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/027-214.webp"
+												"path": "book/GGR/027-214.png"
 											},
 											"width": 1000,
-											"height": 759,
-											"credit": "Deruchenko Alexander"
+											"height": 759
 										},
 										"It's hard for a guild built on stealth and secrecy to maintain a positive relationship with any other guild. All guilds are monitored with suspicion, and they assessed for their current and prospective levels of threat, as well as for their usefulness to House Dimir's schemes. Each cell may foster its own relationships with the other guilds, but it ultimately defers to Dimir's enigmatic leaders to steer overarching strategy.",
 										"Your missions might put you at odds with any other guild by calling on you to infiltrate that guild and gain insight into its plans, steal proprietary information from its guildhall, or subvert its leadership. For instance, you could be tasked to steal the transcript of an Azorius interrogation, the memories of Golgari spy, or the contents of an Orzhov ledger.",
@@ -2727,11 +2701,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/028-215.webp"
+								"path": "book/GGR/028-215.png"
 							},
 							"width": 1000,
-							"height": 467,
-							"credit": "Milivoj Ćeran"
+							"height": 467
 						},
 						{
 							"type": "quote",
@@ -2773,11 +2746,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/029-216.webp"
+												"path": "book/GGR/029-216.png"
 											},
 											"width": 1000,
-											"height": 642,
-											"credit": "Florian de Gesincourt"
+											"height": 642
 										}
 									],
 									"id": "073"
@@ -2820,31 +2792,28 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/030-217.webp"
+												"path": "book/GGR/030-217.png"
 											},
 											"width": 1000,
-											"height": 871,
-											"credit": "Bram Sels"
+											"height": 871
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/031-218.webp"
+												"path": "book/GGR/031-218.png"
 											},
 											"width": 1000,
-											"height": 719,
-											"credit": "Ryan Pancoast"
+											"height": 719
 										},
 										{
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/032-219.webp"
+												"path": "book/GGR/032-219.png"
 											},
 											"width": 1000,
-											"height": 660,
-											"credit": "Magali Villeneuve"
+											"height": 660
 										}
 									]
 								},
@@ -2932,11 +2901,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/033-220.webp"
+												"path": "book/GGR/033-220.png"
 											},
 											"width": 1000,
-											"height": 676,
-											"credit": "Eytan Zana"
+											"height": 676
 										}
 									],
 									"id": "07e"
@@ -3026,11 +2994,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/034-221.webp"
+								"path": "book/GGR/034-221.png"
 							},
 							"width": 1000,
-							"height": 467,
-							"credit": "Kev Walker"
+							"height": 467
 						},
 						{
 							"type": "quote",
@@ -3158,11 +3125,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/035-222.webp"
+										"path": "book/GGR/035-222.png"
 									},
 									"width": 1000,
-									"height": 651,
-									"credit": "James Paick"
+									"height": 651
 								},
 								"The {@background Gruul Anarch|ggr} background is available for characters who are part of the Gruul guild.",
 								{
@@ -3183,11 +3149,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/036-223.webp"
+												"path": "book/GGR/036-223.png"
 											},
 											"width": 1000,
-											"height": 827,
-											"credit": "Livia Prima"
+											"height": 827
 										},
 										"Renown among the Gruul could also be called glory\u2014when you prove yourself in battle, you earn the respect of your fellows. With glory comes acceptance of your leadership and warriors willing to follow you into battle. The Gruul have no formal holders of titles aside from the chieftains of clans and the guildmaster, but relative status within one's clan is still important."
 									],
@@ -3236,11 +3201,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/037-224.webp"
+												"path": "book/GGR/037-224.png"
 											},
 											"width": 1000,
-											"height": 734,
-											"credit": "Dmitry Burmak"
+											"height": 734
 										}
 									],
 									"id": "08c"
@@ -3331,11 +3295,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/038-225.webp"
+								"path": "book/GGR/038-225.png"
 							},
 							"width": 1000,
-							"height": 467,
-							"credit": "Dmitry Burmak"
+							"height": 467
 						},
 						{
 							"type": "quote",
@@ -3382,11 +3345,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/039-226.webp"
+										"path": "book/GGR/039-226.png"
 									},
 									"width": 1000,
-									"height": 639,
-									"credit": "Svetlin Velinov"
+									"height": 639
 								},
 								{
 									"type": "entries",
@@ -3432,11 +3394,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/040-227.webp"
+												"path": "book/GGR/040-227.png"
 											},
 											"width": 1000,
-											"height": 603,
-											"credit": "Adam Paquette"
+											"height": 603
 										}
 									],
 									"id": "094"
@@ -3452,11 +3413,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/041-228.webp"
+												"path": "book/GGR/041-228.png"
 											},
 											"width": 1000,
-											"height": 632,
-											"credit": "Chris Rallis"
+											"height": 632
 										}
 									],
 									"id": "095"
@@ -3625,11 +3585,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/042-229.webp"
+								"path": "book/GGR/042-229.png"
 							},
 							"width": 1000,
-							"height": 467,
-							"credit": "Volkan Baga"
+							"height": 467
 						},
 						{
 							"type": "quote",
@@ -3725,11 +3684,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/043-230.webp"
+										"path": "book/GGR/043-230.png"
 									},
 									"width": 1000,
-									"height": 646,
-									"credit": "Yongjae Choi"
+									"height": 646
 								},
 								"The {@background Orzhov Representative|ggr} background is available for characters who are part of the Orzhov guild.",
 								{
@@ -3743,11 +3701,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/044-231.webp"
+												"path": "book/GGR/044-231.png"
 											},
 											"width": 1000,
-											"height": 650,
-											"credit": "Jenn Ravenna"
+											"height": 650
 										}
 									],
 									"id": "0a7"
@@ -3806,11 +3763,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/045-232.webp"
+												"path": "book/GGR/045-232.png"
 											},
 											"width": 1000,
-											"height": 685,
-											"credit": "Winona Nelson"
+											"height": 685
 										}
 									],
 									"id": "0ac"
@@ -3900,11 +3856,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/046-246.webp"
+								"path": "book/GGR/046-246.png"
 							},
 							"width": 1000,
-							"height": 456,
-							"credit": "Sung Choi"
+							"height": 456
 						},
 						{
 							"type": "quote",
@@ -3937,11 +3892,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/047-233.webp"
+												"path": "book/GGR/047-233.jpg"
 											},
 											"width": 1688,
-											"height": 2000,
-											"credit": "Mathias Kollros"
+											"height": 2000
 										}
 									],
 									"id": "0b1"
@@ -3984,11 +3938,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/049-235.webp"
+										"path": "book/GGR/049-235.png"
 									},
 									"width": 1000,
-									"height": 613,
-									"credit": "Cliff Childs"
+									"height": 613
 								},
 								"The {@background Rakdos Cultist|ggr} background is available for characters who are part of the {@creature Rakdos|GGR} guild.",
 								{
@@ -4001,11 +3954,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/050-247.webp"
+												"path": "book/GGR/050-247.png"
 											},
 											"width": 1000,
-											"height": 637,
-											"credit": "Wesley Burt"
+											"height": 637
 										}
 									],
 									"id": "0b4"
@@ -4082,11 +4034,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/051-236.webp"
+												"path": "book/GGR/051-236.png"
 											},
 											"width": 1000,
-											"height": 643,
-											"credit": "Martina Pilcerova"
+											"height": 643
 										},
 										"A cult of demon worshipers doesn't make a lot of friends. Ideologically, the {@creature Rakdos|GGR} have the most in common with the Gruul and the Golgari; all three guilds have a desire to topple the structures of power in Ravnica. Of course, the guilds disagree about what (or who) should replace the existing structures.",
 										"Making the powerful look ridiculous lies at the heart of the {@creature Rakdos|GGR} performance philosophy. The bulk of the guild's aggression is directed toward guilds that have power and abuse it or guilds that make blatant bids for power. That's particularly true when powerful guilds\u2014especially the Azorius\u2014try to use their power to suppress the {@creature Rakdos|GGR}.",
@@ -4168,11 +4119,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/052-237.webp"
+								"path": "book/GGR/052-237.png"
 							},
 							"width": 1000,
-							"height": 467,
-							"credit": "Winona Nelson"
+							"height": 467
 						},
 						{
 							"type": "quote",
@@ -4217,11 +4167,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/053-238.webp"
+										"path": "book/GGR/053-238.png"
 									},
 									"width": 1000,
-									"height": 1019,
-									"credit": "Sung Choi"
+									"height": 1019
 								},
 								"{@b Alignment}: Usually good, often neutral",
 								"{@b Suggested Races}: Human, centaur, elf (wood), half-elf, loxodon",
@@ -4269,11 +4218,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/055-240.webp"
+										"path": "book/GGR/055-240.png"
 									},
 									"width": 1000,
-									"height": 650,
-									"credit": "Sidharth Chaturvedi"
+									"height": 650
 								},
 								"The {@background Selesnya Initiate|ggr} background is available for characters who are part of the Selesnya guild.",
 								{
@@ -4455,11 +4403,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/056-241.webp"
+												"path": "book/GGR/056-241.png"
 											},
 											"width": 1000,
-											"height": 735,
-											"credit": "Jason Rainville"
+											"height": 735
 										}
 									],
 									"id": "0ce"
@@ -4479,11 +4426,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/057-242.webp"
+								"path": "book/GGR/057-242.png"
 							},
 							"width": 1000,
-							"height": 467,
-							"credit": "Yeong-Hao Han"
+							"height": 467
 						},
 						{
 							"type": "quote",
@@ -4515,11 +4461,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/058-243.webp"
+												"path": "book/GGR/058-243.png"
 											},
 											"width": 1000,
-											"height": 708,
-											"credit": "Willian Murai"
+											"height": 708
 										},
 										"The Holdfast encourages the Simic to promote nature; the Upwelling urges them to perfect nature. The end result is the same: a hastened system of evolution that brings out the best in every creature's nature. But different factions within the Simic Combine interpret these principles in their own ways.",
 										"The leadership of the Simic Combine represents the traditional philosophy of the Utopians. Their vision is of an ideal world in which nature and civilization exist in balance, in which natural life adapts to life in the midst of modern civilization and the civilized world adapts to accommodate these creatures. Utopians generally interpret the Holdfast principle as being about staying rooted in nature, and the Upwelling as concerned with slow, predictable, cyclical improvement. So they remain hidden in their subaquatic laboratories, pursuing their research while isolated from the volatile interrelationships among the other guilds. Prime Speaker {@creature Zegana|GGR} encourages that isolationist attitude.",
@@ -4589,11 +4534,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/059-244.webp"
+										"path": "book/GGR/059-244.png"
 									},
 									"width": 1000,
-									"height": 654,
-									"credit": "Izzy"
+									"height": 654
 								},
 								"The {@background Simic Scientist|ggr} background is available for characters who are part of the Simic guild.",
 								{
@@ -4626,11 +4570,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/060-245.webp"
+												"path": "book/GGR/060-245.png"
 											},
 											"width": 1000,
-											"height": 735,
-											"credit": "Randy Vargas"
+											"height": 735
 										}
 									],
 									"id": "0da"
@@ -4779,11 +4722,10 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "book/GGR/061-301.webp"
+						"path": "book/GGR/061-301.jpg"
 					},
 					"width": 2513,
-					"height": 3338,
-					"credit": "Livia Prima"
+					"height": 3338
 				},
 				"The Tenth District is a sprawling place. To be governed effectively, it is broken into six precincts, each the size of a small city. This chapter describes the various features you can find in those wondrous places.",
 				{
@@ -4810,19 +4752,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/062-302.webp"
+										"path": "book/GGR/062-302.png"
 									},
 									"width": 5000,
-									"height": 3160,
-									"credit": "Jonas de Ro",
-									"imageType": "map",
-									"grid": {
-										"type": "none",
-										"size": 184,
-										"distance": 0.5,
-										"units": "miles"
-									},
-									"title": "Tenth District"
+									"height": 3160
 								}
 							],
 							"id": "0e4"
@@ -4909,11 +4842,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/063-303.webp"
+										"path": "book/GGR/063-303.png"
 									},
 									"width": 1000,
-									"height": 820,
-									"credit": "Yeong-Hao Han"
+									"height": 820
 								},
 								"Deep below the Tenth District lies a vast, thriving community of folk who have no desire or choice to live under the sky. Here, the Dimir, Golgari, {@creature Rakdos|GGR}, and Simic hold sway in the caverns, causeways, and bodies of water that grace the darkest depths.",
 								{
@@ -4978,16 +4910,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/064-304.webp"
+								"path": "book/GGR/064-304.png"
 							},
 							"width": 3487,
-							"height": 5000,
-							"credit": "Jonas de Ro",
-							"imageType": "map",
-							"grid": {
-								"type": "none"
-							},
-							"title": "Precinct 1"
+							"height": 5000
 						},
 						{
 							"type": "entries",
@@ -5092,11 +5018,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/065-305.webp"
+										"path": "book/GGR/065-305.png"
 									},
 									"width": 1000,
-									"height": 735,
-									"credit": "Jedd Chevrier"
+									"height": 735
 								}
 							],
 							"id": "0fe"
@@ -5205,6 +5130,15 @@
 											"\"I still can't believe that crazy old Orzhov syndic just handing out zinos near the plaza, muttering 'The end is near.' She'll invite nothing but undesirables sniffing for free coin.\""
 										]
 									]
+								},
+								{
+									"type": "image",
+									"href": {
+										"type": "internal",
+										"path": "book/GGR/066-306.png"
+									},
+									"width": 1000,
+									"height": 668
 								}
 							],
 							"id": "0ff"
@@ -5217,32 +5151,16 @@
 					"name": "Precinct Two",
 					"page": 106,
 					"entries": [
-						{
-							"type": "image",
-							"href": {
-								"type": "internal",
-								"path": "book/GGR/066-306.webp"
-							},
-							"width": 1000,
-							"height": 668,
-							"credit": "Jung Park"
-						},
 						"Small houses, modest apartments, and commercial shops are sprinkled throughout Precinct Two, a place that law enforcement officers, lawyers, retired soldiers, and well-off working families call home. Corner shops cater to everyday needs, and many establishments are run by ex-soldiers. Streets are kept tidy, and buildings are maintained to be serviceable. Under the precinct's urbane veneer, tension simmers between law officers and the opportunistic crime families who call this precinct home.",
 						"The folk who live in this precinct believe in performing civic duties, conforming to your role, and maintaining strong friendships and family ties. Good neighbors show respect to one another and enjoy competing among themselves to achieve greater successes.",
 						{
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/067-307.webp"
+								"path": "book/GGR/067-307.png"
 							},
 							"width": 2117,
-							"height": 3000,
-							"credit": "Jonas de Ro",
-							"imageType": "map",
-							"grid": {
-								"type": "none"
-							},
-							"title": "Precinct Two"
+							"height": 3000
 						},
 						{
 							"type": "entries",
@@ -5286,11 +5204,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/068-308.webp"
+												"path": "book/GGR/068-308.png"
 											},
 											"width": 1000,
-											"height": 1637,
-											"credit": "Chase Stone"
+											"height": 1637
 										},
 										"Two-story houses are nestled in the rolling hills of this neighborhood in the southern section of the precinct. Griffin Heights is rife with corruption, and less scrupulous government officials exchange information and money with the Orzhov in business establishments here. The locals are fiercely loyal to the Orzhov knights who watch over them, dutifully paying their protection fees."
 									],
@@ -5457,11 +5374,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/069-309.webp"
+								"path": "book/GGR/069-309.png"
 							},
 							"width": 1000,
-							"height": 647,
-							"credit": "Titus Lunter"
+							"height": 647
 						},
 						"Ample parks, busy stables, and large gardens combine to create a vibrant environment in Precinct Three. Natural and urban life intermingle throughout the precinct, and the people who reside here view it as a respite from most other places in the Tenth District. Folk here tend to live simply, and generations of families have dwelt in the same structures for hundreds of years. During the day, the gardens, small pastures, and stables are tended by young and old. Evenings are given over to communal gatherings, sometimes featuring performances by trained beasts or storytelling.",
 						"The people of Precinct Three are comfortable with living around nature. They have no problems with pets or beastly companions sharing their space as well as residing in multifamily structures. Good neighbors help tend to plants, animals, and children whenever necessary.",
@@ -5469,16 +5385,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/070-310.webp"
+								"path": "book/GGR/070-310.png"
 							},
 							"width": 2118,
-							"height": 3000,
-							"credit": "Jonas de Ro",
-							"imageType": "map",
-							"grid": {
-								"type": "none"
-							},
-							"title": "Precinct Three"
+							"height": 3000
 						},
 						{
 							"type": "entries",
@@ -5552,11 +5462,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/071-311.webp"
+										"path": "book/GGR/071-311.png"
 									},
 									"width": 1000,
-									"height": 915,
-									"credit": "Eric Deschamps"
+									"height": 915
 								},
 								"The bounty of nature is plentiful in Precinct Three, which serves as the main source of food for the Tenth District. The finest steeds and livestock are raised here, as well as many war beasts (although they're often trained in Precinct Four). Unlike in most other precincts, barter is an acceptable form of transaction here, and some vendors outright reject payment in coin of any kind. Manufactured goods are relatively hard to find, except in large markets such as the Great Concourse.",
 								"Meals and lodging are widely varied, from squalid to comfortable, depending on the neighborhood. In general, the neighborhoods in Concordance tend toward the more expensive end of that scale, and those in Beast Haven more toward the other end. The residents of Precinct Three don't put much stock in personal appearance, and they're slow to pass judgment on anyone based on visible standards of wealth. The truly wretched sometimes evoke pity and sometimes scorn, and the very wealthy are generally disliked.",
@@ -5694,11 +5603,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/072-312.webp"
+								"path": "book/GGR/072-312.png"
 							},
 							"width": 1000,
-							"height": 660,
-							"credit": "Svetlin Velinov"
+							"height": 660
 						},
 						"Few days or nights pass quietly in Precinct Four. The frequent din of battle as Boros soldiers guard against Gruul marauders, the strange sounds of volatile magic emanating from Izzet experiments, and the occasional explosive flare-ups of goblin gang wars keep the precinct a dynamic and dangerous place. Its buildings include ramshackle tenements damaged by conflict, impregnable fortresses and laboratories, and bustling markets filled with merchants ready to defend themselves and their wares.",
 						"The people of Precinct Four are always ready for a fight. Being able to defend oneself and adapting to change are the most important qualities in this precinct. Good neighbors are your battle mates when you're fighting for your home or your life.",
@@ -5706,16 +5614,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/073-313.webp"
+								"path": "book/GGR/073-313.png"
 							},
 							"width": 2116,
-							"height": 3000,
-							"credit": "Jonas de Ro",
-							"imageType": "map",
-							"grid": {
-								"type": "none"
-							},
-							"title": "Precinct Four"
+							"height": 3000
 						},
 						{
 							"type": "entries",
@@ -5800,11 +5702,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/074-314.webp"
+										"path": "book/GGR/074-314.png"
 									},
 									"width": 1000,
-									"height": 879,
-									"credit": "Karl Kopinski"
+									"height": 879
 								},
 								"Much of Precinct Four is a war zone, and mundane methods of law enforcement aren't always effective in such an environment. No one takes the constant patrolling of the Boros Legion as a guarantee of their safety, and almost all folk know how to fight to some degree. Typical threats include giant monsters, unstable elementals, and Gruul raiding parties, and a curfew system is often instituted when a neighborhood is beset by one of these dangers. The only area that is usually safe from external threats is Tin Street. Petty crimes aren't given much attention, since the soldiers are primarily concerned with curbing violence and mayhem. The typical response to a reported crime or a dangerous threat is {@dice 1d8} minutes, and the squad consists of a Boros Legion {@creature knight} (from the {@book Monster Manual|MM}){@b} leading {@dice 4d4} {@creature soldier|GGR|soldiers}.",
 								"The Red Wastes is a lawless region mostly beyond the reach of Boros patrols and Azorius laws. In other parts of the precinct, goblin gangs shake down locals whenever possible and skirmish against each other over turf. The Shattergang Brothers are a notorious goblin gang that haunts Tin Street in this precinct, dealing in weapons and explosives."
@@ -5931,11 +5832,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/075-315.webp"
+								"path": "book/GGR/075-315.png"
 							},
 							"width": 1000,
-							"height": 654,
-							"credit": "Adam Paquette"
+							"height": 654
 						},
 						"As the home of prestigious universities, ancient libraries, and hidden laboratories, Precinct Five is the hub of information and learning in the Tenth District. People of all ages flock to this precinct to spend time learning, whether by poring over texts and scrolls or finding a mentor who will guide a student. It's also the place to find information brokers, who sell specialized or secret knowledge available nowhere else. Multilevel buildings set next to each other with little regard for planning give way to an occasional square or open campus where socially minded residents congregate during daytime hours. At night, many continue their studies while others tinker with their latest creations or intellectual endeavors. Taverns and pubs tend to be more urbane than in other parts of the district and often feature poetry readings, storytelling, and musical performances.",
 						"People who live in Precinct Five have a zeal for learning and tend to be inquisitive. Getting into a heated debate or touting a recent success to your neighbors is part of showing your worth. Good neighbors keep their projects and research hidden until a result can be displayed; it is considered uncouth to allow others to view a work in progress.",
@@ -5943,16 +5843,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/076-316.webp"
+								"path": "book/GGR/076-316.png"
 							},
 							"width": 2096,
-							"height": 3000,
-							"credit": "Jonas de Ro",
-							"imageType": "map",
-							"grid": {
-								"type": "none"
-							},
-							"title": "Precinct Five"
+							"height": 3000
 						},
 						{
 							"type": "entries",
@@ -6031,11 +5925,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/077-317.webp"
+										"path": "book/GGR/077-317.png"
 									},
 									"width": 1000,
-									"height": 651,
-									"credit": "Eric Deschamps"
+									"height": 651
 								}
 							],
 							"id": "129"
@@ -6121,11 +6014,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/078-318.webp"
+										"path": "book/GGR/078-318.png"
 									},
 									"width": 1000,
-									"height": 631,
-									"credit": "Mark Winters"
+									"height": 631
 								},
 								{
 									"type": "table",
@@ -6180,11 +6072,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/079-319.webp"
+								"path": "book/GGR/079-319.png"
 							},
 							"width": 1000,
-							"height": 664,
-							"credit": "Jenn Ravenna"
+							"height": 664
 						},
 						"Large warehouses, major thoroughfares, and nondescript worker tenements make the utilitarian Precinct Six a hub of activity for shipping, storage, and other mercantile concerns in the Tenth District. Wide cobblestone streets allow for the passage of beasts and constructs that transport raw goods from points beyond the Tenth and for the shipping of manufactured materials back to those locations. The demands of commerce keep the area constantly active, and the inconspicuous nature of the warehouses makes them popular as rendezvous points for all sorts of transactions, legal and illicit. At night, lurking undead and the horrors of the undercity, coming up from Deadbridge Chasm, keep wary citizens indoors, while a few people who deal in sinister magic seek the monsters out for nefarious purposes.",
 						"People who live in this working-class precinct are often practical-minded and thus tolerant of some degree of illicit activity. Being a good neighbor means keeping to yourself, unless you live in the Smelting Quarter, where the atmosphere is much more raucous.",
@@ -6192,16 +6083,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/080-320.webp"
+								"path": "book/GGR/080-320.png"
 							},
 							"width": 2115,
-							"height": 3000,
-							"credit": "Jonas de Ro",
-							"imageType": "map",
-							"grid": {
-								"type": "none"
-							},
-							"title": "Precinct Six"
+							"height": 3000
 						},
 						{
 							"type": "entries",
@@ -6419,11 +6304,10 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "book/GGR/081-401.webp"
+						"path": "book/GGR/081-401.jpg"
 					},
 					"width": 2259,
-					"height": 3000,
-					"credit": "Viktor Titov"
+					"height": 3000
 				},
 				"This chapter provides a toolbox to help the Dungeon Master create adventures featuring the guilds of Ravnica. The tensions among the guilds, a constant current of animosity, provide a solid foundation for building adventures.",
 				"\"{@adventure Krenko's Way|KKW}\" can be used to launch a Ravnica campaign.",
@@ -6672,9 +6556,9 @@
 							"type": "inset",
 							"name": "Quick Build",
 							"entries": [
-								"To make a simple location-based adventure quickly, follow these steps:",
-								"1. Choose a guild (or use the Guilds table in {@book chapter 1|GGR|1} if you want to choose randomly). The adventure will take place in that guild's location, as described in this chapter.",
-								"2. Determine the adventure goal using the table associated with that location.",
+								"To make a simple location-based adventure quickly, follow these steps: ",
+								"1. Choose a guild (or use the Guilds table in {@book chapter 1|GGR|1} if you want to choose randomly). The adventure will take place in that guild's location, as described in this chapter. ",
+								"2. Determine the adventure goal using the table associated with that location. ",
 								"3. Use creatures associated with the guild (shown on the tables in {@book chapter 6|GGR|6|Creatures by Guild}) to populate the location. Optionally, you can use the Location Connections table in this chapter to link the location you're using to a second location. You can either select a location based on the result of that table or determine the second location randomly."
 							],
 							"id": "140"
@@ -6688,11 +6572,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/082-402.webp"
+										"path": "book/GGR/082-402.png"
 									},
 									"width": 1000,
-									"height": 1189,
-									"credit": "Tyler Walpole"
+									"height": 1189
 								},
 								"Certain guilds lend themselves to particular types of adventures better than others, as shown below. If you're interested in running an intrigue adventure, where the heroes must unravel twisted plots within plots, you'll want to choose a different guild from what you would select if you want to run a dungeon delve that will take the adventurers into the labyrinthine undercity.",
 								{
@@ -6948,11 +6831,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/083-403.webp"
+										"path": "book/GGR/083-403.png"
 									},
 									"width": 1000,
-									"height": 668,
-									"credit": "Zoltan Boros"
+									"height": 668
 								}
 							],
 							"id": "148"
@@ -7135,11 +7017,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/084-404.webp"
+										"path": "book/GGR/084-404.png"
 									},
 									"width": 1000,
-									"height": 737,
-									"credit": "Ryan Barger"
+									"height": 737
 								},
 								"A friendly contact can act as a patron, sending a character on a mission or a side quest either as a formal assignment or as a favor. Friendly contacts also have a knack for getting into perilous situations from which they need to be rescued, which can sometimes force characters into making difficult choices between saving friendly nonplayer characters and capturing villainous ones. In extraordinary circumstances, a friendly contact might even join the adventuring party for a short time.",
 								"Contacts who have a more antagonistic relationship with a character can hinder the adventuring party's efforts in a variety of ways. They might appear at inconvenient times to delay the party, or catch the group in the midst of some illegal activity. They might leak information to the adventure's villain, subtly aid the villain's efforts, or even become villains themselves.",
@@ -7167,11 +7048,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/085-405.webp"
+								"path": "book/GGR/085-405.png"
 							},
 							"width": 1000,
-							"height": 1290,
-							"credit": "Richard Wright"
+							"height": 1290
 						},
 						"Adventures involving the Azorius Senate naturally revolve around law enforcement. Player characters who find themselves on the wrong side of the law might be forced to confront well-meaning Azorius arresters as enemies, even if the characters are innocent of any wrongdoing. Lawful characters might also assist the Azorius in maintaining law and order on the mean streets of Ravnica.",
 						{
@@ -7265,20 +7145,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/086-406.webp"
+												"path": "book/GGR/086-406.png"
 											},
 											"width": 2513,
-											"height": 3338,
-											"credit": "Dyson Logos",
-											"imageType": "map",
-											"grid": {
-												"type": "square",
-												"size": 101,
-												"offsetX": -12,
-												"offsetY": -13,
-												"scale": 3
-											},
-											"title": "Map 4.1: Arrester Station"
+											"height": 3338
 										}
 									],
 									"id": "151"
@@ -7349,11 +7219,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/087-407.webp"
+												"path": "book/GGR/087-407.png"
 											},
 											"width": 1000,
-											"height": 609,
-											"credit": "Daarken"
+											"height": 609
 										}
 									],
 									"id": "153"
@@ -7553,20 +7422,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/088-408.webp"
+												"path": "book/GGR/088-408.png"
 											},
 											"width": 2513,
-											"height": 3338,
-											"credit": "Dyson Logos",
-											"imageType": "map",
-											"grid": {
-												"type": "square",
-												"size": 126,
-												"offsetX": 27,
-												"offsetY": -3,
-												"scale": 3
-											},
-											"title": "Map 4.2: Legion Garrison"
+											"height": 3338
 										}
 									],
 									"id": "159"
@@ -7636,11 +7495,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/089-409.webp"
+												"path": "book/GGR/089-409.png"
 											},
 											"width": 1000,
-											"height": 1353,
-											"credit": "Zoltan Boros"
+											"height": 1353
 										},
 										"Boros villains are inclined to engage in activity that involves pursuing one's passion, acquiring power, or exacting retribution. The Boros make good campaign antagonists if the adventurers represent the forces of chaos that the legion opposes\u2014{@creature Rakdos|GGR} revelers, Gruul raiders, Golgari corrupters, or Dimir spies.",
 										"You could structure a campaign around the legion's slow progress in taking over the authority of the Azorius Senate and imposing a sort of martial law on the city. A campaign of this sort is particularly effective if the characters initially work alongside the Boros, especially if one or more characters belong to the legion. They might help Boros soldiers drive off Gruul raiders or uproot Dimir spies\u2014clearly fighting against evil on the side of the good and just. As time goes on, though, their Boros allies might start taking their war against evil too far. Innocent citizens get caught in the crossfire, most punishment is cruel and excessive, and any resistance is met with overwhelming force, to \"set an example\" for anyone else who might consider opposing the legion. A Boros ally (or even a close friend) of the characters might become fully caught up in this fervor. Perhaps the characters can talk some sense into their old friend, but the resolution of the campaign might force them to take more extreme measures to curb the legion's excesses."
@@ -7844,20 +7702,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/090-410.webp"
+												"path": "book/GGR/090-410.png"
 											},
 											"width": 2513,
-											"height": 3338,
-											"credit": "Dyson Logos",
-											"imageType": "map",
-											"grid": {
-												"type": "square",
-												"size": 166,
-												"offsetX": -52,
-												"offsetY": 25,
-												"scale": 3
-											},
-											"title": "Map 4.3: Safe House"
+											"height": 3338
 										},
 										{
 											"type": "inset",
@@ -7943,11 +7791,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/091-411.webp"
+												"path": "book/GGR/091-411.png"
 											},
 											"width": 1000,
-											"height": 1080,
-											"credit": "Daarken"
+											"height": 1080
 										},
 										"Dimir villains favor schemes involving captivity and coercion, defamation, impersonation and disguise, murder, politics, theft, and torture. Perhaps the most insidious technique employed by the Dimir is the erasing and modifying of memories.",
 										"Because their tendrils reach into every other guild, Dimir villains could turn out to be the link between plots that initially seem to be unconnected. Even when individual missions might be straightforward dungeon crawls or battles in the streets, the campaign revolves around the mystery of determining the true villain.",
@@ -8143,20 +7990,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/092-412.webp"
+												"path": "book/GGR/092-412.png"
 											},
 											"width": 2513,
-											"height": 3338,
-											"credit": "Dyson Logos",
-											"imageType": "map",
-											"grid": {
-												"type": "square",
-												"size": 120,
-												"offsetX": 11,
-												"offsetY": 46,
-												"scale": 3
-											},
-											"title": "Map 4.4: Undercity Mansion"
+											"height": 3338
 										}
 									],
 									"id": "16a"
@@ -8226,11 +8063,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/093-413.webp"
+												"path": "book/GGR/093-413.png"
 											},
 											"width": 1000,
-											"height": 732,
-											"credit": "Sung Choi"
+											"height": 732
 										},
 										"The Golgari possess a combination of ambition and ruthlessness that makes them extremely dangerous adversaries. The tension among the various factions of the swarm (the elves, the medusas, the kraul, and the rising erstwhile) adds an element of instability to the mix. But perhaps the Golgari Swarm's most dangerous quality is the widespread confidence among its members that it will survive any catastrophe that might befall the surface world. This certainty means Golgari villains will stop at nothing in an attempt to provoke such an event\u2014triggering a virulent plague, causing explosive plant growth, or inciting the other guilds into open war, for example. Over the course of a campaign, a group of adventurers might foil Golgari plans to accomplish all these things, or the characters might be constantly struggling against one ongoing disaster.",
 										"For example, the characters might spend the early part of the campaign resolving disputes between guilds, unaware that the Golgari are actually the instigators of those conflicts. Perhaps incidental to these missions, they also face a spore druid who is in the early stages of testing a terrible plague. Then, as the campaign reaches higher levels, the plague breaks out again, this time spreading rapidly. The crisis heightens tensions among the other guilds, especially when food sources are threatened. At the climax of the campaign, the heroes must defuse conflict among the guilds while finding a way to get at the druid at the cause of it all, who is locked in an undercity mansion waiting out the catastrophe."
@@ -8346,11 +8182,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/094-414.webp"
+								"path": "book/GGR/094-414.png"
 							},
 							"width": 1000,
-							"height": 874,
-							"credit": "Zoltan Boros"
+							"height": 874
 						},
 						"An adventure involving the Gruul Clans typically revolves around combat. The Gruul provide characters with opportunities to fight huge monsters and vicious berserkers. The Gruul bring chaos and destruction with them wherever they go, so they can easily disrupt and complicate adventures involving any other guild. Any time an adventure needs an injection of brutal violence, the Gruul are a good tool for the purpose.",
 						{
@@ -8433,20 +8268,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/095-415.webp"
+												"path": "book/GGR/095-415.png"
 											},
 											"width": 2513,
-											"height": 3338,
-											"credit": "Dyson Logos",
-											"imageType": "map",
-											"grid": {
-												"type": "square",
-												"size": 147,
-												"offsetX": 75,
-												"offsetY": -62,
-												"scale": 3
-											},
-											"title": "Map 4.5: Rubblebelt Encampment"
+											"height": 3338
 										}
 									],
 									"id": "172"
@@ -8631,11 +8456,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/096-416.webp"
+										"path": "book/GGR/096-416.png"
 									},
 									"width": 1000,
-									"height": 1094,
-									"credit": "Svetlin Velinov"
+									"height": 1094
 								},
 								"The fundamental responsibility of the Izzet League is building and maintaining Ravnica's infrastructure, and the guild's work is responsible for many of the magical\u2013technological conveniences that make life in the city relatively safe and comfortable, from paved roadways to running water. Under the leadership of the draconic genius {@creature Niv-Mizzet|GGR}, the Izzet have continued to innovate, taking their work far beyond the essential needs of infrastructure and into the realm of wild invention. As a result, the workshops and laboratories of the Izzet are prone to magical mishaps, with results that range from personal injury to district-wide destruction. It is perhaps best for Ravnica as a whole that most of Izzet's work takes place in small workshops scattered throughout the city, rather than being concentrated in one place (with the guildhall of Nivix being the notable exception).",
 								{
@@ -8721,20 +8545,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/097-417.webp"
+												"path": "book/GGR/097-417.png"
 											},
 											"width": 2513,
-											"height": 3338,
-											"credit": "Dyson Logos",
-											"imageType": "map",
-											"grid": {
-												"type": "square",
-												"size": 154,
-												"offsetX": 88,
-												"offsetY": 87,
-												"scale": 3
-											},
-											"title": "Map 4.6: Experimental Workshop"
+											"height": 3338
 										},
 										{
 											"type": "table",
@@ -8844,11 +8658,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/098-418.webp"
+												"path": "book/GGR/098-418.png"
 											},
 											"width": 1010,
-											"height": 664,
-											"credit": "Ryan Barger"
+											"height": 664
 										}
 									],
 									"id": "17c"
@@ -9048,20 +8861,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/099-419.webp"
+												"path": "book/GGR/099-419.png"
 											},
 											"width": 2513,
-											"height": 3338,
-											"credit": "Dyson Logos",
-											"imageType": "map",
-											"grid": {
-												"type": "square",
-												"size": 155,
-												"offsetX": 102,
-												"offsetY": -13,
-												"scale": 3
-											},
-											"title": "Map 4.7: Grand Basilica"
+											"height": 3338
 										}
 									],
 									"id": "182"
@@ -9131,11 +8934,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/100-420.webp"
+												"path": "book/GGR/100-420.png"
 											},
 											"width": 1000,
-											"height": 1112,
-											"credit": "David Palumbo"
+											"height": 1112
 										},
 										"You could build a campaign around the Orzhov Syndicate's efforts to gain control of the adventurers. Recognizing the characters as powerful agents for change, one or more pontiffs scheme to make sure that the syndicate can direct that force toward goals of their choosing. In typical Orzhov fashion, that generally means trying to force the characters into debt, either to the Orzhov in general or to an individual pontiff.",
 										"At low levels, the Orzhov might be nothing more than a gentle force behind the scenes. If the adventurers need help, an Orzhov agent might appear and offer it. If they commit crimes, the Orzhov find out about it. The characters' valuables can be kept safe in an Orzhov vault, and Orzhov ministrants can provide healing and other clerical magic at reasonable prices.",
@@ -9253,11 +9055,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/101-421.webp"
+								"path": "book/GGR/101-421.png"
 							},
 							"width": 1000,
-							"height": 1564,
-							"credit": "Mark Winters"
+							"height": 1564
 						},
 						"On most worlds, a cult dedicated to an ancient demon lord would be an obvious villain, to be rooted out and exterminated at all costs. On Ravnica, though, the status of the Cult of Rakdos isn't so clear-cut. It is a guild like the others, and its existence is mandated by the Guildpact, so exterminating it and its founder would violate the fundamental social order of the world. Although the ranks of {@creature Rakdos|GGR} include outright villains who crave blood and mayhem, most of its members are performers who just want to put on a good show. Not every performance ends in violence, and even when a riot does break out, it's not always easy to pin the blame on the entertainers.",
 						"Nonetheless, the Cult of Rakdos has more than its share of truly villainous members, and the guild provides ample opportunity for adventurers to fight against true evil.",
@@ -9349,20 +9150,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/102-422.webp"
+												"path": "book/GGR/102-422.png"
 											},
 											"width": 2513,
-											"height": 3338,
-											"credit": "Dyson Logos",
-											"imageType": "map",
-											"grid": {
-												"type": "square",
-												"size": 164,
-												"offsetX": 59,
-												"offsetY": -82,
-												"scale": 3
-											},
-											"title": "Map 4.8: Notorious Nightclub"
+											"height": 3338
 										}
 									],
 									"id": "18a"
@@ -9380,11 +9171,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/103-423.webp"
+										"path": "book/GGR/103-423.png"
 									},
 									"width": 1000,
-									"height": 632,
-									"credit": "James Ryman"
+									"height": 632
 								},
 								{
 									"type": "table",
@@ -9637,20 +9427,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/104-424.webp"
+												"path": "book/GGR/104-424.png"
 											},
 											"width": 2513,
-											"height": 3338,
-											"credit": "Dyson Logos",
-											"imageType": "map",
-											"grid": {
-												"type": "square",
-												"size": 139,
-												"offsetX": 16,
-												"offsetY": -10,
-												"scale": 3
-											},
-											"title": "Map 4.9: Vernadi Center"
+											"height": 3338
 										}
 									],
 									"id": "192"
@@ -9715,11 +9495,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/105-425.webp"
+										"path": "book/GGR/105-425.png"
 									},
 									"width": 1000,
-									"height": 781,
-									"credit": "Simon Dominic"
+									"height": 781
 								},
 								{
 									"type": "entries",
@@ -9927,20 +9706,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/106-426.webp"
+												"path": "book/GGR/106-426.png"
 											},
 											"width": 2513,
-											"height": 3338,
-											"credit": "Dyson Logos",
-											"imageType": "map",
-											"grid": {
-												"type": "square",
-												"size": 142,
-												"offsetX": 20,
-												"offsetY": 8,
-												"scale": 3
-											},
-											"title": "Map 4.10: Growth Chambers"
+											"height": 3338
 										}
 									],
 									"id": "19a"
@@ -10004,11 +9773,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/107-427.webp"
+										"path": "book/GGR/107-427.png"
 									},
 									"width": 1000,
-									"height": 668,
-									"credit": "Dan Scott"
+									"height": 668
 								},
 								{
 									"type": "entries",
@@ -10021,11 +9789,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/108-428.webp"
+												"path": "book/GGR/108-428.png"
 											},
 											"width": 1000,
-											"height": 668,
-											"credit": "Chris Rallis"
+											"height": 668
 										}
 									],
 									"id": "19c"
@@ -10129,15 +9896,6 @@
 						}
 					],
 					"id": "197"
-				},
-				{
-					"type": "section",
-					"name": "Krenko's Way",
-					"page": 160,
-					"entries": [
-						"{@note See the {@adventure Krenko's Way|KKW} adventure}"
-					],
-					"id": "21f"
 				}
 			],
 			"id": "138"
@@ -10151,11 +9909,10 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "book/GGR/116-501.webp"
+						"path": "book/GGR/116-501.jpg"
 					},
 					"width": 2259,
-					"height": 3000,
-					"credit": "Johannes Voss"
+					"height": 3000
 				},
 				"Those who are bold or cunning enough can find treasures aplenty to reward their exploits in Ravnica. Coins change hands in back alleys, chests of riches are laden onto beasts of burden, and fine objects of art stand on display in museums and galleries. Obscene wealth lies secreted away in Orzhov vaults, the Azorius Senate's payroll is a bureaucratic tangle, and House Dimir greases countless palms with an apparently endless fortune. And items of magic lure adventurers and thieves with the promise of greater power.",
 				{
@@ -10181,11 +9938,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/117-502.webp"
+								"path": "book/GGR/117-502.png"
 							},
 							"width": 1000,
-							"height": 708,
-							"credit": "Zoltan Boros"
+							"height": 708
 						},
 						"A guild charm is a magical effect placed on an otherwise mundane item. Charms are often given to favored members of the guild\u2014those whose renown scores with their guilds have reached 10 or higher\u2014or those entrusted with important missions. A charm typically manifests as the guild's symbol emblazoned on an item that is worn or carried by the chosen creature.",
 						"A guild charm can be used only a certain number of times before it vanishes, and only by the creature upon which it was bestowed. If you use a charm to cast a spell, you can do so without expending a spell slot or providing any components. The spell's save DC is 15, its attack bonus is +7, and the spellcasting ability modifier for any spell effects is +4.",
@@ -11148,11 +10904,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/118-503.webp"
+												"path": "book/GGR/118-503.png"
 											},
 											"width": 1000,
-											"height": 731,
-											"credit": "Daniel Ljunggren"
+											"height": 731
 										},
 										"{@item Guild Signet|ggr}",
 										"{@item Illusionist's Bracers|ggr}",
@@ -11161,11 +10916,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/119-504.webp"
+												"path": "book/GGR/119-504.png"
 											},
 											"width": 1000,
-											"height": 709,
-											"credit": "Terese Nielsen"
+											"height": 709
 										},
 										"{@item Mizzium Armor|ggr}",
 										"{@item Mizzium Mortar|ggr}",
@@ -11174,11 +10928,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/120-505.webp"
+												"path": "book/GGR/120-505.png"
 											},
 											"width": 1000,
-											"height": 731,
-											"credit": "Scott Murphy"
+											"height": 731
 										},
 										"{@item Pariah's Shield|ggr}",
 										"{@item Peregrine Mask|ggr}",
@@ -11189,11 +10942,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/121-506.webp"
+												"path": "book/GGR/121-506.png"
 											},
 											"width": 1000,
-											"height": 702,
-											"credit": "Mark Winters"
+											"height": 702
 										},
 										"{@item Spies' Murmur|ggr}",
 										"{@item Sunforger|ggr}",
@@ -11219,11 +10971,10 @@
 					"type": "image",
 					"href": {
 						"type": "internal",
-						"path": "book/GGR/122-601.webp"
+						"path": "book/GGR/122-601.jpg"
 					},
 					"width": 2285,
-					"height": 3000,
-					"credit": "Tomasz Jedruszek"
+					"height": 3000
 				},
 				"Ravnica is home to a great variety of creatures, including some that are unknown on other worlds in Dungeons & Dragons. This chapter provides stat blocks for many of these creatures, and it concludes with a collection of nonplayer characters who fill the ranks of Ravnica's guilds.",
 				"Some of the stat blocks in this source have a special feature: guild spells. If a stat block says its creature is a spellcaster of a particular guild\u2014an Izzet spellcaster, for instance\u2014that creature's spell list includes one or more spells from that guild's spell list. See {@book chapter 2|GGR|2} for the guilds' lists.",
@@ -12374,11 +12125,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/123-602.webp"
+										"path": "book/GGR/123-602.png"
 									},
 									"width": 1000,
-									"height": 1042,
-									"credit": "Zoltan Boros"
+									"height": 1042
 								}
 							],
 							"id": "1c4"
@@ -12732,11 +12482,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/124-603.webp"
+												"path": "book/GGR/124-603.png"
 											},
 											"width": 1000,
-											"height": 1046,
-											"credit": "John Severin Brassell"
+											"height": 1046
 										},
 										"The winged reptiles known as drakes are a common sight in the skies of Ravnica. They soar above the spires and rooftops hunting for aerial prey. Highly trainable, they are favored as pets, servants, and mounts.",
 										"The most common drakes, called wind drakes, are about the size of a human and use the statistics of a {@creature pteranodon}. The smallest drakes are the size of a bird of prey and use the statistics of an {@creature eagle}; larger ones have the statistics of a {@creature giant eagle}."
@@ -12910,6 +12659,7 @@
 						{
 							"type": "entries",
 							"name": "Supreme Judge Isperia",
+							"page": 0,
 							"entries": [
 								"{@creature Isperia|GGR} is the current guildmaster of the Azorius Senate. As a sphinx, she is aloof and values solitude above all. However, she has been forced to give up her privacy to deal with the increased crime and chaos on Ravnica.",
 								"{@creature Isperia|GGR} is devoted to her guild's belief that law is the ultimate bulwark against chaos, and it is her steady hand that guides the Azorius through these uncertain times. As guildmaster, {@creature Isperia|GGR} serves as the supreme judge, a role that takes advantage of her encyclopedic knowledge of Ravnica's labyrinthine legal system.",
@@ -12932,11 +12682,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/125-636755109153147792.webp"
+												"path": "book/GGR/125-636755109153147792.png"
 											},
 											"width": 400,
-											"height": 292,
-											"credit": "Scott M. Fischer"
+											"height": 292
 										}
 									],
 									"id": "1da"
@@ -12971,11 +12720,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/126-636755109828428319.webp"
+										"path": "book/GGR/126-636755109828428319.png"
 									},
 									"width": 400,
-									"height": 294,
-									"credit": "Chris Rallis"
+									"height": 294
 								}
 							],
 							"id": "1dd"
@@ -13054,11 +12802,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/127-636755111679113628.webp"
+												"path": "book/GGR/127-636755111679113628.png"
 											},
 											"width": 400,
-											"height": 300,
-											"credit": "Chris Rahn"
+											"height": 300
 										}
 									],
 									"id": "1e1"
@@ -13076,11 +12823,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/128-636755111977048218.webp"
+										"path": "book/GGR/128-636755111977048218.png"
 									},
 									"width": 399,
-									"height": 290,
-									"credit": "James Ryman"
+									"height": 290
 								}
 							],
 							"id": "1e3"
@@ -13104,11 +12850,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/129-636755112571289881.webp"
+										"path": "book/GGR/129-636755112571289881.png"
 									},
 									"width": 399,
-									"height": 292,
-									"credit": "Howard Lyon"
+									"height": 292
 								}
 							],
 							"id": "1e5"
@@ -13176,11 +12921,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/130-636755112924118365.webp"
+												"path": "book/GGR/130-636755112924118365.png"
 											},
 											"width": 399,
-											"height": 293,
-											"credit": "Yongjae Choi"
+											"height": 293
 										}
 									],
 									"id": "1e8"
@@ -13221,11 +12965,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/131-605.webp"
+								"path": "book/GGR/131-605.png"
 							},
 							"width": 1000,
-							"height": 735,
-							"credit": "Svetlin Velinov"
+							"height": 735
 						},
 						{
 							"type": "table",
@@ -13294,11 +13037,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/132-636755113664903302.webp"
+												"path": "book/GGR/132-636755113664903302.png"
 											},
 											"width": 399,
-											"height": 292,
-											"credit": "Eric Deschamps"
+											"height": 292
 										}
 									],
 									"id": "1ef"
@@ -13419,11 +13161,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/133-636755114197519042.webp"
+										"path": "book/GGR/133-636755114197519042.png"
 									},
 									"width": 400,
-									"height": 303,
-									"credit": "Todd Lockwood"
+									"height": 303
 								},
 								{
 									"type": "entries",
@@ -13456,11 +13197,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/134-636755114842750008.webp"
+										"path": "book/GGR/134-636755114842750008.png"
 									},
 									"width": 300,
-									"height": 368,
-									"credit": "Wayne Reynolds"
+									"height": 368
 								}
 							],
 							"id": "1f9"
@@ -13484,11 +13224,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/135-636755115264247397.webp"
+										"path": "book/GGR/135-636755115264247397.png"
 									},
 									"width": 399,
-									"height": 366,
-									"credit": "Daarken"
+									"height": 366
 								}
 							],
 							"id": "1fa"
@@ -13564,11 +13303,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/136-636755115845494246.webp"
+										"path": "book/GGR/136-636755115845494246.png"
 									},
 									"width": 399,
-									"height": 318,
-									"credit": "Todd Lockwood"
+									"height": 318
 								},
 								{
 									"type": "entries",
@@ -13600,11 +13338,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/137-636755116506140962.webp"
+										"path": "book/GGR/137-636755116506140962.png"
 									},
 									"width": 399,
-									"height": 284,
-									"credit": "Peter Mohrbacher"
+									"height": 284
 								},
 								{
 									"type": "inset",
@@ -13618,11 +13355,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/138-636755117375789049.webp"
+										"path": "book/GGR/138-636755117375789049.png"
 									},
 									"width": 399,
-									"height": 292,
-									"credit": "Jack Wang"
+									"height": 292
 								}
 							],
 							"id": "202"
@@ -13701,11 +13437,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/139-636755117769707664.webp"
+												"path": "book/GGR/139-636755117769707664.png"
 											},
 											"width": 399,
-											"height": 292,
-											"credit": "Svetlin Velinov"
+											"height": 292
 										},
 										{
 											"type": "inset",
@@ -13719,11 +13454,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/140-606.webp"
+												"path": "book/GGR/140-606.png"
 											},
 											"width": 1000,
-											"height": 735,
-											"credit": "Magali Villeneuve"
+											"height": 735
 										}
 									],
 									"id": "206"
@@ -13796,11 +13530,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/141-636755118302640621.webp"
+												"path": "book/GGR/141-636755118302640621.png"
 											},
 											"width": 400,
-											"height": 276,
-											"credit": "Randy Vargas"
+											"height": 276
 										}
 									],
 									"id": "20b"
@@ -13819,11 +13552,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/142-636755118642849901.webp"
+										"path": "book/GGR/142-636755118642849901.png"
 									},
 									"width": 299,
-									"height": 237,
-									"credit": "Michael C. Hayes"
+									"height": 237
 								}
 							],
 							"id": "20d"
@@ -13838,11 +13570,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/143-636755119018939359.webp"
+										"path": "book/GGR/143-636755119018939359.png"
 									},
 									"width": 399,
-									"height": 303,
-									"credit": "Victor Adame Minguez"
+									"height": 303
 								}
 							],
 							"id": "20e"
@@ -13857,11 +13588,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/144-636755119404834344.webp"
+										"path": "book/GGR/144-636755119404834344.png"
 									},
 									"width": 399,
-									"height": 293,
-									"credit": "Eric Deschamps"
+									"height": 293
 								},
 								{
 									"type": "inset",
@@ -13875,11 +13605,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/145-607.webp"
+										"path": "book/GGR/145-607.png"
 									},
 									"width": 1000,
-									"height": 690,
-									"credit": "Adam Paquette"
+									"height": 690
 								}
 							],
 							"id": "20f"
@@ -13980,11 +13709,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/146-608.webp"
+								"path": "book/GGR/146-608.png"
 							},
 							"width": 1000,
-							"height": 725,
-							"credit": "Raymond Swanland"
+							"height": 725
 						},
 						{
 							"type": "entries",
@@ -14011,11 +13739,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/147-636755119753822988.webp"
+												"path": "book/GGR/147-636755119753822988.png"
 											},
 											"width": 399,
-											"height": 251,
-											"credit": "Chippy"
+											"height": 251
 										}
 									],
 									"id": "216"
@@ -14033,11 +13760,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/148-636755120204143679.webp"
+										"path": "book/GGR/148-636755120204143679.png"
 									},
 									"width": 399,
-									"height": 312,
-									"credit": "Howard Lyon"
+									"height": 312
 								},
 								{
 									"type": "inset",
@@ -14064,11 +13790,10 @@
 							"type": "image",
 							"href": {
 								"type": "internal",
-								"path": "book/GGR/149-609.webp"
+								"path": "book/GGR/149-609.png"
 							},
 							"width": 1000,
-							"height": 734,
-							"credit": "Seb McKinnon"
+							"height": 734
 						},
 						{
 							"type": "table",
@@ -14123,11 +13848,10 @@
 											"type": "image",
 											"href": {
 												"type": "internal",
-												"path": "book/GGR/150-636755120782000992.webp"
+												"path": "book/GGR/150-636755120782000992.png"
 											},
 											"width": 399,
-											"height": 305,
-											"credit": "Willian Murai"
+											"height": 305
 										}
 									],
 									"id": "21c"
@@ -14145,11 +13869,10 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/GGR/151-636755121373045160.webp"
+										"path": "book/GGR/151-636755121373045160.png"
 									},
 									"width": 399,
-									"height": 292,
-									"credit": "Mike Bierek"
+									"height": 292
 								}
 							],
 							"id": "21e"
@@ -14159,114 +13882,6 @@
 				}
 			],
 			"id": "1d5"
-		},
-		{
-			"type": "section",
-			"name": "Credits",
-			"entries": [
-				{
-					"type": "list",
-					"style": "list-hang-notitle",
-					"items": [
-						{
-							"type": "item",
-							"name": "Lead Designers:",
-							"entry": "Jeremy Crawford, Mike Mearls"
-						},
-						{
-							"type": "item",
-							"name": "Designers:",
-							"entry": "Ari Levitch, Ben Petrisor, Mike Mearls, Robert J. Schwalb, Chris Tulach"
-						},
-						{
-							"type": "item",
-							"name": "Managing Editor:",
-							"entry": "Jeremy Crawford"
-						},
-						{
-							"type": "item",
-							"name": "Editors:",
-							"entry": "Christopher Perkins, Kim Mohan, Michele Carter, Phil Athans, Kate Welch"
-						},
-						{
-							"type": "item",
-							"name": "Art Direction:",
-							"entry": "Shauna Narciso, Ari Levitch"
-						},
-						{
-							"type": "item",
-							"name": "Graphic Designer:",
-							"entry": "Trish Yochum"
-						},
-						{
-							"type": "item",
-							"name": "Additional Graphic Design:",
-							"entry": "Emi Tanji"
-						},
-						{
-							"type": "item",
-							"name": "Additional Art Direction:",
-							"entry": "Jeremy Jarvis, Jeremy Cranford, Pamela Ansman-Wolfe, Taylor Ingvarsson, Dawn Murin, Cynthia Sheppard, Andrew Vallas, Mark Winters"
-						},
-						{
-							"type": "item",
-							"name": "Cover Illustrator:",
-							"entry": "Magali Villeneuve"
-						},
-						{
-							"type": "item",
-							"name": "Interior Illustrators:",
-							"entry": "Deruchenko Alexander, Even Amundsen, Steve Argyle, Volkan Baga, Ryan Barger, Steven Belledin, Mike Bierek, Johann Bodin, Zoltan Boros, Noah Bradley, John Severin Brassell, Filip Burburan, Dmitry Burmak, Wesley Burt, Clint Cearley, Milivoj Ceran, Jason Chan, Sidharth Chaturvedi, Zezhou Chen, Jedd Chevrier, Chippy, Cliff Childs, Sung Choi, Yongjae Choi, Jehan Choo, Daarken, Florian De Gesincourt, Eric Deschamps, Simon Dominic, Scott M. Fischer, Randy Gallegos, Lars Grant-West, Yeong-Hao Han, Josh Hass, Michael C. Hayes, Izzy, Tomasz Jedruszek, Jaime Jones, Igor Kieryluk, Mathias Kollros, Alex Konstad, Karl Kopinski, Lius Lasahido, Daniel Ljunggren, Todd Lockwood, Titus Lunter, Howard Lyon, Slawomir Maniak, Seb McKinnon, Aaron Miller, Victor Adame Minguez, Peter Mohrbacher, Willian Murai, Scott Murphy, Winona Nelson, Terese Nielsen, Karla Ortiz, James Paick, David Palumbo, Ryan Pancoast, Adam Paquette, Jung Park, Martina Pilcerova, rk post, Livia Prima, Chris Rahn, Jason Rainville, Chris Rallis, David Rapoza, Jenn Ravenna, Wayne Reynolds, Grzegorz Rutkowski, James Ryman, Dan Scott, Bram Sels, Craig J Spearing, Anna Steinbauer, Zack Stella, Matt Stewart, Chase Stone, Raymond Swanland, Wisnu Tan, Viktor Titov, Randy Vargas, Svetlin Velinov, Magali Villeneuve, Johannes Voss, Kev Walker, Tyler Walpole, Jack Wang, Mark Winters, Richard Wright, Darek Zabrocki, Eytan Zana, Kirsten Zirngibl, Mark Zug"
-						},
-						{
-							"type": "item",
-							"name": "Cartographers:",
-							"entry": "Jonas De Ro, Dyson Logos"
-						},
-						{
-							"type": "item",
-							"name": "Ravnica World Design:",
-							"entry": "Doug Beyer, Sam Burley, Jeremy Cranford, Kelly Digges, Brady Dommermuth, Jenna Helland, Cory H. Herndon, Jeremy Jarvis, Kimberly Kreines, Chris L'etoile, Adam Lee, Ari Levitch, Alison Lührs, Shawn Main, Dawn Murin, Richard Whitters, Mark Winters, James Wyatt"
-						},
-						{
-							"type": "item",
-							"name": "Producer:",
-							"entry": "Dan Tovar"
-						},
-						{
-							"type": "item",
-							"name": "Project Management:",
-							"entry": "Matt Warren"
-						},
-						{
-							"type": "item",
-							"name": "Product Engineer:",
-							"entry": "Cynda Callaway"
-						},
-						{
-							"type": "item",
-							"name": "Imaging Technicians:",
-							"entry": "Kevin Yee"
-						},
-						{
-							"type": "item",
-							"name": "Art Administration:",
-							"entry": "David Gershman"
-						},
-						{
-							"type": "item",
-							"name": "Prepress Specialist:",
-							"entry": "Jefferson Dunlap"
-						},
-						{
-							"type": "item",
-							"name": "Other D&D Team Members:",
-							"entry": "Bart Carroll, Kate Irwin, Christopher Lindsay, Shelly Mazzanoble, Hilary Ross, Liz Schuh, Nathan Stewart, Greg Tito"
-						}
-					]
-				}
-			],
-			"id": "220"
 		}
 	]
 }
