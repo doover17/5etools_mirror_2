@@ -172,7 +172,9 @@ class SearchPage {
 						? `<a href="${adventureBookSourceHref}">${ptPageInner}</a>`
 						: ptPageInner;
 
-					const ptSourceInner = source ? `<i>${Parser.sourceJsonToFull(source)}</i> (<span class="${Parser.sourceJsonToColor(source)}" ${Parser.sourceJsonToStyle(source)}>${Parser.sourceJsonToAbv(source)}</span>)${isSrd ? `<span class="ve-muted relative help-subtle pg-search__disp-srd" title="Available in the Systems Reference Document">[SRD]</span>` : ""}` : `<span></span>`;
+					const ptSourceInner = source
+						? `<i>${Parser.sourceJsonToFull(source)}</i> (<span class="${Parser.sourceJsonToColor(source)}" ${Parser.sourceJsonToStyle(source)}>${Parser.sourceJsonToAbv(source)}</span>)${isSrd ? `<span class="ve-muted relative help-subtle pg-search__disp-srd" title="Available in the Systems Reference Document">[SRD]</span>` : ""}${Parser.sourceJsonToMarkerHtml(source, {isList: false, additionalStyles: "pg-search__disp-source-marker"})}`
+						: `<span></span>`;
 					const ptSource = ptPage || !adventureBookSourceHref
 						? ptSourceInner
 						: `<a href="${adventureBookSourceHref}">${ptSourceInner}</a>`;
@@ -228,6 +230,11 @@ class SearchPage {
 						{
 							onObserve: () => {
 								const page = UrlUtil.categoryToHoverPage(category);
+								if (!page) {
+									$dispImage.addClass(`mobile__hidden`);
+									return;
+								}
+
 								DataLoader.pCacheAndGet(
 									page,
 									source,
@@ -236,18 +243,49 @@ class SearchPage {
 									// region Render tokens, where available
 									let isImagePopulated = false;
 
-									switch (category) {
-										case Parser.CAT_ID_CREATURE:
-										case Parser.CAT_ID_VEHICLE:
-										case Parser.CAT_ID_OBJECT: {
-											const hasToken = ent.tokenUrl || ent.hasToken;
-											if (hasToken) {
-												const fnGetTokenUrl = category === Parser.CAT_ID_CREATURE ? Renderer.monster.getTokenUrl : category === Parser.CAT_ID_VEHICLE ? Renderer.vehicle.getTokenUrl : Renderer.object.getTokenUrl;
+									const displayTokenImage = (
+										{
+											fnHasToken,
+											fnGetTokenUrl,
+										},
+										ent,
+									) => {
+										if (!fnHasToken(ent)) return;
 
-												isImagePopulated = true;
-												const tokenUrl = fnGetTokenUrl(ent);
-												$dispImage.html(`<img src="${tokenUrl}" class="w-100 h-100" alt="Token Image: ${(ent.name || "").qq()}" loading="lazy">`);
-											}
+										isImagePopulated = true;
+										const tokenUrl = fnGetTokenUrl(ent);
+										$dispImage.html(`<img src="${tokenUrl}" class="w-100 h-100" alt="Token Image: ${(ent.name || "").qq()}" ${ent.tokenCredit ? `title="Credit: ${ent.tokenCredit.qq()}"` : ""} loading="lazy">`);
+									};
+
+									switch (category) {
+										case Parser.CAT_ID_CREATURE: {
+											displayTokenImage(
+												{
+													fnHasToken: Renderer.monster.hasToken,
+													fnGetTokenUrl: Renderer.monster.getTokenUrl,
+												},
+												ent,
+											);
+											break;
+										}
+										case Parser.CAT_ID_VEHICLE: {
+											displayTokenImage(
+												{
+													fnHasToken: Renderer.vehicle.hasToken,
+													fnGetTokenUrl: Renderer.vehicle.getTokenUrl,
+												},
+												ent,
+											);
+											break;
+										}
+										case Parser.CAT_ID_OBJECT: {
+											displayTokenImage(
+												{
+													fnHasToken: Renderer.object.hasToken,
+													fnGetTokenUrl: Renderer.object.getTokenUrl,
+												},
+												ent,
+											);
 											break;
 										}
 
@@ -265,6 +303,7 @@ class SearchPage {
 									if (isHoverable) {
 										// region Render preview
 										Renderer.hover.$getHoverContent_stats(page, ent)
+											.removeClass("w-100")
 											.addClass("pg-search__wrp-preview mobile__w-100 br-0")
 											.appendTo($dispPreview);
 										// endregion

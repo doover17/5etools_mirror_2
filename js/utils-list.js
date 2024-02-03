@@ -558,7 +558,7 @@ class SaveManager extends BaseComponent {
 
 		const $wrpRows = $(`<div class="ve-flex-col"></div>`);
 
-		const $dispNoSaves = $(`<div class="ve-flex-col"><i class="ve-muted text-center">No saves found.</i></div>`);
+		const $dispNoSaves = $(`<div class="ve-flex-col"><i class="ve-muted ve-text-center">No saves found.</i></div>`);
 
 		const $btnExpandCollapseAll = $(`<button class="btn btn-default btn-xs px-1 ve-flex-vh-center h-100 no-shrink"></button>`)
 			.click(() => {
@@ -709,7 +709,7 @@ class SaveManager extends BaseComponent {
 			cbOnUpload,
 		},
 	) {
-		const $wrp = $(`<div class="pt-2 ve-flex-col"></div>`);
+		const $wrp = $(`<div class="pt-2 ve-flex-col no-print"></div>`);
 
 		const renderableCollectionSummary = new SaveManager._RenderableCollectionSaves_Summary(
 			{
@@ -815,7 +815,7 @@ class SaveManager extends BaseComponent {
 	}
 }
 
-SaveManager._RenderableCollectionSaves_Load = class extends RenderableCollectionBase {
+SaveManager._RenderableCollectionSaves_Load = class extends RenderableCollectionGenericRows {
 	constructor (
 		{
 			comp,
@@ -826,19 +826,14 @@ SaveManager._RenderableCollectionSaves_Load = class extends RenderableCollection
 			isReadOnlyUi,
 		},
 	) {
-		super(comp, "saves", {namespace: "load"});
+		super(comp, "saves", $wrpRows, {namespace: "load"});
 		this._doClose = doClose;
-		this._$wrpRows = $wrpRows;
 		this._page = page;
 		this._isReadOnlyUi = isReadOnlyUi;
 	}
 
 	getNewRender (save, i) {
-		const comp = BaseComponent.fromObject(save.entity, "*");
-		comp._addHookAll("state", () => {
-			this._getCollectionItem(save.id).entity = comp.toObject("*");
-			this._comp._triggerCollectionUpdate("saves");
-		});
+		const comp = this._utils.getNewRenderComp(save, i);
 
 		const $wrpPreviewInner = $(`<div class="ve-flex-col py-3 ml-4 lst__wrp-preview-inner w-100"></div>`);
 
@@ -924,19 +919,6 @@ SaveManager._RenderableCollectionSaves_Load = class extends RenderableCollection
 			comp,
 			$wrpRow,
 		};
-	}
-
-	doUpdateExistingRender (renderedMeta, save, i) {
-		renderedMeta.comp._proxyAssignSimple("state", save.entity, true);
-		if (!renderedMeta.$wrpRow.parent().is(this._$wrpRows)) renderedMeta.$wrpRow.appendTo(this._$wrpRows);
-	}
-
-	doReorderExistingComponent (renderedMeta, save, i) {
-		const ix = this._comp._state.saves.map(it => it.id).indexOf(save.id);
-		const curIx = this._$wrpRows.find(`> *`).index(renderedMeta.$wrpRow);
-
-		const isMove = !this._$wrpRows.length || curIx !== ix;
-		if (isMove) renderedMeta.$wrpRow.detach().appendTo(this._$wrpRows);
 	}
 };
 
@@ -1043,23 +1025,21 @@ SaveManager._RenderableCollectionSaves_Summary = class extends RenderableCollect
 	}
 };
 
-class SublistPlugin extends BaseComponent {
-	async pLoadData ({exportedSublist, isMemoryOnly = false}) { throw new Error(`Unimplemented!`); }
-	async pMutSaveableData ({exportedSublist, isMemoryOnly = false}) { throw new Error(`Unimplemented!`); }
-
+class SublistPlugin {
 	initLate () { /* Implement as required */ }
-	async pHandleRemoveAll () { /* Implement as required */ }
-	async pDoInitNewState ({prevExportableSublist, evt}) { /* Implement as required */ }
-	getDownloadName () { /* Implement as required */ }
-	getDownloadFileType () { /* Implement as required */ }
+
+	async pLoadData ({exportedSublist, isMemoryOnly = false}) { throw new Error(`Unimplemented!`); }
 	async pMutLegacyData ({exportedSublist, isMemoryOnly = false}) { /* Implement as required */ }
 
-	doPulseSublistUpdate () { this._state.pulse_sublist = !this._state.pulse_sublist; }
-	addHookPulseSublist (hk) { this._addHookBase("pulse_sublist", hk); }
+	async pMutSaveableData ({exportedSublist, isMemoryOnly = false}) { throw new Error(`Unimplemented!`); }
 
-	_getDefaultState () {
-		return {
-			pulse_sublist: false,
-		};
-	}
+	async pHandleRemoveAll () { /* Implement as required */ }
+
+	async pDoInitNewState ({prevExportableSublist, evt}) { /* Implement as required */ }
+
+	getDownloadName () { /* Implement as required */ }
+	getDownloadFileType () { /* Implement as required */ }
+	getUploadFileTypes ({downloadFileTypeBase}) { /* Implement as required */ }
+
+	onSublistUpdate () { /* Implement as required */ }
 }

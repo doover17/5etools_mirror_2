@@ -6,7 +6,7 @@
 class CreatureBuilder extends Builder {
 	constructor () {
 		super({
-			titleSidebarLoadExisting: "Load Existing Creature",
+			titleSidebarLoadExisting: "Copy Existing Creature",
 			titleSidebarDownloadJson: "Download Creatures as JSON",
 			metaSidebarDownloadMarkdown: {
 				title: "Download Creatures as Markdown",
@@ -58,24 +58,13 @@ class CreatureBuilder extends Builder {
 	async pHandleSidebarLoadExistingData (creature, opts) {
 		opts = opts || [];
 
-		function pFetchToken (mon) {
-			return new Promise(resolve => {
-				const img = new Image();
-				const url = Renderer.monster.getTokenUrl(mon);
-				img.onload = resolve(url);
-				img.onerror = resolve(null);
-				img.src = url;
-			});
-		}
-
 		const cleanOrigin = window.location.origin.replace(/\/+$/, "");
 
-		// Get the token based on the original source
-		if (creature.tokenUrl || creature.hasToken) {
-			const rawTokenUrl = await pFetchToken(creature);
-			if (rawTokenUrl) {
-				creature.tokenUrl = /^[a-zA-Z\d]+:\/\//.test(rawTokenUrl) ? rawTokenUrl : `${cleanOrigin}/${rawTokenUrl}`;
-			}
+		if (creature.hasToken) {
+			creature.token = {
+				name: creature.name,
+				source: creature.source,
+			};
 		}
 
 		// Get the fluff based on the original source
@@ -90,7 +79,7 @@ class CreatureBuilder extends Builder {
 		if (creature.soundClip && creature.soundClip.type === "internal") {
 			creature.soundClip = {
 				type: "external",
-				url: `${cleanOrigin}/${Renderer.utils.getMediaUrl(creature, "soundClip", "audio")}`,
+				url: `${cleanOrigin}/${Renderer.utils.getEntryMediaUrl(creature, "soundClip", "audio")}`,
 			};
 		}
 
@@ -109,11 +98,15 @@ class CreatureBuilder extends Builder {
 		const meta = {...(opts.meta || {}), ...this._getInitialMetaState()};
 
 		if (ScaleCreature.isCrInScaleRange(creature) && !opts.isForce) {
-			const ixDefault = Parser.CRS.indexOf(creature.cr.cr || creature.cr);
-			const scaleTo = await InputUiUtil.pGetUserEnum({values: Parser.CRS, title: "At Challenge Rating...", default: ixDefault});
+			const crDefault = creature.cr.cr || creature.cr;
 
-			if (scaleTo != null && scaleTo !== ixDefault) {
-				const scaled = await ScaleCreature.scale(creature, Parser.crToNumber(Parser.CRS[scaleTo]));
+			const scaleTo = await InputUiUtil.pGetUserScaleCr({
+				title: "At Challenge Rating...",
+				default: crDefault,
+			});
+
+			if (scaleTo != null && scaleTo !== crDefault) {
+				const scaled = await ScaleCreature.scale(creature, Parser.crToNumber(scaleTo));
 				delete scaled._displayName;
 				this.setStateFromLoaded({s: scaled, m: meta});
 			} else this.setStateFromLoaded({s: creature, m: meta});
@@ -144,11 +137,17 @@ class CreatureBuilder extends Builder {
 	}
 
 	async _pHashChange_pHandleSubHashes (sub, toLoad) {
-		if (!sub.length) return toLoad;
+		if (!sub.length) return super._pHashChange_pHandleSubHashes(sub, toLoad);
 
 		const scaledHash = sub.find(it => it.startsWith(UrlUtil.HASH_START_CREATURE_SCALED));
 		const scaledSpellSummonHash = sub.find(it => it.startsWith(UrlUtil.HASH_START_CREATURE_SCALED_SPELL_SUMMON));
 		const scaledClassSummonHash = sub.find(it => it.startsWith(UrlUtil.HASH_START_CREATURE_SCALED_CLASS_SUMMON));
+
+		if (
+			!scaledHash
+			&& !scaledSpellSummonHash
+			&& !scaledClassSummonHash
+		) return super._pHashChange_pHandleSubHashes(sub, toLoad);
 
 		if (scaledHash) {
 			const scaleTo = Number(UrlUtil.unpackSubHash(scaledHash)[VeCt.HASH_SCALED][0]);
@@ -176,7 +175,10 @@ class CreatureBuilder extends Builder {
 			}
 		}
 
-		return toLoad;
+		return {
+			isAllowEditExisting: false,
+			toLoad,
+		};
 	}
 
 	async _pInit () {
@@ -188,6 +190,9 @@ class CreatureBuilder extends Builder {
 		]);
 
 		this._bestiaryFluffIndex = bestiaryFluffIndex;
+
+		MiscTag.init({items});
+		AttachedItemTag.init({items});
 
 		await this._pBuildLegendaryGroupCache();
 
@@ -411,7 +416,13 @@ class CreatureBuilder extends Builder {
 			DamageTypeTag.tryRun(this._state);
 			DamageTypeTag.tryRunSpells(this._state);
 			DamageTypeTag.tryRunRegionalsLairs(this._state);
+			CreatureSavingThrowTagger.tryRun(this._state);
+			CreatureSavingThrowTagger.tryRunSpells(this._state);
+			CreatureSavingThrowTagger.tryRunRegionalsLairs(this._state);
 			MiscTag.tryRun(this._state);
+			TagImmResVulnConditional.tryRun(this._state);
+			DragonAgeTag.tryRun(this._state);
+			AttachedItemTag.tryRun(this._state);
 
 			this.renderOutput();
 			this.doUiSave();
@@ -619,7 +630,7 @@ class CreatureBuilder extends Builder {
 
 		const setState = () => {
 			const types = chooseTypeRows
-				.map(rowMeta => rowMeta.$selType.val());
+				.map(rowMeta => rowMeta.cbGetType());
 
 			const isSwarm = $selMode.val() === "1";
 
@@ -679,15 +690,15 @@ class CreatureBuilder extends Builder {
 
 		const $btnAddChooseType = $(`<button class="btn btn-xs btn-default">Add Type</button>`)
 			.click(() => {
-				const $typeRow = this.__$getTypeInput__getChooseTypeRow(null, chooseTypeRows, setState);
-				$wrpChooseTypeRows.append($typeRow.$wrp);
+				const metaTypeRow = this.__$getTypeInput__getChooseTypeRow(null, chooseTypeRows, setState);
+				$wrpChooseTypeRows.append(metaTypeRow.$wrp);
 			});
 
-		const $initialChooseTypeRows = initial.type?.choose
+		const initialChooseTypeRowsMetas = initial.type?.choose
 			? initial.type.choose.map(type => this.__$getTypeInput__getChooseTypeRow(type, chooseTypeRows, setState))
 			: [this.__$getTypeInput__getChooseTypeRow(initial.type || initial, chooseTypeRows, setState)];
 
-		const $wrpChooseTypeRows = $$`<div>${$initialChooseTypeRows.map(it => it.$wrp)}</div>`;
+		const $wrpChooseTypeRows = $$`<div>${initialChooseTypeRowsMetas.map(it => it.$wrp)}</div>`;
 		const $stageType = $$`<div class="mt-2">
 		${$wrpChooseTypeRows}
 		<div>${$btnAddChooseType}</div>
@@ -738,11 +749,39 @@ class CreatureBuilder extends Builder {
 	}
 
 	__$getTypeInput__getChooseTypeRow (type, chooseTypeRows, setState) {
-		const $selType = $(`<select class="form-control input-xs">${Parser.MON_TYPES.map(tp => `<option value="${tp}">${tp.uppercaseFirst()}</option>`).join("")}</select>`)
+		const isInitialCustom = type && !Parser.MON_TYPES.includes(type);
+
+		const $selType = $(`<select class="form-control input-xs mr-2">${Parser.MON_TYPES.map(tp => `<option value="${tp}">${tp.uppercaseFirst()}</option>`).join("")}</select>`)
 			.change(() => {
 				setState();
+			});
+		if (!isInitialCustom) $selType.val(type || Parser.TP_HUMANOID);
+
+		const $iptTypeCustom = $(`<input class="form-control input-xs form-control--minimal mr-2" placeholder="Custom Type">`)
+			.on("change", () => {
+				setState();
+			});
+		if (isInitialCustom) $selType.val(type || "");
+
+		const $cbIsCustomType = $(`<input type="checkbox">`)
+			.on("change", () => {
+				renderIsCustom();
+				setState();
 			})
-			.val(type);
+			.prop("checked", isInitialCustom);
+
+		const renderIsCustom = () => {
+			const isChecked = $cbIsCustomType.prop("checked");
+			$iptTypeCustom.toggleVe(isChecked);
+			$selType.toggleVe(!isChecked);
+		};
+
+		renderIsCustom();
+
+		const cbGetType = () => {
+			if ($cbIsCustomType.prop("checked")) return $iptTypeCustom.val();
+			return $selType.val();
+		};
 
 		const $btnRemove = $(`<button class="btn btn-xs btn-danger" title="Remove Row"><span class="glyphicon glyphicon-trash"/></button>`)
 			.click(() => {
@@ -751,8 +790,16 @@ class CreatureBuilder extends Builder {
 				setState();
 			});
 
-		const $wrp = $$`<div class="ve-flex mb-2">${$selType}${$btnRemove}</div>`;
-		const out = {$wrp, $selType};
+		const $wrp = $$`<div class="ve-flex mb-2">
+			${$selType}
+			${$iptTypeCustom}
+			<label class="ve-flex-v-center mr-2">
+				<span class="mr-2">Custom</span>
+				${$cbIsCustomType}
+			</label>
+			${$btnRemove}
+		</div>`;
+		const out = {$wrp, cbGetType};
 		chooseTypeRows.push(out);
 		return out;
 	}
@@ -1475,7 +1522,7 @@ class CreatureBuilder extends Builder {
 				? this._state[prop].special
 				: this._state[prop];
 
-			const $iptAbil = $(`<input class="form-control form-control--minimal input-xs text-center">`)
+			const $iptAbil = $(`<input class="form-control form-control--minimal input-xs ve-text-center">`)
 				.val(valInitial)
 				.change(() => {
 					const val = $iptAbil.val().trim();
@@ -1508,7 +1555,7 @@ class CreatureBuilder extends Builder {
 		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Saving Throws", {isMarked: true, isRow: true});
 
 		const $getRow = (name, prop) => {
-			const $iptVal = $(`<input class="form-control form-control--minimal input-xs mb-2 text-center">`)
+			const $iptVal = $(`<input class="form-control form-control--minimal input-xs mb-2 ve-text-center">`)
 				.change(() => {
 					$btnProf.removeClass("active");
 					delete this._meta.profSave[prop];
@@ -1561,7 +1608,7 @@ class CreatureBuilder extends Builder {
 		const $getRow = (name, prop) => {
 			const abilProp = Parser.skillToAbilityAbv(prop);
 
-			const $iptVal = $(`<input class="form-control form-control--minimal input-xs mr-2 text-center">`)
+			const $iptVal = $(`<input class="form-control form-control--minimal input-xs mr-2 ve-text-center">`)
 				.change(() => {
 					if (this._meta.profSkill[prop]) {
 						$btnProf.removeClass("active");
@@ -1642,7 +1689,7 @@ class CreatureBuilder extends Builder {
 		const raw = $iptVal.val();
 		if (raw && raw.trim()) {
 			const num = UiUtil.strToInt(raw);
-			const nextState = {...this._state[mode]} || {};
+			const nextState = {...(this._state[mode] || {})};
 			nextState[prop] = num < 0 ? `${num}` : `+${num}`;
 			this._state[mode] = nextState;
 		} else {
@@ -2295,6 +2342,11 @@ class CreatureBuilder extends Builder {
 				mode: "frequency",
 			},
 			{
+				display: "\uD835\uDC65/month (/each) spells",
+				type: "monthly",
+				mode: "frequency",
+			},
+			{
 				display: "\uD835\uDC65/year (/each) spells",
 				type: "yearly",
 				mode: "frequency",
@@ -2381,6 +2433,7 @@ class CreatureBuilder extends Builder {
 			if (trait.daily) handleFrequency("daily");
 			if (trait.rest) handleFrequency("rest");
 			if (trait.weekly) handleFrequency("weekly");
+			if (trait.monthly) handleFrequency("monthly");
 			if (trait.yearly) handleFrequency("yearly");
 			if (trait.spells) {
 				Object.entries(trait.spells).forEach(([k, v]) => {
@@ -2481,6 +2534,7 @@ class CreatureBuilder extends Builder {
 							case "daily": return "/Day";
 							case "rest": return "/Rest";
 							case "weekly": return "/Week";
+							case "monthly": return "/Month";
 							case "yearly": return "/Year";
 						}
 					})();
@@ -3159,23 +3213,51 @@ class CreatureBuilder extends Builder {
 	}
 
 	__$getTokenInput (cb) {
-		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Token Image URL");
+		const [$row, $rowInner] = BuilderUi.getLabelledRowTuple("Token Image");
 
-		const $iptUrl = $(`<input class="form-control form-control--minimal input-xs mr-2">`)
-			.change(() => doUpdateState())
-			.val(this._state.tokenUrl || "");
+		const doUpdateState = () => {
+			delete this._state.token;
+			delete this._state.tokenUrl;
+			delete this._state.tokenHref;
 
-		const $btnPreview = $(`<button class="btn btn-xs btn-default mr-2" title="Preview Token"><span class="glyphicon glyphicon-fullscreen"/></button>`)
+			switch ($selMode.val()) {
+				case "0": {
+					this._state.token = {name: $iptExistingName.val().trim(), source: $iptExistingSource.val().trim()};
+					break;
+				}
+
+				case "1": {
+					this._state.tokenHref = {
+						type: "external",
+						url: $iptExternalUrl.val(),
+					};
+					break;
+				}
+
+				case "2": {
+					this._state.tokenHref = {
+						type: "internal",
+						path: $iptInternalPath.val(),
+					};
+					break;
+				}
+
+				default: throw new Error("Unimplemented!");
+			}
+
+			cb();
+		};
+
+		const $btnPreview = $(`<button class="btn btn-xs btn-default" title="Preview Token"><span class="glyphicon glyphicon-fullscreen"></span></button>`)
 			.click((evt) => {
-				const val = $iptUrl.val().trim();
-				if (!val) return JqueryUtil.doToast({content: "Please enter an image URL", type: "warning"});
+				if (!Renderer.monster.hasToken(this._state)) return JqueryUtil.doToast({content: "Please set a token first!", type: "warning"});
 
 				const $content = Renderer.hover.$getHoverContent_generic(
 					{
 						type: "image",
 						href: {
 							type: "external",
-							url: val,
+							url: Renderer.monster.getTokenUrl(this._state),
 						},
 					},
 					{isBookContent: true},
@@ -3191,15 +3273,81 @@ class CreatureBuilder extends Builder {
 				);
 			});
 
-		const doUpdateState = () => {
-			const val = $iptUrl.val().trim();
-			if (val) this._state.tokenUrl = val;
-			else delete this._state.tokenUrl;
+		const initialMode = this._state.token ? "0" : this._state.tokenHref?.type === "internal" ? "2" : "1";
 
-			cb();
-		};
+		const $selMode = $(`<select class="form-control input-xs mr-2">
+			<option value="0">Existing Creature</option>
+			<option value="1">External URL</option>
+			<option value="2">Internal URL</option>
+		</select>`)
+			.val(initialMode)
+			.change(() => {
+				switch ($selMode.val()) {
+					case "0": {
+						$stgExistingCreature.showVe(); $stgExternalUrl.hideVe(); $stgInternalUrl.hideVe();
+						doUpdateState();
+						break;
+					}
+					case "1": {
+						$stgExistingCreature.hideVe(); $stgExternalUrl.showVe(); $stgInternalUrl.hideVe();
+						doUpdateState();
+						break;
+					}
+					case "2": {
+						$stgExistingCreature.hideVe(); $stgExternalUrl.hideVe(); $stgInternalUrl.showVe();
+						doUpdateState();
+						break;
+					}
+				}
+			});
 
-		$$`<div class="ve-flex">${$iptUrl}${$btnPreview}</div>`.appendTo($rowInner);
+		// region Existing creature
+		const $iptExistingName = $(`<input class="form-control input-xs form-control--minimal">`)
+			.val(this._state.token?.name || "")
+			.on("change", () => doUpdateState());
+		const $iptExistingSource = $(`<input class="form-control input-xs form-control--minimal">`)
+			.val(this._state.token?.source || "")
+			.on("change", () => doUpdateState());
+
+		const $stgExistingCreature = $$`<div class="ve-flex-col mb-2">
+			<div class="ve-flex-v-center mb-2"><span class="mr-2 mkbru__sub-name--25">Name</span>${$iptExistingName}</div>
+			<div class="ve-flex-v-center"><span class="mr-2 mkbru__sub-name--25">Source</span>${$iptExistingSource}</div>
+		</div>`
+			.toggleVe(initialMode === "0");
+		// endregion
+
+		// region External URL
+		const $iptExternalUrl = $(`<input class="form-control form-control--minimal input-xs code">`)
+			.change(() => doUpdateState())
+			.val(
+				this._state.tokenHref?.url
+				|| this._state.tokenUrl // TODO(Future) legacy; remove
+				|| "",
+			);
+
+		const $stgExternalUrl = $$`<div class="ve-flex-col mb-2">
+			<div class="ve-flex-v-center"><span class="mr-2 mkbru__sub-name--25">URL</span>${$iptExternalUrl}</div>
+		</div>`
+			.toggleVe(initialMode === "1");
+		// endregion
+
+		// region Internal URL
+		const $iptInternalPath = $(`<input class="form-control form-control--minimal input-xs code">`)
+			.change(() => doUpdateState())
+			.val(this._state.tokenHref?.path || "");
+
+		const $stgInternalUrl = $$`<div class="ve-flex-col mb-2">
+			<div class="ve-flex-v-center"><span class="mr-2 mkbru__sub-name--25">Path</span>${$iptInternalPath}</div>
+		</div>`
+			.toggleVe(initialMode === "2");
+		// endregion
+
+		$$`<div class="ve-flex-col">
+			<div class="ve-flex mb-2">${$selMode}${$btnPreview}</div>
+			${$stgExistingCreature}
+			${$stgExternalUrl}
+			${$stgInternalUrl}
+		</div>`.appendTo($rowInner);
 
 		return $row;
 	}

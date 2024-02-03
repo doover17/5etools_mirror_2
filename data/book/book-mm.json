@@ -783,7 +783,7 @@
 									"name": "Innate Spellcasting",
 									"page": 10,
 									"entries": [
-										"A monster with the innate ability to cast spells has the Innate Spellcasting special trait. Unless noted otherwise, an innate spell of 1st level or higher is always cast at its lowest possible level and can't be cast at a higher level. If a monster has a cantrip where its level matters and no level is given, use the monster's challenge rating.",
+										"A monster with the innate ability to cast spells has the Innate Spellcasting special trait. Unless noted otherwise. an innate spell of 1st level or higher is always cast at its lowest possible level and can't be cast at a higher level. If a monster has a cantrip where its level matters and no level is given, use the monster's challenge rating.",
 										"An innate spell can have special rules or restrictions. For example, a drow mage can innately cast the {@spell levitate} spell, but the spell has a \"self only\" restriction, which means that the spell affects only the drow mage.",
 										"A monster's innate spells can't be swapped out with other spells. If a monster's innate spells don't require attack rolls, no attack bonus is given for them."
 									],
@@ -794,10 +794,10 @@
 									"name": "Spellcasting",
 									"page": 10,
 									"entries": [
-										"A monster with the Spellcasting class feature has a spellcaster level and spell slots, which it uses to cast its spells of 1st level and higher (as explained in the {@i Player's Handbook}). The spellcaster level is also used for any cantrips included in the feature.",
-										"The monster has a list of spells known or prepared from a particular class. The list might also include spells from a feature in that class, such as the Divine Domain feature of the cleric or the Druid Circle feature of the druid. The monster is considered a member of that class when attuning to or using a magic item that requires membership in the class or access to its spell list.",
-										"A monster can cast a spell from its list at a higher level if it has the spell slot to do so. For example, a drow mage with the 3rd-level {@spell lightning bolt} spell can cast it as a 5th-level spell by using one of its 5th-level spell slots.",
-										"You can change the spells that a monster knows or has prepared, replacing any spell on a monster's spell list with a different spell of the same level and from the same class list. If you do so, you might cause the monster to be a greater or lesser threat than suggested by its challenge rating."
+										"A monster with the Spellcasting special trait has a spellcaster level and spell slots, which it uses to cast its spells of 1st level and higher (as explained in the {@i Player's Handbook}). The spellcaster level is also used for any cantrips included in the feature.",
+										"The monster has a list of spells known or prepared from a specific class. The list might also include spells from a feature in that class, such as the Divine Domain feature of the cleric or the Druid Circle feature of the druid. The monster is considered a member of that class when attuning to or using a magic item that requires membership in the class or access to its spell list.",
+										"A monster can cast a spell from its list at a higher level if it has the spell slot to do so. For example, a drow mage with the 3rd level {@spell lightning bolt} spell can cast it as a 5th-level spell by using one of its 5th-level spell slots.",
+										"You can change the spells that a monster knows or has prepared, replacing any spell on its spell list with a spell of the same level and from the same class list. If you do so. you might cause the monster to be a greater or lesser threat than suggested by its challenge rating."
 									],
 									"id": "028"
 								},
@@ -1658,6 +1658,15 @@
 			"name": "Appendix A: Miscellaneous Creatures",
 			"page": 317,
 			"entries": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/MM/01-062.unicorn-lair.webp"
+					},
+					"width": 1700,
+					"height": 971
+				},
 				"This appendix contains statistics for various animals, vermin, and other critters. The stat blocks are organized alphabetically by creature name.",
 				{
 					"type": "inset",
@@ -1870,6 +1879,131 @@
 				}
 			],
 			"id": "040"
+		},
+		{
+			"type": "section",
+			"name": "Credits",
+			"entries": [
+				{
+					"type": "list",
+					"style": "list-hang-notitle",
+					"columns": 2,
+					"items": [
+						{
+							"type": "item",
+							"name": "Lead Designer:",
+							"entry": "Christopher Perkins"
+						},
+						{
+							"type": "item",
+							"name": "Lead Rules Developer:",
+							"entry": "Jeremy Crawford"
+						},
+						{
+							"type": "item",
+							"name": "Stat Block Development:",
+							"entry": "Chris Sims, Rodney Thompson, Peter Lee"
+						},
+						{
+							"type": "item",
+							"name": "Story Development:",
+							"entry": "Mike Mearls, Robert J. Schwalb, Matt Sernett, Steve Townshend, James Wyatt"
+						},
+						{
+							"type": "item",
+							"name": "Editing:",
+							"entry": "Scott Fitzgerald Gray"
+						},
+						{
+							"type": "item",
+							"name": "Managing Editor:",
+							"entry": "Jeremy Crawford"
+						},
+						{
+							"type": "item",
+							"name": "Producer:",
+							"entry": "Greg Bilsland"
+						},
+						{
+							"type": "item",
+							"name": "Art Director:",
+							"entry": "Kate Irwin"
+						},
+						{
+							"type": "item",
+							"name": "Additional Art Direction:",
+							"entry": "Dan Gelon, Jon Schindehette, Mari Kolkowsky, Melissa Rapier, Shauna Narciso"
+						},
+						{
+							"type": "item",
+							"name": "Graphic Designers:",
+							"entry": "Bree Heiss, Emi Tanji, Barry Craig"
+						},
+						{
+							"type": "item",
+							"name": "Cover Illustrator:",
+							"entry": "Raymond Swanland"
+						},
+						{
+							"type": "item",
+							"name": "Interior Illustrators:",
+							"entry": "Tom Babbey, Daren Bader, John-Paul Balmet, Mark Behm, Eric Belisle, Michael Berube, Zoltan Boros, Christopher Bradley, Aleksi Briclot, Filip Burburan, Christopher Burdett, Sam Burley, Mike Burns, Wesley Burt, Milivoj ´Ceran, Jedd Chevrier, Conceptopolis, Adam Danger Cook, Julie Dillon, Dave Dorman, Jesper Ejsing, Emrah Elmasli, Wayne England, Mike Faille, Toma Feizo Gas, Emily Fiegenschuh, Tomas Giorello, E.M. Gist, Lars Grant-West, E.W. Hekaton, jD, Jon Hodgson, Ralph Horsley, Kurt Huggins and Zelda Devon, Lake Hurwitz, Tyler Jacobson, Vance Kovacs, Daniel Landerman, Lindsey Look, Daniel Ljunggren, Raphael Lübke, Titus Lunter, Slawomir Maniak, Andrew Mar, Brynn Metheney, Christopher Moeller, Mark Molnar, Marco Nelor, Jim Nelson, Mark A. Nelson, Hector Ortiz, Ryan Pancoast, Adam Paquette, Jim Pavelec, Kate Pfeilschiefter, Steve Prescott, Vincent Proce, Darrell Riche, Ned Rogers, Scott Roller, Jasper Sandner, Mike Sass, Marc Sasso, Ilya Shkipin, Carmen Sinek, Craig J Spearing, Annie Stegg, Zack Stella, Matt Stewart, Raymond Swanland, Justin Sweet, Anne Stokes, Matias Tapia, Cory Trego-Erdner, Autumn Rain Turkel, Cyril Van Der Haegen, David Vargo, Franz Vohwinkel, Richard Whitters, Sam Wood, Ben Wootten, Kieran Yanner, Min Yum, Mark Zug"
+						},
+						{
+							"type": "item",
+							"name": "Additional Contributors:",
+							"entry": "Neil Shinkle, Kim Graham, John Hay"
+						},
+						{
+							"type": "item",
+							"name": "Project Management:",
+							"entry": "Neil Shinkle, Kim Graham, John Hay"
+						},
+						{
+							"type": "item",
+							"name": "Production Services:",
+							"entry": "Cynda Callaway, Brian Dumas, Jefferson Dunlap, David Gershman, Matt Knannlein, Anita Williams"
+						},
+						{
+							"type": "item",
+							"name": "Brand and Marketing:",
+							"entry": "Nathan Stewart, Liz Schuh, Chris Lindsay, Shelly Mazzanoble, Hilary Ross, Laura Tommervik, Kim Lundstrom, Trevor Kidd"
+						},
+						{
+							"type": "item",
+							"name": "Based on the original game created by:",
+							"entry": "E. Gary Gygax and Dave Arneson, with Brian Blume, Rob Kuntz, James Ward, and Don Kaye"
+						},
+						{
+							"type": "item",
+							"name": "Drawing from further development by:",
+							"entry": "J. Eric Holmes, Tom Moldvay, Frank Mentzer, Aaron Allston, Harold Johnson, David \"Zeb\" Cook, Ed Greenwood, Keith Baker, Tracy Hickman, Margaret Weis, Douglas Niles, Jeff Grubb, Jonathan Tweet, Monte Cook, Skip Williams, Richard Baker, Peter Adkison, Bill Slavicsek, Andy Collins, and Rob Heinsoo"
+						},
+						{
+							"type": "item",
+							"name": "Playtesting provided by:",
+							"entry": "over 175,000 fans of D&D. Thank you!"
+						},
+						{
+							"type": "item",
+							"name": "Additional feedback provided by:",
+							"entry": "Robert Alaniz, Anthony Caroselli, Josh Dillard, Curt Duval, Sam E. Simpson Jr., Adam Hennebeck, Sterling Hershey, Paul Hughes, Doug Irwin, Ken J. Breese, Yan Lacharité, Tom Lommel, Jonathan Longstaff, Rory Madden, Matt Maranda, Paul Melamed, Mike Mihalas, David Milman, Daren Mitchell, Claudio Pozas, John Proudfoot, Karl Resch, M. Sean Molley, Sam Sherry, Pieter Sleijpen, David \"Oak\" Stark, Vincent Venturella, Fredrick Wheeler, Arthur Wright"
+						}
+					]
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/MM/mmcover.webp"
+					},
+					"title": "On the Cover: Raymond Swanland illustrates the Xanathar ambushing explorers in the darkest depths of Undermountain, proving that the beholder crime lord's interests run deep beneath the city of Waterdeep.",
+					"maxWidth": 600,
+					"width": 1500,
+					"height": 972
+				}
+			],
+			"id": "066"
 		}
 	]
 }

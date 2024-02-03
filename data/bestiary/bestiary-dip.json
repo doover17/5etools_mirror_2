@@ -140,6 +140,10 @@
 			"miscTags": [
 				"MW"
 			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -226,6 +230,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"dagger|phb",
+				"sling|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -238,6 +246,7 @@
 				"P"
 			],
 			"miscTags": [
+				"MLW",
 				"MW",
 				"RNG",
 				"RW",
@@ -335,6 +344,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"longbow|phb",
+				"longsword|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -346,6 +359,7 @@
 				"S"
 			],
 			"miscTags": [
+				"MLW",
 				"MW",
 				"RNG",
 				"RW"
@@ -458,6 +472,9 @@
 			"miscTags": [
 				"MW",
 				"RCH"
+			],
+			"savingThrowForced": [
+				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,

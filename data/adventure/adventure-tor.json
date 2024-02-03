@@ -67,10 +67,11 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/EGW/106-05-02.png"
+										"path": "book/EGW/106-05-02.webp"
 									},
 									"width": 1496,
-									"height": 1000
+									"height": 1000,
+									"credit": "Caio E Santos"
 								},
 								"Once the characters have introduced themselves, read:",
 								{
@@ -276,7 +277,7 @@
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "book/EGW/107-5.1-palma-flora.png"
+														"path": "book/EGW/107-5.1-palma-flora.webp"
 													},
 													"title": "Map 5.1: Palma Flora",
 													"width": 2550,
@@ -505,13 +506,14 @@
 														"type": "internal",
 														"path": "book/EGW/thumbnail/107-5.1-palma-flora.webp"
 													},
-													"id": "000"
+													"id": "000",
+													"credit": "Deven Rue"
 												},
 												{
 													"type": "image",
 													"href": {
 														"type": "internal",
-														"path": "book/EGW/107-5.1-palma-flora-player.png"
+														"path": "book/EGW/107-5.1-palma-flora-player.webp"
 													},
 													"title": "Player Version",
 													"width": 2550,
@@ -526,7 +528,8 @@
 													},
 													"mapParent": {
 														"id": "000"
-													}
+													},
+													"credit": "Deven Rue"
 												}
 											]
 										}
@@ -633,7 +636,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/EGW/108-5.2-wavechaser.png"
+										"path": "book/EGW/108-5.2-wavechaser.webp"
 									},
 									"title": "Map 5.2: Wavechaser",
 									"width": 2550,
@@ -644,7 +647,8 @@
 										"size": 87,
 										"offsetX": -6,
 										"offsetY": 9
-									}
+									},
+									"credit": "Deven Rue"
 								},
 								"Map 5.2 represents {@i Wavechaser} and can be used to represent other ships as well.",
 								"{@i Wavechaser} is a type of vessel known as a caravel, which is equipped for navigating coastal waters. The ship can carry twenty passengers comfortably. Though it's a sturdy vessel, it's not built for the open ocean. The Revelry-controlled island of Darktow is the farthest this ship could feasibly travel.",
@@ -1110,7 +1114,7 @@
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/EGW/109-5.3-ruined-palma-flora.png"
+										"path": "book/EGW/109-5.3-ruined-palma-flora.webp"
 									},
 									"title": "Map 5.3: Ruined Palma Flora",
 									"width": 2550,
@@ -1339,13 +1343,14 @@
 										"type": "internal",
 										"path": "book/EGW/thumbnail/109-5.3-ruined-palma-flora.webp"
 									},
-									"id": "001"
+									"id": "001",
+									"credit": "Deven Rue"
 								},
 								{
 									"type": "image",
 									"href": {
 										"type": "internal",
-										"path": "book/EGW/109-5.3-ruined-palma-flora-player.png"
+										"path": "book/EGW/109-5.3-ruined-palma-flora-player.webp"
 									},
 									"title": "Player Version",
 									"width": 2550,
@@ -1360,7 +1365,8 @@
 									},
 									"mapParent": {
 										"id": "001"
-									}
+									},
+									"credit": "Deven Rue"
 								}
 							]
 						},

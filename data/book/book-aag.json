@@ -15,7 +15,8 @@
 					},
 					"title": "A Cottage on a Kindori",
 					"width": 1700,
-					"height": 1100
+					"height": 1100,
+					"credit": "Jessica Nguyen"
 				},
 				{
 					"type": "section",
@@ -56,7 +57,8 @@
 							},
 							"title": "Wildspace is like an ocean\u2014a really, really big one",
 							"width": 1700,
-							"height": 1135
+							"height": 1135,
+							"credit": "Justin Girard"
 						},
 						"{@adventure Light of Xaryxis|LoX}, the adventure included in this product, begins on a world of your choice but quickly moves into Wildspace after the characters board a ship that turns out to be a spelljamming vessel. The First Adventure table offers alternative ways to launch a D&D campaign set mostly on the Astral Plane.",
 						"If you choose to start your campaign on the Rock of Bral ({@book see chapter 3|AAG|3}), work with your players to determine which characters have lived in the city long enough to know it well.",
@@ -133,7 +135,8 @@
 					},
 					"title": "Spacefaring adventurers leave their damselfly ship behind and explore a new world in pursuit of their latest quest",
 					"width": 1700,
-					"height": 2125
+					"height": 2125,
+					"credit": "Kieran Yanner"
 				},
 				{
 					"type": "section",
@@ -179,7 +182,8 @@
 										"path": "book/AAG/005-01-004.create-race-splash.webp"
 									},
 									"width": 1700,
-									"height": 1135
+									"height": 1135,
+									"credit": "David Auden Nash"
 								},
 								"When you create your D&D character, you decide whether your character is a member of the human race or one of the game's fantastical races, which include the races presented in this chapter. If you create a character using a race option presented here, follow these additional rules during character creation.",
 								{
@@ -250,7 +254,8 @@
 					},
 					"title": "A hammerhead ship collides with a tyrant ship in the Astral Sea",
 					"width": 1700,
-					"height": 2200
+					"height": 2200,
+					"credit": "Campbell White"
 				},
 				{
 					"type": "section",
@@ -302,7 +307,8 @@
 									},
 									"title": "Diagram 2.1: Air Envelope and Gravity Plane",
 									"width": 1700,
-									"height": 1100
+									"height": 1100,
+									"credit": "CoupleOfKooks"
 								},
 								{
 									"type": "entries",
@@ -450,7 +456,8 @@
 							},
 							"title": "Diagram 2.2: The Astral Plane",
 							"width": 1700,
-							"height": 1100
+							"height": 1100,
+							"credit": "CoupleOfKooks"
 						},
 						"Wildspace is where the Astral Plane overlaps with the Material Plane. Creatures and objects in Wildspace age normally and exist on both planes simultaneously. This overlap enables creatures to use spells such as {@spell teleport} and {@spell teleportation circle} to travel from Wildspace to a nearby world, or vice versa.",
 						"Diagram 2.2 illustrates how the Astral Sea surrounds all the Wildspace systems, as well as the astral dominions of gods and the floating remains of dead gods (see the \"Astral Dominions and Dead Gods\" sidebar). Many Wildspace systems have names; for example, Realmspace is a Wildspace system that contains, among other things, the planet Toril\u2014home of the Forgotten Realms setting.",
@@ -693,7 +700,8 @@
 							},
 							"title": "While using an astral projection spell to traverse the Astral Sea, Mordenkainen the wizard happens upon a spelljamming ship",
 							"width": 1700,
-							"height": 1135
+							"height": 1135,
+							"credit": "Billy Christian"
 						},
 						{
 							"type": "list",
@@ -754,7 +762,8 @@
 					},
 					"title": "There's only one rule on the Rock of Bral: leave your vendettas at the docks",
 					"width": 1700,
-					"height": 2200
+					"height": 2200,
+					"credit": "Robin Olausson"
 				},
 				{
 					"type": "section",
@@ -1002,7 +1011,8 @@
 									},
 									"title": "Elmandar's Star Charts is run by a retired elf adventurer who once served as the spelljammer aboard a space galleon called the Eclipse (shown here as a model)",
 									"width": 1700,
-									"height": 1099
+									"height": 1099,
+									"credit": "Kent Davis"
 								},
 								{
 									"type": "entries",
@@ -1148,7 +1158,8 @@
 											},
 											"title": "Large Luigi, the proprietor of the Happy Beholder, is delighted to meet new patrons",
 											"width": 1700,
-											"height": 1135
+											"height": 1135,
+											"credit": "Ralph Horsley"
 										}
 									]
 								},
@@ -1572,10 +1583,13 @@
 							"width": 4096,
 							"height": 2887,
 							"grid": {
-								"type": "none"
+								"type": "none",
+								"size": 58,
+								"distance": 100
 							},
 							"imageType": "map",
-							"id": "00b"
+							"id": "00b",
+							"credit": "Marco Bernardini"
 						},
 						{
 							"type": "image",
@@ -1587,12 +1601,15 @@
 							"width": 4096,
 							"height": 2887,
 							"grid": {
-								"type": "none"
+								"type": "none",
+								"size": 58,
+								"distance": 100
 							},
 							"imageType": "mapPlayer",
 							"mapParent": {
 								"id": "00b"
-							}
+							},
+							"credit": "Marco Bernardini"
 						}
 					]
 				},
@@ -1609,10 +1626,13 @@
 							"width": 4096,
 							"height": 2887,
 							"grid": {
-								"type": "none"
+								"type": "none",
+								"size": 58,
+								"distance": 100
 							},
 							"imageType": "map",
-							"id": "013"
+							"id": "013",
+							"credit": "Marco Bernardini"
 						},
 						{
 							"type": "image",
@@ -1624,17 +1644,370 @@
 							"width": 4096,
 							"height": 2887,
 							"grid": {
-								"type": "none"
+								"type": "none",
+								"size": 58,
+								"distance": 100
 							},
 							"imageType": "mapPlayer",
 							"mapParent": {
 								"id": "013"
-							}
+							},
+							"credit": "Marco Bernardini"
 						}
 					]
 				}
 			],
 			"id": "006"
+		},
+		{
+			"type": "section",
+			"name": "Credits",
+			"entries": [
+				{
+					"type": "entries",
+					"entries": [
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"columns": 2,
+							"items": [
+								{
+									"type": "list",
+									"style": "list-hang-notitle",
+									"items": [
+										{
+											"type": "item",
+											"name": "Project Lead",
+											"entries": [
+												"Christopher Perkins"
+											]
+										},
+										{
+											"type": "item",
+											"name": "Writers",
+											"entries": [
+												"Christopher Perkins, Jeremy Crawford, Ari Levitch"
+											]
+										},
+										{
+											"type": "item",
+											"name": "Art Directors",
+											"entries": [
+												"Kate Irwin, Richard Whitters"
+											]
+										},
+										{
+											"type": "item",
+											"name": "Rules Developers",
+											"entries": [
+												"Jeremy Crawford, Dan Dillon"
+											]
+										},
+										{
+											"type": "item",
+											"name": "Editors",
+											"entries": [
+												"Judy Bauer, Kim Mohan"
+											]
+										},
+										{
+											"type": "item",
+											"name": "Senior Graphic Designer",
+											"entries": [
+												"Trish Yochum"
+											]
+										},
+										{
+											"type": "item",
+											"name": "Graphic Designers",
+											"entries": [
+												"Matt Cole, Trystan Falcone"
+											]
+										},
+										{
+											"type": "item",
+											"name": "Cover Illustrators",
+											"entries": [
+												"Bruce Brenneise, Hydro74"
+											]
+										},
+										{
+											"type": "item",
+											"name": "Interior Illustrators",
+											"entries": [
+												"Alfven Ato, Olivier Bernard, Bruce Brenneise, David René Christensen, Billy Christian, Kent Davis, Nikki Dawes, Olga Drebas, Justin Gerard, Suzanne Helmigh, Ralph Horsley, Katerina Ladon, Olly Lawson, Robson Michel, Scott Murphy, David Auden Nash, Irina Nordsol, Jessica Nguyen, Robin Olausson, Claudio Pozas, Ned Rogers, Campbell White, Zuzanna Wuzyk, Kieran Yanner"
+											]
+										},
+										{
+											"type": "item",
+											"name": "Interior Cartographers",
+											"entries": [
+												"CoupleofKooks, Dyson Logos"
+											]
+										},
+										{
+											"type": "item",
+											"name": "Rock of Bral Poster Map Cartographer",
+											"entries": [
+												"Marco Bernardini"
+											]
+										},
+										{
+											"type": "item",
+											"name": "Concept Illustrators",
+											"entries": [
+												"Titus Lunter, Shawn Wood"
+											]
+										},
+										{
+											"type": "item",
+											"name": "Project Engineer",
+											"entries": [
+												"Cynda Callaway"
+											]
+										},
+										{
+											"type": "item",
+											"name": "Imaging Technicians",
+											"entries": [
+												"Daniel Corona, Kevin Yee"
+											]
+										},
+										{
+											"type": "item",
+											"name": "Prepress Specialist",
+											"entries": [
+												"Jefferson Dunlap"
+											]
+										}
+									]
+								},
+								{
+									"type": "entries",
+									"name": "D&D Studio",
+									"entries": [
+										{
+											"type": "list",
+											"style": "list-hang-notitle",
+											"items": [
+												{
+													"type": "item",
+													"name": "Executive Producer",
+													"entries": [
+														"Ray Winninger"
+													]
+												},
+												{
+													"type": "item",
+													"name": "Director of Studio Operations",
+													"entries": [
+														"Kyle Brink"
+													]
+												},
+												{
+													"type": "item",
+													"name": "Game Architects",
+													"entries": [
+														"Jeremy Crawford, Christopher Perkins"
+													]
+												},
+												{
+													"type": "item",
+													"name": "Design Manager",
+													"entries": [
+														"Steve Scott"
+													]
+												},
+												{
+													"type": "item",
+													"name": "Design Department",
+													"entries": [
+														"Sydney Adams, Judy Bauer, Makenzie De Armas, Dan Dillon, Amanda Hamon, Ben Petrisor, Taymoor Rehman, F. Wesley Schneider, James Wyatt"
+													]
+												},
+												{
+													"type": "item",
+													"name": "Art Department",
+													"entries": [
+														"Matt Cole, Trystan Falcone, Bree Heiss, Kate Irwin, Bob Jordan, Emi Tanji, Trish Yochum"
+													]
+												},
+												{
+													"type": "item",
+													"name": "Senior Producers",
+													"entries": [
+														"Lisa Ohanian, Dan Tovar"
+													]
+												},
+												{
+													"type": "item",
+													"name": "Producers",
+													"entries": [
+														"Bill Benham, Robert Hawkey, Lea Heleotis"
+													]
+												},
+												{
+													"type": "item",
+													"name": "Director of Product Management",
+													"entries": [
+														"Liz Schuh"
+													]
+												},
+												{
+													"type": "item",
+													"name": "Product Managers",
+													"entries": [
+														"Natalie Egan, Chris Lindsay, Hilary Ross, Chris Tulach"
+													]
+												},
+												{
+													"type": "item",
+													"name": "Consultants",
+													"entries": [
+														"Basheer Ghouse, James Mendez Hodes, Sara Thompson"
+													]
+												}
+											]
+										}
+									],
+									"id": "016"
+								},
+								{
+									"type": "entries",
+									"name": "Marketing",
+									"entries": [
+										{
+											"type": "list",
+											"style": "list-hang-notitle",
+											"items": [
+												{
+													"type": "item",
+													"name": "Director of Global Brand Marketing",
+													"entries": [
+														"Brian Perry"
+													]
+												},
+												{
+													"type": "item",
+													"name": "Senior Global Brand Manager",
+													"entries": [
+														"Shelly Mazzanoble"
+													]
+												},
+												{
+													"type": "item",
+													"name": "Associate Global Brand Manager",
+													"entries": [
+														"Sara Chan"
+													]
+												},
+												{
+													"type": "item",
+													"name": "Senior Marketing Communications Manager",
+													"entries": [
+														"Greg Tito"
+													]
+												},
+												{
+													"type": "item",
+													"name": "Community Manager",
+													"entries": [
+														"Brandy Camel"
+													]
+												},
+												{
+													"type": "item",
+													"name": "Social Media Marketing Managers",
+													"entries": [
+														"Nicole Olson, Joshua Morris"
+													]
+												}
+											]
+										}
+									],
+									"id": "017"
+								},
+								{
+									"type": "entries",
+									"name": "D&D Beyond",
+									"entries": [
+										{
+											"type": "list",
+											"style": "list-hang-notitle",
+											"items": [
+												{
+													"type": "item",
+													"name": "Senior Producer",
+													"entries": [
+														"Faith Elisabeth Lilley"
+													]
+												},
+												{
+													"type": "item",
+													"name": "Digital Design Team",
+													"entries": [
+														"Jay Jani, Adam Walton, Joseph Keen"
+													]
+												}
+											]
+										}
+									],
+									"id": "018"
+								}
+							]
+						}
+					],
+					"id": "015"
+				},
+				{
+					"type": "inset",
+					"name": "The following products provided information and inspiration:",
+					"entries": [
+						"Baker III, L. Richard. Rock of Bral. 1992.",
+						"Crawford, Jeremy. {@book Monsters of the Multiverse|MPMM}. 2022.",
+						"Greenwood, Ed. Lost Ships. 1990.",
+						"Grubb, Jeff. Spelljammer: The Concordance of Arcane Space. 1989.",
+						"Schick, Lawrence and David Cook. Star Frontiers: Alpha Dawn. 1982."
+					],
+					"id": "019"
+				},
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "book/AAG/credits.webp"
+					},
+					"maxWidth": 500,
+					"width": 850,
+					"height": 967
+				},
+				{
+					"type": "gallery",
+					"images": [
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/AAG/credits2.webp"
+							},
+							"title": "On the Cover: Illustrator Bruce Brenneise depicts a nautiloid traveling through Wildspace, undoubtedly transporting mind flayers to an unsuspecting world.",
+							"width": 1200,
+							"height": 780
+						},
+						{
+							"type": "image",
+							"href": {
+								"type": "internal",
+								"path": "book/AAG/credits3.webp"
+							},
+							"title": "On the Alt-Cover: The distinguished visage of a giff graces Hydro74's cover, which has crossed flintlock pistols\u2014weapons no giff adventurer should be without\u2014on the back.",
+							"width": 1200,
+							"height": 799
+						}
+					]
+				}
+			],
+			"id": "014"
 		}
 	]
 }

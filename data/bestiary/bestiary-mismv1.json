@@ -157,6 +157,11 @@
 				"blinded",
 				"prone"
 			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -310,6 +315,14 @@
 			"conditionInflictSpell": [
 				"restrained"
 			],
+			"savingThrowForced": [
+				"strength",
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"strength"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -458,6 +471,10 @@
 				"AOE",
 				"MW"
 			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -572,6 +589,11 @@
 				"MW",
 				"RCH"
 			],
+			"savingThrowForced": [
+				"dexterity",
+				"strength"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -721,6 +743,10 @@
 			"conditionInflict": [
 				"incapacitated"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
@@ -881,6 +907,13 @@
 			"conditionInflictSpell": [
 				"restrained"
 			],
+			"savingThrowForced": [
+				"strength"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity"
+			],
+			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
 		}
