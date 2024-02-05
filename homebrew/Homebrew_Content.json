@@ -1873,7 +1873,8 @@
 			"weaponCategory": "martial",
 			"property": [
 				"H",
-				"2H"
+				"2H",
+				"Infernal"
 			],
 			"dmg1": "2d6",
 			"dmgType": "S",
@@ -1883,6 +1884,55 @@
 				"For one minute after being hit by this sword, the next time the target casts a spell, it must succeed on a concentration check (against original hit damage) or the spell fails."
 			],
 			"tier": "major"
+		},
+		{"name": "Repulsion Grenade",
+			"source": "HB",
+			"type": "G",
+			"property":["Formula"],
+			"entries": [
+				"There are 2 major types of repulsion grenades, arcane and alchemical. The damage dice for alchemical grenades are 2d4 fire, for arcane: 1d6 force. The effects are otherwise identical, though preparations differ.",
+				"When used, make a ranged attack roll with an improvised weapon (DC 12) to target a square within range (20/60). On a failed check, roll a d4, moving the target square 1 space in a cardinal direction determined by the roll. If this was made at disadvantage, reroll the d4, moving the target square an additional space (if it would move back to the original target, instead move it the opposite direction)",
+				"The repulsion grenade affects the targeted square and all adjacent squares. Creatures in the area take damage based on the grenade type and must make a Str saving throw or be thrown 10 feet away from the grenade (on a sucessful check to throw, the thrower chooses the direction of the center square. On a failed check, the center square is pushed away from the original target square).",
+				"",
+				{"name":"Arcane Crafting Formula",
+					"type":"inset",
+					"entries": [
+						{
+							"type":"list",
+							"items": [
+								"20gp of arcane alchemical reagents",
+								"minimum 2 days downtime",
+								"Thunderwave or another spell which repells creatures, cast each day"
+							]
+						},
+						"Arcane repulsion grenades must be primed prior to use. A first level spell slot can prime 3 grenades, with 2 additional grenades being primed for each level above first. Grenades remain primed for 1 day, or until the primer completes a long rest.",
+						"Arcane repulsion grenades use the Spell Save DC of the primer."
+					]
+				},
+				{"name":"Alchemical Crafting Formula:",
+					"type":"inset",
+					"entries": [
+						{
+							"type":"list",
+							"items": [
+								"25gp of volatile alchemical reagents",
+								"minimum 2 days downtime",
+								"A successful DC 12 Intelligence (Alchemist's Tools) check. Failing this check by 5 or more causes a minor explosion, dealing 2d4 fire damage to the crafter and any other creatures/objects within 5 feet."
+							]
+						},
+						"Alchemical grenades use your alchemist's DC (Alchemist's Tools (+2 for expertise) + Int)",
+						"An alchemical repulsion grenade remains stable for 1 month, after which is has a 50% chance to detonate while being handled/thrown. It can be safely disposed of using alchemists tools, though no resources may be salvaged."
+					]
+				},
+				{"name":"Learning the Formula:",
+					"type":"insetReadaloud",
+					"entries":[
+						"Through research and trial and error, each of these formulae can be discovered.",
+						"For 1 month of downtime spent researching, make a DC 15 Intelligence (Alchemist's Tools) check. Gain 1 point towards your research on a success, and an additional point for every 5 you beat the DC by (20, 25, etc)",
+						"A reasonable source of inspiration for this research can yield advantage, or even a flat bonus, to these research checks."
+					]
+				}
+			]
 		}
 	]
 }
