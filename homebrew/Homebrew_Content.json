@@ -228,10 +228,10 @@
 			],
 			"tokenUrl": "img\\HB\\Wine Ooze.png"
 		},
-		{"name": "Stone Tree",
+		{"name": "Alabaster Tree",
 			"source": "HB",
 			"size": [ "G" ],
-			"type": "plant",
+			"type": "celestial",
 			"alignment": [ "U" ],
 			"ac": [ 18 ],
 			"hp": {
@@ -1368,6 +1368,106 @@
 					]
 				}
 			]
+		},
+		{"name": "Azbe'elum (Green Abishai)",
+			"source": "HB",
+			"size": [ "M" ],
+			"type": {
+				"type": "fiend",
+				"tags": [
+					"devil",
+					"dragon",
+					"wizard"
+				]
+			},
+			"alignment": [ "L", "E" ],
+			"ac": [ {
+					"ac": 18,
+					"from": [ "natural armor" ]
+			} ],
+			"hp": {
+				"average": 195,
+				"formula": "26d8 + 78"
+			},
+			"speed": { "walk": 30, "fly": 40 },
+			"str": 12, "dex": 17, "con": 16, "int": 17, "wis": 12, "cha": 19,
+			"save": { "int": "+8", "cha": "+9" },
+			"skill": {
+				"deception": "+9",
+				"insight": "+6",
+				"perception": "+6",
+				"persuasion": "+9"
+			},
+			"senses": [ "darkvision 120 ft." ],
+			"passive": 16,
+			"resist": [
+				"cold",
+				{"note": "from nonmagical attacks that aren't silvered",
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"cond": true
+				}
+			],
+			"immune": [
+				"fire",
+				"poison"
+			],
+			"conditionImmune": [ "poisoned" ],
+			"languages": [
+				"Draconic",
+				"Infernal",
+				"telepathy 120 ft."
+			],
+			"cr": "15",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"The abishai casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 17}):"
+					],
+					"will": [
+						"{@spell alter self}",
+						"{@spell major image}"
+					],
+					"daily": {
+						"3e": [
+							"{@spell charm person}",
+							"{@spell detect thoughts}",
+							"{@spell fear}"
+						],
+						"1e": [
+							"{@spell confusion}",
+							"{@spell dominate person}",
+							"{@spell mass suggestion}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{"name": "Devil's Sight",
+					"entries": [ "Magical darkness doesn't impede the abishai's {@sense darkvision}." ]
+				},
+				{"name": "Magic Resistance",
+					"entries": [ "The abishai has advantage on saving throws against spells and other magical effects." ]
+				}
+			],
+			"action": [
+				{"name": "Multiattack",
+					"entries": [
+						"The abishai makes two Fiendish Claw attacks, or it makes one Fiendish Claw attack and uses Spellcasting."
+					]
+				},
+				{"name": "Fiendish Claw",
+					"entries": [
+						"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}12 ({@damage 2d8 + 3}) force damage. If the target is a creature, it must succeed on a {@dc 16} Constitution saving throw or take 16 ({@damage 3d10}) poison damage and become {@condition poisoned} for 1 minute. The {@condition poisoned} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+					]
+				}
+			]
 		}
 	],
 	"itemProperty": [
@@ -1892,7 +1992,7 @@
 			"entries": [
 				"There are 2 major types of repulsion grenades, arcane and alchemical. The damage dice for alchemical grenades are 2d4 fire, for arcane: 1d6 force. The effects are otherwise identical, though preparations differ.",
 				"When used, make a ranged attack roll with an improvised weapon (DC 12) to target a square within range (20/60). On a failed check, roll a d4, moving the target square 1 space in a cardinal direction determined by the roll. If this was made at disadvantage, reroll the d4, moving the target square an additional space (if it would move back to the original target, instead move it the opposite direction)",
-				"The repulsion grenade affects the targeted square and all adjacent squares. Creatures in the area take damage based on the grenade type and must make a Str saving throw or be thrown 10 feet away from the grenade (on a sucessful check to throw, the thrower chooses the direction of the center square. On a failed check, the center square is pushed away from the original target square).",
+				"The repulsion grenade affects the targeted square and all adjacent squares. Creatures in the area take damage based on the grenade type and must make a Str saving throw or be thrown 10 feet away from the grenade. (on a sucessful check to throw, the thrower chooses the direction of the center square. On a failed check, the center square is pushed away from the original target square).",
 				"",
 				{"name":"Arcane Crafting Formula",
 					"type":"inset",
@@ -1927,11 +2027,44 @@
 				{"name":"Learning the Formula:",
 					"type":"insetReadaloud",
 					"entries":[
-						"Through research and trial and error, each of these formulae can be discovered.",
-						"For 1 month of downtime spent researching, make a DC 15 Intelligence (Alchemist's Tools) check. Gain 1 point towards your research on a success, and an additional point for every 5 you beat the DC by (20, 25, etc)",
+						"Through research and trial and error, each of these formulae can be discovered. It takes 5 breakthroughs to discover each formula.",
+						"For 1 month of downtime spent researching, make a DC 15 Intelligence (Alchemist's Tools) check. Gain 1 breakthrough on a success, and an additional one for every 5 you beat the DC by (20, 25, etc)",
 						"A reasonable source of inspiration for this research can yield advantage, or even a flat bonus, to these research checks."
 					]
 				}
+			]
+		}
+	],
+	"spell": [
+		{"name":"Conjure Fireball",
+			"source":"HB",
+			"level":3,
+			"school":"C",
+			"time":[
+				{
+					"number":1,
+					"unit":"action"
+				}
+			],
+			"range": { "type": "point",
+				"distance": { "type": "touch" }
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": { "text": "An empty drinking vessel capable of containing at least 8floz (1 cup)" }
+			},
+			"duration": [ { "type": "instant" } ],
+			"entries": [
+				"<i>Crafted by the wizard Kalabash</i>",
+				"",
+				"You conjure 8floz a magical alcohol known as <i>Fireball</i> into an empty vessel that you touch.",
+				"<i>Fireball</i> has a unique magical property of turning non-magical water-based liquids that it comes into contact with into <i>Fireball</i> of a weaker concentration. This process converts half the original volume of <i>Fireball</i> of other liquid before losing this magical property and becoming a relatively stable substance at nearly 100% alcohol content.",
+				"<i>Fireball</i> tastes faintly of whiskey spiced with cinnamon, but this flavor has been overpowered by the overconcentration of alcohol.",
+				"Half a cup of <i>Fireball</i> contains enough nutrients to sustain a creature for 1 day.",
+				"A creature takes 1d4 fire damage when consuming undiluted <i>Fireball</i> for the first floz consumed, and every 2 additional floz consumed. This resets after 1 hour of not partaking.",
+				"",
+				"The {@item Alcohol|HB} DC of undiluted fireball is 1 DC 25 check per 2oz"
 			]
 		}
 	]
