@@ -4209,6 +4209,76 @@
 			]
 		},
 		{
+			"name": "Tarot Deck",
+			"id": "TD",
+			"source": "TD",
+			"group": "supplement-alt",
+			"cover": {
+				"type": "internal",
+				"path": "covers/TD.webp"
+			},
+			"published": "2022-05-24",
+			"author": "Clarkson Potter",
+			"contents": [
+				{
+					"name": "Tarot Deck",
+					"headers": [
+						{
+							"header": "How to Read Tarot",
+							"depth": 1
+						},
+						{
+							"header": "Upright and Reversed Meanings",
+							"depth": 1
+						},
+						{
+							"header": "Card Spreads",
+							"depth": 1
+						},
+						{
+							"header": "D&D Encounters",
+							"depth": 1
+						},
+						{
+							"header": "An Adventure in a Spread",
+							"depth": 1
+						},
+						{
+							"header": "Creating the Story",
+							"depth": 1
+						}
+					]
+				},
+				{
+					"name": "The Deck",
+					"headers": [
+						"The Major Arcana",
+						"The Minor Arcana",
+						{
+							"header": "Strength",
+							"depth": 1,
+							"index": 1
+						},
+						{
+							"header": "Intelligence",
+							"depth": 1
+						},
+						{
+							"header": "Wisdom",
+							"depth": 1
+						},
+						{
+							"header": "Charisma",
+							"depth": 1
+						}
+					]
+				},
+				{
+					"name": "Credits"
+				}
+			]
+		},
+		{
 			"name": "Astral Adventurer's Guide",
 			"alias": [
 				"Spelljammer: Astral Adventurer's Guide"

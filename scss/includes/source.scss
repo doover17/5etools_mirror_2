@@ -81,6 +81,7 @@
 	$rgb-source-GHLoE: #c07e4e;
 	$rgb-source-DoDk: #825494;
 	$rgb-source-HWCS: #d0914b;
+	$rgb-source-TD: #bb9528;
 
 	// region Categories
 
@@ -619,6 +620,12 @@
 		color: $rgb-source-HWCS !important;
 		border-color: $rgb-source-HWCS !important;
 		text-decoration-color: $rgb-source-HWCS !important;
+	}
+
+	&TD {
+		color: $rgb-source-TD !important;
+		border-color: $rgb-source-TD !important;
+		text-decoration-color: $rgb-source-TD !important;
 	}
 	// endregion
 }
