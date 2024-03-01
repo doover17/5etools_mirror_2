@@ -349,9 +349,13 @@ globalThis.Renderer = function () {
 		if (entry == null) return; // Avoid dying on nully entries
 		if (!textStack) throw new Error("Missing stack!");
 		if (!meta) throw new Error("Missing metadata!");
-		if (entry.type === "section") meta.depth = -1;
 
 		options = options || {};
+
+		// For wrapped entries, simply recurse
+		if (entry.type === "wrapper") return this._recursiveRender(entry.wrapped, textStack, meta, options);
+
+		if (entry.type === "section") meta.depth = -1;
 
 		meta._didRenderPrefix = false;
 		meta._didRenderSuffix = false;
@@ -359,9 +363,6 @@ globalThis.Renderer = function () {
 		if (typeof entry === "object") {
 			// the root entry (e.g. "Rage" in barbarian "classFeatures") is assumed to be of type "entries"
 			const type = entry.type == null || entry.type === "section" ? "entries" : entry.type;
-
-			// For wrapped entries, simply recurse
-			if (type === "wrapper") return this._recursiveRender(entry.wrapped, textStack, meta, options);
 
 			meta._typeStack.push(type);
 
@@ -784,7 +785,7 @@ globalThis.Renderer = function () {
 			? this._getPagePart(entry)
 			: "";
 		const partExpandCollapse = !this._isPartPageExpandCollapseDisabled && !isInlineTitle
-			? `<span class="rd__h-toggle ml-2 clickable no-select" data-rd-h-toggle-button="true" title="Toggle Visibility (CTRL to Toggle All)">[\u2013]</span>`
+			? this._getPtExpandCollapse()
 			: "";
 		const partPageExpandCollapse = !this._isPartPageExpandCollapseDisabled && (pagePart || partExpandCollapse)
 			? `<span class="ve-flex-vh-center">${[pagePart, partExpandCollapse].filter(Boolean).join("")}</span>`
@@ -905,6 +906,10 @@ globalThis.Renderer = function () {
 		}
 	};
 
+	this._getPtExpandCollapse = function () {
+		return `<span class="rd__h-toggle ml-2 clickable no-select" data-rd-h-toggle-button="true" title="Toggle Visibility (CTRL to Toggle All)">[\u2013]</span>`;
+	};
+
 	this._getPtExpandCollapseSpecial = function () {
 		return `<span class="rd__h-toggle ml-2 clickable no-select" data-rd-h-special-toggle-button="true" title="Toggle Visibility (CTRL to Toggle All)">[\u2013]</span>`;
 	};
@@ -917,7 +922,7 @@ globalThis.Renderer = function () {
 		this._handleTrackDepth(entry, 1);
 
 		const pagePart = this._getPagePart(entry, true);
-		const partExpandCollapse = this._getPtExpandCollapseSpecial();
+		const partExpandCollapse = !this._isPartPageExpandCollapseDisabled ? this._getPtExpandCollapseSpecial() : "";
 		const partPageExpandCollapse = `<span class="ve-flex-vh-center">${[pagePart, partExpandCollapse].filter(Boolean).join("")}</span>`;
 
 		if (entry.name != null) {
@@ -950,7 +955,7 @@ globalThis.Renderer = function () {
 		this._handleTrackDepth(entry, 1);
 
 		const pagePart = this._getPagePart(entry, true);
-		const partExpandCollapse = this._getPtExpandCollapseSpecial();
+		const partExpandCollapse = !this._isPartPageExpandCollapseDisabled ? this._getPtExpandCollapseSpecial() : "";
 		const partPageExpandCollapse = `<span class="ve-flex-vh-center">${[pagePart, partExpandCollapse].filter(Boolean).join("")}</span>`;
 
 		if (entry.name != null) {
@@ -981,7 +986,7 @@ globalThis.Renderer = function () {
 		this._handleTrackDepth(entry, 1);
 
 		const pagePart = this._getPagePart(entry, true);
-		const partExpandCollapse = this._getPtExpandCollapseSpecial();
+		const partExpandCollapse = !this._isPartPageExpandCollapseDisabled ? this._getPtExpandCollapseSpecial() : "";
 		const partPageExpandCollapse = `<span class="ve-flex-vh-center">${[pagePart, partExpandCollapse].filter(Boolean).join("")}</span>`;
 
 		textStack[0] += `<${this.wrapperTag} class="rd__b-special rd__b-inset" ${dataString}>`;
@@ -6089,6 +6094,14 @@ Renderer.optionalfeature = class {
 			<tr><td colspan="6"><p>${Renderer.get().render(Renderer.optionalfeature.getTypeEntry(ent))}</p></td></tr>
 		`;
 	}
+
+	static pGetFluff (ent) {
+		return Renderer.utils.pGetFluff({
+			entity: ent,
+			fnGetFluffData: DataUtil.optionalfeatureFluff.loadJSON.bind(DataUtil.optionalfeatureFluff),
+			fluffProp: "optionalfeatureFluff",
+		});
+	}
 };
 
 Renderer.reward = class {
@@ -6669,6 +6682,9 @@ Renderer.deity = class {
 		"province": {
 			name: "Province",
 		},
+		"dogma": {
+			name: "Dogma",
+		},
 		"altNames": {
 			name: "Alternate Names",
 			displayFn: (it) => it.join(", "),
@@ -6809,12 +6825,12 @@ Renderer.object = class {
 		`;
 	}
 
-	static hasToken (obj) {
-		return Renderer.generic.hasToken(obj);
+	static hasToken (obj, opts) {
+		return Renderer.generic.hasToken(obj, opts);
 	}
 
-	static getTokenUrl (obj) {
-		return Renderer.generic.getTokenUrl(obj, "objects/tokens");
+	static getTokenUrl (obj, opts) {
+		return Renderer.generic.getTokenUrl(obj, "objects/tokens", opts);
 	}
 
 	static pGetFluff (obj) {
@@ -7752,12 +7768,12 @@ Renderer.monster = class {
 		return skills;
 	}
 
-	static hasToken (mon) {
-		return Renderer.generic.hasToken(mon);
+	static hasToken (mon, opts) {
+		return Renderer.generic.hasToken(mon, opts);
 	}
 
-	static getTokenUrl (mon) {
-		return Renderer.generic.getTokenUrl(mon, "bestiary/tokens");
+	static getTokenUrl (mon, opts) {
+		return Renderer.generic.getTokenUrl(mon, "bestiary/tokens", opts);
 	}
 
 	static postProcessFluff (mon, fluff) {
@@ -9224,7 +9240,7 @@ Renderer.item = class {
 
 	static _pPopulatePropertyAndTypeReference = null;
 	static pPopulatePropertyAndTypeReference () {
-		return Renderer.item._pPopulatePropertyAndTypeReference || (async () => {
+		Renderer.item._pPopulatePropertyAndTypeReference ||= (async () => {
 			const data = await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/items-base.json`);
 
 			Object.entries(Parser.ITEM_TYPE_JSON_TO_ABV).forEach(([abv, name]) => Renderer.item._addType({abbreviation: abv, name}));
@@ -9235,6 +9251,8 @@ Renderer.item = class {
 
 			await Renderer.item._pAddPrereleaseBrewPropertiesAndTypes();
 		})();
+
+		return Renderer.item._pPopulatePropertyAndTypeReference;
 	}
 
 	// fetch every possible indexable item from official data
@@ -10002,12 +10020,12 @@ Renderer.vehicle = class {
 		});
 	}
 
-	static hasToken (veh) {
-		return Renderer.generic.hasToken(veh);
+	static hasToken (veh, opts) {
+		return Renderer.generic.hasToken(veh, opts);
 	}
 
-	static getTokenUrl (veh) {
-		return Renderer.generic.getTokenUrl(veh, "vehicles/tokens");
+	static getTokenUrl (veh, opts) {
+		return Renderer.generic.getTokenUrl(veh, "vehicles/tokens", opts);
 	}
 };
 
@@ -10933,18 +10951,20 @@ Renderer.generic = class {
 
 	/* -------------------------------------------- */
 
-	static hasToken (ent) {
-		return ent.tokenUrl // TODO(Future) legacy; remove
-			|| ent.hasToken // An implicit token
+	static hasToken (ent, {isIgnoreImplicit = false} = {}) {
+		const fromEntity = ent.tokenUrl // TODO(Future) legacy; remove
 			|| ent.token // An explicit token
 			|| ent.tokenHref // An explicit token URL (local or external)
 		;
+		if (fromEntity || isIgnoreImplicit) return !!fromEntity;
+		return ent.hasToken; // An implicit token
 	}
 
-	static getTokenUrl (ent, mediaDir) {
+	static getTokenUrl (ent, mediaDir, {isIgnoreImplicit = false} = {}) {
 		if (ent.tokenUrl) return ent.tokenUrl; // TODO(Future) legacy; remove
 		if (ent.token) return Renderer.get().getMediaUrl("img", `${mediaDir}/${Parser.sourceJsonToAbv(ent.token.source)}/${Parser.nameToTokenName(ent.token.name)}.webp`);
 		if (ent.tokenHref) return Renderer.utils.getEntryMediaUrl(ent, "tokenHref", "img");
+		if (isIgnoreImplicit) return null;
 		return Renderer.get().getMediaUrl("img", `${mediaDir}/${Parser.sourceJsonToAbv(ent.source)}/${Parser.nameToTokenName(ent.name)}.webp`);
 	}
 };
@@ -12216,6 +12236,7 @@ Renderer.hover = class {
 			case UrlUtil.PG_RACES: return Renderer.race.pGetFluff;
 			case UrlUtil.PG_BACKGROUNDS: return Renderer.background.pGetFluff;
 			case UrlUtil.PG_FEATS: return Renderer.feat.pGetFluff;
+			case UrlUtil.PG_OPT_FEATURES: return Renderer.optionalfeature.pGetFluff;
 			case UrlUtil.PG_LANGUAGES: return Renderer.language.pGetFluff;
 			case UrlUtil.PG_VEHICLES: return Renderer.vehicle.pGetFluff;
 			case UrlUtil.PG_CHAR_CREATION_OPTIONS: return Renderer.charoption.pGetFluff;

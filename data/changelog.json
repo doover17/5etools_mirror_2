@@ -2645,5 +2645,21 @@
 		"ver": "1.199.1",
 		"date": "2024-02-01",
 		"txt": "- Added \"Mark Card as Drawn\" button to Decks page\n- Added \"Time\" filters to Recipes page _[note that, currently, only homebrew recipes have time data on which to filter]_ \n- Fixed CR Scaler crash when scaling no-modifier damage rolls at low CRs\n- Fixed CR Scaler crash when scaling fixed (i.e., no roll) damage numbers\n- (Brew) Added support for \"dexterityMax\" on non-medium armor\n- (Brew) Improved Feat Text Converter \"spellcasting\" handling\n- (Brew) Added support for short-form range units to Spell Text Converter\n- (Brew) Fixed Spell Text Converter \"missing property\" validation raising false positives\n- (Brew) Fixed crash when rendering demo page as Markdown\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.199.2",
+		"date": "2024-02-04",
+		"txt": "- Added \"Disadvantage on Stealth\" and \"Strength Requirement\" filters to Items page\n- (Brew) Added Creature Text Converter support for vulgar fraction characters\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.199.3",
+		"date": "2024-02-11",
+		"txt": "- Added page numbers to Planescape: Adventures in the Multiverse adventures/books (Sigil and the Outlands, Turn of Fortune's Wheel, Morte's Planar Parade)\n- (Brew) Added fluff support to `optionalfeature`s\n- (Brew) Fixed rare case where loading a homebrew subclass could fail to load its depended-upon class\n- (Fixed typos/added tags)"
+	},
+	{
+		"ver": "1.200.0",
+		"date": "2024-02-19",
+		"title": "Digital Magpie",
+		"txt": "- Added The Deck of Many Things: Card Reference Guide content (thanks @ Lyra for the data entry and conversion)\n- Added Humblewood Campaign Setting (thanks @ Ragu and @ Spappz for the existing homebrew conversion)\n- Added page numbers to Dungeons of Drakkenheim adventure content\n- (Brew) Fixed Creature Text Converter failing to convert `@recharge` tags in some names\n- (Brew) Added basic \"special equipment\" tagging to Creature Text Converter\n- (Fixed typos/added tags)"
 	}
 ]
