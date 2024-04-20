@@ -1,0 +1,342 @@
+{
+	"siteVersion": "1.181.0",
+	"_meta": {
+		"sources": [
+			{
+				"json": "Redesign",
+				"abbreviation": "Redesign",
+				"full": "DnD Redesign",
+				"url": "",
+				"authors": [],
+				"convertedBy": [],
+				"color": "#ff00ff"
+			}
+		],
+		"dateAdded": 1688699543,
+		"dateLastModified": 1688699543
+	},
+	"sense": [
+		{
+			"name": "Lifesense",
+			"source": "Redesign",
+			"entries": [
+				"A creature with lifesense can sense the approximate direction and distance (though not precise location) of any creatures other than undead and constructs within its lifesense radius."
+			]
+		}
+	],
+	"monster": [
+		{"name": "Zombie",
+			"source": "Redesign",
+			"size": [ "M" ],
+			"type": {
+				"type": "undead",
+				"tags": [ "corporeal" ]
+			},
+			"alignment": [ "N", "E" ],
+			"ac": [ {
+					"ac": 8
+			} ],
+			"hp": {
+				"average": 22,
+				"formula": "3d8 + 9"
+			},
+			"speed": { "walk": 25 },
+			"str": 15, "dex": 6, "con": 16, "int": 3, "wis": 6, "cha": 5,
+			"save": { "con": "+5", "wis": "+0" },
+			"senses": [ "lifesense 60 ft." ],
+			"passive": 8,
+			"resist": [
+				"necrotic"
+			],
+			"immune": [
+				"poison"
+			],
+			"vulnerable": [
+				"fire"
+			],
+			"conditionImmune": [ "poisoned", "exhaustion" ],
+			"languages": [
+				"Understands all languages it spoke in life but can't speak"
+			],
+			"cr": "1/4",
+			"trait": [
+				{"name": "Deathless Lunge",
+					"entries": [
+						"Trigger: Reduce to 0HP",
+						"Condition: Has not taken radiant damage since its last turn.",
+						"As it dies, the zombie makes one final lunge against the living.",
+						"Effect: The zombie moves up to its speed, then makes a single attack against a target it can sense."
+					]
+				},
+				{"name": "Undead Nature",
+					"entries": [
+						"A zombie has no need of air, food, water, or sleep."
+					]
+				},
+				{"name": "Fear of Flame",
+					"entries": [
+						"A zombie which takes fire or radiant damage is frightened by the source out to a range of 15 feet."
+					]
+				}
+			],
+			"action": [
+				{"name": "Slam",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) bludgeoning damage."
+					]
+				}
+			],
+			"tokenUrl": "http://localhost/img/MM/Zombie.png",
+			"fluff": {
+				"entries": [
+					{
+						"type": "entries",
+						"entries": [
+							"Zombies are dumb, basically evil creatures. Created by dark magic, a zombie with no orders will wander aimlessly, seeking out the living to consume.",
+							"In combat, a zombie takes the most direct route to a target, ignoring obstacles and hazards. If given specific commands, it can avoid such things, and even use simple melee weapons.",
+							"",
+							"<b>Zomboid Transformation.</b> A creature turned into a zombie retains its basic shape, but uses the base statblock with the following changes:",
+							{
+								"type":"list",
+								"items": [
+									"A bestial creature often replaces Slam with an equivalent Bite or Claw attack which deals piercing or slashing damage.",
+									"For each size category below medium, the zombie's hit dice decrease by 1 step, and its AC increases by 1 step, the inverse also holds.",
+									"If the creatures walking speed was less than 25, it retains that speed. If the original creature's primary speed was a swimming speed, it instead has a swimming speed of 25 with a walking speed of 5"
+								]
+							}
+						]
+					}
+				]
+			}
+		},
+		{"name": "Skeleton",
+			"source": "Redesign",
+			"size": [ "M" ],
+			"type": {
+				"type": "undead",
+				"tags": [ "corporeal" ]
+			},
+			"alignment": [ "L", "E" ],
+			"ac": [ {
+					"ac": 13,
+					"from": [ "natural armor (11 + Dex)" ]
+			} ],
+			"hp": {
+				"average": 13,
+				"formula": "2d8 + 4"
+			},
+			"speed": { "walk": 30 },
+			"str": 10, "dex": 14, "con": 15, "int": 6, "wis": 8, "cha": 5,
+			"save": { "dex": "+4", "wis": "+1" },
+			"senses": [ "lifesense 60 ft." ],
+			"passive": 9,
+			"resist": [
+				"necrotic"
+			],
+			"immune": [
+				"poison"
+			],
+			"vulnerable": [
+				"bludgeoning"
+			],
+			"conditionImmune": [ "poisoned", "exhaustion" ],
+			"languages": [
+				"Understands all languages it spoke in life but can't speak"
+			],
+			"cr": "1/4",
+			"trait": [
+				{"name": "Undead Nature",
+					"entries": [
+						"A skeleton has no need of air, food, water, or sleep."
+					]
+				},
+				{"name": "Variable Structure",
+					"entries": [
+						"A skeleton has a varying amount of bones at any time. By collecting bones it can increase its max HP up to the max allotment of its hit dice (20).",
+						"A skeleton with move than its base max HP or less than half its base max HP has a move speed of 25 instead of 30.",
+						"",
+						"When a skeleton takes radiant damage, it loses the ability to rearrange its bones until the end of its next turn."
+					]
+				}
+			],
+			"action": [
+				{"name": "Claw",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) slashing damage."
+					]
+				},
+				{"name": "Throw (me) a Bone",
+					"entries": [
+						"{@atk rw} {@hit 4} to hit, (20/60), one target. {@h}4 ({@damage 1d4 + 2}) bludgeoning damage.",
+						"The skeleton's current and max hp are reduced by 1"
+					]
+				},
+				{"name": "Bonecobbler",
+					"entries": [
+						"During its turn, the Skeleton uses Bonecobble up to 5 times. It cannot take the Bonecobble bonus action in the same turn."
+					]
+				}
+			],
+			"bonus action": [
+				{"name":"Bonecobble",
+					"entries": [
+						"The skeleton picks up one bone in its space and attaches it, gaining 1 current and max hp."
+					]
+				}
+			],
+			"tokenUrl": "http://localhost/img/MM/Skeleton.png",
+			"fluff": {
+				"entries": [
+					{
+						"type": "entries",
+						"entries": [
+							"Smarter than their fleshy cousins, skeletons are still dumb, basically evil creatures. Created by dark magic, a skeleton with no orders will wander aimlessly, seeking out the living to consume.",
+							"In combat, a skeleton takes the most direct route to a target, avoiding obvious hazards, and moving around obstacles only after proving going through them is ineffective. If given specific commands, it will easily avoid obstacles, and even use simple weapons.",
+							"",
+							"<b>Skeletal Transformation.</b> A creature turned into a skeleton retains its basic shape, but uses the base statblock with the following changes:",
+							{
+								"type":"list",
+								"items": [
+									"A bestial creature may replaces Claw with an equivalent Bite attack which deals piercing damage.",
+									"For each size category below medium, the skeleton's hit dice decrease by 1 step, and its AC increases by 1 step, the inverse also holds.",
+									"If the creatures walking speed was less than 30, it retains that speed."
+								]
+							}
+						]
+					}
+				]
+			}
+		},
+		{"name": "Shadow",
+			"source": "Redesign",
+			"size": [ "M" ],
+			"type": {
+				"type": "undead",
+				"tags": [ "ethereal" ]
+			},
+			"alignment": [ "C", "E" ],
+			"ac": [ {
+					"ac": 12
+			} ],
+			"hp": {
+				"average": 9,
+				"formula": "2d8 + 0"
+			},
+			"speed": { "fly": 40 },
+			"str": 6, "dex": 14, "con": 11, "int": 6, "wis": 10, "cha": 7,
+			"senses": [ "lifesense 60 ft." ],
+			"passive": 10,
+			"resist": [
+				"acid", "cold", "fire", "lightning", "thunder",
+				{"note": "from nonmagical attacks that aren't silvered",
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"cond": true
+				}
+			],
+			"immune": [
+				"poison", "necrotic"
+			],
+			"vulnerable": [
+				"radiant"
+			],
+			"conditionImmune": [ "poisoned", "exhaustion" ],
+			"languages": [
+				"Understands all languages it spoke in life but can't speak"
+			],
+			"cr": "1/4",
+			"trait": [
+				{"name": "Bad Flier",
+					"entries": [
+						"The shadow falls at the end of a turn if it's airborne and the only thing holding it aloft is its flying speed."
+					]
+				},
+				{"name": "Undead Nature",
+					"entries": [
+						"A shadow has no need of air, food, water, or sleep."
+					]
+				},
+				{"name": "Amorphous",
+					"entries": [
+						"The shadow can move through a space as narrow as 1 inch wide without squeezing."
+					]
+				},
+				{"name": "Shadow Stealth",
+					"entries": [
+						"While in dim light or darkness, the shadow can take the Hide action as a bonus action. Its stealth bonus is also improved to +6."
+					]
+				},
+				{"name": "Sunlight Weakness",
+					"entries": [
+						"While in sunlight, the shadow has disadvantage on attack rolls, ability checks, and saving throws."
+					]
+				}
+			],
+			"action": [
+				{"name": "Strength Drain",
+					"entries": [
+						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) necrotic damage, 1d4 strength damage (use same d4). A creature reduced to 0 strength by this attack remains alive, yet unconscious for 24 hours during which it gradually fades. A splash of holy water, casting of lesser restoration, or short rest (cannot short rest while unconscious) mitigates this reduction by 1d4. A long rest removes the reduction completely.",
+						"If a creature (CR >= 1/4) fades completely from this attack, it becomes a shadow."
+					]
+				}
+			],
+			"tokenUrl": "http://localhost/img/MM/Shadow.png",
+			"fluff": {
+				"entries": [
+					{
+						"type": "entries",
+						"entries": [
+							"Shadows are basically evil creatures. Created by dark magic, a shadow with no orders will wander aimlessly, seeking out the living to consume and turn. Greedy for life, they prioritize targeting creatures with 4 or more strength.",
+							"In combat, a shadow will hide in the shadows until within 60 feet of a target, then take the most direct route to it, avoiding obstacles and hazards. Even with specific commands, a shadow is incapable of using weapons.",
+							"",
+							"<b>Shadowy Transformation.</b> A creature turned into a shadow retains its basic shape, but uses the base statblock with the following changes:",
+							{
+								"type":"list",
+								"items": [
+									"For each size category below medium, the shadow's hit dice decrease by 1 step, and its AC increases by 1 step, the inverse also holds.",
+									"If the creature was Tiny or smaller, or had only 1 hit die, Strength drain deals only 1d2+2 / 1d2 damage.",
+									"If the creature was Huge or larger, or had more than 10 hit dice, Strength drain instead deals 1d6+2 / 1d6 damage."
+								]
+							}
+						]
+					}
+				]
+			}
+		}
+	],
+	"item": [
+		{"name": "Torch",
+			"source": "Redesign",
+			"type": "M",
+			"weight": 1,
+			"value": 1,
+			"weaponCategory": "improvised",
+			"property": [
+				"L"
+			],
+			"dmg1": "1d4",
+			"dmgType": "F",
+			"entries": [
+				"Prior to being lit, a torch deals bludgeoning damage. While lit, it deals fire damage. After it goes out, a torch is no longer effective as a weapon.",
+				"Dexterity may be used to attack with a torch. In this case, the torch deals 1 + mod fire damage instead of 1d4 + mod."
+			]
+		}
+	],
+	"variantrule": [
+		{"name":"Flanking",
+			"ruleType": "V",
+			"entries": [
+				"A creature is considered 'Flanked' if there are hostile creatures on opposing sides of it. Attacks against a flanked creature have +2 to hit."
+			]
+		},
+		{"name":"Risky Ranged Attacks",
+			"ruleType": "V",
+			"entries": [
+				"Instead of suffering disadvantage to ranged attacks from a creature being within 5 feet, making a ranged attack triggers attacks of opportunity from any hostile creature within melee reach."
+			]
+		}
+	]
+}
