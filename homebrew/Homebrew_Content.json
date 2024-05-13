@@ -782,7 +782,7 @@
 				},
 				{"name": "Bite",
 					"entries": [
-						"{@atk mw} {@hit 7} to hit, reach 10 ft., one target. {@h}5 ({@damage 3d4 + 4}) piercing damage. The target must then make a Con save (DC 16), taking 4d8 necrotic damage on a failed save, or half as much on a successful save.",
+						"{@atk mw} {@hit 7} to hit, reach 10 ft., one target. {@h}5 ({@damage 3d4 + 4}) piercing damage. The target must then make a Con save (DC 16), suffering one stack of sugar rot on a failed save, or none on a successful save. Regardless of success, all stacks of sugar rot immediately activate.",
 						"If the creature is reduced to 0 hit points, it is reduced to inedible remains (a skeleton, crumbs, etc), the Sugarmaw regains 10hp, and a {@creature Gummy Worm|HB} is created in an adjacent space.",
 						"After being hit by this attack, a creature (or its remains) are ejected to the space behind the Sugarmaw."
 					]
@@ -1800,6 +1800,123 @@
 			],
 			"tokenUrl": "img\\HB\\Candy\\Gingerbread House.png"
 		},
+		{"name": "Grammy Webmire",
+			"source": "HB",
+			"size": [ "L" ],
+			"type": {
+				"type": "fey",
+				"tags": [ "hag" ]
+			},
+			"alignment": [ "C", "E" ],
+			"ac": [ {
+					"ac": 15
+			} ],
+			"hp": {
+				"formula": "20d10 + 60",
+				"average": 170
+			},
+			"speed": { "walk": 25 },
+			"str": 23, "dex": 8, "con": 16, "int": 14, "wis": 15, "cha": 23,
+			"save": { "wis": "+7", "con": "+8" },
+			"skill": { "persuasion": "+11", "intimidation": "+11", "deception": "+11", "perception": "+7" },
+			"senses": [ "darkvision 60 ft.", "lifesense 60 ft." ],
+			"passive": 17,
+			"languages": [ "Candy", "Sylvan", "Common" ],
+			"cr": "15",
+			"trait": [
+				{"name": "Shapeshifting",
+					"entries": [
+						"Webmire is a large fey. She can appear as a small humanoid and anything in between. These changes alter her physical form, but not stats."
+					]
+				}
+			],
+			"action": [
+				{"name": "Spellcasting",
+					"entries": [
+						"Webmire's spell save DC is 19",
+						"At Will: ",
+						"3rd (3 slots): {@spell Fireball}",
+						"4th (3 slots): Custom Curses",
+						"5th (1 slot): {@spell Wrath of Nature|XGE}, {@spell Cone of Cold}, {@spell Cloudkill}",
+						"6th (1 slot): {@spell Wall of Thorns}, {@spell Soul Cage|XGE}, {@spell Conjure Fey}",
+						"Custom spells follow"
+					]
+				},
+				{"name": "Curse of Rotting",
+					"entries": [
+						"Targets a 60ft cone",
+						"Targeted creatures of Webmires choice must make a con save against 13 stacks of sugar rot",
+						"At Higher Levels: +2 stacks"
+					]
+				},
+				{"name": "Curse of Binding",
+					"entries": [
+						"Targets 2 creatures in 120 feet",
+						"Targeted creatures must make a str save vs being {@condition restrained|phb|enchained} in crimson rock candy. The candy has AC 12, 40 HP, an athletics DC of 25, and standard candy relations to biting (counts as medium creature).",
+						"At Higher Levels: +1 Creature"
+					]
+				},
+				{"name": "Curse of Lethargy",
+					"entries": [
+						"Targets a 15ft-rad sphere in 120 feet",
+						"Targeted creatures of Webmires choice may only use one of action, bonus action, or movement on their next turn.",
+						"At Higher Levels: +5 foot radius"
+					]
+				},
+				{"name": "Curse of Hunger",
+					"entries": [
+						"Targets a single creature in sight",
+						"Target must make a cha save vs condition:",
+						"At the start of each of its turns, the creature suffers 1 level of exhaustion and is informed it is extremely hungry and that nearby creatures look tasty.",
+						"This effect persists until the creature dies of hunger or Bites another creature. After biting a creature, the exhaustion gained by this effect deminish 1 stack at the end of each of the creatures turns.",
+						"At Higher Levels: +1 Creature"
+					]
+				},
+				{"name": "Multiattack",
+					"entries": [
+						"Webmire makes 2 attacks with her claws, and one with her bite."
+					]
+				},
+				{"name": "Claws",
+					"entries": [
+						"{@atk mw} {@hit 11} to hit, reach 5 ft., one target. {@h}19 ({@damage 2d12 + 6}) slashing damage."
+					]
+				},
+				{"name": "Bite",
+					"entries": [
+						"{@atk mw} {@hit 11} to hit, reach 5 ft., one target. {@h}12 ({@damage 1d12 + 6}) piercing damage and the target suffers 3 stacks of sugar rot."
+					]
+				},
+				{"name": "Crush",
+					"entries": [
+						"{@atk mw} {@hit 11} to hit, reach 5 ft., one target. {@h}The target is grappled and restrained. It also takes 45 ({@damage 6d12 + 6}) bludgeoning damage. On subsequent turns the hag must either repeat this ability (automatically hitting if the target hasn't escaped), or end the grapple."
+					]
+				}
+			],
+			"legendary": [
+				{"name": "Crush",
+					"entries": [
+						"The hag crushes a grappled target, dealing 18 ({@damage 2d12+6}) bludgeoning damage."
+					]
+				},
+				{"name": "Curse of Rotting",
+					"entries": [
+						"Targets one creature in 60ft",
+						"Con save vs 6 stacks of sugar rot"
+					]
+				},
+				{"name": "Misty Step",
+					"entries": [
+						"Webmire casts misty step"
+					]
+				}
+			],
+			"legendaryGroup": {
+				"name": "Grammy Webmire",
+				"source": "HB"
+			},
+			"tokenUrl": "img\\HB\\Candy\\Grammy Webmire.png"
+		},
 		{"name": "Azbe'elum (Green Abishai)",
 			"source": "HB",
 			"size": [ "M" ],
@@ -1901,6 +2018,37 @@
 			]
 		}
 	],
+	"legendaryGroup": [
+		{"name": "Grammy Webmire",
+			"source": "HB",	
+			"lairActions": [
+				"When fighting inside her lair, Grammy Webmire can invoke powerful ritual magic as lair actions. On initiative count 20 (Any creature above 20 reacts to this effect as if telegraphed), Grammy Webmire can take one lair action to cause one of the following effects:",
+				{
+					"type": "list",
+					"items": [
+						"Cotton Candy clouds.",
+						"Hot Cocoa kettle.",
+						"A new wave of Corrupted Candies exits the oven",
+						"Tasha's Hideous Laugh Gas? (Candies immune)",
+						"rock candy outcroppings for candy to eat",
+						"Webmire exits her hovel (phase 2, end lair actions; begin legendary actions)"
+					]
+				}
+			],
+			"regionalEffects": [
+				"The abandoned city surrounding webmires hovel is bad, decayed, etc:",
+				{
+					"type": "list",
+					"items": [
+						"Instead of a vacant plain, big post-apocalyptic buildings vibe here",
+						"You occasionally hear creepy child laughter",
+						"Candies here get corrupted - gingerbrutes replacing townscookies, woodland gummies becoming corrupted and aggressive, etc"
+					]
+				},
+				"If grammy dies, these effects fade over the course of {@dice 1d4} hours."
+			]
+		}
+	],
 	"itemProperty": [
 		{"abbreviation": "Formula",
 			"source": "HB",
@@ -1950,7 +2098,9 @@
 		{"name": "Sugar Rot",
 			"source": "HB",
 			"entries": [
-				"Sugar Rot (stacks) is a non-magical disease inflicted by eating candy creatures. At the beginning of the inflicted's turn, they take xd4 poison damage, where x is the number of stacks of Sugar Rot they have, then remove any stacks that resulted in a 4 being rolled."
+				"Sugar Rot (stacks) is a non-magical disease inflicted by eating candy creatures. At the beginning of the inflicted's turn, they take xd4 poison damage, where x is the number of stacks of Sugar Rot they have, then remove any stacks that resulted in a 4 being rolled.",
+				"The average damage for 1 stack of sugar rot is 10.",
+				"The average damage for 1 stack of sugar rot after webmire goes crazy is 3.33 (cures on 2, 3, 4)"
 			]
 		}
 	],
