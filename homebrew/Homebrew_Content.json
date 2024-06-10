@@ -369,6 +369,67 @@
 				}
 			]
 		},
+		{"name": "Speed Demon (Racing)",
+			"source": "HB",
+			"size": [ "M" ],
+			"type": "fiend",
+			"alignment": [ "E" ],
+			"ac": [ 15 ],
+			"hp": {
+				"formula": "6d8",
+				"average": 27
+			},
+			"speed": { "walk": 30 },
+			"str": 6, "dex": 25, "con": 11, "int": 13, "wis": 14, "cha": 14,
+			"senses": [ "devilsight (darkvision) 120 ft." ],
+			"passive": 12,
+			"resist": [
+				"lightning (move speed +10 until its next end)",
+				"fire"
+			],
+			"vulnerable": [
+				"cold (lose next turn)"
+			],
+			"cr": "4",
+			"trait": [
+				{"name": "Need for Speed",
+					"entries": [
+						"This creature passes its turn with no action if it cannot move. (including move speed 0).",
+						"If this creature takes cold damage, its next turn is also skipped in this manner."
+					]
+				},
+				{"name": "Uncommonly Fast",
+					"entries": [
+						"The speed demon takes 2 turns each round. In combat, one has -10 to initiative, in the race, have 2 \"opposite\" demons act after each player."
+					]
+				},
+				{"name": "Shared Action",
+					"entries": [
+						"The speed demon may sacrifice its turn to allow any other speed demon in initiative to take a turn."
+					]
+				}
+			],
+			"action": [
+				{"name": "Stab",
+					"entries": [
+						"This attack is made with advantage",
+						"{@atk mw} {@hit 10} to hit, reach 5 ft., one target. {@h}14 ({@damage 2d6 + 7}) piercing damage."
+					]
+				},
+				{"name": "Lightning Jab (x2)",
+					"entries": [
+						"{@atk mw} {@hit 10} to hit, reach 5 ft., one target. {@h}8 ({@damage 1 + 7}) lightning damage."
+					]
+				}
+			],
+			"reaction": [
+				{"name": "Dodge",
+					"entries": [
+						"Reaction to being hit by an attack roll or failing a dex save. Reroll the roll and take the favorable result for the speed demon."
+					]
+				}
+			]
+		},
 		{"name": "Rust Buster",
 			"source": "HB",
 			"size": [ "S" ],
@@ -2465,7 +2526,7 @@
 			"wondrous": "true",
 			"reqAttune":"true",
 			"entries": [
-				"While attuned to this devilishly stylish red bandana, a creature may take a second reaction each round."
+				"While attuned to this devilishly stylish red bandana, a creature may take a second reaction or bonus action each round (action type chosen on attunement)."
 			]
 		},
 		{"name": "Candy Apple (Tainted)",
