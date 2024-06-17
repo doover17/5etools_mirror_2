@@ -2077,6 +2077,68 @@
 					]
 				}
 			]
+		},
+		{"name": "Obsidian Scarab",
+			"source": "HB",
+			"size": [ "T" ],
+			"type": "construct",
+			"alignment": [ "U" ],
+			"ac": [ { 
+				"ac": 18, 
+				"from": [ "natural armor" ] 
+			} ],
+			"hp": {
+				"average": 3,
+				"formula": "3d4"
+			},
+			"speed": { "walk": 20, "burrow": 20, "fly": 20 },
+			"str": 9, "dex": 15, "con": 8, "int": 3, "wis": 12, "cha": 6,
+			"senses": [ "darkvision 60 ft.", "tremorsense 60 ft." ],
+			"passive": 9,
+			"cr": "1/8",
+			"trait": [
+				{"name": "False Appearance",
+					"entries": [
+						"If the scarab is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the scarab move or act, that creature must succeed on a {@dc 18} Intelligence ({@skill Investigation}) check to discern that the scarab is animate."
+					]
+				},
+				{"name": "Hunting Automaton",
+					"entries": [
+						"The scarab doubles its dexterity modifier when applied to attack rolls and save DCs. It doubles its wisdom modifier for checks made to hunt prey (such as perception or survival)"
+					]
+				}
+			],
+			"action": [
+				{"name": "Bite",
+					"entries": [
+						"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d4 + 2}) piercing damage. If the target is a creature, it has disadvantage on attack rolls until the start of its next turn."
+					]
+				}
+			],
+			"bonus": [
+				{"name": "Scale Dust (1/Day)",
+					"entries": [
+						"The scarab releases magical glittering dust from its wings. Each creature within 5 feet of the scarab must succeed on a {@dc 14} Dexterity saving throw or be outlined in violet light for 10 minutes. While outlined in this way, a creature sheds dim light in a 10-foot radius and can't benefit from being {@condition invisible}. In addition, attack rolls against that creature have advantage, with this additional effect ending when the creature takes damage."
+					]
+				}
+			],
+			"tokenUrl": "http://localhost/img/FTD/Hoard Scarab.png",
+			"fluff": {
+				"entries": [
+					{
+						"type": "entries",
+						"entries": [
+							{
+								"type": "entries",
+								"entries": [
+									"Obsidian scarabs are a construct unique to Trollskull Manor, made by {@creature Brownie|HB} from House Auvryndar crests to keep various pests outside the manor, particularly the attic and other living spaces.",
+									"The scarabs, while not requiring sustenance for survival, are carniverous and eat various insects and other pests inside Trollskull Manor."
+								]
+							}
+						]
+					}
+				]
+			}
 		}
 	],
 	"legendaryGroup": [
@@ -2692,6 +2754,50 @@
 				"While weilding Pain, you gain a +2 bonus to spell attack rolls and to the saving throw DCs of your warlock spells.",
 				"Whenever you cast a spell with Pain, suffer 1d8 damage (potentially breaking concentration). A non-evil creature instead suffers 2d6 damage.",
 				"Once per Long Rest, you may cast {@spell Power Word Stun|PHB} using Pain and no spell slot or components."
+			]
+		},
+		{"name": "Tankard of Many Colors",
+			"source": "HB",
+			"type": "RD",
+			"tier": "minor",
+			"rarity": "rare",
+			"weight": 4,
+			"entries": [
+				"This copper tankard contains a semi-transparent creamy liquid which shimmers along every hue of the rainbow at a moderate value and saturation. The tankard holds 4 charges.",
+				"One or more charges may be drunk as an Action. When this is done, consult the panels below to determine what happens. Do not view the panels before they become relevant.",
+				{"name":"1 Charge",
+					"type":"inset",
+					"collapsed":true,
+					"entries":[
+						"Choose one of the following effects:",
+						{"type":"list",
+							"entries":[
+								"You cast Disguise Self targeting a creature in range of touch. The Investigation DC of this spell is 17, if the creature is unwilling, the save to negate this effect is a DC 17 Wisdom saving throw.",
+								"You cast Color Spray as a second level spell. You may alter the target area to be a cone of size 10' to size 20'."
+							]
+						}
+					]
+				},
+				{"name":"2-3 Charges",
+					"type":"inset",
+					"collapsed":true,
+					"entries":[
+						"Choose one of the following effects:",
+						{"type":"list",
+							"entries":[
+								"You cast Mirror Image on a creature you touch with the following change: Instead of 3 images, there are 6. Each image, as well as the targeted creature, are a major hue of the rainbow. Instead of having a chance to cause an attack to miss, each surviving image grants a stacking +1 bonus to AC, with an image being destroyed whenever an attack misses the target, regardless of the hit roll.",
+								"You cast Major Image, not requiring concentration. Upon creation of the image you may give it simple animation instructions, such as to walk along a specified route appearing to patrol a hall, but cannot control the image after creating it. If 3 charges were consumed, the image lasts until dispelled. The Investigation DC for this image is 17."
+							]
+						}
+					]
+				},
+				{"name":"4 Charges",
+					"type":"inset",
+					"collapsed":true,
+					"entries":[
+						"You cast Prismatic Spray, except the target area is a 25' diameter sphere centered on you. The spell hits you. The save DC for the spell is 17."
+					]
+				}
 			]
 		}
 	],
