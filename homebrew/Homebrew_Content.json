@@ -2122,7 +2122,7 @@
 					]
 				}
 			],
-			"tokenUrl": "http://localhost/img/FTD/Hoard Scarab.png",
+			"tokenUrl": "img\\HB\\Obsidian Scarab.png",
 			"fluff": {
 				"entries": [
 					{
@@ -2758,44 +2758,47 @@
 		},
 		{"name": "Tankard of Many Colors",
 			"source": "HB",
-			"type": "RD",
+			"type": "P",
 			"tier": "minor",
-			"rarity": "rare",
+			"rarity": "very rare",
 			"weight": 4,
 			"entries": [
 				"This copper tankard contains a semi-transparent creamy liquid which shimmers along every hue of the rainbow at a moderate value and saturation. The tankard holds 4 charges.",
 				"One or more charges may be drunk as an Action. When this is done, consult the panels below to determine what happens. Do not view the panels before they become relevant.",
 				{"name":"1 Charge",
 					"type":"inset",
-					"collapsed":true,
+					"collapsed": true,
 					"entries":[
-						"Choose one of the following effects:",
+						"Highlight text to see effect",
+						"{@highlight Choose one of the following effects:|bbb}",
 						{"type":"list",
-							"entries":[
-								"You cast Disguise Self targeting a creature in range of touch. The Investigation DC of this spell is 17, if the creature is unwilling, the save to negate this effect is a DC 17 Wisdom saving throw.",
-								"You cast Color Spray as a second level spell. You may alter the target area to be a cone of size 10' to size 20'."
+							"items":[
+								"{@highlight You cast Disguise Self targeting a creature in range of touch. The Investigation DC of this spell is 17, if the creature is unwilling, the save to negate this effect is a DC 17 Wisdom saving throw.|bbb}",
+								"{@highlight You cast Color Spray as a second level spell. You may alter the target area to be a cone of size 10' to size 20'.|bbb}"
 							]
 						}
 					]
 				},
 				{"name":"2-3 Charges",
 					"type":"inset",
-					"collapsed":true,
+					"collapsed": true,
 					"entries":[
-						"Choose one of the following effects:",
+						"Highlight text to see effect",
+						"{@highlight Choose one of the following effects:|bbb}",
 						{"type":"list",
-							"entries":[
-								"You cast Mirror Image on a creature you touch with the following change: Instead of 3 images, there are 6. Each image, as well as the targeted creature, are a major hue of the rainbow. Instead of having a chance to cause an attack to miss, each surviving image grants a stacking +1 bonus to AC, with an image being destroyed whenever an attack misses the target, regardless of the hit roll.",
-								"You cast Major Image, not requiring concentration. Upon creation of the image you may give it simple animation instructions, such as to walk along a specified route appearing to patrol a hall, but cannot control the image after creating it. If 3 charges were consumed, the image lasts until dispelled. The Investigation DC for this image is 17."
+							"items":[
+								"{@highlight You cast Mirror Image on a creature you touch with the following change: Instead of 3 images, there are 6. Each image, as well as the targeted creature, are a major hue of the rainbow. Instead of having a chance to cause an attack to miss, each surviving image grants a stacking +1 bonus to AC, with an image being destroyed whenever an attack misses the target, regardless of the hit roll.|bbb}",
+								"{@highlight You cast Major Image, not requiring concentration. Upon creation of the image you may give it simple animation instructions, such as to walk along a specified route appearing to patrol a hall, but cannot control the image after creating it. If 3 charges were consumed, the image lasts until dispelled. The Investigation DC for this image is 17.|bbb}"
 							]
 						}
 					]
 				},
 				{"name":"4 Charges",
 					"type":"inset",
-					"collapsed":true,
+					"collapsed": true,
 					"entries":[
-						"You cast Prismatic Spray, except the target area is a 25' diameter sphere centered on you. The spell hits you. The save DC for the spell is 17."
+						"Highlight text to see effect",
+						"{@highlight You cast Prismatic Spray, except the target area is a 25' diameter sphere centered on you. The spell hits you. The save DC for the spell is 17.|bbb}"
 					]
 				}
 			]
