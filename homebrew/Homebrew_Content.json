@@ -1414,7 +1414,7 @@
 				},
 				{"name": "Caneblade",
 					"entries": [
-						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}11 ({@damage 3d4 + 4}) bludgeoning, slashing, or piercing damage."
+						"{@atk mw} {@hit 6} to hit, reach 5 ft., one target. {@h}11 ({@damage 3d4 + 4}) bludgeoning, slashing, or piercing damage."
 					]
 				},
 				{"name": "Jumbo Gusher (1 use)",
@@ -1427,6 +1427,119 @@
 				{"name": "Block",
 					"entries": [
 						"As a reaction to being hit by an attack, the gingerbrute rolls 1d6, adding it to its AC, potentially causing the attack to miss."
+					]
+				},
+				{"name": "Bully",
+					"entries": [
+						"As a reaction to a creature within 5 feet of the gingerbrute making an attack, the gingerbrute may make one caneblade attack against that creature."
+					]
+				}
+			],
+			"tokenUrl": "img\\HB\\Candy\\Gingerbrute Tough.png"
+		},
+		{"name": "Gingerbrute Toughie (Licorice Whip)",
+			"source": "HB",
+			"size": [ "M" ],
+			"type": "candy",
+			"alignment": [ "E" ],
+			"ac": [ 15 ],
+			"hp": {
+				"formula": "10d8 + 20",
+				"average": 65
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 18, "dex": 12, "con": 15, "int": 10, "wis": 13, "cha":11,
+			"save": { "str": "+6", "con": "+4" },
+			"passive": 11,
+			"languages": [ "Candy" ],
+			"vulnerable":[
+				"damage from bite attacks"
+			],
+			"cr": "3",
+			"trait": [
+				{"name": "Creature Type: Candy",
+					"entries": [
+						"Candy is a subtype of both construct and humanoid. All candies have vulnerability to damage from bite attacks.",
+						"When a creature bites a candy, it gains temp hp equal to the damage dealt (not counting overflow). It then also gains x stacks of {@disease Sugar Rot|HB}, where x is 1 for a tiny or small creature, 2 for medium, large, or huge, and 3 for gargantuan+",
+						"A creature can gain no more stacks of sugar rot in one round than the greatest amount they would gain from a single bite (ie, the amount of the largest candy they bit)"
+					]
+				}
+			],
+			"action": [
+				{"name": "Multiattack",
+					"entries": [
+						"The gingerbrute makes 2 Whip attacks."
+					]
+				},
+				{"name": "Licorice Whip",
+					"entries": [
+						"{@atk mw} {@hit 6} to hit, reach 10 ft., one target. {@h}1 ({@damage 1}) piercing damage, plus 1 stack of sugar rot, unless the piercing damage was prevented."
+					]
+				}
+			],
+			"reaction": [
+				{"name": "Peppermint Shield (Breakable)",
+					"entries": [
+						"As a reaction to being attacked, the gingerbrute raises its peppermint shield, increasing its AC by 6. If the attack misses, roll damage regardless of the hit roll, damage exceeding 8 points shatters the peppermint."
+					]
+				},
+				{"name": "Bully",
+					"entries": [
+						"As a reaction to a creature within 5 feet of the gingerbrute making an attack, the gingerbrute may make one caneblade attack against that creature."
+					]
+				}
+			],
+			"tokenUrl": "img\\HB\\Candy\\Gingerbrute Tough.png"
+		},
+		{"name": "Gingerbrute Toughie (Black Licorice)",
+			"source": "HB",
+			"size": [ "M" ],
+			"type": "candy",
+			"alignment": [ "E" ],
+			"ac": [ 15 ],
+			"hp": {
+				"formula": "10d8 + 20",
+				"average": 65
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 18, "dex": 12, "con": 15, "int": 10, "wis": 13, "cha":11,
+			"save": { "str": "+6", "con": "+4" },
+			"passive": 11,
+			"languages": [ "Candy" ],
+			"vulnerable":[
+				"damage from bite attacks"
+			],
+			"cr": "3",
+			"trait": [
+				{"name": "Creature Type: Candy",
+					"entries": [
+						"Candy is a subtype of both construct and humanoid. All candies have vulnerability to damage from bite attacks.",
+						"When a creature bites a candy, it gains temp hp equal to the damage dealt (not counting overflow). It then also gains x stacks of {@disease Sugar Rot|HB}, where x is 1 for a tiny or small creature, 2 for medium, large, or huge, and 3 for gargantuan+",
+						"A creature can gain no more stacks of sugar rot in one round than the greatest amount they would gain from a single bite (ie, the amount of the largest candy they bit)"
+					]
+				}
+			],
+			"action": [
+				{"name": "Multiattack",
+					"entries": [
+						"The gingerbrute makes 2 Whip attacks."
+					]
+				},
+				{"name": "Licorice Whip",
+					"entries": [
+						"This attack is made with advantage",
+						"{@atk mw} {@hit 6} to hit, reach 10 ft., one target. {@h}2 ({@damage 1d4}) necrotic damage, plus 1 stack of sugar rot, unless the necrotic damage was prevented."
+					]
+				}
+			],
+			"reaction": [
+				{"name": "Peppermint Shield (Breakable)",
+					"entries": [
+						"As a reaction to being attacked, the gingerbrute raises its peppermint shield, increasing its AC by 6. If the attack misses, roll damage regardless of the hit roll, damage exceeding 8 points shatters the peppermint."
 					]
 				},
 				{"name": "Bully",
@@ -2607,7 +2720,7 @@
 			"entries": [
 				"Gingerbreadman Cookies are consumed as a bonus action, and are beneficial to Candy, but detrimental to all other creatures.",
 				"A Candy which consumes Gingerbreadman Cookies gains the benefits of the {@spell Mirror Image|PHB} spell.",
-				"Another creature which consumes Gingerbreadman Cookies is immediately ill and regurgitates a {@creature Swarm of Insects|PHB|Swarm of Gingerbread Men} (except the creature type is Candy (Humanoid), instead of Beast and the attacks deal Bludgeoning damage, instead of Piercing damage.)",
+				"Another creature which consumes Gingerbreadman Cookies is immediately ill and regurgitates a {@creature Swarm of Insects|MM|Swarm of Gingerbread Men} (except the creature type is Candy (Humanoid), instead of Beast and the attacks deal Bludgeoning damage, instead of Piercing damage.)",
 				"Con save DC 18, the swarm is spawned at half health."
 			]
 		},
@@ -2686,6 +2799,24 @@
 				"The blade of this sword is wreathed in writhing translucent white-blue fragments of a spirit.",
 				"When this sword strikes a creature concentrating on a spell, it deals an additional xd6 necrotic damage, where x is the level of the spell being concentrated on.",
 				"For one minute after being hit by this sword, the next time the target casts a spell, it must succeed on a concentration check (against original hit damage) or the spell fails."
+			],
+			"tier": "major"
+		},
+		{"name": "Black Licorice Whip",
+			"source": "HB",
+			"type": "M",
+			"rarity": "rare",
+			"reqAttune": true,
+			"weight": 6,
+			"weaponCategory": "martial",
+			"property": [
+				"F","R"
+			],
+			"dmg1": "2d4",
+			"dmgType": "N",
+			"entries": [
+				"This whip of black licorice phases partially through its victims, rotting their flesh from the bone rather than flaying it to bits.",
+				"A creature not attuned to the weapon takes 1 necrotic damage whenever it makes an attack with it."
 			],
 			"tier": "major"
 		},
