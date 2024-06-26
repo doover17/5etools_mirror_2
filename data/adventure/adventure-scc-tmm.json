@@ -599,7 +599,8 @@
 											"title": "Map 5.1: Furygale Repository",
 											"width": 3000,
 											"height": 4071,
-											"credit": "Mike Schley"
+											"credit": "Mike Schley",
+											"id": "006"
 										},
 										{
 											"type": "list",
@@ -4096,11 +4097,13 @@
 												}
 											]
 										}
-									]
+									],
+									"id": "005"
 								}
 							]
 						}
-					]
+					],
+					"id": "004"
 				},
 				{
 					"type": "image",
@@ -4137,7 +4140,8 @@
 						}
 					]
 				}
-			]
+			],
+			"id": "003"
 		}
 	]
 }

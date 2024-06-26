@@ -15,7 +15,7 @@ class NavBar {
 
 	static _onLoad () {
 		NavBar._dropdowns = [...NavBar._navbar.querySelectorAll(`li.dropdown--navbar`)];
-		document.addEventListener("click", () => NavBar._dropdowns.forEach(ele => ele.classList.remove("open")));
+		document.addEventListener("click", () => NavBar._closeAllDropdowns());
 
 		NavBar._clearAllTimers();
 
@@ -123,19 +123,11 @@ class NavBar {
 		this._addElement_button(
 			NavBar._CAT_SETTINGS,
 			{
-				html: styleSwitcher.getDayNightButtonText(),
-				click: (evt) => NavBar.InteractionManager._onClick_button_dayNight(evt),
-				context: (evt) => NavBar.InteractionManager._onContext_button_dayNight(evt),
-				className: "nightModeToggle",
-			},
-		);
-		this._addElement_button(
-			NavBar._CAT_SETTINGS,
-			{
-				html: styleSwitcher.getActiveWide() === true ? "Disable Wide Mode" : "Enable Wide Mode (Experimental)",
-				click: (evt) => NavBar.InteractionManager._onClick_button_wideMode(evt),
-				className: "wideModeToggle",
-				title: "This feature is unsupported. Expect bugs.",
+				html: "Preferences",
+				click: () => {
+					ConfigUi.show();
+					NavBar._closeAllDropdowns();
+				},
 			},
 		);
 		this._addElement_divider(NavBar._CAT_SETTINGS);
@@ -395,7 +387,7 @@ class NavBar {
 			a.setAttribute("target", "_blank");
 			a.classList.add("inline-split-v-center");
 			a.classList.add("w-100");
-			a.innerHTML = `<span>${aText}</span><span class="glyphicon glyphicon-new-window"/>`;
+			a.innerHTML = `<span>${aText}</span><span class="glyphicon glyphicon-new-window"></span>`;
 		}
 
 		li.appendChild(a);
@@ -506,7 +498,7 @@ class NavBar {
 		}
 
 		const a = document.createElement("a");
-		a.className = "dropdown-toggle";
+		a.className = "ve-dropdown-toggle";
 		a.href = "#";
 		a.setAttribute("role", "button");
 		a.onclick = function (event) { NavBar._handleDropdownClick(this, event, isSide); };
@@ -517,7 +509,7 @@ class NavBar {
 		a.innerHTML = `${category} <span class="caret ${isSide ? "caret--right" : ""}"></span>`;
 
 		const ul = document.createElement("ul");
-		ul.className = `dropdown-menu ${isSide ? "dropdown-menu--side" : "dropdown-menu--top"}`;
+		ul.className = `ve-dropdown-menu ${isSide ? "ve-dropdown-menu--side" : "ve-dropdown-menu--top"}`;
 		ul.onclick = function (event) { event.stopPropagation(); };
 
 		li.appendChild(a);
@@ -618,6 +610,10 @@ class NavBar {
 		else NavBar._openDropdown(ele);
 	}
 
+	static _closeAllDropdowns () {
+		NavBar._dropdowns.forEach(ele => ele.classList.remove("open"));
+	}
+
 	static _openDropdown (ele) {
 		const lisOpen = [];
 
@@ -644,7 +640,7 @@ class NavBar {
 	 * @private
 	 */
 	static _openDropdown_mutAlignment ({liNavbar}) {
-		const uls = [...liNavbar.querySelectorAll("ul.dropdown-menu")];
+		const uls = [...liNavbar.querySelectorAll("ul.ve-dropdown-menu")];
 		const widthRequired = window.innerWidth < 1200
 			? Math.max(...uls.map(ul => ul.getBoundingClientRect().width))
 			: uls.map(ul => ul.getBoundingClientRect().width).reduce((a, b) => a + b, 0);
@@ -785,7 +781,7 @@ NavBar.InteractionManager = class {
 
 	static async _pOnClick_button_loadStateFile (evt) {
 		evt.preventDefault();
-		const {jsons, errors} = await DataUtil.pUserUpload({expectedFileTypes: ["5etools"]});
+		const {jsons, errors} = await InputUiUtil.pGetUserUploadJson({expectedFileTypes: ["5etools"]});
 
 		DataUtil.doHandleFileLoadErrorsGeneric(errors);
 

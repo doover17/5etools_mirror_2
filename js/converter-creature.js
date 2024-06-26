@@ -89,6 +89,7 @@ class CreatureParser extends BaseParser {
 		if (!nxtLine) return false;
 
 		if (ConvertUtil.isNameLine(nxtLine)) return false; // avoid absorbing the start of traits
+		if (ConvertUtil.isListItemLine(nxtLine)) return false;
 		if (this._NO_ABSORB_TITLES.some(it => nxtLine.toUpperCase().includes(it))) return false;
 		if (this._NO_ABSORB_SUBTITLES.some(it => nxtLine.toUpperCase().startsWith(it))) return false;
 
@@ -719,7 +720,7 @@ class CreatureParser extends BaseParser {
 			.map(it => {
 				if (!it.name.trim() && !it.entries.length) return null;
 
-				const m = /can take (\d) legendary actions/gi.exec(it.entries[0]);
+				const m = /can take (\d) legendary actions?/gi.exec(it.entries[0]);
 				if (!it.name.trim() && m) {
 					if (m[1] !== "3") stats.legendaryActions = Number(m[1]);
 					return null;
@@ -745,7 +746,7 @@ class CreatureParser extends BaseParser {
 				for (let i = 0; i < block.entries.length; ++i) {
 					const curLine = block.entries[i];
 
-					if (typeof curLine !== "string" || !curLine.trim().endsWith(":")) continue;
+					if (typeof curLine !== "string") continue;
 
 					let lst = null;
 					let offset = 1;
@@ -756,18 +757,30 @@ class CreatureParser extends BaseParser {
 						if (typeof nxtLine !== "string" || !/^[•●]/.test(nxtLine.trim())) break;
 
 						nxtLine = nxtLine.replace(/^[•●]\s*/, "");
+						const listItem = this._doMergeBulletedLists_getListItem(nxtLine);
 
 						if (!lst) {
-							lst = {type: "list", items: [nxtLine]};
+							lst = {type: "list", items: [listItem]};
 							block.entries[i + offset] = lst;
 							offset++;
 						} else {
-							lst.items.push(nxtLine);
+							lst.items.push(listItem);
 							block.entries.splice(i + offset, 1);
 						}
 					}
 				}
 			});
+	}
+
+	static _doMergeBulletedLists_getListItem (str) {
+		if (!ConvertUtil.isNameLine(str)) return str;
+
+		const {name, entry} = ConvertUtil.splitNameLine(str);
+		return {
+			type: "item",
+			name,
+			entry,
+		};
 	}
 
 	static _mutAssignPrettyType ({obj, type}) {
@@ -1419,7 +1432,17 @@ class CreatureParser extends BaseParser {
 		const spellcasting = [];
 		stats[prop] = stats[prop].map(ent => {
 			if (!ent.name || !ent.name.toLowerCase().includes("spellcasting")) return ent;
-			const parsed = SpellcastingTraitConvert.tryParseSpellcasting(ent, {isMarkdown, cbErr: options.cbErr, displayAs: prop, actions: stats.action, reactions: stats.reaction});
+			const parsed = SpellcastingTraitConvert.tryParseSpellcasting(
+				ent,
+				{
+					isMarkdown,
+					cbMan: (wrn) => options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}${wrn}`),
+					cbErr: (err) => options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}${err}`),
+					displayAs: prop,
+					actions: stats.action,
+					reactions: stats.reaction,
+				},
+			);
 			if (!parsed) return ent;
 			spellcasting.push(parsed);
 			return null;
@@ -1475,6 +1498,13 @@ class CreatureParser extends BaseParser {
 
 		if (/ or /.test(strType)) {
 			const pts = strType.split(/(?:, |,? or )/g);
+			type = {
+				choose: pts.map(it => it.trim()).filter(Boolean),
+			};
+		}
+
+		if (/ (&|and) /.test(strType)) {
+			const pts = strType.split(/(?:, |,? (?:&|and) )/g);
 			type = {
 				choose: pts.map(it => it.trim()).filter(Boolean),
 			};
@@ -1553,7 +1583,7 @@ class CreatureParser extends BaseParser {
 		// regular creatures
 
 		// region Size
-		const reSize = new RegExp(`(${Object.values(Parser.SIZE_ABV_TO_FULL).join("|")})`, "i");
+		const reSize = new RegExp(`\\b(${Object.values(Parser.SIZE_ABV_TO_FULL).join("|")})\\b`, "i");
 		const reSizeGlobal = new RegExp(reSize, "gi");
 
 		const tks = meta.curLine.split(reSizeGlobal);

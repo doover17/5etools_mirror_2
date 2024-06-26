@@ -225,9 +225,15 @@ class ItemParser extends BaseParser {
 			const isGenericWeaponArmor = this._setCleanTaglineInfo_mutIsGenericWeaponArmor({stats, part, partLower, options});
 			if (isGenericWeaponArmor) continue;
 
-			const mBaseWeapon = /^(?<ptPre>weapon|staff) \((?<ptParens>[^)]+)\)$/i.exec(part);
+			const mBaseWeapon = /^(?<ptPre>weapon|staff|rod) \((?<ptParens>[^)]+)\)$/i.exec(part);
 			if (mBaseWeapon) {
 				if (mBaseWeapon.groups.ptPre.toLowerCase() === "staff") stats.staff = true;
+				if (mBaseWeapon.groups.ptPre.toLowerCase() === "rod") {
+					if (stats.type) {
+						throw new Error(`Multiple types! "${stats.type}" -> "${mBaseWeapon.groups.ptParens}"`);
+					}
+					stats.type = "RD";
+				}
 
 				if (mBaseWeapon.groups.ptParens === "spear or javelin") {
 					(stats.requires ||= []).push(...this._setCleanTaglineInfo_getGenericRequires({stats, str: "spear", options}));
@@ -318,9 +324,15 @@ class ItemParser extends BaseParser {
 
 	static _setCleanTaglineInfo_getProcArmorPart ({pt}) {
 		switch (pt) {
-			case "light": return {"type": "LA"};
-			case "medium": return {"type": "MA"};
-			case "heavy": return {"type": "HA"};
+			case "light":
+			case "light armor":
+				return {"type": "LA"};
+			case "medium":
+			case "medium armor":
+				return {"type": "MA"};
+			case "heavy":
+			case "heavy armor":
+				return {"type": "HA"};
 			default: {
 				const baseItem = this._setCleanTaglineInfo_getArmorBaseItem(pt);
 				if (!baseItem) throw new Error(`Could not find base item "${pt}"`);

@@ -44,7 +44,7 @@ class Omnisearch {
 					}
 
 					this._clickFirst = true;
-					this._handleClickSubmit(evt);
+					this._pHandleClickSubmit(evt).then(null);
 					break;
 				case "ArrowUp":
 					evt.preventDefault();
@@ -64,23 +64,23 @@ class Omnisearch {
 			this._clickFirst = false;
 			if (evt.which >= 37 && evt.which <= 40) return;
 			clearTimeout(typeTimer);
-			typeTimer = setTimeout(() => this._handleClickSubmit(), this._TYPE_TIMEOUT_MS);
+			typeTimer = setTimeout(() => this._pHandleClickSubmit(), this._TYPE_TIMEOUT_MS);
 		});
 		this._iptSearch.onKeydown(() => clearTimeout(typeTimer));
 		this._iptSearch.onClick(evt => {
 			evt.stopPropagation();
 			Renderer.hover.cleanTempWindows();
-			if (this._iptSearch.val() && this._iptSearch.val().trim().length) this._handleClickSubmit();
+			if (this._iptSearch.val() && this._iptSearch.val().trim().length) this._pHandleClickSubmit().then(null);
 		});
 
 		this._init_scrollHandler();
 		this._init_bindBodyListeners();
 	}
 
-	static _handleClickSubmit (evt) {
+	static async _pHandleClickSubmit (evt) {
 		if (evt) evt.stopPropagation();
+		await this._pDoSearch();
 		Renderer.hover.cleanTempWindows();
-		return this._pDoSearch();
 	}
 
 	static _init_elements () {
@@ -110,7 +110,7 @@ class Omnisearch {
 			clazz: "btn btn-default omni__submit",
 			tabindex: -1,
 			html: `<span class="glyphicon glyphicon-search"></span>`,
-			click: evt => this._handleClickSubmit(evt),
+			click: evt => this._pHandleClickSubmit(evt),
 		});
 
 		this._wrpSearchInput = e_({
@@ -317,15 +317,37 @@ class Omnisearch {
 	}
 
 	static _renderLink_getHoverString (category, url, src, {isFauxPage = false} = {}) {
-		return `onmouseover="Renderer.hover.pHandleLinkMouseOver(event, this)" onmouseleave="Renderer.hover.handleLinkMouseLeave(event, this)" onmousemove="Renderer.hover.handleLinkMouseMove(event, this)" ondragstart="Renderer.hover.handleLinkDragStart(event, this)" data-vet-page="${UrlUtil.categoryToHoverPage(category).qq()}" data-vet-source="${src.qq()}" data-vet-hash="${url.qq()}" ${isFauxPage ? `data-vet-is-faux-page="true"` : ""} ${Renderer.hover.getPreventTouchString()}`;
+		return [
+			`onmouseover="Renderer.hover.pHandleLinkMouseOver(event, this)"`,
+			`onmouseleave="Renderer.hover.handleLinkMouseLeave(event, this)"`,
+			`onmousemove="Renderer.hover.handleLinkMouseMove(event, this)"`,
+			`ondragstart="Renderer.hover.handleLinkDragStart(event, this)"`,
+			`data-vet-page="${UrlUtil.categoryToHoverPage(category).qq()}"`,
+			`data-vet-source="${src.qq()}"`,
+			`data-vet-hash="${url.qq()}"`,
+			isFauxPage ? `data-vet-is-faux-page="true"` : "",
+			Renderer.hover.getPreventTouchString(),
+		]
+			.filter(Boolean)
+			.join(" ");
+	}
+
+	static _isFauxPage (r) {
+		return !!r.hx;
+	}
+
+	static getResultHref (r) {
+		const isFauxPage = this._isFauxPage(r);
+		if (isFauxPage) return null;
+		return r.c === Parser.CAT_ID_PAGE ? r.u : `${Renderer.get().baseUrl}${UrlUtil.categoryToPage(r.c)}#${r.uh || r.u}`;
 	}
 
 	static $getResultLink (r) {
-		const isFauxPage = !!r.hx;
+		const isFauxPage = this._isFauxPage(r);
 
 		if (isFauxPage) return $(`<span tabindex="0" ${r.h ? this._renderLink_getHoverString(r.c, r.u, r.s, {isFauxPage}) : ""} class="omni__lnk-name help">${r.cf}: ${r.n}</span>`);
 
-		const href = r.c === Parser.CAT_ID_PAGE ? r.u : `${Renderer.get().baseUrl}${UrlUtil.categoryToPage(r.c)}#${r.uh || r.u}`;
+		const href = this.getResultHref(r);
 		return $(`<a href="${href}" ${r.h ? this._renderLink_getHoverString(r.c, r.u, r.s, {isFauxPage}) : ""} class="omni__lnk-name">${r.cf}: ${r.n}</a>`);
 	}
 
@@ -622,10 +644,10 @@ class Omnisearch {
 
 	static addScrollTopFloat () {
 		// "To top" button
-		const $btnToTop = $(`<button class="btn btn-sm btn-default" title="To Top"><span class="glyphicon glyphicon-arrow-up"/></button>`)
+		const $btnToTop = $(`<button class="btn btn-sm btn-default" title="To Top"><span class="glyphicon glyphicon-arrow-up"></span></button>`)
 			.click(() => MiscUtil.scrollPageTop());
 
-		const $wrpTop = $$`<div class="bk__to-top">
+		const $wrpTop = $$`<div class="bk__to-top no-print">
 			${$btnToTop}
 		</div>`.appendTo(document.body);
 

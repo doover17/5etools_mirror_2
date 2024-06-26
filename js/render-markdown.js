@@ -2,15 +2,7 @@
 
 // TODO implement remaining methods
 class RendererMarkdown {
-	static async pInit () {
-		const settings = await StorageUtil.pGet("bookViewSettingsMarkdown") || Object.entries(RendererMarkdown._CONFIG).mergeMap(([k, v]) => ({[k]: v.default}));
-		Object.assign(RendererMarkdown, settings);
-		RendererMarkdown._isInit = true;
-	}
-
-	static checkInit () {
-		if (!RendererMarkdown._isInit) throw new Error(`RendererMarkdown has not been initialised!`);
-	}
+	static CHARS_PER_PAGE = 5500;
 
 	getLineBreak () { return "\n"; }
 
@@ -34,8 +26,6 @@ class RendererMarkdown {
 	set isSkipStylingItemLinks (val) { this._isSkipStylingItemLinks = val; }
 
 	static get () {
-		RendererMarkdown.checkInit();
-
 		return new RendererMarkdown().setFnPostProcess(RendererMarkdown._fnPostProcess);
 	}
 
@@ -399,7 +389,7 @@ class RendererMarkdown {
 				this._recursiveRender(by, tempStack, meta);
 				if (i < len - 1) tempStack[0] += "\n";
 			}
-			textStack[0] += `\u2014 ${tempStack.join("")}${entry.from ? `, *${entry.from}*` : ""}`;
+			textStack[0] += `\u2014 ${tempStack.join("")}${entry.from ? `, *${this.render(entry.from)}*` : ""}`;
 		}
 	}
 
@@ -639,26 +629,23 @@ class RendererMarkdown {
 
 	// region primitives
 	_renderString (entry, textStack, meta, options) {
-		switch (RendererMarkdown._tagRenderMode || 0) {
-			// render tags where possible
-			case 0: {
-				this._renderString_renderMode0(entry, textStack, meta, options);
+		switch (VetoolsConfig.get("markdown", "tagRenderMode") || "convertMarkdown") {
+			case "convertMarkdown": {
+				this._renderString_renderModeConvertMarkdown(entry, textStack, meta, options);
 				break;
 			}
-			// leave tags as-is
-			case 1: {
+			case "ignore": {
 				textStack[0] += entry;
 				break;
 			}
-			// strip tags
-			case 2: {
+			case "convertText": {
 				textStack[0] += Renderer.stripTags(entry);
 				break;
 			}
 		}
 	}
 
-	_renderString_renderMode0 (entry, textStack, meta, options) {
+	_renderString_renderModeConvertMarkdown (entry, textStack, meta, options) {
 		const tagSplit = Renderer.splitByTags(entry);
 		const len = tagSplit.length;
 		for (let i = 0; i < len; ++i) {
@@ -688,6 +675,12 @@ class RendererMarkdown {
 				break;
 			case "@s":
 			case "@strike":
+				textStack[0] += `~~`;
+				this._recursiveRender(text, textStack, meta);
+				textStack[0] += `~~`;
+				break;
+			case "@s2":
+			case "@strikeDouble":
 				textStack[0] += `~~`;
 				this._recursiveRender(text, textStack, meta);
 				textStack[0] += `~~`;
@@ -780,64 +773,10 @@ class RendererMarkdown {
 
 	// region Static options
 	static async pShowSettingsModal () {
-		RendererMarkdown.checkInit();
-
-		const {$modalInner} = UiUtil.getShowModal({
-			title: "Markdown Settings",
-			cbClose: () => RendererMarkdown.__$wrpSettings.detach(),
-		});
-		if (!RendererMarkdown.__$wrpSettings) {
-			const _compMarkdownSettings = BaseComponent.fromObject({
-				_tagRenderMode: RendererMarkdown._tagRenderMode,
-				_isAddColumnBreaks: RendererMarkdown._isAddColumnBreaks,
-			});
-			const compMarkdownSettings = _compMarkdownSettings.getPod();
-			const saveMarkdownSettingsDebounced = MiscUtil.debounce(() => StorageUtil.pSet("bookViewSettingsMarkdown", _compMarkdownSettings.toObject()), 100);
-			compMarkdownSettings.addHookAll(() => {
-				Object.assign(RendererMarkdown, compMarkdownSettings.getState());
-				saveMarkdownSettingsDebounced();
-			});
-
-			const $rows = Object.entries(RendererMarkdown._CONFIG)
-				.map(([k, v]) => {
-					let $ipt;
-					switch (v.type) {
-						case "boolean": {
-							$ipt = ComponentUiUtil.$getCbBool(_compMarkdownSettings, k).addClass("mr-1");
-							break;
-						}
-						case "enum": {
-							$ipt = ComponentUiUtil.$getSelEnum(_compMarkdownSettings, k, {values: v.values, fnDisplay: v.fnDisplay});
-							break;
-						}
-						default: throw new Error(`Unhandled input type!`);
-					}
-
-					return $$`<div class="m-1 stripe-even"><label class="split-v-center">
-						<div class="w-100 mr-2">${v.name}</div>
-						${$ipt.addClass("max-w-33")}
-					</label></div>`;
-				});
-
-			RendererMarkdown.__$wrpSettings = $$`<div class="ve-flex-v-col w-100 h-100">${$rows}</div>`;
-		}
-		RendererMarkdown.__$wrpSettings.appendTo($modalInner);
+		ConfigUi.show({settingsGroupIds: ["markdown"]});
 	}
 	// endregion
-
-	static getSetting (key) { return this[`_${key}`]; }
 }
-RendererMarkdown._isInit = false;
-RendererMarkdown.CHARS_PER_PAGE = 5500;
-RendererMarkdown.__$wrpSettings = null;
-RendererMarkdown._TAG_RENDER_MODES = ["Convert to Markdown", "Leave As-Is", "Convert to Text"];
-RendererMarkdown._CONFIG = {
-	_tagRenderMode: {default: 0, name: "Tag Handling (<code>@tag</code>)", fnDisplay: ix => RendererMarkdown._TAG_RENDER_MODES[ix], type: "enum", values: [0, 1, 2]},
-	_isAddColumnBreaks: {default: false, name: "Add GM Binder Column Breaks (<code>\\columnbreak</code>)", type: "boolean"},
-	_isAddPageBreaks: {default: false, name: "Add GM Binder Page Breaks (<code>\\pagebreak</code>)", type: "boolean"},
-};
-
-if (typeof window !== "undefined") window.addEventListener("load", () => RendererMarkdown.pInit());
 
 RendererMarkdown.utils = class {
 	static getPageText (it) {
@@ -909,9 +848,9 @@ RendererMarkdown.monster = class {
 		const abilityScorePart = RendererMarkdown.utils.compact.getRenderedAbilityScores(mon, {prefix: ">"});
 		const savePart = mon.save ? `\n>- **Saving Throws** ${Object.keys(mon.save).sort(SortUtil.ascSortAtts).map(it => RendererMarkdown.monster.getSave(it, mon.save[it])).join(", ")}` : "";
 		const skillPart = mon.skill ? `\n>- **Skills** ${RendererMarkdown.monster.getSkillsString(mon)}` : "";
-		const damVulnPart = mon.vulnerable ? `\n>- **Damage Vulnerabilities** ${Parser.getFullImmRes(mon.vulnerable)}` : "";
-		const damResPart = mon.resist ? `\n>- **Damage Resistances** ${Parser.getFullImmRes(mon.resist)}` : "";
-		const damImmPart = mon.immune ? `\n>- **Damage Immunities** ${Parser.getFullImmRes(mon.immune)}` : "";
+		const damVulnPart = mon.vulnerable ? `\n>- **Damage Vulnerabilities** ${Parser.getFullImmRes(mon.vulnerable, {isPlainText: true})}` : "";
+		const damResPart = mon.resist ? `\n>- **Damage Resistances** ${Parser.getFullImmRes(mon.resist, {isPlainText: true})}` : "";
+		const damImmPart = mon.immune ? `\n>- **Damage Immunities** ${Parser.getFullImmRes(mon.immune, {isPlainText: true})}` : "";
 		const condImmPart = mon.conditionImmune ? `\n>- **Condition Immunities** ${Parser.getFullCondImm(mon.conditionImmune, {isPlainText: true})}` : "";
 		const sensePart = !opts.isHideSenses ? `\n>- **Senses** ${mon.senses ? `${Renderer.utils.getRenderedSenses(mon.senses, true)}, ` : ""}passive Perception ${mon.passive || "\u2014"}` : "";
 		const languagePart = !opts.isHideLanguages ? `\n>- **Languages** ${Renderer.monster.getRenderedLanguages(mon.languages)}` : "";
@@ -958,7 +897,7 @@ ${mon.pbNote || Parser.crToNumber(mon.cr) < VeCt.CR_CUSTOM ? `>- **Proficiency B
 
 		let breakablePart = `${traitsPart}${actionsPart}${bonusActionsPart}${reactionsPart}${legendaryActionsPart}${mythicActionsPart}${legendaryGroupLairPart}${legendaryGroupRegionalPart}${footerPart}`;
 
-		if (RendererMarkdown.getSetting("isAddColumnBreaks")) {
+		if (VetoolsConfig.get("markdown", "isAddColumnBreaks")) {
 			let charAllowanceFirstCol = 2200 - unbreakablePart.length;
 
 			const breakableLines = breakablePart.split("\n");
@@ -1096,7 +1035,7 @@ ${mon.pbNote || Parser.crToNumber(mon.cr) < VeCt.CR_CUSTOM ? `>- **Proficiency B
 
 				const out = [monEntry];
 
-				const isAddPageBreaks = RendererMarkdown.getSetting("isAddPageBreaks");
+				const isAddPageBreaks = VetoolsConfig.get("markdown", "isAddPageBreaks");
 				if (fluffText) {
 					// Insert a page break before every fluff section
 					if (isAddPageBreaks) out.push("", "\\pagebreak", "");
@@ -1689,6 +1628,8 @@ RendererMarkdown.vehicle = class {
 			renderer.render(entriesMetaShip.entrySizeDimensions),
 			RendererMarkdown.vehicle.ship.getCrewCargoPaceSection_(ent, {entriesMetaShip}),
 			RendererMarkdown.utils.compact.getRenderedAbilityScores(ent),
+			entriesMeta.entryDamageVulnerabilities ? renderer.render(entriesMeta.entryDamageVulnerabilities) : null,
+			entriesMeta.entryDamageResistances ? renderer.render(entriesMeta.entryDamageResistances) : null,
 			entriesMeta.entryDamageImmunities ? renderer.render(entriesMeta.entryDamageImmunities) : null,
 			entriesMeta.entryConditionImmunities ? renderer.render(entriesMeta.entryConditionImmunities) : null,
 			ent.action ? "### Actions" : null,
@@ -1770,6 +1711,8 @@ RendererMarkdown.vehicle = class {
 				.map(prop => renderer.render(entriesMetaInfwar[prop])),
 			renderer.render(entriesMetaInfwar.entrySpeedNote),
 			RendererMarkdown.utils.compact.getRenderedAbilityScores(ent),
+			entriesMeta.entryDamageVulnerabilities ? renderer.render(entriesMeta.entryDamageVulnerabilities) : null,
+			entriesMeta.entryDamageResistances ? renderer.render(entriesMeta.entryDamageResistances) : null,
 			entriesMeta.entryDamageImmunities ? renderer.render(entriesMeta.entryDamageImmunities) : null,
 			entriesMeta.entryConditionImmunities ? renderer.render(entriesMeta.entryConditionImmunities) : null,
 			...this._getLinesRendered_traits({ent, renderer}),

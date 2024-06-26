@@ -65,10 +65,15 @@ class BaseConverter extends BaseComponent {
 		this._state.source = val;
 	}
 
+	get page () { return this._state.page; }
+	set page (val) { this._state.page = val; }
+
 	get mode () { return this._state.mode; }
 
+	/* -------------------------------------------- */
+
 	renderSidebar (parent, $parent) {
-		const $wrpSidebar = $(`<div class="w-100 ve-flex-col"/>`).appendTo($parent);
+		const $wrpSidebar = $(`<div class="w-100 ve-flex-col"></div>`).appendTo($parent);
 		const hkShowSidebar = () => $wrpSidebar.toggleClass("hidden", parent.get("converter") !== this._converterId);
 		parent.addHook("converter", hkShowSidebar);
 		hkShowSidebar();
@@ -153,7 +158,7 @@ class BaseConverter extends BaseComponent {
 	_renderSidebarSourcePart (parent, $wrpSidebar) {
 		if (!this._hasSource) return;
 
-		const $wrpSourceOverlay = $(`<div class="h-100 w-100"/>`);
+		const $wrpSourceOverlay = $(`<div class="h-100 w-100"></div>`);
 		let modalMeta = null;
 
 		const rebuildStageSource = (options) => {
@@ -186,10 +191,10 @@ class BaseConverter extends BaseComponent {
 			<select class="form-control input-xs"><option value="">(None)</option></select>`
 			.change(() => this._state.source = $selSource.val());
 
-		$(`<option/>`, {val: "5e_divider", text: `\u2014`, disabled: true}).appendTo($selSource);
+		$(`<option></option>`, {val: "5e_divider", text: `\u2014`, disabled: true}).appendTo($selSource);
 
 		Object.keys(Parser.SOURCE_JSON_TO_FULL)
-			.forEach(src => $(`<option/>`, {val: src, text: Parser.sourceJsonToFull(src)}).appendTo($selSource));
+			.forEach(src => $(`<option></option>`, {val: src, text: Parser.sourceJsonToFull(src)}).appendTo($selSource));
 
 		const hkAvailSources = () => {
 			const curSources = new Set($selSource.find(`option`).map((i, e) => $(e).val()));
@@ -212,7 +217,7 @@ class BaseConverter extends BaseComponent {
 				const $optBrewLast = $selSource.find(`option[disabled]`).prev();
 				optionsToAdd.forEach(source => {
 					const fullSource = BrewUtil2.sourceJsonToSource(source);
-					$(`<option/>`, {val: fullSource.json, text: fullSource.full}).insertAfter($optBrewLast);
+					$(`<option></option>`, {val: fullSource.json, text: fullSource.full}).insertAfter($optBrewLast);
 				});
 			}
 
@@ -261,6 +266,21 @@ class BaseConverter extends BaseComponent {
 		ConverterUiUtil.renderSideMenuDivider($wrpSidebar);
 	}
 	// endregion
+
+	/* -------------------------------------------- */
+
+	renderFooterLhs (parent, {$wrpFooterLhs}) {
+		if (!this._hasPageNumbers) return;
+
+		const $dispPage = $(`<div class="ve-muted italic" title="Use &quot;+&quot; and &quot;-&quot; (when the cursor is not in a text input) to increase/decrease."></div>`)
+			.appendTo($wrpFooterLhs);
+
+		this._addHookBase("page", () => {
+			$dispPage.html(this._state.page != null ? `<b class="mr-1">Page:</b> ${this._state.page}` : "");
+		})();
+
+		parent.addHook("converter", () => $dispPage.toggleClass("ve-hidden", parent.get("converter") !== this._converterId))();
+	}
 }
 
 class CreatureConverter extends BaseConverter {
@@ -1144,11 +1164,10 @@ class ConverterUi extends BaseComponent {
 				content: `Saved!`,
 			});
 		});
-		const hkConverter = () => {
+
+		this._addHookBase("converter", () => {
 			$btnSaveLocal.toggleClass("hidden", !this.activeConverter.canSaveLocal);
-		};
-		this._addHookBase("converter", hkConverter);
-		hkConverter();
+		})();
 
 		$(`#btn-output-download`).click(() => {
 			const metaCurr = this._getCurrentEntities();
@@ -1228,7 +1247,21 @@ class ConverterUi extends BaseComponent {
 		$("#parsestatblock").on("click", () => doConversion(false));
 		$(`#parsestatblockadd`).on("click", () => doConversion(true));
 
-		this.initSideMenu();
+		$(document.body)
+			.on("keydown", evt => {
+				if (EventUtil.isInInput(evt) || !EventUtil.noModifierKeys(evt)) return;
+
+				const key = EventUtil.getKeyIgnoreCapsLock(evt);
+				if (!["+", "-"].includes(key)) return;
+
+				evt.stopPropagation();
+				evt.preventDefault();
+
+				this.activeConverter.page += (key === "+" ? 1 : -1);
+			});
+
+		this._initSideMenu();
+		this._initFooterLhs();
 
 		this._pInit_dispErrorsWarnings();
 
@@ -1296,7 +1329,7 @@ class ConverterUi extends BaseComponent {
 		}
 	}
 
-	initSideMenu () {
+	_initSideMenu () {
 		const $mnu = $(`.sidemenu`);
 
 		const $selConverter = ComponentUiUtil.$getSelEnum(
@@ -1334,7 +1367,7 @@ class ConverterUi extends BaseComponent {
 		ConverterUiUtil.renderSideMenuDivider($mnu);
 		// endregion
 
-		const $wrpConverters = $(`<div class="w-100 ve-flex-col"/>`).appendTo($mnu);
+		const $wrpConverters = $(`<div class="w-100 ve-flex-col"></div>`).appendTo($mnu);
 		Object
 			.keys(this._converters)
 			.sort(SortUtil.ascSortLower)
@@ -1347,6 +1380,15 @@ class ConverterUi extends BaseComponent {
 		};
 		this._addHookBase("converter", hkMode);
 		hkMode();
+	}
+
+	_initFooterLhs () {
+		const $wrpFooterLhs = $(`#wrp-footer-lhs`);
+
+		Object
+			.keys(this._converters)
+			.sort(SortUtil.ascSortLower)
+			.forEach(k => this._converters[k].renderFooterLhs(this.getPod(), {$wrpFooterLhs}));
 	}
 
 	doCleanAndOutput (obj, append) {

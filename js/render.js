@@ -258,7 +258,34 @@ globalThis.Renderer = function () {
 		MiscUtil.delete(this._plugins, pluginType);
 	};
 
-	this._getPlugins = function (pluginType) { return this._plugins[pluginType] || []; };
+	this._getPlugins = function (pluginType) { return this._plugins[pluginType] ||= []; };
+
+	this._applyPlugins_useFirst = function (pluginType, commonArgs, pluginArgs) {
+		for (const plugin of this._getPlugins(pluginType)) {
+			const out = plugin(commonArgs, pluginArgs);
+			if (out) return out;
+		}
+	};
+
+	this._applyPlugins_useAll = function (pluginType, commonArgs, pluginArgs) {
+		const plugins = this._getPlugins(pluginType);
+		if (!plugins?.length) return null;
+
+		let input = pluginArgs.input;
+		for (const plugin of plugins) {
+			input = plugin(commonArgs, pluginArgs) ?? input;
+		}
+		return input;
+	};
+
+	this._applyPlugins_getAll = function (pluginType, commonArgs, pluginArgs) {
+		const plugins = this._getPlugins(pluginType);
+		if (!plugins?.length) return [];
+
+		return plugins
+			.map(plugin => plugin(commonArgs, pluginArgs))
+			.filter(Boolean);
+	};
 
 	/** Run a function with the given plugin active. */
 	this.withPlugin = function ({pluginTypes, fnPlugin, fn}) {
@@ -437,11 +464,15 @@ globalThis.Renderer = function () {
 		}
 	};
 
-	this._RE_TEXT_CENTER = /\btext-center\b/;
+	this._RE_TEXT_CENTER = /\btext-center\b/g;
+	this._RE_COL_D = /\bcol-\d\d?(?:-\d\d?)?\b/g;
 
 	this._getMutatedStyleString = function (str) {
 		if (!str) return str;
-		return str.replace(this._RE_TEXT_CENTER, "ve-text-center");
+		return str
+			.replace(this._RE_TEXT_CENTER, "ve-$&")
+			.replace(this._RE_COL_D, "ve-$&")
+		;
 	};
 
 	this._adjustDepth = function (meta, dDepth) {
@@ -481,7 +512,7 @@ globalThis.Renderer = function () {
 			: null;
 		const ptTitleCreditTooltip = this._renderImage_getTitleCreditTooltipText(entry);
 		const ptTitle = ptTitleCreditTooltip ? `title="${ptTitleCreditTooltip}"` : "";
-		const pluginDataIsNoLink = this._getPlugins("image_isNoLink").map(plugin => plugin(entry, textStack, meta, options)).some(Boolean);
+		const pluginDataIsNoLink = this._applyPlugins_useFirst("image_isNoLink", {textStack, meta, options}, {input: entry});
 
 		textStack[0] += `<div class="${this._renderImage_getWrapperClasses(entry, meta)}" ${entry.title && this._isHeaderIndexIncludeImageTitles ? `data-title-index="${this._headerIndex++}"` : ""}>
 			${pluginDataIsNoLink ? "" : `<a href="${href}" target="_blank" rel="noopener noreferrer" ${ptTitle}>`}
@@ -550,6 +581,11 @@ globalThis.Renderer = function () {
 			page: entry.page,
 			source: entry.source,
 			hash: entry.hash,
+			...entry.expectsLightBackground
+				? {expectsLightBackground: true}
+				: entry.expectsDarkBackground
+					? {expectsDarkBackground: true}
+					: {},
 		};
 	};
 
@@ -560,6 +596,8 @@ globalThis.Renderer = function () {
 
 	this._renderImage_getWrapperClasses = function (entry) {
 		const out = ["rd__wrp-image", "relative"];
+		if (entry.expectsLightBackground) out.push("rd__wrp-image--bg", "rd__wrp-image--bg-light");
+		else if (entry.expectsDarkBackground) out.push("rd__wrp-image--bg", "rd__wrp-image--bg-dark");
 		if (entry.style) {
 			switch (entry.style) {
 				case "comic-speaker-left": out.push("rd__comic-img-speaker", "rd__comic-img-speaker--left"); break;
@@ -581,17 +619,13 @@ globalThis.Renderer = function () {
 
 	this._renderImage_getUrl = function (entry) {
 		let url = Renderer.utils.getEntryMediaUrl(entry, "href", "img");
-		for (const plugin of this._getPlugins(`image_urlPostProcess`)) {
-			url = plugin(entry, url) || url;
-		}
+		url = this._applyPlugins_useAll("image_urlPostProcess", null, {input: url}) ?? url;
 		return url;
 	};
 
 	this._renderImage_getUrlThumbnail = function (entry) {
 		let url = Renderer.utils.getEntryMediaUrl(entry, "hrefThumbnail", "img");
-		for (const plugin of this._getPlugins(`image_urlThumbnailPostProcess`)) {
-			url = plugin(entry, url) || url;
-		}
+		url = this._applyPlugins_useAll("image_urlThumbnailPostProcess", null, {input: url}) ?? url;
 		return url;
 	};
 
@@ -801,7 +835,7 @@ globalThis.Renderer = function () {
 		const cachedLastDepthTrackerProps = MiscUtil.copyFast(this._lastDepthTrackerInheritedProps);
 		this._handleTrackDepth(entry, meta.depth);
 
-		const pluginDataNamePrefix = this._getPlugins(`${type}_namePrefix`).map(plugin => plugin(entry, textStack, meta, options)).filter(Boolean);
+		const pluginDataNamePrefix = this._applyPlugins_getAll(`${type}_namePrefix`, {textStack, meta, options}, {input: entry});
 
 		const headerSpan = entry.name ? `<${headerTag} class="rd__h ${headerClass}" data-title-index="${this._headerIndex++}" ${this._getEnumeratedTitleRel(entry.name)}> <span class="entry-title-inner${!pagePart && entry.source ? ` help-subtle` : ""}"${!pagePart && entry.source ? ` title="Source: ${Parser.sourceJsonToFull(entry.source)}${entry.page ? `, p${entry.page}` : ""}"` : ""}>${pluginDataNamePrefix.join("")}${this.render({type: "inline", entries: [entry.name]})}${isAddPeriod ? "." : ""}</span>${partPageExpandCollapse}</${headerTag}> ` : "";
 
@@ -907,11 +941,11 @@ globalThis.Renderer = function () {
 	};
 
 	this._getPtExpandCollapse = function () {
-		return `<span class="rd__h-toggle ml-2 clickable no-select" data-rd-h-toggle-button="true" title="Toggle Visibility (CTRL to Toggle All)">[\u2013]</span>`;
+		return `<span class="rd__h-toggle ml-2 clickable no-select no-print lst-is-exporting-image__hidden" data-rd-h-toggle-button="true" title="Toggle Visibility (CTRL to Toggle All)">[\u2013]</span>`;
 	};
 
 	this._getPtExpandCollapseSpecial = function () {
-		return `<span class="rd__h-toggle ml-2 clickable no-select" data-rd-h-special-toggle-button="true" title="Toggle Visibility (CTRL to Toggle All)">[\u2013]</span>`;
+		return `<span class="rd__h-toggle ml-2 clickable no-select no-print lst-is-exporting-image__hidden" data-rd-h-special-toggle-button="true" title="Toggle Visibility (CTRL to Toggle All)">[\u2013]</span>`;
 	};
 
 	this._renderInset = function (entry, textStack, meta, options) {
@@ -1145,7 +1179,7 @@ globalThis.Renderer = function () {
 					if (i < len - 1) tempStack[0] += "<br>";
 				}
 			}
-			textStack[0] += `<span class="rd__quote-by">\u2014 ${byArr ? tempStack.join("") : ""}${byArr && entry.from ? `, ` : ""}${entry.from ? `<i>${entry.from}</i>` : ""}</span>`;
+			textStack[0] += `<span class="rd__quote-by">\u2014 ${byArr ? tempStack.join("") : ""}${byArr && entry.from ? `, ` : ""}${entry.from ? `<i>${this.render(entry.from)}</i>` : ""}</span>`;
 			textStack[0] += `</p>`;
 		}
 
@@ -1222,9 +1256,23 @@ globalThis.Renderer = function () {
 	};
 
 	this._renderDice = function (entry, textStack, meta, options) {
-		const pluginResults = this._getPlugins("dice").map(plugin => plugin(entry, textStack, meta, options)).filter(Boolean);
+		const pluginResults = this._applyPlugins_getAll("dice", {textStack, meta, options}, {input: entry});
 
-		textStack[0] += Renderer.getEntryDice(entry, entry.name, {isAddHandlers: this._isAddHandlers, pluginResults});
+		for (const res of pluginResults) {
+			if (res.rendered) {
+				textStack[0] += res.rendered;
+				return;
+			}
+		}
+
+		const toDisplay = Renderer.getEntryDiceDisplayText(entry);
+
+		if (entry.rollable === true) {
+			textStack[0] += Renderer.getRollableEntryDice(entry, entry.name, toDisplay, {isAddHandlers: this._isAddHandlers, pluginResults});
+			return;
+		}
+
+		textStack[0] += toDisplay;
 	};
 
 	this._renderActions = function (entry, textStack, meta, options) {
@@ -1522,8 +1570,7 @@ globalThis.Renderer = function () {
 	this._getStyleClass = function (entryType, entry) {
 		const outList = [];
 
-		const pluginResults = this._getPlugins(`${entryType}_styleClass_fromSource`)
-			.map(plugin => plugin(entryType, entry)).filter(Boolean);
+		const pluginResults = this._applyPlugins_getAll(`${entryType}_styleClass_fromSource`, null, {input: {entryType, entry}});
 
 		if (!pluginResults.some(it => it.isSkip)) {
 			if (
@@ -1543,31 +1590,40 @@ globalThis.Renderer = function () {
 	};
 
 	this._renderString = function (entry, textStack, meta, options) {
-		const tagSplit = Renderer.splitByTags(entry);
+		const str = this._applyPlugins_useAll("string_preprocess", {textStack, meta, options}, {input: entry}) ?? entry;
+
+		const tagSplit = Renderer.splitByTags(str);
 		const len = tagSplit.length;
 		for (let i = 0; i < len; ++i) {
 			const s = tagSplit[i];
 			if (!s) continue;
-			if (s.startsWith("{@")) {
-				const [tag, text] = Renderer.splitFirstSpace(s.slice(1, -1));
-				this._renderString_renderTag(textStack, meta, options, tag, text);
-			} else textStack[0] += s;
+
+			if (!s.startsWith("{@")) {
+				this._renderString_renderBasic(textStack, meta, options, s);
+				continue;
+			}
+
+			const [tag, text] = Renderer.splitFirstSpace(s.slice(1, -1));
+			this._renderString_renderTag(textStack, meta, options, tag, text);
 		}
+	};
+
+	this._renderString_renderBasic = function (textStack, meta, options, str) {
+		const fromPlugins = this._applyPlugins_useFirst("string_basic", {textStack, meta, options}, {input: str});
+		if (fromPlugins) return void (textStack[0] += fromPlugins);
+
+		textStack[0] += str;
 	};
 
 	this._renderString_renderTag = function (textStack, meta, options, tag, text) {
 		// region Plugins
-		// Generic
-		for (const plugin of this._getPlugins("string_tag")) {
-			const out = plugin(tag, text, textStack, meta, options);
-			if (out) return void (textStack[0] += out);
-		}
-
 		// Tag-specific
-		for (const plugin of this._getPlugins(`string_${tag}`)) {
-			const out = plugin(tag, text, textStack, meta, options);
-			if (out) return void (textStack[0] += out);
-		}
+		const fromPluginsSpecific = this._applyPlugins_useFirst(`string_${tag}`, {textStack, meta, options}, {input: {tag, text}});
+		if (fromPluginsSpecific) return void (textStack[0] += fromPluginsSpecific);
+
+		// Generic
+		const fromPluginsGeneric = this._applyPlugins_useFirst("string_tag", {textStack, meta, options}, {input: {tag, text}});
+		if (fromPluginsGeneric) return void (textStack[0] += fromPluginsGeneric);
 		// endregion
 
 		switch (tag) {
@@ -1590,9 +1646,21 @@ globalThis.Renderer = function () {
 				this._recursiveRender(text, textStack, meta);
 				textStack[0] += `</s>`;
 				break;
+			case "@s2":
+			case "@strikeDouble":
+				textStack[0] += `<s class="ve-strike-double">`;
+				this._recursiveRender(text, textStack, meta);
+				textStack[0] += `</s>`;
+				break;
 			case "@u":
 			case "@underline":
 				textStack[0] += `<u>`;
+				this._recursiveRender(text, textStack, meta);
+				textStack[0] += `</u>`;
+				break;
+			case "@u2":
+			case "@underlineDouble":
+				textStack[0] += `<u class="ve-underline-double">`;
 				this._recursiveRender(text, textStack, meta);
 				textStack[0] += `</u>`;
 				break;
@@ -1791,7 +1859,11 @@ globalThis.Renderer = function () {
 			case "@link": {
 				const [displayText, url] = Renderer.splitTagByPipe(text);
 				let outUrl = url == null ? displayText : url;
-				if (!outUrl.startsWith("http")) outUrl = `http://${outUrl}`; // avoid HTTPS, as the D&D homepage doesn't support it
+
+				// If a URL is prefixed with e.g. `https://` or `mailto:`, leave it as-is
+				// Otherwise, assume `http` (avoid HTTPS, as the D&D homepage doesn't support it)
+				if (!/^[a-zA-Z]+:/.test(outUrl)) outUrl = `http://${outUrl}`;
+
 				const fauxEntry = {
 					type: "link",
 					href: {
@@ -1818,6 +1890,20 @@ globalThis.Renderer = function () {
 					fauxEntry.hash = hash;
 					fauxEntry.hashPreEncoded = true;
 				}
+				this._recursiveRender(fauxEntry, textStack, meta);
+
+				break;
+			}
+			case "@5etoolsImg": {
+				const [displayText, page] = Renderer.splitTagByPipe(text);
+				const fauxEntry = {
+					type: "link",
+					href: {
+						type: "external",
+						url: UrlUtil.link(this.getMediaUrl("img", page)),
+					},
+					text: displayText,
+				};
 				this._recursiveRender(fauxEntry, textStack, meta);
 
 				break;
@@ -1991,7 +2077,7 @@ globalThis.Renderer = function () {
 			}
 		}
 
-		const pluginData = this._getPlugins("link").map(plugin => plugin(entry, textStack, meta, options)).filter(Boolean);
+		const pluginData = this._applyPlugins_getAll("link", {textStack, meta, options}, {input: entry});
 		const isDisableEvents = pluginData.some(it => it.isDisableEvents);
 		const additionalAttributes = pluginData.map(it => it.attributes).filter(Boolean);
 
@@ -2005,20 +2091,23 @@ globalThis.Renderer = function () {
 	};
 
 	this._renderLink_getHref = function (entry) {
-		let href;
 		if (entry.href.type === "internal") {
 			// baseURL is blank by default
-			href = `${this.baseUrl}${entry.href.path}#`;
+			const ptBase = `${this.baseUrl}${entry.href.path}`;
+			let ptHash = "";
 			if (entry.href.hash != null) {
-				href += entry.href.hashPreEncoded ? entry.href.hash : UrlUtil.encodeForHash(entry.href.hash);
+				ptHash += entry.href.hashPreEncoded ? entry.href.hash : UrlUtil.encodeForHash(entry.href.hash);
 			}
 			if (entry.href.subhashes != null) {
-				href += Renderer.utils.getLinkSubhashString(entry.href.subhashes);
+				ptHash += Renderer.utils.getLinkSubhashString(entry.href.subhashes);
 			}
-		} else if (entry.href.type === "external") {
-			href = entry.href.url;
+			if (!ptHash) return ptBase;
+			return `${ptBase}#${ptHash}`;
 		}
-		return href;
+		if (entry.href.type === "external") {
+			return entry.href.url;
+		}
+		return "";
 	};
 
 	this._renderLink_getHoverString = function (entry) {
@@ -2040,13 +2129,25 @@ globalThis.Renderer = function () {
 			procHash += Renderer.utils.getLinkSubhashString(entry.href.hover.subhashes);
 		}
 
-		const pluginData = this._getPlugins("link_attributesHover")
-			.map(plugin => plugin(entry, procHash))
-			.filter(Boolean);
+		const pluginData = this._applyPlugins_getAll("link_attributesHover", null, {input: {entry, procHash}});
 		const replacementAttributes = pluginData.map(it => it.attributesHoverReplace).filter(Boolean);
 		if (replacementAttributes.length) return replacementAttributes.join(" ");
 
-		return `onmouseover="Renderer.hover.pHandleLinkMouseOver(event, this)" onmouseleave="Renderer.hover.handleLinkMouseLeave(event, this)" onmousemove="Renderer.hover.handleLinkMouseMove(event, this)" ondragstart="Renderer.hover.handleLinkDragStart(event, this)" data-vet-page="${entry.href.hover.page.qq()}" data-vet-source="${entry.href.hover.source.qq()}" data-vet-hash="${procHash.qq()}" ${entry.href.hover.preloadId != null ? `data-vet-preload-id="${`${entry.href.hover.preloadId}`.qq()}"` : ""} ${entry.href.hover.isFauxPage ? `data-vet-is-faux-page="true"` : ""} ${Renderer.hover.getPreventTouchString()}`;
+		return [
+			`onmouseover="Renderer.hover.pHandleLinkMouseOver(event, this)"`,
+			`onmouseleave="Renderer.hover.handleLinkMouseLeave(event, this)"`,
+			`onmousemove="Renderer.hover.handleLinkMouseMove(event, this)"`,
+			`onclick="Renderer.hover.handleLinkClick(event, this)"`,
+			`ondragstart="Renderer.hover.handleLinkDragStart(event, this)"`,
+			`data-vet-page="${entry.href.hover.page.qq()}"`,
+			`data-vet-source="${entry.href.hover.source.qq()}"`,
+			`data-vet-hash="${procHash.qq()}"`,
+			entry.href.hover.preloadId != null ? `data-vet-preload-id="${`${entry.href.hover.preloadId}`.qq()}"` : "",
+			entry.href.hover.isFauxPage ? `data-vet-is-faux-page="true"` : "",
+			Renderer.hover.getPreventTouchString(),
+		]
+			.filter(Boolean)
+			.join(" ");
 	};
 
 	/**
@@ -2090,6 +2191,7 @@ Renderer._INLINE_HEADER_TERMINATORS = new Set([".", ",", "!", "?", ";", ":", `"`
 Renderer._STYLE_TAG_ID_TO_STYLE = {
 	"small-caps": "small-caps",
 	"small": "ve-small",
+	"large": "ve-large",
 	"capitalize": "capitalize",
 	"dnd-font": "dnd-font",
 };
@@ -2099,8 +2201,12 @@ Renderer.get = () => {
 	return Renderer.defaultRenderer;
 };
 
+/**
+ * Note that a tag (`{@tag ...}`) is not valid inside a property injector (`{=prop ...}`),
+ *   but a property injector *is* valid inside a tag.
+ */
 Renderer.applyProperties = function (entry, object) {
-	const propSplit = Renderer.splitByPropertyInjectors(entry);
+	const propSplit = Renderer.splitByTags(entry);
 	const len = propSplit.length;
 	if (len === 1) return entry;
 
@@ -2109,6 +2215,12 @@ Renderer.applyProperties = function (entry, object) {
 	for (let i = 0; i < len; ++i) {
 		const s = propSplit[i];
 		if (!s) continue;
+
+		if (s.startsWith("{@")) {
+			const [tag, text] = Renderer.splitFirstSpace(s.slice(1, -1));
+			textStack += `{${tag} ${Renderer.applyProperties(text, object)}}`;
+			continue;
+		}
 
 		if (!s.startsWith("{=")) {
 			textStack += s;
@@ -2198,60 +2310,68 @@ Renderer.splitFirstSpace = function (string) {
 	return firstIndex === -1 ? [string, ""] : [string.substr(0, firstIndex), string.substr(firstIndex + 1)];
 };
 
-Renderer._splitByTagsBase = function (leadingCharacter) {
-	return function (string) {
-		let tagDepth = 0;
-		let char, char2;
-		const out = [];
-		let curStr = "";
-		let isLastOpen = false;
+Renderer._SPLIT_BY_TAG_LEADING_CHARS = new Set(["@", "="]);
 
-		const len = string.length;
-		for (let i = 0; i < len; ++i) {
-			char = string[i];
-			char2 = string[i + 1];
+Renderer.splitByTags = function (string) {
+	let tagDepth = 0;
+	let char, char2;
+	const out = [];
+	let curStr = "";
+	let isPrevCharOpenBrace = false;
 
-			switch (char) {
-				case "{":
-					isLastOpen = true;
-					if (char2 === leadingCharacter) {
-						if (tagDepth++ > 0) {
-							curStr += "{";
-						} else {
-							out.push(curStr.replace(/<VE_LEAD>/g, leadingCharacter));
-							curStr = `{${leadingCharacter}`;
-							++i;
-						}
-					} else curStr += "{";
-					break;
+	const pushOutput = () => {
+		if (!curStr) return;
+		out.push(curStr);
+	};
 
-				case "}":
-					isLastOpen = false;
-					curStr += "}";
-					if (tagDepth !== 0 && --tagDepth === 0) {
-						out.push(curStr.replace(/<VE_LEAD>/g, leadingCharacter));
-						curStr = "";
-					}
-					break;
+	const len = string.length;
+	for (let i = 0; i < len; ++i) {
+		char = string[i];
+		char2 = string[i + 1];
 
-				case leadingCharacter: {
-					if (!isLastOpen) curStr += "<VE_LEAD>";
-					else curStr += leadingCharacter;
+		switch (char) {
+			case "{":
+				if (!Renderer._SPLIT_BY_TAG_LEADING_CHARS.has(char2)) {
+					isPrevCharOpenBrace = false;
+					curStr += "{";
 					break;
 				}
 
-				default: isLastOpen = false; curStr += char; break;
+				isPrevCharOpenBrace = true;
+
+				if (tagDepth++ > 0) {
+					curStr += "{";
+				} else {
+					pushOutput();
+					curStr = `{${char2}`;
+					++i;
+				}
+
+				break;
+
+			case "}":
+				isPrevCharOpenBrace = false;
+				curStr += "}";
+				if (tagDepth !== 0 && --tagDepth === 0) {
+					pushOutput();
+					curStr = "";
+				}
+				break;
+
+			case "@":
+			case "=": {
+				curStr += char;
+				break;
 			}
+
+			default: isPrevCharOpenBrace = false; curStr += char; break;
 		}
+	}
 
-		if (curStr) out.push(curStr.replace(/<VE_LEAD>/g, leadingCharacter));
+	pushOutput();
 
-		return out;
-	};
+	return out;
 };
-
-Renderer.splitByTags = Renderer._splitByTagsBase("@");
-Renderer.splitByPropertyInjectors = Renderer._splitByTagsBase("=");
 
 Renderer._splitByPipeBase = function (leadingCharacter) {
 	return function (string) {
@@ -2300,13 +2420,6 @@ Renderer._splitByPipeBase = function (leadingCharacter) {
 };
 
 Renderer.splitTagByPipe = Renderer._splitByPipeBase("@");
-
-Renderer.getEntryDice = function (entry, name, opts = {}) {
-	const toDisplay = Renderer.getEntryDiceDisplayText(entry);
-
-	if (entry.rollable === true) return Renderer.getRollableEntryDice(entry, name, toDisplay, opts);
-	else return toDisplay;
-};
 
 Renderer.getRollableEntryDice = function (
 	entry,
@@ -2725,7 +2838,7 @@ Renderer.utils = class {
 		let pageLinkPart;
 		if (opts.page) {
 			const hash = UrlUtil.URL_TO_HASH_BUILDER[opts.page](it);
-			dataPart = `data-page="${opts.page}" data-source="${it.source.escapeQuotes()}" data-hash="${hash.escapeQuotes()}" ${opts.extensionData != null ? `data-extension='${JSON.stringify(opts.extensionData).escapeQuotes()}` : ""}'`;
+			dataPart = `data-page="${opts.page}" data-source="${it.source.escapeQuotes()}" data-hash="${hash.escapeQuotes()}" ${opts.extensionData != null ? `data-extension='${JSON.stringify(opts.extensionData).escapeQuotes()}'` : ""}`;
 			pageLinkPart = SourceUtil.getAdventureBookSourceHref(it.source, it.page);
 
 			// Enable Rivet import for entities embedded in entries
@@ -2894,7 +3007,7 @@ Renderer.utils = class {
 		tabButtons.forEach((tb, i) => {
 			tb.ix = i;
 
-			tb.$t = $(`<button class="ui-tab__btn-tab-head btn btn-default stat-tab-gen">${tb.label}</button>`)
+			tb.$t = $(`<button class="ui-tab__btn-tab-head btn btn-default stat-tab-gen pt-2p px-4p pb-0">${tb.label}</button>`)
 				.click(() => tb.fnActivateTab({isUserInput: true}));
 
 			tb.fnActivateTab = ({isUserInput = false} = {}) => {
@@ -3030,28 +3143,39 @@ Renderer.utils = class {
 		return fluff;
 	}
 
-	static async pGetFluff ({entity, pFnPostProcess, fnGetFluffData, fluffUrl, fluffBaseUrl, fluffProp} = {}) {
-		let predefinedFluff = await Renderer.utils.pGetPredefinedFluff(entity, fluffProp);
+	static async _pGetFluff ({entity, fluffProp, lockToken2} = {}) {
+		const fluffEntity = await DataLoader.pCacheAndGet(fluffProp, entity.source, UrlUtil.URL_TO_HASH_BUILDER[fluffProp](entity), {lockToken2});
+		if (fluffEntity) return fluffEntity;
+
+		if (entity._versionBase_name && entity._versionBase_source) {
+			return DataLoader.pCacheAndGet(
+				fluffProp,
+				entity.source,
+				UrlUtil.URL_TO_HASH_BUILDER[fluffProp]({
+					name: entity._versionBase_name,
+					source: entity._versionBase_source,
+				}),
+				{
+					lockToken2,
+				},
+			);
+		}
+
+		return null;
+	}
+
+	// TODO(Future) move into `DataLoader`; cleanup `lockToken2` usage
+	static async pGetFluff ({entity, pFnPostProcess, fluffProp, lockToken2 = null} = {}) {
+		const predefinedFluff = await Renderer.utils.pGetPredefinedFluff(entity, fluffProp);
 		if (predefinedFluff) {
-			if (pFnPostProcess) predefinedFluff = await pFnPostProcess(predefinedFluff);
+			if (pFnPostProcess) return pFnPostProcess(predefinedFluff);
 			return predefinedFluff;
 		}
-		if (!fnGetFluffData && !fluffBaseUrl && !fluffUrl) return null;
 
-		const fluffIndex = fluffBaseUrl ? await DataUtil.loadJSON(`${Renderer.get().baseUrl}${fluffBaseUrl}fluff-index.json`) : null;
-		if (fluffIndex && !fluffIndex[entity.source]) return null;
-
-		const data = fnGetFluffData ? await fnGetFluffData() : fluffIndex && fluffIndex[entity.source]
-			? await DataUtil.loadJSON(`${Renderer.get().baseUrl}${fluffBaseUrl}${fluffIndex[entity.source]}`)
-			: await DataUtil.loadJSON(`${Renderer.get().baseUrl}${fluffUrl}`);
-		if (!data) return null;
-
-		let fluff = (data[fluffProp] || []).find(it => it.name === entity.name && it.source === entity.source);
-		if (!fluff && entity._versionBase_name && entity._versionBase_source) fluff = (data[fluffProp] || []).find(it => it.name === entity._versionBase_name && it.source === entity._versionBase_source);
+		const fluff = await Renderer.utils._pGetFluff({entity, fluffProp});
 		if (!fluff) return null;
 
-		// Avoid modifying the original object
-		if (pFnPostProcess) fluff = await pFnPostProcess(fluff);
+		if (pFnPostProcess) return pFnPostProcess(fluff);
 		return fluff;
 	}
 
@@ -3600,7 +3724,12 @@ Renderer.utils = class {
 						if ((!fauxEntry.displayText && (rollText || "").includes("#$")) || (fauxEntry.displayText && fauxEntry.displayText.includes("#$"))) fauxEntry.displayText = (fauxEntry.displayText || rollText).replace(/#\$prompt_number[^$]*\$#/g, "(n)");
 						fauxEntry.displayText = fauxEntry.displayText || fauxEntry.toRoll;
 
-						if (tag === "@damage") fauxEntry.subType = "damage";
+						if (tag === "@damage") {
+							fauxEntry.subType = "damage";
+							const [damageType] = others;
+							if (damageType) fauxEntry.damageType = damageType;
+						}
+
 						if (tag === "@autodice") fauxEntry.autoRoll = true;
 
 						return fauxEntry;
@@ -4218,7 +4347,7 @@ Renderer.tag = class {
 		get tag () { return `@${this.tagName}`; }
 
 		getStripped (tag, text) {
-			text = text.replace(/<\$([^$]+)\$>/gi, ""); // remove any variable tags
+			text = DataUtil.generic.variableResolver.getHumanReadableString(text); // replace any variables
 			return this._getStripped(tag, text);
 		}
 
@@ -4265,12 +4394,28 @@ Renderer.tag = class {
 		tagName = "strike";
 	};
 
+	static TagStrikethroughDoubleShort = class extends this._TagTextStyle {
+		tagName = "s2";
+	};
+
+	static TagStrikethroughDoubleLong = class extends this._TagTextStyle {
+		tagName = "strikeDouble";
+	};
+
 	static TagUnderlineShort = class extends this._TagTextStyle {
 		tagName = "u";
 	};
 
 	static TagUnderlineLong = class extends this._TagTextStyle {
 		tagName = "underline";
+	};
+
+	static TagUnderlineDoubleShort = class extends this._TagTextStyle {
+		tagName = "u2";
+	};
+
+	static TagUnderlineDoubleLong = class extends this._TagTextStyle {
+		tagName = "underlineDouble";
 	};
 
 	static TagSup = class extends this._TagTextStyle {
@@ -4338,13 +4483,13 @@ Renderer.tag = class {
 		}
 	};
 
-	static TagHit = class extends this._TagBaseAt {
+	static TagHitText = class extends this._TagBaseAt {
 		tagName = "h";
 
 		_getStripped (tag, text) { return "Hit: "; }
 	};
 
-	static TagMiss = class extends this._TagBaseAt {
+	static TagMissText = class extends this._TagBaseAt {
 		tagName = "m";
 
 		_getStripped (tag, text) { return "Miss: "; }
@@ -4424,43 +4569,43 @@ Renderer.tag = class {
 		}
 	};
 
-	static TaChance = class extends this._TagDiceFlavor {
+	static TagChance = class extends this._TagDiceFlavor {
 		tagName = "chance";
 	};
 
-	static TaD20 = class extends this._TagDiceFlavor {
+	static TagD20 = class extends this._TagDiceFlavor {
 		tagName = "d20";
 	};
 
-	static TaDamage = class extends this._TagDiceFlavor {
+	static TagDamage = class extends this._TagDiceFlavor {
 		tagName = "damage";
 	};
 
-	static TaDice = class extends this._TagDiceFlavor {
+	static TagDice = class extends this._TagDiceFlavor {
 		tagName = "dice";
 	};
 
-	static TaAutodice = class extends this._TagDiceFlavor {
+	static TagAutodice = class extends this._TagDiceFlavor {
 		tagName = "autodice";
 	};
 
-	static TaHit = class extends this._TagDiceFlavor {
+	static TagHit = class extends this._TagDiceFlavor {
 		tagName = "hit";
 	};
 
-	static TaRecharge = class extends this._TagDiceFlavor {
+	static TagRecharge = class extends this._TagDiceFlavor {
 		tagName = "recharge";
 	};
 
-	static TaAbility = class extends this._TagDiceFlavor {
+	static TagAbility = class extends this._TagDiceFlavor {
 		tagName = "ability";
 	};
 
-	static TaSavingThrow = class extends this._TagDiceFlavor {
+	static TagSavingThrow = class extends this._TagDiceFlavor {
 		tagName = "savingThrow";
 	};
 
-	static TaSkillCheck = class extends this._TagDiceFlavor {
+	static TagSkillCheck = class extends this._TagDiceFlavor {
 		tagName = "skillCheck";
 	};
 
@@ -4497,6 +4642,10 @@ Renderer.tag = class {
 
 	static Tag5etools = class extends this._TagPipedNoDisplayText {
 		tagName = "5etools";
+	};
+
+	static Tag5etoolsImg = class extends this._TagPipedNoDisplayText {
+		tagName = "5etoolsImg";
 	};
 
 	static TagAdventure = class extends this._TagPipedNoDisplayText {
@@ -4844,8 +4993,12 @@ Renderer.tag = class {
 		new this.TagItalicLong(),
 		new this.TagStrikethroughShort(),
 		new this.TagStrikethroughLong(),
+		new this.TagStrikethroughDoubleShort(),
+		new this.TagStrikethroughDoubleLong(),
 		new this.TagUnderlineShort(),
 		new this.TagUnderlineLong(),
+		new this.TagUnderlineDoubleShort(),
+		new this.TagUnderlineDoubleLong(),
 		new this.TagSup(),
 		new this.TagSub(),
 		new this.TagKbd(),
@@ -4865,8 +5018,8 @@ Renderer.tag = class {
 
 		new this.TagUnit(),
 
-		new this.TagHit(),
-		new this.TagMiss(),
+		new this.TagHitText(),
+		new this.TagMissText(),
 
 		new this.TagAtk(),
 
@@ -4876,16 +5029,16 @@ Renderer.tag = class {
 
 		new this.TagDcYourSpellSave(),
 
-		new this.TaChance(),
-		new this.TaD20(),
-		new this.TaDamage(),
-		new this.TaDice(),
-		new this.TaAutodice(),
-		new this.TaHit(),
-		new this.TaRecharge(),
-		new this.TaAbility(),
-		new this.TaSavingThrow(),
-		new this.TaSkillCheck(),
+		new this.TagChance(),
+		new this.TagD20(),
+		new this.TagDamage(),
+		new this.TagDice(),
+		new this.TagAutodice(),
+		new this.TagHit(),
+		new this.TagRecharge(),
+		new this.TagAbility(),
+		new this.TagSavingThrow(),
+		new this.TagSkillCheck(),
 
 		new this.TagScaledice(),
 		new this.TagScaledamage(),
@@ -4893,6 +5046,7 @@ Renderer.tag = class {
 		new this.TagCoinflip(),
 
 		new this.Tag5etools(),
+		new this.Tag5etoolsImg(),
 		new this.TagAdventure(),
 		new this.TagBook(),
 		new this.TagFilter(),
@@ -5244,7 +5398,6 @@ Renderer.feat = class {
 	static pGetFluff (feat) {
 		return Renderer.utils.pGetFluff({
 			entity: feat,
-			fnGetFluffData: DataUtil.featFluff.loadJSON.bind(DataUtil.featFluff),
 			fluffProp: "featFluff",
 		});
 	}
@@ -5265,9 +5418,13 @@ Renderer.class = class {
 		return Renderer.hover.getGenericCompactRenderedString(clsEntry);
 	}
 
-	static getHitDiceEntry (clsHd) { return clsHd ? {toRoll: `${clsHd.number}d${clsHd.faces}`, rollable: true} : null; }
+	static getHitDiceEntry (clsHd) { return clsHd ? `{@dice ${clsHd.number}d${clsHd.faces}||Hit die}` : null; }
 	static getHitPointsAtFirstLevel (clsHd) { return clsHd ? `${clsHd.number * clsHd.faces} + your Constitution modifier` : null; }
-	static getHitPointsAtHigherLevels (className, clsHd, hdEntry) { return className && clsHd && hdEntry ? `${Renderer.getEntryDice(hdEntry, "Hit die")} (or ${((clsHd.number * clsHd.faces) / 2 + 1)}) + your Constitution modifier per ${className} level after 1st` : null; }
+	static getHitPointsAtHigherLevels (className, clsHd) {
+		return className && clsHd
+			? `${Renderer.get().render(Renderer.class.getHitDiceEntry(clsHd))} (or ${((clsHd.number * clsHd.faces) / 2 + 1)}) + your Constitution modifier per ${className} level after 1st`
+			: null;
+	}
 
 	static getRenderedArmorProfs (armorProfs) { return armorProfs.map(a => Renderer.get().render(a.full ? a.full : a === "light" || a === "medium" || a === "heavy" ? `{@filter ${a} armor|items|type=${a} armor}` : a)).join(", "); }
 	static getRenderedWeaponProfs (weaponProfs) { return weaponProfs.map(w => Renderer.get().render(w === "simple" || w === "martial" ? `{@filter ${w} weapons|items|type=${w} weapon}` : w.optional ? `<span class="help help--hover" title="Optional Proficiency">${w.proficiency}</span>` : w)).join(", "); }
@@ -5387,19 +5544,50 @@ Renderer.class = class {
 			);
 		});
 	}
+
+	static pGetFluff (cls) {
+		// Handle legacy/deprecated class fluff
+		// TODO(Future) remove this after ~July 2024
+		if (cls.fluff instanceof Array) {
+			cls = {...cls};
+			cls.fluff = {entries: cls.fluff};
+		}
+
+		return Renderer.utils.pGetFluff({
+			entity: cls,
+			fluffProp: "classFluff",
+		});
+	}
 };
 
 Renderer.subclass = class {
 	static getCompactRenderedString (sc) {
+		const entries = MiscUtil.copyFast((sc.subclassFeatures || []).flat());
+		if (entries[0]?.name === sc.name) delete entries[0].name;
+
 		const scEntry = {
 			type: "section",
 			name: sc.name,
 			source: sc.source,
 			page: sc.page,
-			entries: MiscUtil.copyFast((sc.subclassFeatures || []).flat()),
+			entries,
 		};
 
 		return Renderer.hover.getGenericCompactRenderedString(scEntry);
+	}
+
+	static pGetFluff (sc) {
+		return Renderer.utils.pGetFluff({
+			entity: sc,
+			fluffProp: "subclassFluff",
+		});
+	}
+};
+
+Renderer.classSubclass = class {
+	static pGetFluff (clsOrSc) {
+		if (clsOrSc.__prop === "subclass") return Renderer.subclass.pGetFluff(clsOrSc);
+		return Renderer.class.pGetFluff(clsOrSc);
 	}
 };
 
@@ -5962,7 +6150,6 @@ Renderer.spell = class {
 	static pGetFluff (sp) {
 		return Renderer.utils.pGetFluff({
 			entity: sp,
-			fluffBaseUrl: `data/spells/`,
 			fluffProp: "spellFluff",
 		});
 	}
@@ -5990,7 +6177,6 @@ Renderer.condition = class {
 	static pGetFluff (it) {
 		return Renderer.utils.pGetFluff({
 			entity: it,
-			fnGetFluffData: it.__prop === "condition" ? DataUtil.conditionFluff.loadJSON.bind(DataUtil.conditionFluff) : null,
 			fluffProp: it.__prop === "condition" ? "conditionFluff" : "diseaseFluff",
 		});
 	}
@@ -6010,7 +6196,6 @@ Renderer.background = class {
 	static pGetFluff (bg) {
 		return Renderer.utils.pGetFluff({
 			entity: bg,
-			fnGetFluffData: DataUtil.backgroundFluff.loadJSON.bind(DataUtil.backgroundFluff),
 			fluffProp: "backgroundFluff",
 		});
 	}
@@ -6098,7 +6283,6 @@ Renderer.optionalfeature = class {
 	static pGetFluff (ent) {
 		return Renderer.utils.pGetFluff({
 			entity: ent,
-			fnGetFluffData: DataUtil.optionalfeatureFluff.loadJSON.bind(DataUtil.optionalfeatureFluff),
 			fluffProp: "optionalfeatureFluff",
 		});
 	}
@@ -6138,7 +6322,6 @@ Renderer.reward = class {
 	static pGetFluff (ent) {
 		return Renderer.utils.pGetFluff({
 			entity: ent,
-			fnGetFluffData: DataUtil.rewardFluff.loadJSON.bind(DataUtil.rewardFluff),
 			fluffProp: "rewardFluff",
 		});
 	}
@@ -6163,9 +6346,9 @@ Renderer.race = class {
 			<tr><td colspan="6">
 				<table class="w-100 summary stripe-even-table">
 					<tr>
-						<th class="col-4 ve-text-center">Ability Scores</th>
-						<th class="col-4 ve-text-center">Size</th>
-						<th class="col-4 ve-text-center">Speed</th>
+						<th class="ve-col-4 ve-text-center">Ability Scores</th>
+						<th class="ve-col-4 ve-text-center">Size</th>
+						<th class="ve-col-4 ve-text-center">Speed</th>
 					</tr>
 					<tr>
 						<td class="ve-text-center">${Renderer.getAbilityData(race.ability).asText}</td>
@@ -6197,7 +6380,7 @@ Renderer.race = class {
 
 	static getHeightAndWeightEntries (race, {isStatic = false} = {}) {
 		const colLabels = ["Base Height", "Base Weight", "Height Modifier", "Weight Modifier"];
-		const colStyles = ["col-2-3 ve-text-center", "col-2-3 ve-text-center", "col-2-3 ve-text-center", "col-2 ve-text-center"];
+		const colStyles = ["col-2-3 text-center", "col-2-3 text-center", "col-2-3 text-center", "col-2 text-center"];
 
 		const cellHeightMod = !isStatic
 			? `+<span data-race-heightmod="true">${race.heightAndWeight.heightMod}</span>`
@@ -6215,7 +6398,7 @@ Renderer.race = class {
 
 		if (!isStatic) {
 			colLabels.push("");
-			colStyles.push("col-3-1 ve-text-center");
+			colStyles.push("ve-col-3-1 text-center");
 			row.push(`<div class="ve-flex-vh-center">
 				<div class="ve-hidden race__disp-result-height-weight ve-flex-v-baseline">
 					<div class="mr-1">=</div>
@@ -6255,16 +6438,16 @@ Renderer.race = class {
 		opts = opts || {};
 
 		const out = [];
-		races.forEach(r => {
+		races.forEach(race => {
 			// FIXME(Deprecated) Backwards compatibility for old race data; remove at some point
-			if (r.size && typeof r.size === "string") r.size = [r.size];
+			if (race.size && typeof race.size === "string") race.size = [race.size];
 
 			// Ignore `"lineage": true`, as it is only used for filters
-			if (r.lineage && r.lineage !== true) {
-				r = MiscUtil.copyFast(r);
+			if (race.lineage && race.lineage !== true) {
+				race = MiscUtil.copyFast(race);
 
-				if (r.lineage === "VRGR") {
-					r.ability = r.ability || [
+				if (race.lineage === "VRGR") {
+					race.ability = race.ability || [
 						{
 							choose: {
 								weighted: {
@@ -6282,8 +6465,8 @@ Renderer.race = class {
 							},
 						},
 					];
-				} else if (r.lineage === "UA1") {
-					r.ability = r.ability || [
+				} else if (race.lineage === "UA1") {
+					race.ability = race.ability || [
 						{
 							choose: {
 								weighted: {
@@ -6295,60 +6478,60 @@ Renderer.race = class {
 					];
 				}
 
-				r.entries = r.entries || [];
-				r.entries.push({
+				race.entries = race.entries || [];
+				race.entries.push({
 					type: "entries",
 					name: "Languages",
 					entries: ["You can speak, read, and write Common and one other language that you and your DM agree is appropriate for your character."],
 				});
 
-				r.languageProficiencies = r.languageProficiencies || [{"common": true, "anyStandard": 1}];
+				race.languageProficiencies = race.languageProficiencies || [{"common": true, "anyStandard": 1}];
 			}
 
-			if (r.subraces && !r.subraces.length) delete r.subraces;
+			if (race.subraces && !race.subraces.length) delete race.subraces;
 
-			if (r.subraces) {
-				r.subraces.forEach(sr => {
-					sr.source = sr.source || r.source;
+			if (race.subraces) {
+				race.subraces.forEach(sr => {
+					sr.source = sr.source || race.source;
 					sr._isSubRace = true;
 				});
 
-				r.subraces.sort((a, b) => SortUtil.ascSortLower(a.name || "_", b.name || "_") || SortUtil.ascSortLower(Parser.sourceJsonToAbv(a.source), Parser.sourceJsonToAbv(b.source)));
+				race.subraces.sort((a, b) => SortUtil.ascSortLower(a.name || "_", b.name || "_") || SortUtil.ascSortLower(Parser.sourceJsonToAbv(a.source), Parser.sourceJsonToAbv(b.source)));
 			}
 
-			if (opts.isAddBaseRaces && r.subraces) {
-				const baseRace = MiscUtil.copyFast(r);
+			if (opts.isAddBaseRaces && race.subraces) {
+				const baseRace = MiscUtil.copyFast(race);
 
 				baseRace._isBaseRace = true;
 
-				const isAnyNoName = r.subraces.some(it => !it.name);
+				const isAnyNoName = race.subraces.some(it => !it.name);
 				if (isAnyNoName) {
 					baseRace._rawName = baseRace.name;
 					baseRace.name = `${baseRace.name} (Base)`;
 				}
 
 				const nameCounts = {};
-				r.subraces.filter(sr => sr.name).forEach(sr => nameCounts[sr.name.toLowerCase()] = (nameCounts[sr.name.toLowerCase()] || 0) + 1);
-				nameCounts._ = r.subraces.filter(sr => !sr.name).length;
+				race.subraces.filter(sr => sr.name).forEach(sr => nameCounts[sr.name.toLowerCase()] = (nameCounts[sr.name.toLowerCase()] || 0) + 1);
+				nameCounts._ = race.subraces.filter(sr => !sr.name).length;
 
 				const lst = {
 					type: "list",
-					items: r.subraces.map(sr => {
+					items: race.subraces.map(sr => {
 						const count = nameCounts[(sr.name || "_").toLowerCase()];
-						const idName = Renderer.race.getSubraceName(r.name, sr.name);
+						const idName = Renderer.race.getSubraceName(race.name, sr.name);
 						return `{@race ${idName}|${sr.source}${count > 1 ? `|${idName} (<span title="${Parser.sourceJsonToFull(sr.source).escapeQuotes()}">${Parser.sourceJsonToAbv(sr.source)}</span>)` : ""}}`;
 					}),
 				};
 
 				Renderer.race._mutBaseRaceEntries(baseRace, lst);
-				baseRace._subraces = r.subraces.map(sr => ({name: Renderer.race.getSubraceName(r.name, sr.name), source: sr.source}));
+				baseRace._subraces = race.subraces.map(sr => ({name: Renderer.race.getSubraceName(race.name, sr.name), source: sr.source}));
 
 				delete baseRace.subraces;
 
 				out.push(baseRace);
 			}
 
-			out.push(...Renderer.race._mergeSubraces(r));
+			out.push(...Renderer.race._mergeSubraces(race));
 		});
 
 		return out;
@@ -6423,11 +6606,6 @@ Renderer.race = class {
 		// merge names, abilities, entries, tags
 		if (cpySr.name) {
 			cpy._subraceName = cpySr.name;
-
-			if (cpySr.alias) {
-				cpy.alias = cpySr.alias.map(it => Renderer.race.getSubraceName(cpy.name, it));
-				delete cpySr.alias;
-			}
 
 			cpy.name = Renderer.race.getSubraceName(cpy.name, cpySr.name);
 			delete cpySr.name;
@@ -6650,7 +6828,6 @@ Renderer.race = class {
 	static pGetFluff (race) {
 		return Renderer.utils.pGetFluff({
 			entity: race,
-			fnGetFluffData: DataUtil.raceFluff.loadJSON.bind(DataUtil.raceFluff),
 			fluffProp: "raceFluff",
 		});
 	}
@@ -6836,7 +7013,6 @@ Renderer.object = class {
 	static pGetFluff (obj) {
 		return Renderer.utils.pGetFluff({
 			entity: obj,
-			fnGetFluffData: DataUtil.objectFluff.loadJSON.bind(DataUtil.objectFluff),
 			fluffProp: "objectFluff",
 		});
 	}
@@ -6971,7 +7147,6 @@ Renderer.traphazard = class {
 	static pGetFluff (ent) {
 		return Renderer.utils.pGetFluff({
 			entity: ent,
-			fnGetFluffData: ent.__prop === "trap" ? DataUtil.trapFluff.loadJSON.bind(DataUtil.trapFluff) : DataUtil.hazardFluff.loadJSON.bind(DataUtil.hazardFluff),
 			fluffProp: ent.__prop === "trap" ? "trapFluff" : "hazardFluff",
 		});
 	}
@@ -7413,7 +7588,7 @@ Renderer.monster = class {
 
 		return e_({
 			tag: "select",
-			clazz: "input-xs form-control form-control--minimal w-initial inline-block ve-popwindow__hidden",
+			clazz: "input-xs form-control form-control--minimal w-initial inline-block ve-popwindow__hidden no-print lst-is-exporting-image__hidden",
 			name: "mon__sel-summon-spell-level",
 			children: [
 				e_({tag: "option", val: "-1", text: "\u2014"}),
@@ -7431,7 +7606,7 @@ Renderer.monster = class {
 
 		return e_({
 			tag: "select",
-			clazz: "input-xs form-control form-control--minimal w-initial inline-block ve-popwindow__hidden",
+			clazz: "input-xs form-control form-control--minimal w-initial inline-block ve-popwindow__hidden no-print lst-is-exporting-image__hidden",
 			name: "mon__sel-summon-class-level",
 			children: [
 				e_({tag: "option", val: "-1", text: "\u2014"}),
@@ -7543,12 +7718,12 @@ Renderer.monster = class {
 			ptCrSpellLevel = `<td colspan="2">
 				${Parser.monCrToFull(mon.cr, {isMythic: !!mon.mythic})}
 				${opts.isShowScalers && !opts.isScaledCr && Parser.isValidCr(mon.cr ? (mon.cr.cr || mon.cr) : null) ? `
-				<button title="Scale Creature By CR (Highly Experimental)" class="mon__btn-scale-cr btn btn-xs btn-default">
+				<button title="Scale Creature By CR (Highly Experimental)" class="mon__btn-scale-cr btn btn-xs btn-default no-print">
 					<span class="glyphicon glyphicon-signal"></span>
 				</button>
 				` : ""}
 				${opts.isScaledCr ? `
-				<button title="Reset CR Scaling" class="mon__btn-reset-cr btn btn-xs btn-default">
+				<button title="Reset CR Scaling" class="mon__btn-reset-cr btn btn-xs btn-default no-print">
 					<span class="glyphicon glyphicon-refresh"></span>
 				</button>
 				` : ""}
@@ -7685,7 +7860,7 @@ Renderer.monster = class {
 		const absRemaining = Parser.ABIL_ABVS.filter(ab => !seenAbs.has(ab));
 
 		return `<tr>
-			${absRemaining.map(ab => `<th class="col-2 ve-text-center bold">${ab.toUpperCase()}</th>`).join("")}
+			${absRemaining.map(ab => `<th class="ve-col-2 ve-text-center bold">${ab.toUpperCase()}</th>`).join("")}
 		</tr>
 		<tr>
 			${absRemaining.map(ab => `<td class="ve-text-center">${Renderer.utils.getAbilityRoller(mon, ab)}</td>`).join("")}
@@ -7862,8 +8037,7 @@ Renderer.monster = class {
 	static pGetFluff (mon) {
 		return Renderer.utils.pGetFluff({
 			entity: mon,
-			pFnPostProcess: Renderer.monster.postProcessFluff.bind(null, mon),
-			fluffBaseUrl: `data/bestiary/`,
+			pFnPostProcess: Renderer.monster.postProcessFluff.bind(Renderer.monster, mon),
 			fluffProp: "monsterFluff",
 		});
 	}
@@ -8180,7 +8354,7 @@ Renderer.item = class {
 			const dexterityMax = (itemType === "MA" && item.dexterityMax == null)
 				? 2
 				: item.dexterityMax;
-			const isAddDex = item.dexterityMax != null || itemType !== "HA";
+			const isAddDex = item.dexterityMax != null || !["HA", "S"].includes(itemType);
 
 			const prefix = item.type === "S" ? "+" : "";
 			const suffix = isAddDex ? ` + Dex${dexterityMax ? ` (max ${dexterityMax})` : ""}` : "";
@@ -8788,6 +8962,10 @@ Renderer.item = class {
 
 		Renderer.item._createSpecificVariants_mergeVulnerableResistImmune({specificVariant, inherits});
 
+		// Inherit fluff
+		if (genericVariant.hasFluff) specificVariant.hasFluff = genericVariant.hasFluff;
+		if (genericVariant.hasFluffImages) specificVariant.hasFluffImages = genericVariant.hasFluffImages;
+
 		// track the specific variant on the parent generic, to later render as part of the stats
 		genericVariant.variants = genericVariant.variants || [];
 		if (!genericVariant.variants.some(it => it.base?.name === baseItem.name && it.base?.source === baseItem.source)) genericVariant.variants.push({base: baseItem, specificVariant});
@@ -9294,10 +9472,18 @@ Renderer.item = class {
 		return false;
 	}
 
-	static pGetFluff (item) {
-		return Renderer.utils.pGetFluff({
+	static async pGetFluff (item) {
+		const fluffItem = await Renderer.utils.pGetFluff({
 			entity: item,
-			fnGetFluffData: DataUtil.itemFluff.loadJSON.bind(DataUtil.itemFluff),
+			fluffProp: "itemFluff",
+		});
+		if (fluffItem) return fluffItem;
+
+		if (!item._variantName) return null;
+
+		// Inherit generic variant fluff
+		return Renderer.utils.pGetFluff({
+			entity: {name: item._variantName, source: item.source},
 			fluffProp: "itemFluff",
 		});
 	}
@@ -9428,6 +9614,7 @@ Renderer.variantrule = class {
 	static getCompactRenderedString (rule) {
 		const cpy = MiscUtil.copyFast(rule);
 		delete cpy.name;
+		if (cpy.entries && cpy.ruleType) cpy.entries.unshift(`{@i ${Parser.ruleTypeToFull(cpy.ruleType)} Rule}`);
 		return `
 			${Renderer.utils.getExcludedTr({entity: rule, dataProp: "variantrule", page: UrlUtil.PG_VARIANTRULES})}
 			${Renderer.utils.getNameTr(rule, {page: UrlUtil.PG_VARIANTRULES})}
@@ -9550,6 +9737,12 @@ Renderer.vehicle = class {
 
 	static getVehicleRenderableEntriesMeta (ent) {
 		return {
+			entryDamageVulnerabilities: ent.vulnerable
+				? `{@b Damage Vulnerabilities} ${Parser.getFullImmRes(ent.vulnerable)}`
+				: null,
+			entryDamageResistances: ent.resist
+				? `{@b Damage Resistances} ${Parser.getFullImmRes(ent.resist)}`
+				: null,
 			entryDamageImmunities: ent.immune
 				? `{@b Damage Immunities} ${Parser.getFullImmRes(ent.immune)}`
 				: null,
@@ -9862,12 +10055,12 @@ Renderer.vehicle = class {
 		return Parser.ABIL_ABVS.some(it => veh[it] != null) ? `<tr><td colspan="6">
 			<table class="w-100 summary stripe-even-table">
 				<tr>
-					<th class="col-2 ve-text-center">STR</th>
-					<th class="col-2 ve-text-center">DEX</th>
-					<th class="col-2 ve-text-center">CON</th>
-					<th class="col-2 ve-text-center">INT</th>
-					<th class="col-2 ve-text-center">WIS</th>
-					<th class="col-2 ve-text-center">CHA</th>
+					<th class="ve-col-2 ve-text-center">STR</th>
+					<th class="ve-col-2 ve-text-center">DEX</th>
+					<th class="ve-col-2 ve-text-center">CON</th>
+					<th class="ve-col-2 ve-text-center">INT</th>
+					<th class="ve-col-2 ve-text-center">WIS</th>
+					<th class="ve-col-2 ve-text-center">CHA</th>
 				</tr>
 				<tr>
 					<td class="ve-text-center">${Renderer.utils.getAbilityRoller(veh, "str")}</td>
@@ -9885,6 +10078,8 @@ Renderer.vehicle = class {
 		entriesMeta ||= Renderer.vehicle.getVehicleRenderableEntriesMeta(ent);
 
 		const props = [
+			"entryDamageVulnerabilities",
+			"entryDamageResistances",
 			"entryDamageImmunities",
 			"entryConditionImmunities",
 		];
@@ -9971,12 +10166,21 @@ Renderer.vehicle = class {
 		static getVehicleInfwarRenderableEntriesMeta (ent) {
 			const dexMod = Parser.getAbilityModNumber(ent.dex);
 
+			const ptDtMt = [
+				ent.hp.dt != null ? `damage threshold ${ent.hp.dt}` : null,
+				ent.hp.mt != null ? `ishap threshold ${ent.hp.mt}` : null,
+			]
+				.filter(Boolean)
+				.join(", ");
+
+			const ptAc = ent.ac ?? dexMod === 0 ? `19` : `${19 + dexMod} (19 while motionless)`;
+
 			return {
 				entrySizeWeight: `{@i ${Parser.sizeAbvToFull(ent.size)} vehicle (${ent.weight.toLocaleString()} lb.)}`,
 				entryCreatureCapacity: `{@b Creature Capacity} ${Renderer.vehicle.getInfwarCreatureCapacity(ent)}`,
 				entryCargoCapacity: `{@b Cargo Capacity} ${Parser.weightToFull(ent.capCargo)}`,
-				entryArmorClass: `{@b Armor Class} ${dexMod === 0 ? `19` : `${19 + dexMod} (19 while motionless)`}`,
-				entryHitPoints: `{@b Hit Points} ${ent.hp.hp} (damage threshold ${ent.hp.dt}, mishap threshold ${ent.hp.mt})`,
+				entryArmorClass: `{@b Armor Class} ${ptAc}`,
+				entryHitPoints: `{@b Hit Points} ${ent.hp.hp}${ptDtMt ? ` (${ptDtMt})` : ""}`,
 				entrySpeed: `{@b Speed} ${ent.speed} ft.`,
 				entrySpeedNote: `[{@b Travel Pace} ${Math.floor(ent.speed / 10)} miles per hour (${Math.floor(ent.speed * 24 / 10)} miles per day)]`,
 				entrySpeedNoteTitle: `Based on "Special Travel Pace," DMG p242`,
@@ -10015,7 +10219,6 @@ Renderer.vehicle = class {
 	static pGetFluff (veh) {
 		return Renderer.utils.pGetFluff({
 			entity: veh,
-			fnGetFluffData: DataUtil.vehicleFluff.loadJSON.bind(DataUtil.vehicleFluff),
 			fluffProp: "vehicleFluff",
 		});
 	}
@@ -10101,7 +10304,6 @@ Renderer.language = class {
 	static pGetFluff (it) {
 		return Renderer.utils.pGetFluff({
 			entity: it,
-			fnGetFluffData: DataUtil.languageFluff.loadJSON.bind(DataUtil.languageFluff),
 			fluffProp: "languageFluff",
 		});
 	}
@@ -10245,7 +10447,6 @@ Renderer.charoption = class {
 	static pGetFluff (it) {
 		return Renderer.utils.pGetFluff({
 			entity: it,
-			fnGetFluffData: DataUtil.charoptionFluff.loadJSON.bind(DataUtil.charoptionFluff),
 			fluffProp: "charoptionFluff",
 		});
 	}
@@ -10335,7 +10536,7 @@ Renderer.recipe = class {
 				${entriesMeta.entryCooksNotes ? `<div class="w-100 ve-flex-col mt-4"><div class="ve-flex-vh-center bold mb-1 small-caps">Cook's Notes</div><div class="italic">${Renderer.get().render(entriesMeta.entryCooksNotes)}</div></div>` : ""}
 			</div>
 
-			<div class="pl-2 ve-flex-2 rd-recipes__wrp-instructions overflow-x-auto">
+			<div class="pl-2 ve-flex-2 rd-recipes__wrp-instructions ve-overflow-x-auto">
 				${Renderer.get().setFirstSection(true).render(entriesMeta.entryInstructions, 2)}
 			</div>
 		</div>`;
@@ -10365,7 +10566,6 @@ Renderer.recipe = class {
 	static pGetFluff (it) {
 		return Renderer.utils.pGetFluff({
 			entity: it,
-			fnGetFluffData: DataUtil.recipeFluff.loadJSON.bind(DataUtil.recipeFluff),
 			fluffProp: "recipeFluff",
 		});
 	}
@@ -10802,6 +11002,7 @@ Renderer.generic = class {
 			skillToolLanguageProfs,
 			setValid: new Set(this.FEATURE__SKILLS_ALL),
 			setValidAny: this._SKILL_TOOL_LANGUAGE_KEYS__SKILL_ANY,
+			anyAlt: "anySkill",
 			isShort,
 			hoverTag: "skill",
 		});
@@ -10813,6 +11014,7 @@ Renderer.generic = class {
 			skillToolLanguageProfs,
 			setValid: new Set(this.FEATURE__TOOLS_ALL),
 			setValidAny: this._SKILL_TOOL_LANGUAGE_KEYS__TOOL_ANY,
+			anyAlt: "anyTool",
 			isShort,
 		});
 	}
@@ -10823,11 +11025,12 @@ Renderer.generic = class {
 			skillToolLanguageProfs,
 			setValid: new Set(this.FEATURE__LANGUAGES_ALL),
 			setValidAny: this._SKILL_TOOL_LANGUAGE_KEYS__LANGAUGE_ANY,
+			anyAlt: "anyLanguage",
 			isShort,
 		});
 	}
 
-	static _summariseProfs ({profGroupArr, skillToolLanguageProfs, setValid, setValidAny, isShort, hoverTag}) {
+	static _summariseProfs ({profGroupArr, skillToolLanguageProfs, setValid, setValidAny, anyAlt, isShort, hoverTag}) {
 		if (!profGroupArr?.length && !skillToolLanguageProfs?.length) return {summary: "", collection: []};
 
 		const collectionSet = new Set();
@@ -10847,13 +11050,13 @@ Renderer.generic = class {
 						const chooseProfs = vMapped.from
 							.filter(s => !isValidate || setValid.has(s))
 							.map(s => {
-								collectionSet.add(s);
+								collectionSet.add(this._summariseProfs_getCollectionKey(s, anyAlt));
 								return this._summariseProfs_getEntry({str: s, isShort, hoverTag});
 							});
 						return `${isShort ? `${i === 0 ? "C" : "c"}hoose ` : ""}${v.count || 1} ${isShort ? `of` : `from`} ${chooseProfs.joinConjunct(", ", " or ")}`;
 					}
 
-					collectionSet.add(k);
+					collectionSet.add(this._summariseProfs_getCollectionKey(k, anyAlt));
 					return this._summariseProfs_getEntry({str: k, isShort, hoverTag});
 				});
 
@@ -10871,6 +11074,10 @@ Renderer.generic = class {
 			.join(` <i>or</i> `);
 
 		return {summary, collection: [...collectionSet].sort(SortUtil.ascSortLower)};
+	}
+
+	static _summariseProfs_getCollectionKey (k, anyAlt) {
+		return k === anyAlt ? "any" : k;
 	}
 
 	static _summariseProfs_sortKeys (a, b, {setValidAny = null} = {}) {
@@ -10962,10 +11169,10 @@ Renderer.generic = class {
 
 	static getTokenUrl (ent, mediaDir, {isIgnoreImplicit = false} = {}) {
 		if (ent.tokenUrl) return ent.tokenUrl; // TODO(Future) legacy; remove
-		if (ent.token) return Renderer.get().getMediaUrl("img", `${mediaDir}/${Parser.sourceJsonToAbv(ent.token.source)}/${Parser.nameToTokenName(ent.token.name)}.webp`);
+		if (ent.token) return Renderer.get().getMediaUrl("img", `${mediaDir}/${ent.token.source}/${Parser.nameToTokenName(ent.token.name)}.webp`);
 		if (ent.tokenHref) return Renderer.utils.getEntryMediaUrl(ent, "tokenHref", "img");
 		if (isIgnoreImplicit) return null;
-		return Renderer.get().getMediaUrl("img", `${mediaDir}/${Parser.sourceJsonToAbv(ent.source)}/${Parser.nameToTokenName(ent.name)}.webp`);
+		return Renderer.get().getMediaUrl("img", `${mediaDir}/${ent.source}/${Parser.nameToTokenName(ent.name)}.webp`);
 	}
 };
 
@@ -11033,16 +11240,16 @@ Renderer.hover = class {
 
 	static cleanTempWindows () {
 		for (const [key, meta] of Renderer.hover._eleCache.entries()) {
-			// If this is an element-less "permanent" show which has been closed
+			// If this is an element-less "permanent" show (i.e. a "predefined" window) which has been closed
 			if (!meta.isPermanent && meta.windowMeta && typeof key === "number") {
 				meta.windowMeta.doClose();
 				Renderer.hover._eleCache.delete(key);
-				return;
+				continue;
 			}
 
 			if (!meta.isPermanent && meta.windowMeta && !document.body.contains(key)) {
 				meta.windowMeta.doClose();
-				return;
+				continue;
 			}
 
 			if (!meta.isPermanent && meta.isHovered && meta.windowMeta) {
@@ -11064,9 +11271,9 @@ Renderer.hover = class {
 			.forEach(([, meta]) => meta.doClose());
 	}
 
-	static _getSetMeta (ele) {
-		if (!Renderer.hover._eleCache.has(ele)) Renderer.hover._eleCache.set(ele, new Renderer.hover.LinkMeta());
-		return Renderer.hover._eleCache.get(ele);
+	static _getSetMeta (key) {
+		if (!Renderer.hover._eleCache.has(key)) Renderer.hover._eleCache.set(key, new Renderer.hover.LinkMeta());
+		return Renderer.hover._eleCache.get(key);
 	}
 
 	static _handleGenericMouseOverStart ({evt, ele}) {
@@ -11367,6 +11574,12 @@ Renderer.hover = class {
 		ele.style.cursor = "";
 	}
 
+	static handleLinkClick (evt, ele) {
+		// Close the window (if not permanent)
+		// Note that this prevents orphan windows when e.g. clicking a specific variant on an Items page magicvariant
+		Renderer.hover.handleLinkMouseLeave(evt, ele);
+	}
+
 	// (Baked into render strings)
 	static handleLinkDragStart (evt, ele) {
 		// Close the window
@@ -11520,9 +11733,14 @@ Renderer.hover = class {
 	 * @param [opts.isPopout] If the window should be immediately popped out.
 	 * @param [opts.compactReferenceData] Reference (e.g. page/source/hash/others) which can be used to load the contents into the DM screen.
 	 * @param [opts.sourceData] Source JSON (as raw as possible) used to construct this popout.
+	 * @param [opts.isResizeOnlyWidth]
+	 * @param [opts.isHideBottomBorder]
 	 */
 	static getShowWindow ($content, position, opts) {
 		opts = opts || {};
+		const {isHideBottomBorder, isResizeOnlyWidth} = opts;
+
+		if (isHideBottomBorder && !isResizeOnlyWidth) throw new Error(`"isHideBottomBorder" option requires "isResizeOnlyWidth"!`);
 
 		Renderer.hover._doInit();
 
@@ -11538,7 +11756,7 @@ Renderer.hover = class {
 			});
 		const $wrpContent = $(`<div class="hwin__wrp-table"></div>`);
 		if (opts.height != null) $wrpContent.css("height", opts.height);
-		const $hovTitle = $(`<span class="window-title min-w-0 overflow-ellipsis" title="${`${opts.title || ""}`.qq()}">${opts.title || ""}</span>`);
+		const $hovTitle = $(`<span class="window-title min-w-0 ve-overflow-ellipsis" title="${`${opts.title || ""}`.qq()}">${opts.title || ""}</span>`);
 
 		const hoverWindow = {};
 		const hoverId = Renderer.hover._getNextId();
@@ -11549,31 +11767,40 @@ Renderer.hover = class {
 		const drag = {};
 
 		const $brdrTopRightResize = $(`<div class="hoverborder__resize-ne"></div>`)
-			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 1}));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 1, isResizeOnlyWidth}));
+		if (isResizeOnlyWidth) $brdrTopRightResize.hideVe();
 
 		const $brdrRightResize = $(`<div class="hoverborder__resize-e"></div>`)
-			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 2}));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 2, isResizeOnlyWidth}));
 
 		const $brdrBottomRightResize = $(`<div class="hoverborder__resize-se"></div>`)
-			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 3}));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 3, isResizeOnlyWidth}));
+		if (isResizeOnlyWidth) $brdrBottomRightResize.hideVe();
 
-		const $brdrBtm = $(`<div class="hoverborder hoverborder--btm ${opts.isBookContent ? "hoverborder-book" : ""}"><div class="hoverborder__resize-s"></div></div>`)
-			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 4}));
+		const $brdrBtm = $(`<div class="hoverborder hoverborder--btm ${opts.isBookContent ? "hoverborder-book" : ""}"></div>`);
+		const $brdrBtmResize = $(`<div class="hoverborder__resize-s"></div>`)
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 4, isResizeOnlyWidth}))
+			.appendTo($brdrBtm);
+		if (isResizeOnlyWidth) $brdrBtmResize.hideVe();
+		if (isHideBottomBorder) $brdrBtm.hideVe();
 
 		const $brdrBtmLeftResize = $(`<div class="hoverborder__resize-sw"></div>`)
-			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 5}));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 5, isResizeOnlyWidth}));
+		if (isResizeOnlyWidth) $brdrBtmLeftResize.hideVe();
 
 		const $brdrLeftResize = $(`<div class="hoverborder__resize-w"></div>`)
-			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 6}));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 6, isResizeOnlyWidth}));
 
 		const $brdrTopLeftResize = $(`<div class="hoverborder__resize-nw"></div>`)
-			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 7}));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 7, isResizeOnlyWidth}));
+		if (isResizeOnlyWidth) $brdrTopLeftResize.hideVe();
 
 		const $brdrTopResize = $(`<div class="hoverborder__resize-n"></div>`)
-			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 8}));
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 8, isResizeOnlyWidth}));
+		if (isResizeOnlyWidth) $brdrTopResize.hideVe();
 
 		const $brdrTop = $(`<div class="hoverborder hoverborder--top ${opts.isBookContent ? "hoverborder-book" : ""}" ${opts.isPermanent ? `data-perm="true"` : ""}></div>`)
-			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 9}))
+			.on("mousedown touchstart", (evt) => Renderer.hover._getShowWindow_handleDragMousedown({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type: 9, isResizeOnlyWidth}))
 			.on("contextmenu", (evt) => {
 				Renderer.hover._contextMenuLastClicked = {
 					hoverId,
@@ -11752,7 +11979,7 @@ Renderer.hover = class {
 		if (opts.cbClose) opts.cbClose(hoverWindow);
 	}
 
-	static _getShowWindow_handleDragMousedown ({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type}) {
+	static _getShowWindow_handleDragMousedown ({hoverWindow, hoverId, $hov, drag, $wrpContent}, {evt, type, isResizeOnlyWidth}) {
 		if (evt.which === 0 || evt.which === 1) evt.preventDefault();
 		hoverWindow.zIndex = Renderer.hover._getNextZIndex(hoverId);
 		$hov.css({
@@ -11764,11 +11991,11 @@ Renderer.hover = class {
 		drag.startY = EventUtil.getClientY(evt);
 		drag.baseTop = parseFloat($hov.css("top"));
 		drag.baseLeft = parseFloat($hov.css("left"));
-		drag.baseHeight = $wrpContent.height();
+		if (!isResizeOnlyWidth) drag.baseHeight = $wrpContent.height();
 		drag.baseWidth = parseFloat($hov.css("width"));
 		if (type < 9) {
 			$wrpContent.css({
-				"height": drag.baseHeight,
+				...(isResizeOnlyWidth ? {} : {"height": drag.baseHeight}),
 				"max-height": "initial",
 			});
 			$hov.css("max-width", "initial");
@@ -12241,6 +12468,8 @@ Renderer.hover = class {
 			case UrlUtil.PG_VEHICLES: return Renderer.vehicle.pGetFluff;
 			case UrlUtil.PG_CHAR_CREATION_OPTIONS: return Renderer.charoption.pGetFluff;
 			case UrlUtil.PG_RECIPES: return Renderer.recipe.pGetFluff;
+			case UrlUtil.PG_TRAPS_HAZARDS: return Renderer.traphazard.pGetFluff;
+			case UrlUtil.PG_CLASSES: return Renderer.classSubclass.pGetFluff;
 			default: return null;
 		}
 	}
@@ -12416,28 +12645,47 @@ Renderer.findName = function (entry) { return CollectionUtil.dfs(entry, {prop: "
 Renderer.findSource = function (entry) { return CollectionUtil.dfs(entry, {prop: "source"}); };
 Renderer.findEntry = function (entry) { return CollectionUtil.dfs(entry, {fnMatch: obj => obj.name && obj?.entries?.length}); };
 
-Renderer.stripTags = function (str) {
+/**
+ * @param {string} str
+ * @param {?Set<string>} allowlistTags
+ * @param {?Set<string>} blocklistTags
+ */
+Renderer.stripTags = function (str, {allowlistTags = null, blocklistTags = null} = {}) {
 	if (!str) return str;
-	let nxtStr = Renderer._stripTagLayer(str);
-	while (nxtStr.length !== str.length) {
-		str = nxtStr;
-		nxtStr = Renderer._stripTagLayer(str);
-	}
-	return nxtStr;
+
+	const ptrAccum = {_: ""};
+	Renderer._stripTags_textRender({str, ptrAccum, allowlistTags, blocklistTags});
+	return ptrAccum._;
 };
 
-Renderer._stripTagLayer = function (str) {
-	if (str.includes("{@")) {
-		const tagSplit = Renderer.splitByTags(str);
-		return tagSplit.filter(it => it).map(it => {
-			if (it.startsWith("{@")) {
-				let [tag, text] = Renderer.splitFirstSpace(it.slice(1, -1));
-				const tagInfo = Renderer.tag.TAG_LOOKUP[tag];
-				if (!tagInfo) throw new Error(`Unhandled tag: "${tag}"`);
-				return tagInfo.getStripped(tag, text);
-			} else return it;
-		}).join("");
-	} return str;
+Renderer._stripTags_textRender = function ({str, ptrAccum, allowlistTags = null, blocklistTags = null} = {}) {
+	const tagSplit = Renderer.splitByTags(str);
+	const len = tagSplit.length;
+	for (let i = 0; i < len; ++i) {
+		const s = tagSplit[i];
+		if (!s) continue;
+
+		if (!s.startsWith("{@")) {
+			ptrAccum._ += s;
+			continue;
+		}
+
+		const [tag, text] = Renderer.splitFirstSpace(s.slice(1, -1));
+
+		if (
+			(allowlistTags != null && allowlistTags.has(tag))
+			|| (blocklistTags != null && !blocklistTags.has(tag))
+		) {
+			ptrAccum._ += s;
+			continue;
+		}
+
+		const tagInfo = Renderer.tag.TAG_LOOKUP[tag];
+		if (!tagInfo) throw new Error(`Unhandled tag: "${tag}"`);
+		const stripped = tagInfo.getStripped(tag, text);
+
+		Renderer._stripTags_textRender({str: stripped, ptrAccum, allowlistTags, blocklistTags});
+	}
 };
 
 /**

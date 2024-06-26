@@ -1,3 +1,4 @@
+@use "vars/vars";
 
 .list--stats {
 	height: initial;
@@ -24,13 +25,13 @@ h3.ele-magic {
 	margin: 0;
 }
 
-@media (max-width: 991px) {
+@media screen and (width <= #{vars.$width-screen-md}) {
 	.list--stats {
 		max-height: 20em;
 	}
 }
 
-@media (max-device-height: 700px) {
+@media screen and (device-height <= 700px) {
 	.list {
 		max-height: 20em;
 	}
@@ -52,7 +53,7 @@ h3.ele-magic {
 	background: #ccc;
 }
 
-.night-mode .itm__list-divider {
+.ve-night-mode .itm__list-divider {
 	background: #555;
 }
 

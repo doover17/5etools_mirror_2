@@ -7838,15 +7838,9 @@
 				"Common",
 				"Giant"
 			],
-			"traitTags": [
-				"Keen Senses"
-			],
 			"languageTags": [
 				"C",
 				"GI"
-			],
-			"spellcastingTags": [
-				"I"
 			],
 			"hasToken": true
 		},

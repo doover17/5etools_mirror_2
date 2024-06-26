@@ -2972,7 +2972,8 @@
 							},
 							"mapName": "The Lucidian Coast",
 							"width": 850,
-							"height": 914
+							"height": 914,
+							"id": "2cd"
 						},
 						{
 							"type": "insetReadaloud",
@@ -3406,7 +3407,8 @@
 							},
 							"mapName": "The Alabaster Sierras",
 							"width": 1700,
-							"height": 1315
+							"height": 1315,
+							"id": "2ce"
 						},
 						{
 							"type": "insetReadaloud",
@@ -3599,7 +3601,8 @@
 									},
 									"mapName": "The Shearing Channel",
 									"width": 850,
-									"height": 1121
+									"height": 1121,
+									"id": "2cf"
 								},
 								{
 									"type": "entries",
@@ -4458,7 +4461,8 @@
 							},
 							"mapName": "The Dividing Plains",
 							"width": 1700,
-							"height": 1181
+							"height": 1181,
+							"id": "2d0"
 						},
 						{
 							"type": "insetReadaloud",
@@ -5454,7 +5458,8 @@
 							},
 							"mapName": "The Cliffkeep Mountains",
 							"width": 1700,
-							"height": 994
+							"height": 994,
+							"id": "2d1"
 						},
 						{
 							"type": "insetReadaloud",
@@ -5663,7 +5668,8 @@
 									},
 									"mapName": "The City of Kraghammer",
 									"width": 850,
-									"height": 2307
+									"height": 2307,
+									"id": "2d2"
 								},
 								{
 									"type": "entries",
@@ -6398,7 +6404,8 @@
 							},
 							"mapName": "The Stormcrest Mountains",
 							"width": 1700,
-							"height": 889
+							"height": 889,
+							"id": "2d3"
 						},
 						{
 							"type": "insetReadaloud",
@@ -6744,7 +6751,8 @@
 							},
 							"mapName": "The Rifenmist Peninsula",
 							"width": 1700,
-							"height": 794
+							"height": 794,
+							"id": "2d4"
 						},
 						{
 							"type": "insetReadaloud",
@@ -7253,7 +7261,8 @@
 							},
 							"mapName": "The Verdant Expanse",
 							"width": 1700,
-							"height": 823
+							"height": 823,
+							"id": "2d5"
 						},
 						{
 							"type": "insetReadaloud",
@@ -7572,7 +7581,8 @@
 											},
 											"mapName": "The City of Syngorn",
 											"width": 1700,
-											"height": 1153
+											"height": 1153,
+											"id": "2d6"
 										},
 										{
 											"type": "entries",
@@ -7766,7 +7776,8 @@
 							},
 							"mapName": "The Bladeshimmer Shoreline",
 							"width": 850,
-							"height": 2289
+							"height": 2289,
+							"id": "2d7"
 						},
 						{
 							"type": "insetReadaloud",
@@ -8172,7 +8183,8 @@
 											},
 											"mapName": "Emon, The City of Fellowship",
 											"width": 1700,
-											"height": 2307
+											"height": 2307,
+											"id": "2d8"
 										},
 										{
 											"type": "entries",
@@ -10925,7 +10937,6 @@
 					"items": [
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"216",
 								"{@b Aaron J. Riley}",
@@ -10934,7 +10945,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"17, 25, 86",
 								"{@b Adrián Ibarra Lugo}",
@@ -10944,7 +10954,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"235, 247",
 								"{@b Allie Briggs}",
@@ -10954,7 +10963,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"8, 146, 187\u2013189, 234",
 								"{@b Ameera Sheikh}",
@@ -10964,7 +10972,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"5, 142",
 								"{@b Andrey Vasilchenko}",
@@ -10973,7 +10980,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"66, 69, 72, 74, 79, 81, 92, 94, 97, 108, 113, 121, 126, 139",
 								"{@b Andy Law}",
@@ -10983,7 +10989,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"226\u2013227, 229\u2013230",
 								"{@b Anna Grinenko}",
@@ -10993,7 +10998,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"153",
 								"{@b Ariana Orner}",
@@ -11003,7 +11007,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"160\u2013161, 163",
 								"{@b Azra Wheeler}",
@@ -11013,7 +11016,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"87, 252",
 								"{@b Biago D'Alessandro}",
@@ -11022,7 +11024,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"99, 122, 219, 256",
 								"{@b Brian Syme}",
@@ -11031,7 +11032,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"240, 242\u2013243",
 								"{@b Caio Santos}",
@@ -11041,7 +11041,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"42, 112, 116, 195, 197",
 								"{@b Clara Daly}",
@@ -11051,7 +11050,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"18, 155, 184, 199, 253",
 								"{@b Claudia Ianniciello}",
@@ -11061,7 +11059,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"28\u201338, 44, 46, 48, 50\u201355, 57, 60-61, 63",
 								"{@b Conceptopolis, LLC}",
@@ -11070,7 +11067,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"12, 14, 107",
 								"{@b Cyarna Trim}",
@@ -11080,7 +11076,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"58, 261",
 								"{@b De La Rosa Design, LLC}",
@@ -11089,7 +11084,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"62, 236, 238, 249, 259",
 								"{@b Elisa Serio}",
@@ -11099,7 +11093,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"272, 274",
 								"{@b Elliott Berggren}",
@@ -11108,7 +11101,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"cover, 3, 224\u2013225",
 								"{@b Genel Jumalon}",
@@ -11118,7 +11110,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"244",
 								"{@b Hunter Bonyun}",
@@ -11127,7 +11118,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"246",
 								"{@b Ilich Henriquez}",
@@ -11136,7 +11126,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"140",
 								"{@b Isabel Gibney}",
@@ -11146,7 +11135,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"1, 202\u2013212",
 								"{@b Jessica Nguyen}",
@@ -11156,7 +11144,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"265",
 								"{@b Jessica Scates}",
@@ -11165,7 +11152,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"82, 182, 223, 255",
 								"{@b John Anthony di Giovanni}",
@@ -11175,7 +11161,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"262, 268, 270",
 								"{@b Jonah Baumann}",
@@ -11185,7 +11170,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"261",
 								"{@b Kennef Riggles}",
@@ -11194,7 +11178,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"22, 64, 70, 77, 91, 102, 118, 125, 133, 147, 191, 200",
 								"{@b Kent Davis}",
@@ -11204,7 +11187,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"166\u2013168, 170\u2013171, 173, 175, 177, 179, 242, 278\u2013279",
 								"{@b Lauren Walsh}",
@@ -11214,7 +11196,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"6",
 								"{@b Lea Bichlmaier}",
@@ -11224,7 +11205,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"11, 148",
 								"{@b Linda Lithén}",
@@ -11234,7 +11214,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"158, 241, 257",
 								"{@b Nguyen Hieu}",
@@ -11244,7 +11223,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"45, 154, 157, 159, 162, 164",
 								"{@b Nikki Dawes}",
@@ -11254,7 +11232,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"109, 137, 151, 192, 231",
 								"{@b Svetoslav Petrov}",
@@ -11263,7 +11240,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"195",
 								"{@b Stanislav Dikolenko}",
@@ -11272,7 +11248,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"42, 223, 260",
 								"{@b Wesley Griffith}",
@@ -11282,7 +11257,6 @@
 						},
 						{
 							"type": "item",
-							"name": "",
 							"entries": [
 								"26, 157",
 								"{@b Zuzanna Wuzyk}",
@@ -11326,7 +11300,8 @@
 					},
 					"mapName": "Realm of Tal'Dorei",
 					"width": 1280,
-					"height": 1651
+					"height": 1651,
+					"id": "2d9"
 				},
 				{
 					"type": "image",
@@ -11343,7 +11318,8 @@
 					},
 					"mapName": "Realm of Tal'Dorei\u2014Large Watermarked",
 					"width": 2000,
-					"height": 2556
+					"height": 2556,
+					"id": "2da"
 				}
 			],
 			"id": "2c6"
@@ -11621,9 +11597,11 @@
 												}
 											]
 										}
-									]
+									],
+									"id": "2cc"
 								}
-							]
+							],
+							"id": "2cb"
 						}
 					]
 				},
@@ -11636,7 +11614,8 @@
 					"width": 850,
 					"height": 1119
 				}
-			]
+			],
+			"id": "2ca"
 		}
 	]
 }

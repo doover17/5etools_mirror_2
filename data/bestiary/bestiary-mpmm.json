@@ -397,7 +397,7 @@
 				{
 					"name": "Pseudopod",
 					"entries": [
-						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}7 ({@damage 2d6 + 4}) bludgeoning damage plus 7 ({@damage 2d6}) psychic damage."
+						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}11 ({@damage 2d6 + 4}) bludgeoning damage plus 7 ({@damage 2d6}) psychic damage."
 					]
 				},
 				{
@@ -2179,6 +2179,9 @@
 				{
 					"source": "MTF",
 					"page": 117
+				},
+				{
+					"source": "VEoR"
 				}
 			],
 			"size": [
@@ -3282,7 +3285,7 @@
 				{
 					"name": "Shadow Step",
 					"entries": [
-						"The banderhobb teleports up to 30 feet to an un occupied space of dim light or darkness that it can see."
+						"The banderhobb teleports up to 30 feet to an unoccupied space of dim light or darkness that it can see."
 					]
 				},
 				{
@@ -4619,6 +4622,9 @@
 				{
 					"source": "MTF",
 					"page": 161
+				},
+				{
+					"source": "VEoR"
 				}
 			],
 			"size": [
@@ -5499,6 +5505,9 @@
 				},
 				{
 					"source": "AATM"
+				},
+				{
+					"source": "VEoR"
 				}
 			],
 			"size": [
@@ -8702,6 +8711,9 @@
 				"type": "internal",
 				"path": "bestiary/rothe.mp3"
 			},
+			"traitTags": [
+				"Beast of Burden"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -18529,6 +18541,9 @@
 				{
 					"source": "MTF",
 					"page": 162
+				},
+				{
+					"source": "VEoR"
 				}
 			],
 			"size": [
@@ -23005,6 +23020,9 @@
 				{
 					"source": "MTF",
 					"page": 232
+				},
+				{
+					"source": "VEoR"
 				}
 			],
 			"size": [
@@ -23140,6 +23158,9 @@
 				},
 				{
 					"source": "AATM"
+				},
+				{
+					"source": "VEoR"
 				}
 			],
 			"size": [
@@ -26229,6 +26250,9 @@
 				{
 					"source": "VGM",
 					"page": 217
+				},
+				{
+					"source": "VEoR"
 				}
 			],
 			"size": [
@@ -26907,7 +26931,7 @@
 				{
 					"name": "Acid Breath {@recharge 5}",
 					"entries": [
-						"The neothelid exhales acid in a 60- foot cone. Each creature in that area must make a {@dc 18} Dexterity saving throw, taking 35 ({@damage 10d6}) acid damage on a failed save, or half as much damage on a successful one."
+						"The neothelid exhales acid in a 60-foot cone. Each creature in that area must make a {@dc 18} Dexterity saving throw, taking 35 ({@damage 10d6}) acid damage on a failed save, or half as much damage on a successful one."
 					]
 				}
 			],
@@ -28636,6 +28660,9 @@
 				"type": "internal",
 				"path": "bestiary/ox.mp3"
 			},
+			"traitTags": [
+				"Beast of Burden"
+			],
 			"damageTags": [
 				"P"
 			],
@@ -29036,6 +29063,9 @@
 				{
 					"source": "MTF",
 					"page": 160
+				},
+				{
+					"source": "VEoR"
 				}
 			],
 			"size": [
@@ -31151,7 +31181,7 @@
 								],
 								[
 									"21\u201325",
-									"The target's eyes become beacons, filling a 15- foot cone with dim light when they are open."
+									"The target's eyes become beacons, filling a 15-foot cone with dim light when they are open."
 								],
 								[
 									"26\u201330",
@@ -37764,7 +37794,7 @@
 			},
 			"str": 18,
 			"dex": 14,
-			"con": 15,
+			"con": 16,
 			"int": 8,
 			"wis": 10,
 			"cha": 10,

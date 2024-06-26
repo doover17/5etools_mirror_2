@@ -1,45 +1,36 @@
 "use strict";
 
 class SpellsSublistManager extends SublistManager {
-	constructor () {
-		super({
-			sublistClass: "subspells",
-			sublistListOptions: {
-				fnSort: PageFilterSpells.sortSpells,
-			},
-		});
-	}
-
 	static get _ROW_TEMPLATE () {
 		return [
 			new SublistCellTemplate({
 				name: "Name",
-				css: "bold col-3-2 pl-0",
+				css: "bold ve-col-3-2 pl-0",
 				colStyle: "",
 			}),
 			new SublistCellTemplate({
 				name: "Level",
-				css: "capitalize col-1-5 ve-text-center",
+				css: "capitalize ve-col-1-5 ve-text-center",
 				colStyle: "text-center",
 			}),
 			new SublistCellTemplate({
 				name: "Time",
-				css: "col-1-8 ve-text-center",
+				css: "ve-col-1-8 ve-text-center",
 				colStyle: "text-center",
 			}),
 			new SublistCellTemplate({
 				name: "School",
-				css: "capitalize col-1-6 ve-text-center",
+				css: "capitalize ve-col-1-6 ve-text-center",
 				colStyle: "text-center",
 			}),
 			new SublistCellTemplate({
 				name: "C.",
-				css: "concentration--sublist col-0-7 ve-text-center",
+				css: "concentration--sublist ve-col-0-7 ve-text-center",
 				colStyle: "text-center",
 			}),
 			new SublistCellTemplate({
 				name: "Range",
-				css: "range col-3-2 pr-0 text-right",
+				css: "range ve-col-3-2 pr-0 text-right",
 				colStyle: "text-right",
 			}),
 		];
@@ -223,7 +214,6 @@ class SpellsPage extends ListPageMultiSource {
 		super({
 			pageFilter: new PageFilterSpells(),
 
-			listClass: "spells",
 			listOptions: {
 				fnSort: PageFilterSpells.sortSpells,
 			},
@@ -241,6 +231,7 @@ class SpellsPage extends ListPageMultiSource {
 				colTransforms: {
 					name: UtilsTableview.COL_TRANSFORM_NAME,
 					source: UtilsTableview.COL_TRANSFORM_SOURCE,
+					page: UtilsTableview.COL_TRANSFORM_PAGE,
 					level: {name: "Level", transform: (it) => Parser.spLevelToFull(it)},
 					time: {name: "Casting Time", transform: (it) => PageFilterSpells.getTblTimeStr(it[0])},
 					duration: {name: "Duration", transform: (it) => Parser.spDurationToFull(it)},
@@ -331,21 +322,21 @@ class SpellsPage extends ListPageMultiSource {
 					href: `#${hash}`,
 					clazz: "lst--border lst__row-inner",
 					children: [
-						e_({tag: "span", clazz: `bold col-2-9 pl-0`, text: spell.name}),
-						e_({tag: "span", clazz: `col-1-5 ve-text-center`, text: PageFilterSpells.getTblLevelStr(spell)}),
-						e_({tag: "span", clazz: `col-1-7 ve-text-center`, text: time}),
+						e_({tag: "span", clazz: `bold ve-col-2-9 pl-0`, text: spell.name}),
+						e_({tag: "span", clazz: `ve-col-1-5 ve-text-center`, text: PageFilterSpells.getTblLevelStr(spell)}),
+						e_({tag: "span", clazz: `ve-col-1-7 ve-text-center`, text: time}),
 						e_({
 							tag: "span",
-							clazz: `col-1-2 sp__school-${spell.school} ve-text-center`,
+							clazz: `ve-col-1-2 sp__school-${spell.school} ve-text-center`,
 							title: Parser.spSchoolAndSubschoolsAbvsToFull(spell.school, spell.subschools),
 							style: Parser.spSchoolAbvToStylePart(spell.school),
 							text: school,
 						}),
-						e_({tag: "span", clazz: `col-0-6 ve-text-center`, title: "Concentration", text: concentration}),
-						e_({tag: "span", clazz: `col-2-4 text-right`, text: range}),
+						e_({tag: "span", clazz: `ve-col-0-6 ve-text-center`, title: "Concentration", text: concentration}),
+						e_({tag: "span", clazz: `ve-col-2-4 text-right`, text: range}),
 						e_({
 							tag: "span",
-							clazz: `col-1-7 ve-text-center ${Parser.sourceJsonToColor(spell.source)} pr-0`,
+							clazz: `ve-col-1-7 ve-text-center ${Parser.sourceJsonToColor(spell.source)} pr-0`,
 							style: Parser.sourceJsonToStylePart(spell.source),
 							title: `${Parser.sourceJsonToFull(spell.source)}${Renderer.utils.getSourceSubText(spell)}`,
 							text: source,

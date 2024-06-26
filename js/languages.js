@@ -1,27 +1,21 @@
 "use strict";
 
 class LanguagesSublistManager extends SublistManager {
-	constructor () {
-		super({
-			sublistClass: "sublanguages",
-		});
-	}
-
 	static get _ROW_TEMPLATE () {
 		return [
 			new SublistCellTemplate({
 				name: "Name",
-				css: "bold col-8 pl-0",
+				css: "bold ve-col-8 pl-0",
 				colStyle: "",
 			}),
 			new SublistCellTemplate({
 				name: "Type",
-				css: "col-2 ve-text-center",
+				css: "ve-col-2 ve-text-center",
 				colStyle: "text-center",
 			}),
 			new SublistCellTemplate({
 				name: "Script",
-				css: "col-2 ve-text-center pr-0",
+				css: "ve-col-2 ve-text-center pr-0",
 				colStyle: "text-center",
 			}),
 		];
@@ -70,8 +64,6 @@ class LanguagesPage extends ListPage {
 
 			pageFilter,
 
-			listClass: "languages",
-
 			dataProps: ["language"],
 
 			isMarkdownPopout: true,
@@ -88,10 +80,10 @@ class LanguagesPage extends ListPage {
 		const hash = UrlUtil.autoEncodeHash(it);
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
-			<span class="col-6 bold pl-0">${it.name}</span>
-			<span class="col-2 ve-text-center">${(it.type || "\u2014").uppercaseFirst()}</span>
-			<span class="col-2 ve-text-center">${(it.script || "\u2014").toTitleCase()}</span>
-			<span class="col-2 ve-text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${Parser.sourceJsonToStyle(it.source)}>${source}</span>
+			<span class="ve-col-6 bold pl-0">${it.name}</span>
+			<span class="ve-col-2 ve-text-center">${(it.type || "\u2014").uppercaseFirst()}</span>
+			<span class="ve-col-2 ve-text-center">${(it.script || "\u2014").toTitleCase()}</span>
+			<span class="ve-col-2 ve-text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${Parser.sourceJsonToStyle(it.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(
@@ -127,7 +119,7 @@ class LanguagesPage extends ListPage {
 				fnPopulate: () => {
 					this._$pgContent.empty().append(Renderer.utils.getBorderTr());
 					this._$pgContent.append(Renderer.utils.getNameTr(ent));
-					const $td = $(`<td colspan="6" class="text"/>`);
+					const $td = $(`<td colspan="6" class="text"></td>`);
 					$$`<tr class="text">${$td}</tr>`.appendTo(this._$pgContent);
 					this._$pgContent.append(Renderer.utils.getBorderTr());
 
@@ -138,7 +130,7 @@ class LanguagesPage extends ListPage {
 						return;
 					}
 
-					const $styleFont = $(`<style/>`);
+					const $styleFont = $(`<style></style>`);
 
 					let lastStyleIndex = null;
 					let lastStyleClass = null;

@@ -242,7 +242,7 @@ class LootGenUi extends BaseComponent {
 									"Item",
 								],
 								colStyles: [
-									"col-2 ve-text-center",
+									"col-2 text-center",
 									"col-10",
 								],
 								rows: items.map((it, i) => ([i + 1, `{@item ${it.name}|${it.source}}`])),
@@ -1187,7 +1187,7 @@ class LootGenUi extends BaseComponent {
 	}
 
 	_render_output ({$wrp}) {
-		this._$wrpOutputRows = $(`<div class="w-100 h-100 ve-flex-col overflow-y-auto smooth-scroll"></div>`);
+		this._$wrpOutputRows = $(`<div class="w-100 h-100 ve-flex-col ve-overflow-y-auto smooth-scroll"></div>`);
 
 		$$`<div class="ve-flex-col w-100 h-100">
 			<h4 class="my-0"><i>Output</i></h4>
@@ -1993,7 +1993,7 @@ class LootGenMagicItem extends BaseComponent {
 		const $btnReroll = this._$getBtnReroll();
 
 		return $$`<li class="split-v-center">
-			<div class="ve-flex-v-center ve-flex-wrap pr-3">
+			<div class="ve-flex-v-center ve-flex-wrap pr-3 min-w-0">
 				${$dispBaseEntry}
 				${$dispRoll}
 			</div>
@@ -2087,7 +2087,7 @@ class LootGenMagicItemSpellScroll extends LootGenMagicItem {
 		const $btnReroll = this._$getBtnReroll();
 
 		return $$`<li class="split-v-center">
-			<div class="ve-flex-v-center ve-flex-wrap pr-3">
+			<div class="ve-flex-v-center ve-flex-wrap pr-3 min-w-0">
 				${$dispBaseEntry}
 				<div class="ve-flex-v-center italic mr-2">
 					<span>(</span>
@@ -2141,7 +2141,7 @@ class LootGenMagicItemSubItems extends LootGenMagicItem {
 		const $btnReroll = this._$getBtnReroll();
 
 		return $$`<li class="split-v-center">
-			<div class="ve-flex-v-center ve-flex-wrap pr-3">
+			<div class="ve-flex-v-center ve-flex-wrap pr-3 min-w-0">
 				${$dispBaseEntry}
 				<div class="ve-flex-v-center italic mr-2">
 					<span>(</span>
@@ -2211,14 +2211,14 @@ class LootGenMagicItemTable extends LootGenMagicItem {
 
 		return $$`<li class="ve-flex-col">
 			<div class="split-v-center">
-				<div class="ve-flex-v-center ve-flex-wrap pr-3">
+				<div class="ve-flex-v-center ve-flex-wrap pr-3 min-w-0">
 					${$dispBaseEntry}
 					${$dispRoll}
 				</div>
 				${$btnReroll}
 			</div>
 			<div class="split-v-center pl-2">
-				<div class="ve-flex-v-center ve-flex-wrap pr-3">
+				<div class="ve-flex-v-center ve-flex-wrap pr-3 min-w-0">
 					<span class="ml-1 mr-2">&rarr;</span>
 					${$dispTableEntry}
 					${$dispTableRoll}

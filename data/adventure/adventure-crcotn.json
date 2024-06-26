@@ -22898,6 +22898,7 @@
 					"grid": {
 						"type": "none"
 					},
+					"mapName": "Great City of Ank'Harel",
 					"title": "A map of the great city of Ank'Harel, the caverns of the last city of Cael Morrow, and the mysterious realm beneath\u2014as explored by the Allegiance of Allsight. 836 PD",
 					"width": 1189,
 					"height": 1700,
@@ -23116,9 +23117,11 @@
 												}
 											]
 										}
-									]
+									],
+									"id": "37a"
 								}
-							]
+							],
+							"id": "33d"
 						},
 						{
 							"type": "entries",
@@ -23161,9 +23164,11 @@
 												}
 											]
 										}
-									]
+									],
+									"id": "407"
 								}
-							]
+							],
+							"id": "406"
 						},
 						{
 							"type": "entries",
@@ -23199,9 +23204,11 @@
 												}
 											]
 										}
-									]
+									],
+									"id": "40c"
 								}
-							]
+							],
+							"id": "409"
 						}
 					]
 				},
@@ -23215,7 +23222,8 @@
 					"width": 1200,
 					"height": 792
 				}
-			]
+			],
+			"id": "2e3"
 		}
 	]
 }

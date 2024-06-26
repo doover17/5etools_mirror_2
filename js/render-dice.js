@@ -19,6 +19,8 @@ Renderer.dice = {
 
 	_isManualMode: false,
 
+	/* -------------------------------------------- */
+
 	// region Utilities
 	DICE: [4, 6, 8, 10, 12, 20, 100],
 	getNextDice (faces) {
@@ -33,6 +35,8 @@ Renderer.dice = {
 		else return null;
 	},
 	// endregion
+
+	/* -------------------------------------------- */
 
 	// region DM Screen integration
 	_panel: null,
@@ -59,6 +63,27 @@ Renderer.dice = {
 		return Renderer.dice._$wrpRoll;
 	},
 	// endregion
+
+	/* -------------------------------------------- */
+
+	bindOnclickListener (ele) {
+		ele.addEventListener("click", (evt) => {
+			const eleDice = evt.target.hasAttribute("data-packed-dice")
+				? evt.target
+				// Tolerate e.g. Bestiary wrapped proficiency dice rollers
+				: evt.target.parentElement?.hasAttribute("data-packed-dice")
+					? evt.target.parentElement
+					: null;
+
+			if (!eleDice) return;
+
+			evt.preventDefault();
+			evt.stopImmediatePropagation();
+			Renderer.dice.pRollerClickUseData(evt, eleDice).then(null);
+		});
+	},
+
+	/* -------------------------------------------- */
 
 	/**
 	 * Silently roll an expression and get the result.
@@ -195,6 +220,8 @@ Renderer.dice = {
 	// endregion
 
 	// region Event handling
+	RE_PROMPT: /#\$prompt_number:?([^$]*)\$#/g,
+
 	async pRollerClickUseData (evt, ele) {
 		evt.stopPropagation();
 		evt.preventDefault();
@@ -233,10 +260,8 @@ Renderer.dice = {
 
 		if (!chosenRollData) return;
 
-		const rePrompt = /#\$prompt_number:?([^$]*)\$#/g;
 		const results = [];
-		let m;
-		while ((m = rePrompt.exec(chosenRollData.toRoll))) {
+		for (const m of chosenRollData.toRoll.matchAll(Renderer.dice.RE_PROMPT)) {
 			const optionsRaw = m[1];
 			const opts = {};
 			if (optionsRaw) {
@@ -263,8 +288,7 @@ Renderer.dice = {
 		}
 
 		const rollDataCpy = MiscUtil.copyFast(chosenRollData);
-		rePrompt.lastIndex = 0;
-		rollDataCpy.toRoll = rollDataCpy.toRoll.replace(rePrompt, () => results.shift());
+		rollDataCpy.toRoll = rollDataCpy.toRoll.replace(Renderer.dice.RE_PROMPT, () => results.shift());
 
 		// If there's a prompt, prompt the user to select the dice
 		let rollDataCpyToRoll;
@@ -1074,7 +1098,7 @@ Renderer.dice.lang = {
 			.replace(/\s*?\bdivided by\b\s*?/g, " / ")
 			// endregion
 			.replace(/\s+/g, "")
-			.replace(/[\u2012\u2013\u2014]/g, "-") // convert dashes
+			.replace(/[\u2012\u2013\u2014\u2212]/g, "-") // convert dashes
 			.replace(/[×]/g, "*") // convert mult signs
 			.replace(/\*\*/g, "^") // convert ** to ^
 			.replace(/÷/g, "/") // convert div signs

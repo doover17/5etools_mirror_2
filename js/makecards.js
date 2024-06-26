@@ -63,9 +63,9 @@ class MakeCards extends BaseComponent {
 
 		$$($wrpConfig)`<h5 class="split-v-center"><div>New Card Defaults</div>${$btnResetDefaults}</h5>
 		<div class="ve-flex-v-center bold">
-			<div class="col-4 ve-text-center pr-2">Type</div>
-			<div class="col-4 ve-text-center p-2">Color</div>
-			<div class="col-4 ve-text-center pl-2">Icon</div>
+			<div class="ve-col-4 ve-text-center pr-2">Type</div>
+			<div class="ve-col-4 ve-text-center p-2">Color</div>
+			<div class="ve-col-4 ve-text-center pl-2">Icon</div>
 		</div>`;
 
 		const $getColorIconConfigRow = (entityType) => {
@@ -74,7 +74,7 @@ class MakeCards extends BaseComponent {
 			const kColor = `color_${entityType}`;
 			const kIcon = `icon_${entityType}`;
 			const $iptColor = ComponentUiUtil.$getIptColor(this, kColor).addClass("cards-cfg__ipt-color");
-			const $dispIcon = $(`<div class="cards__disp-btn-icon"/>`);
+			const $dispIcon = $(`<div class="cards__disp-btn-icon"></div>`);
 			const $btnChooseIcon = $$`<button class="btn btn-xs btn-default cards__btn-choose-icon">${$dispIcon}</button>`
 				.click(async () => {
 					const icon = await MakeCards._pGetUserIcon(this._state[kIcon]);
@@ -85,9 +85,9 @@ class MakeCards extends BaseComponent {
 			hkIcon();
 
 			return $$`<div class="ve-flex-v-center stripe-even m-1">
-				<div class="col-4 ve-flex-vh-center pr-2">${entityMeta.searchTitle}</div>
-				<div class="col-4 ve-flex-vh-center p-2">${$iptColor}</div>
-				<div class="col-4 ve-flex-vh-center pl-2">${$btnChooseIcon}</div>
+				<div class="ve-col-4 ve-flex-vh-center pr-2">${entityMeta.searchTitle}</div>
+				<div class="ve-col-4 ve-flex-vh-center p-2">${$iptColor}</div>
+				<div class="ve-col-4 ve-flex-vh-center pl-2">${$btnChooseIcon}</div>
 			</div>`;
 		};
 
@@ -101,16 +101,16 @@ class MakeCards extends BaseComponent {
 		const menuSearch = ContextUtil.getMenu(this._render_getContextMenuOptions());
 
 		const $iptSearch = $(`<input type="search" class="form-control mr-2" placeholder="Search cards...">`);
-		const $btnAdd = $(`<button class="btn btn-primary mr-2"><span class="glyphicon glyphicon-plus"/> Add</button>`)
+		const $btnAdd = $(`<button class="btn btn-primary mr-2"><span class="glyphicon glyphicon-plus"></span> Add</button>`)
 			.click(evt => ContextUtil.pOpenMenu(evt, menuSearch));
-		const $btnReset = $(`<button class="btn btn-danger mr-2"><span class="glyphicon glyphicon-trash"/> Reset</button>`)
-			.click(() => {
-				if (!confirm("Are you sure?")) return;
+		const $btnReset = $(`<button class="btn btn-danger mr-2"><span class="glyphicon glyphicon-trash"></span> Reset</button>`)
+			.click(async () => {
+				if (!await InputUiUtil.pGetUserBoolean({title: "Reset", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
 				this._list.removeAllItems();
 				this._list.update();
 				this._doSaveStateDebounced();
 			});
-		const $btnExport = $(`<button class="btn btn-default"><span class="glyphicon glyphicon-download"/> Export JSON</button>`)
+		const $btnExport = $(`<button class="btn btn-default"><span class="glyphicon glyphicon-download"></span> Export JSON</button>`)
 			.click(() => {
 				const toDownload = this._list.items.map(it => {
 					const entityMeta = MakeCards._AVAILABLE_TYPES[it.values.entityType];
@@ -183,18 +183,18 @@ class MakeCards extends BaseComponent {
 				this._list.visibleItems.forEach(it => it.data.$cbSel.prop("checked", isSel));
 			});
 		$$`<div class="w-100 no-shrink ve-flex-v-center bold">
-			<div class="col-1 mr-2 ve-flex-vh-center">${$cbSelAll}</div>
-			<div class="col-3 mr-2 ve-flex-vh-center">Name</div>
-			<div class="col-1-5 mr-2 ve-flex-vh-center">Source</div>
-			<div class="col-1-5 mr-2 ve-flex-vh-center">Type</div>
-			<div class="col-1-1 mr-2 ve-flex-vh-center">Color</div>
-			<div class="col-1-1 mr-2 ve-flex-vh-center">Icon</div>
-			<div class="col-1 mr-2 ve-flex-vh-center">Count</div>
-			<div class="col-1-1 ve-flex-v-center ve-flex-h-right"/>
+			<div class="ve-col-1 mr-2 ve-flex-vh-center">${$cbSelAll}</div>
+			<div class="ve-col-3 mr-2 ve-flex-vh-center">Name</div>
+			<div class="ve-col-1-5 mr-2 ve-flex-vh-center">Source</div>
+			<div class="ve-col-1-5 mr-2 ve-flex-vh-center">Type</div>
+			<div class="ve-col-1-1 mr-2 ve-flex-vh-center">Color</div>
+			<div class="ve-col-1-1 mr-2 ve-flex-vh-center">Icon</div>
+			<div class="ve-col-1 mr-2 ve-flex-vh-center">Count</div>
+			<div class="ve-col-1-1 ve-flex-v-center ve-flex-h-right"></div>
 		</div>`.appendTo($wrpContainer);
 
-		const $wrpList = $(`<div class="w-100 h-100"/>`);
-		$$`<div class="ve-flex-col h-100 w-100 overflow-y-auto mt-2 overflow-x-hidden">${$wrpList}</div>`.appendTo($wrpContainer);
+		const $wrpList = $(`<div class="w-100 h-100"></div>`);
+		$$`<div class="ve-flex-col h-100 w-100 ve-overflow-y-auto mt-2 ve-overflow-x-hidden">${$wrpList}</div>`.appendTo($wrpContainer);
 
 		this._list = new List({$iptSearch, $wrpList, isUseJquery: true});
 		this._list.init();
@@ -319,7 +319,7 @@ class MakeCards extends BaseComponent {
 			this._doSaveStateDebounced();
 		};
 
-		const $dispIcon = $(`<div class="cards__disp-btn-icon"/>`)
+		const $dispIcon = $(`<div class="cards__disp-btn-icon"></div>`)
 			.css("background-image", `url('${MakeCards._getIconPath(cardMeta.icon)}')`);
 		const $btnIcon = $$`<button class="btn btn-default btn-xs cards__btn-choose-icon">${$dispIcon}</button>`
 			.click(async () => {
@@ -341,7 +341,7 @@ class MakeCards extends BaseComponent {
 			})
 			.val(cardMeta.count);
 
-		const $btnCopy = $(`<button class="btn btn-default btn-xs mr-2" title="Copy JSON (SHIFT to view JSON)"><span class="glyphicon glyphicon-copy"/></button>`)
+		const $btnCopy = $(`<button class="btn btn-default btn-xs mr-2" title="Copy JSON (SHIFT to view JSON)"><span class="glyphicon glyphicon-copy"></span></button>`)
 			.click(async evt => {
 				const entityMeta = MakeCards._AVAILABLE_TYPES[listItem.values.entityType];
 				const toCopy = {
@@ -371,7 +371,7 @@ class MakeCards extends BaseComponent {
 					JqueryUtil.showCopiedEffect($btnCopy, "Copied JSON!");
 				}
 			});
-		const $btnDelete = $(`<button class="btn btn-danger btn-xs" title="Remove"><span class="glyphicon glyphicon-trash"/></button>`)
+		const $btnDelete = $(`<button class="btn btn-danger btn-xs" title="Remove"><span class="glyphicon glyphicon-trash"></span></button>`)
 			.click(() => {
 				this._list.removeItemByIndex(uid);
 				this._list.update();
@@ -379,14 +379,14 @@ class MakeCards extends BaseComponent {
 			});
 
 		const $ele = $$`<label class="ve-flex-v-center my-1 w-100 lst__row lst--border lst__row-inner">
-			<div class="col-1 mr-2 ve-flex-vh-center">${$cbSel}</div>
-			<div class="col-3 mr-2 ve-flex-v-center">${loaded.name}</div>
-			<div class="col-1-5 mr-2 ve-flex-vh-center ${Parser.sourceJsonToColor(loaded.source)}" title="${Parser.sourceJsonToFull(loaded.source)}" ${Parser.sourceJsonToStyle(loaded.source)}>${Parser.sourceJsonToAbv(loaded.source)}</div>
-			<div class="col-1-5 mr-2 ve-flex-vh-center">${Parser.getPropDisplayName(cardMeta.entityType)}</div>
-			<div class="col-1-1 mr-2 ve-flex-vh-center">${$iptRgb}</div>
-			<div class="col-1-1 mr-2 ve-flex-vh-center">${$btnIcon}</div>
-			<div class="col-1 mr-2 ve-flex-vh-center">${$iptCount}</div>
-			<div class="col-1-1 ve-flex-v-center ve-flex-h-right">${$btnCopy}${$btnDelete}</div>
+			<div class="ve-col-1 mr-2 ve-flex-vh-center">${$cbSel}</div>
+			<div class="ve-col-3 mr-2 ve-flex-v-center">${loaded.name}</div>
+			<div class="ve-col-1-5 mr-2 ve-flex-vh-center ${Parser.sourceJsonToColor(loaded.source)}" title="${Parser.sourceJsonToFull(loaded.source)}" ${Parser.sourceJsonToStyle(loaded.source)}>${Parser.sourceJsonToAbv(loaded.source)}</div>
+			<div class="ve-col-1-5 mr-2 ve-flex-vh-center">${Parser.getPropDisplayName(cardMeta.entityType)}</div>
+			<div class="ve-col-1-1 mr-2 ve-flex-vh-center">${$iptRgb}</div>
+			<div class="ve-col-1-1 mr-2 ve-flex-vh-center">${$btnIcon}</div>
+			<div class="ve-col-1 mr-2 ve-flex-vh-center">${$iptCount}</div>
+			<div class="ve-col-1-1 ve-flex-v-center ve-flex-h-right">${$btnCopy}${$btnDelete}</div>
 		</label>`;
 
 		const listItem = new ListItem(
@@ -619,7 +619,7 @@ class MakeCards extends BaseComponent {
 				.keydown(async evt => {
 					// prevent double-binding the return key if we have autocomplete enabled
 					await MiscUtil.pDelay(17); // arbitrary delay to allow dropdown to render (~1000/60, i.e. 1 60 FPS frame)
-					if ($modalInner.find(`.typeahead.dropdown-menu`).is(":visible")) return;
+					if ($modalInner.find(`.typeahead.ve-dropdown-menu`).is(":visible")) return;
 					// return key
 					if (evt.which === 13) doClose(true);
 					evt.stopPropagation();
@@ -631,7 +631,7 @@ class MakeCards extends BaseComponent {
 				source: icon_names,
 				items: "16",
 				fnGetItemPrefix: (iconName) => {
-					return `<span class="cards__disp-typeahead-icon mr-2" style="background-image: url('${MakeCards._getIconPath(iconName)}')"/> `;
+					return `<span class="cards__disp-typeahead-icon mr-2" style="background-image: url('${MakeCards._getIconPath(iconName)}')"></span> `;
 				},
 			});
 

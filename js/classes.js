@@ -65,6 +65,140 @@ class UtilClassesPage {
 		}
 		return "fresh";
 	}
+
+	/* -------------------------------------------- */
+
+	static _getRenderedClassSubclassFluff (
+		{
+			ent,
+			entFluff,
+			depthArr = null,
+			isRemoveRootName = false,
+			isAddLeadingHr = false,
+			isAddTrailingHr = false,
+			isAddSourceNote = false,
+		},
+	) {
+		entFluff = MiscUtil.copyFast(entFluff);
+
+		const hasEntries = !!entFluff?.entries?.length;
+		const hasImages = !!entFluff?.images?.length;
+
+		let stack = "";
+		Renderer.get().setFirstSection(true);
+
+		if (hasEntries) {
+			const renderer = Renderer.get();
+
+			if (depthArr) renderer.setDepthTracker(depthArr, {additionalPropsInherited: ["_isStandardSource"]});
+			else renderer.setDepthTracker([]);
+
+			entFluff.entries.filter(f => f.source === ent.source).forEach(f => f._isStandardSource = true);
+
+			entFluff.entries.forEach((f, i) => {
+				const cpy = MiscUtil.copyFast(f);
+
+				// Remove the name from the first section if it is a copy of the class/subclass name
+				if (
+					isRemoveRootName
+					&& i === 0
+					&& cpy.name
+					&& (
+						cpy.name.toLowerCase() === ent.name.toLowerCase()
+						|| cpy.name.toLowerCase() === `the ${ent.name.toLowerCase()}`
+					)
+				) {
+					delete cpy.name;
+				}
+
+				if (
+					isAddSourceNote
+					&& typeof cpy !== "string"
+					&& cpy.source
+					&& cpy.source !== ent.source
+					&& cpy.entries
+				) {
+					cpy.entries.unshift(`{@note The following information is from ${Parser.sourceJsonToFull(cpy.source)}${Renderer.utils.isDisplayPage(cpy.page) ? `, page ${cpy.page}` : ""}.}`);
+				}
+
+				stack += renderer.render(cpy);
+			});
+		}
+
+		if (hasImages) {
+			if (hasEntries) {
+				stack += `<div class="py-2"></div>`;
+			}
+
+			this._getFluffLayoutImages(entFluff.images)
+				.forEach(ent => stack += Renderer.get().render(ent));
+		}
+
+		if (hasImages || hasEntries) {
+			if (isAddLeadingHr) stack = Renderer.get().render({type: "hr"}) + stack;
+			if (isAddTrailingHr) stack += Renderer.get().render({type: "hr"});
+		}
+
+		return {
+			hasEntries,
+			hasImages,
+			rendered: stack || null,
+		};
+	}
+
+	static getRenderedClassFluff (
+		{
+			cls,
+			clsFluff,
+			depthArr = null,
+			isRemoveRootName = false,
+			isAddTrailingHr = false,
+		},
+	) {
+		return this._getRenderedClassSubclassFluff({
+			ent: cls,
+			entFluff: clsFluff,
+			depthArr,
+			isRemoveRootName,
+			isAddTrailingHr,
+			isAddSourceNote: true,
+		});
+	}
+
+	static getRenderedSubclassFluff (
+		{
+			sc,
+			scFluff,
+			depthArr = null,
+		},
+	) {
+		return this._getRenderedClassSubclassFluff({
+			ent: sc,
+			entFluff: scFluff,
+			depthArr,
+			isAddLeadingHr: true,
+			isAddTrailingHr: true,
+		});
+	}
+
+	static _getFluffLayoutImages (images) {
+		if (images.length === 1) {
+			return [
+				{
+					maxWidth: "98",
+					maxWidthUnits: "%",
+					...images[0],
+				},
+			];
+		}
+
+		return [
+			{
+				type: "gallery",
+				images: [...images],
+			},
+		];
+	}
 }
 
 class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProxyBase(ListPage))) {
@@ -228,7 +362,6 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 
 			// Force data on any classes with unusual sources to behave as though they have normal sources
 			if (SourceUtil.isNonstandardSource(cls.source) || PrereleaseUtil.hasSourceJson(cls.source) || BrewUtil2.hasSourceJson(cls.source)) {
-				if (cls.fluff) cls.fluff.filter(f => f.source === cls.source).forEach(f => f._isStandardSource = true);
 				cls.subclasses.filter(sc => sc.source === cls.source).forEach(sc => sc._isStandardSource = true);
 			}
 
@@ -539,8 +672,8 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		const source = Parser.sourceJsonToAbv(cls.source);
 
 		const $lnk = $(`<a href="#${hash}" class="lst--border lst__row-inner">
-			<span class="bold col-8 pl-0">${cls.name}</span>
-			<span class="col-4 ve-text-center ${Parser.sourceJsonToColor(cls.source)} pr-0" title="${Parser.sourceJsonToFull(cls.source)}" ${Parser.sourceJsonToStyle(cls.source)}>${source}</span>
+			<span class="bold ve-col-8 pl-0">${cls.name}</span>
+			<span class="ve-col-4 ve-text-center ${Parser.sourceJsonToColor(cls.source)} pr-0" title="${Parser.sourceJsonToFull(cls.source)}" ${Parser.sourceJsonToStyle(cls.source)}>${source}</span>
 		</a>`);
 
 		const $ele = $$`<li class="lst__row ve-flex-col ${isExcluded ? "row--blocklisted" : ""}">${$lnk}</li>`;
@@ -668,7 +801,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		this._render_renderClassTable();
 		this._render_renderSidebar();
 		await this._render_pRenderSubclassTabs();
-		this._render_renderClassContent();
+		await this._render_pRenderClassContent();
 		this._render_renderOutline();
 		this._render_renderAltViews();
 		// endregion
@@ -694,7 +827,19 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		this._addHookBase("feature", hkScrollToFeature);
 		hkScrollToFeature();
 
-		const hkDisplayFluff = () => $(`.cls-main__cls-fluff`).toggleVe(!!this._state.isShowFluff);
+		const hkDisplayFluff = () => {
+			$(`.cls-main__cls-fluff`).toggleVe(!!this._state.isShowFluff);
+
+			if (!this._state.isShowFluff) {
+				$(`.cls-main__sc-fluff`).hideVe();
+			} else {
+				$(`.cls-main__sc-fluff`)
+					.each((i, e) => {
+						const $e = $(e);
+						$e.toggleVe(!!this._state[$e.attr("data-subclass-id-fluff")]);
+					});
+			}
+		};
 		this._addHookBase("isShowFluff", hkDisplayFluff);
 		MiscUtil.pDefer(hkDisplayFluff);
 
@@ -752,6 +897,8 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 
 					const isVisible = this._state[stateKey];
 					$(`[data-subclass-id="${stateKey}"]`).toggleVe(!!isVisible);
+
+					$(`[data-subclass-id-fluff="${stateKey}"]`).toggleVe(!!isVisible && this._state.isShowFluff);
 
 					if (!isFirstRun) hkIsShowNamePrefixes();
 				};
@@ -835,7 +982,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 			<tr><th class="border" colspan="15"></th></tr>
 			<tr><th class="cls-tbl__disp-name" colspan="15">${cls.name}</th></tr>
 			<tr>
-				<th colspan="3"/> <!-- spacer to match the 3 default cols (level, prof, features) -->
+				<th colspan="3"></th> <!-- spacer to match the 3 default cols (level, prof, features) -->
 				${$tblGroupHeaders}
 			</tr>
 			<tr>
@@ -865,7 +1012,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		const $thGroupHeader = tableGroup.title
 			? $(`<th class="cls-tbl__col-group" colspan="${colLabels.length}">${tableGroup.title}</th>`)
 			// if there's no title, add a spacer
-			: $(`<th colspan="${colLabels.length}"/>`);
+			: $(`<th colspan="${colLabels.length}"></th>`);
 		$tblGroupHeaders.push($thGroupHeader);
 
 		// Render column headers (bottom section)
@@ -957,7 +1104,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 					hkSetHref();
 
 					// Make a dummy for the last item
-					const $dispComma = ixFeature === lvlFeaturesFilt.length - 1 ? $(`<span/>`) : $(`<span class="mr-1">,</span>`);
+					const $dispComma = ixFeature === lvlFeaturesFilt.length - 1 ? $(`<span></span>`) : $(`<span class="mr-1">,</span>`);
 					return {
 						$wrpLink: $$`<div class="inline-block">${$lnk}${$dispComma}</div>`,
 						$dispComma,
@@ -1160,14 +1307,12 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		// region HP/hit dice
 		let $ptHp = null;
 		if (cls.hd) {
-			const hdEntry = Renderer.class.getHitDiceEntry(cls.hd);
-
 			$ptHp = $(`<tr></tr>`)
 				.fastSetHtml(`<td colspan="6" class="cls-side__section">
 					<h5 class="cls-side__section-head">Hit Points</h5>
-					<div><strong>Hit Dice:</strong> ${Renderer.getEntryDice(hdEntry, "Hit die")}</div>
+					<div><strong>Hit Dice:</strong> ${Renderer.get().render(Renderer.class.getHitDiceEntry(cls.hd))}</div>
 					<div><strong>Hit Points at 1st Level:</strong> ${Renderer.class.getHitPointsAtFirstLevel(cls.hd)}</div>
-					<div><strong>Hit Points at Higher Levels:</strong> ${Renderer.class.getHitPointsAtHigherLevels(cls.name, cls.hd, hdEntry)}</div>
+					<div><strong>Hit Points at Higher Levels:</strong> ${Renderer.class.getHitPointsAtHigherLevels(cls.name, cls.hd)}</div>
 				</td>`);
 			$ptsToToggle.push($ptHp);
 		}
@@ -1186,7 +1331,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 				equip.default && equip.default.length ? `<ul class="pl-4"><li>${equip.default.map(it => Renderer.get().render(it)).join("</li><li>")}</ul>` : "",
 				equip.goldAlternative != null ? `<p>Alternatively, you may start with ${Renderer.get().render(equip.goldAlternative)} gp to buy your own equipment.</p>` : "",
 			].filter(Boolean).join("");
-			const $dispRendered = $(`<div/>`);
+			const $dispRendered = $(`<div></div>`);
 
 			$ptEquipment = $$`<tr>
 				<td class="cls-side__section" colspan="6">
@@ -1327,7 +1472,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		// endregion
 
 		// region subclasses
-		const $wrpScTabs = $(`<div class="ve-flex-v-center ve-flex-wrap mr-2 w-100"/>`).appendTo($wrp);
+		const $wrpScTabs = $(`<div class="ve-flex-v-center ve-flex-wrap mr-2 w-100"></div>`).appendTo($wrp);
 		this._listSubclass = new List({$wrpList: $wrpScTabs, isUseJquery: true, fnSort: ClassesPage._fnSortSubclassFilterItems});
 
 		cls.subclasses.forEach((sc, i) => {
@@ -1336,7 +1481,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 			this._listSubclass.addItem(listItem);
 		});
 
-		const $dispCount = $(`<div class="text-muted m-1 cls-tabs__sc-not-shown ve-flex-vh-center"/>`);
+		const $dispCount = $(`<div class="text-muted m-1 cls-tabs__sc-not-shown ve-flex-vh-center"></div>`);
 		this._listSubclass.addItem(new ListItem(
 			-1,
 			$dispCount,
@@ -1376,7 +1521,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 	async _render_pInitSubclassControls ($wrp) {
 		const cls = this.activeClass;
 
-		const $btnSelAll = $(`<button class="btn btn-xs btn-default" title="Select All (SHIFT to filter for and include most recent; CTRL to select official plus homebrew)"><span class="glyphicon glyphicon-check"/></button>`)
+		const $btnSelAll = $(`<button class="btn btn-xs btn-default" title="Select All (SHIFT to filter for and include most recent; CTRL to select official plus homebrew)"><span class="glyphicon glyphicon-check"></span></button>`)
 			.click(evt => {
 				const allStateKeys = cls.subclasses.map(sc => UrlUtil.getStateKeySubclass(sc));
 				if (evt.shiftKey) {
@@ -1463,7 +1608,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		filterSets.forEach((it, i) => $selFilterPreset.append(`<option value="${i}">${it.name}</option>`));
 		$selFilterPreset.val("-1");
 
-		const $btnReset = $(`<button class="btn btn-xs btn-default" title="Reset Selection"><span class="glyphicon glyphicon-refresh"/></button>`)
+		const $btnReset = $(`<button class="btn btn-xs btn-default" title="Reset Selection"><span class="glyphicon glyphicon-refresh"></span></button>`)
 			.click(() => {
 				this._proxyAssign("state", "_state", "__state", cls.subclasses.mergeMap(sc => ({[UrlUtil.getStateKeySubclass(sc)]: false})));
 			});
@@ -1473,9 +1618,9 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		// Remove the temporary "hidden" class used to prevent popping
 		this._listSubclass.items.forEach(it => it.ele.showVe());
 
-		const $btnToggleSources = ComponentUiUtil.$getBtnBool(this, "isShowScSources", {$ele: $(`<button class="btn btn-xs btn-default ve-flex-1" title="Show Subclass Sources"><span class="glyphicon glyphicon-book"/></button>`)});
+		const $btnToggleSources = ComponentUiUtil.$getBtnBool(this, "isShowScSources", {$ele: $(`<button class="btn btn-xs btn-default ve-flex-1" title="Show Subclass Sources"><span class="glyphicon glyphicon-book"></span></button>`)});
 
-		const $btnShuffle = $(`<button title="Feeling Lucky?" class="btn btn-xs btn-default ve-flex-1"><span class="glyphicon glyphicon-random"/></button>`)
+		const $btnShuffle = $(`<button title="Feeling Lucky?" class="btn btn-xs btn-default ve-flex-1"><span class="glyphicon glyphicon-random"></span></button>`)
 			.click(() => {
 				if (!this._listSubclass.visibleItems.length) return JqueryUtil.doToast({content: "No subclasses to choose from!", type: "warning"});
 
@@ -1520,7 +1665,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 
 		if (this._state[stateKey] == null) this._state[stateKey] = false;
 
-		const $dispName = $(`<div title="${ClassesPage.getBtnTitleSubclass(sc)}"/>`);
+		const $dispName = $(`<div title="${ClassesPage.getBtnTitleSubclass(sc)}"></div>`);
 		const $dispSource = $(`<div class="ml-1" title="${Parser.sourceJsonToFull(sc.source)}">(${Parser.sourceJsonToAbv(sc.source)})</div>`);
 		const hkSourcesVisible = () => {
 			$dispName.text(this._state.isShowScSources ? ClassesPage.getBaseShortName(sc) : sc.shortName);
@@ -1563,15 +1708,15 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 	_trackOutlineFluffData (depthData) { this._outlineData.fluff = depthData; }
 
 	_trackOutlineCfData (ixLvl, ixFeature, depthData) {
-		((this._outlineData.classFeatures = (this._outlineData.classFeatures || []))[ixLvl] =
-			(this._outlineData.classFeatures[ixLvl] || []))[ixFeature] =
-			depthData;
+		((this._outlineData.classFeatures ||= [])[ixLvl] ||= [])[ixFeature] = depthData;
 	}
 
 	_trackOutlineScData (stateKey, level, ixScFeature, depthData) {
-		((this._outlineData[stateKey] = (this._outlineData[stateKey] || []))[level] =
-			(this._outlineData[stateKey][level] || []))[ixScFeature] =
-			depthData;
+		(((this._outlineData.subclassFeatures ||= {})[stateKey] ||= [])[level] ||= [])[ixScFeature] = depthData;
+	}
+
+	_trackOutlineScFluffData (stateKey, level, ixScFeature, depthData) {
+		(((this._outlineData.subclassFluff ||= {})[stateKey] ||= [])[level] ||= [])[ixScFeature] = depthData;
 	}
 
 	_render_renderOutline () {
@@ -1580,7 +1725,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		// Auto-hide the outline on small screens
 		if (Renderer.hover.isSmallScreen()) this._state.isHideOutline = true;
 
-		const $dispShowHide = $(`<div class="cls-nav__disp-toggle"/>`);
+		const $dispShowHide = $(`<div class="cls-nav__disp-toggle"></div>`);
 		const $wrpHeadInner = $$`<div class="cls-nav__head-inner split">
 			<div>Outline</div>
 			${$dispShowHide}
@@ -1591,7 +1736,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 			${$wrpHeadInner}
 			<hr class="cls-nav__hr">
 		</div>`.appendTo(this._$wrpOutline);
-		const $wrpBody = $(`<div class="nav-body"/>`).appendTo(this._$wrpOutline);
+		const $wrpBody = $(`<div class="nav-body"></div>`).appendTo(this._$wrpOutline);
 
 		const hkShowHide = () => {
 			$wrpHead.toggleClass("cls-nav__head--active", !this._state.isHideOutline);
@@ -1703,6 +1848,11 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 			.appendTo($wrpBody);
 	}
 
+	_render_renderOutline_isOutlineRenderable (depthEntry) {
+		return depthEntry.name
+			&& !depthEntry.data?.isNoOutline;
+	}
+
 	_render_renderOutline_renderFeature (
 		{
 			ixLvl,
@@ -1720,23 +1870,25 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		const depthData = MiscUtil.get(this._outlineData.classFeatures, ixLvl, ixFeature);
 
 		if (!this._state.isHideFeatures && depthData) {
-			depthData.filter(it => it.name).forEach(it => {
-				const additionalCssClassesRaw = UtilClassesPage.getColorStyleClasses(
-					it,
-					{
-						isForceStandardSource: it.source === this.activeClass.source,
-						prefix: "cls-nav__item--",
-					},
-				);
+			depthData
+				.filter(this._render_renderOutline_isOutlineRenderable.bind(this))
+				.forEach(it => {
+					const additionalCssClassesRaw = UtilClassesPage.getColorStyleClasses(
+						it,
+						{
+							isForceStandardSource: it.source === this.activeClass.source,
+							prefix: "cls-nav__item--",
+						},
+					);
 
-				this._render_renderOutline_doMakeItem({
-					depthData: it,
-					additionalCssClasses: additionalCssClassesRaw.join(" "),
-					filterValues,
-					isUseSubclassSources,
-					$wrpBody,
+					this._render_renderOutline_doMakeItem({
+						depthData: it,
+						additionalCssClasses: additionalCssClassesRaw.join(" "),
+						filterValues,
+						isUseSubclassSources,
+						$wrpBody,
+					});
 				});
-			});
 		}
 
 		const activeScStateKeys = this._getActiveSubclasses(true);
@@ -1748,23 +1900,25 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		if (activeScStateKeys.length) {
 			// If we didn't render the intro for gaining a subclass feature, do so now
 			if (this._state.isHideFeatures && depthData) {
-				depthData.filter(it => it.name).forEach(it => {
-					const additionalCssClassesRaw = UtilClassesPage.getColorStyleClasses(
-						it,
-						{
-							isSubclass: true,
-							isForceStandardSource: true,
-							prefix: "cls-nav__item--",
-						},
-					);
+				depthData
+					.filter(this._render_renderOutline_isOutlineRenderable.bind(this))
+					.forEach(it => {
+						const additionalCssClassesRaw = UtilClassesPage.getColorStyleClasses(
+							it,
+							{
+								isSubclass: true,
+								isForceStandardSource: true,
+								prefix: "cls-nav__item--",
+							},
+						);
 
-					this._render_renderOutline_doMakeItem({
-						depthData: it,
-						filterValues,
-						isUseSubclassSources,
-						$wrpBody,
+						this._render_renderOutline_doMakeItem({
+							depthData: it,
+							filterValues,
+							isUseSubclassSources,
+							$wrpBody,
+						});
 					});
-				});
 			}
 
 			this.activeClass.subclasses.forEach(sc => {
@@ -1776,25 +1930,52 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 				if (!scLvlFeatures) return;
 
 				scLvlFeatures.forEach((scFeature, ixScFeature) => {
-					const depthData = MiscUtil.get(this._outlineData, stateKey, scFeature.level, ixScFeature);
-					depthData.filter(it => it.name).map(it => {
-						const additionalCssClassesRaw = UtilClassesPage.getColorStyleClasses(
-							it,
-							{
-								isSubclass: true,
-								isForceStandardSource: sc._isStandardSource,
-								prefix: "cls-nav__item--",
-							},
-						);
+					const depthData = MiscUtil.get(this._outlineData, "subclassFeatures", stateKey, scFeature.level, ixScFeature);
+					(depthData || [])
+						.filter(this._render_renderOutline_isOutlineRenderable.bind(this))
+						.map(it => {
+							const additionalCssClassesRaw = UtilClassesPage.getColorStyleClasses(
+								it,
+								{
+									isSubclass: true,
+									isForceStandardSource: sc._isStandardSource,
+									prefix: "cls-nav__item--",
+								},
+							);
 
-						this._render_renderOutline_doMakeItem({
-							depthData: it,
-							additionalCssClasses: additionalCssClassesRaw.join(" "),
-							filterValues,
-							isUseSubclassSources,
-							$wrpBody,
+							this._render_renderOutline_doMakeItem({
+								depthData: it,
+								additionalCssClasses: additionalCssClassesRaw.join(" "),
+								filterValues,
+								isUseSubclassSources,
+								$wrpBody,
+							});
 						});
-					});
+
+					if (!this._state.isShowFluff) return;
+
+					const depthDataFluff = MiscUtil.get(this._outlineData, "subclassFluff", stateKey, scFeature.level, ixScFeature);
+
+					(depthDataFluff || [])
+						.filter(this._render_renderOutline_isOutlineRenderable.bind(this))
+						.map(it => {
+							const additionalCssClassesRaw = UtilClassesPage.getColorStyleClasses(
+								it,
+								{
+									isSubclass: true,
+									isForceStandardSource: sc._isStandardSource,
+									prefix: "cls-nav__item--",
+								},
+							);
+
+							this._render_renderOutline_doMakeItem({
+								depthData: it,
+								additionalCssClasses: additionalCssClassesRaw.join(" "),
+								filterValues,
+								isUseSubclassSources,
+								$wrpBody,
+							});
+						});
 				});
 			});
 		}
@@ -1865,7 +2046,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		// endregion
 	}
 
-	_render_renderClassContent () {
+	async _render_pRenderClassContent () {
 		const $content = $(document.getElementById("pagecontent")).empty();
 		const cls = this.activeClass;
 		this._outlineData = {};
@@ -1874,43 +2055,36 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 
 		$content.append(Renderer.utils.getBorderTr());
 
-		if (cls.fluff) {
+		const clsFluff = await Renderer.class.pGetFluff(cls);
+		if (clsFluff) {
 			const depthArr = [];
-			let stack = "";
-			Renderer.get().setFirstSection(true);
 
-			cls.fluff.forEach((f, i) => {
-				const cpy = MiscUtil.copyFast(f);
+			const {hasEntries, rendered} = UtilClassesPage.getRenderedClassFluff({cls, clsFluff, depthArr, isAddTrailingHr: true});
 
-				if (typeof cpy !== "string") {
-					if (f.source && f.source !== cls.source && cpy.entries) cpy.entries.unshift(`{@note The following information is from ${Parser.sourceJsonToFull(f.source)}${Renderer.utils.isDisplayPage(f.page) ? `, page ${f.page}` : ""}.}`);
-				}
+			if (rendered) {
+				const $trFluff = $(`<tr class="cls-main__cls-fluff"><td colspan="6"></td></tr>`).fastSetHtml(rendered).appendTo($content);
+			}
 
-				stack += Renderer.get().setDepthTracker(depthArr, {additionalPropsInherited: ["_isStandardSource"]}).render(cpy);
-			});
-
-			// Add a trailing `<hr>`
-			stack += Renderer.get().render({type: "section"});
-
-			const $trFluff = $(`<tr class="cls-main__cls-fluff"><td colspan="6"/></tr>`).fastSetHtml(stack).appendTo($content);
-			this._trackOutlineFluffData(depthArr);
+			if (hasEntries) this._trackOutlineFluffData(depthArr);
 		}
 
 		const ptrIsFirstSubclassLevel = {_: true};
-		cls.classFeatures.forEach((lvlFeatures, ixLvl) => {
+		const ptrsHasRenderedSubclass = {};
+		await cls.classFeatures.pSerialAwaitMap(async (lvlFeatures, ixLvl) => {
 			const ptrHasHandledSubclassFeatures = {_: false};
 
-			lvlFeatures.forEach((feature, ixFeature) => {
+			await lvlFeatures.pSerialAwaitMap(async (feature, ixFeature) => {
 				if (feature.source === cls.source) {
 					feature = MiscUtil.copyFast(feature);
 					feature._isStandardSource = true;
 				}
 
-				this._render_renderClassContent_renderFeature({
+				await this._render_renderClassContent_pRenderFeature({
 					ixLvl,
 					feature,
 					ixFeature,
 					ptrHasHandledSubclassFeatures,
+					ptrsHasRenderedSubclass,
 					ptrIsFirstSubclassLevel,
 					$content,
 					cls,
@@ -1920,10 +2094,11 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 			// If there are out-of-sync subclass features (e.g. Stryxhaven subclasses), add a "fake" feature to compensate
 			if (!ptrHasHandledSubclassFeatures._ && this.constructor._hasSubclassFeaturesAtLevel(cls, ixLvl + 1)) {
 				this.constructor._hasSubclassFeaturesAtLevel(cls, ixLvl + 1);
-				this._render_renderClassContent_renderFeature({
+				await this._render_renderClassContent_pRenderFeature({
 					ixLvl,
 					feature: this.constructor._getFauxGainSubclassFeatureFeature(cls, ixLvl + 1),
 					ixFeature: -1,
+					ptrsHasRenderedSubclass,
 					ptrIsFirstSubclassLevel,
 					$content,
 					cls,
@@ -1933,7 +2108,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 
 		if (cls.otherSources) {
 			const text = Renderer.utils.getSourceAndPageHtml(cls);
-			const $trClassFeature = $(`<tr data-feature-type="class"><td colspan="6"/></tr>`)
+			const $trClassFeature = $(`<tr data-feature-type="class"><td colspan="6"></td></tr>`)
 				.fastSetHtml(`<hr class="hr-1"><b>Class source:</b> ${text}`)
 				.appendTo($content);
 		}
@@ -1947,12 +2122,13 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 			.removePlugins("entries_namePrefix");
 	}
 
-	_render_renderClassContent_renderFeature (
+	async _render_renderClassContent_pRenderFeature (
 		{
 			ixLvl,
 			feature,
 			ixFeature,
 			ptrHasHandledSubclassFeatures,
+			ptrsHasRenderedSubclass,
 			ptrIsFirstSubclassLevel,
 			$content,
 			cls,
@@ -1966,12 +2142,12 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 				"entries_styleClass_fromSource",
 				"section_styleClass_fromSource",
 			],
-			fnPlugin: (entryType, entry) => {
+			fnPlugin: (commonArgs, {input: {entryType, entry}}) => {
 				const source = entry.source || toRenderSource;
 				if (source === cls.source) return {isSkip: true};
 			},
 			fn: () => {
-				return $(`<tr data-scroll-id="${ixLvl}-${ixFeature}" data-feature-type="class" class="cls-main__linked-titles"><td colspan="6"/></tr>`)
+				return $(`<tr data-scroll-id="${ixLvl}-${ixFeature}" data-feature-type="class" class="cls-main__linked-titles"><td colspan="6"></td></tr>`)
 					.fastSetHtml(Renderer.get().setDepthTracker(depthArr, {additionalProps: ["isReprinted"], additionalPropsInherited: ["_isStandardSource", "isClassFeatureVariant"]}).render(feature))
 					.appendTo($content);
 			},
@@ -1985,15 +2161,18 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 		$trClassFeature.attr("data-feature-type", "gain-subclass");
 
 		// Add a placeholder feature to display when no subclasses are active
-		const $trSubclassFeature = $(`<tr class="cls-main__sc-feature" data-subclass-none-message="true"><td colspan="6"/></tr>`)
+		const $trSubclassFeature = $(`<tr class="cls-main__sc-feature" data-subclass-none-message="true"><td colspan="6"></td></tr>`)
 			.fastSetHtml(Renderer.get().setDepthTracker([]).render({type: "entries", entries: [{name: `{@note No Subclass Selected}`, type: "entries", entries: [`{@note <span class="clickable roller" data-jump-select-a-subclass="true">Select a subclass</span> to view its feature(s) here.}`]}]}))
 			.appendTo($content);
 
-		cls.subclasses.forEach(sc => {
+		await cls.subclasses.pSerialAwaitMap(async sc => {
 			const stateKey = UrlUtil.getStateKeySubclass(sc);
 
 			const scLvlFeatures = sc.subclassFeatures.find(it => it[0]?.level === ixLvl + 1);
 			if (!scLvlFeatures) return;
+
+			const scFluff = ptrsHasRenderedSubclass[stateKey] ? null : await Renderer.subclass.pGetFluff(sc);
+			ptrsHasRenderedSubclass[stateKey] = true;
 
 			scLvlFeatures.forEach((scFeature, ixScFeature) => {
 				const depthArr = [];
@@ -2002,7 +2181,8 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 					? Renderer.get().render(`{@note This subclass was published on ${DatetimeUtil.getDateStr({date: new Date(Parser.sourceJsonToDate(sc.source))})}.}`)
 					: "";
 				const ptSources = ptrIsFirstSubclassLevel._ === true && sc.otherSources ? `{@note {@b Subclass source:} ${Renderer.utils.getSourceAndPageHtml(sc)}}` : "";
-				const toRender = (ptDate || ptSources) && scFeature.entries ? MiscUtil.copyFast(scFeature) : scFeature;
+				const toRender = MiscUtil.copyFast(scFeature);
+
 				if (ptDate && toRender.entries) toRender.entries.unshift(ptDate);
 				if (ptSources && toRender.entries) toRender.entries.push(ptSources);
 
@@ -2010,7 +2190,7 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 				//   subclasses are shown.
 				let hasNamePluginRun = false;
 				Renderer.get()
-					.addPlugin("entries_namePrefix", function (entry) {
+					.addPlugin("entries_namePrefix", (commonArgs, {input: entry}) => {
 						if (ptrIsFirstSubclassLevel._ === true || !entry.name) return;
 
 						if (hasNamePluginRun) return;
@@ -2027,12 +2207,12 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 						"entries_styleClass_fromSource",
 						"section_styleClass_fromSource",
 					],
-					fnPlugin: (entryType, entry) => {
+					fnPlugin: (commonArgs, {input: {entryType, entry}}) => {
 						const source = entry.source || toRenderSource;
 						if (source === sc.source) return {isSkip: true};
 					},
 					fn: () => {
-						const $trSubclassFeature = $(`<tr class="cls-main__sc-feature" data-subclass-id="${UrlUtil.getStateKeySubclass(sc)}"><td colspan="6"/></tr>`)
+						const $trSubclassFeature = $(`<tr class="cls-main__sc-feature" data-subclass-id="${UrlUtil.getStateKeySubclass(sc)}"><td colspan="6"></td></tr>`)
 							.fastSetHtml(Renderer.get().setDepthTracker(depthArr, {additionalProps: ["isReprinted"], additionalPropsInherited: ["_isStandardSource", "isClassFeatureVariant"]}).render(toRender))
 							.appendTo($content);
 					},
@@ -2041,6 +2221,17 @@ class ClassesPage extends MixinComponentGlobalState(MixinBaseComponent(MixinProx
 				Renderer.get().removePlugins("entries_namePrefix");
 
 				this._trackOutlineScData(stateKey, ixLvl + 1, ixScFeature, depthArr);
+
+				const depthArrSubclassFluff = [];
+				const {hasEntries, rendered: rdScFluff} = UtilClassesPage.getRenderedSubclassFluff({sc, scFluff, depthArr: depthArrSubclassFluff});
+
+				if (!rdScFluff?.length) return;
+
+				if (hasEntries) this._trackOutlineScFluffData(stateKey, ixLvl + 1, ixScFeature, depthArrSubclassFluff);
+
+				$(`<tr class="cls-main__sc-fluff" data-subclass-id-fluff="${UrlUtil.getStateKeySubclass(sc)}"><td colspan="6"></td></tr>`)
+					.fastSetHtml(rdScFluff)
+					.appendTo($content);
 			});
 		});
 
@@ -2371,11 +2562,11 @@ ClassesPage.ClassBookView = class extends BookModeViewBase {
 		const cls = this._classPage.activeClass;
 
 		// Top bar
-		const $pnlMenu = $(`<div class="cls-bkmv__wrp-tabs ve-flex-h-center"/>`).appendTo($wrpContent);
+		const $pnlMenu = $(`<div class="cls-bkmv__wrp-tabs ve-flex-h-center no-print"></div>`).appendTo($wrpContent);
 
 		// Main panel
 		const $tblBook = $(`<table class="w-100 stats stats--book stats--book-large stats--bkmv"></div>`);
-		$$`<div class="ve-flex-col overflow-y-auto container">${$tblBook}</div>`.appendTo($wrpContent);
+		$$`<div class="ve-flex-col ve-overflow-y-auto container">${$tblBook}</div>`.appendTo($wrpContent);
 
 		const renderStack = [];
 		Renderer.get().setFirstSection(true);
@@ -2383,23 +2574,18 @@ ClassesPage.ClassBookView = class extends BookModeViewBase {
 		Renderer.get().recursiveRender({type: "section", name: cls.name}, renderStack);
 		renderStack.push(`</td></tr>`);
 
-		renderStack.push(`<tr class="text" data-cls-book-fluff="true"><td colspan="6" class="py-3 px-5">`);
+		const clsFluff = await Renderer.class.pGetFluff(cls);
+		if (clsFluff) {
+			const {hasEntries, rendered} = UtilClassesPage.getRenderedClassFluff({cls, clsFluff, isRemoveRootName: true});
+
+			if (rendered) {
+				renderStack.push(`<tr class="text" data-cls-book-fluff="true"><td colspan="6" class="py-3 px-5">`);
+				renderStack.push(rendered);
+				renderStack.push(`</td></tr>`);
+			}
+		}
+
 		Renderer.get().setFirstSection(true);
-		(cls.fluff || []).forEach((f, i) => {
-			f = MiscUtil.copyFast(f);
-
-			// Remove the name from the first section if it is a copy of the class name
-			if (i === 0 && f.name && f.name.toLowerCase() === cls.name.toLowerCase()) {
-				delete f.name;
-			}
-
-			if (f.source && f.source !== cls.source && f.entries) {
-				f.entries.unshift(`{@note The following information is from ${Parser.sourceJsonToFull(f.source)}${Renderer.utils.isDisplayPage(f.page) ? `, page ${f.page}` : ""}.}`);
-			}
-
-			Renderer.get().recursiveRender(f, renderStack);
-		});
-		renderStack.push(`</td></tr>`);
 
 		renderStack.push(`<tr class="text" data-cls-book-cf="true"><td colspan="6" class="py-3 px-5">`);
 		cls.classFeatures.forEach(lvl => {
@@ -2407,14 +2593,26 @@ ClassesPage.ClassBookView = class extends BookModeViewBase {
 		});
 		renderStack.push(`</td></tr>`);
 
-		cls.subclasses
+		await cls.subclasses
 			.filter(sc => !ClassesPage.isSubclassExcluded_(cls, sc))
-			.forEach((sc, ixSubclass) => {
-				renderStack.push(`<tr data-cls-book-sc-ix="${ixSubclass}" class="cls-main__sc-feature"><td colspan="6" class="py-3 px-5">`);
-				sc.subclassFeatures.forEach(lvl => {
+			.pSerialAwaitMap(async (sc, ixSubclass) => {
+				const scFluff = await Renderer.subclass.pGetFluff(sc);
+
+				sc.subclassFeatures.forEach((lvl, ix) => {
+					renderStack.push(`<tr data-cls-book-sc-ix="${ixSubclass}" class="cls-main__sc-feature"><td colspan="6" class="py-3 px-5">`);
 					lvl.forEach(f => Renderer.get().recursiveRender(f, renderStack));
+					renderStack.push(`</td></tr>`);
+
+					if (ix !== 0) return;
+
+					const {rendered: rdScFluff} = UtilClassesPage.getRenderedSubclassFluff({sc, scFluff});
+
+					if (!rdScFluff?.length) return;
+
+					renderStack.push(`<tr data-cls-book-sc-fluff-ix="${ixSubclass}" class="cls-main__sc-fluff"><td colspan="6" class="py-3 px-5">`);
+					renderStack.push(rdScFluff);
+					renderStack.push(`</td></tr>`);
 				});
-				renderStack.push(`</td></tr>`);
 			});
 		renderStack.push(Renderer.utils.getBorderTr());
 		$tblBook.append(renderStack.join(""));
@@ -2456,6 +2654,16 @@ ClassesPage.ClassBookView = class extends BookModeViewBase {
 				this._parent.addHook(stateKey, hkShowHide);
 				hkShowHide();
 
+				const hkShowHideFluff = () => {
+					const isActive = !!this._parent.get(stateKey) && !!this._parent.get("isShowFluff");
+					$wrpContent.find(`[data-cls-book-sc-fluff-ix="${i}"]`).toggleVe(!!isActive);
+				};
+				(this._hooks[stateKey] ||= []).push(hkShowHideFluff);
+				this._parent.addHook(stateKey, hkShowHideFluff);
+				(this._hooks["isShowFluff"] ||= []).push(hkShowHideFluff);
+				this._parent.addHook("isShowFluff", hkShowHideFluff);
+				hkShowHideFluff();
+
 				$pnlMenu.append($btnToggleSc);
 			});
 
@@ -2465,17 +2673,17 @@ ClassesPage.ClassBookView = class extends BookModeViewBase {
 			$btnToggleCf.toggleClass("cls__btn-cf--active", isActive);
 			$dispFeatures.toggleVe(!!isActive);
 		};
-		(this._hooks["isHideFeatures"] = this._hooks["isHideFeatures"] || []).push(hkFeatures);
+		(this._hooks["isHideFeatures"] ||= []).push(hkFeatures);
 		this._parent.addHook("isHideFeatures", hkFeatures);
 		hkFeatures();
 
 		const hkFluff = () => {
 			const $dispFluff = $wrpContent.find(`[data-cls-book-fluff="true"]`);
 			const isHidden = !this._parent.get("isShowFluff");
-			$btnToggleInfo.toggleVe(!!isHidden);
+			$btnToggleInfo.toggleClass("active", !isHidden);
 			$dispFluff.toggleVe(!isHidden);
 		};
-		(this._hooks["isShowFluff"] = this._hooks["isShowFluff"] || []).push(hkFluff);
+		(this._hooks["isShowFluff"] ||= []).push(hkFluff);
 		this._parent.addHook("isShowFluff", hkFluff);
 		hkFluff();
 

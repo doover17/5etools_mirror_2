@@ -68,22 +68,22 @@ class BestiarySublistManager extends SublistManager {
 		return [
 			new SublistCellTemplate({
 				name: "Name",
-				css: "bold col-5 pl-0",
+				css: "bold ve-col-5 pl-0",
 				colStyle: "",
 			}),
 			new SublistCellTemplate({
 				name: "Type",
-				css: "col-3-8",
+				css: "ve-col-3-8",
 				colStyle: "",
 			}),
 			new SublistCellTemplate({
 				name: "CR",
-				css: "col-1-2 ve-text-center",
+				css: "ve-col-1-2 ve-text-center",
 				colStyle: "text-center",
 			}),
 			new SublistCellTemplate({
 				name: "Number",
-				css: "col-2 ve-text-center",
+				css: "ve-col-2 ve-text-center",
 				colStyle: "text-center",
 			}),
 		];
@@ -98,7 +98,7 @@ class BestiarySublistManager extends SublistManager {
 
 		const cellsText = [name, type, cr];
 
-		const $hovStatblock = $(`<span class="col-1-4 help help--hover best-ecgen__visible">Stat Block</span>`)
+		const $hovStatblock = $(`<span class="ve-col-1-4 help help--hover best-ecgen__visible">Stat Block</span>`)
 			.mouseover(evt => this._encounterBuilder.doStatblockMouseOver({
 				evt,
 				ele: $hovStatblock[0],
@@ -110,26 +110,26 @@ class BestiarySublistManager extends SublistManager {
 			.mouseleave(evt => Renderer.hover.handleLinkMouseLeave(evt, $hovStatblock[0]));
 
 		const hovTokenMeta = EncounterBuilderUiBestiary.getTokenHoverMeta(mon);
-		const $hovToken = !hovTokenMeta ? $(`<span class="col-1-2 best-ecgen__visible"></span>`) : $(`<span class="col-1-2 best-ecgen__visible help help--hover">Token</span>`)
+		const $hovToken = !hovTokenMeta ? $(`<span class="ve-col-1-2 best-ecgen__visible"></span>`) : $(`<span class="ve-col-1-2 best-ecgen__visible help help--hover">Token</span>`)
 			.mouseover(evt => hovTokenMeta.mouseOver(evt, $hovToken[0]))
 			.mousemove(evt => hovTokenMeta.mouseMove(evt, $hovToken[0]))
 			.mouseleave(evt => hovTokenMeta.mouseLeave(evt, $hovToken[0]));
 
-		const $hovImage = $(`<span class="col-1-2 best-ecgen__visible help help--hover">Image</span>`);
+		const $hovImage = $(`<span class="ve-col-1-2 best-ecgen__visible help help--hover">Image</span>`);
 		Renderer.monster.hover.bindFluffImageMouseover({mon, $ele: $hovImage});
 
 		const $ptCr = (() => {
-			if (!ScaleCreature.isCrInScaleRange(mon)) return $(`<span class="col-1-2 ve-text-center">${cr}</span>`);
+			if (!ScaleCreature.isCrInScaleRange(mon)) return $(`<span class="ve-col-1-2 ve-text-center">${cr}</span>`);
 
 			const $iptCr = $(`<input value="${cr}" class="w-100 ve-text-center form-control form-control--minimal input-xs">`)
 				.click(() => $iptCr.select())
 				.change(() => this._encounterBuilder.pDoCrChange($iptCr, mon, mon._scaledCr));
 
-			return $$`<span class="col-1-2 ve-text-center">${$iptCr}</span>`;
+			return $$`<span class="ve-col-1-2 ve-text-center">${$iptCr}</span>`;
 		})();
 
-		const $eleCount1 = $(`<span class="col-2 ve-text-center">${count}</span>`);
-		const $eleCount2 = $(`<span class="col-2 pr-0 ve-text-center">${count}</span>`);
+		const $eleCount1 = $(`<span class="ve-col-2 ve-text-center">${count}</span>`);
+		const $eleCount2 = $(`<span class="ve-col-2 pr-0 ve-text-center">${count}</span>`);
 
 		const listItem = new ListItem(
 			hash,
@@ -168,7 +168,7 @@ class BestiarySublistManager extends SublistManager {
 
 			<div class="lst__wrp-cells best-ecgen__visible--flex lst--border lst__row-inner">
 				${sublistButtonsMeta.$wrp}
-				<span class="best-ecgen__name--sub col-3-5">${name}</span>
+				<span class="best-ecgen__name--sub ve-col-3-5">${name}</span>
 				${$hovStatblock}
 				${$hovToken}
 				${$hovImage}
@@ -211,13 +211,13 @@ class BestiaryPageBookView extends ListPageBookView {
 		const $btnDownloadMarkdown = $(`<button class="btn btn-default btn-sm">Download as Markdown</button>`)
 			.click(async () => DataUtil.userDownloadText("bestiary.md", await pGetAsMarkdown()));
 
-		const $btnCopyMarkdown = $(`<button class="btn btn-default btn-sm px-2" title="Copy Markdown to Clipboard"><span class="glyphicon glyphicon-copy"/></button>`)
+		const $btnCopyMarkdown = $(`<button class="btn btn-default btn-sm px-2" title="Copy Markdown to Clipboard"><span class="glyphicon glyphicon-copy"></span></button>`)
 			.click(async () => {
 				await MiscUtil.pCopyTextToClipboard(await pGetAsMarkdown());
 				JqueryUtil.showCopiedEffect($btnCopyMarkdown);
 			});
 
-		const $btnDownloadMarkdownSettings = $(`<button class="btn btn-default btn-sm px-2" title="Markdown Settings"><span class="glyphicon glyphicon-cog"/></button>`)
+		const $btnDownloadMarkdownSettings = $(`<button class="btn btn-default btn-sm px-2" title="Markdown Settings"><span class="glyphicon glyphicon-cog"></span></button>`)
 			.click(async () => RendererMarkdown.pShowSettingsModal());
 
 		$$`<div class="ve-flex-v-center btn-group ml-2">
@@ -302,11 +302,12 @@ class BestiaryPage extends ListPageMultiSource {
 				colTransforms: {
 					name: UtilsTableview.COL_TRANSFORM_NAME,
 					source: UtilsTableview.COL_TRANSFORM_SOURCE,
+					page: UtilsTableview.COL_TRANSFORM_PAGE,
 					size: {name: "Size", transform: size => Renderer.utils.getRenderedSize(size)},
 					type: {name: "Type", transform: type => Parser.monTypeToFullObj(type).asText},
 					alignment: {name: "Alignment", transform: align => Parser.alignmentListToFull(align)},
-					ac: {name: "AC", transform: ac => Parser.acToFull(ac)},
-					hp: {name: "HP", transform: hp => Renderer.monster.getRenderedHp(hp)},
+					ac: {name: "AC", transform: ac => ac != null ? Parser.acToFull(ac) : ""},
+					hp: {name: "HP", transform: hp => hp != null ? Renderer.monster.getRenderedHp(hp) : ""},
 					_speed: {name: "Speed", transform: mon => Parser.getSpeedString(mon)},
 					...Parser.ABIL_ABVS.mergeMap(ab => ({[ab]: {name: Parser.attAbvToFull(ab)}})),
 					_save: {name: "Saving Throws", transform: mon => Renderer.monster.getSavesPart(mon)},
@@ -373,7 +374,7 @@ class BestiaryPage extends ListPageMultiSource {
 		this._$wrpBtnProf = null;
 		this._$btnProf = null;
 
-		this._profDicMode = _BestiaryConsts.PROF_MODE_BONUS;
+		this._profDiceMode = null;
 
 		this._encounterBuilder = null;
 
@@ -430,12 +431,12 @@ class BestiaryPage extends ListPageMultiSource {
 					click: evt => this._handleBestiaryLinkClick(evt),
 					children: [
 						this._encounterBuilder.getButtons(mI),
-						e_({tag: "span", clazz: `best-ecgen__name bold col-4-2 pl-0`, text: mon.name}),
-						e_({tag: "span", clazz: `col-4-1`, text: type}),
-						e_({tag: "span", clazz: `col-1-7 ve-text-center`, text: cr}),
+						e_({tag: "span", clazz: `best-ecgen__name bold ve-col-4-2 pl-0`, text: mon.name}),
+						e_({tag: "span", clazz: `ve-col-4-1`, text: type}),
+						e_({tag: "span", clazz: `ve-col-1-7 ve-text-center`, text: cr}),
 						e_({
 							tag: "span",
-							clazz: `col-2 ve-text-center ${Parser.sourceJsonToColor(mon.source)} pr-0`,
+							clazz: `ve-col-2 ve-text-center ${Parser.sourceJsonToColor(mon.source)} pr-0`,
 							style: Parser.sourceJsonToStylePart(mon.source),
 							title: `${Parser.sourceJsonToFull(mon.source)}${Renderer.utils.getSourceSubText(mon)}`,
 							text: source,
@@ -519,27 +520,36 @@ class BestiaryPage extends ListPageMultiSource {
 	}
 
 	async _pOnLoad_pPreDataAdd () {
-		this._pPageInit_profBonusDiceToggle();
+		await this._pPageInit_pProfBonusDiceToggle();
 	}
 
 	_pOnLoad_pPostLoad () {
 		this._encounterBuilder.render();
 	}
 
-	_pPageInit_profBonusDiceToggle () {
+	async _pPageInit_pProfBonusDiceToggle () {
 		const $btnProfBonusDice = $("button#profbonusdice");
 
+		this._profDiceMode = await StorageUtil.pGetForPage("proficiencyDiceMode") || _BestiaryConsts.PROF_MODE_BONUS;
+
+		const hk = () => {
+			$btnProfBonusDice.text(this._profDiceMode === _BestiaryConsts.PROF_MODE_DICE ? "Use Proficiency Bonus" : "Use Proficiency Dice");
+			this._$pgContent.attr("data-proficiency-dice-mode", this._profDiceMode);
+			StorageUtil.pSetForPage("proficiencyDiceMode", this._profDiceMode).then(null);
+		};
+
 		$btnProfBonusDice.click(() => {
-			if (this._profDicMode === _BestiaryConsts.PROF_MODE_DICE) {
-				this._profDicMode = _BestiaryConsts.PROF_MODE_BONUS;
-				$btnProfBonusDice.html("Use Proficiency Dice");
-				this._$pgContent.attr("data-proficiency-dice-mode", this._profDicMode);
-			} else {
-				this._profDicMode = _BestiaryConsts.PROF_MODE_DICE;
-				$btnProfBonusDice.html("Use Proficiency Bonus");
-				this._$pgContent.attr("data-proficiency-dice-mode", this._profDicMode);
+			if (this._profDiceMode === _BestiaryConsts.PROF_MODE_DICE) {
+				this._profDiceMode = _BestiaryConsts.PROF_MODE_BONUS;
+				hk();
+				return;
 			}
+
+			this._profDiceMode = _BestiaryConsts.PROF_MODE_DICE;
+			hk();
 		});
+
+		hk();
 	}
 
 	_handleBestiaryLiClick (evt, listItem) {
@@ -556,11 +566,9 @@ class BestiaryPage extends ListPageMultiSource {
 	}
 
 	_bindProfDiceHandlers () {
-		this._$pgContent.attr("data-proficiency-dice-mode", this._profDicMode);
-
 		this._$pgContent
 			.on(`mousedown`, `[data-roll-prof-type]`, evt => {
-				if (this._profDicMode !== _BestiaryConsts.PROF_MODE_BONUS) evt.preventDefault();
+				if (this._profDiceMode !== _BestiaryConsts.PROF_MODE_BONUS) evt.preventDefault();
 			})
 			.on(`click`, `[data-roll-prof-type]`, evt => {
 				const parent = evt.currentTarget.closest(`[data-roll-prof-type]`);
@@ -570,7 +578,7 @@ class BestiaryPage extends ListPageMultiSource {
 
 				switch (type) {
 					case "d20": {
-						if (this._profDicMode === _BestiaryConsts.PROF_MODE_BONUS) return;
+						if (this._profDiceMode === _BestiaryConsts.PROF_MODE_BONUS) return;
 
 						evt.stopPropagation();
 						evt.preventDefault();
@@ -584,7 +592,7 @@ class BestiaryPage extends ListPageMultiSource {
 					}
 
 					case "dc": {
-						if (this._profDicMode === _BestiaryConsts.PROF_MODE_BONUS) {
+						if (this._profDiceMode === _BestiaryConsts.PROF_MODE_BONUS) {
 							evt.stopPropagation();
 							evt.preventDefault();
 							return;
@@ -683,7 +691,7 @@ class BestiaryPage extends ListPageMultiSource {
 	) {
 		Renderer.get().setFirstSection(true);
 
-		const $btnScaleCr = !ScaleCreature.isCrInScaleRange(mon) ? null : $(`<button id="btn-scale-cr" title="Scale Creature By CR (Highly Experimental)" class="mon__btn-scale-cr btn btn-xs btn-default ve-popwindow__hidden"><span class="glyphicon glyphicon-signal"></span></button>`)
+		const $btnScaleCr = !ScaleCreature.isCrInScaleRange(mon) ? null : $(`<button id="btn-scale-cr" title="Scale Creature By CR (Highly Experimental)" class="mon__btn-scale-cr btn btn-xs btn-default ve-popwindow__hidden no-print lst-is-exporting-image__hidden"><span class="glyphicon glyphicon-signal"></span></button>`)
 			.click((evt) => {
 				evt.stopPropagation();
 				const win = (evt.view || {}).window;
@@ -700,7 +708,7 @@ class BestiaryPage extends ListPageMultiSource {
 				});
 			});
 
-		const $btnResetScaleCr = !ScaleCreature.isCrInScaleRange(mon) ? null : $(`<button id="btn-reset-cr" title="Reset CR Scaling" class="mon__btn-reset-cr btn btn-xs btn-default ve-popwindow__hidden"><span class="glyphicon glyphicon-refresh"></span></button>`)
+		const $btnResetScaleCr = !ScaleCreature.isCrInScaleRange(mon) ? null : $(`<button id="btn-reset-cr" title="Reset CR Scaling" class="mon__btn-reset-cr btn btn-xs btn-default ve-popwindow__hidden no-print lst-is-exporting-image__hidden"><span class="glyphicon glyphicon-refresh"></span></button>`)
 			.click(() => Hist.setSubhash(VeCt.HASH_SCALED, null))
 			.toggle(isScaledCr);
 
@@ -731,16 +739,16 @@ class BestiaryPage extends ListPageMultiSource {
 		// region dice rollers
 		const expectedPB = Parser.crToPb(mon.cr);
 
-		const pluginDc = (tag, text) => {
+		const pluginDc = (commonArgs, {input: {tag, text}}) => {
 			if (isNaN(text) || expectedPB <= 0) return null;
 
 			const withoutPB = Number(text) - expectedPB;
-			const profDiceString = BestiaryPage._addSpacesToDiceExp(`+1d${(expectedPB * 2)}${withoutPB >= 0 ? "+" : ""}${withoutPB}`);
+			const profDiceString = BestiaryPage._addSpacesToDiceExp(`1d${(expectedPB * 2)}${withoutPB >= 0 ? "+" : ""}${withoutPB}`);
 
 			return `DC <span class="rd__dc rd__dc--rollable" data-roll-prof-type="dc" data-roll-prof-dice="${profDiceString.qq()}"><span class="rd__dc--rollable-text">${text}</span><span class="rd__dc--rollable-dice">${profDiceString}</span></span>`;
 		};
 
-		const pluginDice = (entry, textStack, meta, options) => {
+		const pluginDice = (commonArgs, {input: entry}) => {
 			if (expectedPB <= 0 || entry.subType !== "d20" || entry.context?.type == null) return null;
 
 			const text = Renderer.getEntryDiceDisplayText(entry);
@@ -905,14 +913,14 @@ class BestiaryPage extends ListPageMultiSource {
 			};
 
 			// append footer first to be behind buttons
-			const $footer = $(`<div class="mon__token-footer"/>`);
+			const $footer = $(`<div class="mon__token-footer"></div>`);
 			const $wrpFooter = $$`<div class="mon__wrp-token-footer">${$footer}</div>`.hide().appendTo($lnkToken);
 
-			const $btnLeft = $$`<div class="mon__btn-token-cycle mon__btn-token-cycle--left"><span class="glyphicon glyphicon-chevron-left"/></div>`
+			const $btnLeft = $$`<div class="mon__btn-token-cycle mon__btn-token-cycle--left"><span class="glyphicon glyphicon-chevron-left"></span></div>`
 				.click(evt => handleClick(evt, -1)).appendTo($lnkToken)
 				.hide();
 
-			const $btnRight = $$`<div class="mon__btn-token-cycle mon__btn-token-cycle--right"><span class="glyphicon glyphicon-chevron-right"/></div>`
+			const $btnRight = $$`<div class="mon__btn-token-cycle mon__btn-token-cycle--right"><span class="glyphicon glyphicon-chevron-right"></span></div>`
 				.click(evt => handleClick(evt, 1)).appendTo($lnkToken);
 		}
 	}

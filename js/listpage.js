@@ -107,7 +107,6 @@ class SublistManager {
 
 	/**
 	 * @param [opts]
-	 * @param [opts.sublistClass] Sublist class.
 	 * @param [opts.sublistListOptions] Other sublist options.
 	 * @param [opts.isSublistItemsCountable] If the sublist items should be countable, i.e. have a quantity.
 	 * @param [opts.shiftCountAddSubtract] If the sublist items should be countable, i.e. have a quantity.
@@ -115,7 +114,6 @@ class SublistManager {
 	constructor (opts) {
 		opts = opts || {};
 
-		this._sublistClass = opts.sublistClass; // TODO(PageGen) remove once all pages transitioned
 		this._sublistListOptions = opts.sublistListOptions || {};
 		this._isSublistItemsCountable = !!opts.isSublistItemsCountable;
 		this._shiftCountAddSubtract = opts.shiftCountAddSubtract ?? 20;
@@ -160,7 +158,7 @@ class SublistManager {
 
 		this._listSub = new List({
 			...this._sublistListOptions,
-			$wrpList: this._sublistClass ? $(`.${this._sublistClass}`) : $(`#sublist`),
+			$wrpList: $(`#sublist`),
 			isUseJquery: true,
 		});
 
@@ -536,7 +534,7 @@ class SublistManager {
 	}
 
 	async pHandleClick_upload ({isAdditive = false} = {}) {
-		const {jsons, errors} = await DataUtil.pUserUpload({expectedFileTypes: this._getUploadFileTypes()});
+		const {jsons, errors} = await InputUiUtil.pGetUserUploadJson({expectedFileTypes: this._getUploadFileTypes()});
 
 		DataUtil.doHandleFileLoadErrorsGeneric(errors);
 
@@ -980,14 +978,8 @@ class ListPage {
 	 * @param [opts.prereleaseDataSource] Function to fetch prerelease data.
 	 * @param [opts.brewDataSource] Function to fetch brew data.
 	 * @param [opts.pFnGetFluff] Function to fetch fluff for a given entity.
-	 * @param [opts.dataSourceFluff] Fluff JSON data url or function to fetch fluff data.
-	 * @param [opts.filters] Array of filters to use in the filter box. (Either `filters` and `filterSource` or
-	 * `pageFilter` must be specified.)
-	 * @param [opts.filterSource] Source filter. (Either `filters` and `filterSource` or
-	 * `pageFilter` must be specified.)
 	 * @param [opts.pageFilter] PageFilter implementation for this page. (Either `filters` and `filterSource` or
 	 * `pageFilter` must be specified.)
-	 * @param [opts.listClass] List class.
 	 * @param opts.listOptions Other list options.
 	 * @param opts.dataProps JSON data propert(y/ies).
 	 *
@@ -1013,11 +1005,7 @@ class ListPage {
 		this._prereleaseDataSource = opts.prereleaseDataSource;
 		this._brewDataSource = opts.brewDataSource;
 		this._pFnGetFluff = opts.pFnGetFluff;
-		this._dataSourcefluff = opts.dataSourceFluff;
-		this._filters = opts.filters;
-		this._filterSource = opts.filterSource;
 		this._pageFilter = opts.pageFilter;
-		this._listClass = opts.listClass; // TODO(PageGen) remove once all pages transitioned
 		this._listOptions = opts.listOptions || {};
 		this._dataProps = opts.dataProps;
 		this._bookViewOptions = opts.bookViewOptions;
@@ -1038,7 +1026,6 @@ class ListPage {
 		this._dataList = [];
 		this._ixData = 0;
 		this._bookView = null;
-		this._bookViewToShow = null;
 		this._sublistManager = null;
 		this._btnsTabs = {};
 		this._lastRender = {};
@@ -1152,7 +1139,7 @@ class ListPage {
 		const $btnReset = $("#reset");
 		this._list = this._initList({
 			$iptSearch,
-			$wrpList: this._listClass ? $(`.list.${this._listClass}`) : $(`#list`),
+			$wrpList: $(`#list`),
 			$btnReset,
 			$btnClear: $(`#lst__search-glass`),
 			dispPageTagline: document.getElementById(`page__subtitle`),
@@ -1359,7 +1346,7 @@ class ListPage {
 		$btnReset.before($btnHideSearch);
 
 		const $btnShowSearch = $(`<button class="btn btn-block btn-default btn-xs" type="button">Show List</button>`);
-		const $wrpBtnShowSearch = $$`<div class="col-12 mb-1 ve-hidden">${$btnShowSearch}</div>`.prependTo($wrpContent);
+		const $wrpBtnShowSearch = $$`<div class="ve-col-12 mb-1 ve-hidden">${$btnShowSearch}</div>`.prependTo($wrpContent);
 
 		$btnHideSearch.click(() => {
 			$wrpList.hideVe();
@@ -1704,7 +1691,7 @@ class ListPage {
 
 		this._btnsTabs[ident] = e_({
 			tag: "button",
-			clazz: "ui-tab__btn-tab-head btn btn-default",
+			clazz: "ui-tab__btn-tab-head btn btn-default pt-2p px-4p pb-0",
 			children: [
 				e_({
 					tag: "span",
@@ -1769,6 +1756,11 @@ class ListPage {
 			),
 			null,
 			new ContextUtil.Action(
+				"Export as Image (SHIFT to Copy Image)",
+				evt => this._pHandleClick_exportAsImage({evt, isFast: evt.shiftKey, $eleCopyEffect: $btnOptions}),
+			),
+			null,
+			new ContextUtil.Action(
 				"Download Pinned List (SHIFT to Copy Link)",
 				evt => this._sublistManager.pHandleClick_download({isUrl: evt.shiftKey, $eleCopyEffect: $btnOptions}),
 			),
@@ -1821,8 +1813,15 @@ class ListPage {
 
 		const menu = ContextUtil.getMenu(contextOptions);
 		$btnOptions
+			.off("mousedown")
+			.on("mousedown", evt => {
+				evt.preventDefault();
+			})
 			.off("click")
-			.on("click", evt => ContextUtil.pOpenMenu(evt, menu));
+			.on("click", async evt => {
+				evt.preventDefault();
+				await ContextUtil.pOpenMenu(evt, menu);
+			});
 	}
 
 	async _handleGenericContextMenuClick_pDoMassPopout (evt, ele, selection) {
@@ -2007,7 +2006,7 @@ class ListPage {
 		];
 		const menu = ContextUtil.getMenu(actions);
 
-		const $btnOptions = $(`<button class="btn btn-default btn-xs btn-stats-name" title="Other Options"><span class="glyphicon glyphicon-option-vertical"/></button>`)
+		const $btnOptions = $(`<button class="btn btn-default btn-xs btn-stats-name" title="Other Options"><span class="glyphicon glyphicon-option-vertical"></span></button>`)
 			.click(evt => ContextUtil.pOpenMenu(evt, menu));
 
 		return $$`<div class="ve-flex-v-center btn-group ml-2">${$btnOptions}</div>`;
@@ -2015,6 +2014,100 @@ class ListPage {
 
 	/** @abstract */
 	_renderStats_doBuildStatsTab ({ent}) { throw new Error("Unimplemented!"); }
+
+	/* -------------------------------------------- */
+
+	static _OFFSET_WINDOW_EXPORT_AS_IMAGE = 17;
+
+	async _pHandleClick_exportAsImage ({evt, isFast, $eleCopyEffect}) {
+		if (typeof domtoimage === "undefined") await import("../lib/dom-to-image-more.min.js");
+
+		const ent = this._dataList[Hist.lastLoadedId];
+
+		const optsDomToImage = {
+			// FIXME(Future) doesn't seem to have the desired effect; `lst__is-exporting-image` bodge used instead
+			adjustClonedNode: (node, clone, isAfter) => {
+				if (node.classList && node.classList.contains("stats-source") && !isAfter) {
+					clone.style.paddingRight = "0px";
+				}
+				return clone;
+			},
+		};
+
+		// See: https://github.com/1904labs/dom-to-image-more/issues/146
+		if (BrowserUtil.isFirefox()) {
+			const bcr = this._$pgContent[0].getBoundingClientRect();
+			optsDomToImage.width = bcr.width;
+			optsDomToImage.height = bcr.height;
+		}
+
+		if (isFast) {
+			let blob;
+			try {
+				this._$pgContent.addClass("lst__is-exporting-image");
+				blob = await domtoimage.toBlob(this._$pgContent[0], optsDomToImage);
+			} finally {
+				this._$pgContent.removeClass("lst__is-exporting-image");
+			}
+
+			const isCopy = await MiscUtil.pCopyBlobToClipboard(blob);
+			if (isCopy) JqueryUtil.showCopiedEffect($eleCopyEffect, "Copied!");
+
+			return;
+		}
+
+		const html = this._$pgContent[0].outerHTML;
+		const page = UrlUtil.getCurrentPage();
+
+		const $cpy = $(html)
+			.addClass("lst__is-exporting-image");
+		$cpy.find();
+
+		const $btnCpy = $(`<button class="btn btn-default btn-xs" title="SHIFT to Copy and Close">Copy</button>`)
+			.on("click", async evt => {
+				const blob = await domtoimage.toBlob($cpy[0], optsDomToImage);
+				const isCopy = await MiscUtil.pCopyBlobToClipboard(blob);
+				if (isCopy) JqueryUtil.showCopiedEffect($btnCpy, "Copied!");
+
+				if (isCopy && evt.shiftKey) hoverWindow.doClose();
+			});
+
+		const $btnSave = $(`<button class="btn btn-default btn-xs" title="SHIFT to Save and Close">Save</button>`)
+			.on("click", async evt => {
+				const dataUrl = await domtoimage.toPng($cpy[0], optsDomToImage);
+				DataUtil.userDownloadDataUrl(`${ent.name}.png`, dataUrl);
+
+				if (evt.shiftKey) hoverWindow.doClose();
+			});
+
+		const width = this._$pgContent[0].getBoundingClientRect().width;
+		const posBtn = $eleCopyEffect[0].getBoundingClientRect().toJSON();
+		const hoverWindow = Renderer.hover.getShowWindow(
+			$$`<div class="ve-flex-col">
+				<div class="split-v-center mb-2 px-2 mt-2">
+					<i class="mr-2">Optionally resize the width of the window, then Copy or Save.</i>
+					<div class="btn-group">
+						${$btnCpy}
+						${$btnSave}
+					</div>
+				</div>
+				${$cpy}
+			</div>`,
+			Renderer.hover.getWindowPositionExact(
+				posBtn.left - width + posBtn.width - this.constructor._OFFSET_WINDOW_EXPORT_AS_IMAGE,
+				posBtn.top + posBtn.height + this.constructor._OFFSET_WINDOW_EXPORT_AS_IMAGE,
+				evt,
+			),
+			{
+				title: `Image Export - ${ent.name}`,
+				isPermanent: true,
+				isBookContent: page === UrlUtil.PG_RECIPES,
+				isResizeOnlyWidth: true,
+				isHideBottomBorder: true,
+				width,
+			},
+		);
+	}
 }
 
 class ListPageBookView extends BookModeViewBase {
@@ -2111,7 +2204,7 @@ class ListPageBookView extends BookModeViewBase {
 
 			if (i < parts.length - 1) {
 				if ((charLimit -= part.length) < 0) {
-					if (RendererMarkdown.getSetting("isAddPageBreaks")) out.push("", "\\pagebreak", "");
+					if (VetoolsConfig.get("markdown", "isAddPageBreaks")) out.push("", "\\pagebreak", "");
 					charLimit = RendererMarkdown.CHARS_PER_PAGE;
 				}
 			}
@@ -2124,13 +2217,13 @@ class ListPageBookView extends BookModeViewBase {
 		const $btnDownloadMarkdown = $(`<button class="btn btn-default btn-sm">Download as Markdown</button>`)
 			.click(() => DataUtil.userDownloadText(`${UrlUtil.getCurrentPage().replace(".html", "")}.md`, this._getVisibleAsMarkdown()));
 
-		const $btnCopyMarkdown = $(`<button class="btn btn-default btn-sm px-2" title="Copy Markdown to Clipboard"><span class="glyphicon glyphicon-copy"/></button>`)
+		const $btnCopyMarkdown = $(`<button class="btn btn-default btn-sm px-2" title="Copy Markdown to Clipboard"><span class="glyphicon glyphicon-copy"></span></button>`)
 			.click(async () => {
 				await MiscUtil.pCopyTextToClipboard(this._getVisibleAsMarkdown());
 				JqueryUtil.showCopiedEffect($btnCopyMarkdown);
 			});
 
-		const $btnDownloadMarkdownSettings = $(`<button class="btn btn-default btn-sm px-2" title="Markdown Settings"><span class="glyphicon glyphicon-cog"/></button>`)
+		const $btnDownloadMarkdownSettings = $(`<button class="btn btn-default btn-sm px-2" title="Markdown Settings"><span class="glyphicon glyphicon-cog"></span></button>`)
 			.click(async () => RendererMarkdown.pShowSettingsModal());
 
 		return $$`<div class="ve-flex-v-center btn-group ml-3">

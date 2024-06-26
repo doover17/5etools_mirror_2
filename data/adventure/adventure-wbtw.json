@@ -1388,7 +1388,8 @@
 							"title": "Welcome to the Witchlight Carnival",
 							"width": 7000,
 							"height": 4934,
-							"credit": "Stacey Allan & Will Doyle"
+							"credit": "Stacey Allan & Will Doyle",
+							"id": "02a"
 						},
 						{
 							"type": "entries",
@@ -3560,7 +3561,8 @@
 							"title": "The Domain of Prismeer",
 							"width": 7000,
 							"height": 4962,
-							"credit": "Stacey Allan & Will Doyle"
+							"credit": "Stacey Allan & Will Doyle",
+							"id": "02b"
 						},
 						{
 							"type": "entries",
@@ -26332,9 +26334,11 @@
 												}
 											]
 										}
-									]
+									],
+									"id": "027"
 								}
-							]
+							],
+							"id": "026"
 						},
 						{
 							"type": "entries",
@@ -26377,9 +26381,11 @@
 												}
 											]
 										}
-									]
+									],
+									"id": "029"
 								}
-							]
+							],
+							"id": "028"
 						}
 					]
 				},
@@ -26417,7 +26423,8 @@
 						}
 					]
 				}
-			]
+			],
+			"id": "025"
 		}
 	]
 }

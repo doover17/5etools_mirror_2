@@ -29,7 +29,8 @@
 									"page": 3,
 									"entries": [
 										"Dungeon Masters can use the cards for divinatory readings that provide players with clues about the challenges that lie ahead. Divinatory readings are described in the \"{@book Divinatory Uses|DMTCRG|1}\" section."
-									]
+									],
+									"id": "003"
 								},
 								{
 									"type": "entries",
@@ -37,11 +38,14 @@
 									"page": 3,
 									"entries": [
 										"DMs can use the deck to generate adventure ideas and even outline an adventure's starting situation, journey, encounters, and climax. The guidelines for this are found in the \"{@book Adventure Spreads|DMTCRG|2}\" section and include an example of how the cards can be used to create a story or a dungeon,"
-									]
+									],
+									"id": "004"
 								}
-							]
+							],
+							"id": "002"
 						}
-					]
+					],
+					"id": "001"
 				},
 				{
 					"type": "entries",
@@ -63,9 +67,11 @@
 										"In addition to the twenty-two cards of the {@item Deck of Many Things|DMG}, this deck includes an additional forty-four cards, known as the {@deck Deck of Many More Things|BMT}. These sixty-six cards often appear together as a combined deck. The game rules for the new cards appear in {@book chapter 7 of The Book of Many Things|BMT|6}."
 									]
 								}
-							]
+							],
+							"id": "006"
 						}
-					]
+					],
+					"id": "005"
 				},
 				{
 					"type": "image",
@@ -91,7 +97,8 @@
 							"page": 4,
 							"entries": [
 								"In addition to having their own meanings, cards take on additional meanings when combined as spreads: arrangements of oracle cards on a surface. With spreads, the order in which cards are drawn and where they're placed in relation to other cards add meaning to a reading. For example, cards drawn earlier in a reading might be interpreted as talking about the past or the start of an adventure, while those drawn later might speak about the future or an adventure's culmination."
-							]
+							],
+							"id": "008"
 						},
 						{
 							"type": "image",
@@ -103,9 +110,11 @@
 							"width": 1700,
 							"height": 1064
 						}
-					]
+					],
+					"id": "007"
 				}
-			]
+			],
+			"id": "000"
 		},
 		{
 			"type": "section",
@@ -126,7 +135,8 @@
 							"page": 6,
 							"entries": [
 								"When posing a question using the deck, avoid anything with a simple yes-or-no answer and questions with a specific, factual answer. Instead, ask open-ended questions that might have many answers. Questions like \"How can we stop Iuz from conquering all of the Flanaess?\" are more suited to the divinatory nature of the cards than \"Where is the Eye of Vecna?\""
-							]
+							],
+							"id": "00b"
 						},
 						{
 							"type": "entries",
@@ -135,7 +145,8 @@
 							"entries": [
 								"The reader should decide what cards to include in the deck for the reading, depending on their goals.",
 								"A DM might want to include only cards that reflect the themes of the adventure, or choose the exact cards to display to give the players specific clues. A character reading a nonplayer character's fortune might do the same if they want to trick or manipulate that person, but trusting in fate and including the whole deck is always an option."
-							]
+							],
+							"id": "00c"
 						},
 						{
 							"type": "entries",
@@ -143,9 +154,11 @@
 							"page": 6,
 							"entries": [
 								"As cards are drawn, take your time interpreting them. Ponder how the cards' possible interpretations might speak to the questioner's memories, experiences, and current situation. The reader should help the questioner look for connections between cards, seeking the story the cards tell as they're brought together."
-							]
+							],
+							"id": "00d"
 						}
-					]
+					],
+					"id": "00a"
 				},
 				{
 					"type": "entries",
@@ -159,7 +172,8 @@
 							"page": 6,
 							"entries": [
 								"For the simplest reading, draw a single card from the deck. Many readers use this technique in the morning when preparing for a day of adventure. The card they draw presents a message about the day to come, something to use as guidance when the adventure becomes challenging and the way forward unclear. Alternatively, drawing a single card can provide quick guidance concerning an immediate problem or an ongoing situation that has become impossible to ignore."
-							]
+							],
+							"id": "00f"
 						},
 						{
 							"type": "entries",
@@ -169,7 +183,8 @@
 								"A three-card spread allows the cards to tell a story, as the cards interact with each other and their meanings resonate and connect. This increases the power and usefulness of the cards, but there are many ways to interpret a three-card spread, so it's important to know what you want from the cards before you place them.",
 								"The most common form of a three-card spread is to interpret the first card as representing the past, especially forces in the past that are relevant to the question. The second card represents the present situation, and the final card hints at the future.",
 								"Alternatively, the first card might represent a problem, the second card an obstacle, and the final card the solution. Or the first card could represent the questioner, the second card another individual, and the third card the relationship between the two."
-							]
+							],
+							"id": "010"
 						},
 						{
 							"type": "entries",
@@ -182,7 +197,9 @@
 										"type": "internal",
 										"path": "book/DMTCRG/Five-Card Spread.webp"
 									},
-									"title": "Diagram 1: Five-Card Spread"
+									"title": "Diagram 1: Five-Card Spread",
+									"width": 800,
+									"height": 934
 								},
 								"A five-card spread (see diagram 1) allows a question to be answered with great complexity and nuance, as the cards show multiple perspectives and weave an interconnected story, Here's an example of a five-card spread you might use:",
 								{
@@ -216,11 +233,14 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "011"
 						}
-					]
+					],
+					"id": "00e"
 				}
-			]
+			],
+			"id": "009"
 		},
 		{
 			"type": "section",
@@ -240,7 +260,9 @@
 								"type": "internal",
 								"path": "book/DMTCRG/Adventure Spread.webp"
 							},
-							"title": "Diagram 2: Adventure Spread"
+							"title": "Diagram 2: Adventure Spread",
+							"width": 1444,
+							"height": 934
 						},
 						"Lay out the cards in this order:",
 						{
@@ -284,7 +306,8 @@
 								}
 							]
 						}
-					]
+					],
+					"id": "013"
 				},
 				{
 					"type": "entries",
@@ -298,7 +321,9 @@
 								"type": "internal",
 								"path": "book/DMTCRG/Example Adventure Spread.webp"
 							},
-							"title": "Diagram 3: Example Adventure Spread"
+							"title": "Diagram 3: Example Adventure Spread",
+							"width": 1443,
+							"height": 934
 						},
 						{
 							"type": "list",
@@ -357,9 +382,12 @@
 								"type": "internal",
 								"path": "bestiary/BMT/Deck Defender.webp"
 							},
-							"credit": "Nikki Dawes"
+							"credit": "Nikki Dawes",
+							"width": 1700,
+							"height": 1079
 						}
-					]
+					],
+					"id": "014"
 				},
 				{
 					"type": "entries",
@@ -556,7 +584,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "016"
 						},
 						"Using these separate decks, lay out the cards in a slightly modified adventure spread:",
 						{
@@ -610,7 +639,8 @@
 							"width": 1700,
 							"height": 522
 						}
-					]
+					],
+					"id": "015"
 				},
 				{
 					"type": "entries",
@@ -700,9 +730,11 @@
 								}
 							]
 						}
-					]
+					],
+					"id": "017"
 				}
-			]
+			],
+			"id": "012"
 		},
 		{
 			"type": "section",
@@ -773,7 +805,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "01a"
 						},
 						{
 							"type": "entries",
@@ -810,7 +843,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "01b"
 						},
 						{
 							"type": "image",
@@ -818,9 +852,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/01-aberration.webp"
 							},
-							"credit": "Jim Zaccaria"
+							"credit": "Jim Zaccaria",
+							"width": 720,
+							"height": 1227
 						}
-					]
+					],
+					"id": "019"
 				},
 				{
 					"type": "entries",
@@ -863,7 +900,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "01d"
 						},
 						{
 							"type": "entries",
@@ -900,7 +938,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "01e"
 						},
 						{
 							"type": "image",
@@ -912,7 +951,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "01c"
 				},
 				{
 					"type": "entries",
@@ -955,7 +995,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "020"
 						},
 						{
 							"type": "entries",
@@ -992,7 +1033,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "021"
 						},
 						{
 							"type": "image",
@@ -1000,9 +1042,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/03-beast.webp"
 							},
-							"credit": "Abigail Larson"
+							"credit": "Abigail Larson",
+							"width": 720,
+							"height": 1227
 						}
-					]
+					],
+					"id": "01f"
 				},
 				{
 					"type": "entries",
@@ -1045,7 +1090,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "023"
 						},
 						{
 							"type": "entries",
@@ -1082,7 +1128,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "024"
 						},
 						{
 							"type": "image",
@@ -1090,9 +1137,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/04-book.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1229
 						}
-					]
+					],
+					"id": "022"
 				},
 				{
 					"type": "entries",
@@ -1135,7 +1185,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "026"
 						},
 						{
 							"type": "entries",
@@ -1172,7 +1223,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "027"
 						},
 						{
 							"type": "image",
@@ -1180,9 +1232,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/05-bridge.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1229
 						}
-					]
+					],
+					"id": "025"
 				},
 				{
 					"type": "entries",
@@ -1225,7 +1280,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "029"
 						},
 						{
 							"type": "entries",
@@ -1262,7 +1318,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "02a"
 						},
 						{
 							"type": "image",
@@ -1270,9 +1327,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/06-campfire.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1232
 						}
-					]
+					],
+					"id": "028"
 				},
 				{
 					"type": "entries",
@@ -1315,7 +1375,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "02c"
 						},
 						{
 							"type": "entries",
@@ -1352,7 +1413,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "02d"
 						},
 						{
 							"type": "image",
@@ -1360,9 +1422,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/07-cavern.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1233
 						}
-					]
+					],
+					"id": "02b"
 				},
 				{
 					"type": "entries",
@@ -1405,7 +1470,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "02f"
 						},
 						{
 							"type": "entries",
@@ -1442,7 +1508,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "030"
 						},
 						{
 							"type": "image",
@@ -1450,9 +1517,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/08-celestial.webp"
 							},
-							"credit": "Jim Zaccaria"
+							"credit": "Jim Zaccaria",
+							"width": 720,
+							"height": 1230
 						}
-					]
+					],
+					"id": "02e"
 				},
 				{
 					"type": "entries",
@@ -1495,7 +1565,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "032"
 						},
 						{
 							"type": "entries",
@@ -1532,7 +1603,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "033"
 						},
 						{
 							"type": "image",
@@ -1544,7 +1616,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "031"
 				},
 				{
 					"type": "entries",
@@ -1587,7 +1660,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "035"
 						},
 						{
 							"type": "entries",
@@ -1624,7 +1698,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "036"
 						},
 						{
 							"type": "image",
@@ -1632,9 +1707,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/10-construct.webp"
 							},
-							"credit": "Abigail Larson"
+							"credit": "Abigail Larson",
+							"width": 720,
+							"height": 1229
 						}
-					]
+					],
+					"id": "034"
 				},
 				{
 					"type": "entries",
@@ -1677,7 +1755,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "038"
 						},
 						{
 							"type": "entries",
@@ -1714,7 +1793,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "039"
 						},
 						{
 							"type": "image",
@@ -1722,9 +1802,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/11-corpse.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1231
 						}
-					]
+					],
+					"id": "037"
 				},
 				{
 					"type": "entries",
@@ -1767,7 +1850,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "03b"
 						},
 						{
 							"type": "entries",
@@ -1804,7 +1888,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "03c"
 						},
 						{
 							"type": "image",
@@ -1812,9 +1897,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/12-crossroads.webp"
 							},
-							"credit": "Abigail Larson"
+							"credit": "Abigail Larson",
+							"width": 720,
+							"height": 1229
 						}
-					]
+					],
+					"id": "03a"
 				},
 				{
 					"type": "entries",
@@ -1857,7 +1945,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "03e"
 						},
 						{
 							"type": "entries",
@@ -1894,7 +1983,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "03f"
 						},
 						{
 							"type": "image",
@@ -1906,7 +1996,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "03d"
 				},
 				{
 					"type": "entries",
@@ -1949,7 +2040,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "041"
 						},
 						{
 							"type": "entries",
@@ -1986,7 +2078,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "042"
 						},
 						{
 							"type": "image",
@@ -1994,9 +2087,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/14-door.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1233
 						}
-					]
+					],
+					"id": "040"
 				},
 				{
 					"type": "entries",
@@ -2039,7 +2135,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "044"
 						},
 						{
 							"type": "entries",
@@ -2076,7 +2173,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "045"
 						},
 						{
 							"type": "image",
@@ -2084,9 +2182,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/15-dragon.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1228
 						}
-					]
+					],
+					"id": "043"
 				},
 				{
 					"type": "entries",
@@ -2129,7 +2230,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "047"
 						},
 						{
 							"type": "entries",
@@ -2166,7 +2268,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "048"
 						},
 						{
 							"type": "image",
@@ -2174,9 +2277,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/16-elemental.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1231
 						}
-					]
+					],
+					"id": "046"
 				},
 				{
 					"type": "entries",
@@ -2219,7 +2325,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "04a"
 						},
 						{
 							"type": "entries",
@@ -2256,7 +2363,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "04b"
 						},
 						{
 							"type": "image",
@@ -2268,7 +2376,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "049"
 				},
 				{
 					"type": "entries",
@@ -2311,7 +2420,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "04d"
 						},
 						{
 							"type": "entries",
@@ -2348,7 +2458,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "04e"
 						},
 						{
 							"type": "image",
@@ -2356,9 +2467,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/18-expert.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1229
 						}
-					]
+					],
+					"id": "04c"
 				},
 				{
 					"type": "entries",
@@ -2401,7 +2515,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "050"
 						},
 						{
 							"type": "entries",
@@ -2438,7 +2553,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "051"
 						},
 						{
 							"type": "image",
@@ -2450,7 +2566,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "04f"
 				},
 				{
 					"type": "entries",
@@ -2493,7 +2610,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "053"
 						},
 						{
 							"type": "entries",
@@ -2530,7 +2648,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "054"
 						},
 						{
 							"type": "image",
@@ -2538,9 +2657,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/20-fey.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1230
 						}
-					]
+					],
+					"id": "052"
 				},
 				{
 					"type": "entries",
@@ -2583,7 +2705,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "056"
 						},
 						{
 							"type": "entries",
@@ -2620,7 +2743,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "057"
 						},
 						{
 							"type": "image",
@@ -2628,9 +2752,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/21-fiend.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1229
 						}
-					]
+					],
+					"id": "055"
 				},
 				{
 					"type": "entries",
@@ -2673,7 +2800,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "059"
 						},
 						{
 							"type": "entries",
@@ -2710,7 +2838,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "05a"
 						},
 						{
 							"type": "image",
@@ -2718,9 +2847,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/22-flames.webp"
 							},
-							"credit": "Harry Conway"
+							"credit": "Harry Conway",
+							"width": 720,
+							"height": 1227
 						}
-					]
+					],
+					"id": "058"
 				},
 				{
 					"type": "entries",
@@ -2763,7 +2895,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "05c"
 						},
 						{
 							"type": "entries",
@@ -2800,7 +2933,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "05d"
 						},
 						{
 							"type": "image",
@@ -2812,7 +2946,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "05b"
 				},
 				{
 					"type": "entries",
@@ -2855,7 +2990,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "05f"
 						},
 						{
 							"type": "entries",
@@ -2892,7 +3028,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "060"
 						},
 						{
 							"type": "image",
@@ -2904,7 +3041,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "05e"
 				},
 				{
 					"type": "entries",
@@ -2947,7 +3085,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "062"
 						},
 						{
 							"type": "entries",
@@ -2984,7 +3123,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "063"
 						},
 						{
 							"type": "image",
@@ -2992,9 +3132,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/25-giant.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1228
 						}
-					]
+					],
+					"id": "061"
 				},
 				{
 					"type": "entries",
@@ -3037,7 +3180,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "065"
 						},
 						{
 							"type": "entries",
@@ -3074,7 +3218,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "066"
 						},
 						{
 							"type": "image",
@@ -3082,9 +3227,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/26-humanoid.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1228
 						}
-					]
+					],
+					"id": "064"
 				},
 				{
 					"type": "entries",
@@ -3127,7 +3275,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "068"
 						},
 						{
 							"type": "entries",
@@ -3164,7 +3313,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "069"
 						},
 						{
 							"type": "image",
@@ -3176,7 +3326,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "067"
 				},
 				{
 					"type": "entries",
@@ -3219,7 +3370,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "06b"
 						},
 						{
 							"type": "entries",
@@ -3256,7 +3408,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "06c"
 						},
 						{
 							"type": "image",
@@ -3268,7 +3421,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "06a"
 				},
 				{
 					"type": "entries",
@@ -3311,7 +3465,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "06e"
 						},
 						{
 							"type": "entries",
@@ -3348,7 +3503,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "06f"
 						},
 						{
 							"type": "image",
@@ -3360,7 +3516,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "06d"
 				},
 				{
 					"type": "entries",
@@ -3403,7 +3560,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "071"
 						},
 						{
 							"type": "entries",
@@ -3440,7 +3598,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "072"
 						},
 						{
 							"type": "image",
@@ -3448,9 +3607,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/30-lance.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1229
 						}
-					]
+					],
+					"id": "070"
 				},
 				{
 					"type": "entries",
@@ -3493,7 +3655,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "074"
 						},
 						{
 							"type": "entries",
@@ -3530,7 +3693,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "075"
 						},
 						{
 							"type": "image",
@@ -3538,9 +3702,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/31-mage.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1228
 						}
-					]
+					],
+					"id": "073"
 				},
 				{
 					"type": "entries",
@@ -3583,7 +3750,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "077"
 						},
 						{
 							"type": "entries",
@@ -3620,7 +3788,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "078"
 						},
 						{
 							"type": "image",
@@ -3628,9 +3797,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/32-map.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1230
 						}
-					]
+					],
+					"id": "076"
 				},
 				{
 					"type": "entries",
@@ -3673,7 +3845,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "07a"
 						},
 						{
 							"type": "entries",
@@ -3710,7 +3883,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "07b"
 						},
 						{
 							"type": "image",
@@ -3718,9 +3892,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/33-maze.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1228
 						}
-					]
+					],
+					"id": "079"
 				},
 				{
 					"type": "entries",
@@ -3763,7 +3940,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "07d"
 						},
 						{
 							"type": "entries",
@@ -3800,7 +3978,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "07e"
 						},
 						{
 							"type": "image",
@@ -3808,9 +3987,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/34-mine.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1230
 						}
-					]
+					],
+					"id": "07c"
 				},
 				{
 					"type": "entries",
@@ -3853,7 +4035,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "080"
 						},
 						{
 							"type": "entries",
@@ -3890,7 +4073,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "081"
 						},
 						{
 							"type": "image",
@@ -3898,9 +4082,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/35-monstrosity.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1229
 						}
-					]
+					],
+					"id": "07f"
 				},
 				{
 					"type": "entries",
@@ -3943,7 +4130,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "083"
 						},
 						{
 							"type": "entries",
@@ -3980,7 +4168,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "084"
 						},
 						{
 							"type": "image",
@@ -3992,7 +4181,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "082"
 				},
 				{
 					"type": "entries",
@@ -4035,7 +4225,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "086"
 						},
 						{
 							"type": "entries",
@@ -4072,7 +4263,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "087"
 						},
 						{
 							"type": "image",
@@ -4080,9 +4272,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/37-ooze.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1231
 						}
-					]
+					],
+					"id": "085"
 				},
 				{
 					"type": "entries",
@@ -4125,7 +4320,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "089"
 						},
 						{
 							"type": "entries",
@@ -4162,7 +4358,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "08a"
 						},
 						{
 							"type": "image",
@@ -4170,9 +4367,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/38-path.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1230
 						}
-					]
+					],
+					"id": "088"
 				},
 				{
 					"type": "entries",
@@ -4215,7 +4415,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "08c"
 						},
 						{
 							"type": "entries",
@@ -4252,7 +4453,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "08d"
 						},
 						{
 							"type": "image",
@@ -4260,9 +4462,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/39-pit.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1229
 						}
-					]
+					],
+					"id": "08b"
 				},
 				{
 					"type": "entries",
@@ -4305,7 +4510,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "08f"
 						},
 						{
 							"type": "entries",
@@ -4342,7 +4548,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "090"
 						},
 						{
 							"type": "image",
@@ -4350,9 +4557,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/40-plant.webp"
 							},
-							"credit": "Joanna Barnum"
+							"credit": "Joanna Barnum",
+							"width": 720,
+							"height": 1229
 						}
-					]
+					],
+					"id": "08e"
 				},
 				{
 					"type": "entries",
@@ -4395,7 +4605,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "092"
 						},
 						{
 							"type": "entries",
@@ -4432,7 +4643,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "093"
 						},
 						{
 							"type": "image",
@@ -4440,9 +4652,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/41-priest.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1229
 						}
-					]
+					],
+					"id": "091"
 				},
 				{
 					"type": "entries",
@@ -4485,7 +4700,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "095"
 						},
 						{
 							"type": "entries",
@@ -4522,7 +4738,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "096"
 						},
 						{
 							"type": "image",
@@ -4530,9 +4747,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/42-prisoner.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1229
 						}
-					]
+					],
+					"id": "094"
 				},
 				{
 					"type": "entries",
@@ -4575,7 +4795,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "098"
 						},
 						{
 							"type": "entries",
@@ -4612,7 +4833,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "099"
 						},
 						{
 							"type": "image",
@@ -4624,7 +4846,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "097"
 				},
 				{
 					"type": "entries",
@@ -4667,7 +4890,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "09b"
 						},
 						{
 							"type": "entries",
@@ -4704,7 +4928,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "09c"
 						},
 						{
 							"type": "image",
@@ -4712,9 +4937,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/44-ring.webp"
 							},
-							"credit": "Abigail Larson"
+							"credit": "Abigail Larson",
+							"width": 720,
+							"height": 1229
 						}
-					]
+					],
+					"id": "09a"
 				},
 				{
 					"type": "entries",
@@ -4757,7 +4985,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "09e"
 						},
 						{
 							"type": "entries",
@@ -4794,7 +5023,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "09f"
 						},
 						{
 							"type": "image",
@@ -4806,7 +5036,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "09d"
 				},
 				{
 					"type": "entries",
@@ -4849,7 +5080,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0a1"
 						},
 						{
 							"type": "entries",
@@ -4886,7 +5118,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0a2"
 						},
 						{
 							"type": "image",
@@ -4898,7 +5131,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "0a0"
 				},
 				{
 					"type": "entries",
@@ -4941,7 +5175,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0a4"
 						},
 						{
 							"type": "entries",
@@ -4978,7 +5213,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0a5"
 						},
 						{
 							"type": "image",
@@ -4990,7 +5226,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "0a3"
 				},
 				{
 					"type": "entries",
@@ -5033,7 +5270,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0a7"
 						},
 						{
 							"type": "entries",
@@ -5070,7 +5308,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0a8"
 						},
 						{
 							"type": "image",
@@ -5078,9 +5317,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/48-shield.webp"
 							},
-							"credit": "Joanna Barnum"
+							"credit": "Joanna Barnum",
+							"width": 720,
+							"height": 1227
 						}
-					]
+					],
+					"id": "0a6"
 				},
 				{
 					"type": "entries",
@@ -5123,7 +5365,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0aa"
 						},
 						{
 							"type": "entries",
@@ -5160,7 +5403,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0ab"
 						},
 						{
 							"type": "image",
@@ -5168,9 +5412,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/49-ship.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1230
 						}
-					]
+					],
+					"id": "0a9"
 				},
 				{
 					"type": "entries",
@@ -5213,7 +5460,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0ad"
 						},
 						{
 							"type": "entries",
@@ -5250,7 +5498,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0ae"
 						},
 						{
 							"type": "image",
@@ -5262,7 +5511,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "0ac"
 				},
 				{
 					"type": "entries",
@@ -5305,7 +5555,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0b0"
 						},
 						{
 							"type": "entries",
@@ -5342,7 +5593,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0b1"
 						},
 						{
 							"type": "image",
@@ -5350,9 +5602,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/51-staff.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1230
 						}
-					]
+					],
+					"id": "0af"
 				},
 				{
 					"type": "entries",
@@ -5395,7 +5650,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0b3"
 						},
 						{
 							"type": "entries",
@@ -5432,7 +5688,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0b4"
 						},
 						{
 							"type": "image",
@@ -5440,9 +5697,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/52-stairway.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1228
 						}
-					]
+					],
+					"id": "0b2"
 				},
 				{
 					"type": "entries",
@@ -5485,7 +5745,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0b6"
 						},
 						{
 							"type": "entries",
@@ -5522,7 +5783,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0b7"
 						},
 						{
 							"type": "image",
@@ -5534,7 +5796,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "0b5"
 				},
 				{
 					"type": "entries",
@@ -5577,7 +5840,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0b9"
 						},
 						{
 							"type": "entries",
@@ -5614,7 +5878,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0ba"
 						},
 						{
 							"type": "image",
@@ -5622,9 +5887,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/54-statue.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1230
 						}
-					]
+					],
+					"id": "0b8"
 				},
 				{
 					"type": "entries",
@@ -5667,7 +5935,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0bc"
 						},
 						{
 							"type": "entries",
@@ -5704,7 +5973,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0bd"
 						},
 						{
 							"type": "image",
@@ -5716,7 +5986,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "0bb"
 				},
 				{
 					"type": "entries",
@@ -5759,7 +6030,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0bf"
 						},
 						{
 							"type": "entries",
@@ -5796,7 +6068,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0c0"
 						},
 						{
 							"type": "image",
@@ -5808,7 +6081,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "0be"
 				},
 				{
 					"type": "entries",
@@ -5851,7 +6125,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0c2"
 						},
 						{
 							"type": "entries",
@@ -5888,7 +6163,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0c3"
 						},
 						{
 							"type": "image",
@@ -5896,9 +6172,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/57-tavern.webp"
 							},
-							"credit": "Joanna Barnum"
+							"credit": "Joanna Barnum",
+							"width": 720,
+							"height": 1226
 						}
-					]
+					],
+					"id": "0c1"
 				},
 				{
 					"type": "entries",
@@ -5941,7 +6220,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0c5"
 						},
 						{
 							"type": "entries",
@@ -5978,7 +6258,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0c6"
 						},
 						{
 							"type": "image",
@@ -5986,9 +6267,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/58-temple.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1229
 						}
-					]
+					],
+					"id": "0c4"
 				},
 				{
 					"type": "entries",
@@ -6031,7 +6315,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0c8"
 						},
 						{
 							"type": "entries",
@@ -6068,7 +6353,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0c9"
 						},
 						{
 							"type": "image",
@@ -6080,7 +6366,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "0c7"
 				},
 				{
 					"type": "entries",
@@ -6123,7 +6410,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0cb"
 						},
 						{
 							"type": "entries",
@@ -6160,7 +6448,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0cc"
 						},
 						{
 							"type": "image",
@@ -6168,9 +6457,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/60-tomb.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1230
 						}
-					]
+					],
+					"id": "0ca"
 				},
 				{
 					"type": "entries",
@@ -6213,7 +6505,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0ce"
 						},
 						{
 							"type": "entries",
@@ -6250,7 +6543,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0cf"
 						},
 						{
 							"type": "image",
@@ -6258,9 +6552,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/61-tower.webp"
 							},
-							"credit": "Abigail Larson"
+							"credit": "Abigail Larson",
+							"width": 720,
+							"height": 1224
 						}
-					]
+					],
+					"id": "0cd"
 				},
 				{
 					"type": "entries",
@@ -6303,7 +6600,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0d1"
 						},
 						{
 							"type": "entries",
@@ -6340,7 +6638,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0d2"
 						},
 						{
 							"type": "image",
@@ -6348,9 +6647,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/62-tree.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1229
 						}
-					]
+					],
+					"id": "0d0"
 				},
 				{
 					"type": "entries",
@@ -6393,7 +6695,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0d4"
 						},
 						{
 							"type": "entries",
@@ -6430,7 +6733,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0d5"
 						},
 						{
 							"type": "image",
@@ -6438,9 +6742,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/63-undead.webp"
 							},
-							"credit": "Abigail Larson"
+							"credit": "Abigail Larson",
+							"width": 720,
+							"height": 1232
 						}
-					]
+					],
+					"id": "0d3"
 				},
 				{
 					"type": "entries",
@@ -6483,7 +6790,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0d7"
 						},
 						{
 							"type": "entries",
@@ -6520,7 +6828,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0d8"
 						},
 						{
 							"type": "image",
@@ -6532,7 +6841,8 @@
 							"width": 850,
 							"height": 1552
 						}
-					]
+					],
+					"id": "0d6"
 				},
 				{
 					"type": "entries",
@@ -6575,7 +6885,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0da"
 						},
 						{
 							"type": "entries",
@@ -6612,7 +6923,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0db"
 						},
 						{
 							"type": "image",
@@ -6620,9 +6932,12 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/65-warrior.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1230
 						}
-					]
+					],
+					"id": "0d9"
 				},
 				{
 					"type": "entries",
@@ -6665,7 +6980,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0dd"
 						},
 						{
 							"type": "entries",
@@ -6702,7 +7018,8 @@
 										}
 									]
 								}
-							]
+							],
+							"id": "0de"
 						},
 						{
 							"type": "image",
@@ -6710,11 +7027,15 @@
 								"type": "internal",
 								"path": "decks/DMTCRG/Deck of Many More Things/66-well.webp"
 							},
-							"credit": "Ivan Shavrin"
+							"credit": "Ivan Shavrin",
+							"width": 720,
+							"height": 1228
 						}
-					]
+					],
+					"id": "0dc"
 				}
-			]
+			],
+			"id": "018"
 		},
 		{
 			"type": "section",
@@ -6948,11 +7269,13 @@
 												}
 											]
 										}
-									]
+									],
+									"id": "0e1"
 								}
 							]
 						}
-					]
+					],
+					"id": "0e0"
 				},
 				{
 					"type": "image",
@@ -6974,7 +7297,9 @@
 								"path": "book/DMTCRG/Cover Front.webp"
 							},
 							"title": "Front Cover",
-							"credit": "Harry Conway (left and right), Tinnel Lovitt (center)"
+							"credit": "Harry Conway (left and right), Tinnel Lovitt (center)",
+							"width": 1700,
+							"height": 1142
 						},
 						{
 							"type": "image",
@@ -6983,11 +7308,14 @@
 								"path": "book/DMTCRG/Cover Back.webp"
 							},
 							"title": "Back Cover",
-							"credit": "Axel Defois"
+							"credit": "Axel Defois",
+							"width": 1700,
+							"height": 1140
 						}
 					]
 				}
-			]
+			],
+			"id": "0df"
 		}
 	]
 }

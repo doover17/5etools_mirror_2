@@ -10,6 +10,7 @@
 				"path": "covers/LMoP.webp"
 			},
 			"published": "2014-07-15",
+			"author": "Wizards RPG Team",
 			"storyline": "Starter Set",
 			"level": {
 				"start": 1,
@@ -113,6 +114,7 @@
 				"path": "covers/HotDQ.webp"
 			},
 			"published": "2014-08-19",
+			"author": "Wizards RPG Team",
 			"storyline": "Tyranny of Dragons",
 			"level": {
 				"start": 1,
@@ -882,6 +884,7 @@
 				"path": "covers/RoT.webp"
 			},
 			"published": "2014-11-04",
+			"author": "Wizards RPG Team",
 			"storyline": "Tyranny of Dragons",
 			"level": {
 				"start": 8,
@@ -1445,6 +1448,7 @@
 				"path": "covers/PotA.webp"
 			},
 			"published": "2015-04-07",
+			"author": "Wizards RPG Team",
 			"storyline": "Elemental Evil",
 			"level": {
 				"start": 1,
@@ -2895,6 +2899,7 @@
 				"path": "covers/OotA.webp"
 			},
 			"published": "2015-09-15",
+			"author": "Wizards RPG Team",
 			"storyline": "Rage of Demons",
 			"level": {
 				"start": 1,
@@ -3647,6 +3652,7 @@
 				"path": "covers/CoS.webp"
 			},
 			"published": "2016-03-15",
+			"author": "Wizards RPG Team",
 			"storyline": "Ravenloft",
 			"level": {
 				"start": 1,
@@ -5269,6 +5275,7 @@
 				"path": "covers/SKT.webp"
 			},
 			"published": "2016-09-06",
+			"author": "Wizards RPG Team",
 			"storyline": "Storm King's Thunder",
 			"level": {
 				"start": 1,
@@ -7140,6 +7147,7 @@
 			},
 			"published": "2017-03-24",
 			"publishedOrder": 0,
+			"author": "Wizards RPG Team",
 			"storyline": "Tales from the Yawning Portal",
 			"level": {
 				"start": 1,
@@ -7436,6 +7444,7 @@
 			},
 			"published": "2017-03-24",
 			"publishedOrder": 1,
+			"author": "Wizards RPG Team",
 			"storyline": "Tales from the Yawning Portal",
 			"level": {
 				"start": 3,
@@ -7716,6 +7725,7 @@
 			},
 			"published": "2017-03-24",
 			"publishedOrder": 2,
+			"author": "Wizards RPG Team",
 			"storyline": "Tales from the Yawning Portal",
 			"level": {
 				"start": 5,
@@ -8000,6 +8010,7 @@
 			},
 			"published": "2017-03-24",
 			"publishedOrder": 3,
+			"author": "Wizards RPG Team",
 			"storyline": "Tales from the Yawning Portal",
 			"level": {
 				"start": 8,
@@ -8160,6 +8171,7 @@
 			},
 			"published": "2017-03-24",
 			"publishedOrder": 4,
+			"author": "Wizards RPG Team",
 			"storyline": "Tales from the Yawning Portal",
 			"level": {
 				"start": 9,
@@ -8651,6 +8663,7 @@
 			},
 			"published": "2017-03-24",
 			"publishedOrder": 5,
+			"author": "Wizards RPG Team",
 			"storyline": "Tales from the Yawning Portal",
 			"level": {
 				"start": 11,
@@ -9455,6 +9468,7 @@
 			},
 			"published": "2017-03-24",
 			"publishedOrder": 6,
+			"author": "Wizards RPG Team",
 			"storyline": "Tales from the Yawning Portal",
 			"level": {
 				"start": 10,
@@ -9649,6 +9663,7 @@
 				"path": "covers/ToA.webp"
 			},
 			"published": "2017-09-19",
+			"author": "Wizards RPG Team",
 			"storyline": "Tomb of Annihilation",
 			"level": {
 				"start": 1,
@@ -11222,6 +11237,7 @@
 				"path": "covers/TTP.webp"
 			},
 			"published": "2017-11-03",
+			"author": "Wizards RPG Team",
 			"storyline": "Tomb of Annihilation",
 			"level": {
 				"start": 1,
@@ -11306,6 +11322,7 @@
 				"path": "covers/TLK.webp"
 			},
 			"published": "2017-11-28",
+			"author": "Shawn Wood",
 			"storyline": "Extra Life",
 			"level": {
 				"start": 4,
@@ -11314,6 +11331,9 @@
 			"contents": [
 				{
 					"name": "The Lost Kenku"
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -11327,6 +11347,7 @@
 				"path": "covers/XMtS.webp"
 			},
 			"published": "2017-12-11",
+			"author": "Wizards MTG Team",
 			"storyline": "Ixalan",
 			"level": {
 				"start": 4,
@@ -11394,6 +11415,9 @@
 						"type": "appendix",
 						"identifier": "E"
 					}
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -11407,6 +11431,7 @@
 				"path": "covers/WDH.webp"
 			},
 			"published": "2018-09-18",
+			"author": "Wizards RPG Team",
 			"storyline": "Waterdeep",
 			"level": {
 				"start": 1,
@@ -11416,10 +11441,7 @@
 				{
 					"name": "Foreword",
 					"headers": [
-						"Pronunciation Guide",
-						"Information",
-						"DM Map Links",
-						"Player Map Links"
+						"Pronunciation Guide"
 					]
 				},
 				{
@@ -11663,6 +11685,7 @@
 				"path": "covers/LLK.webp"
 			},
 			"published": "2018-11-10",
+			"author": "Extra Life",
 			"storyline": "Extra Life",
 			"level": {
 				"start": 5,
@@ -11790,6 +11813,7 @@
 				"path": "covers/WDMM.webp"
 			},
 			"published": "2018-11-13",
+			"author": "Wizards RPG Team",
 			"storyline": "Waterdeep",
 			"level": {
 				"start": 5,
@@ -15050,6 +15074,7 @@
 				"path": "covers/GGR.webp"
 			},
 			"published": "2018-11-20",
+			"author": "Wizards RPG Team",
 			"storyline": "Ravnica",
 			"level": {
 				"start": 1,
@@ -15069,6 +15094,9 @@
 						"The Handoff",
 						"The End?"
 					]
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -15082,6 +15110,7 @@
 				"path": "covers/AZfyT.webp"
 			},
 			"published": "2019-03-05",
+			"author": "Wizards RPG Team",
 			"storyline": "Ravnica",
 			"level": {
 				"start": 2,
@@ -15105,6 +15134,9 @@
 				},
 				{
 					"name": "Pregenerated Characters"
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -15118,6 +15150,7 @@
 				"path": "covers/GoS.webp"
 			},
 			"published": "2019-05-21",
+			"author": "Wizards RPG Team",
 			"storyline": "Ghosts of Saltmarsh",
 			"level": {
 				"start": 1,
@@ -16291,6 +16324,7 @@
 				"path": "covers/HftT.webp"
 			},
 			"published": "2019-05-21",
+			"author": "Wizards RPG Team",
 			"storyline": "Stranger Things",
 			"level": {
 				"start": 3,
@@ -16326,6 +16360,7 @@
 				"path": "covers/HWAitW.webp"
 			},
 			"published": "2019-06-17",
+			"author": "The Deck of Many",
 			"storyline": "Humblewood",
 			"level": {
 				"start": 1,
@@ -16422,6 +16457,9 @@
 						"Facing the Aspect",
 						"Epilogue"
 					]
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -16435,6 +16473,7 @@
 				"path": "covers/AI.webp"
 			},
 			"published": "2019-06-18",
+			"author": "Wizards RPG Team",
 			"storyline": "Acquisitions Incorporated",
 			"level": {
 				"start": 1,
@@ -16747,6 +16786,9 @@
 						"Franchise Downtime",
 						"The Campaign to Come"
 					]
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -16762,6 +16804,7 @@
 			},
 			"published": "2019-06-24",
 			"publishedOrder": 0,
+			"author": "Wizards RPG Team",
 			"storyline": "Essentials Kit",
 			"level": {
 				"start": 1,
@@ -16923,6 +16966,7 @@
 			},
 			"published": "2019-09-03",
 			"publishedOrder": 1,
+			"author": "Wizards RPG Team",
 			"storyline": "Essentials Kit",
 			"level": {
 				"start": 7,
@@ -17729,6 +17773,7 @@
 			},
 			"published": "2019-09-03",
 			"publishedOrder": 2,
+			"author": "Wizards RPG Team",
 			"storyline": "Essentials Kit",
 			"level": {
 				"start": 9,
@@ -18464,6 +18509,7 @@
 			},
 			"published": "2019-09-03",
 			"publishedOrder": 3,
+			"author": "Wizards RPG Team",
 			"storyline": "Essentials Kit",
 			"level": {
 				"start": 11,
@@ -19481,6 +19527,7 @@
 				"path": "covers/BGDIA.webp"
 			},
 			"published": "2019-09-18",
+			"author": "Wizards RPG Team",
 			"storyline": "Baldur's Gate",
 			"level": {
 				"start": 1,
@@ -20375,6 +20422,7 @@
 				"path": "covers/LR.webp"
 			},
 			"published": "2019-09-19",
+			"author": "Wizards RPG Team",
 			"storyline": "Extra Life",
 			"level": {
 				"start": 9,
@@ -20477,6 +20525,7 @@
 				"path": "covers/IMR.webp"
 			},
 			"published": "2019-11-12",
+			"author": "Wizards RPG Team",
 			"storyline": "Extra Life",
 			"level": {
 				"start": 5,
@@ -20857,6 +20906,7 @@
 				"path": "covers/ERLW.webp"
 			},
 			"published": "2019-11-19",
+			"author": "Wizards RPG Team",
 			"storyline": "Eberron",
 			"level": {
 				"start": 1,
@@ -20935,6 +20985,9 @@
 						"Lightning Rail to Wroat",
 						"Conclusion"
 					]
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -20948,6 +21001,7 @@
 				"path": "covers/RMR.webp"
 			},
 			"published": "2019-11-19",
+			"author": "Wizards RPG Team",
 			"storyline": "Rick and Morty",
 			"level": {
 				"start": 1,
@@ -21170,6 +21224,7 @@
 			},
 			"published": "2020-03-17",
 			"publishedOrder": 0,
+			"author": "Darrington Press",
 			"storyline": "Wildemount",
 			"level": {
 				"start": 1,
@@ -21247,6 +21302,7 @@
 			},
 			"published": "2020-03-17",
 			"publishedOrder": 1,
+			"author": "Darrington Press",
 			"storyline": "Wildemount",
 			"level": {
 				"start": 1,
@@ -21391,6 +21447,7 @@
 			},
 			"published": "2020-03-17",
 			"publishedOrder": 2,
+			"author": "Darrington Press",
 			"storyline": "Wildemount",
 			"level": {
 				"start": 1,
@@ -21526,6 +21583,7 @@
 			},
 			"published": "2020-03-17",
 			"publishedOrder": 3,
+			"author": "Darrington Press",
 			"storyline": "Wildemount",
 			"level": {
 				"start": 1,
@@ -21641,6 +21699,7 @@
 				"path": "covers/MOT.webp"
 			},
 			"published": "2020-06-02",
+			"author": "Wizards RPG Team",
 			"storyline": "Mythic Odysseys of Theros",
 			"level": {
 				"start": 1,
@@ -21691,6 +21750,9 @@
 						"Deciphering the Mask",
 						"Myths to Be Told"
 					]
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -21704,6 +21766,7 @@
 				"path": "covers/IDRotF.webp"
 			},
 			"published": "2020-09-15",
+			"author": "Wizards RPG Team",
 			"storyline": "Icewind Dale",
 			"level": {
 				"start": 1,
@@ -23450,6 +23513,7 @@
 				"path": "covers/CM.webp"
 			},
 			"published": "2021-03-16",
+			"author": "Wizards RPG Team",
 			"storyline": "Candlekeep Mysteries",
 			"level": {
 				"start": 1,
@@ -24493,6 +24557,7 @@
 				"path": "covers/VRGR.webp"
 			},
 			"published": "2021-05-18",
+			"author": "Wizards RPG Team",
 			"storyline": "Ravenloft",
 			"level": {
 				"start": 1,
@@ -24659,6 +24724,7 @@
 				"path": "covers/RtG.webp"
 			},
 			"published": "2021-05-21",
+			"author": "Extra Life",
 			"storyline": "Extra Life",
 			"level": {
 				"start": 6,
@@ -24696,6 +24762,9 @@
 						"type": "appendix",
 						"identifier": "B"
 					}
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -24710,6 +24779,7 @@
 				"path": "covers/AitFR-ISF.webp"
 			},
 			"published": "2021-06-30",
+			"author": "Wizards MTG Team",
 			"storyline": "Adventures in the Forgotten Realms",
 			"level": {
 				"start": 8,
@@ -24800,6 +24870,9 @@
 				},
 				{
 					"name": "Appendix: Maps, Monsters, & NPCs"
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -24814,6 +24887,7 @@
 				"path": "covers/AitFR-THP.webp"
 			},
 			"published": "2021-07-07",
+			"author": "Wizards MTG Team",
 			"storyline": "Adventures in the Forgotten Realms",
 			"level": {
 				"start": 8,
@@ -24897,6 +24971,9 @@
 				},
 				{
 					"name": "Appendix: Monsters and Magic Items"
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -24911,6 +24988,7 @@
 				"path": "covers/AitFR-AVT.webp"
 			},
 			"published": "2021-07-14",
+			"author": "Wizards MTG Team",
 			"storyline": "Adventures in the Forgotten Realms",
 			"level": {
 				"start": 9,
@@ -24990,6 +25068,9 @@
 						"type": "appendix",
 						"identifier": "B"
 					}
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -25004,6 +25085,7 @@
 				"path": "covers/AitFR-DN.webp"
 			},
 			"published": "2021-07-21",
+			"author": "Wizards MTG Team",
 			"storyline": "Adventures in the Forgotten Realms",
 			"level": {
 				"start": 9,
@@ -25096,6 +25178,9 @@
 						"type": "appendix",
 						"identifier": "B"
 					}
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -25110,6 +25195,7 @@
 				"path": "covers/AitFR-FCD.webp"
 			},
 			"published": "2021-07-28",
+			"author": "Wizards MTG Team",
 			"storyline": "Adventures in the Forgotten Realms",
 			"level": {
 				"start": 10,
@@ -25196,6 +25282,9 @@
 						"type": "appendix",
 						"identifier": "C"
 					}
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -25211,6 +25300,7 @@
 			},
 			"published": "2021-09-01",
 			"publishedOrder": 0,
+			"author": "Wizards RPG Team",
 			"storyline": "NERDS Restoring Harmony",
 			"level": {
 				"start": 1,
@@ -25272,6 +25362,9 @@
 						"Completing the Mission",
 						"Magic Items"
 					]
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -25287,6 +25380,7 @@
 			},
 			"published": "2021-09-01",
 			"publishedOrder": 1,
+			"author": "Wizards RPG Team",
 			"storyline": "NERDS Restoring Harmony",
 			"level": {
 				"start": 1,
@@ -25313,6 +25407,9 @@
 						"Completing the Mission",
 						"Magic Items"
 					]
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -25328,6 +25425,7 @@
 			},
 			"published": "2021-09-01",
 			"publishedOrder": 2,
+			"author": "Wizards RPG Team",
 			"storyline": "NERDS Restoring Harmony",
 			"level": {
 				"start": 1,
@@ -25350,6 +25448,9 @@
 						"Completing the Mission",
 						"Magic Items"
 					]
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -25365,6 +25466,7 @@
 			},
 			"published": "2021-09-01",
 			"publishedOrder": 3,
+			"author": "Wizards RPG Team",
 			"storyline": "NERDS Restoring Harmony",
 			"level": {
 				"start": 1,
@@ -25410,6 +25512,9 @@
 						"Completing the Mission",
 						"Magic Items"
 					]
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -25425,6 +25530,7 @@
 			},
 			"published": "2021-09-01",
 			"publishedOrder": 4,
+			"author": "Wizards RPG Team",
 			"storyline": "NERDS Restoring Harmony",
 			"level": {
 				"start": 1,
@@ -25455,6 +25561,9 @@
 						"Completing the Mission",
 						"Magic Items"
 					]
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -25470,6 +25579,7 @@
 			},
 			"published": "2021-09-01",
 			"publishedOrder": 5,
+			"author": "Wizards RPG Team",
 			"storyline": "NERDS Restoring Harmony",
 			"level": {
 				"start": 1,
@@ -25496,6 +25606,9 @@
 						"Completing the Mission",
 						"Magic Items"
 					]
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -25511,6 +25624,7 @@
 			},
 			"published": "2021-09-01",
 			"publishedOrder": 6,
+			"author": "Wizards RPG Team",
 			"storyline": "NERDS Restoring Harmony",
 			"level": {
 				"start": 1,
@@ -25549,6 +25663,9 @@
 						"Completing the Mission",
 						"Magic Items"
 					]
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -25562,6 +25679,7 @@
 				"path": "covers/WBtW.webp"
 			},
 			"published": "2021-09-21",
+			"author": "Wizards RPG Team",
 			"storyline": "The Wild Beyond the Witchlight",
 			"level": {
 				"start": 1,
@@ -26245,6 +26363,7 @@
 			},
 			"published": "2021-12-07",
 			"publishedOrder": 0,
+			"author": "Wizards RPG Team",
 			"storyline": "Strixhaven",
 			"level": {
 				"start": 1,
@@ -26553,6 +26672,7 @@
 			},
 			"published": "2021-12-07",
 			"publishedOrder": 1,
+			"author": "Wizards RPG Team",
 			"storyline": "Strixhaven",
 			"level": {
 				"start": 4,
@@ -26686,6 +26806,7 @@
 			},
 			"published": "2021-12-07",
 			"publishedOrder": 2,
+			"author": "Wizards RPG Team",
 			"storyline": "Strixhaven",
 			"level": {
 				"start": 6,
@@ -26804,6 +26925,7 @@
 			},
 			"published": "2021-12-07",
 			"publishedOrder": 3,
+			"author": "Wizards RPG Team",
 			"storyline": "Strixhaven",
 			"level": {
 				"start": 8,
@@ -26966,6 +27088,7 @@
 				"path": "covers/CRCotN.webp"
 			},
 			"published": "2022-03-15",
+			"author": "Darrington Press",
 			"storyline": "Critical Role",
 			"level": {
 				"start": 3,
@@ -27537,6 +27660,7 @@
 				"path": "covers/JttRC.webp"
 			},
 			"published": "2022-07-19",
+			"author": "Wizards RPG Team",
 			"storyline": "Journeys through the Radiant Citadel",
 			"level": {
 				"start": 1,
@@ -28018,6 +28142,7 @@
 				"path": "covers/DoSI.webp"
 			},
 			"published": "2022-07-31",
+			"author": "Wizards RPG Team",
 			"storyline": "Starter Set",
 			"level": {
 				"start": 1,
@@ -28241,6 +28366,7 @@
 				"path": "covers/SjA.webp"
 			},
 			"published": "2022-08-01",
+			"author": "Wizards RPG Team",
 			"storyline": "Spelljammer",
 			"level": {
 				"start": 1,
@@ -28327,6 +28453,7 @@
 				"path": "covers/SAiS.webp"
 			},
 			"published": "2022-08-16",
+			"author": "Wizards RPG Team",
 			"storyline": "Spelljammer",
 			"level": {
 				"start": 5,
@@ -28475,6 +28602,7 @@
 				"path": "covers/DSotDQ.webp"
 			},
 			"published": "2022-11-22",
+			"author": "Wizards RPG Team",
 			"storyline": "Dragonlance",
 			"level": {
 				"start": 1,
@@ -29087,6 +29215,7 @@
 				"path": "covers/KftGV.webp"
 			},
 			"published": "2023-02-21",
+			"author": "Wizards RPG Team",
 			"storyline": "Keys from the Golden Vault",
 			"level": {
 				"start": 1,
@@ -30321,6 +30450,7 @@
 				"path": "covers/GotSF.webp"
 			},
 			"published": "2023-08-01",
+			"author": "Wizards RPG Team",
 			"storyline": "Giants of the Star Forge",
 			"level": {
 				"start": 16,
@@ -30378,6 +30508,7 @@
 				"path": "covers/PaBTSO.webp"
 			},
 			"published": "2023-09-19",
+			"author": "Wizards RPG Team",
 			"storyline": "Starter Set",
 			"level": {
 				"start": 1,
@@ -31468,6 +31599,7 @@
 				"path": "covers/LK.webp"
 			},
 			"published": "2023-09-26",
+			"author": "Wizards RPG Team",
 			"storyline": "Minecraft",
 			"level": {
 				"start": 3,
@@ -31583,6 +31715,7 @@
 				"path": "covers/PAitM.webp"
 			},
 			"published": "2023-10-17",
+			"author": "Wizards RPG Team",
 			"storyline": "Planescape",
 			"level": {
 				"start": 3,
@@ -31813,7 +31946,7 @@
 					]
 				},
 				{
-					"name": "Cover"
+					"name": "Credits"
 				}
 			]
 		},
@@ -31827,6 +31960,7 @@
 				"path": "covers/CoA.webp"
 			},
 			"published": "2023-10-30",
+			"author": "Wizards RPG Team",
 			"storyline": "Extra Life",
 			"level": {
 				"start": 11,
@@ -32431,6 +32565,9 @@
 						"type": "appendix",
 						"identifier": "F"
 					}
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -32444,6 +32581,7 @@
 				"path": "covers/PiP.webp"
 			},
 			"published": "2023-11-20",
+			"author": "Wizards RPG Team",
 			"storyline": "Family Friendly",
 			"level": {
 				"start": 1,
@@ -32463,6 +32601,9 @@
 						"Conclusion",
 						"Appendix A"
 					]
+				},
+				{
+					"name": "Credits"
 				}
 			]
 		},
@@ -32476,6 +32617,7 @@
 				"path": "covers/HFStCM.webp"
 			},
 			"published": "2023-11-21",
+			"author": "Wizards RPG Team",
 			"storyline": "Heroes' Feast",
 			"level": {
 				"start": 10,
@@ -32542,6 +32684,7 @@
 				"path": "covers/GHLoE.webp"
 			},
 			"published": "2023-11-30",
+			"author": "Ghostfire Gaming",
 			"storyline": "Grim Hollow",
 			"level": {
 				"start": 1,
@@ -33342,6 +33485,7 @@
 				"path": "covers/DoDk.webp"
 			},
 			"published": "2023-12-21",
+			"author": "Ghostfire Gaming",
 			"storyline": "Drakkenheim",
 			"level": {
 				"start": 1,
@@ -33441,9 +33585,15 @@
 					"headers": [
 						"Overview",
 						"Black Ivory Inn",
-						"Developments",
+						{
+							"depth": 1,
+							"header": "Developments"
+						},
 						"Buckledown Row",
-						"Developments",
+						{
+							"depth": 1,
+							"header": "Developments"
+						},
 						"Chapel of Saint Brenna",
 						{
 							"depth": 1,
@@ -33485,7 +33635,10 @@
 							"depth": 1,
 							"header": "[10] Hidden Reliquary"
 						},
-						"Developments",
+						{
+							"depth": 1,
+							"header": "Developments"
+						},
 						"Eckerman Mill",
 						"Rat's Nest Tavern",
 						{
@@ -33520,7 +33673,10 @@
 							"depth": 1,
 							"header": "[8] Seer's Den"
 						},
-						"Developments",
+						{
+							"depth": 1,
+							"header": "Developments"
+						},
 						"Reed Manor",
 						{
 							"depth": 1,
@@ -33546,7 +33702,10 @@
 							"depth": 1,
 							"header": "[12] Materials Storage"
 						},
-						"Developments",
+						{
+							"depth": 1,
+							"header": "Developments"
+						},
 						"Shrine of Morrigan",
 						"Smithy on the Scar",
 						{
@@ -33577,7 +33736,10 @@
 							"depth": 1,
 							"header": "[6] Gun Platforms"
 						},
-						"Developments",
+						{
+							"depth": 1,
+							"header": "Developments"
+						},
 						"Stick's Ferry"
 					]
 				},
@@ -33589,13 +33751,25 @@
 					},
 					"headers": [
 						"Overview",
-						"Developments",
+						{
+							"depth": 1,
+							"header": "Developments"
+						},
 						"Cosmological Clocktower",
-						"Developments",
+						{
+							"depth": 1,
+							"header": "Developments"
+						},
 						"The Crater",
-						"Developments",
+						{
+							"depth": 1,
+							"header": "Developments"
+						},
 						"Kleinberg Estate",
-						"Developments",
+						{
+							"depth": 1,
+							"header": "Developments"
+						},
 						"Old Town Cistern",
 						{
 							"depth": 1,
@@ -33633,7 +33807,10 @@
 							"depth": 1,
 							"header": "[4] Underground Lake"
 						},
-						"Developments",
+						{
+							"depth": 1,
+							"header": "Developments"
+						},
 						"Queen's Park",
 						{
 							"depth": 1,
@@ -33651,9 +33828,15 @@
 							"depth": 1,
 							"header": "[4] Underground Pond"
 						},
-						"Developments",
+						{
+							"depth": 1,
+							"header": "Developments"
+						},
 						"Rose Theatre",
-						"Developments",
+						{
+							"depth": 1,
+							"header": "Developments"
+						},
 						"Saint Vitruvio's Cathedral",
 						{
 							"depth": 1,
@@ -33699,7 +33882,10 @@
 							"depth": 1,
 							"header": "[10] Argonath's Rest"
 						},
-						"Developments",
+						{
+							"depth": 1,
+							"header": "Developments"
+						},
 						"Slaughterstone Square"
 					]
 				},
@@ -33751,7 +33937,10 @@
 						"Court of Thieves",
 						"Drakkenheim Garrison",
 						"Inscrutable Tower",
-						"Developments",
+						{
+							"depth": 1,
+							"header": "Developments"
+						},
 						"Saint Selina's Monastery"
 					]
 				},
@@ -33834,7 +34023,10 @@
 						"Main Entrance",
 						"Throne Room",
 						"Dungeons of Drakkenheim",
-						"Developments",
+						{
+							"depth": 1,
+							"header": "Developments"
+						},
 						"Closing the Dimensional Rift",
 						"Beyond the Dimensional Rift",
 						"Eternal Custodian",
@@ -33949,6 +34141,1490 @@
 						"Drakkenheim: City Map",
 						"Drakkenheim: Deep Haze Map"
 					]
+				}
+			]
+		},
+		{
+			"name": "Descent into the Lost Caverns of Tsojcanth",
+			"id": "DitLCoT",
+			"source": "DitLCoT",
+			"group": "supplement",
+			"cover": {
+				"type": "internal",
+				"path": "covers/QftIS.webp"
+			},
+			"published": "2024-03-26",
+			"author": "Wizards RPG Team",
+			"storyline": "Quests from the Infinite Staircase",
+			"level": {
+				"start": 9,
+				"end": 9
+			},
+			"contents": [
+				{
+					"name": "Descent into the Lost Caverns of Tsojcanth",
+					"headers": [
+						"Using This Supplement",
+						"Background",
+						"Tournament Rules",
+						"Lost Caverns",
+						{
+							"depth": 1,
+							"header": "L1: Entry Caverns"
+						},
+						{
+							"depth": 1,
+							"header": "L2: Slate Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "L3: Guano-Covered Cave"
+						},
+						{
+							"depth": 1,
+							"header": "L4: Littered Cave"
+						},
+						{
+							"depth": 1,
+							"header": "L5: Grotto"
+						},
+						{
+							"depth": 1,
+							"header": "L6: Fungal Cavern"
+						},
+						{
+							"depth": 1,
+							"header": "L7: Slimy Cavern"
+						},
+						{
+							"depth": 1,
+							"header": "L8: Stinking Cave"
+						},
+						{
+							"depth": 1,
+							"header": "L9: Bat Corridor"
+						},
+						{
+							"depth": 1,
+							"header": "L10: Long Gallery"
+						},
+						{
+							"depth": 1,
+							"header": "L11: Fomorian Cave"
+						},
+						{
+							"depth": 1,
+							"header": "L12: River Ledge"
+						},
+						{
+							"depth": 1,
+							"header": "L13: Underground Lake"
+						},
+						{
+							"depth": 1,
+							"header": "L14: Basilisk Den"
+						},
+						{
+							"depth": 1,
+							"header": "L15: Rainbow Cavern"
+						},
+						{
+							"depth": 1,
+							"header": "L16: Boulder Heap"
+						},
+						{
+							"depth": 1,
+							"header": "L17: Lavish Parlor"
+						},
+						{
+							"depth": 1,
+							"header": "L18: Black-Water Lake"
+						},
+						{
+							"depth": 1,
+							"header": "L19: Cave of Crystals"
+						},
+						{
+							"depth": 1,
+							"header": "L20: Pool Cavern"
+						},
+						"Conclusion",
+						"Appendix A: Magic Items",
+						"Appendix B: Creature",
+						"Appendix C: Score Sheet",
+						"Appendix D: Premade Characters",
+						"Credits"
+					]
+				}
+			]
+		},
+		{
+			"name": "Red Dragon's Tale: A LEGO Adventure",
+			"id": "LRDT",
+			"source": "LRDT",
+			"group": "supplement-alt",
+			"cover": {
+				"type": "internal",
+				"path": "covers/LRDT.webp"
+			},
+			"published": "2024-04-01",
+			"author": "Wizards RPG Team",
+			"storyline": "LEGO",
+			"level": {
+				"start": 5,
+				"end": 5
+			},
+			"contents": [
+				{
+					"name": "Introduction",
+					"headers": [
+						"About the Heroes",
+						"Running the Adventure"
+					]
+				},
+				{
+					"name": "Scene 1: Inn Plain Sight"
+				},
+				{
+					"name": "Scene 2: The Meadow"
+				},
+				{
+					"name": "Scene 3: The Dungeon"
+				},
+				{
+					"name": "Scene 4: The Basement"
+				},
+				{
+					"name": "Scene 5: The Tower"
+				},
+				{
+					"name": "Scene 6: The Dragon"
+				},
+				{
+					"name": "Conclusion"
+				},
+				{
+					"name": "Nonplayer Characters"
+				},
+				{
+					"name": "Without D&D Rules"
+				},
+				{
+					"name": "Character Sheets"
+				},
+				{
+					"name": "Credits"
+				}
+			]
+		},
+		{
+			"name": "Vecna: Nest of the Eldritch Eye",
+			"id": "VNotEE",
+			"source": "VNotEE",
+			"group": "supplement",
+			"cover": {
+				"type": "internal",
+				"path": "covers/VEoR.webp"
+			},
+			"published": "2024-04-16",
+			"storyline": "Vecna",
+			"level": {
+				"start": 3,
+				"end": 3
+			},
+			"contents": [
+				{
+					"name": "Vecna: Nest of the Eldritch Eye",
+					"headers": [
+						"Running the Adventure",
+						"Beginning the Adventure",
+						"Dead Man's Message",
+						"Into Neverwinter's Catacombs",
+						{
+							"depth": 1,
+							"header": "N1: Entrance Tunnel"
+						},
+						{
+							"depth": 1,
+							"header": "N2: Half-Collapsed Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "N3: Flooded Tunnel"
+						},
+						{
+							"depth": 1,
+							"header": "N4: Cinerary Rotunda"
+						},
+						{
+							"depth": 1,
+							"header": "N5: Tomb of the Mage"
+						},
+						{
+							"depth": 1,
+							"header": "N6: Tomb of the Knight"
+						},
+						{
+							"depth": 1,
+							"header": "N7: Crawlspace"
+						},
+						{
+							"depth": 1,
+							"header": "N8: Forked Tunnel"
+						},
+						{
+							"depth": 1,
+							"header": "N9: Sewerage Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "N10: Crypt of the Silenced Singers"
+						},
+						{
+							"depth": 1,
+							"header": "N11: Door of the Eldritch Eye"
+						},
+						{
+							"depth": 1,
+							"header": "N12: Hall of the Whispered One"
+						},
+						{
+							"depth": 1,
+							"header": "N13: Cultist Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "N14: Eldritch Library"
+						},
+						{
+							"depth": 1,
+							"header": "N15: Ritual Chamber"
+						},
+						"Concluding the Adventure",
+						"Credits"
+					]
+				}
+			]
+		},
+		{
+			"name": "Vecna: Eve of Ruin",
+			"id": "VEoR",
+			"source": "VEoR",
+			"group": "supplement",
+			"cover": {
+				"type": "internal",
+				"path": "covers/VEoR.webp"
+			},
+			"published": "2024-05-21",
+			"author": "Wizards RPG Team",
+			"storyline": "Vecna",
+			"level": {
+				"start": 10,
+				"end": 20
+			},
+			"contents": [
+				{
+					"name": "Introduction: Danger to the Multiverse",
+					"headers": [
+						"Existence in Peril",
+						"Vecna's History",
+						"Kas's Plan",
+						"Adventure Summary",
+						"Running the Adventure",
+						"Character Creation",
+						"The Power of Secrets",
+						"Challenge Ratings"
+					]
+				},
+				{
+					"name": "Return from Neverdeath Graveyard",
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 1
+					},
+					"headers": [
+						"Running This Chapter",
+						"Getting Started",
+						"In the Graveyard",
+						{
+							"depth": 1,
+							"header": "C1: Hallix Mausoleum"
+						},
+						{
+							"depth": 1,
+							"header": "C2: Lower Mausoleum"
+						},
+						{
+							"depth": 1,
+							"header": "C3: Uneven Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "C4: Trapped Grate"
+						},
+						{
+							"depth": 1,
+							"header": "C5: Sarcelle's Cell"
+						},
+						{
+							"depth": 1,
+							"header": "C6: Supply Room"
+						},
+						{
+							"depth": 1,
+							"header": "C7: Fountain Room"
+						},
+						{
+							"depth": 1,
+							"header": "C8: East Pressure Room"
+						},
+						{
+							"depth": 1,
+							"header": "C9: Clockwork Alcove"
+						},
+						{
+							"depth": 1,
+							"header": "C10: Improvised Workshop"
+						},
+						{
+							"depth": 1,
+							"header": "C11: Umberto's Cell"
+						},
+						{
+							"depth": 1,
+							"header": "C12: West Pressure Room"
+						},
+						{
+							"depth": 1,
+							"header": "C13: Wall Crossing"
+						},
+						{
+							"depth": 1,
+							"header": "C14: Common Room"
+						},
+						{
+							"depth": 1,
+							"header": "C15: Kitchen"
+						},
+						{
+							"depth": 1,
+							"header": "C16: Subleader Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "C17: Library"
+						},
+						{
+							"depth": 1,
+							"header": "C18: Vacant Cell"
+						},
+						{
+							"depth": 1,
+							"header": "C19: Demon Lair"
+						},
+						{
+							"depth": 1,
+							"header": "C20: Indrina's Cell"
+						},
+						{
+							"depth": 1,
+							"header": "C21: Haunted Room"
+						},
+						{
+							"depth": 1,
+							"header": "C22: Latrine"
+						},
+						{
+							"depth": 1,
+							"header": "C23: Corridor"
+						},
+						{
+							"depth": 1,
+							"header": "C24: Empty Crypts"
+						},
+						{
+							"depth": 1,
+							"header": "C25: Leader's Room"
+						},
+						{
+							"depth": 1,
+							"header": "C26: Sacrifice Gallery"
+						},
+						"Escaping Evernight",
+						"Dolindar Tomb",
+						{
+							"depth": 1,
+							"header": "B1: Portico"
+						},
+						{
+							"depth": 1,
+							"header": "B2: Hall"
+						},
+						{
+							"depth": 1,
+							"header": "B3: Lost Dolindars"
+						},
+						{
+							"depth": 1,
+							"header": "B4: Vault"
+						},
+						{
+							"depth": 1,
+							"header": "B5: Puzzle Door"
+						},
+						{
+							"depth": 1,
+							"header": "B6: Matriarch's Chamber"
+						},
+						"What's Next?"
+					]
+				},
+				{
+					"name": "The Wizards Three",
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 2
+					},
+					"headers": [
+						"Running This Chapter",
+						"After Neverdeath",
+						"Rise of the Lich-God",
+						"The Sigil Sanctum",
+						{
+							"depth": 1,
+							"header": "S1: Library"
+						},
+						{
+							"depth": 1,
+							"header": "S2: Parlor"
+						},
+						{
+							"depth": 1,
+							"header": "S3: Workspace"
+						},
+						{
+							"depth": 1,
+							"header": "S4: Lounge"
+						},
+						"The Wizards Three",
+						"Kas the Destroyer",
+						"Surprise Development",
+						"Toward Web's Edge",
+						"Web's Edge",
+						{
+							"depth": 1,
+							"header": "W1: False Front"
+						},
+						{
+							"depth": 1,
+							"header": "W2: Lolth Shrine"
+						},
+						{
+							"depth": 1,
+							"header": "W3: Summoning Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "W4: Corridor"
+						},
+						{
+							"depth": 1,
+							"header": "W5: Guardian Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "W6: Holding Cells"
+						},
+						{
+							"depth": 1,
+							"header": "W7: Meeting Room"
+						},
+						{
+							"depth": 1,
+							"header": "W8: Mission Hall"
+						},
+						{
+							"depth": 1,
+							"header": "W9: Fodder Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "W10: Barrack of the Faithful"
+						},
+						{
+							"depth": 1,
+							"header": "W11: Passageway"
+						},
+						{
+							"depth": 1,
+							"header": "W12: Sacred Web Hall"
+						},
+						"Next Steps"
+					]
+				},
+				{
+					"name": "The Lambent Zenith's Last Voyage",
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 3
+					},
+					"headers": [
+						"Running the Adventure",
+						"A Doorway to Space",
+						"Into the Astral Sea",
+						"Wreck of the Lambent Zenith",
+						{
+							"depth": 1,
+							"header": "Z2: Upper Crew Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "Z3: Galley and Pantry"
+						},
+						{
+							"depth": 1,
+							"header": "Z4: Mess Hall"
+						},
+						{
+							"depth": 1,
+							"header": "Z5: Companionway"
+						},
+						{
+							"depth": 1,
+							"header": "Z6: Lower Crew Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "Z7: Storage"
+						},
+						{
+							"depth": 1,
+							"header": "Z8: Stateroom"
+						},
+						{
+							"depth": 1,
+							"header": "Z9: Brig"
+						},
+						{
+							"depth": 1,
+							"header": "Z10: Starboard Top Deck"
+						},
+						{
+							"depth": 1,
+							"header": "Z11: Grell Nest"
+						},
+						{
+							"depth": 1,
+							"header": "Z12: Lifeboat Wreck"
+						},
+						{
+							"depth": 1,
+							"header": "Z13: Study"
+						},
+						{
+							"depth": 1,
+							"header": "Z15: Captain's Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "Z16: Navigation Room"
+						},
+						{
+							"depth": 1,
+							"header": "Z17: Bridge"
+						},
+						{
+							"depth": 1,
+							"header": "Z18: Forward Cargo Hold"
+						},
+						{
+							"depth": 1,
+							"header": "Z19: Safe Room"
+						},
+						"Heart of Havock",
+						{
+							"depth": 1,
+							"header": "A1: Entry Atrium"
+						},
+						{
+							"depth": 1,
+							"header": "A2: Ventricle Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "A3: Flooded Atrium"
+						},
+						"Next Steps"
+					]
+				},
+				{
+					"name": "The Ruined Colossus",
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 4
+					},
+					"headers": [
+						"Running This Chapter",
+						"Doorway to Eberron",
+						"An Important Detail",
+						"Mount Ironrot",
+						"Finding a Docent",
+						"Landro",
+						{
+							"depth": 1,
+							"header": "L1: Cave Entrance"
+						},
+						{
+							"depth": 1,
+							"header": "L2: Cave Graveyard"
+						},
+						{
+							"depth": 1,
+							"header": "L3: Cave Shack"
+						},
+						{
+							"depth": 1,
+							"header": "L4: Bottleneck"
+						},
+						{
+							"depth": 1,
+							"header": "L5: Right Foot"
+						},
+						{
+							"depth": 1,
+							"header": "L6: Left Foot"
+						},
+						{
+							"depth": 1,
+							"header": "L7: Leg Shafts"
+						},
+						{
+							"depth": 1,
+							"header": "L8: Armory"
+						},
+						{
+							"depth": 1,
+							"header": "L9: Blocked Antigravity Well"
+						},
+						{
+							"depth": 1,
+							"header": "L10: Artificer Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "L11: Workshop"
+						},
+						{
+							"depth": 1,
+							"header": "L12: Lost Soldier"
+						},
+						{
+							"depth": 1,
+							"header": "L13: Dragonshard Pool"
+						},
+						{
+							"depth": 1,
+							"header": "L14: Blazebear Den"
+						},
+						{
+							"depth": 1,
+							"header": "L15: Overhang"
+						},
+						{
+							"depth": 1,
+							"header": "L16: Ruined Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "L17: Bridge"
+						},
+						{
+							"depth": 1,
+							"header": "L18: Collapsed Antigravity Well"
+						},
+						{
+							"depth": 1,
+							"header": "L19: Muster Point"
+						},
+						{
+							"depth": 1,
+							"header": "L20: War Room"
+						},
+						{
+							"depth": 1,
+							"header": "L21: Shoulders"
+						},
+						{
+							"depth": 1,
+							"header": "L22: Walkway"
+						},
+						{
+							"depth": 1,
+							"header": "L23: Holding Cells"
+						},
+						{
+							"depth": 1,
+							"header": "L24: Intake Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "L25: Vault"
+						},
+						{
+							"depth": 1,
+							"header": "L26: Throat"
+						},
+						{
+							"depth": 1,
+							"header": "L27: Weapons System"
+						},
+						{
+							"depth": 1,
+							"header": "L28: Graymatter Engine"
+						},
+						"Next Steps"
+					]
+				},
+				{
+					"name": "Death House",
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 5
+					},
+					"headers": [
+						"Running This Chapter",
+						"Barovia",
+						"Arriving in Barovia",
+						"Death House",
+						{
+							"depth": 1,
+							"header": "D3: Den of Wolves"
+						},
+						{
+							"depth": 1,
+							"header": "D5: Dining Room"
+						},
+						{
+							"depth": 1,
+							"header": "D6: Upper Hall"
+						},
+						{
+							"depth": 1,
+							"header": "D8: Library"
+						},
+						{
+							"depth": 1,
+							"header": "D9: Secret Room"
+						},
+						{
+							"depth": 1,
+							"header": "D10: Conservatory"
+						},
+						{
+							"depth": 1,
+							"header": "D11: Balcony"
+						},
+						{
+							"depth": 1,
+							"header": "D13: Bathroom"
+						},
+						{
+							"depth": 1,
+							"header": "D14: Storage Room"
+						},
+						{
+							"depth": 1,
+							"header": "D16: Attic Hall"
+						},
+						{
+							"depth": 1,
+							"header": "D17: Spare Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "D18: Storage Room"
+						},
+						{
+							"depth": 1,
+							"header": "D19: Spare Bedroom"
+						},
+						{
+							"depth": 1,
+							"header": "D20: Children's Room"
+						},
+						{
+							"depth": 1,
+							"header": "D21: Secret Stairs"
+						},
+						{
+							"depth": 1,
+							"header": "D22: Dungeon Level Access"
+						},
+						{
+							"depth": 1,
+							"header": "D24: Cult Initiates' Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "D25: Cultist Quarters and Well"
+						},
+						{
+							"depth": 1,
+							"header": "D26: Hidden Spiked Pit"
+						},
+						{
+							"depth": 1,
+							"header": "D27: Dining Hall"
+						},
+						{
+							"depth": 1,
+							"header": "D28: Larder"
+						},
+						{
+							"depth": 1,
+							"header": "D29: Intersection"
+						},
+						{
+							"depth": 1,
+							"header": "D30: Stairs Down"
+						},
+						{
+							"depth": 1,
+							"header": "D31: Darklord's Shrine"
+						},
+						{
+							"depth": 1,
+							"header": "D32: Hidden Trapdoor"
+						},
+						{
+							"depth": 1,
+							"header": "D33: Cult Leaders' Den"
+						},
+						{
+							"depth": 1,
+							"header": "D34: Cult Leaders' Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "D35: Reliquary"
+						},
+						{
+							"depth": 1,
+							"header": "D36: Prison"
+						},
+						{
+							"depth": 1,
+							"header": "D37: Tunnel to Portcullis"
+						},
+						{
+							"depth": 1,
+							"header": "D38: Ritual Chamber"
+						},
+						"Strahd's Presence",
+						"Leaving the House",
+						"Next Steps"
+					]
+				},
+				{
+					"name": "Night of Blue Fire",
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 6
+					},
+					"headers": [
+						"Running This Chapter",
+						"Krynn",
+						"Arriving on Krynn",
+						"The Peylon Tree",
+						{
+							"depth": 1,
+							"header": "P1: Rotted Roots"
+						},
+						{
+							"depth": 1,
+							"header": "P2: Hollow"
+						},
+						{
+							"depth": 1,
+							"header": "P3: Ledge"
+						},
+						{
+							"depth": 1,
+							"header": "P4: Grotto"
+						},
+						"Bittergrass Fen",
+						"The Blue Fire Wardens",
+						"Three Moons Vault",
+						{
+							"depth": 1,
+							"header": "V1: Entrance"
+						},
+						{
+							"depth": 1,
+							"header": "V2: Anteroom"
+						},
+						{
+							"depth": 1,
+							"header": "V3: Escape Tunnel"
+						},
+						{
+							"depth": 1,
+							"header": "V4: Halls"
+						},
+						{
+							"depth": 1,
+							"header": "V5: Scrying Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "V6: Empty Cells"
+						},
+						{
+							"depth": 1,
+							"header": "V7: Valendar's Cell"
+						},
+						{
+							"depth": 1,
+							"header": "V8: Garrison"
+						},
+						{
+							"depth": 1,
+							"header": "V9: Winding Staircase"
+						},
+						{
+							"depth": 1,
+							"header": "V10: Trapped Black Rose Bearer"
+						},
+						{
+							"depth": 1,
+							"header": "V11: Vault Access"
+						},
+						{
+							"depth": 1,
+							"header": "V12: Treasure Vaults"
+						},
+						{
+							"depth": 1,
+							"header": "V13: Ruined Vault"
+						},
+						{
+							"depth": 1,
+							"header": "V14: Flooded Basement"
+						},
+						{
+							"depth": 1,
+							"header": "V15: Lunar Shrine"
+						},
+						{
+							"depth": 1,
+							"header": "V16: Locked Stairwell"
+						},
+						{
+							"depth": 1,
+							"header": "V17: White Tower Ruins"
+						},
+						{
+							"depth": 1,
+							"header": "V18: Veteran Camp"
+						},
+						{
+							"depth": 1,
+							"header": "V19: White Tower Lookout"
+						},
+						{
+							"depth": 1,
+							"header": "V20: Ruined Shrine"
+						},
+						{
+							"depth": 1,
+							"header": "V21: Drawbridge"
+						},
+						{
+							"depth": 1,
+							"header": "V22: Lookout Turret"
+						},
+						{
+							"depth": 1,
+							"header": "V23: Wall Walk"
+						},
+						{
+							"depth": 1,
+							"header": "V24: Rookery"
+						},
+						{
+							"depth": 1,
+							"header": "V25: Courtyard"
+						},
+						{
+							"depth": 1,
+							"header": "V26: Barrack"
+						},
+						{
+							"depth": 1,
+							"header": "V27: Armory"
+						},
+						{
+							"depth": 1,
+							"header": "V28: Royal Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "V29: Orrery"
+						},
+						{
+							"depth": 1,
+							"header": "V30: Red Mirror Stairwell"
+						},
+						{
+							"depth": 1,
+							"header": "V31: Teremini's Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "V32: Stairwell"
+						},
+						{
+							"depth": 1,
+							"header": "V33: Muster Yard"
+						},
+						{
+							"depth": 1,
+							"header": "V34. Circle of Undeath"
+						},
+						{
+							"depth": 1,
+							"header": "V35: Temple"
+						},
+						{
+							"depth": 1,
+							"header": "V36: Akaazi's Quarters"
+						},
+						{
+							"depth": 1,
+							"header": "V37: Aviary"
+						},
+						{
+							"depth": 1,
+							"header": "U1: White Lunarium"
+						},
+						{
+							"depth": 1,
+							"header": "U2: Red Lunarium"
+						},
+						{
+							"depth": 1,
+							"header": "U3: Black Lunarium"
+						},
+						{
+							"depth": 1,
+							"header": "U4: Moonbridges"
+						},
+						{
+							"depth": 1,
+							"header": "U5: Moondisk"
+						},
+						"Next Steps"
+					]
+				},
+				{
+					"name": "Tomb of Wayward Souls",
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 7
+					},
+					"headers": [
+						"Running This Chapter",
+						"Oerth",
+						"Down to Oerth",
+						"Into the Tomb",
+						{
+							"depth": 1,
+							"header": "T1: False Entrance"
+						},
+						{
+							"depth": 1,
+							"header": "T2: False Entrance"
+						},
+						{
+							"depth": 1,
+							"header": "T3: Tomb Entrance"
+						},
+						{
+							"depth": 1,
+							"header": "T4: Face of the Great Blue Devil"
+						},
+						{
+							"depth": 1,
+							"header": "T5: Cave of Seven Casks"
+						},
+						{
+							"depth": 1,
+							"header": "T6: Hall of Gemstones"
+						},
+						{
+							"depth": 1,
+							"header": "T7: Skeleton Closet"
+						},
+						{
+							"depth": 1,
+							"header": "T8: Room of Myriad Archways"
+						},
+						{
+							"depth": 1,
+							"header": "T9: Forest of Spirits Mirage"
+						},
+						{
+							"depth": 1,
+							"header": "T10: Crushing Room Trap"
+						},
+						{
+							"depth": 1,
+							"header": "T11: Strange Altar"
+						},
+						{
+							"depth": 1,
+							"header": "T12: Room of Respite"
+						},
+						{
+							"depth": 1,
+							"header": "T13: Celestial Sky Mirage"
+						},
+						{
+							"depth": 1,
+							"header": "T14: Juggernaut Arena"
+						},
+						{
+							"depth": 1,
+							"header": "T15: Juggernaut Control Room"
+						},
+						{
+							"depth": 1,
+							"header": "T16: Acid Pit Crossing"
+						},
+						{
+							"depth": 1,
+							"header": "T17: Jade Serpent Guardians' Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "T18: Hall of Discordance"
+						},
+						{
+							"depth": 1,
+							"header": "T19: Library"
+						},
+						{
+							"depth": 1,
+							"header": "T21: Phantasmal Mirage"
+						},
+						{
+							"depth": 1,
+							"header": "T22: Vortex Bridge"
+						},
+						{
+							"depth": 1,
+							"header": "T23: Arcane Laboratory"
+						},
+						{
+							"depth": 1,
+							"header": "T24: Underwater Trench Mirage"
+						},
+						{
+							"depth": 1,
+							"header": "T25: Crypt Doors"
+						},
+						{
+							"depth": 1,
+							"header": "T26: Crypt"
+						},
+						{
+							"depth": 1,
+							"header": "T27: Crypt Vault"
+						},
+						"Next Steps"
+					]
+				},
+				{
+					"name": "The Dragon Queen's Pride",
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 8
+					},
+					"headers": [
+						"Running This Chapter",
+						"Avernus",
+						"Descending into Avernus",
+						"The Red Belvedere",
+						"Casino Rooms",
+						"Dragon's Pride",
+						{
+							"depth": 1,
+							"header": "N1: Wyrmsong Cantina"
+						},
+						{
+							"depth": 1,
+							"header": "N2: Enchanting Arcana"
+						},
+						{
+							"depth": 1,
+							"header": "N3: Virtuous Vices"
+						},
+						{
+							"depth": 1,
+							"header": "N4: Windfall's Office"
+						},
+						{
+							"depth": 1,
+							"header": "N5: Ruby Sanctum"
+						},
+						"Next Steps"
+					]
+				},
+				{
+					"name": "The Betrayer Revealed",
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 9
+					},
+					"headers": [
+						"Running This Chapter",
+						"Returning from Avernus",
+						"Kas Reveals Himself",
+						"Pandesmos Outlook",
+						"Next Steps"
+					]
+				},
+				{
+					"name": "The War of Pandesmos",
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 10
+					},
+					"headers": [
+						"Running This Chapter",
+						"Chaos Incarnate",
+						"Carapace Ridge",
+						"Hurricane Tower",
+						{
+							"depth": 1,
+							"header": "X1: Vestibule"
+						},
+						{
+							"depth": 1,
+							"header": "X2: Tower Base"
+						},
+						"Ruinous Citadel",
+						{
+							"depth": 1,
+							"header": "Y1: Drill Field"
+						},
+						{
+							"depth": 1,
+							"header": "Y2: Guard Hall"
+						},
+						{
+							"depth": 1,
+							"header": "Y3: Hall"
+						},
+						{
+							"depth": 1,
+							"header": "Y4: Vault"
+						},
+						{
+							"depth": 1,
+							"header": "Y5: Planning Chamber"
+						},
+						{
+							"depth": 1,
+							"header": "Y6: Food Storage"
+						},
+						{
+							"depth": 1,
+							"header": "Y7: Miska's Prison-Hall"
+						},
+						"Cliffside Redoubt",
+						{
+							"depth": 1,
+							"header": "F1: Upper Bunker"
+						},
+						{
+							"depth": 1,
+							"header": "F2: Lower Entrance"
+						},
+						{
+							"depth": 1,
+							"header": "F3: Central Chamber"
+						},
+						"Fighting Kas",
+						"Next Steps"
+					]
+				},
+				{
+					"name": "Eve of Ruin",
+					"ordinal": {
+						"type": "chapter",
+						"identifier": 11
+					},
+					"headers": [
+						"Running This Chapter",
+						"Reunion in Sigil",
+						"Vecna's Grasp",
+						{
+							"depth": 1,
+							"header": "E1: Kaleidoscopic Cavern"
+						},
+						{
+							"depth": 1,
+							"header": "E2: Unreality Tunnels"
+						},
+						"Torment of Kas",
+						{
+							"depth": 1,
+							"header": "K1: Ruined Bailey"
+						},
+						{
+							"depth": 1,
+							"header": "K2: Statues of Vecna"
+						},
+						{
+							"depth": 1,
+							"header": "K3: Receiving Room"
+						},
+						{
+							"depth": 1,
+							"header": "K4: Fountain of Blood"
+						},
+						{
+							"depth": 1,
+							"header": "K5: Kas's Chamber"
+						},
+						"Neverwinter's New King",
+						"Dead Gods",
+						{
+							"depth": 1,
+							"header": "G1: Crumbling Mound"
+						},
+						{
+							"depth": 1,
+							"header": "G2: Sword Bridge"
+						},
+						{
+							"depth": 1,
+							"header": "G3: Horror's Fissure"
+						},
+						{
+							"depth": 1,
+							"header": "G4: Shrine of Habbakuk"
+						},
+						"Cave of Shattered Reflection",
+						{
+							"depth": 1,
+							"header": "R1: Shattered Grotto"
+						},
+						{
+							"depth": 1,
+							"header": "R2: Threshold"
+						},
+						{
+							"depth": 1,
+							"header": "R3: Ritual Chamber"
+						},
+						"Conclusion"
+					]
+				},
+				{
+					"name": "Bestiary",
+					"ordinal": {
+						"type": "appendix",
+						"identifier": "A"
+					},
+					"headers": [
+						"Abishais",
+						"Astral Dreadnought",
+						"Black Rose Bearer",
+						"Blades of Eberron",
+						"Blazebear",
+						"Bone Roc",
+						"Borthak",
+						"Cadaver Collector",
+						"Citadel Spider",
+						"Cosmic Horror",
+						"Deadbark Dryad",
+						"Deathwolf",
+						"Degloth",
+						"Eye Monger",
+						"False Lich",
+						"Granite Juggernaut",
+						"Hazvongel",
+						"Hertilod",
+						"Inquisitor of the Tome",
+						"Lunar Dragon",
+						"Mirror Shade",
+						"Moonlight Guardian",
+						"Necromancer Wizard",
+						"Night Scavver",
+						"Priest of Osybus",
+						"Relentless Impaler",
+						"Sorrowsworn",
+						"Spiderdragon",
+						"Spyder-Fiends",
+						"Star Angler",
+						"Vlazok",
+						"Warforged Warrior",
+						"Whirling Chandelier"
+					]
+				},
+				{
+					"name": "Character Dossier",
+					"ordinal": {
+						"type": "appendix",
+						"identifier": "B"
+					},
+					"headers": [
+						"Acererak",
+						"Alustriel Silverhand",
+						"Kas the Betrayer",
+						"Lolth the Spider Queen",
+						"Lord Soth",
+						"Miska the Wolf-Spider",
+						"Mordenkainen",
+						"Strahd von Zarovich",
+						"Tasha",
+						"Tiamat",
+						"Vecna"
+					]
+				},
+				{
+					"name": "Secrets Tracker",
+					"ordinal": {
+						"type": "appendix",
+						"identifier": "C"
+					}
+				},
+				{
+					"name": "Credits"
+				}
+			]
+		},
+		{
+			"name": "Quests from the Infinite Staircase",
+			"id": "QftIS",
+			"source": "QftIS",
+			"group": "supplement",
+			"cover": {
+				"type": "internal",
+				"path": "covers/QftIS.webp"
+			},
+			"published": "2024-07-16",
+			"author": "Wizards RPG Team",
+			"storyline": "Quests from the Infinite Staircase",
+			"level": {
+				"start": 1,
+				"end": 13
+			},
+			"contents": [
+				{
+					"name": "Introduction"
 				}
 			]
 		}

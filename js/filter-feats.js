@@ -2,12 +2,7 @@
 
 class PageFilterFeats extends PageFilter {
 	// region static
-	static _PREREQ_KEY_TO_FULL = {
-		"other": "Special",
-		"spellcasting2020": "Spellcasting",
-		"spellcastingFeature": "Spellcasting",
-		"spellcastingPrepared": "Spellcasting",
-	};
+	static _PREREQ_KEYs_OTHER_IGNORED = new Set(["level"]);
 	// endregion
 
 	constructor () {
@@ -32,7 +27,7 @@ class PageFilterFeats extends PageFilter {
 		});
 		this._otherPrereqFilter = new Filter({
 			header: "Other",
-			items: ["Ability", "Race", "Psionics", "Proficiency", "Special", "Spellcasting"],
+			items: [...FilterCommon.PREREQ_FILTER_ITEMS],
 		});
 		this._levelFilter = new Filter({
 			header: "Level",
@@ -64,9 +59,12 @@ class PageFilterFeats extends PageFilter {
 
 		const prereqText = Renderer.utils.prerequisite.getHtml(feat.prerequisite, {isListMode: true}) || VeCt.STR_NONE;
 
-		feat._fPrereqOther = [...new Set((feat.prerequisite || []).flatMap(it => Object.keys(it)))]
-			.map(it => (this._PREREQ_KEY_TO_FULL[it] || it).uppercaseFirst());
-		if (feat.prerequisite) feat._fPrereqLevel = feat.prerequisite.filter(it => it.level != null).map(it => `Level ${it.level.level ?? it.level}`);
+		feat._fPrereqOther = FilterCommon.getFilterValuesPrerequisite(feat.prerequisite, {ignoredKeys: this._PREREQ_KEYs_OTHER_IGNORED});
+		feat._fPrereqLevel = feat.prerequisite
+			? feat.prerequisite
+				.filter(it => it.level != null)
+				.map(it => `Level ${it.level.level ?? it.level}`)
+			: [];
 		feat._fBenifits = [
 			feat.resist ? "Damage Resistance" : null,
 			feat.immune ? "Damage Immunity" : null,
@@ -102,7 +100,8 @@ class PageFilterFeats extends PageFilter {
 
 		this._sourceFilter.addItem(feat.source);
 		this._categoryFilter.addItem(feat.category);
-		if (feat.prerequisite) this._levelFilter.addItem(feat._fPrereqLevel);
+		this._levelFilter.addItem(feat._fPrereqLevel);
+		this._otherPrereqFilter.addItem(feat._fPrereqOther);
 		this._vulnerableFilter.addItem(feat._fVuln);
 		this._resistFilter.addItem(feat._fRes);
 		this._immuneFilter.addItem(feat._fImm);
@@ -190,16 +189,16 @@ class ModalFilterFeats extends ModalFilter {
 		const source = Parser.sourceJsonToAbv(feat.source);
 
 		eleRow.innerHTML = `<div class="w-100 ve-flex-vh-center lst--border veapp__list-row no-select lst__wrp-cells">
-			<div class="col-0-5 pl-0 ve-flex-vh-center">${this._isRadio ? `<input type="radio" name="radio" class="no-events">` : `<input type="checkbox" class="no-events">`}</div>
+			<div class="ve-col-0-5 pl-0 ve-flex-vh-center">${this._isRadio ? `<input type="radio" name="radio" class="no-events">` : `<input type="checkbox" class="no-events">`}</div>
 
-			<div class="col-0-5 px-1 ve-flex-vh-center">
+			<div class="ve-col-0-5 px-1 ve-flex-vh-center">
 				<div class="ui-list__btn-inline px-2" title="Toggle Preview (SHIFT to Toggle Info Preview)">[+]</div>
 			</div>
 
-			<div class="col-4 ${feat._versionBase_isVersion ? "italic" : ""} ${this._getNameStyle()}">${feat._versionBase_isVersion ? `<span class="px-3"></span>` : ""}${feat.name}</div>
-			<span class="col-3 ${feat._slAbility === VeCt.STR_NONE ? "italic" : ""}">${feat._slAbility}</span>
-				<span class="col-3 ${feat._slPrereq === VeCt.STR_NONE ? "italic" : ""}">${feat._slPrereq}</span>
-			<div class="col-1 pr-0 ve-flex-h-center ${Parser.sourceJsonToColor(feat.source)}" title="${Parser.sourceJsonToFull(feat.source)}" ${Parser.sourceJsonToStyle(feat.source)}>${source}${Parser.sourceJsonToMarkerHtml(feat.source)}</div>
+			<div class="ve-col-4 ${feat._versionBase_isVersion ? "italic" : ""} ${this._getNameStyle()}">${feat._versionBase_isVersion ? `<span class="px-3"></span>` : ""}${feat.name}</div>
+			<span class="ve-col-3 ${feat._slAbility === VeCt.STR_NONE ? "italic" : ""}">${feat._slAbility}</span>
+				<span class="ve-col-3 ${feat._slPrereq === VeCt.STR_NONE ? "italic" : ""}">${feat._slPrereq}</span>
+			<div class="ve-col-1 pr-0 ve-flex-h-center ${Parser.sourceJsonToColor(feat.source)}" title="${Parser.sourceJsonToFull(feat.source)}" ${Parser.sourceJsonToStyle(feat.source)}>${source}${Parser.sourceJsonToMarkerHtml(feat.source)}</div>
 		</div>`;
 
 		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;

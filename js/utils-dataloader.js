@@ -17,6 +17,15 @@ class _DataLoaderConst {
 	static SOURCE_BREW_ALL_CURRENT = Symbol("SOURCE_BREW_ALL_CURRENT");
 
 	static ENTITY_NULL = Symbol("ENTITY_NULL");
+
+	static _SOURCES_ALL_NON_SITE = new Set([
+		this.SOURCE_PRERELEASE_ALL_CURRENT,
+		this.SOURCE_BREW_ALL_CURRENT,
+	]);
+
+	static isSourceAllNonSite (source) {
+		return this._SOURCES_ALL_NON_SITE.has(source);
+	}
 }
 
 class _DataLoaderInternalUtil {
@@ -638,6 +647,7 @@ class _DataTypeLoader {
 	async _pPrePopulate ({data, isPrerelease, isBrew}) { /* Implement as required */ }
 
 	async pGetSiteData ({pageClean, sourceClean}) {
+		if (_DataLoaderConst.isSourceAllNonSite(sourceClean)) return {};
 		const propCache = this._getSiteIdent({pageClean, sourceClean});
 		this._cache_pSiteData[propCache] = this._cache_pSiteData[propCache] || this._pGetSiteData({pageClean, sourceClean});
 		return this._cache_pSiteData[propCache];
@@ -837,6 +847,14 @@ class _DataTypeLoaderOptionalfeatureFluff extends _DataTypeLoaderSingleSource {
 	_filename = "fluff-optionalfeatures.json";
 }
 
+class _DataTypeLoaderRewardFluff extends _DataTypeLoaderSingleSource {
+	static PROPS = ["rewardFluff"];
+	static PAGE = UrlUtil.PG_REWARDS;
+	static IS_FLUFF = true;
+
+	_filename = "fluff-rewards.json";
+}
+
 class _DataTypeLoaderItemFluff extends _DataTypeLoaderSingleSource {
 	static PROPS = ["itemFluff"];
 	static PAGE = UrlUtil.PG_ITEMS;
@@ -970,13 +988,6 @@ class _DataTypeLoaderLanguage extends _DataTypeLoaderPredefined {
 	_loader = "language";
 }
 
-class _DataTypeLoaderRecipe extends _DataTypeLoaderPredefined {
-	static PROPS = ["recipe"];
-	static PAGE = UrlUtil.PG_RECIPES;
-
-	_loader = "recipe";
-}
-
 class _DataTypeLoaderMultiSource extends _DataTypeLoader {
 	_prop;
 
@@ -1050,6 +1061,28 @@ class _DataTypeLoaderCustomSpellFluff extends _DataTypeLoaderMultiSource {
 	static IS_FLUFF = true;
 
 	_prop = "spellFluff";
+}
+
+class _DataTypeLoaderClassSubclassFluff extends _DataTypeLoaderMultiSource {
+	static PROPS = ["classFluff", "subclassFluff"];
+	static PAGE = UrlUtil.PG_CLASSES;
+	static IS_FLUFF = true;
+
+	_getSiteIdent ({pageClean, sourceClean}) {
+		// use `.toString()` in case `sourceClean` is a `Symbol`
+		return `${this.constructor.PROPS.join("__")}__${sourceClean.toString()}`;
+	}
+
+	async _pGetSiteData ({pageClean, sourceClean}) {
+		return this._pGetSiteDataAll();
+	}
+
+	async _pGetSiteDataAll () {
+		const jsons = await this.constructor.PROPS.pMap(prop => DataUtil[prop].loadJSON());
+		const out = {};
+		jsons.forEach(json => Object.assign(out, {...json}));
+		return out;
+	}
 }
 
 /** @abstract */
@@ -1412,6 +1445,59 @@ class _DataTypeLoaderCustomDeck extends _DataTypeLoaderCustomRawable {
 	}
 }
 
+class _DataTypeLoaderRecipe extends _DataTypeLoaderCustomRawable {
+	static PROPS = ["raw_recipe", "recipe"];
+	static PAGE = UrlUtil.PG_RECIPES;
+
+	static _PROPS_RAWABLE = ["recipe"];
+
+	async _pGetRawSiteData () { return DataUtil.recipe.loadRawJSON(); }
+
+	async _pGetPostCacheData_obj ({obj, lockToken2}) {
+		if (!obj) return null;
+
+		const out = {};
+
+		if (obj.raw_recipe?.length) out.recipe = await obj.raw_recipe.pSerialAwaitMap(ent => this.constructor._pGetDereferencedRecipeData(ent, {lockToken2}));
+
+		return out;
+	}
+
+	static async _pGetDereferencedRecipeData (recipe, {lockToken2}) {
+		recipe = MiscUtil.copyFast(recipe);
+
+		Renderer.recipe.populateFullIngredients(recipe);
+
+		const fluff = await this._pGetDereferencedFluffData(recipe, {lockToken2});
+		if (fluff) recipe.fluff = fluff;
+
+		return recipe;
+	}
+
+	static async _pGetDereferencedFluffData (recipe, {lockToken2}) {
+		const fluff = await Renderer.utils.pGetFluff({
+			entity: recipe,
+			fluffProp: "recipeFluff",
+			lockToken2,
+		});
+		if (!fluff) return null;
+
+		const cpyFluff = MiscUtil.copyFast(fluff);
+		delete cpyFluff.name;
+		delete cpyFluff.source;
+
+		return cpyFluff;
+	}
+
+	async pGetPostCacheData ({siteData = null, prereleaseData = null, brewData = null, lockToken2}) {
+		return {
+			siteDataPostCache: await this._pGetPostCacheData_obj_withCache({obj: siteData, lockToken2, propCache: "site"}),
+			prereleaseDataPostCache: await this._pGetPostCacheData_obj({obj: prereleaseData, lockToken2}),
+			brewDataPostCache: await this._pGetPostCacheData_obj({obj: brewData, lockToken2}),
+		};
+	}
+}
+
 class _DataTypeLoaderCustomQuickref extends _DataTypeLoader {
 	static PROPS = ["reference", "referenceData"];
 	static PAGE = UrlUtil.PG_QUICKREF;
@@ -1660,6 +1746,7 @@ class DataLoader {
 		_DataTypeLoaderCustomMonsterFluff.register({fnRegister});
 		_DataTypeLoaderCustomSpell.register({fnRegister});
 		_DataTypeLoaderCustomSpellFluff.register({fnRegister});
+		_DataTypeLoaderClassSubclassFluff.register({fnRegister});
 		// endregion
 
 		// region Predefined
@@ -1710,6 +1797,7 @@ class DataLoader {
 		_DataTypeLoaderBackgroundFluff.register({fnRegister});
 		_DataTypeLoaderFeatFluff.register({fnRegister});
 		_DataTypeLoaderOptionalfeatureFluff.register({fnRegister});
+		_DataTypeLoaderRewardFluff.register({fnRegister});
 		_DataTypeLoaderItemFluff.register({fnRegister});
 		_DataTypeLoaderRaceFluff.register({fnRegister});
 		_DataTypeLoaderLanguageFluff.register({fnRegister});
@@ -1876,7 +1964,7 @@ class DataLoader {
 	 */
 	static async pCacheAndGet (page, source, hash, {isCopy = false, isRequired = false, isSilent = false, lockToken2} = {}) {
 		const fromCache = this.getFromCache(page, source, hash, {isCopy, _isReturnSentinel: true});
-		if (fromCache === _DataLoaderConst.ENTITY_NULL) return null;
+		if (fromCache === _DataLoaderConst.ENTITY_NULL) return this._getVerifiedRequiredEntity({pageClean: page, sourceClean: source, hashClean: hash, ent: null, isRequired});
 		if (fromCache) return fromCache;
 
 		const {page: pageClean, source: sourceClean, hash: hashClean} = _DataLoaderInternalUtil.getCleanPageSourceHash({page, source, hash});

@@ -6571,7 +6571,8 @@
 								"units": "miles"
 							},
 							"imageType": "map",
-							"credit": "Lee Moyer"
+							"credit": "Lee Moyer",
+							"id": "059"
 						}
 					]
 				},
@@ -20532,7 +20533,6 @@
 				{
 					"type": "list",
 					"style": "list-hang-notitle",
-					"columns": 2,
 					"items": [
 						{
 							"type": "item",

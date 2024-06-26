@@ -1,10 +1,19 @@
-import * as fs from "fs";
+import fs from "fs";
+import path from "path";
 import "../js/parser.js";
 import "../js/utils.js";
 import * as ut from "../node/util.js";
+import {listFiles} from "../node/util.js";
 
 class _TestTokenImages {
-	static _IS_CLEAN_MM_EXTRAS = false;
+	static _IS_CLEAN_EXTRAS = false;
+	static _IS_MOVE_EXTRAS = false;
+	static _SOURCES_CLEAN_EXTRAS = [
+		Parser.SRC_MM,
+		Parser.SRC_MPMM,
+		Parser.SRC_BAM,
+		Parser.SRC_VRGR,
+	];
 
 	static _PATH_BASE = `./img/bestiary/tokens`;
 	static _EXT = "webp";
@@ -19,11 +28,11 @@ class _TestTokenImages {
 	static _existing = new Set();
 	static _expectedFromHashToken = {};
 
-	static _mmTokens = null;
+	static _existingSourceTokens = null;
 
-	static _isMmToken (filename) {
-		if (!this._mmTokens) this._mmTokens = fs.readdirSync(`${this._PATH_BASE}/${Parser.sourceJsonToAbv(Parser.SRC_MM)}`).mergeMap(it => ({[it]: true}));
-		return !!this._mmTokens[filename.split("/").last()];
+	static _isExistingSourceToken ({filename, src}) {
+		(this._existingSourceTokens ||= {})[src] ||= fs.readdirSync(`${this._PATH_BASE}/${src}`).mergeMap(it => ({[it]: true}));
+		return !!this._existingSourceTokens[src][filename.split("/").last()];
 	}
 
 	static _readBestiaryJson () {
@@ -32,13 +41,12 @@ class _TestTokenImages {
 			.forEach(file => {
 				ut.readJson(`./data/bestiary/${file}`).monster
 					.forEach(m => {
-						const source = Parser.sourceJsonToAbv(m.source);
-						const implicitTokenPath = `${this._PATH_BASE}/${source}/${Parser.nameToTokenName(m.name)}.${this._EXT}`;
+						const implicitTokenPath = `${this._PATH_BASE}/${m.source}/${Parser.nameToTokenName(m.name)}.${this._EXT}`;
 
 						if (m.hasToken) this._expectedFromHashToken[implicitTokenPath] = true;
 
-						if (!fs.existsSync(`${this._PATH_BASE}/${source}`)) {
-							this._expectedDirs[source] = true;
+						if (!fs.existsSync(`${this._PATH_BASE}/${m.source}`)) {
+							this._expectedDirs[m.source] = true;
 							return;
 						}
 
@@ -48,13 +56,13 @@ class _TestTokenImages {
 						if (m.variant) {
 							m.variant
 								.filter(it => it.token)
-								.forEach(entry => this._expected.add(`${this._PATH_BASE}/${Parser.sourceJsonToAbv(entry.token.source)}/${Parser.nameToTokenName(entry.token.name)}.${this._EXT}`));
+								.forEach(entry => this._expected.add(`${this._PATH_BASE}/${entry.token.source}/${Parser.nameToTokenName(entry.token.name)}.${this._EXT}`));
 						}
 
 						// add tokens specified as alt art
 						if (m.altArt) {
 							m.altArt
-								.forEach(alt => this._expected.add(`${this._PATH_BASE}/${Parser.sourceJsonToAbv(alt.source)}/${Parser.nameToTokenName(alt.name)}.${this._EXT}`));
+								.forEach(alt => this._expected.add(`${this._PATH_BASE}/${alt.source}/${Parser.nameToTokenName(alt.name)}.${this._EXT}`));
 						}
 					});
 			});
@@ -79,12 +87,25 @@ class _TestTokenImages {
 		});
 		this._existing.forEach((img) => {
 			delete this._expectedFromHashToken[img];
+
 			if (!this._expected.has(img)) {
-				if (this._IS_CLEAN_MM_EXTRAS && this._isMmToken(img)) {
-					fs.unlinkSync(img);
-					results.push(`[ !DELETE] ${img}`);
-					return;
+				if (this._IS_CLEAN_EXTRAS) {
+					const srcExisting = this._SOURCES_CLEAN_EXTRAS
+						.find(src => this._isExistingSourceToken({filename: img, src}));
+					if (srcExisting) {
+						fs.unlinkSync(img);
+						results.push(`[ !DELETE] ${img} (found in "${srcExisting}")`);
+						return;
+					}
 				}
+
+				if (this._IS_MOVE_EXTRAS) {
+					const dir = path.join(path.dirname(img), "extras");
+					fs.mkdirSync(dir, {recursive: true});
+					fs.copyFileSync(img, path.join(dir, path.basename(img)));
+					fs.unlinkSync(img);
+				}
+
 				results.push(`[   EXTRA] ${img}`);
 				isError = true;
 			}
@@ -133,26 +154,23 @@ class _TestAdventureBookImages {
 			};
 		};
 
-		[
-			{filename: "adventures.json", prop: "adventure", dir: "adventure"},
-			{filename: "books.json", prop: "book", dir: "book"},
-		].flatMap(({filename, prop, dir}) => ut.readJson(`./data/${filename}`)[prop]
-			.map(({id}) => `./data/${dir}/${dir}-${id.toLowerCase()}.json`))
-			.forEach(filename => {
+		listFiles()
+			.forEach(filepath => {
+				const json = ut.readJson(filepath);
 				walker.walk(
-					ut.readJson(filename),
+					json,
 					{
-						object: getHandler(filename, pathsMissing),
+						object: getHandler(filepath, pathsMissing),
 					},
 				);
 			});
 
 		if (pathsMissing.length) {
-			console.log(`Adventure/Book Errors:\n${pathsMissing.map(it => `\t${it}`).join("\n")}`);
+			console.log(`Missing Images:\n${pathsMissing.map(it => `\t${it}`).join("\n")}`);
 			return true;
 		}
 
-		console.log(`##### Adventure/Book Image Tests Passed #####`);
+		console.log(`##### Missing Image Test Passed #####`);
 		return false;
 	}
 }

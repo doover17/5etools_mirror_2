@@ -57,8 +57,8 @@ function addMonsterFeatures (mfData) {
 	});
 
 	// when clicking a row in the "Monster Statistics by Challenge Rating" table
-	$("#msbcr tr").not(":has(th)").click(function () {
-		if (!confirm("This will reset the calculator. Are you sure?")) return;
+	$("#msbcr tr").not(":has(th)").click(async function () {
+		if (!await InputUiUtil.pGetUserBoolean({title: "Reset", htmlDescription: "This will reset the calculator. Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
 		$("#expectedcr").val($(this).children("td:eq(0)").html());
 		const [minHp, maxHp] = $(this).children("td:eq(4)").html().split("-").map(it => parseInt(it));
 		$("#hp").val(minHp + (maxHp - minHp) / 2);
@@ -88,12 +88,12 @@ function addMonsterFeatures (mfData) {
 
 		$wrpMonFeatures.append(`
 			<label class="row crc__mon_feature ui-tip__parent">
-				<div class="col-1 crc__mon_feature_wrp_cb">
+				<div class="ve-col-1 crc__mon_feature_wrp_cb">
 					<input type="checkbox" id="mf-${Parser.stringToSlug(f.name)}" title="${f.name}" data-hp="${f.hp || ""}" data-ac="${f.ac || ""}" data-dpr="${f.dpr || ""}" data-attackbonus="${f.attackBonus || ""}" class="crc__mon_feature_cb">${numBox}
 				</div>
-				<div class="col-2">${f.name}</div>
-				<div class="col-2">${Renderer.get().render(`{@creature ${f.example}}`)}</div>
-				<div class="col-7"><span title="${effectOnCr.join(", ")}">${Renderer.get().render(f.effect)}</span></div>
+				<div class="ve-col-2">${f.name}</div>
+				<div class="ve-col-2">${Renderer.get().render(`{@creature ${f.example}}`)}</div>
+				<div class="ve-col-7"><span title="${effectOnCr.join(", ")}">${Renderer.get().render(f.effect)}</span></div>
 			</label>
 		`);
 	});
@@ -156,11 +156,10 @@ function addMonsterFeatures (mfData) {
 
 	$("#monsterfeatures .crc__wrp_mon_features input").change(calculateCr);
 
-	$("#crcalc_reset").click(() => {
-		confirm("Are you sure?") && (() => {
-			window.location = "";
-			parseUrl();
-		})();
+	$("#crcalc_reset").click(async () => {
+		if (!await InputUiUtil.pGetUserBoolean({title: "Reset", htmlDescription: "Are you sure?", textYes: "Yes", textNo: "Cancel"})) return;
+		window.location = "";
+		parseUrl();
 	});
 
 	parseUrl();

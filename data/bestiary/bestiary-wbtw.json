@@ -1,13 +1,5 @@
 {
 	"_meta": {
-		"otherSources": {
-			"monster": {
-				"MM": "WBtW",
-				"VGM": "WBtW",
-				"GoS": "WBtW",
-				"CoS": "WBtW"
-			}
-		},
 		"dependencies": {
 			"monster": [
 				"MM"
@@ -15,7 +7,15 @@
 		},
 		"internalCopies": [
 			"monster"
-		]
+		],
+		"otherSources": {
+			"monster": {
+				"MM": "WBtW",
+				"VGM": "WBtW",
+				"GoS": "WBtW",
+				"CoS": "WBtW"
+			}
+		}
 	},
 	"monster": [
 		{
@@ -2281,6 +2281,11 @@
 			"isNamedCreature": true,
 			"source": "WBtW",
 			"page": 205,
+			"otherSources": [
+				{
+					"source": "VEoR"
+				}
+			],
 			"size": [
 				"M"
 			],

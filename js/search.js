@@ -13,6 +13,23 @@ class SearchPage {
 		this._render();
 	}
 
+	/* -------------------------------------------- */
+
+	static _PARAM_QUERY = "q";
+	static _PARAM_LUCKY = "lucky";
+
+	static _getSearchParams () {
+		const params = new URLSearchParams(location.search);
+		return Object.fromEntries(params);
+	}
+
+	static _setSearchParams (obj) {
+		const params = new URLSearchParams(obj);
+		location.search = params.toString();
+	}
+
+	/* -------------------------------------------- */
+
 	static _render_$getBtnToggleFilter (
 		{
 			propOmnisearch,
@@ -43,11 +60,13 @@ class SearchPage {
 				if (evt.key !== "Enter") return;
 				$btnSearch.click();
 			})
-			.val(decodeURIComponent(location.search.slice(1).replace(/\+/g, " ")));
+			.val(this._getSearchParams()[this._PARAM_QUERY]);
 
 		const $btnSearch = $(`<button class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>`)
 			.click(() => {
-				location.search = encodeURIComponent($iptSearch.val().trim().toLowerCase());
+				this._setSearchParams({
+					[this._PARAM_QUERY]: $iptSearch.val().trim().toLowerCase(),
+				});
 			});
 
 		const $btnHelp = $(`<button class="btn btn-default mr-2 mobile__hidden" title="Help"><span class="glyphicon glyphicon-info-sign"></span></button>`)
@@ -104,10 +123,10 @@ class SearchPage {
 		SearchPage._$wrpResults = $(`<div class="ve-flex-col w-100">${this._getWrpResult_message("Loading...")}</div>`);
 
 		$$(SearchPage._$wrp)`<div class="ve-flex-col w-100 pg-search__wrp">
-			<div class="ve-flex-v-center mb-2 mobile-ish__ve-flex-col">
-				<div class="ve-flex-v-center input-group btn-group mr-2 w-100 mobile-ish__mb-2">${$iptSearch}${$btnSearch}</div>
+			<div class="ve-flex-v-center mb-2 mobile-lg__ve-flex-col">
+				<div class="ve-flex-v-center input-group btn-group mr-2 w-100 mobile-lg__mb-2">${$iptSearch}${$btnSearch}</div>
 
-				<div class="ve-flex-v-center mobile__ve-flex-col mobile-ish__ve-flex-ai-start mobile-ish__w-100">
+				<div class="ve-flex-v-center mobile__ve-flex-col mobile-lg__ve-flex-ai-start mobile-lg__w-100">
 					${$btnHelp}
 					<div class="ve-flex-v-center btn-group mr-2 mobile__mb-2 mobile__mr-0">
 						${$btnToggleBrew}
@@ -146,18 +165,31 @@ class SearchPage {
 		}
 		SearchPage._rowMetas = [];
 
-		if (!location.search.slice(1)) {
+		const params = this._getSearchParams();
+
+		if (!params[this._PARAM_QUERY]) {
 			SearchPage._$wrpResults.empty().append(this._getWrpResult_message("Enter a search to view results"));
 			return;
 		}
 
-		Omnisearch.pGetResults(decodeURIComponent(location.search.slice(1).replace(/\+/g, " ")))
+		Omnisearch.pGetResults(params[this._PARAM_QUERY])
 			.then(results => {
 				SearchPage._$wrpResults.empty();
 
 				if (!results.length) {
 					SearchPage._$wrpResults.append(this._getWrpResult_message("No results found."));
 					return;
+				}
+
+				if (this._PARAM_LUCKY in params) {
+					const [href] = results
+						.map(res => Omnisearch.getResultHref(res.doc))
+						.filter(Boolean);
+
+					if (href) {
+						window.location = `${Renderer.get().baseUrl}${href}`;
+						return;
+					}
 				}
 
 				SearchPage._rowMetas = results.map(result => {

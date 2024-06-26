@@ -26,9 +26,9 @@ class _RenderableCollectionConditionsCustomEdit extends RenderableCollectionGene
 
 		$$($wrpRow)`
 			<div class="ve-flex-vh-center w-100 my-1">
-				<div class="col-5 pr-1 ve-flex-v-center">${$iptName}</div>
-				<div class="col-2 px-1 ve-flex-v-center">${$iptColor}</div>
-				<div class="col-5 pr-1 ve-flex-v-center">
+				<div class="ve-col-5 pr-1 ve-flex-v-center">${$iptName}</div>
+				<div class="ve-col-2 px-1 ve-flex-v-center">${$iptColor}</div>
+				<div class="ve-col-5 pr-1 ve-flex-v-center">
 					${$iptTurns}
 					<div class="ve-flex-vh-center btn-group">
 						${$btnDelete}
@@ -70,7 +70,7 @@ export class InitiativeTrackerConditionCustomEdit extends BaseComponent {
 				this._state.conditionsCustom = [...this._state.conditionsCustom, InitiativeTrackerConditionUtil.getNewRowState()];
 			});
 
-		const $wrpRows = $(`<div class="ve-flex-col h-100 min-h-0 overflow-y-auto"></div>`);
+		const $wrpRows = $(`<div class="ve-flex-col h-100 min-h-0 ve-overflow-y-auto"></div>`);
 
 		const compRows = new _RenderableCollectionConditionsCustomEdit({comp: this, $wrpRows});
 		this._addHookBase("conditionsCustom", () => compRows.render())();
@@ -78,10 +78,10 @@ export class InitiativeTrackerConditionCustomEdit extends BaseComponent {
 		$$($modalInner)`
 			<div class="ve-flex-col mt-2 h-100 min-h-0">
 				<div class="ve-flex-vh-center w-100 mb-2 bb-1p-trans">
-					<div class="col-5">Name</div>
-					<div class="col-2">Color</div>
-					<div class="col-4">Turns</div>
-					<div class="col-1 ve-flex-v-center ve-flex-h-right">${$btnAdd}</div>
+					<div class="ve-col-5">Name</div>
+					<div class="ve-col-2">Color</div>
+					<div class="ve-col-4">Turns</div>
+					<div class="ve-col-1 ve-flex-v-center ve-flex-h-right">${$btnAdd}</div>
 				</div>
 
 				${$wrpRows}

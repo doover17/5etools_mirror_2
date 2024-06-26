@@ -1,22 +1,16 @@
 "use strict";
 
 class ObjectsSublistManager extends SublistManager {
-	constructor () {
-		super({
-			sublistClass: "subobjects",
-		});
-	}
-
 	static get _ROW_TEMPLATE () {
 		return [
 			new SublistCellTemplate({
 				name: "Name",
-				css: "bold col-9 pl-0",
+				css: "bold ve-col-9 pl-0",
 				colStyle: "",
 			}),
 			new SublistCellTemplate({
 				name: "Size",
-				css: "col-3 pr-0 ve-text-center",
+				css: "ve-col-3 pr-0 ve-text-center",
 				colStyle: "text-center",
 			}),
 		];
@@ -58,13 +52,10 @@ class ObjectsPage extends ListPage {
 
 		super({
 			dataSource: DataUtil.object.loadJSON.bind(DataUtil.object),
-			dataSourceFluff: DataUtil.objectFluff.loadJSON.bind(DataUtil.objectFluff),
 
 			pFnGetFluff,
 
 			pageFilter,
-
-			listClass: "objects",
 
 			dataProps: ["object"],
 
@@ -87,9 +78,9 @@ class ObjectsPage extends ListPage {
 		const size = Renderer.utils.getRenderedSize(obj.size);
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
-			<span class="bold col-8 pl-0">${obj.name}</span>
-			<span class="col-2 ve-text-center">${size}</span>
-			<span class="col-2 ve-text-center ${Parser.sourceJsonToColor(obj.source)} pr-0" title="${Parser.sourceJsonToFull(obj.source)}" ${Parser.sourceJsonToStyle(obj.source)}>${source}</span>
+			<span class="bold ve-col-8 pl-0">${obj.name}</span>
+			<span class="ve-col-2 ve-text-center">${size}</span>
+			<span class="ve-col-2 ve-text-center ${Parser.sourceJsonToColor(obj.source)} pr-0" title="${Parser.sourceJsonToFull(obj.source)}" ${Parser.sourceJsonToStyle(obj.source)}>${source}</span>
 		</a>`;
 
 		const listItem = new ListItem(
